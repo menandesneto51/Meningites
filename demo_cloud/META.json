@@ -1,5 +1,6 @@
 {
-  "n_arquivos_csv": 116,
+  "n_arquivos_csv": 128,
   "pulados_grandes": [],
+  "geojson_simplificado": true,
   "aviso": "Pacote DEMO para avaliação pública/cloud. Colunas nominais removidas da base e filas. Sem acesso ao DW."
 }

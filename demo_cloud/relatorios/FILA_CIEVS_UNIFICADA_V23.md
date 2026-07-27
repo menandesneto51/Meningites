@@ -1,6 +1,6 @@
 # Fila CIEVS unificada — Meningites V23
 
-**Gerado em:** 27/07/2026 11:39
+**Gerado em:** 27/07/2026 13:46
 **Matches usados (score ≥ 0.75):** GAL=415 · SIM=64
 
 ## Enriquecimento DW na base
@@ -8,6 +8,15 @@
 - Casos com match GAL: **415**
 - Casos com GAL positivo: **70**
 - Casos com match SIM: **64**
+
+## Mortalidade SINAN × SIM (para Odds Ratio)
+
+- Óbitos SINAN (EvolucaoCaso): **395**
+- Óbitos SIM (linkage ≥ 0.75): **64**
+- União SINAN∪SIM (desfecho padrão dos OR): **415**
+- SIM sem óbito meningite no SINAN: **20**
+
+Arquivo: `desfechos_mortalidade_sim_v23.csv` · resumo: `mortalidade_sinan_sim_resumo_v23.csv`.
 
 ## Alertas linkage DW: 29
 ## Alertas qualidade: 43
