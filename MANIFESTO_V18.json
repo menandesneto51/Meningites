@@ -1,0 +1,6 @@
+{
+  "pacote": "Meningites V18 Refinado Completo",
+  "principal_dashboard": "dashboard_meningites_v18_refinado.py",
+  "principal_pipeline": "pipeline_meningites_v18_refino_completo.py",
+  "principal_menu": "MENU_MENINGITES_V18_REFINO_COMPLETO.bat"
+}

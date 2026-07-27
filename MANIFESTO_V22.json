@@ -1,0 +1,14 @@
+{
+  "pacote": "Meningites V22 Refino Consolidado",
+  "dashboard": "dashboard_meningites_v22_refinado.py",
+  "pipeline": "pipeline_meningites_v22_refino_consolidado.py",
+  "menu": "MENU_MENINGITES_V22_REFINO_CONSOLIDADO.bat",
+  "mantem_demais_abas": true,
+  "refinos": [
+    "destaque p<0.005",
+    "séries históricas separadas",
+    "OR/IC95/p-value fixos à direita",
+    "canal endêmico visual melhorado",
+    "distância geoespacial corrigida"
+  ]
+}

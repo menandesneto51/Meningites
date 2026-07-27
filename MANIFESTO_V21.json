@@ -1,0 +1,11 @@
+{
+  "pacote": "Meningites V21 Refino Analítico Visual",
+  "dashboard": "dashboard_meningites_v21_analitico_visual.py",
+  "pipeline": "pipeline_meningites_v21_refino_analitico_visual.py",
+  "menu": "MENU_MENINGITES_V21_REFINO_ANALITICO_VISUAL.bat",
+  "mantem_demais_abas": true,
+  "novos_modulos": [
+    "02c_odds_clinico_socio_comorb_v21.py",
+    "04b_nowcasting_desfechos_v21.py"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "pacote": "Meningites V17 BI Epidemiológico",
+  "arquivos": [
+    "00_INSTALAR_DEPENDENCIAS_MENINGITES_V17.bat",
+    "00_base_unica_meningites_v17.py",
+    "00_preparar_base_unica_meningites_v16.py",
+    "01_kpis_semanais_meningites_v17.py",
+    "02_estatisticas_or_meningites_v17.py",
+    "03_surtos_canal_endemico_meningites_v17.py",
+    "04_nowcasting_forecasting_meningites_v17.py",
+    "05_geoespacial_moran_meningites_v17.py",
+    "06_clima_casos_meningites_v17.py",
+    "07_laboratorio_qualidade_meningites_v17.py",
+    "08_vacina_etiologia_or_meningites_v17.py",
+    "09_relatorio_tecnico_meningites_v17.py",
+    "MENU_MENINGITES_V17_BI.bat",
+    "README_MENINGITES_V17_BI.md",
+    "dashboard_meningites_v16_completo.py",
+    "dashboard_meningites_v17_bi_epidemiologico.py",
+    "meningites_v17_common.py",
+    "pipeline_meningites_v17_completo.py",
+    "requirements_meningites_v17.txt"
+  ],
+  "execucao": "MENU_MENINGITES_V17_BI.bat ou python pipeline_meningites_v17_completo.py --all-open"
+}

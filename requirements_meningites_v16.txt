@@ -1,0 +1,17 @@
+pandas
+numpy
+streamlit
+plotly
+scipy
+openpyxl
+python-docx
+statsmodels
+scikit-learn
+matplotlib
+pyarrow
+geopandas
+shapely
+pyproj
+fiona
+libpysal
+esda

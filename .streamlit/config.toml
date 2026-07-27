@@ -1,0 +1,14 @@
+[server]
+port = 8510
+headless = false
+
+[browser]
+gatherUsageStats = false
+serverAddress = "localhost"
+serverPort = 8510
+
+[theme]
+primaryColor = "#0B6E4F"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F4F7F5"
+textColor = "#102A23"

@@ -1,0 +1,22 @@
+{
+  "pacote": "Meningites V19 Sistema Completo",
+  "tipo": "sistema completo consolidado",
+  "mantem_abas": [
+    "Executivo",
+    "Mapas",
+    "Estatística/OR",
+    "Surtos",
+    "Canal/Gráficos",
+    "Projeções",
+    "Geoespacial",
+    "Clima",
+    "Laboratório",
+    "Vacina",
+    "Comorbidades",
+    "Qualidade",
+    "Relatório/Base"
+  ],
+  "principal_menu": "MENU_MENINGITES_V19_SISTEMA_COMPLETO.bat",
+  "principal_pipeline": "pipeline_meningites_v19_sistema_completo.py",
+  "principal_dashboard": "dashboard_meningites_v19_sistema_completo.py"
+}

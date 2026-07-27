@@ -1,0 +1,26 @@
+project:
+  name: robo_meningite_avancado
+  version: "1.0"
+analysis:
+  date_col: DataPrimeirosSintomas
+  notification_date_col: DataNotificacao
+  municipality_col: MunicipioResidencia
+  municipality_code_col: CodigoMunicipioResidencia
+  classification_col: ClassificacaoMeningite
+  final_case_col: ClassificacaoCaso
+  outcome_col: EvolucaoCaso
+  hospitalization_col: OcorreuHospitalizacao
+  horizons: [7, 15, 30, 60]
+  min_daily_observations: 30
+data_quality:
+  missing_tokens: ["*Em Branco", "Ignorado", "", "nan", "NaN", "None"]
+  duplicate_keys: ["NumeroNotificacao"]
+  logical_date_order:
+    - ["DataPrimeirosSintomas", "DataNotificacao"]
+    - ["DataNotificacao", "DataInvestigacao"]
+    - ["DataPrimeirosSintomas", "DataInternacao"]
+    - ["DataPrimeirosSintomas", "DataPuncaoLombar"]
+    - ["DataPrimeirosSintomas", "DataEvolucao"]
+    - ["DataNotificacao", "DataEncerramento"]
+outputs:
+  folder: outputs

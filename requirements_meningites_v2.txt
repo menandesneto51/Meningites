@@ -1,0 +1,12 @@
+streamlit
+plotly
+pandas
+numpy
+scipy
+statsmodels
+python-docx
+matplotlib
+geopandas
+libpysal
+esda
+lifelines

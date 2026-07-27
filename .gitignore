@@ -1,0 +1,57 @@
+# Secrets / credentials
+.env
+.env.*
+!.env.example
+**/credentials*.json
+**/DW_*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.egg-info/
+.venv/
+venv/
+
+# IDE / local
+.cursor/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Large / regenerable data dumps and outputs
+data/
+outputs/
+saida_meningites*/
+exports_dashboard_*/
+relatorios/
+logs_orquestrador/
+entradas_linkage/
+_arquivo_legado/
+robo_meningite_avancado_v1/
+pacote_completo_meningites_dashboard_abas_relatorio_word/
+pacote_meningites_v2_refinado/
+
+# Local caches / streamlit
+.streamlit/secrets.toml
+
+# Large binaries / dumps often regenerated
+*.parquet
+*.feather
+*.h5
+*.sqlite
+*.db
+
+# Raw dumps kept local
+meningite*.csv
+meningite*.xlsx
+historico_clima*.csv
+geo_social.csv
+populacao_padronizada*.csv
+AUDITORIA_FINAL*.csv
+*Municipios MT*.csv
+*Popula*.csv
+*.zip
+*.pdf
+!README.md

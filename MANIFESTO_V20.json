@@ -1,0 +1,6 @@
+{
+  "pacote": "Meningites V20 Refinamento Estratégico",
+  "dashboard": "dashboard_meningites_v20_estrategico.py",
+  "pipeline": "pipeline_meningites_v20_refino_estrategico.py",
+  "menu": "MENU_MENINGITES_V20_REFINO_ESTRATEGICO.bat"
+}

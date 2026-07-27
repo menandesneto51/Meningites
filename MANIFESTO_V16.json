@@ -1,0 +1,21 @@
+{
+  "pacote": "Meningites V16 Pipeline Completo",
+  "arquivos": [
+    "00_INSTALAR_DEPENDENCIAS_MENINGITES_V16.bat",
+    "00_preparar_base_unica_meningites_v16.py",
+    "01_kpis_semanais_meningites_v16.py",
+    "02_clima_casos_meningites_v16.py",
+    "03_alerta_surtos_classificacao_meningites_v16.py",
+    "04_indicadores_laboratoriais_meningites_v16.py",
+    "05_vacina_etiologia_efetividade_meningites_v16.py",
+    "06_relatorio_tecnico_meningites_v16.py",
+    "MENU_MENINGITES_V16_COMPLETO.bat",
+    "README_MENINGITES_V16_PIPELINE_COMPLETO.md",
+    "dashboard_meningites_v16_completo.py",
+    "pipeline_meningites_v16_completo.py",
+    "requirements_meningites_v16.txt",
+    "00_preparar_base_unica_meningites_v15.py"
+  ],
+  "rodar": "MENU_MENINGITES_V16_COMPLETO.bat ou python pipeline_meningites_v16_completo.py --all-open",
+  "correcao": "Inclui base V16 completa e alias V15 para não ocorrer mais erro de arquivo ausente."
+}
