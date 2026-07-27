@@ -1431,22 +1431,89 @@ def nowcasting_chart(base, now):
 
 
 def climate_section():
+    """Correlação exploratória clima × casos/desfechos (módulo 06). Não é o SIS Clima-Saúde."""
+    st.caption(
+        "Análise **exploratória** de associação temporal entre variáveis climáticas e meningites. "
+        "Não implica causalidade e **não** substitui o SIS Integrado Clima-Saúde."
+    )
     diag = OUT / "diagnostico_clima_v17.txt"
     if diag.exists():
         st.info(diag.read_text(encoding="utf-8"))
     corr = read_any(OUT / "correlacao_clima_casos_v17.csv")
+    top = read_any(OUT / "correlacao_clima_desfechos_top_v17.csv")
     daily = read_any(OUT / "clima_casos_diario_v17.csv")
-    if not corr.empty and {"spearman","variavel_climatica"}.issubset(corr.columns):
-        corr["spearman"] = pd.to_numeric(corr["spearman"], errors="coerce")
-        best = corr.assign(abs_spearman=lambda x: x["spearman"].abs()).sort_values("abs_spearman", ascending=False).head(20)
-        bar_with_labels(best, "spearman", "variavel_climatica", "Correlação clima x casos (melhores lags)", color="lag_dias" if "lag_dias" in best.columns else None, orient="h", height=500)
-        st.caption("R² e correlações são medidas exploratórias ecológicas e não devem ser interpretadas como causalidade.")
-        st.dataframe(corr, use_container_width=True)
-    if not daily.empty and {"data","casos"}.issubset(daily.columns):
+    if corr.empty:
+        st.warning("Rode: py -3.13 06_clima_casos_meningites_v17.py")
+        return
+
+    for c in ["spearman", "pearson", "r2", "lag_dias"]:
+        if c in corr.columns:
+            corr[c] = pd.to_numeric(corr[c], errors="coerce")
+    if "abs_r" not in corr.columns and "spearman" in corr.columns:
+        corr["abs_r"] = corr["spearman"].abs()
+
+    desfechos = sorted(corr["desfecho"].dropna().astype(str).unique()) if "desfecho" in corr.columns else ["casos"]
+    escolha = st.selectbox("Desfecho", desfechos, index=0 if "casos" not in desfechos else desfechos.index("casos"))
+    sub = corr[corr["desfecho"].astype(str).eq(escolha)].copy() if "desfecho" in corr.columns else corr.copy()
+    best = sub.sort_values("abs_r", ascending=False).head(20) if "abs_r" in sub.columns else sub.head(20)
+
+    st.subheader(f"Maiores |correlações| — {escolha}")
+    if not best.empty:
+        fig = px.bar(
+            best,
+            x="spearman",
+            y="variavel_climatica",
+            color="lag_dias" if "lag_dias" in best.columns else None,
+            orientation="h",
+            text=[fmt(v, 2) for v in best["spearman"]],
+            title=f"Spearman clima × {escolha} (lags 0–30 dias)",
+        )
+        fig.update_traces(textposition="outside", cliponaxis=False)
+        fig.update_layout(height=max(420, 26 * len(best) + 120), margin=dict(b=40, t=60))
+        st.plotly_chart(fig, use_container_width=True, key=uid())
+        st.dataframe(best, use_container_width=True)
+
+    if not top.empty:
+        with st.expander("Top correlações por desfecho"):
+            st.dataframe(top, use_container_width=True)
+
+    # Narrativa assistida
+    st.subheader("Interpretação assistida (IA / RAG)")
+    usar_llm = st.checkbox("Usar LLM (Gemini/OpenAI se configurado no .env)", value=False, key="clima_llm")
+    if st.button("Gerar leitura dos achados climáticos", key="btn_clima_narr"):
+        linhas = []
+        for _, r in best.head(5).iterrows():
+            linhas.append(
+                f"- {r.get('variavel_climatica')} lag {r.get('lag_dias')}d: "
+                f"Spearman={fmt(r.get('spearman'), 3)}, R²={fmt(r.get('r2'), 3)}"
+            )
+        ctx = f"Desfecho: {escolha}\n" + "\n".join(linhas)
+        try:
+            from meningites_env import load_meningites_env
+            load_meningites_env()
+            assist = __import__("16_assistente_cievs_v23")
+            ans = assist.answer(
+                "Interprete correlações ecológicas entre clima e meningites para o CIEVS. "
+                "Enfatize que não há causalidade e que sazonalidade/atraso de notificação confundem.",
+                contexto_dados=ctx,
+                use_llm=usar_llm,
+            )
+            st.markdown(
+                f'<div class="ai-box">{(ans.get("resposta") or "").replace(chr(10), "<br/>")}</div>',
+                unsafe_allow_html=True,
+            )
+        except Exception as e:
+            st.warning(f"Assistente indisponível: {e}")
+
+    if not daily.empty and {"data", "casos"}.issubset(daily.columns):
+        daily = daily.copy()
         daily["data"] = pd.to_datetime(daily["data"], errors="coerce")
-        vars_ = [c for c in daily.columns if c not in ["data", "casos"] and pd.api.types.is_numeric_dtype(daily[c])]
+        vars_ = [c for c in daily.columns if c not in ["data", "casos", "confirmados", "hospitalizacoes", "obitos", "altas"]
+                 and pd.api.types.is_numeric_dtype(daily[c])]
+        st.subheader("Dispersão exploratória (casos)")
         for var in vars_[:4]:
             fig = px.scatter(daily, x=var, y="casos", trendline="ols", title=f"Casos vs {var}")
+            fig.update_layout(height=380)
             st.plotly_chart(fig, use_container_width=True, key=uid())
 
 
@@ -2233,7 +2300,7 @@ def assistant_section():
     st.caption(
         "Perguntas respondidas com recuperação de trechos da NT 97/2024, Informe Meningites, "
         "Caderno SINAN e Guia de Vigilância. Sempre valide com a equipe antes de comunicação oficial. "
-        "LLM opcional se OPENAI_API_KEY estiver configurada."
+        "LLM opcional (Gemini/OpenAI) se as chaves estiverem no `.env` local."
     )
     try:
         from conhecimento_ms_meningites_v23 import FAQ_RAPIDO
@@ -2270,7 +2337,7 @@ def assistant_section():
         height=90,
         placeholder="Ex.: O que fazer em caso de DM em escola? Quando é surto comunitário?",
     )
-    usar_llm = st.checkbox("Tentar enriquecer com LLM (se houver API key)", value=False)
+    usar_llm = st.checkbox("Tentar enriquecer com LLM (Gemini/OpenAI do .env)", value=False)
     if st.button("Consultar normas", type="primary") and pergunta.strip():
         with st.spinner("Recuperando normas e montando resposta..."):
             ctx = assist.build_contexto_operacional()
@@ -2323,6 +2390,12 @@ def report_section(df):
 
 
 def main():
+    try:
+        from meningites_env import load_meningites_env
+        load_meningites_env()
+    except Exception:
+        pass
+
     inject_ui_css()
     base = load_base()
     if base.empty:
@@ -2335,7 +2408,7 @@ def main():
         """
 <div class="hero-band">
   <h1>Robô de Meningites — CIEVS-MT</h1>
-  <p>Vigilância de meningites · Indicadores MS · Alertas CIEVS (NT 97/2024) · Nowcast/forecast · Não é o SIS Clima-Saúde.</p>
+  <p>Vigilância de meningites · Indicadores MS · Alertas CIEVS (NT 97/2024) · Clima×casos exploratório · Nowcast/forecast.</p>
 </div>
         """,
         unsafe_allow_html=True,
@@ -2374,7 +2447,7 @@ def main():
         "01 Executivo", "02 Indicadores MS", "03 Alertas CIEVS", "04 Painel Epidemiológico",
         "05 Assistente IA", "06 Mapas", "07 Estatística/OR", "08 Surtos", "09 Sazonalidade/Canal",
         "10 Projeções", "11 Geoespacial", "12 Laboratório", "13 Vacina",
-        "14 Comorbidades", "15 Qualidade", "16 Relatório/Base",
+        "14 Comorbidades", "15 Qualidade", "16 Relatório/Base", "17 Clima×casos",
     ])
 
     with tabs[0]:
@@ -2653,6 +2726,9 @@ def main():
 
     with tabs[15]:
         report_section(df)
+
+    with tabs[16]:
+        climate_section()
 
 
 if __name__ == "__main__":

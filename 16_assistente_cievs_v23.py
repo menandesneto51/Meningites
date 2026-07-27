@@ -129,15 +129,42 @@ def answer_offline(query: str, contexto_dados: str = "") -> dict:
 
 
 def _openai_enrich(prompt: str) -> str | None:
-    """Chamada opcional à API OpenAI se OPENAI_API_KEY estiver no ambiente."""
-    api_key = os.environ.get("OPENAI_API_KEY") or os.environ.get("MENINGITES_OPENAI_API_KEY")
+    """Chamada opcional LLM (OpenAI ou Gemini OpenAI-compatible)."""
+    try:
+        from meningites_env import load_meningites_env
+        load_meningites_env()
+    except Exception:
+        pass
+
+    api_key = (
+        os.environ.get("OPENAI_API_KEY")
+        or os.environ.get("MENINGITES_OPENAI_API_KEY")
+        or os.environ.get("LLM_API_KEY")
+        or os.environ.get("GEMINI_API_KEY")
+    )
     if not api_key:
         return None
+
+    url = (
+        os.environ.get("LLM_API_URL")
+        or os.environ.get("OPENAI_BASE_URL")
+        or "https://api.openai.com/v1/chat/completions"
+    )
+    model = (
+        os.environ.get("LLM_MODEL")
+        or os.environ.get("GEMINI_MODEL")
+        or os.environ.get("MENINGITES_OPENAI_MODEL")
+        or "gpt-4o-mini"
+    )
+    # Gemini 2.0-flash foi descontinuado na API; mapear para modelo atual.
+    if model.strip().lower() in {"gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"}:
+        model = "gemini-2.5-flash"
+
     try:
         import urllib.request
 
         body = json.dumps({
-            "model": os.environ.get("MENINGITES_OPENAI_MODEL", "gpt-4o-mini"),
+            "model": model,
             "messages": [
                 {
                     "role": "system",
@@ -154,7 +181,7 @@ def _openai_enrich(prompt: str) -> str | None:
             "temperature": 0.2,
         }).encode("utf-8")
         req = urllib.request.Request(
-            "https://api.openai.com/v1/chat/completions",
+            url,
             data=body,
             headers={
                 "Content-Type": "application/json",
