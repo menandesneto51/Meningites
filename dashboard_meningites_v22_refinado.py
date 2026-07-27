@@ -470,15 +470,65 @@ def arrow_html(var):
     return trend_arrow_color(var, higher_is_bad=True)
 
 
+SEMAFORO_COLORS = {
+    "Verde": "#16a34a",
+    "verde": "#16a34a",
+    "Vermelho": "#dc2626",
+    "vermelho": "#dc2626",
+    "Amarelo": "#ca8a04",
+    "amarelo": "#ca8a04",
+    "Atenção": "#ca8a04",
+    "Atencao": "#ca8a04",
+    "Alto": "#ea580c",
+    "Crítico": "#b91c1c",
+    "Critico": "#b91c1c",
+    "Rotina": "#64748b",
+}
+
+
 def semaforo_color(txt):
-    s = str(txt or "").strip().lower()
-    if "verde" in s:
+    s = str(txt or "").strip()
+    if s in SEMAFORO_COLORS:
+        return SEMAFORO_COLORS[s]
+    low = s.lower()
+    if "verde" in low:
         return "#16a34a"
-    if "vermel" in s:
+    if "vermel" in low or "crít" in low or "crit" in low:
         return "#dc2626"
-    if "amarelo" in s or "aten" in s:
-        return "#d97706"
+    if "amarelo" in low or "aten" in low:
+        return "#ca8a04"
+    if "alto" in low:
+        return "#ea580c"
     return "#6b7280"
+
+
+def semaforo_badge(txt):
+    """Badge colorido — fonte/fundo seguem Verde/Vermelho/Amarelo (visível no Streamlit)."""
+    label = str(txt or "—")
+    c = semaforo_color(label)
+    return (
+        f'<span style="display:inline-block;background:{c};color:#ffffff !important;'
+        f'padding:4px 12px;border-radius:999px;font-weight:800;font-size:0.9rem;'
+        f'letter-spacing:0.02em;">{label}</span>'
+    )
+
+
+def plotly_semaforo_map(series=None):
+    """Mapa de cores Plotly para coluna semaforo / classe_alerta."""
+    base = {
+        "Verde": "#16a34a",
+        "Vermelho": "#dc2626",
+        "Amarelo": "#eab308",
+        "Atenção": "#eab308",
+        "Alto": "#ea580c",
+        "Crítico": "#b91c1c",
+        "Rotina": "#94a3b8",
+    }
+    if series is not None:
+        for v in pd.Series(series).dropna().astype(str).unique():
+            if v not in base:
+                base[v] = semaforo_color(v)
+    return base
 
 
 def kpi_delta_html(delta_pct, suffix="%", higher_is_bad=True):
@@ -694,39 +744,79 @@ def forest_plot_or_labeled(data, title, max_items=25):
 
     d = d.sort_values(["p_value", "or"], ascending=[True, False]).head(max_items).copy()
     d["rotulo"] = d["exposicao"].astype(str).str.replace("_", " ").str[:78]
-    d["texto_or"] = d.apply(lambda r: f"OR {fmt(r['or'],2)} | IC95% {fmt(r['ic95_inferior'],2)}–{fmt(r['ic95_superior'],2)} | p={fmt(r.get('p_value', np.nan),4)}", axis=1)
+    d["interpretacao"] = d.apply(_or_interpret_row, axis=1)
+    d["cor"] = d["or"].apply(lambda x: "#dc2626" if x > 1 else ("#16a34a" if x < 1 else "#64748b"))
+    d["texto_or"] = d.apply(
+        lambda r: f"OR {fmt(r['or'],2)} | IC95% {fmt(r['ic95_inferior'],2)}–{fmt(r['ic95_superior'],2)} | p={fmt(r.get('p_value', np.nan),4)} · {r['interpretacao']}",
+        axis=1,
+    )
     yvals = list(range(len(d)))
 
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x=d["or"], y=yvals, mode="markers",
-        marker=dict(size=11),
-        customdata=np.stack([d["rotulo"], d["desfecho"], d["p_value"], d["texto_or"]], axis=-1),
+        marker=dict(size=12, color=d["cor"], line=dict(width=1, color="#111827")),
+        customdata=np.stack([d["rotulo"], d["desfecho"], d["p_value"], d["texto_or"], d["interpretacao"]], axis=-1),
         hovertemplate="<b>%{customdata[0]}</b><br>Desfecho: %{customdata[1]}<br>%{customdata[3]}<extra></extra>",
-        name="OR"
+        name="OR",
     ))
     for yi, (_, r) in zip(yvals, d.iterrows()):
-        fig.add_shape(type="line", x0=r["ic95_inferior"], x1=r["ic95_superior"], y0=yi, y1=yi, line=dict(width=2))
-        # Texto fixo no painel direito; não usa coordenada do dado, logo não sobrepõe o forest plot.
+        fig.add_shape(type="line", x0=r["ic95_inferior"], x1=r["ic95_superior"], y0=yi, y1=yi,
+                      line=dict(width=2.2, color=r["cor"]))
         fig.add_annotation(
             xref="paper", x=1.01, y=yi, yref="y",
             text=r["texto_or"], showarrow=False,
             xanchor="left", align="left",
-            font=dict(size=11)
+            font=dict(size=10, color=r["cor"]),
         )
 
-    fig.add_vline(x=1, line_dash="dash", line_color="black")
+    fig.add_vline(x=1, line_dash="dash", line_color="#111827")
     fig.update_layout(
         title=title,
-        height=max(560, 34 * len(d) + 190),
-        xaxis_title="Odds Ratio (escala log)",
+        height=max(580, 36 * len(d) + 200),
+        xaxis_title="Odds Ratio (escala log) — à direita de 1 = risco; à esquerda = proteção",
         yaxis=dict(tickmode="array", tickvals=yvals, ticktext=d["rotulo"]),
         xaxis_type="log",
-        margin=dict(l=310, r=460, t=70, b=50),
+        margin=dict(l=300, r=520, t=70, b=50),
         showlegend=False,
     )
     st.plotly_chart(fig, use_container_width=True, key=uid())
     significant_alerts_from_frames([(title, d)], threshold=0.005, title=f"Destaques de {title}")
+
+
+def _or_interpret_row(r):
+    orv = float(r["or"]) if pd.notna(r.get("or")) else np.nan
+    lo = float(r["ic95_inferior"]) if pd.notna(r.get("ic95_inferior")) else np.nan
+    hi = float(r["ic95_superior"]) if pd.notna(r.get("ic95_superior")) else np.nan
+    p = float(r["p_value"]) if pd.notna(r.get("p_value")) else np.nan
+    if pd.isna(orv):
+        return "sem interpretação"
+    # IC cruza 1 → não significativo
+    if pd.notna(lo) and pd.notna(hi) and lo <= 1 <= hi:
+        return "sem evidência clara (IC cruza 1)"
+    if pd.notna(p) and p >= 0.05:
+        return "não significativo (p≥0,05)"
+    if orv > 1:
+        return "fator de RISCO (aumenta chance do desfecho)"
+    if orv < 1:
+        return "fator de PROTEÇÃO (reduz chance do desfecho)"
+    return "neutro (OR≈1)"
+
+
+def or_interpretation_guide():
+    st.markdown(
+        """
+<div class="section-card">
+<b>Como ler Odds Ratio (OR) — guia rápido</b><br/>
+• <span style="color:#dc2626;font-weight:700;">OR &gt; 1 (vermelho)</span>: associação com <b>maior chance</b> do desfecho → <b>risco</b>.<br/>
+• <span style="color:#16a34a;font-weight:700;">OR &lt; 1 (verde)</span>: associação com <b>menor chance</b> do desfecho → <b>proteção</b>.<br/>
+• <b>OR ≈ 1</b> ou IC95% que passa por 1: sem evidência clara de associação.<br/>
+• <b>p &lt; 0,05</b> (ou &lt; 0,005 nos destaques): associação estatisticamente relevante, mas <i>não prova causalidade</i>.<br/>
+• Use o gráfico: pontos à <b>direita</b> da linha tracejada (1) = risco; à <b>esquerda</b> = proteção.
+</div>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 def canal_plot_visual(d, clas):
@@ -963,26 +1053,85 @@ def indicators_by_year(ind):
 
 def outbreak_section():
     alerts = read_any(OUT / "alerta_surtos_classificacao_agrupada_v17.csv")
+    nt97 = read_any(OUT / "alertas_inteligentes_surtos_nt97_v23.csv")
+
+    st.markdown("### Critérios do Ministério da Saúde / CIEVS")
+    st.markdown(
+        """
+**Doença meningocócica (NT nº 97/2024-DPNI/SVSA/MS)**  
+- **Surto comunitário:** elevação de casos DM lab+ acima do esperado histórico no território (ex.: > média anual dos anos anteriores), com investigação de vínculo e resposta (quimioprofilaxia/vacinação conforme GVS).  
+- **Surto institucional:** ≥2 casos DM associados a instituição (escola, creche, quartel, etc.) em janela epidemiológica.  
+- **Resposta sensível:** 1 caso de DM já exige investigação de contatos e oportunidade de quimioprofilaxia.
+
+**Demais etiologias (critério operacional CIEVS-MT no sistema)**  
+- Acima do limite histórico / média+2DP da mesma classificação no município-SE  
+- Agregado ≥2 casos da mesma classificação em 14 dias  
+- ≥2 confirmados na semana · óbito por meningite · DM com peso adicional  
+
+**Classes de alerta:**  
+"""
+        + f'{semaforo_badge("Atenção")} sinais iniciais · '
+        + f'{semaforo_badge("Alto")} múltiplos critérios · '
+        + f'{semaforo_badge("Crítico")} excedência/óbito/surto NT97',
+        unsafe_allow_html=True,
+    )
+
+    if not nt97.empty:
+        st.subheader("Surtos / aglomerados — critérios NT 97 (DM)")
+        ycol = "municipio_v17" if "municipio_v17" in nt97.columns else nt97.columns[1]
+        xcol = "n_casos_90d_lab" if "n_casos_90d_lab" in nt97.columns else (
+            "n_casos" if "n_casos" in nt97.columns else nt97.select_dtypes("number").columns[0]
+        )
+        fig_nt = px.bar(
+            nt97.head(40),
+            x=xcol,
+            y=ycol,
+            color="severidade" if "severidade" in nt97.columns else None,
+            color_discrete_map=plotly_semaforo_map(nt97.get("severidade")),
+            orientation="h",
+            title="Alertas NT 97 — doença meningocócica",
+            hover_data=[c for c in ["tipo_alerta", "acao_recomendada", "norma", "evidencia"] if c in nt97.columns],
+        )
+        fig_nt.update_layout(
+            height=max(420, 28 * min(len(nt97), 40) + 120),
+            legend=dict(orientation="h", y=-0.15),
+            margin=dict(b=80, t=60),
+        )
+        st.plotly_chart(fig_nt, use_container_width=True, key=uid())
+        st.dataframe(nt97, use_container_width=True)
+
     if alerts.empty:
-        st.info("Arquivo de alertas de surtos não encontrado.")
+        st.info("Arquivo de alertas de surtos municipais não encontrado. Rode o módulo 03 do pipeline.")
         return
     alerts = alerts[alerts["classe_alerta"].astype(str).isin(["Atenção", "Alto", "Crítico"])].copy()
     if alerts.empty:
-        st.success("Não há surtos classificados no momento com base nos critérios operacionais do sistema.")
-        st.markdown("- **Critérios usados:** acima do limite histórico, agregado em 14 dias, múltiplos confirmados, óbito, e sensibilidade adicional para doença meningocócica.")
+        st.success("Não há surtos municipais classificados no momento (fora de Rotina).")
         return
-    st.markdown("**Classificação de surto utilizada pelo sistema**")
-    st.markdown("- **Atenção:** sinais iniciais de agregação ou excedência leve.")
-    st.markdown("- **Alto:** múltiplos critérios combinados, exigindo investigação e resposta intensificada.")
-    st.markdown("- **Crítico:** excedência importante, agregação consistente e/ou presença de óbito, demandando resposta prioritária.")
-    fig = px.bar(alerts.sort_values(["classe_alerta", "pontuacao_alerta", "casos_semana"], ascending=[True, False, False]),
-                 x="casos_semana", y="municipio_v17", color="classe_alerta", text="casos_semana", orientation="h",
-                 hover_data=["classificacao_agrupada_v17", "motivos", "recomendacao_vigilancia"], title="Eventos classificados como surtos/alertas acionáveis")
-    fig.update_traces(textposition="outside")
-    fig.update_layout(height=600)
+
+    st.subheader("Alertas municipais por classificação (canal + agregação)")
+    fig = px.bar(
+        alerts.sort_values(["classe_alerta", "pontuacao_alerta", "casos_semana"], ascending=[True, False, False]),
+        x="casos_semana",
+        y="municipio_v17",
+        color="classe_alerta",
+        text="casos_semana",
+        orientation="h",
+        color_discrete_map=plotly_semaforo_map(alerts.get("classe_alerta")),
+        hover_data=["classificacao_agrupada_v17", "motivos", "recomendacao_vigilancia"]
+        if {"motivos", "recomendacao_vigilancia"}.issubset(alerts.columns)
+        else ["classificacao_agrupada_v17"],
+        title="Eventos classificados como surtos/alertas acionáveis",
+    )
+    fig.update_traces(textposition="outside", cliponaxis=False)
+    fig.update_layout(
+        height=max(480, 26 * len(alerts.head(50)) + 140),
+        legend_title_text="Classe",
+        legend=dict(orientation="h", y=-0.12),
+        margin=dict(b=90, t=60, l=10, r=30),
+    )
     st.plotly_chart(fig, use_container_width=True, key=uid())
     keep = [c for c in ["municipio_v17","regional_v17","classificacao_agrupada_v17","casos_semana","confirmados_semana","obitos_semana","classe_alerta","motivos","recomendacao_vigilancia"] if c in alerts.columns]
-    st.dataframe(alerts[keep], use_container_width=True)
+    st.dataframe(alerts[keep] if keep else alerts, use_container_width=True)
 
 
 def canal_plot(d, clas):
@@ -1320,12 +1469,21 @@ def plot_nowcast_forecast_historico(estrato: str, nc24: pd.DataFrame, fc24: pd.D
             ))
 
     fig.update_layout(
-        title=f"Série histórica · nowcast · forecast — {estrato}",
-        height=520,
+        title=dict(text=f"Série histórica · nowcast · forecast — {estrato}", y=0.98),
+        height=560,
         xaxis_title="Semana epidemiológica",
         yaxis_title="Casos",
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0),
-        margin=dict(l=40, r=20, t=60, b=40),
+        legend=dict(
+            orientation="h",
+            yanchor="top",
+            y=-0.22,
+            x=0,
+            xanchor="left",
+            bgcolor="rgba(255,255,255,0.9)",
+            bordercolor="#e5e7eb",
+            borderwidth=1,
+        ),
+        margin=dict(l=50, r=30, t=70, b=110),
         hovermode="x unified",
     )
     st.plotly_chart(fig, use_container_width=True, key=uid())
@@ -1335,8 +1493,7 @@ def mini_metric_card(label, value, delta=None, higher_is_bad=True, semaforo=None
     """Card compacto com delta colorido (fonte = cor semântica)."""
     extra = ""
     if semaforo is not None:
-        c = semaforo_color(semaforo)
-        extra = f'<div class="kpi-delta" style="color:{c} !important;">{semaforo}</div>'
+        extra = f'<div style="margin-top:8px;">{semaforo_badge(semaforo)}</div>'
     elif delta is not None:
         try:
             d = float(delta)
@@ -1600,7 +1757,7 @@ def ms_indicators_section():
                   <div class="kpi-value" style="font-size:1.7rem;">{fmt(val)}%</div>
                   <div class="kpi-sub">Ref. BR: {fmt(ref) if pd.notna(ref) else "—"}%</div>
                   {kpi_delta_html(delta_pp, suffix=" pp vs BR", higher_is_bad=False) if delta_pp is not None else ""}
-                  <div class="kpi-delta" style="color:{semaforo_color(sem)} !important;font-size:1rem;">{sem}</div>
+                  <div style="margin-top:8px;">{semaforo_badge(sem)}</div>
                 </div>
                 """,
                 unsafe_allow_html=True,
@@ -1616,10 +1773,18 @@ def ms_indicators_section():
             orientation="h",
             text=[fmt(v) for v in show["valor_pct"]],
             color="semaforo" if "semaforo" in show.columns else None,
+            color_discrete_map=plotly_semaforo_map(show.get("semaforo")) if "semaforo" in show.columns else None,
             title="Painel de indicadores operacionais MS (%)",
         )
-        fig.update_traces(textposition="outside")
-        fig.update_layout(height=520, xaxis_title="Percentual (%)", yaxis_title="")
+        fig.update_traces(textposition="outside", cliponaxis=False)
+        fig.update_layout(
+            height=max(480, 48 * len(show) + 120),
+            xaxis_title="Percentual (%)",
+            yaxis_title="",
+            legend_title_text="Semáforo",
+            margin=dict(l=20, r=40, t=70, b=40),
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0),
+        )
         st.plotly_chart(fig, use_container_width=True, key=uid())
     st.dataframe(painel, use_container_width=True)
 
@@ -1678,10 +1843,15 @@ def smart_alerts_section():
             fig = px.bar(
                 resumo.sort_values("n", ascending=True).tail(20),
                 x="n", y="tipo_alerta", color="severidade" if "severidade" in resumo.columns else None,
+                color_discrete_map=plotly_semaforo_map(resumo.get("severidade")) if "severidade" in resumo.columns else None,
                 orientation="h", text="n", title="Volume de alertas por tipo"
             )
-            fig.update_traces(textposition="outside")
-            fig.update_layout(height=520, xaxis_title="N", yaxis_title="")
+            fig.update_traces(textposition="outside", cliponaxis=False)
+            fig.update_layout(
+                height=520, xaxis_title="N", yaxis_title="",
+                legend=dict(orientation="h", y=-0.15),
+                margin=dict(b=80, t=60),
+            )
             st.plotly_chart(fig, use_container_width=True, key=uid())
         st.dataframe(resumo, use_container_width=True)
 
@@ -1752,6 +1922,31 @@ def epi_panel_section():
     )
     st.plotly_chart(fig, use_container_width=True, key=uid())
     st.dataframe(resumo, use_container_width=True)
+
+    st.subheader("Mapa municipal + nowcast / forecast")
+    em1, em2 = st.columns(2)
+    with em1:
+        ind_mun = read_any(OUT / "indicadores_municipio_ano_v17.csv")
+        shp = load_shapefile()
+        ll = load_latlong()
+        if not ind_mun.empty and shp is not None:
+            m = ind_mun[pd.to_numeric(ind_mun.get("ano_evento_v17"), errors="coerce").eq(ano_ref)].copy()
+            if m.empty:
+                m = ind_mun.copy()
+            metric = "incidencia_100mil" if "incidencia_100mil" in m.columns else "casos"
+            if metric in m.columns:
+                choropleth_or_points(m, shp, ll, metric, f"Mapa — {metric} ({ano_ref})")
+            else:
+                st.info("Sem coluna de incidência/casos para o mapa.")
+        else:
+            st.info("Shapefile ou indicadores municipais indisponíveis.")
+    with em2:
+        nc24 = read_any(OUT / "nowcasting_operacional_v24.csv")
+        fc24 = read_any(OUT / "forecasting_operacional_v24.csv")
+        if not nc24.empty or not fc24.empty:
+            plot_nowcast_forecast_historico("ESTADUAL", nc24, fc24)
+        else:
+            st.info("Nowcast/forecast indisponíveis — rode o módulo 24.")
 
     snap_eti = read_any(OUT / "painel_epi_snapshot_etiologia_v23.csv")
     if not snap_eti.empty:
@@ -2008,10 +2203,10 @@ def main():
                             sem = r.get("semaforo", "—")
                             st.markdown(
                                 f"""
-                                <div class="kpi-card" style="min-height:120px;">
+                                <div class="kpi-card" style="min-height:130px;">
                                   <div class="kpi-label">{str(r.get('indicador_rotulo', ''))[:48]}</div>
                                   <div class="kpi-value" style="font-size:1.55rem;">{fmt(r.get('valor_pct'))}%</div>
-                                  <div class="kpi-delta" style="color:{semaforo_color(sem)} !important;">{sem}</div>
+                                  <div style="margin-top:8px;">{semaforo_badge(sem)}</div>
                                 </div>
                                 """,
                                 unsafe_allow_html=True,
@@ -2102,6 +2297,7 @@ def main():
 
     with tabs[6]:
         st.subheader("Odds Ratio separado por domínio analítico")
+        or_interpretation_guide()
         ors21 = read_any(OUT / "odds_ratio_clinico_socio_comorb_v21.csv")
         if not ors21.empty:
             for dominio, titulo in [
