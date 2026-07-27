@@ -1,39 +1,99 @@
-# Hospedar no Streamlit Community Cloud
+# Tutorial — publicar o Robô de Meningites no Streamlit Cloud
 
-## O que sobe
-- Código do painel (`dashboard_meningites_v22_refinado.py`)
-- Pacote **demo anonimizado** em `demo_cloud/` (sem nome/CNS/endereço)
-- Shapefile municipal
-- **Sem** conexão ao Data Warehouse da SES-MT
+Objetivo: gerar um link (`https://….streamlit.app`) para colegas de outros estados avaliarem o painel **sem** acessar o DW da SES-MT.
 
-## Preparar pacote (na máquina local, após rodar o pipeline)
+Pré-requisito já feito neste projeto: código + `demo_cloud/` (dados anonimizados) estão no GitHub  
+→ https://github.com/menandesneto51/Meningites
+
+---
+
+## Passo 1 — Conta
+
+1. Abra o navegador em: **https://share.streamlit.io**
+2. Clique em **Sign in** / **Continue with GitHub**
+3. Autorize o Streamlit a acessar sua conta GitHub (`menandesneto51`)
+4. Se o repositório for **privado**, aceite o pedido de permissão para repos privados
+
+---
+
+## Passo 2 — Criar o app
+
+1. No painel do Streamlit Cloud, clique em **Create app** / **New app**
+2. Escolha **Deploy a public app from GitHub** (mesmo com repo privado, após autorizar)
+
+Preencha exatamente:
+
+| Campo | Valor |
+|--------|--------|
+| **Repository** | `menandesneto51/Meningites` |
+| **Branch** | `main` |
+| **Main file path** | `dashboard_meningites_v22_refinado.py` |
+| **App URL** (opcional) | ex.: `meningites-cievs-mt` |
+
+3. Clique em **Deploy**
+
+Aguarde 2–10 minutos (instala `requirements.txt` + GeoPandas). Acompanhe o log em **Manage app**.
+
+---
+
+## Passo 3 — Conferir se subiu certo
+
+Quando abrir o app, você deve ver:
+
+- Título: **Robô de Meningites — CIEVS-MT**
+- Faixa amarela: **Modo demonstração / Streamlit Cloud**
+- Abas (Executivo, Indicadores MS, Mapas, Projeções, etc.)
+
+Se der erro:
+
+| Erro comum | O que fazer |
+|------------|-------------|
+| `ModuleNotFoundError` | Confirme que `requirements.txt` está na raiz do repo e faça **Reboot app** |
+| App vazio / sem indicadores | Rode local `py -3.13 preparar_pacote_cloud_demo.py`, commit + push de `demo_cloud/`, depois **Reboot** |
+| Falha no GeoPandas/GDAL | Confirme `packages.txt` na raiz; **Reboot** |
+| Repo não aparece | Em Settings do Streamlit → GitHub → reconectar e liberar repos privados |
+
+---
+
+## Passo 4 — Compartilhar com avaliadores
+
+1. Copie a URL do app (ex.: `https://meningites-cievs-mt.streamlit.app`)
+2. Envie por e-mail/WhatsApp
+3. (Opcional) Em **Settings → Sharing** do app:
+   - **Public** — qualquer pessoa com o link
+   - **Private** — só quem você convidar
+
+---
+
+## Passo 5 — Atualizar o cloud depois de mudanças
+
+Na máquina local (depois do pipeline):
+
 ```bat
+cd "C:\Users\Menandesneto\OneDrive\CIEVS MT\Meningites"
 py -3.13 preparar_pacote_cloud_demo.py
-git add demo_cloud requirements.txt packages.txt runtime.txt
-git commit -m "Add Streamlit Cloud demo pack"
+git add demo_cloud
+git commit -m "Atualiza pacote demo do painel"
 git push
 ```
 
-## Publicar
-1. Acesse https://share.streamlit.io (conta GitHub)
-2. **New app** → repositório `menandesneto51/Meningites` (privado OK se autorizar)
-3. Branch: `main`
-4. Main file: `dashboard_meningites_v22_refinado.py`
-5. Deploy
+No Streamlit Cloud: o app **redeploya sozinho** após o push (ou use **Reboot app**).
 
-URL típica: `https://<nome-do-app>.streamlit.app`
+---
 
-## Avaliadores de outro estado
-- Compartilhe o link público do app
-- Ou deixe o app **private** no Streamlit Cloud e convide por e-mail
+## O que o cloud NÃO faz
 
-## Limitações do cloud
-- Sem DW / GAL / SIM ao vivo
-- Dados do último pacote demo gerado
-- Forecast/nowcast são os já calculados localmente
+- Não conecta no Data Warehouse (`10.15.1.50`)
+- Não mostra nome, CNS ou endereço (pacote anonimizado)
+- Não substitui o painel operacional local em **http://localhost:8510**
 
-## Local (porta dedicada Meningites)
-```bat
-ABRIR_PAINEL_MENINGITES.bat
-```
-http://localhost:8510
+---
+
+## Atalhos úteis
+
+| Recurso | Link / comando |
+|---------|----------------|
+| Streamlit Cloud | https://share.streamlit.io |
+| Repositório | https://github.com/menandesneto51/Meningites |
+| Arquivo principal | `dashboard_meningites_v22_refinado.py` |
+| Painel local | `ABRIR_PAINEL_MENINGITES.bat` → http://localhost:8510 |

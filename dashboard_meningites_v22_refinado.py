@@ -401,14 +401,94 @@ def significant_alerts_from_frames(frames, threshold=0.005, title="Achados estat
     st.warning(f"{title}: {len(out)} achado(s) com p < {threshold}.")
     st.dataframe(out.sort_values("p_value"), use_container_width=True)
 
+def inject_ui_css():
+    """Visual / UX: tipografia, contraste, deltas e abas legíveis."""
+    st.markdown(
+        """
+<style>
+  .stApp { background: linear-gradient(180deg, #f3f7f5 0%, #ffffff 220px); }
+  h1 { letter-spacing: -0.02em !important; color: #0b3d2e !important; }
+  h2, h3 { color: #12352a !important; }
+  div[data-testid="stTabs"] button[role="tab"] {
+    font-size: 0.92rem !important;
+    white-space: nowrap !important;
+  }
+  div[data-testid="stTabs"] [data-baseweb="tab-list"] {
+    gap: 0.15rem;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+  }
+  .kpi-card {
+    background: #fff;
+    border: 1px solid #d7e3dc;
+    border-radius: 14px;
+    padding: 14px 16px;
+    box-shadow: 0 1px 3px rgba(16,42,35,.06);
+    min-height: 200px;
+  }
+  .kpi-label { font-size: 0.95rem; font-weight: 700; color: #374151; }
+  .kpi-value { font-size: 2.05rem; font-weight: 800; color: #111827; line-height: 1.15; }
+  .kpi-sub { font-size: 0.78rem; color: #6b7280; margin-top: 2px; }
+  .kpi-line { font-size: 0.86rem; color: #374151; margin-top: 8px; }
+  .kpi-delta { font-size: 1.15rem; font-weight: 800; margin-top: 8px; }
+  .section-card {
+    background: #fff;
+    border: 1px solid #e5ebe7;
+    border-radius: 12px;
+    padding: 12px 14px 4px 14px;
+    margin-bottom: 10px;
+  }
+  div[data-testid="stMetricDelta"] svg { display: none !important; }
+  /* Garante que deltas nativos do Streamlit respeitem a cor do texto */
+  div[data-testid="stMetricDelta"] { font-weight: 700 !important; }
+  .block-container { padding-top: 1.2rem !important; max-width: 1400px; }
+</style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def trend_arrow_color(delta, *, higher_is_bad=True):
+    """
+    Seta segue a tendência (▲ aumento / ▼ queda).
+    Cor epidemiológica padrão: aumento = vermelho, queda = verde.
+    """
+    if pd.isna(delta):
+        return "→", "#6b7280"
+    try:
+        d = float(delta)
+    except Exception:
+        return "→", "#6b7280"
+    if abs(d) < 1e-12:
+        return "●", "#d97706"
+    if d > 0:
+        return "▲", ("#dc2626" if higher_is_bad else "#16a34a")
+    return "▼", ("#16a34a" if higher_is_bad else "#dc2626")
+
+
 def arrow_html(var):
-    if pd.isna(var):
-        return "➜", "#6b7280"
-    if var < 0:
-        return "▼", "#16a34a"
-    if var > 0:
-        return "▲", "#dc2626"
-    return "➜", "#f59e0b"
+    return trend_arrow_color(var, higher_is_bad=True)
+
+
+def semaforo_color(txt):
+    s = str(txt or "").strip().lower()
+    if "verde" in s:
+        return "#16a34a"
+    if "vermel" in s:
+        return "#dc2626"
+    if "amarelo" in s or "aten" in s:
+        return "#d97706"
+    return "#6b7280"
+
+
+def kpi_delta_html(delta_pct, suffix="%", higher_is_bad=True):
+    arrow, color = trend_arrow_color(delta_pct, higher_is_bad=higher_is_bad)
+    if pd.isna(delta_pct):
+        return f'<div class="kpi-delta" style="color:{color};">{arrow} NA</div>'
+    return (
+        f'<div class="kpi-delta" style="color:{color} !important;">'
+        f"{arrow} {fmt(delta_pct, 1)}{suffix}</div>"
+    )
 
 
 def weekly_current_previous(df):
@@ -432,7 +512,7 @@ def weekly_current_previous(df):
 def build_metric_cards(df):
     """
     KPI principal = total real do período selecionado.
-    Abaixo: última semana disponível, semana anterior e variação percentual.
+    Abaixo: última semana, semana anterior e variação % com seta/cor coerentes.
     """
     if df.empty:
         st.info("Sem dados no período selecionado.")
@@ -467,6 +547,8 @@ def build_metric_cards(df):
     cols = st.columns(len(totals))
     for colui, (label, (_, total_value)) in zip(cols, totals.items()):
         wk_col = week_map[label]
+        # Altas: aumento é bom → higher_is_bad=False
+        higher_is_bad = label != "Altas"
         if not weekly.empty and wk_col in weekly.columns:
             cur = weekly.iloc[-1]
             prev = weekly.iloc[-2] if len(weekly) > 1 else None
@@ -478,17 +560,19 @@ def build_metric_cards(df):
             curv = prevv = var = np.nan
             semana_atual = "Última semana"
 
-        arrow, color = arrow_html(var)
-        colui.markdown(f"""
-        <div style="background:#ffffff;padding:14px;border-radius:14px;border:1px solid #e5e7eb;box-shadow:0 1px 2px rgba(0,0,0,.06);height:195px;">
-          <div style="font-size:15px;color:#374151;font-weight:700;">{label}</div>
-          <div style="font-size:34px;font-weight:800;color:#111827;line-height:1.1;">{fmt(total_value,0)}</div>
-          <div style="font-size:12px;color:#6b7280;margin-top:4px;">Total do período selecionado</div>
-          <div style="font-size:13px;color:#374151;margin-top:12px;">{semana_atual}: <b>{fmt(curv,0)}</b></div>
-          <div style="font-size:13px;color:#374151;margin-top:4px;">Semana anterior: <b>{fmt(prevv,0)}</b></div>
-          <div style="font-size:18px;font-weight:800;color:{color};margin-top:8px;">{arrow} {fmt(var,1)}%</div>
+        colui.markdown(
+            f"""
+        <div class="kpi-card">
+          <div class="kpi-label">{label}</div>
+          <div class="kpi-value">{fmt(total_value, 0)}</div>
+          <div class="kpi-sub">Total do período selecionado</div>
+          <div class="kpi-line">{semana_atual}: <b>{fmt(curv, 0)}</b></div>
+          <div class="kpi-line">Semana anterior: <b>{fmt(prevv, 0)}</b></div>
+          {kpi_delta_html(var, higher_is_bad=higher_is_bad)}
         </div>
-        """, unsafe_allow_html=True)
+        """,
+            unsafe_allow_html=True,
+        )
 
 
 def bar_with_labels(df, x, y, title, color=None, height=420, orient="v"):
@@ -1162,6 +1246,116 @@ def sazonalidade_section():
             st.markdown(rel.read_text(encoding="utf-8")[:5000])
 
 
+def plot_nowcast_forecast_historico(estrato: str, nc24: pd.DataFrame, fc24: pd.DataFrame):
+    """Série histórica + nowcast recente + forecast com IC 80%."""
+    serie = read_any(OUT / "nowcast_serie_semanal_v24.csv")
+    if serie.empty:
+        serie = read_any(OUT / "nowcast_serie_semanal_casos_v23.csv")
+        if not serie.empty and "estrato" not in serie.columns:
+            serie = serie.copy()
+            serie["estrato"] = "ESTADUAL"
+            if "y" not in serie.columns and "casos" in serie.columns:
+                serie = serie.rename(columns={"casos": "y"})
+
+    fig = go.Figure()
+    hist = pd.DataFrame()
+    if not serie.empty and "estrato" in serie.columns:
+        hist = serie[serie["estrato"].astype(str).eq(estrato)].copy()
+    elif not serie.empty:
+        hist = serie.copy()
+
+    if not hist.empty and {"periodo", "y"}.issubset(hist.columns):
+        hist = hist.sort_values(["ano_epi_v17", "semana_epi_v17"] if {"ano_epi_v17", "semana_epi_v17"}.issubset(hist.columns) else ["periodo"])
+        hist = hist.tail(104)
+        fig.add_trace(go.Scatter(
+            x=hist["periodo"], y=pd.to_numeric(hist["y"], errors="coerce"),
+            mode="lines", name="Histórico (casos/SE)",
+            line=dict(color="#64748b", width=1.6),
+        ))
+
+    sub = nc24[nc24["estrato"].astype(str).eq(estrato)].copy() if not nc24.empty and "estrato" in nc24.columns else pd.DataFrame()
+    if not sub.empty:
+        fig.add_trace(go.Scatter(
+            x=sub["periodo"], y=pd.to_numeric(sub["observado"], errors="coerce"),
+            mode="markers+lines", name="Observado (recente)",
+            marker=dict(size=9, color="#0f766e"), line=dict(color="#0f766e", width=2),
+        ))
+        y_nc = pd.to_numeric(sub["nowcast"], errors="coerce")
+        fig.add_trace(go.Scatter(
+            x=sub["periodo"], y=y_nc,
+            mode="markers+lines", name="Nowcast",
+            marker=dict(size=10, symbol="diamond", color="#c2410c"),
+            line=dict(color="#c2410c", width=2, dash="dot"),
+        ))
+        if {"nowcast_p10", "nowcast_p90"}.issubset(sub.columns):
+            fig.add_trace(go.Scatter(
+                x=sub["periodo"], y=pd.to_numeric(sub["nowcast_p90"], errors="coerce"),
+                mode="lines", line=dict(width=0), showlegend=False, hoverinfo="skip",
+            ))
+            fig.add_trace(go.Scatter(
+                x=sub["periodo"], y=pd.to_numeric(sub["nowcast_p10"], errors="coerce"),
+                mode="lines", fill="tonexty", name="IC nowcast",
+                line=dict(width=0), fillcolor="rgba(194,65,12,0.18)",
+            ))
+
+    fc_sub = pd.DataFrame()
+    if not fc24.empty:
+        fc_sub = fc24[fc24["estrato"].astype(str).eq(estrato)].copy() if "estrato" in fc24.columns else fc24.copy()
+    if not fc_sub.empty and "periodo" in fc_sub.columns:
+        # amarra forecast ao último ponto histórico/nowcast
+        fig.add_trace(go.Scatter(
+            x=fc_sub["periodo"], y=pd.to_numeric(fc_sub["pred"], errors="coerce"),
+            mode="lines+markers", name="Forecast",
+            marker=dict(size=8, color="#1d4ed8"), line=dict(color="#1d4ed8", width=2.4),
+        ))
+        if {"lower_80", "upper_80"}.issubset(fc_sub.columns):
+            fig.add_trace(go.Scatter(
+                x=fc_sub["periodo"], y=pd.to_numeric(fc_sub["upper_80"], errors="coerce"),
+                mode="lines", line=dict(width=0), showlegend=False, hoverinfo="skip",
+            ))
+            fig.add_trace(go.Scatter(
+                x=fc_sub["periodo"], y=pd.to_numeric(fc_sub["lower_80"], errors="coerce"),
+                mode="lines", fill="tonexty", name="IC 80% forecast",
+                line=dict(width=0), fillcolor="rgba(29,78,216,0.16)",
+            ))
+
+    fig.update_layout(
+        title=f"Série histórica · nowcast · forecast — {estrato}",
+        height=520,
+        xaxis_title="Semana epidemiológica",
+        yaxis_title="Casos",
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0),
+        margin=dict(l=40, r=20, t=60, b=40),
+        hovermode="x unified",
+    )
+    st.plotly_chart(fig, use_container_width=True, key=uid())
+
+
+def mini_metric_card(label, value, delta=None, higher_is_bad=True, semaforo=None):
+    """Card compacto com delta colorido (fonte = cor semântica)."""
+    extra = ""
+    if semaforo is not None:
+        c = semaforo_color(semaforo)
+        extra = f'<div class="kpi-delta" style="color:{c} !important;">{semaforo}</div>'
+    elif delta is not None:
+        try:
+            d = float(delta)
+            extra = kpi_delta_html(d, suffix="", higher_is_bad=higher_is_bad)
+        except Exception:
+            arrow, color = trend_arrow_color(None)
+            extra = f'<div class="kpi-delta" style="color:{color};">{delta}</div>'
+    st.markdown(
+        f"""
+        <div class="kpi-card" style="min-height:120px;">
+          <div class="kpi-label">{label}</div>
+          <div class="kpi-value" style="font-size:1.65rem;">{value}</div>
+          {extra}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
 def nowcast_refinado_section():
     """Nowcast operacional V24 (estadual/DM/regional) + legado V23."""
     gest = read_any(OUT / "indicadores_gestao_semana_v24.csv")
@@ -1179,11 +1373,16 @@ def nowcast_refinado_section():
         if not gest.empty:
             g = gest.iloc[0]
             c1, c2, c3, c4, c5 = st.columns(5)
-            c1.metric("Nowcast SE (MT)", fmt(g.get("casos_nowcast_se")), fmt(g.get("delta_nowcast_vs_se_anterior")))
-            c2.metric("Observado SE", fmt(g.get("casos_observados_se")))
-            c3.metric("Nowcast DM", fmt(g.get("dm_nowcast_se")))
-            c4.metric("Fila crítica", fmt(g.get("fila_cievs_criticos_n"), 0))
-            c5.metric("Atraso notif P90 (d)", fmt(g.get("atraso_notif_p90_dias")))
+            with c1:
+                mini_metric_card("Nowcast SE (MT)", fmt(g.get("casos_nowcast_se")), g.get("delta_nowcast_vs_se_anterior"), True)
+            with c2:
+                mini_metric_card("Observado SE", fmt(g.get("casos_observados_se")))
+            with c3:
+                mini_metric_card("Nowcast DM", fmt(g.get("dm_nowcast_se")))
+            with c4:
+                mini_metric_card("Fila crítica", fmt(g.get("fila_cievs_criticos_n"), 0))
+            with c5:
+                mini_metric_card("Atraso notif P90 (d)", fmt(g.get("atraso_notif_p90_dias")))
             st.write(f"**Status sazonal:** {g.get('status_sazonal')} — {g.get('status_detalhe', '')}")
             st.info(f"Ação sugerida: {g.get('acao_sugerida', '')}")
 
@@ -1197,44 +1396,26 @@ def nowcast_refinado_section():
                     f"({e.get('qualidade_forecast', '')})"
                 )
 
-        if not nc24.empty:
-            estratos = sorted(nc24["estrato"].dropna().astype(str).unique().tolist())
+        if not nc24.empty or not fc24.empty:
+            estratos = []
+            if not nc24.empty and "estrato" in nc24.columns:
+                estratos = sorted(nc24["estrato"].dropna().astype(str).unique().tolist())
             prefer = [e for e in ["ESTADUAL", "DM"] if e in estratos]
             outros = [e for e in estratos if e not in prefer]
-            escolha = st.selectbox("Estrato do nowcast", prefer + outros, key="nc24_estrato")
-            sub = nc24[nc24["estrato"].astype(str).eq(escolha)].copy()
-            if not sub.empty:
-                fig = go.Figure()
-                fig.add_bar(name="Observado", x=sub["periodo"], y=sub["observado"])
-                err = None
-                if {"nowcast_p10", "nowcast_p90"}.issubset(sub.columns):
-                    err = dict(
-                        type="data",
-                        symmetric=False,
-                        array=(pd.to_numeric(sub["nowcast_p90"], errors="coerce") - pd.to_numeric(sub["nowcast"], errors="coerce")).clip(lower=0),
-                        arrayminus=(pd.to_numeric(sub["nowcast"], errors="coerce") - pd.to_numeric(sub["nowcast_p10"], errors="coerce")).clip(lower=0),
-                    )
-                fig.add_bar(name="Nowcast", x=sub["periodo"], y=sub["nowcast"], error_y=err)
-                fig.update_layout(
-                    barmode="group", height=420, title=f"Observado vs nowcast — {escolha}",
-                    xaxis_title="Período", yaxis_title="Casos",
-                )
-                st.plotly_chart(fig, use_container_width=True, key=uid())
-                st.dataframe(sub, use_container_width=True)
+            escolha = st.selectbox("Estrato do nowcast / forecast", prefer + outros or ["ESTADUAL"], key="nc24_estrato")
+            st.markdown('<div class="section-card">', unsafe_allow_html=True)
+            plot_nowcast_forecast_historico(escolha, nc24, fc24)
+            st.markdown("</div>", unsafe_allow_html=True)
 
+            sub = nc24[nc24["estrato"].astype(str).eq(escolha)].copy() if not nc24.empty and "estrato" in nc24.columns else pd.DataFrame()
+            if not sub.empty:
+                with st.expander("Tabela nowcast (últimas SE)", expanded=False):
+                    st.dataframe(sub, use_container_width=True)
             if not fc24.empty:
                 fc_sub = fc24[fc24["estrato"].astype(str).eq(escolha)].copy() if "estrato" in fc24.columns else fc24
                 if not fc_sub.empty:
-                    fig2 = go.Figure()
-                    fig2.add_scatter(x=fc_sub["periodo"], y=fc_sub["pred"], mode="lines+markers", name="Forecast")
-                    if {"lower_80", "upper_80"}.issubset(fc_sub.columns):
-                        fig2.add_scatter(x=fc_sub["periodo"], y=fc_sub["upper_80"], mode="lines",
-                                         line=dict(width=0), showlegend=False)
-                        fig2.add_scatter(x=fc_sub["periodo"], y=fc_sub["lower_80"], mode="lines",
-                                         fill="tonexty", name="IC 80%", line=dict(width=0))
-                    fig2.update_layout(height=400, title=f"Forecast 8 SE — {escolha}",
-                                       xaxis_title="SE prevista", yaxis_title="Casos")
-                    st.plotly_chart(fig2, use_container_width=True, key=uid())
+                    with st.expander("Tabela forecast 8 SE", expanded=False):
+                        st.dataframe(fc_sub, use_container_width=True)
 
             if not rank.empty:
                 with st.expander("Ranking nowcast por regional"):
@@ -1258,29 +1439,24 @@ def nowcast_refinado_section():
     r = resumo.iloc[0]
     st.caption("Nowcast corrigido por atraso de notificação + forecast ensemble semanal (V23).")
     c1, c2, c3, c4 = st.columns(4)
-    c1.metric("Observado SE", fmt(r.get("observado_se_atual")))
-    c2.metric("Nowcast corrigido", fmt(r.get("nowcast_se_atual")), fmt(r.get("incremento_atraso_estimado")))
-    c3.metric("Forecast SE+1", fmt(r.get("forecast_se1")))
-    c4.metric("Backtest MAPE %", fmt(r.get("backtest_mape_pct")))
+    with c1:
+        mini_metric_card("Observado SE", fmt(r.get("observado_se_atual")))
+    with c2:
+        mini_metric_card("Nowcast corrigido", fmt(r.get("nowcast_se_atual")), r.get("incremento_atraso_estimado"), True)
+    with c3:
+        mini_metric_card("Forecast SE+1", fmt(r.get("forecast_se1")))
+    with c4:
+        mini_metric_card("Backtest MAPE %", fmt(r.get("backtest_mape_pct")))
     st.write(f"Status vs sazonalidade: **{r.get('alerta_nowcast')}** — {r.get('alerta_detalhe', '')}")
-    if not nc.empty:
-        fig = px.bar(
-            nc, x="periodo", y=["observado", "nowcast"],
-            barmode="group", title="Últimas SE — observado vs nowcast (atraso)"
-        )
-        fig.update_layout(height=400, xaxis_title="Período", yaxis_title="Casos")
-        st.plotly_chart(fig, use_container_width=True, key=uid())
-    if not fc.empty:
-        fig2 = px.line(
-            fc, x="periodo", y="pred",
-            title="Forecast semanal (ensemble) com intervalo 80%",
-        )
-        if {"lower_80", "upper_80"}.issubset(fc.columns):
-            fig2.add_traces(px.line(fc, x="periodo", y="upper_80").data)
-            fig2.add_traces(px.line(fc, x="periodo", y="lower_80").data)
-        fig2.update_layout(height=400, xaxis_title="SE prevista", yaxis_title="Casos")
-        st.plotly_chart(fig2, use_container_width=True, key=uid())
-        st.dataframe(fc, use_container_width=True)
+    # gráfico legado amarrado à série V23
+    if not nc.empty or not fc.empty:
+        fake_nc = nc.copy()
+        if not fake_nc.empty and "estrato" not in fake_nc.columns:
+            fake_nc["estrato"] = "ESTADUAL"
+        fake_fc = fc.copy()
+        if not fake_fc.empty and "estrato" not in fake_fc.columns:
+            fake_fc["estrato"] = "ESTADUAL"
+        plot_nowcast_forecast_historico("ESTADUAL", fake_nc if not fake_nc.empty else pd.DataFrame(), fake_fc if not fake_fc.empty else pd.DataFrame())
     if not bt.empty:
         with st.expander("Backtest (8 SE) V23"):
             st.dataframe(bt, use_container_width=True)
@@ -1407,17 +1583,28 @@ def ms_indicators_section():
     cols = st.columns(4)
     for i, (ind, label) in enumerate(core.items()):
         row = painel[painel["indicador"].astype(str).eq(ind)]
-        if row.empty:
-            cols[i].metric(label, "NA")
-            continue
-        r = row.iloc[0]
-        val = r.get("valor_pct", np.nan)
-        ref = r.get("referencia_brasil_2024", np.nan)
-        delta = None
-        if pd.notna(val) and pd.notna(ref):
-            delta = f"{val - ref:+.1f} pp vs BR".replace(".", ",")
-        cols[i].metric(label, f"{fmt(val)}%" if pd.notna(val) else "NA", delta)
-        cols[i].caption(f"Semáforo: {r.get('semaforo', '—')}")
+        with cols[i]:
+            if row.empty:
+                mini_metric_card(label, "NA")
+                continue
+            r = row.iloc[0]
+            val = r.get("valor_pct", np.nan)
+            ref = r.get("referencia_brasil_2024", np.nan)
+            sem = r.get("semaforo", "—")
+            # delta vs BR: valor acima da meta = bom → higher_is_bad=False
+            delta_pp = (float(val) - float(ref)) if pd.notna(val) and pd.notna(ref) else None
+            st.markdown(
+                f"""
+                <div class="kpi-card" style="min-height:140px;">
+                  <div class="kpi-label">{label}</div>
+                  <div class="kpi-value" style="font-size:1.7rem;">{fmt(val)}%</div>
+                  <div class="kpi-sub">Ref. BR: {fmt(ref) if pd.notna(ref) else "—"}%</div>
+                  {kpi_delta_html(delta_pp, suffix=" pp vs BR", higher_is_bad=False) if delta_pp is not None else ""}
+                  <div class="kpi-delta" style="color:{semaforo_color(sem)} !important;font-size:1rem;">{sem}</div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
 
     st.markdown("---")
     show = painel.copy()
@@ -1700,6 +1887,7 @@ def report_section(df):
 
 
 def main():
+    inject_ui_css()
     base = load_base()
     if base.empty:
         st.error("Base V17/V18 ausente. Rode o pipeline completo.")
@@ -1757,13 +1945,48 @@ def main():
             st.markdown("---")
             st.subheader("Decisão da semana (gestão V24)")
             gcols = st.columns(5)
-            gcols[0].metric("Nowcast SE", fmt(g.get("casos_nowcast_se")), fmt(g.get("delta_nowcast_vs_se_anterior")))
-            gcols[1].metric("Nowcast DM", fmt(g.get("dm_nowcast_se")))
-            gcols[2].metric("Fila crítica", fmt(g.get("fila_cievs_criticos_n"), 0))
-            gcols[3].metric("Inv. 48h %", fmt(g.get("pct_investigados_48h")))
-            gcols[4].metric("Enc. 60d %", fmt(g.get("pct_encerrados_60d")))
+            with gcols[0]:
+                mini_metric_card("Nowcast SE", fmt(g.get("casos_nowcast_se")), g.get("delta_nowcast_vs_se_anterior"), True)
+            with gcols[1]:
+                mini_metric_card("Nowcast DM", fmt(g.get("dm_nowcast_se")))
+            with gcols[2]:
+                mini_metric_card("Fila crítica", fmt(g.get("fila_cievs_criticos_n"), 0))
+            with gcols[3]:
+                mini_metric_card("Inv. 48h %", fmt(g.get("pct_investigados_48h")))
+            with gcols[4]:
+                mini_metric_card("Enc. 60d %", fmt(g.get("pct_encerrados_60d")))
             st.caption(f"{g.get('status_sazonal')} — {g.get('status_detalhe', '')}")
             st.write(g.get("acao_sugerida", ""))
+
+        # Mapa + nowcast/forecast no executivo
+        st.markdown("---")
+        st.subheader("Território e projeções")
+        m1, m2 = st.columns([1.05, 1])
+        with m1:
+            ind_full = read_any(OUT / "indicadores_municipio_ano_v17.csv")
+            if not ind_full.empty and shapefile is not None:
+                ind_map = ind_full.copy()
+                if ano_sel and "ano_evento_v17" in ind_map.columns:
+                    ind_map = ind_map[ind_map["ano_evento_v17"].isin(ano_sel)]
+                latest = pd.to_numeric(ind_map["ano_evento_v17"], errors="coerce").max() if "ano_evento_v17" in ind_map.columns else np.nan
+                mdf = ind_map[pd.to_numeric(ind_map["ano_evento_v17"], errors="coerce").eq(latest)].copy() if "ano_evento_v17" in ind_map.columns else ind_map.copy()
+                if "casos" in mdf.columns:
+                    choropleth_or_points(mdf, shapefile, latlon, "casos", "Casos por município")
+                else:
+                    st.info("Indicador municipal de casos indisponível para o mapa.")
+            elif shapefile is None:
+                st.warning("Shapefile não carregado — veja aba 06 Mapas.")
+            else:
+                st.info("Indicadores municipais indisponíveis para o mapa.")
+        with m2:
+            nc24 = read_any(OUT / "nowcasting_operacional_v24.csv")
+            fc24 = read_any(OUT / "forecasting_operacional_v24.csv")
+            if not nc24.empty or not fc24.empty:
+                plot_nowcast_forecast_historico("ESTADUAL", nc24, fc24)
+                st.caption("Detalhes e outros estratos na aba **10 Projeções**.")
+            else:
+                timeseries_cases(df)
+
         # Destaque rápido MS + fila
         ms_resumo = read_any(OUT / "indicadores_ms_operacionais_v23.csv")
         fila_ex = read_any(OUT / "alertas_inteligentes_fila_cievs_v23.csv")
@@ -1781,11 +2004,18 @@ def main():
                 mcols = st.columns(4)
                 for i, (_, r) in enumerate(top4.iterrows()):
                     if i < 4:
-                        mcols[i].metric(
-                            str(r.get("indicador_rotulo", ""))[:42],
-                            f"{fmt(r.get('valor_pct'))}%",
-                            r.get("semaforo", ""),
-                        )
+                        with mcols[i]:
+                            sem = r.get("semaforo", "—")
+                            st.markdown(
+                                f"""
+                                <div class="kpi-card" style="min-height:120px;">
+                                  <div class="kpi-label">{str(r.get('indicador_rotulo', ''))[:48]}</div>
+                                  <div class="kpi-value" style="font-size:1.55rem;">{fmt(r.get('valor_pct'))}%</div>
+                                  <div class="kpi-delta" style="color:{semaforo_color(sem)} !important;">{sem}</div>
+                                </div>
+                                """,
+                                unsafe_allow_html=True,
+                            )
             if not epi_ex.empty:
                 meta = read_any(OUT / "painel_epi_meta_v23.csv")
                 ano_ref = int(meta.iloc[0]["ano_referencia"]) if not meta.empty else int(epi_ex["ano_evento_v17"].max())
