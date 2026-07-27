@@ -1,0 +1,2 @@
+﻿tp,fp,fn,tn,sensibilidade_pct,especificidade_pct,vpp_pct,vpn_pct,interpretacao
+0,3452,0,2390,,40.91064703868538,0.0,100.0,Comparação operacional entre classificação confirmada e positividade laboratorial; depende da completude dos exames.

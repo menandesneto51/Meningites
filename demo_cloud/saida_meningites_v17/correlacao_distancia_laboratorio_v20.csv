@@ -1,0 +1,5 @@
+﻿variavel,n,pearson_distancia,spearman_distancia,interpretacao
+taxa_uso_laboratorio_pct,131,-0.10491339285543348,-0.1084973791870707,Correlação exploratória entre distância de Cuiabá e indicador; não implica causalidade.
+taxa_positividade_real_pct,99,-0.05663193094556961,-0.009714051369597614,Correlação exploratória entre distância de Cuiabá e indicador; não implica causalidade.
+casos,131,0.0857583367858461,-0.09047153326399247,Correlação exploratória entre distância de Cuiabá e indicador; não implica causalidade.
+incidencia_100mil,0,,,Correlação exploratória entre distância de Cuiabá e indicador; não implica causalidade.

@@ -1,0 +1,15 @@
+﻿campo,preenchidos,ausentes,completude_pct
+DataPrimeirosSintomas,5842,0,100.0
+DataNotificacao,5842,0,100.0
+DataInvestigacao,5633,209,96.42245806230743
+DataPuncaoLombar,4850,992,83.01951386511469
+DataEncerramento,5536,306,94.76206778500513
+ClassificacaoCaso,5546,296,94.93324204039712
+ClassificacaoMeningite,3394,2448,58.096542280041085
+EvolucaoCaso,4481,1361,76.70318384115029
+CriterioConfirmacao,3444,2398,58.95241355700102
+MunicipioResidencia,5842,0,100.0
+RegionalResidencia,5842,0,100.0
+ResultadoPCRLiquor,1156,4686,19.787743923313933
+VacinaConjugadaMeningoC,2393,3449,40.961999315302975
+VacinaContraPneumococo,2159,3683,36.95652173913043

@@ -1,0 +1,9 @@
+﻿campo_vacinal,vacina,etiologias_alvo,usar_para_efetividade,observacao
+VacinaContraPolissacaridicaAC_bin_v17,Meningocócica polissacarídica A/C,Doença meningocócica,True,Meningite viral/asséptica não possui vacina correspondente nos campos analisados.
+VacinaContraPolissacaridicaBC_bin_v17,Meningocócica polissacarídica B/C,Doença meningocócica,True,Meningite viral/asséptica não possui vacina correspondente nos campos analisados.
+VacinaConjugadaMeningoC_bin_v17,Meningocócica C conjugada,Doença meningocócica,True,Meningite viral/asséptica não possui vacina correspondente nos campos analisados.
+VacinaContraBCG_bin_v17,BCG,Meningite tuberculosa,True,Meningite viral/asséptica não possui vacina correspondente nos campos analisados.
+VacinaContraHemofilos_bin_v17,Hib/Hemófilos,Meningite por Hib/Hemófilo,True,Meningite viral/asséptica não possui vacina correspondente nos campos analisados.
+VacinaContraPneumococo_bin_v17,Pneumocócica,Meningite pneumocócica,True,Meningite viral/asséptica não possui vacina correspondente nos campos analisados.
+VacinaContraTriplice_bin_v17,Tríplice bacteriana/DTP,Não aplicável para efetividade etiológica,False,Meningite viral/asséptica não possui vacina correspondente nos campos analisados.
+VacinaOutras_bin_v17,Outras vacinas,Não aplicável para efetividade etiológica,False,Meningite viral/asséptica não possui vacina correspondente nos campos analisados.

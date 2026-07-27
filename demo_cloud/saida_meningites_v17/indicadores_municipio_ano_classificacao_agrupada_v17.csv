@@ -1,0 +1,2257 @@
+﻿ano_evento_v17,codigo_municipio_v17,municipio_v17,regional_v17,classificacao_agrupada_v17,casos,confirmados,hospitalizacoes,obitos_meningite,populacao,incidencia_100mil,mortalidade_100mil,letalidade_confirmados
+1966,510520,JUSCIMEIRA,RONDONOPOLIS,Meningite fúngica,1,1,1,1,,,,100.0
+1975,510785,SAO FELIX DO ARAGUAIA,SAO FELIX DO ARAGUAIA,Outras etiologias,1,0,1,0,,,,
+1976,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,1,1,1,0,,,,0.0
+1980,510340,CUIABA,CUIABA,Meningite fúngica,1,1,1,0,,,,0.0
+2000,510510,JUARA,JUARA,Outras etiologias,1,0,1,0,,,,
+2002,510340,CUIABA,CUIABA,Outras etiologias,1,0,1,0,,,,
+2004,510622,NOVA MUTUM,SINOP,Outras etiologias,1,0,1,0,,,,
+2006,510030,ALTO ARAGUAIA,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2006,510340,CUIABA,CUIABA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2006,510517,JURUENA,JUINA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2006,510650,POCONE,CUIABA,Meningite não especificada,1,1,1,0,,,,0.0
+2006,510680,PORTO DOS GAUCHOS,JUARA,Meningite não especificada,1,1,1,0,,,,0.0
+2006,510724,SANTA CARMEM,SINOP,Outras etiologias,1,0,0,0,,,,
+2006,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2006,510790,SINOP,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510020,AGUA BOA,AGUA BOA,Meningite tuberculosa,1,1,1,0,,,,0.0
+2007,510025,ALTA FLORESTA,ALTA FLORESTA,Doença meningocócica,1,1,1,1,,,,100.0
+2007,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2007,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite não especificada,2,2,2,1,,,,50.0
+2007,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2007,510025,ALTA FLORESTA,ALTA FLORESTA,Outras etiologias,3,0,2,0,,,,
+2007,510030,ALTO ARAGUAIA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510050,ALTO PARAGUAI,DIAMANTINO,Outras etiologias,2,0,2,0,,,,
+2007,510060,ALTO TAQUARI,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2007,510080,APIACAS,ALTA FLORESTA,Meningite fúngica,1,1,1,0,,,,0.0
+2007,510125,ARAPUTANGA,CACERES,Meningite não especificada,2,2,2,0,,,,0.0
+2007,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510170,BARRA DO BUGRES,TANGARA DA SERRA,Outras etiologias,1,0,0,0,,,,
+2007,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite fúngica,1,1,1,0,,,,0.0
+2007,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,5,0,4,0,,,,
+2007,510190,BRASNORTE,JUINA,Outras etiologias,1,0,1,0,,,,
+2007,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,3,3,3,0,,,,0.0
+2007,510250,CACERES,CACERES,Meningite não especificada,2,2,2,1,,,,50.0
+2007,510250,CACERES,CACERES,Meningite viral/asséptica,7,7,7,0,,,,0.0
+2007,510250,CACERES,CACERES,Outras etiologias,1,0,1,0,,,,
+2007,510260,CAMPINAPOLIS,BARRA DO GARCAS,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2007,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,1,0,0,0,,,,
+2007,510267,CAMPO VERDE,RONDONOPOLIS,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2007,510267,CAMPO VERDE,RONDONOPOLIS,Meningite não especificada,1,1,0,0,,,,0.0
+2007,510267,CAMPO VERDE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510270,CANARANA,AGUA BOA,Doença meningocócica,1,1,1,0,,,,0.0
+2007,510320,COLIDER,COLIDER,Outras etiologias,5,0,5,0,,,,
+2007,510325,COLNIZA,JUINA,Outras etiologias,2,0,2,0,,,,
+2007,510340,CUIABA,CUIABA,Doença meningocócica,1,1,1,0,,,,0.0
+2007,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,11,11,11,1,,,,9.090909090909092
+2007,510340,CUIABA,CUIABA,Meningite fúngica,1,1,1,0,,,,0.0
+2007,510340,CUIABA,CUIABA,Meningite não especificada,57,57,57,2,,,,3.508771929824561
+2007,510340,CUIABA,CUIABA,Meningite pneumocócica,5,5,5,1,,,,20.0
+2007,510340,CUIABA,CUIABA,Meningite viral/asséptica,50,50,49,0,,,,0.0
+2007,510340,CUIABA,CUIABA,Outras etiologias,34,2,31,1,,,,50.0
+2007,510345,DENISE,TANGARA DA SERRA,Meningite por Hib/Hemófilo,1,1,1,0,,,,0.0
+2007,510345,DENISE,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510345,DENISE,TANGARA DA SERRA,Outras etiologias,1,0,0,0,,,,
+2007,510350,DIAMANTINO,DIAMANTINO,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510350,DIAMANTINO,DIAMANTINO,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510370,FELIZ NATAL,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510380,FIGUEIROPOLIS D OESTE,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510385,GAUCHA DO NORTE,AGUA BOA,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Doença meningocócica,1,1,1,0,,,,0.0
+2007,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite pneumocócica,1,1,1,0,,,,0.0
+2007,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,9,0,8,0,,,,
+2007,510420,GUIRATINGA,RONDONOPOLIS,Meningite não especificada,3,3,3,0,,,,0.0
+2007,510420,GUIRATINGA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510420,GUIRATINGA,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2007,510460,ITIQUIRA,RONDONOPOLIS,Meningite bacteriana/outras bactérias,2,1,2,1,,,,100.0
+2007,510460,ITIQUIRA,RONDONOPOLIS,Meningite não especificada,1,1,1,1,,,,100.0
+2007,510480,JACIARA,RONDONOPOLIS,Meningite não especificada,2,2,2,0,,,,0.0
+2007,510480,JACIARA,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2007,510490,JANGADA,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510490,JANGADA,CUIABA,Outras etiologias,1,0,1,0,,,,
+2007,510510,JUARA,JUARA,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510510,JUARA,JUARA,Outras etiologias,4,0,4,0,,,,
+2007,510515,JUINA,JUINA,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510515,JUINA,JUINA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510515,JUINA,JUINA,Outras etiologias,4,0,4,0,,,,
+2007,510520,JUSCIMEIRA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510523,LAMBARI D OESTE,CACERES,Outras etiologias,1,0,0,0,,,,
+2007,510525,LUCAS DO RIO VERDE,SINOP,Meningite não especificada,2,2,2,0,,,,0.0
+2007,510530,LUCIARA,SAO FELIX DO ARAGUAIA,Outras etiologias,1,0,0,0,,,,
+2007,510550,VILA BELA DA S TRINDADE,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510558,MARCELANDIA,COLIDER,Outras etiologias,2,0,1,0,,,,
+2007,510562,MIRASSOL D OESTE,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2007,510562,MIRASSOL D OESTE,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510562,MIRASSOL D OESTE,CACERES,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2007,510562,MIRASSOL D OESTE,CACERES,Outras etiologias,1,0,0,0,,,,
+2007,510610,NOSSA SENHORA DO LIVRAMENTO,CUIABA,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510610,NOSSA SENHORA DO LIVRAMENTO,CUIABA,Outras etiologias,3,0,1,0,,,,
+2007,510615,NOVA BANDEIRANTES,ALTA FLORESTA,Doença meningocócica,2,2,2,2,,,,100.0
+2007,510618,NOVA LACERDA,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2007,510621,NOVA CANAA DO NORTE,COLIDER,Outras etiologias,3,0,2,0,,,,
+2007,510622,NOVA MUTUM,SINOP,Meningite não especificada,3,3,3,0,,,,0.0
+2007,510622,NOVA MUTUM,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510625,NOVA XAVANTINA,BARRA DO GARCAS,Doença meningocócica,1,1,1,0,,,,0.0
+2007,510625,NOVA XAVANTINA,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510625,NOVA XAVANTINA,BARRA DO GARCAS,Outras etiologias,2,1,2,0,,,,0.0
+2007,510626,NOVO MUNDO,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,,,,
+2007,510629,PARANAITA,ALTA FLORESTA,Meningite não especificada,3,3,3,0,,,,0.0
+2007,510629,PARANAITA,ALTA FLORESTA,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2007,510629,PARANAITA,ALTA FLORESTA,Outras etiologias,2,1,0,0,,,,0.0
+2007,510630,PARANATINGA,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2007,510630,PARANATINGA,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2007,510637,PEDRA PRETA,RONDONOPOLIS,Doença meningocócica,1,1,1,1,,,,100.0
+2007,510637,PEDRA PRETA,RONDONOPOLIS,Outras etiologias,2,0,2,0,,,,
+2007,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Outras etiologias,2,0,1,0,,,,
+2007,510645,PLANALTO DA SERRA,CUIABA,Outras etiologias,1,0,1,0,,,,
+2007,510650,POCONE,CUIABA,Meningite bacteriana/outras bactérias,2,2,2,1,,,,50.0
+2007,510650,POCONE,CUIABA,Meningite fúngica,1,1,1,0,,,,0.0
+2007,510650,POCONE,CUIABA,Meningite não especificada,3,3,2,1,,,,33.33333333333333
+2007,510650,POCONE,CUIABA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2007,510650,POCONE,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510650,POCONE,CUIABA,Outras etiologias,3,0,2,0,,,,
+2007,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2007,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2007,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,1,1,1,1,,,,100.0
+2007,510682,PORTO ESPERIDIAO,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510685,PORTO ESTRELA,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510700,POXOREO,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2007,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2007,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2007,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Outras etiologias,1,0,0,0,,,,
+2007,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2007,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Outras etiologias,2,1,1,0,,,,0.0
+2007,510740,SAO PEDRO DA CIPA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510760,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2007,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2007,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,20,20,20,0,,,,0.0
+2007,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2007,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,41,41,40,0,,,,0.0
+2007,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,7,1,5,1,,,,100.0
+2007,510770,ROSARIO OESTE,DIAMANTINO,Meningite não especificada,1,1,1,1,,,,100.0
+2007,510770,ROSARIO OESTE,DIAMANTINO,Outras etiologias,1,0,1,0,,,,
+2007,510777,SANTA TEREZINHA,PORTO ALEGRE DO NORTE,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510777,SANTA TEREZINHA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,,,,
+2007,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Meningite fúngica,1,1,1,0,,,,0.0
+2007,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Meningite não especificada,1,1,1,0,,,,0.0
+2007,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2007,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2007,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,1,0,1,0,,,,
+2007,510785,SAO FELIX DO ARAGUAIA,SAO FELIX DO ARAGUAIA,Outras etiologias,2,0,2,0,,,,
+2007,510787,SAPEZAL,TANGARA DA SERRA,Doença meningocócica,1,1,1,0,,,,0.0
+2007,510787,SAPEZAL,TANGARA DA SERRA,Meningite não especificada,2,2,1,1,,,,50.0
+2007,510787,SAPEZAL,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2007,510787,SAPEZAL,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2007,510790,SINOP,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2007,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2007,510790,SINOP,SINOP,Meningite não especificada,2,2,2,0,,,,0.0
+2007,510790,SINOP,SINOP,Meningite pneumocócica,1,1,1,1,,,,100.0
+2007,510790,SINOP,SINOP,Meningite viral/asséptica,19,19,19,0,,,,0.0
+2007,510790,SINOP,SINOP,Outras etiologias,26,0,25,0,,,,
+2007,510792,SORRISO,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2007,510792,SORRISO,SINOP,Meningite não especificada,5,5,5,2,,,,40.0
+2007,510794,TABAPORA,JUARA,Meningite pneumocócica,1,1,1,1,,,,100.0
+2007,510795,TANGARA DA SERRA,TANGARA DA SERRA,Doença meningocócica,1,1,1,0,,,,0.0
+2007,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite bacteriana/outras bactérias,3,3,3,0,,,,0.0
+2007,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite não especificada,3,3,3,0,,,,0.0
+2007,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,74,0,73,0,,,,
+2007,510840,VARZEA GRANDE,CUIABA,Doença meningocócica,2,2,2,0,,,,0.0
+2007,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,3,3,3,0,,,,0.0
+2007,510840,VARZEA GRANDE,CUIABA,Meningite fúngica,1,1,1,0,,,,0.0
+2007,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,26,26,24,0,,,,0.0
+2007,510840,VARZEA GRANDE,CUIABA,Meningite pneumocócica,4,4,4,1,,,,25.0
+2007,510840,VARZEA GRANDE,CUIABA,Meningite por Hib/Hemófilo,2,2,1,1,,,,50.0
+2007,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,13,13,12,0,,,,0.0
+2007,510840,VARZEA GRANDE,CUIABA,Outras etiologias,35,0,29,0,,,,
+2007,510850,VERA,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2007,510850,VERA,SINOP,Outras etiologias,1,0,1,0,,,,
+2007,510895,NOVA MONTE VERDE,ALTA FLORESTA,Meningite não especificada,3,3,3,0,,,,0.0
+2007,510895,NOVA MONTE VERDE,ALTA FLORESTA,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2007,510895,NOVA MONTE VERDE,ALTA FLORESTA,Outras etiologias,1,1,1,0,,,,0.0
+2008,510020,AGUA BOA,AGUA BOA,Meningite não especificada,1,1,1,0,,,,0.0
+2008,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2008,510025,ALTA FLORESTA,ALTA FLORESTA,Outras etiologias,1,0,1,0,,,,
+2008,510030,ALTO ARAGUAIA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2008,510140,ARIPUANA,JUINA,Outras etiologias,1,1,1,1,,,,100.0
+2008,510170,BARRA DO BUGRES,TANGARA DA SERRA,Outras etiologias,2,0,2,0,,,,
+2008,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,4,0,3,0,,,,
+2008,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,6,6,5,0,,,,0.0
+2008,510250,CACERES,CACERES,Meningite fúngica,1,1,1,0,,,,0.0
+2008,510250,CACERES,CACERES,Meningite não especificada,3,3,3,0,,,,0.0
+2008,510250,CACERES,CACERES,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2008,510250,CACERES,CACERES,Outras etiologias,4,1,4,0,,,,0.0
+2008,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Meningite não especificada,1,1,0,0,,,,0.0
+2008,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,2,0,2,0,,,,
+2008,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,3,0,3,0,,,,
+2008,510268,CAMPOS DE JULIO,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2008,510270,CANARANA,AGUA BOA,Meningite por Hib/Hemófilo,2,2,2,0,,,,0.0
+2008,510270,CANARANA,AGUA BOA,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2008,510300,CHAPADA DOS GUIMARAES,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2008,510300,CHAPADA DOS GUIMARAES,CUIABA,Outras etiologias,1,0,1,0,,,,
+2008,510305,CLAUDIA,SINOP,Outras etiologias,1,0,1,0,,,,
+2008,510310,COCALINHO,AGUA BOA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2008,510320,COLIDER,COLIDER,Outras etiologias,3,0,3,0,,,,
+2008,510325,COLNIZA,JUINA,Meningite não especificada,2,2,2,1,,,,50.0
+2008,510325,COLNIZA,JUINA,Outras etiologias,1,0,1,0,,,,
+2008,510330,COMODORO,PONTES E LACERDA,Doença meningocócica,1,1,1,0,,,,0.0
+2008,510330,COMODORO,PONTES E LACERDA,Outras etiologias,1,0,1,0,,,,
+2008,510335,CONFRESA,PORTO ALEGRE DO NORTE,Meningite não especificada,1,1,1,0,,,,0.0
+2008,510335,CONFRESA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,,,,
+2008,510340,CUIABA,CUIABA,Doença meningocócica,3,3,3,1,,,,33.33333333333333
+2008,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,6,6,6,0,,,,0.0
+2008,510340,CUIABA,CUIABA,Meningite fúngica,3,3,3,0,,,,0.0
+2008,510340,CUIABA,CUIABA,Meningite não especificada,30,30,29,0,,,,0.0
+2008,510340,CUIABA,CUIABA,Meningite pneumocócica,6,6,6,1,,,,16.666666666666664
+2008,510340,CUIABA,CUIABA,Meningite tuberculosa,1,1,1,0,,,,0.0
+2008,510340,CUIABA,CUIABA,Meningite viral/asséptica,17,17,17,0,,,,0.0
+2008,510340,CUIABA,CUIABA,Outras etiologias,27,2,24,0,,,,0.0
+2008,510350,DIAMANTINO,DIAMANTINO,Meningite não especificada,2,2,2,0,,,,0.0
+2008,510350,DIAMANTINO,DIAMANTINO,Meningite pneumocócica,1,1,1,0,,,,0.0
+2008,510350,DIAMANTINO,DIAMANTINO,Outras etiologias,2,0,2,0,,,,
+2008,510390,GENERAL CARNEIRO,BARRA DO GARCAS,Outras etiologias,1,0,1,0,,,,
+2008,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite pneumocócica,2,2,2,0,,,,0.0
+2008,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,4,0,4,0,,,,
+2008,510420,GUIRATINGA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2008,510450,INDIAVAI,CACERES,Outras etiologias,1,1,1,0,,,,0.0
+2008,510454,ITANHANGA,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2008,510480,JACIARA,RONDONOPOLIS,Meningite não especificada,2,2,2,0,,,,0.0
+2008,510480,JACIARA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2008,510480,JACIARA,RONDONOPOLIS,Outras etiologias,2,0,2,0,,,,
+2008,510490,JANGADA,CUIABA,Outras etiologias,2,0,2,0,,,,
+2008,510510,JUARA,JUARA,Outras etiologias,2,0,2,0,,,,
+2008,510523,LAMBARI D OESTE,CACERES,Outras etiologias,1,1,1,0,,,,0.0
+2008,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,2,0,2,0,,,,
+2008,510550,VILA BELA DA S TRINDADE,PONTES E LACERDA,Outras etiologias,1,0,1,0,,,,
+2008,510558,MARCELANDIA,COLIDER,Doença meningocócica,1,1,1,0,,,,0.0
+2008,510558,MARCELANDIA,COLIDER,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2008,510558,MARCELANDIA,COLIDER,Outras etiologias,3,1,1,0,,,,0.0
+2008,510562,MIRASSOL D OESTE,CACERES,Outras etiologias,3,0,1,0,,,,
+2008,510590,NOBRES,DIAMANTINO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2008,510590,NOBRES,DIAMANTINO,Meningite não especificada,1,1,1,0,,,,0.0
+2008,510590,NOBRES,DIAMANTINO,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2008,510615,NOVA BANDEIRANTES,ALTA FLORESTA,Meningite não especificada,1,1,1,0,,,,0.0
+2008,510619,NOVA SANTA HELENA,COLIDER,Outras etiologias,1,0,1,0,,,,
+2008,510622,NOVA MUTUM,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2008,510623,NOVA OLIMPIA,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2008,510623,NOVA OLIMPIA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2008,510629,PARANAITA,ALTA FLORESTA,Meningite pneumocócica,1,1,1,1,,,,100.0
+2008,510629,PARANAITA,ALTA FLORESTA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2008,510629,PARANAITA,ALTA FLORESTA,Outras etiologias,1,0,1,0,,,,
+2008,510630,PARANATINGA,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2008,510637,PEDRA PRETA,RONDONOPOLIS,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2008,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Meningite não especificada,1,1,1,0,,,,0.0
+2008,510650,POCONE,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2008,510650,POCONE,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2008,510650,POCONE,CUIABA,Outras etiologias,5,0,3,0,,,,
+2008,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2008,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2008,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,2,0,0,0,,,,
+2008,510700,POXOREO,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2008,510700,POXOREO,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2008,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite fúngica,1,1,1,0,,,,0.0
+2008,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,4,0,2,0,,,,
+2008,510706,QUERENCIA,AGUA BOA,Outras etiologias,2,0,2,0,,,,
+2008,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2008,510715,RESERVA DO CABACAL,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2008,510726,SANTO AFONSO,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2008,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Outras etiologias,1,0,1,0,,,,
+2008,510735,SAO JOSE DO XINGU,PORTO ALEGRE DO NORTE,Meningite não especificada,1,1,1,0,,,,0.0
+2008,510735,SAO JOSE DO XINGU,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,0,0,,,,
+2008,510740,SAO PEDRO DA CIPA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2008,510760,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2008,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2008,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite fúngica,2,2,2,0,,,,0.0
+2008,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,6,6,6,0,,,,0.0
+2008,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,3,3,3,1,,,,33.33333333333333
+2008,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,24,24,22,0,,,,0.0
+2008,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,4,1,3,0,,,,0.0
+2008,510770,ROSARIO OESTE,DIAMANTINO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2008,510770,ROSARIO OESTE,DIAMANTINO,Outras etiologias,4,0,3,0,,,,
+2008,510774,SANTA CRUZ DO XINGU,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,0,0,,,,
+2008,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2008,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,2,0,1,0,,,,
+2008,510787,SAPEZAL,TANGARA DA SERRA,Meningite pneumocócica,1,1,1,1,,,,100.0
+2008,510787,SAPEZAL,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2008,510787,SAPEZAL,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2008,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,6,6,6,0,,,,0.0
+2008,510790,SINOP,SINOP,Meningite não especificada,10,10,10,0,,,,0.0
+2008,510790,SINOP,SINOP,Meningite viral/asséptica,15,15,15,0,,,,0.0
+2008,510790,SINOP,SINOP,Outras etiologias,24,0,21,0,,,,
+2008,510792,SORRISO,SINOP,Doença meningocócica,2,2,2,1,,,,50.0
+2008,510792,SORRISO,SINOP,Meningite fúngica,2,2,2,1,,,,50.0
+2008,510792,SORRISO,SINOP,Meningite não especificada,2,2,2,0,,,,0.0
+2008,510792,SORRISO,SINOP,Meningite pneumocócica,1,1,1,0,,,,0.0
+2008,510792,SORRISO,SINOP,Outras etiologias,2,0,1,0,,,,
+2008,510794,TABAPORA,JUARA,Outras etiologias,1,0,1,0,,,,
+2008,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite não especificada,4,4,4,0,,,,0.0
+2008,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2008,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,10,0,10,0,,,,
+2008,510805,TERRA NOVA DO NORTE,PEIXOTO DE AZEVEDO,Doença meningocócica,1,1,0,1,,,,100.0
+2008,510810,TESOURO,RONDONOPOLIS,Meningite não especificada,1,1,1,1,,,,100.0
+2008,510830,UNIAO DO SUL,SINOP,Outras etiologias,1,0,0,0,,,,
+2008,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,6,6,5,0,,,,0.0
+2008,510840,VARZEA GRANDE,CUIABA,Meningite fúngica,5,5,5,0,,,,0.0
+2008,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,23,23,21,2,,,,8.695652173913043
+2008,510840,VARZEA GRANDE,CUIABA,Meningite pneumocócica,2,2,2,0,,,,0.0
+2008,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,8,8,7,0,,,,0.0
+2008,510840,VARZEA GRANDE,CUIABA,Outras etiologias,34,0,29,0,,,,
+2008,510850,VERA,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2008,510860,VILA RICA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,,,,
+2008,510890,NOVA MARINGA,DIAMANTINO,Meningite não especificada,2,2,2,0,,,,0.0
+2009,510025,ALTA FLORESTA,ALTA FLORESTA,Doença meningocócica,1,1,1,0,,,,0.0
+2009,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2009,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510025,ALTA FLORESTA,ALTA FLORESTA,Outras etiologias,3,0,3,0,,,,
+2009,510080,APIACAS,ALTA FLORESTA,Outras etiologias,2,1,2,1,,,,100.0
+2009,510125,ARAPUTANGA,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510130,ARENAPOLIS,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510140,ARIPUANA,JUINA,Outras etiologias,1,0,1,0,,,,
+2009,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite não especificada,2,2,2,0,,,,0.0
+2009,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,3,0,1,0,,,,
+2009,510190,BRASNORTE,JUINA,Doença meningocócica,1,1,1,1,,,,100.0
+2009,510190,BRASNORTE,JUINA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2009,510250,CACERES,CACERES,Doença meningocócica,1,1,1,0,,,,0.0
+2009,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,2,2,2,1,,,,50.0
+2009,510250,CACERES,CACERES,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2009,510250,CACERES,CACERES,Outras etiologias,2,0,2,0,,,,
+2009,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Meningite não especificada,1,1,1,1,,,,100.0
+2009,510267,CAMPO VERDE,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,1,1,1,0,,,,0.0
+2009,510270,CANARANA,AGUA BOA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2009,510270,CANARANA,AGUA BOA,Outras etiologias,1,0,1,0,,,,
+2009,510279,CARLINDA,ALTA FLORESTA,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510285,CASTANHEIRA,JUINA,Outras etiologias,2,0,2,0,,,,
+2009,510300,CHAPADA DOS GUIMARAES,CUIABA,Outras etiologias,2,1,1,0,,,,0.0
+2009,510305,CLAUDIA,SINOP,Outras etiologias,1,0,1,0,,,,
+2009,510320,COLIDER,COLIDER,Outras etiologias,1,0,1,0,,,,
+2009,510325,COLNIZA,JUINA,Outras etiologias,1,0,1,0,,,,
+2009,510330,COMODORO,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510330,COMODORO,PONTES E LACERDA,Outras etiologias,1,0,1,0,,,,
+2009,510335,CONFRESA,PORTO ALEGRE DO NORTE,Meningite fúngica,1,1,1,0,,,,0.0
+2009,510336,CONQUISTA D OESTE,PONTES E LACERDA,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2009,510340,CUIABA,CUIABA,Doença meningocócica,6,6,6,1,,,,16.666666666666664
+2009,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,4,4,3,2,,,,50.0
+2009,510340,CUIABA,CUIABA,Meningite fúngica,2,2,2,0,,,,0.0
+2009,510340,CUIABA,CUIABA,Meningite não especificada,24,24,22,1,,,,4.166666666666666
+2009,510340,CUIABA,CUIABA,Meningite pneumocócica,4,4,4,1,,,,25.0
+2009,510340,CUIABA,CUIABA,Meningite viral/asséptica,6,6,6,0,,,,0.0
+2009,510340,CUIABA,CUIABA,Outras etiologias,19,3,13,0,,,,0.0
+2009,510345,DENISE,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2009,510360,DOM AQUINO,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510370,FELIZ NATAL,SINOP,Meningite não especificada,1,1,1,1,,,,100.0
+2009,510370,FELIZ NATAL,SINOP,Outras etiologias,2,1,2,1,,,,100.0
+2009,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,4,0,3,0,,,,
+2009,510420,GUIRATINGA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510460,ITIQUIRA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2009,510460,ITIQUIRA,RONDONOPOLIS,Outras etiologias,1,1,1,0,,,,0.0
+2009,510480,JACIARA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510490,JANGADA,CUIABA,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510510,JUARA,JUARA,Meningite viral/asséptica,1,1,1,1,,,,100.0
+2009,510510,JUARA,JUARA,Outras etiologias,2,0,1,0,,,,
+2009,510515,JUINA,JUINA,Doença meningocócica,3,3,3,1,,,,33.33333333333333
+2009,510515,JUINA,JUINA,Outras etiologias,3,0,3,0,,,,
+2009,510517,JURUENA,JUINA,Outras etiologias,2,0,1,0,,,,
+2009,510520,JUSCIMEIRA,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2009,510520,JUSCIMEIRA,RONDONOPOLIS,Outras etiologias,1,1,1,0,,,,0.0
+2009,510523,LAMBARI D OESTE,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510525,LUCAS DO RIO VERDE,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2009,510525,LUCAS DO RIO VERDE,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2009,510525,LUCAS DO RIO VERDE,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,5,1,4,1,,,,100.0
+2009,510550,VILA BELA DA S TRINDADE,PONTES E LACERDA,Meningite não especificada,1,1,1,1,,,,100.0
+2009,510560,MATUPA,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,,,,
+2009,510590,NOBRES,DIAMANTINO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2009,510600,NORTELANDIA,DIAMANTINO,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510610,NOSSA SENHORA DO LIVRAMENTO,CUIABA,Outras etiologias,1,0,0,0,,,,
+2009,510615,NOVA BANDEIRANTES,ALTA FLORESTA,Outras etiologias,1,0,1,0,,,,
+2009,510617,NOVA NAZARE,AGUA BOA,Outras etiologias,2,0,0,0,,,,
+2009,510622,NOVA MUTUM,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2009,510622,NOVA MUTUM,SINOP,Outras etiologias,2,0,1,0,,,,
+2009,510625,NOVA XAVANTINA,BARRA DO GARCAS,Outras etiologias,1,0,0,0,,,,
+2009,510629,PARANAITA,ALTA FLORESTA,Outras etiologias,1,0,0,0,,,,
+2009,510630,PARANATINGA,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2009,510630,PARANATINGA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510630,PARANATINGA,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2009,510630,PARANATINGA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2009,510637,PEDRA PRETA,RONDONOPOLIS,Meningite não especificada,1,1,0,0,,,,0.0
+2009,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Outras etiologias,2,0,2,0,,,,
+2009,510650,POCONE,CUIABA,Outras etiologias,2,0,1,0,,,,
+2009,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2009,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,3,2,2,1,,,,50.0
+2009,510685,PORTO ESTRELA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2009,510700,POXOREO,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2009,510700,POXOREO,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510700,POXOREO,RONDONOPOLIS,Meningite pneumocócica,2,2,2,0,,,,0.0
+2009,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2009,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2009,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite não especificada,2,2,2,0,,,,0.0
+2009,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2009,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2009,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,1,1,1,0,,,,0.0
+2009,510706,QUERENCIA,AGUA BOA,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Outras etiologias,1,0,1,0,,,,
+2009,510718,RIBEIRAO CASCALHEIRA,AGUA BOA,Meningite fúngica,1,1,1,0,,,,0.0
+2009,510724,SANTA CARMEM,SINOP,Meningite não especificada,3,3,3,0,,,,0.0
+2009,510724,SANTA CARMEM,SINOP,Outras etiologias,1,0,1,0,,,,
+2009,510726,SANTO AFONSO,TANGARA DA SERRA,Outras etiologias,1,0,0,0,,,,
+2009,510729,SAO JOSE DO POVO,RONDONOPOLIS,Meningite pneumocócica,1,1,1,1,,,,100.0
+2009,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Outras etiologias,1,0,1,0,,,,
+2009,510735,SAO JOSE DO XINGU,PORTO ALEGRE DO NORTE,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510740,SAO PEDRO DA CIPA,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2009,510760,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2009,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,8,8,8,0,,,,0.0
+2009,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,3,3,3,0,,,,0.0
+2009,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,2,2,2,1,,,,50.0
+2009,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,8,8,7,1,,,,12.5
+2009,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,14,0,13,0,,,,
+2009,510770,ROSARIO OESTE,DIAMANTINO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2009,510777,SANTA TEREZINHA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,,,,
+2009,510787,SAPEZAL,TANGARA DA SERRA,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2009,510787,SAPEZAL,TANGARA DA SERRA,Meningite não especificada,4,4,3,0,,,,0.0
+2009,510787,SAPEZAL,TANGARA DA SERRA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2009,510787,SAPEZAL,TANGARA DA SERRA,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2009,510787,SAPEZAL,TANGARA DA SERRA,Outras etiologias,2,0,1,0,,,,
+2009,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,3,3,3,0,,,,0.0
+2009,510790,SINOP,SINOP,Meningite não especificada,7,7,7,1,,,,14.285714285714285
+2009,510790,SINOP,SINOP,Meningite viral/asséptica,15,15,15,0,,,,0.0
+2009,510790,SINOP,SINOP,Outras etiologias,22,0,20,0,,,,
+2009,510792,SORRISO,SINOP,Doença meningocócica,3,3,3,1,,,,33.33333333333333
+2009,510792,SORRISO,SINOP,Meningite bacteriana/outras bactérias,4,4,4,0,,,,0.0
+2009,510792,SORRISO,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510792,SORRISO,SINOP,Outras etiologias,1,0,1,0,,,,
+2009,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2009,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,6,1,6,0,,,,0.0
+2009,510835,VALE DE SAO DOMINGOS,PONTES E LACERDA,Outras etiologias,1,0,1,0,,,,
+2009,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,7,7,7,2,,,,28.57142857142857
+2009,510840,VARZEA GRANDE,CUIABA,Meningite fúngica,2,2,1,1,,,,50.0
+2009,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,7,7,7,0,,,,0.0
+2009,510840,VARZEA GRANDE,CUIABA,Meningite tuberculosa,1,1,1,0,,,,0.0
+2009,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2009,510840,VARZEA GRANDE,CUIABA,Outras etiologias,32,2,27,0,,,,0.0
+2009,510850,VERA,SINOP,Doença meningocócica,1,1,1,1,,,,100.0
+2009,510850,VERA,SINOP,Outras etiologias,1,0,1,0,,,,
+2009,510860,VILA RICA,PORTO ALEGRE DO NORTE,Doença meningocócica,1,1,1,1,,,,100.0
+2009,510890,NOVA MARINGA,DIAMANTINO,Outras etiologias,2,0,2,0,,,,
+2010,510020,AGUA BOA,AGUA BOA,Doença meningocócica,1,1,1,0,,,,0.0
+2010,510025,ALTA FLORESTA,ALTA FLORESTA,Outras etiologias,2,0,2,0,,,,
+2010,510030,ALTO ARAGUAIA,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2010,510030,ALTO ARAGUAIA,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2010,510130,ARENAPOLIS,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2010,510140,ARIPUANA,JUINA,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2010,510180,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,2,2,2,0,,,,0.0
+2010,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2010,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2010,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,1,0,0,0,,,,
+2010,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2010,510250,CACERES,CACERES,Meningite fúngica,1,1,1,0,,,,0.0
+2010,510250,CACERES,CACERES,Meningite não especificada,3,3,3,0,,,,0.0
+2010,510250,CACERES,CACERES,Meningite por Hib/Hemófilo,1,1,1,1,,,,100.0
+2010,510250,CACERES,CACERES,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2010,510250,CACERES,CACERES,Outras etiologias,3,3,2,1,,,,33.33333333333333
+2010,510260,CAMPINAPOLIS,BARRA DO GARCAS,Outras etiologias,1,0,1,0,,,,
+2010,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2010,510267,CAMPO VERDE,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2010,510267,CAMPO VERDE,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510267,CAMPO VERDE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2010,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,3,0,2,0,,,,
+2010,510268,CAMPOS DE JULIO,PONTES E LACERDA,Meningite não especificada,1,1,1,1,,,,100.0
+2010,510268,CAMPOS DE JULIO,PONTES E LACERDA,Outras etiologias,1,1,1,0,,,,0.0
+2010,510270,CANARANA,AGUA BOA,Outras etiologias,2,0,2,0,,,,
+2010,510300,CHAPADA DOS GUIMARAES,CUIABA,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510310,COCALINHO,AGUA BOA,Doença meningocócica,1,1,1,0,,,,0.0
+2010,510310,COCALINHO,AGUA BOA,Outras etiologias,2,0,2,0,,,,
+2010,510320,COLIDER,COLIDER,Meningite não especificada,2,2,2,1,,,,50.0
+2010,510320,COLIDER,COLIDER,Outras etiologias,1,0,1,0,,,,
+2010,510325,COLNIZA,JUINA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2010,510335,CONFRESA,PORTO ALEGRE DO NORTE,Outras etiologias,2,0,2,0,,,,
+2010,510336,CONQUISTA D OESTE,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510340,CUIABA,CUIABA,Doença meningocócica,2,2,2,1,,,,50.0
+2010,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,8,8,7,0,,,,0.0
+2010,510340,CUIABA,CUIABA,Meningite fúngica,2,2,2,0,,,,0.0
+2010,510340,CUIABA,CUIABA,Meningite não especificada,8,8,8,0,,,,0.0
+2010,510340,CUIABA,CUIABA,Meningite viral/asséptica,12,12,10,1,,,,8.333333333333332
+2010,510340,CUIABA,CUIABA,Outras etiologias,38,2,30,0,,,,0.0
+2010,510350,DIAMANTINO,DIAMANTINO,Outras etiologias,1,0,1,0,,,,
+2010,510370,FELIZ NATAL,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2010,510370,FELIZ NATAL,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite não especificada,2,2,2,1,,,,50.0
+2010,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite pneumocócica,1,1,1,0,,,,0.0
+2010,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,5,0,4,0,,,,
+2010,510454,ITANHANGA,SINOP,Outras etiologias,1,0,1,0,,,,
+2010,510460,ITIQUIRA,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2010,510480,JACIARA,RONDONOPOLIS,Doença meningocócica,3,3,3,3,,,,100.0
+2010,510480,JACIARA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510480,JACIARA,RONDONOPOLIS,Outras etiologias,1,1,0,1,,,,100.0
+2010,510510,JUARA,JUARA,Meningite fúngica,1,1,1,0,,,,0.0
+2010,510510,JUARA,JUARA,Outras etiologias,3,0,1,0,,,,
+2010,510515,JUINA,JUINA,Outras etiologias,1,0,1,0,,,,
+2010,510520,JUSCIMEIRA,RONDONOPOLIS,Meningite fúngica,1,1,1,0,,,,0.0
+2010,510520,JUSCIMEIRA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2010,510520,JUSCIMEIRA,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2010,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,2,0,2,0,,,,
+2010,510558,MARCELANDIA,COLIDER,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510558,MARCELANDIA,COLIDER,Outras etiologias,1,0,1,0,,,,
+2010,510562,MIRASSOL D OESTE,CACERES,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2010,510590,NOBRES,DIAMANTINO,Outras etiologias,1,1,1,0,,,,0.0
+2010,510615,NOVA BANDEIRANTES,ALTA FLORESTA,Outras etiologias,1,0,1,0,,,,
+2010,510618,NOVA LACERDA,PONTES E LACERDA,Meningite não especificada,1,1,1,1,,,,100.0
+2010,510622,NOVA MUTUM,SINOP,Meningite por Hib/Hemófilo,1,1,1,1,,,,100.0
+2010,510623,NOVA OLIMPIA,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510623,NOVA OLIMPIA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2010,510624,NOVA UBIRATA,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510625,NOVA XAVANTINA,BARRA DO GARCAS,Doença meningocócica,1,1,1,0,,,,0.0
+2010,510626,NOVO MUNDO,PEIXOTO DE AZEVEDO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2010,510629,PARANAITA,ALTA FLORESTA,Outras etiologias,3,0,3,0,,,,
+2010,510630,PARANATINGA,RONDONOPOLIS,Meningite não especificada,2,2,2,0,,,,0.0
+2010,510630,PARANATINGA,RONDONOPOLIS,Outras etiologias,1,1,1,0,,,,0.0
+2010,510631,NOVO SANTO ANTONIO,SAO FELIX DO ARAGUAIA,Outras etiologias,1,0,0,0,,,,
+2010,510637,PEDRA PRETA,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2010,510637,PEDRA PRETA,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2010,510637,PEDRA PRETA,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2010,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Meningite tuberculosa,1,1,1,0,,,,0.0
+2010,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Outras etiologias,2,0,1,0,,,,
+2010,510645,PLANALTO DA SERRA,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2010,510650,POCONE,CUIABA,Outras etiologias,5,1,1,0,,,,0.0
+2010,510670,PONTE BRANCA,BARRA DO GARCAS,Meningite pneumocócica,1,1,1,1,,,,100.0
+2010,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,2,1,1,0,,,,0.0
+2010,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,1,1,1,0,,,,0.0
+2010,510682,PORTO ESPERIDIAO,CACERES,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2010,510685,PORTO ESTRELA,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2010,510685,PORTO ESTRELA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2010,510700,POXOREO,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510700,POXOREO,RONDONOPOLIS,Meningite pneumocócica,1,1,1,1,,,,100.0
+2010,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite pneumocócica,1,1,1,1,,,,100.0
+2010,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2010,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,2,1,2,0,,,,0.0
+2010,510718,RIBEIRAO CASCALHEIRA,AGUA BOA,Outras etiologias,1,0,1,0,,,,
+2010,510726,SANTO AFONSO,TANGARA DA SERRA,Meningite fúngica,1,1,1,0,,,,0.0
+2010,510740,SAO PEDRO DA CIPA,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2010,510740,SAO PEDRO DA CIPA,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2010,510760,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2,2,2,0,,,,0.0
+2010,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,5,5,5,0,,,,0.0
+2010,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,2,2,2,0,,,,0.0
+2010,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,3,3,3,0,,,,0.0
+2010,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,7,7,7,0,,,,0.0
+2010,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,16,2,16,0,,,,0.0
+2010,510770,ROSARIO OESTE,DIAMANTINO,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510774,SANTA CRUZ DO XINGU,PORTO ALEGRE DO NORTE,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,1,0,0,0,,,,
+2010,510787,SAPEZAL,TANGARA DA SERRA,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2010,510787,SAPEZAL,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510787,SAPEZAL,TANGARA DA SERRA,Meningite pneumocócica,1,1,1,1,,,,100.0
+2010,510787,SAPEZAL,TANGARA DA SERRA,Outras etiologias,1,0,0,0,,,,
+2010,510790,SINOP,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2010,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,2,2,2,1,,,,50.0
+2010,510790,SINOP,SINOP,Meningite não especificada,2,2,2,0,,,,0.0
+2010,510790,SINOP,SINOP,Meningite pneumocócica,2,2,2,1,,,,50.0
+2010,510790,SINOP,SINOP,Meningite viral/asséptica,5,5,5,0,,,,0.0
+2010,510790,SINOP,SINOP,Outras etiologias,6,0,5,0,,,,
+2010,510792,SORRISO,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2010,510792,SORRISO,SINOP,Meningite não especificada,3,3,3,0,,,,0.0
+2010,510792,SORRISO,SINOP,Meningite pneumocócica,1,1,1,0,,,,0.0
+2010,510792,SORRISO,SINOP,Outras etiologias,2,0,2,0,,,,
+2010,510795,TANGARA DA SERRA,TANGARA DA SERRA,Doença meningocócica,1,1,1,0,,,,0.0
+2010,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite fúngica,1,1,1,0,,,,0.0
+2010,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2010,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,2,0,2,0,,,,
+2010,510805,TERRA NOVA DO NORTE,PEIXOTO DE AZEVEDO,Meningite fúngica,1,1,1,1,,,,100.0
+2010,510840,VARZEA GRANDE,CUIABA,Doença meningocócica,4,4,4,0,,,,0.0
+2010,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,5,5,5,0,,,,0.0
+2010,510840,VARZEA GRANDE,CUIABA,Meningite fúngica,2,2,2,0,,,,0.0
+2010,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,3,3,2,0,,,,0.0
+2010,510840,VARZEA GRANDE,CUIABA,Meningite por Hib/Hemófilo,1,1,1,1,,,,100.0
+2010,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2010,510840,VARZEA GRANDE,CUIABA,Outras etiologias,19,1,15,0,,,,0.0
+2010,510850,VERA,SINOP,Outras etiologias,1,0,0,0,,,,
+2010,510895,NOVA MONTE VERDE,ALTA FLORESTA,Outras etiologias,1,0,1,0,,,,
+2011,510020,AGUA BOA,AGUA BOA,Outras etiologias,1,0,1,0,,,,
+2011,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite não especificada,1,1,1,0,,,,0.0
+2011,510025,ALTA FLORESTA,ALTA FLORESTA,Outras etiologias,1,0,1,0,,,,
+2011,510030,ALTO ARAGUAIA,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2011,510035,ALTO BOA VISTA,SAO FELIX DO ARAGUAIA,Outras etiologias,1,0,1,0,,,,
+2011,510060,ALTO TAQUARI,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2011,510060,ALTO TAQUARI,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2011,510120,ARAGUAINHA,RONDONOPOLIS,Meningite pneumocócica,1,1,1,1,,,,100.0
+2011,510125,ARAPUTANGA,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2011,510125,ARAPUTANGA,CACERES,Meningite fúngica,1,1,1,0,,,,0.0
+2011,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2011,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2011,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite por Hib/Hemófilo,1,1,1,0,,,,0.0
+2011,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,6,0,6,0,,,,
+2011,510185,BOM JESUS DO ARAGUAIA,AGUA BOA,Outras etiologias,1,0,1,0,,,,
+2011,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,3,3,3,0,,,,0.0
+2011,510250,CACERES,CACERES,Meningite não especificada,4,4,4,0,,,,0.0
+2011,510250,CACERES,CACERES,Meningite pneumocócica,1,1,1,1,,,,100.0
+2011,510250,CACERES,CACERES,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2011,510260,CAMPINAPOLIS,BARRA DO GARCAS,Outras etiologias,2,0,2,0,,,,
+2011,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Doença meningocócica,1,1,1,0,,,,0.0
+2011,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2011,510270,CANARANA,AGUA BOA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2011,510270,CANARANA,AGUA BOA,Outras etiologias,2,0,2,0,,,,
+2011,510300,CHAPADA DOS GUIMARAES,CUIABA,Doença meningocócica,1,1,1,0,,,,0.0
+2011,510320,COLIDER,COLIDER,Outras etiologias,1,0,1,0,,,,
+2011,510325,COLNIZA,JUINA,Outras etiologias,1,0,1,0,,,,
+2011,510335,CONFRESA,PORTO ALEGRE DO NORTE,Meningite não especificada,1,1,1,0,,,,0.0
+2011,510336,CONQUISTA D OESTE,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2011,510336,CONQUISTA D OESTE,PONTES E LACERDA,Outras etiologias,1,0,0,0,,,,
+2011,510340,CUIABA,CUIABA,Doença meningocócica,7,7,7,3,,,,42.857142857142854
+2011,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,21,21,21,0,,,,0.0
+2011,510340,CUIABA,CUIABA,Meningite fúngica,7,7,7,1,,,,14.285714285714285
+2011,510340,CUIABA,CUIABA,Meningite não especificada,6,6,6,0,,,,0.0
+2011,510340,CUIABA,CUIABA,Meningite tuberculosa,1,1,1,0,,,,0.0
+2011,510340,CUIABA,CUIABA,Meningite viral/asséptica,16,16,16,0,,,,0.0
+2011,510340,CUIABA,CUIABA,Outras etiologias,26,0,24,0,,,,
+2011,510350,DIAMANTINO,DIAMANTINO,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2011,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Doença meningocócica,1,1,1,0,,,,0.0
+2011,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,4,0,3,0,,,,
+2011,510450,INDIAVAI,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2011,510454,ITANHANGA,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2011,510454,ITANHANGA,SINOP,Outras etiologias,1,0,1,0,,,,
+2011,510455,ITAUBA,COLIDER,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2011,510480,JACIARA,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2011,510480,JACIARA,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2011,510480,JACIARA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2011,510480,JACIARA,RONDONOPOLIS,Outras etiologias,1,1,1,0,,,,0.0
+2011,510510,JUARA,JUARA,Doença meningocócica,1,1,1,0,,,,0.0
+2011,510510,JUARA,JUARA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2011,510510,JUARA,JUARA,Meningite não especificada,1,1,1,0,,,,0.0
+2011,510510,JUARA,JUARA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2011,510510,JUARA,JUARA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2011,510510,JUARA,JUARA,Outras etiologias,3,1,3,0,,,,0.0
+2011,510515,JUINA,JUINA,Outras etiologias,2,0,2,0,,,,
+2011,510520,JUSCIMEIRA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2011,510525,LUCAS DO RIO VERDE,SINOP,Meningite fúngica,1,1,1,1,,,,100.0
+2011,510525,LUCAS DO RIO VERDE,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2011,510525,LUCAS DO RIO VERDE,SINOP,Meningite pneumocócica,1,1,1,1,,,,100.0
+2011,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,6,0,6,0,,,,
+2011,510550,VILA BELA DA S TRINDADE,PONTES E LACERDA,Outras etiologias,1,0,1,0,,,,
+2011,510558,MARCELANDIA,COLIDER,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2011,510560,MATUPA,PEIXOTO DE AZEVEDO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2011,510560,MATUPA,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,,,,
+2011,510590,NOBRES,DIAMANTINO,Meningite fúngica,1,1,1,1,,,,100.0
+2011,510600,NORTELANDIA,DIAMANTINO,Outras etiologias,2,0,2,0,,,,
+2011,510610,NOSSA SENHORA DO LIVRAMENTO,CUIABA,Meningite pneumocócica,1,1,0,0,,,,0.0
+2011,510618,NOVA LACERDA,PONTES E LACERDA,Meningite não especificada,1,1,1,1,,,,100.0
+2011,510622,NOVA MUTUM,SINOP,Doença meningocócica,1,1,1,1,,,,100.0
+2011,510622,NOVA MUTUM,SINOP,Meningite pneumocócica,1,1,1,0,,,,0.0
+2011,510624,NOVA UBIRATA,SINOP,Outras etiologias,1,0,0,0,,,,
+2011,510629,PARANAITA,ALTA FLORESTA,Doença meningocócica,1,1,1,0,,,,0.0
+2011,510630,PARANATINGA,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2011,510630,PARANATINGA,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2011,510630,PARANATINGA,RONDONOPOLIS,Outras etiologias,2,0,0,0,,,,
+2011,510637,PEDRA PRETA,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2011,510637,PEDRA PRETA,RONDONOPOLIS,Meningite pneumocócica,3,3,3,3,,,,100.0
+2011,510637,PEDRA PRETA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2011,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2011,510650,POCONE,CUIABA,Meningite não especificada,2,2,1,0,,,,0.0
+2011,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite bacteriana/outras bactérias,2,2,2,1,,,,50.0
+2011,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2011,510682,PORTO ESPERIDIAO,CACERES,Doença meningocócica,1,1,1,0,,,,0.0
+2011,510682,PORTO ESPERIDIAO,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2011,510682,PORTO ESPERIDIAO,CACERES,Meningite pneumocócica,1,1,1,0,,,,0.0
+2011,510700,POXOREO,RONDONOPOLIS,Doença meningocócica,1,1,1,1,,,,100.0
+2011,510700,POXOREO,RONDONOPOLIS,Meningite não especificada,1,1,1,1,,,,100.0
+2011,510700,POXOREO,RONDONOPOLIS,Outras etiologias,2,0,2,0,,,,
+2011,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Doença meningocócica,1,1,1,1,,,,100.0
+2011,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2011,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2011,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,2,2,2,1,,,,50.0
+2011,510706,QUERENCIA,AGUA BOA,Doença meningocócica,1,1,1,1,,,,100.0
+2011,510715,RESERVA DO CABACAL,CACERES,Meningite não especificada,1,1,1,1,,,,100.0
+2011,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Doença meningocócica,1,1,1,1,,,,100.0
+2011,510760,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2,2,2,0,,,,0.0
+2011,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2011,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite fúngica,2,2,2,0,,,,0.0
+2011,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,5,5,3,1,,,,20.0
+2011,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,7,7,7,0,,,,0.0
+2011,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,8,5,5,0,,,,0.0
+2011,510775,SALTO DO CEU,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2011,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Meningite não especificada,1,1,0,1,,,,100.0
+2011,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Meningite por Hib/Hemófilo,1,1,1,0,,,,0.0
+2011,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2011,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,2,0,0,0,,,,
+2011,510787,SAPEZAL,TANGARA DA SERRA,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2011,510787,SAPEZAL,TANGARA DA SERRA,Outras etiologias,7,0,7,0,,,,
+2011,510790,SINOP,SINOP,Doença meningocócica,2,2,2,1,,,,50.0
+2011,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,3,3,3,1,,,,33.33333333333333
+2011,510790,SINOP,SINOP,Meningite fúngica,1,1,1,1,,,,100.0
+2011,510790,SINOP,SINOP,Meningite não especificada,6,6,6,0,,,,0.0
+2011,510790,SINOP,SINOP,Meningite pneumocócica,1,1,1,1,,,,100.0
+2011,510790,SINOP,SINOP,Meningite viral/asséptica,19,19,19,0,,,,0.0
+2011,510790,SINOP,SINOP,Outras etiologias,8,0,8,0,,,,
+2011,510792,SORRISO,SINOP,Doença meningocócica,1,1,1,1,,,,100.0
+2011,510792,SORRISO,SINOP,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2011,510792,SORRISO,SINOP,Meningite não especificada,4,4,4,0,,,,0.0
+2011,510792,SORRISO,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2011,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite pneumocócica,2,1,2,0,,,,0.0
+2011,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite viral/asséptica,4,4,4,0,,,,0.0
+2011,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,4,1,4,1,,,,100.0
+2011,510800,TAPURAH,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2011,510800,TAPURAH,SINOP,Meningite viral/asséptica,1,1,0,0,,,,0.0
+2011,510800,TAPURAH,SINOP,Outras etiologias,1,0,1,0,,,,
+2011,510805,TERRA NOVA DO NORTE,PEIXOTO DE AZEVEDO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2011,510805,TERRA NOVA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,,,,
+2011,510810,TESOURO,RONDONOPOLIS,Outras etiologias,1,1,1,0,,,,0.0
+2011,510840,VARZEA GRANDE,CUIABA,Doença meningocócica,3,3,3,0,,,,0.0
+2011,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,5,5,5,0,,,,0.0
+2011,510840,VARZEA GRANDE,CUIABA,Meningite fúngica,1,1,1,0,,,,0.0
+2011,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,3,3,3,0,,,,0.0
+2011,510840,VARZEA GRANDE,CUIABA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2011,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,4,4,4,0,,,,0.0
+2011,510840,VARZEA GRANDE,CUIABA,Outras etiologias,12,0,11,0,,,,
+2011,510850,VERA,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2011,510850,VERA,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2011,510850,VERA,SINOP,Meningite por Hib/Hemófilo,1,1,1,0,,,,0.0
+2011,510860,VILA RICA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,,,,
+2012,510010,ACORIZAL,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2012,510020,AGUA BOA,AGUA BOA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2012,510025,ALTA FLORESTA,ALTA FLORESTA,Doença meningocócica,1,1,1,0,,,,0.0
+2012,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite não especificada,2,2,2,0,,,,0.0
+2012,510025,ALTA FLORESTA,ALTA FLORESTA,Outras etiologias,2,0,2,0,,,,
+2012,510030,ALTO ARAGUAIA,RONDONOPOLIS,Meningite fúngica,1,1,1,1,,,,100.0
+2012,510030,ALTO ARAGUAIA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2012,510080,APIACAS,ALTA FLORESTA,Meningite não especificada,1,1,1,0,,,,0.0
+2012,510100,ARAGUAIANA,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,,,,0.0
+2012,510100,ARAGUAIANA,BARRA DO GARCAS,Outras etiologias,2,0,1,0,,,,
+2012,510125,ARAPUTANGA,CACERES,Outras etiologias,1,0,0,0,,,,
+2012,510140,ARIPUANA,JUINA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2012,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite pneumocócica,1,1,1,1,,,,100.0
+2012,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2012,510170,BARRA DO BUGRES,TANGARA DA SERRA,Outras etiologias,2,0,2,0,,,,
+2012,510180,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,2,2,2,1,,,,50.0
+2012,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,,,,0.0
+2012,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,14,0,9,0,,,,
+2012,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,4,4,3,0,,,,0.0
+2012,510250,CACERES,CACERES,Meningite não especificada,3,3,3,0,,,,0.0
+2012,510250,CACERES,CACERES,Meningite tuberculosa,1,1,1,0,,,,0.0
+2012,510250,CACERES,CACERES,Meningite viral/asséptica,4,4,4,0,,,,0.0
+2012,510250,CACERES,CACERES,Outras etiologias,1,1,1,0,,,,0.0
+2012,510260,CAMPINAPOLIS,BARRA DO GARCAS,Meningite viral/asséptica,1,1,1,1,,,,100.0
+2012,510260,CAMPINAPOLIS,BARRA DO GARCAS,Outras etiologias,1,0,0,0,,,,
+2012,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2012,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,2,0,1,0,,,,
+2012,510270,CANARANA,AGUA BOA,Doença meningocócica,1,1,1,0,,,,0.0
+2012,510270,CANARANA,AGUA BOA,Meningite não especificada,1,1,1,0,,,,0.0
+2012,510279,CARLINDA,ALTA FLORESTA,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2012,510279,CARLINDA,ALTA FLORESTA,Outras etiologias,1,0,0,0,,,,
+2012,510305,CLAUDIA,SINOP,Outras etiologias,1,0,1,0,,,,
+2012,510320,COLIDER,COLIDER,Meningite não especificada,1,1,1,0,,,,0.0
+2012,510335,CONFRESA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,,,,
+2012,510337,COTRIGUACU,JUINA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2012,510340,CUIABA,CUIABA,Doença meningocócica,14,14,13,3,,,,21.428571428571427
+2012,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,17,17,16,4,,,,23.52941176470588
+2012,510340,CUIABA,CUIABA,Meningite fúngica,1,1,1,0,,,,0.0
+2012,510340,CUIABA,CUIABA,Meningite não especificada,12,12,12,0,,,,0.0
+2012,510340,CUIABA,CUIABA,Meningite pneumocócica,5,5,5,2,,,,40.0
+2012,510340,CUIABA,CUIABA,Meningite viral/asséptica,19,19,18,1,,,,5.263157894736842
+2012,510340,CUIABA,CUIABA,Outras etiologias,30,2,27,1,,,,50.0
+2012,510350,DIAMANTINO,DIAMANTINO,Outras etiologias,1,0,0,0,,,,
+2012,510370,FELIZ NATAL,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2012,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,4,0,3,0,,,,
+2012,510480,JACIARA,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2012,510480,JACIARA,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2012,510480,JACIARA,RONDONOPOLIS,Outras etiologias,1,1,0,0,,,,0.0
+2012,510515,JUINA,JUINA,Outras etiologias,1,0,1,0,,,,
+2012,510517,JURUENA,JUINA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2012,510520,JUSCIMEIRA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2012,510520,JUSCIMEIRA,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2012,510525,LUCAS DO RIO VERDE,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2012,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,2,0,2,0,,,,
+2012,510550,VILA BELA DA S TRINDADE,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2012,510562,MIRASSOL D OESTE,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2012,510562,MIRASSOL D OESTE,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2012,510562,MIRASSOL D OESTE,CACERES,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2012,510590,NOBRES,DIAMANTINO,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2012,510615,NOVA BANDEIRANTES,ALTA FLORESTA,Meningite não especificada,1,1,1,1,,,,100.0
+2012,510623,NOVA OLIMPIA,TANGARA DA SERRA,Outras etiologias,2,0,2,0,,,,
+2012,510626,NOVO MUNDO,PEIXOTO DE AZEVEDO,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2012,510629,PARANAITA,ALTA FLORESTA,Meningite não especificada,1,1,1,0,,,,0.0
+2012,510630,PARANATINGA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2012,510631,NOVO SANTO ANTONIO,SAO FELIX DO ARAGUAIA,Outras etiologias,1,0,0,0,,,,
+2012,510637,PEDRA PRETA,RONDONOPOLIS,Meningite não especificada,1,1,1,1,,,,100.0
+2012,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,,,,
+2012,510650,POCONE,CUIABA,Outras etiologias,1,1,0,0,,,,0.0
+2012,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2012,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,1,1,0,0,,,,0.0
+2012,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2012,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,2,0,2,0,,,,
+2012,510682,PORTO ESPERIDIAO,CACERES,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2012,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2012,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2012,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite fúngica,3,3,3,0,,,,0.0
+2012,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2012,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2012,510706,QUERENCIA,AGUA BOA,Outras etiologias,1,0,1,0,,,,
+2012,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2012,510724,SANTA CARMEM,SINOP,Doença meningocócica,1,1,1,1,,,,100.0
+2012,510729,SAO JOSE DO POVO,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2012,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2012,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Meningite fúngica,1,1,1,0,,,,0.0
+2012,510760,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2,2,2,0,,,,0.0
+2012,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2012,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite fúngica,2,2,2,0,,,,0.0
+2012,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,2,2,2,0,,,,0.0
+2012,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2012,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,14,14,14,0,,,,0.0
+2012,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,2,1,1,0,,,,0.0
+2012,510790,SINOP,SINOP,Doença meningocócica,4,4,4,2,,,,50.0
+2012,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2012,510790,SINOP,SINOP,Meningite não especificada,6,6,6,0,,,,0.0
+2012,510790,SINOP,SINOP,Meningite pneumocócica,1,1,1,1,,,,100.0
+2012,510790,SINOP,SINOP,Meningite viral/asséptica,17,17,17,0,,,,0.0
+2012,510790,SINOP,SINOP,Outras etiologias,4,0,4,0,,,,
+2012,510792,SORRISO,SINOP,Doença meningocócica,2,2,2,1,,,,50.0
+2012,510792,SORRISO,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2012,510792,SORRISO,SINOP,Meningite não especificada,2,2,2,0,,,,0.0
+2012,510792,SORRISO,SINOP,Meningite tuberculosa,1,1,1,1,,,,100.0
+2012,510792,SORRISO,SINOP,Meningite viral/asséptica,5,5,5,0,,,,0.0
+2012,510792,SORRISO,SINOP,Outras etiologias,5,1,2,0,,,,0.0
+2012,510794,TABAPORA,JUARA,Outras etiologias,1,0,1,0,,,,
+2012,510795,TANGARA DA SERRA,TANGARA DA SERRA,Doença meningocócica,1,1,1,0,,,,0.0
+2012,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,2,0,2,0,,,,
+2012,510800,TAPURAH,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2012,510800,TAPURAH,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2012,510810,TESOURO,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2012,510820,TORIXOREU,BARRA DO GARCAS,Meningite não especificada,1,1,1,1,,,,100.0
+2012,510840,VARZEA GRANDE,CUIABA,Doença meningocócica,5,5,5,2,,,,40.0
+2012,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,4,4,4,0,,,,0.0
+2012,510840,VARZEA GRANDE,CUIABA,Meningite fúngica,1,1,1,0,,,,0.0
+2012,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,5,5,5,1,,,,20.0
+2012,510840,VARZEA GRANDE,CUIABA,Meningite pneumocócica,2,2,2,0,,,,0.0
+2012,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,8,8,8,0,,,,0.0
+2012,510840,VARZEA GRANDE,CUIABA,Outras etiologias,10,2,4,0,,,,0.0
+2012,510850,VERA,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2012,510850,VERA,SINOP,Outras etiologias,1,0,1,0,,,,
+2013,510020,AGUA BOA,AGUA BOA,Outras etiologias,1,0,1,0,,,,
+2013,510030,ALTO ARAGUAIA,RONDONOPOLIS,Doença meningocócica,1,1,0,1,,,,100.0
+2013,510040,ALTO GARCAS,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,1,,,,100.0
+2013,510050,ALTO PARAGUAI,DIAMANTINO,Outras etiologias,1,0,1,0,,,,
+2013,510080,APIACAS,ALTA FLORESTA,Doença meningocócica,1,1,1,0,,,,0.0
+2013,510100,ARAGUAIANA,BARRA DO GARCAS,Meningite bacteriana/outras bactérias,1,1,0,0,,,,0.0
+2013,510100,ARAGUAIANA,BARRA DO GARCAS,Outras etiologias,2,0,2,0,,,,
+2013,510125,ARAPUTANGA,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2013,510130,ARENAPOLIS,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2013,510140,ARIPUANA,JUINA,Outras etiologias,1,0,1,0,,,,
+2013,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2013,510170,BARRA DO BUGRES,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2013,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite fúngica,1,1,1,0,,,,0.0
+2013,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,7,7,7,1,,,,14.285714285714285
+2013,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,6,1,6,0,,,,0.0
+2013,510190,BRASNORTE,JUINA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2013,510250,CACERES,CACERES,Doença meningocócica,2,2,2,0,,,,0.0
+2013,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,5,5,5,0,,,,0.0
+2013,510250,CACERES,CACERES,Meningite não especificada,10,10,10,0,,,,0.0
+2013,510250,CACERES,CACERES,Meningite viral/asséptica,20,20,19,0,,,,0.0
+2013,510250,CACERES,CACERES,Outras etiologias,1,0,1,0,,,,
+2013,510260,CAMPINAPOLIS,BARRA DO GARCAS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2013,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2013,510267,CAMPO VERDE,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2013,510267,CAMPO VERDE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2013,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2013,510270,CANARANA,AGUA BOA,Meningite não especificada,1,1,1,1,,,,100.0
+2013,510270,CANARANA,AGUA BOA,Outras etiologias,5,0,4,0,,,,
+2013,510300,CHAPADA DOS GUIMARAES,CUIABA,Doença meningocócica,2,2,2,1,,,,50.0
+2013,510300,CHAPADA DOS GUIMARAES,CUIABA,Meningite não especificada,1,1,1,0,,,,0.0
+2013,510300,CHAPADA DOS GUIMARAES,CUIABA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2013,510300,CHAPADA DOS GUIMARAES,CUIABA,Outras etiologias,2,0,1,0,,,,
+2013,510305,CLAUDIA,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2013,510305,CLAUDIA,SINOP,Outras etiologias,1,1,1,0,,,,0.0
+2013,510320,COLIDER,COLIDER,Outras etiologias,1,0,1,0,,,,
+2013,510340,CUIABA,CUIABA,Doença meningocócica,8,8,8,5,,,,62.5
+2013,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,6,6,6,2,,,,33.33333333333333
+2013,510340,CUIABA,CUIABA,Meningite não especificada,25,25,25,0,,,,0.0
+2013,510340,CUIABA,CUIABA,Meningite pneumocócica,3,3,3,0,,,,0.0
+2013,510340,CUIABA,CUIABA,Meningite viral/asséptica,16,16,16,0,,,,0.0
+2013,510340,CUIABA,CUIABA,Outras etiologias,33,1,29,0,,,,0.0
+2013,510350,DIAMANTINO,DIAMANTINO,Meningite não especificada,1,1,1,0,,,,0.0
+2013,510360,DOM AQUINO,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2013,510360,DOM AQUINO,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2013,510370,FELIZ NATAL,SINOP,Meningite não especificada,1,1,1,1,,,,100.0
+2013,510390,GENERAL CARNEIRO,BARRA DO GARCAS,Outras etiologias,1,0,1,0,,,,
+2013,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2013,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite não especificada,1,1,1,0,,,,0.0
+2013,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2013,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,2,0,2,0,,,,
+2013,510420,GUIRATINGA,RONDONOPOLIS,Outras etiologias,2,1,2,0,,,,0.0
+2013,510454,ITANHANGA,SINOP,Doença meningocócica,2,2,2,0,,,,0.0
+2013,510455,ITAUBA,COLIDER,Doença meningocócica,1,1,1,0,,,,0.0
+2013,510455,ITAUBA,COLIDER,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2013,510460,ITIQUIRA,RONDONOPOLIS,Doença meningocócica,2,2,2,0,,,,0.0
+2013,510460,ITIQUIRA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2013,510460,ITIQUIRA,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2013,510480,JACIARA,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2013,510480,JACIARA,RONDONOPOLIS,Meningite não especificada,2,2,2,0,,,,0.0
+2013,510480,JACIARA,RONDONOPOLIS,Meningite pneumocócica,1,1,1,1,,,,100.0
+2013,510480,JACIARA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2013,510480,JACIARA,RONDONOPOLIS,Outras etiologias,4,0,2,0,,,,
+2013,510500,JAURU,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2013,510515,JUINA,JUINA,Outras etiologias,1,0,1,0,,,,
+2013,510525,LUCAS DO RIO VERDE,SINOP,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2013,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,1,0,1,0,,,,
+2013,510558,MARCELANDIA,COLIDER,Meningite não especificada,1,1,1,0,,,,0.0
+2013,510558,MARCELANDIA,COLIDER,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2013,510558,MARCELANDIA,COLIDER,Outras etiologias,2,0,2,0,,,,
+2013,510610,NOSSA SENHORA DO LIVRAMENTO,CUIABA,Outras etiologias,1,0,0,0,,,,
+2013,510615,NOVA BANDEIRANTES,ALTA FLORESTA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2013,510615,NOVA BANDEIRANTES,ALTA FLORESTA,Outras etiologias,1,0,1,0,,,,
+2013,510618,NOVA LACERDA,PONTES E LACERDA,Meningite bacteriana/outras bactérias,2,1,2,0,,,,0.0
+2013,510618,NOVA LACERDA,PONTES E LACERDA,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2013,510622,NOVA MUTUM,SINOP,Doença meningocócica,2,2,2,2,,,,100.0
+2013,510622,NOVA MUTUM,SINOP,Outras etiologias,1,0,1,0,,,,
+2013,510625,NOVA XAVANTINA,BARRA DO GARCAS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2013,510627,NOVO HORIZONTE DO NORTE,JUARA,Meningite fúngica,1,1,1,1,,,,100.0
+2013,510629,PARANAITA,ALTA FLORESTA,Meningite não especificada,1,1,1,0,,,,0.0
+2013,510630,PARANATINGA,RONDONOPOLIS,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2013,510630,PARANATINGA,RONDONOPOLIS,Outras etiologias,2,0,2,0,,,,
+2013,510637,PEDRA PRETA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,1,,,,100.0
+2013,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Meningite fúngica,1,1,1,0,,,,0.0
+2013,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,,,,
+2013,510650,POCONE,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2013,510650,POCONE,CUIABA,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2013,510650,POCONE,CUIABA,Outras etiologias,2,0,1,0,,,,
+2013,510665,PONTAL DO ARAGUAIA,BARRA DO GARCAS,Meningite não especificada,1,1,1,1,,,,100.0
+2013,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2013,510685,PORTO ESTRELA,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2013,510700,POXOREO,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2013,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2013,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite fúngica,1,1,1,0,,,,0.0
+2013,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite pneumocócica,2,2,2,1,,,,50.0
+2013,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2013,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,2,0,0,0,,,,
+2013,510706,QUERENCIA,AGUA BOA,Outras etiologias,1,0,1,0,,,,
+2013,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2013,510724,SANTA CARMEM,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2013,510724,SANTA CARMEM,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2013,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,4,4,4,1,,,,25.0
+2013,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite fúngica,4,4,4,3,,,,75.0
+2013,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2013,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,7,7,7,0,,,,0.0
+2013,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,5,5,5,1,,,,20.0
+2013,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2013,510779,SANTO ANTONIO DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2013,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,3,0,1,0,,,,
+2013,510785,SAO FELIX DO ARAGUAIA,SAO FELIX DO ARAGUAIA,Outras etiologias,1,0,0,0,,,,
+2013,510787,SAPEZAL,TANGARA DA SERRA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2013,510787,SAPEZAL,TANGARA DA SERRA,Outras etiologias,1,0,0,0,,,,
+2013,510790,SINOP,SINOP,Doença meningocócica,3,3,3,1,,,,33.33333333333333
+2013,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,2,2,2,1,,,,50.0
+2013,510790,SINOP,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2013,510790,SINOP,SINOP,Meningite viral/asséptica,8,8,8,0,,,,0.0
+2013,510790,SINOP,SINOP,Outras etiologias,5,0,5,0,,,,
+2013,510792,SORRISO,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2013,510792,SORRISO,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2013,510792,SORRISO,SINOP,Meningite não especificada,3,3,3,0,,,,0.0
+2013,510792,SORRISO,SINOP,Meningite pneumocócica,2,2,2,0,,,,0.0
+2013,510792,SORRISO,SINOP,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2013,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,2,0,2,0,,,,
+2013,510805,TERRA NOVA DO NORTE,PEIXOTO DE AZEVEDO,Meningite não especificada,1,1,1,0,,,,0.0
+2013,510830,UNIAO DO SUL,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2013,510840,VARZEA GRANDE,CUIABA,Doença meningocócica,5,5,4,3,,,,60.0
+2013,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,3,3,3,0,,,,0.0
+2013,510840,VARZEA GRANDE,CUIABA,Meningite fúngica,1,1,1,0,,,,0.0
+2013,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,4,4,4,0,,,,0.0
+2013,510840,VARZEA GRANDE,CUIABA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2013,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2013,510840,VARZEA GRANDE,CUIABA,Outras etiologias,19,2,15,0,,,,0.0
+2013,510850,VERA,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2013,510850,VERA,SINOP,Meningite não especificada,2,2,2,1,,,,50.0
+2013,510850,VERA,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2013,510895,NOVA MONTE VERDE,ALTA FLORESTA,Meningite não especificada,1,1,1,0,,,,0.0
+2014,510020,AGUA BOA,AGUA BOA,Outras etiologias,1,0,1,0,,,,
+2014,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite não especificada,2,2,2,0,,,,0.0
+2014,510025,ALTA FLORESTA,ALTA FLORESTA,Outras etiologias,1,0,1,0,,,,
+2014,510030,ALTO ARAGUAIA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510060,ALTO TAQUARI,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510120,ARAGUAINHA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510125,ARAPUTANGA,CACERES,Outras etiologias,1,0,1,0,,,,
+2014,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,7,6,7,2,,,,33.33333333333333
+2014,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,2,0,2,0,,,,
+2014,510250,CACERES,CACERES,Doença meningocócica,1,1,1,1,,,,100.0
+2014,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,2,2,2,1,,,,50.0
+2014,510250,CACERES,CACERES,Meningite não especificada,1,1,1,1,,,,100.0
+2014,510250,CACERES,CACERES,Meningite viral/asséptica,10,10,9,0,,,,0.0
+2014,510250,CACERES,CACERES,Outras etiologias,1,0,1,0,,,,
+2014,510260,CAMPINAPOLIS,BARRA DO GARCAS,Doença meningocócica,3,3,3,0,,,,0.0
+2014,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2014,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,2,0,2,0,,,,
+2014,510267,CAMPO VERDE,RONDONOPOLIS,Doença meningocócica,1,1,1,1,,,,100.0
+2014,510267,CAMPO VERDE,RONDONOPOLIS,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2014,510267,CAMPO VERDE,RONDONOPOLIS,Meningite não especificada,3,3,3,0,,,,0.0
+2014,510267,CAMPO VERDE,RONDONOPOLIS,Meningite pneumocócica,3,3,3,0,,,,0.0
+2014,510267,CAMPO VERDE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2014,510269,CANABRAVA DO NORTE,PORTO ALEGRE DO NORTE,Meningite não especificada,1,1,1,0,,,,0.0
+2014,510300,CHAPADA DOS GUIMARAES,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510300,CHAPADA DOS GUIMARAES,CUIABA,Outras etiologias,4,0,4,0,,,,
+2014,510305,CLAUDIA,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2014,510320,COLIDER,COLIDER,Meningite pneumocócica,1,1,1,0,,,,0.0
+2014,510320,COLIDER,COLIDER,Meningite tuberculosa,1,1,1,0,,,,0.0
+2014,510325,COLNIZA,JUINA,Meningite não especificada,1,1,1,0,,,,0.0
+2014,510330,COMODORO,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510335,CONFRESA,PORTO ALEGRE DO NORTE,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2014,510340,CUIABA,CUIABA,Doença meningocócica,7,7,7,1,,,,14.285714285714285
+2014,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,6,6,6,1,,,,16.666666666666664
+2014,510340,CUIABA,CUIABA,Meningite fúngica,3,3,3,0,,,,0.0
+2014,510340,CUIABA,CUIABA,Meningite não especificada,12,12,11,1,,,,8.333333333333332
+2014,510340,CUIABA,CUIABA,Meningite viral/asséptica,9,9,9,0,,,,0.0
+2014,510340,CUIABA,CUIABA,Outras etiologias,47,1,39,0,,,,0.0
+2014,510343,CURVELANDIA,CACERES,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2014,510360,DOM AQUINO,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2014,510370,FELIZ NATAL,SINOP,Meningite fúngica,1,1,1,1,,,,100.0
+2014,510370,FELIZ NATAL,SINOP,Outras etiologias,1,0,1,0,,,,
+2014,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite fúngica,1,1,1,0,,,,0.0
+2014,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite não especificada,2,2,2,0,,,,0.0
+2014,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,4,0,4,0,,,,
+2014,510450,INDIAVAI,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2014,510452,IPIRANGA DO NORTE,SINOP,Meningite pneumocócica,1,1,1,0,,,,0.0
+2014,510455,ITAUBA,COLIDER,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510480,JACIARA,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2014,510480,JACIARA,RONDONOPOLIS,Outras etiologias,1,1,0,0,,,,0.0
+2014,510515,JUINA,JUINA,Outras etiologias,1,0,1,0,,,,
+2014,510523,LAMBARI D OESTE,CACERES,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2014,510525,LUCAS DO RIO VERDE,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2014,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,3,0,3,0,,,,
+2014,510550,VILA BELA DA S TRINDADE,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510558,MARCELANDIA,COLIDER,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510560,MATUPA,PEIXOTO DE AZEVEDO,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510562,MIRASSOL D OESTE,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2014,510618,NOVA LACERDA,PONTES E LACERDA,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2014,510622,NOVA MUTUM,SINOP,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2014,510622,NOVA MUTUM,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2014,510622,NOVA MUTUM,SINOP,Outras etiologias,1,0,1,0,,,,
+2014,510623,NOVA OLIMPIA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2014,510624,NOVA UBIRATA,SINOP,Meningite não especificada,2,2,2,0,,,,0.0
+2014,510624,NOVA UBIRATA,SINOP,Meningite pneumocócica,1,1,1,0,,,,0.0
+2014,510625,NOVA XAVANTINA,BARRA DO GARCAS,Outras etiologias,1,0,1,0,,,,
+2014,510626,NOVO MUNDO,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,,,,
+2014,510627,NOVO HORIZONTE DO NORTE,JUARA,Outras etiologias,1,0,1,0,,,,
+2014,510629,PARANAITA,ALTA FLORESTA,Meningite não especificada,1,0,1,0,,,,
+2014,510630,PARANATINGA,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2014,510630,PARANATINGA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2014,510630,PARANATINGA,RONDONOPOLIS,Meningite pneumocócica,1,1,1,1,,,,100.0
+2014,510630,PARANATINGA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510637,PEDRA PRETA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,,,,
+2014,510650,POCONE,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510650,POCONE,CUIABA,Outras etiologias,4,0,3,0,,,,
+2014,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2014,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite viral/asséptica,4,4,3,0,,,,0.0
+2014,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,3,0,1,0,,,,
+2014,510677,PORTO ALEGRE DO NORTE,PORTO ALEGRE DO NORTE,Doença meningocócica,1,1,1,1,,,,100.0
+2014,510680,PORTO DOS GAUCHOS,JUARA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2014,510680,PORTO DOS GAUCHOS,JUARA,Outras etiologias,1,0,0,0,,,,
+2014,510682,PORTO ESPERIDIAO,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2014,510682,PORTO ESPERIDIAO,CACERES,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510700,POXOREO,RONDONOPOLIS,Meningite pneumocócica,1,1,1,1,,,,100.0
+2014,510700,POXOREO,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2014,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,2,1,2,0,,,,0.0
+2014,510715,RESERVA DO CABACAL,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2014,510720,RIO BRANCO,CACERES,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2014,510729,SAO JOSE DO POVO,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2014,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Outras etiologias,1,0,1,0,,,,
+2014,510760,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2,2,2,0,,,,0.0
+2014,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,3,3,3,0,,,,0.0
+2014,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite fúngica,1,1,1,0,,,,0.0
+2014,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,6,6,6,0,,,,0.0
+2014,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,10,10,10,0,,,,0.0
+2014,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,4,2,4,0,,,,0.0
+2014,510770,ROSARIO OESTE,DIAMANTINO,Outras etiologias,1,0,1,0,,,,
+2014,510779,SANTO ANTONIO DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,1,,,,100.0
+2014,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,1,0,1,0,,,,
+2014,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,5,5,5,0,,,,0.0
+2014,510790,SINOP,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2014,510790,SINOP,SINOP,Meningite não especificada,2,2,2,0,,,,0.0
+2014,510790,SINOP,SINOP,Meningite pneumocócica,1,1,1,0,,,,0.0
+2014,510790,SINOP,SINOP,Meningite viral/asséptica,25,25,25,0,,,,0.0
+2014,510790,SINOP,SINOP,Outras etiologias,1,1,0,0,,,,0.0
+2014,510792,SORRISO,SINOP,Doença meningocócica,2,2,2,0,,,,0.0
+2014,510792,SORRISO,SINOP,Meningite não especificada,7,7,7,0,,,,0.0
+2014,510792,SORRISO,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510800,TAPURAH,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510835,VALE DE SAO DOMINGOS,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2014,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,3,3,3,0,,,,0.0
+2014,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,2,2,2,0,,,,0.0
+2014,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,4,4,4,0,,,,0.0
+2014,510840,VARZEA GRANDE,CUIABA,Outras etiologias,35,2,26,0,,,,0.0
+2014,510880,NOVA GUARITA,COLIDER,Outras etiologias,1,0,1,0,,,,
+2015,510010,ACORIZAL,CUIABA,Outras etiologias,1,0,1,0,,,,
+2015,510020,AGUA BOA,AGUA BOA,Meningite viral/asséptica,1,1,1,1,,,,100.0
+2015,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite não especificada,5,5,5,0,,,,0.0
+2015,510030,ALTO ARAGUAIA,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2015,510140,ARIPUANA,JUINA,Outras etiologias,1,0,1,0,,,,
+2015,510160,BARAO DE MELGACO,CUIABA,Meningite não especificada,1,1,1,0,,,,0.0
+2015,510170,BARRA DO BUGRES,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2015,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,5,5,5,1,,,,20.0
+2015,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,2,0,2,0,,,,
+2015,510250,CACERES,CACERES,Doença meningocócica,2,2,2,0,,,,0.0
+2015,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,4,4,3,0,,,,0.0
+2015,510250,CACERES,CACERES,Meningite não especificada,7,7,7,1,,,,14.285714285714285
+2015,510250,CACERES,CACERES,Meningite tuberculosa,1,1,1,0,,,,0.0
+2015,510250,CACERES,CACERES,Meningite viral/asséptica,5,5,5,1,,,,20.0
+2015,510250,CACERES,CACERES,Outras etiologias,1,0,0,0,,,,
+2015,510260,CAMPINAPOLIS,BARRA DO GARCAS,Outras etiologias,1,0,1,0,,,,
+2015,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,2,0,2,0,,,,
+2015,510267,CAMPO VERDE,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2015,510267,CAMPO VERDE,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2015,510267,CAMPO VERDE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2015,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2015,510270,CANARANA,AGUA BOA,Doença meningocócica,1,1,1,0,,,,0.0
+2015,510270,CANARANA,AGUA BOA,Meningite tuberculosa,1,1,1,0,,,,0.0
+2015,510270,CANARANA,AGUA BOA,Outras etiologias,1,0,1,0,,,,
+2015,510300,CHAPADA DOS GUIMARAES,CUIABA,Doença meningocócica,1,1,1,1,,,,100.0
+2015,510300,CHAPADA DOS GUIMARAES,CUIABA,Outras etiologias,1,0,1,0,,,,
+2015,510310,COCALINHO,AGUA BOA,Outras etiologias,1,0,1,0,,,,
+2015,510320,COLIDER,COLIDER,Outras etiologias,1,0,1,0,,,,
+2015,510330,COMODORO,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2015,510330,COMODORO,PONTES E LACERDA,Outras etiologias,1,0,0,0,,,,
+2015,510335,CONFRESA,PORTO ALEGRE DO NORTE,Outras etiologias,3,0,2,0,,,,
+2015,510337,COTRIGUACU,JUINA,Meningite fúngica,1,1,1,0,,,,0.0
+2015,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,3,3,2,1,,,,33.33333333333333
+2015,510340,CUIABA,CUIABA,Meningite fúngica,7,7,7,1,,,,14.285714285714285
+2015,510340,CUIABA,CUIABA,Meningite não especificada,19,19,19,2,,,,10.526315789473683
+2015,510340,CUIABA,CUIABA,Meningite pneumocócica,3,3,2,3,,,,100.0
+2015,510340,CUIABA,CUIABA,Meningite tuberculosa,1,1,1,0,,,,0.0
+2015,510340,CUIABA,CUIABA,Meningite viral/asséptica,6,6,6,0,,,,0.0
+2015,510340,CUIABA,CUIABA,Outras etiologias,35,1,31,0,,,,0.0
+2015,510343,CURVELANDIA,CACERES,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2015,510360,DOM AQUINO,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2015,510380,FIGUEIROPOLIS D OESTE,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2015,510390,GENERAL CARNEIRO,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,,,,0.0
+2015,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Doença meningocócica,1,1,1,1,,,,100.0
+2015,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,5,0,4,0,,,,
+2015,510420,GUIRATINGA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2015,510420,GUIRATINGA,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2015,510455,ITAUBA,COLIDER,Outras etiologias,1,0,1,0,,,,
+2015,510460,ITIQUIRA,RONDONOPOLIS,Meningite pneumocócica,2,2,2,0,,,,0.0
+2015,510480,JACIARA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2015,510480,JACIARA,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2015,510480,JACIARA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2015,510480,JACIARA,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2015,510490,JANGADA,CUIABA,Outras etiologias,1,0,1,0,,,,
+2015,510500,JAURU,PONTES E LACERDA,Meningite tuberculosa,1,1,1,0,,,,0.0
+2015,510500,JAURU,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2015,510500,JAURU,PONTES E LACERDA,Outras etiologias,1,0,1,0,,,,
+2015,510510,JUARA,JUARA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2015,510515,JUINA,JUINA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2015,510515,JUINA,JUINA,Meningite não especificada,1,1,1,0,,,,0.0
+2015,510520,JUSCIMEIRA,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2015,510523,LAMBARI D OESTE,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2015,510525,LUCAS DO RIO VERDE,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2015,510550,VILA BELA DA S TRINDADE,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2015,510562,MIRASSOL D OESTE,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2015,510562,MIRASSOL D OESTE,CACERES,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2015,510590,NOBRES,DIAMANTINO,Meningite não especificada,1,1,1,0,,,,0.0
+2015,510618,NOVA LACERDA,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2015,510621,NOVA CANAA DO NORTE,COLIDER,Outras etiologias,1,0,1,0,,,,
+2015,510624,NOVA UBIRATA,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2015,510624,NOVA UBIRATA,SINOP,Outras etiologias,1,0,1,0,,,,
+2015,510625,NOVA XAVANTINA,BARRA DO GARCAS,Doença meningocócica,1,1,1,0,,,,0.0
+2015,510629,PARANAITA,ALTA FLORESTA,Outras etiologias,1,0,0,0,,,,
+2015,510630,PARANATINGA,RONDONOPOLIS,Meningite não especificada,1,1,1,1,,,,100.0
+2015,510630,PARANATINGA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2015,510637,PEDRA PRETA,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2015,510637,PEDRA PRETA,RONDONOPOLIS,Outras etiologias,2,0,0,0,,,,
+2015,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2015,510650,POCONE,CUIABA,Outras etiologias,1,0,1,0,,,,
+2015,510665,PONTAL DO ARAGUAIA,BARRA DO GARCAS,Outras etiologias,1,0,1,0,,,,
+2015,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite bacteriana/outras bactérias,3,3,3,0,,,,0.0
+2015,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,2,2,2,0,,,,0.0
+2015,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2015,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,3,0,3,0,,,,
+2015,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite não especificada,1,0,1,0,,,,
+2015,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2015,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2015,510718,RIBEIRAO CASCALHEIRA,AGUA BOA,Meningite não especificada,1,1,1,0,,,,0.0
+2015,510724,SANTA CARMEM,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2015,510724,SANTA CARMEM,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2015,510726,SANTO AFONSO,TANGARA DA SERRA,Doença meningocócica,1,1,1,0,,,,0.0
+2015,510760,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2015,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,4,4,4,0,,,,0.0
+2015,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,2,2,2,0,,,,0.0
+2015,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite tuberculosa,1,1,1,0,,,,0.0
+2015,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,6,6,6,0,,,,0.0
+2015,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,3,1,2,0,,,,0.0
+2015,510770,ROSARIO OESTE,DIAMANTINO,Outras etiologias,2,0,2,0,,,,
+2015,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2015,510790,SINOP,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2015,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2015,510790,SINOP,SINOP,Meningite não especificada,4,4,4,0,,,,0.0
+2015,510790,SINOP,SINOP,Meningite pneumocócica,1,1,1,1,,,,100.0
+2015,510790,SINOP,SINOP,Meningite viral/asséptica,4,4,4,0,,,,0.0
+2015,510790,SINOP,SINOP,Outras etiologias,2,1,2,0,,,,0.0
+2015,510792,SORRISO,SINOP,Doença meningocócica,3,3,3,1,,,,33.33333333333333
+2015,510792,SORRISO,SINOP,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2015,510792,SORRISO,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2015,510792,SORRISO,SINOP,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2015,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,2,0,2,0,,,,
+2015,510800,TAPURAH,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2015,510800,TAPURAH,SINOP,Outras etiologias,1,0,1,0,,,,
+2015,510840,VARZEA GRANDE,CUIABA,Doença meningocócica,1,1,1,0,,,,0.0
+2015,510840,VARZEA GRANDE,CUIABA,Meningite fúngica,1,1,1,0,,,,0.0
+2015,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,4,4,4,1,,,,25.0
+2015,510840,VARZEA GRANDE,CUIABA,Meningite por Hib/Hemófilo,1,1,1,1,,,,100.0
+2015,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2015,510840,VARZEA GRANDE,CUIABA,Outras etiologias,18,0,14,0,,,,
+2015,510860,VILA RICA,PORTO ALEGRE DO NORTE,Meningite não especificada,1,1,1,0,,,,0.0
+2015,510885,NOVA MARILANDIA,TANGARA DA SERRA,Outras etiologias,2,0,1,0,,,,
+2015,510890,NOVA MARINGA,DIAMANTINO,Doença meningocócica,1,1,1,0,,,,0.0
+2016,510020,AGUA BOA,AGUA BOA,Meningite não especificada,1,1,1,1,,,,100.0
+2016,510020,AGUA BOA,AGUA BOA,Outras etiologias,1,1,0,0,,,,0.0
+2016,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite não especificada,1,1,1,0,,,,0.0
+2016,510040,ALTO GARCAS,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2016,510060,ALTO TAQUARI,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2016,510100,ARAGUAIANA,BARRA DO GARCAS,Outras etiologias,1,0,1,0,,,,
+2016,510125,ARAPUTANGA,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2016,510180,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,3,3,3,2,,,,66.66666666666666
+2016,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,4,4,4,1,,,,25.0
+2016,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,5,1,4,0,,,,0.0
+2016,510185,BOM JESUS DO ARAGUAIA,AGUA BOA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2016,510250,CACERES,CACERES,Doença meningocócica,3,3,3,3,,,,100.0
+2016,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,7,7,7,1,,,,14.285714285714285
+2016,510250,CACERES,CACERES,Meningite não especificada,6,6,6,0,,,,0.0
+2016,510250,CACERES,CACERES,Meningite pneumocócica,1,1,1,1,,,,100.0
+2016,510250,CACERES,CACERES,Meningite viral/asséptica,8,8,8,0,,,,0.0
+2016,510250,CACERES,CACERES,Outras etiologias,1,0,1,0,,,,
+2016,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2016,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2016,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2016,510267,CAMPO VERDE,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2016,510267,CAMPO VERDE,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2016,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2016,510268,CAMPOS DE JULIO,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2016,510268,CAMPOS DE JULIO,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2016,510269,CANABRAVA DO NORTE,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,0,0,,,,
+2016,510300,CHAPADA DOS GUIMARAES,CUIABA,Outras etiologias,1,0,0,0,,,,
+2016,510305,CLAUDIA,SINOP,Outras etiologias,2,1,2,0,,,,0.0
+2016,510320,COLIDER,COLIDER,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2016,510325,COLNIZA,JUINA,Outras etiologias,1,0,1,0,,,,
+2016,510335,CONFRESA,PORTO ALEGRE DO NORTE,Meningite não especificada,1,1,1,0,,,,0.0
+2016,510335,CONFRESA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,,,,
+2016,510337,COTRIGUACU,JUINA,Meningite não especificada,1,1,1,0,,,,0.0
+2016,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,4,4,4,0,,,,0.0
+2016,510340,CUIABA,CUIABA,Meningite fúngica,4,4,4,0,,,,0.0
+2016,510340,CUIABA,CUIABA,Meningite não especificada,11,11,10,0,,,,0.0
+2016,510340,CUIABA,CUIABA,Meningite por Hib/Hemófilo,1,1,1,0,,,,0.0
+2016,510340,CUIABA,CUIABA,Meningite tuberculosa,1,1,1,1,,,,100.0
+2016,510340,CUIABA,CUIABA,Meningite viral/asséptica,3,3,3,1,,,,33.33333333333333
+2016,510340,CUIABA,CUIABA,Outras etiologias,65,20,27,0,,,,0.0
+2016,510370,FELIZ NATAL,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2016,510452,IPIRANGA DO NORTE,SINOP,Meningite pneumocócica,1,1,1,0,,,,0.0
+2016,510452,IPIRANGA DO NORTE,SINOP,Outras etiologias,2,0,1,0,,,,
+2016,510480,JACIARA,RONDONOPOLIS,Meningite não especificada,2,2,2,0,,,,0.0
+2016,510480,JACIARA,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2016,510500,JAURU,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2016,510500,JAURU,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2016,510510,JUARA,JUARA,Doença meningocócica,1,1,1,0,,,,0.0
+2016,510510,JUARA,JUARA,Meningite não especificada,1,1,1,0,,,,0.0
+2016,510510,JUARA,JUARA,Outras etiologias,1,0,1,0,,,,
+2016,510515,JUINA,JUINA,Meningite não especificada,1,1,1,0,,,,0.0
+2016,510515,JUINA,JUINA,Outras etiologias,1,0,1,0,,,,
+2016,510523,LAMBARI D OESTE,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2016,510525,LUCAS DO RIO VERDE,SINOP,Meningite pneumocócica,1,1,1,0,,,,0.0
+2016,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,1,0,1,0,,,,
+2016,510550,VILA BELA DA S TRINDADE,PONTES E LACERDA,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2016,510558,MARCELANDIA,COLIDER,Meningite não especificada,1,1,1,0,,,,0.0
+2016,510562,MIRASSOL D OESTE,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2016,510562,MIRASSOL D OESTE,CACERES,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2016,510622,NOVA MUTUM,SINOP,Outras etiologias,1,0,1,0,,,,
+2016,510624,NOVA UBIRATA,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2016,510625,NOVA XAVANTINA,BARRA DO GARCAS,Outras etiologias,1,1,0,0,,,,0.0
+2016,510629,PARANAITA,ALTA FLORESTA,Meningite não especificada,1,1,1,0,,,,0.0
+2016,510629,PARANAITA,ALTA FLORESTA,Outras etiologias,2,0,2,0,,,,
+2016,510637,PEDRA PRETA,RONDONOPOLIS,Outras etiologias,2,0,1,0,,,,
+2016,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,,,,
+2016,510650,POCONE,CUIABA,Outras etiologias,2,0,1,0,,,,
+2016,510675,PONTES E LACERDA,PONTES E LACERDA,Doença meningocócica,1,1,1,0,,,,0.0
+2016,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2016,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,3,3,3,0,,,,0.0
+2016,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2016,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,4,0,2,0,,,,
+2016,510680,PORTO DOS GAUCHOS,JUARA,Outras etiologias,1,0,0,0,,,,
+2016,510682,PORTO ESPERIDIAO,CACERES,Outras etiologias,1,0,1,0,,,,
+2016,510700,POXOREO,RONDONOPOLIS,Meningite fúngica,1,1,1,0,,,,0.0
+2016,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2016,510706,QUERENCIA,AGUA BOA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2016,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2016,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2016,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Outras etiologias,2,0,2,0,,,,
+2016,510719,RIBEIRAOZINHO,BARRA DO GARCAS,Outras etiologias,1,0,1,0,,,,
+2016,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Outras etiologias,1,0,1,0,,,,
+2016,510760,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2016,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,3,3,3,0,,,,0.0
+2016,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite fúngica,2,2,1,0,,,,0.0
+2016,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,6,6,6,0,,,,0.0
+2016,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2016,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,8,8,8,0,,,,0.0
+2016,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,5,2,5,0,,,,0.0
+2016,510776,SANTA RITA DO TRIVELATO,SINOP,Outras etiologias,1,0,1,0,,,,
+2016,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Meningite não especificada,2,2,2,0,,,,0.0
+2016,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,1,0,1,0,,,,
+2016,510787,SAPEZAL,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2016,510787,SAPEZAL,TANGARA DA SERRA,Outras etiologias,1,0,0,0,,,,
+2016,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,3,3,3,0,,,,0.0
+2016,510790,SINOP,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2016,510790,SINOP,SINOP,Meningite não especificada,2,2,2,0,,,,0.0
+2016,510790,SINOP,SINOP,Meningite viral/asséptica,3,3,3,1,,,,33.33333333333333
+2016,510790,SINOP,SINOP,Outras etiologias,2,0,2,0,,,,
+2016,510792,SORRISO,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2016,510792,SORRISO,SINOP,Meningite não especificada,4,4,4,1,,,,25.0
+2016,510792,SORRISO,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2016,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite não especificada,2,2,2,0,,,,0.0
+2016,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,2,0,1,0,,,,
+2016,510800,TAPURAH,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2016,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,9,9,9,2,,,,22.22222222222222
+2016,510840,VARZEA GRANDE,CUIABA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2016,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2016,510840,VARZEA GRANDE,CUIABA,Outras etiologias,15,2,9,1,,,,50.0
+2016,510860,VILA RICA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,0,0,,,,
+2016,510895,NOVA MONTE VERDE,ALTA FLORESTA,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510020,AGUA BOA,AGUA BOA,Outras etiologias,1,0,1,0,,,,
+2017,510025,ALTA FLORESTA,ALTA FLORESTA,Doença meningocócica,1,1,1,0,,,,0.0
+2017,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite pneumocócica,1,1,1,1,,,,100.0
+2017,510040,ALTO GARCAS,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2017,510050,ALTO PARAGUAI,DIAMANTINO,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510050,ALTO PARAGUAI,DIAMANTINO,Outras etiologias,1,1,0,0,,,,0.0
+2017,510125,ARAPUTANGA,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510170,BARRA DO BUGRES,TANGARA DA SERRA,Outras etiologias,2,0,2,0,,,,
+2017,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,6,6,6,2,,,,33.33333333333333
+2017,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,11,0,9,0,,,,
+2017,510250,CACERES,CACERES,Doença meningocócica,1,1,1,1,,,,100.0
+2017,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,3,3,3,0,,,,0.0
+2017,510250,CACERES,CACERES,Meningite fúngica,1,1,1,1,,,,100.0
+2017,510250,CACERES,CACERES,Meningite não especificada,3,3,3,0,,,,0.0
+2017,510250,CACERES,CACERES,Meningite tuberculosa,1,1,1,0,,,,0.0
+2017,510250,CACERES,CACERES,Meningite viral/asséptica,8,8,8,0,,,,0.0
+2017,510250,CACERES,CACERES,Outras etiologias,3,2,2,0,,,,0.0
+2017,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Meningite fúngica,1,1,1,0,,,,0.0
+2017,510267,CAMPO VERDE,RONDONOPOLIS,Meningite não especificada,2,2,1,0,,,,0.0
+2017,510267,CAMPO VERDE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2017,510268,CAMPOS DE JULIO,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2017,510270,CANARANA,AGUA BOA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2017,510270,CANARANA,AGUA BOA,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510279,CARLINDA,ALTA FLORESTA,Outras etiologias,1,0,1,0,,,,
+2017,510305,CLAUDIA,SINOP,Meningite fúngica,1,1,1,1,,,,100.0
+2017,510305,CLAUDIA,SINOP,Meningite não especificada,1,1,1,1,,,,100.0
+2017,510305,CLAUDIA,SINOP,Meningite pneumocócica,1,1,1,0,,,,0.0
+2017,510305,CLAUDIA,SINOP,Outras etiologias,1,0,1,0,,,,
+2017,510320,COLIDER,COLIDER,Meningite fúngica,1,1,1,1,,,,100.0
+2017,510320,COLIDER,COLIDER,Outras etiologias,3,0,3,0,,,,
+2017,510335,CONFRESA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,,,,
+2017,510340,CUIABA,CUIABA,Doença meningocócica,5,5,5,1,,,,20.0
+2017,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,8,8,8,0,,,,0.0
+2017,510340,CUIABA,CUIABA,Meningite fúngica,6,6,6,1,,,,16.666666666666664
+2017,510340,CUIABA,CUIABA,Meningite não especificada,7,7,7,1,,,,14.285714285714285
+2017,510340,CUIABA,CUIABA,Meningite pneumocócica,2,2,2,2,,,,100.0
+2017,510340,CUIABA,CUIABA,Meningite viral/asséptica,17,17,17,1,,,,5.88235294117647
+2017,510340,CUIABA,CUIABA,Outras etiologias,39,11,17,0,,,,0.0
+2017,510350,DIAMANTINO,DIAMANTINO,Outras etiologias,3,0,3,0,,,,
+2017,510370,FELIZ NATAL,SINOP,Doença meningocócica,2,2,2,1,,,,50.0
+2017,510370,FELIZ NATAL,SINOP,Outras etiologias,1,0,1,0,,,,
+2017,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2017,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,3,0,3,0,,,,
+2017,510452,IPIRANGA DO NORTE,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510455,ITAUBA,COLIDER,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2017,510480,JACIARA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510480,JACIARA,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2017,510490,JANGADA,CUIABA,Outras etiologias,1,1,0,0,,,,0.0
+2017,510500,JAURU,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510500,JAURU,PONTES E LACERDA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2017,510510,JUARA,JUARA,Meningite tuberculosa,1,1,1,0,,,,0.0
+2017,510510,JUARA,JUARA,Outras etiologias,2,0,1,0,,,,
+2017,510517,JURUENA,JUINA,Outras etiologias,1,0,1,0,,,,
+2017,510520,JUSCIMEIRA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510520,JUSCIMEIRA,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2017,510525,LUCAS DO RIO VERDE,SINOP,Doença meningocócica,1,1,1,1,,,,100.0
+2017,510550,VILA BELA DA S TRINDADE,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2017,510550,VILA BELA DA S TRINDADE,PONTES E LACERDA,Outras etiologias,2,1,1,0,,,,0.0
+2017,510558,MARCELANDIA,COLIDER,Outras etiologias,3,0,2,0,,,,
+2017,510560,MATUPA,PEIXOTO DE AZEVEDO,Meningite fúngica,1,1,1,0,,,,0.0
+2017,510562,MIRASSOL D OESTE,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2017,510562,MIRASSOL D OESTE,CACERES,Meningite não especificada,2,2,2,0,,,,0.0
+2017,510562,MIRASSOL D OESTE,CACERES,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2017,510562,MIRASSOL D OESTE,CACERES,Outras etiologias,1,0,0,0,,,,
+2017,510590,NOBRES,DIAMANTINO,Meningite não especificada,1,1,1,1,,,,100.0
+2017,510590,NOBRES,DIAMANTINO,Meningite tuberculosa,1,1,1,0,,,,0.0
+2017,510610,NOSSA SENHORA DO LIVRAMENTO,CUIABA,Meningite não especificada,1,1,1,1,,,,100.0
+2017,510618,NOVA LACERDA,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2017,510621,NOVA CANAA DO NORTE,COLIDER,Outras etiologias,1,0,1,0,,,,
+2017,510622,NOVA MUTUM,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2017,510622,NOVA MUTUM,SINOP,Meningite fúngica,1,1,1,1,,,,100.0
+2017,510622,NOVA MUTUM,SINOP,Outras etiologias,3,0,3,0,,,,
+2017,510624,NOVA UBIRATA,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510625,NOVA XAVANTINA,BARRA DO GARCAS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2017,510625,NOVA XAVANTINA,BARRA DO GARCAS,Meningite não especificada,3,3,3,1,,,,33.33333333333333
+2017,510626,NOVO MUNDO,PEIXOTO DE AZEVEDO,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510626,NOVO MUNDO,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,0,0,,,,
+2017,510628,NOVO SAO JOAQUIM,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510629,PARANAITA,ALTA FLORESTA,Outras etiologias,1,0,1,0,,,,
+2017,510630,PARANATINGA,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2017,510637,PEDRA PRETA,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2017,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,,,,
+2017,510650,POCONE,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2017,510650,POCONE,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2017,510650,POCONE,CUIABA,Outras etiologias,1,0,1,0,,,,
+2017,510665,PONTAL DO ARAGUAIA,BARRA DO GARCAS,Meningite não especificada,1,1,0,0,,,,0.0
+2017,510675,PONTES E LACERDA,PONTES E LACERDA,Doença meningocócica,1,1,1,1,,,,100.0
+2017,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2017,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2017,510682,PORTO ESPERIDIAO,CACERES,Doença meningocócica,1,1,1,1,,,,100.0
+2017,510682,PORTO ESPERIDIAO,CACERES,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2017,510685,PORTO ESTRELA,TANGARA DA SERRA,Outras etiologias,1,0,0,0,,,,
+2017,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite não especificada,3,3,3,0,,,,0.0
+2017,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,2,2,2,0,,,,0.0
+2017,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2017,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2017,510724,SANTA CARMEM,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite fúngica,1,1,1,0,,,,0.0
+2017,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,6,6,5,0,,,,0.0
+2017,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,3,2,3,1,,,,50.0
+2017,510770,ROSARIO OESTE,DIAMANTINO,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2017,510770,ROSARIO OESTE,DIAMANTINO,Outras etiologias,1,0,1,0,,,,
+2017,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,2,1,1,0,,,,0.0
+2017,510787,SAPEZAL,TANGARA DA SERRA,Meningite fúngica,1,1,1,0,,,,0.0
+2017,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2017,510790,SINOP,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2017,510790,SINOP,SINOP,Meningite viral/asséptica,7,7,7,0,,,,0.0
+2017,510790,SINOP,SINOP,Outras etiologias,2,0,2,0,,,,
+2017,510792,SORRISO,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2017,510792,SORRISO,SINOP,Meningite não especificada,6,6,6,1,,,,16.666666666666664
+2017,510792,SORRISO,SINOP,Meningite pneumocócica,1,1,1,0,,,,0.0
+2017,510792,SORRISO,SINOP,Outras etiologias,1,0,1,0,,,,
+2017,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2017,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite não especificada,2,2,2,0,,,,0.0
+2017,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2017,510800,TAPURAH,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510805,TERRA NOVA DO NORTE,PEIXOTO DE AZEVEDO,Meningite não especificada,1,1,1,0,,,,0.0
+2017,510820,TORIXOREU,BARRA DO GARCAS,Outras etiologias,1,0,1,0,,,,
+2017,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2017,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,9,9,9,1,,,,11.11111111111111
+2017,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2017,510840,VARZEA GRANDE,CUIABA,Outras etiologias,25,4,21,0,,,,0.0
+2017,510885,NOVA MARILANDIA,TANGARA DA SERRA,Meningite não especificada,1,1,1,1,,,,100.0
+2018,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite fúngica,1,1,1,0,,,,0.0
+2018,510025,ALTA FLORESTA,ALTA FLORESTA,Outras etiologias,2,0,1,0,,,,
+2018,510080,APIACAS,ALTA FLORESTA,Doença meningocócica,1,1,1,0,,,,0.0
+2018,510140,ARIPUANA,JUINA,Outras etiologias,1,0,1,0,,,,
+2018,510160,BARAO DE MELGACO,CUIABA,Outras etiologias,1,0,1,0,,,,
+2018,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2018,510170,BARRA DO BUGRES,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2018,510180,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,1,1,1,0,,,,0.0
+2018,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,6,6,6,1,,,,16.666666666666664
+2018,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2018,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,13,0,13,0,,,,
+2018,510190,BRASNORTE,JUINA,Outras etiologias,1,0,1,0,,,,
+2018,510250,CACERES,CACERES,Doença meningocócica,1,1,1,0,,,,0.0
+2018,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2018,510250,CACERES,CACERES,Meningite fúngica,1,1,1,0,,,,0.0
+2018,510250,CACERES,CACERES,Meningite tuberculosa,1,1,1,0,,,,0.0
+2018,510250,CACERES,CACERES,Meningite viral/asséptica,4,4,4,1,,,,25.0
+2018,510250,CACERES,CACERES,Outras etiologias,2,1,2,0,,,,0.0
+2018,510260,CAMPINAPOLIS,BARRA DO GARCAS,Outras etiologias,2,0,1,0,,,,
+2018,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2018,510267,CAMPO VERDE,RONDONOPOLIS,Meningite não especificada,2,2,2,1,,,,50.0
+2018,510267,CAMPO VERDE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2018,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,1,1,1,0,,,,0.0
+2018,510268,CAMPOS DE JULIO,PONTES E LACERDA,Outras etiologias,2,0,2,0,,,,
+2018,510300,CHAPADA DOS GUIMARAES,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2018,510320,COLIDER,COLIDER,Outras etiologias,4,0,3,0,,,,
+2018,510325,COLNIZA,JUINA,Meningite não especificada,1,1,1,1,,,,100.0
+2018,510335,CONFRESA,PORTO ALEGRE DO NORTE,Outras etiologias,2,0,2,0,,,,
+2018,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,5,5,5,0,,,,0.0
+2018,510340,CUIABA,CUIABA,Meningite fúngica,1,1,1,1,,,,100.0
+2018,510340,CUIABA,CUIABA,Meningite não especificada,10,10,9,0,,,,0.0
+2018,510340,CUIABA,CUIABA,Meningite pneumocócica,3,3,3,1,,,,33.33333333333333
+2018,510340,CUIABA,CUIABA,Meningite tuberculosa,1,1,1,0,,,,0.0
+2018,510340,CUIABA,CUIABA,Meningite viral/asséptica,13,13,13,0,,,,0.0
+2018,510340,CUIABA,CUIABA,Outras etiologias,29,2,28,0,,,,0.0
+2018,510350,DIAMANTINO,DIAMANTINO,Meningite não especificada,1,1,1,0,,,,0.0
+2018,510350,DIAMANTINO,DIAMANTINO,Outras etiologias,2,1,1,0,,,,0.0
+2018,510380,FIGUEIROPOLIS D OESTE,PONTES E LACERDA,Outras etiologias,1,0,0,0,,,,
+2018,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,3,0,2,0,,,,
+2018,510480,JACIARA,RONDONOPOLIS,Meningite não especificada,5,5,5,0,,,,0.0
+2018,510480,JACIARA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2018,510480,JACIARA,RONDONOPOLIS,Outras etiologias,2,0,1,0,,,,
+2018,510510,JUARA,JUARA,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2018,510510,JUARA,JUARA,Meningite não especificada,1,1,1,0,,,,0.0
+2018,510510,JUARA,JUARA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2018,510510,JUARA,JUARA,Outras etiologias,1,0,0,0,,,,
+2018,510515,JUINA,JUINA,Meningite não especificada,1,1,0,1,,,,100.0
+2018,510515,JUINA,JUINA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2018,510517,JURUENA,JUINA,Doença meningocócica,1,1,1,0,,,,0.0
+2018,510520,JUSCIMEIRA,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2018,510525,LUCAS DO RIO VERDE,SINOP,Doença meningocócica,1,1,1,0,,,,0.0
+2018,510525,LUCAS DO RIO VERDE,SINOP,Meningite não especificada,2,2,2,0,,,,0.0
+2018,510550,VILA BELA DA S TRINDADE,PONTES E LACERDA,Outras etiologias,1,0,0,0,,,,
+2018,510590,NOBRES,DIAMANTINO,Meningite não especificada,1,1,1,0,,,,0.0
+2018,510590,NOBRES,DIAMANTINO,Outras etiologias,2,0,2,0,,,,
+2018,510600,NORTELANDIA,DIAMANTINO,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2018,510615,NOVA BANDEIRANTES,ALTA FLORESTA,Doença meningocócica,1,1,1,1,,,,100.0
+2018,510620,NOVA BRASILANDIA,CUIABA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2018,510622,NOVA MUTUM,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2018,510623,NOVA OLIMPIA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2018,510625,NOVA XAVANTINA,BARRA DO GARCAS,Meningite não especificada,2,2,2,0,,,,0.0
+2018,510630,PARANATINGA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2018,510630,PARANATINGA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2018,510637,PEDRA PRETA,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2018,510650,POCONE,CUIABA,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2018,510650,POCONE,CUIABA,Outras etiologias,5,0,4,0,,,,
+2018,510665,PONTAL DO ARAGUAIA,BARRA DO GARCAS,Doença meningocócica,1,1,1,0,,,,0.0
+2018,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2018,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,2,1,2,0,,,,0.0
+2018,510682,PORTO ESPERIDIAO,CACERES,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2018,510700,POXOREO,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2018,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2018,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,3,3,3,0,,,,0.0
+2018,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,4,0,4,0,,,,
+2018,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Outras etiologias,1,1,1,1,,,,100.0
+2018,510740,SAO PEDRO DA CIPA,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2018,510760,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2018,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2018,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite fúngica,2,2,2,1,,,,50.0
+2018,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,3,3,3,0,,,,0.0
+2018,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,5,5,5,1,,,,20.0
+2018,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2018,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,15,2,13,1,,,,50.0
+2018,510770,ROSARIO OESTE,DIAMANTINO,Outras etiologias,1,0,1,0,,,,
+2018,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,1,0,1,0,,,,
+2018,510787,SAPEZAL,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,,,,0.0
+2018,510787,SAPEZAL,TANGARA DA SERRA,Outras etiologias,2,0,0,0,,,,
+2018,510790,SINOP,SINOP,Doença meningocócica,2,2,2,1,,,,50.0
+2018,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,3,3,3,0,,,,0.0
+2018,510790,SINOP,SINOP,Meningite fúngica,1,1,1,0,,,,0.0
+2018,510790,SINOP,SINOP,Meningite não especificada,3,3,3,1,,,,33.33333333333333
+2018,510790,SINOP,SINOP,Meningite viral/asséptica,7,7,7,0,,,,0.0
+2018,510790,SINOP,SINOP,Outras etiologias,3,0,3,0,,,,
+2018,510792,SORRISO,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2018,510792,SORRISO,SINOP,Meningite não especificada,3,3,3,0,,,,0.0
+2018,510792,SORRISO,SINOP,Outras etiologias,1,0,0,0,,,,
+2018,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2018,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite não especificada,2,2,2,0,,,,0.0
+2018,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2018,510805,TERRA NOVA DO NORTE,PEIXOTO DE AZEVEDO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2018,510820,TORIXOREU,BARRA DO GARCAS,Outras etiologias,1,0,1,0,,,,
+2018,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,2,2,2,1,,,,50.0
+2018,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,12,12,12,0,,,,0.0
+2018,510840,VARZEA GRANDE,CUIABA,Meningite pneumocócica,1,1,0,1,,,,100.0
+2018,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2018,510840,VARZEA GRANDE,CUIABA,Outras etiologias,21,2,18,0,,,,0.0
+2018,510850,VERA,SINOP,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2018,510860,VILA RICA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,,,,
+2019,510010,ACORIZAL,CUIABA,Outras etiologias,1,0,1,0,,,,
+2019,510020,AGUA BOA,AGUA BOA,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite fúngica,1,1,1,0,,,,0.0
+2019,510030,ALTO ARAGUAIA,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2019,510040,ALTO GARCAS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2019,510050,ALTO PARAGUAI,DIAMANTINO,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510050,ALTO PARAGUAI,DIAMANTINO,Outras etiologias,2,0,0,0,,,,
+2019,510080,APIACAS,ALTA FLORESTA,Outras etiologias,1,0,0,0,,,,
+2019,510125,ARAPUTANGA,CACERES,Outras etiologias,1,1,0,1,,,,100.0
+2019,510130,ARENAPOLIS,TANGARA DA SERRA,Meningite pneumocócica,1,1,1,1,,,,100.0
+2019,510130,ARENAPOLIS,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2019,510160,BARAO DE MELGACO,CUIABA,Outras etiologias,1,0,1,0,,,,
+2019,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite pneumocócica,2,2,2,0,,,,0.0
+2019,510170,BARRA DO BUGRES,TANGARA DA SERRA,Outras etiologias,2,0,2,0,,,,
+2019,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,9,9,9,2,,,,22.22222222222222
+2019,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,6,0,5,0,,,,
+2019,510185,BOM JESUS DO ARAGUAIA,AGUA BOA,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510185,BOM JESUS DO ARAGUAIA,AGUA BOA,Outras etiologias,3,0,3,0,,,,
+2019,510250,CACERES,CACERES,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2019,510260,CAMPINAPOLIS,BARRA DO GARCAS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2019,510260,CAMPINAPOLIS,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510260,CAMPINAPOLIS,BARRA DO GARCAS,Outras etiologias,1,0,1,0,,,,
+2019,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,1,0,0,0,,,,
+2019,510267,CAMPO VERDE,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510267,CAMPO VERDE,RONDONOPOLIS,Meningite pneumocócica,2,2,2,1,,,,50.0
+2019,510267,CAMPO VERDE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2019,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,2,0,1,0,,,,
+2019,510300,CHAPADA DOS GUIMARAES,CUIABA,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510305,CLAUDIA,SINOP,Meningite não especificada,1,0,1,0,,,,
+2019,510320,COLIDER,COLIDER,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510335,CONFRESA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,,,,
+2019,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,5,5,5,0,,,,0.0
+2019,510340,CUIABA,CUIABA,Meningite fúngica,3,3,3,0,,,,0.0
+2019,510340,CUIABA,CUIABA,Meningite não especificada,13,13,13,2,,,,15.384615384615385
+2019,510340,CUIABA,CUIABA,Meningite pneumocócica,4,4,4,2,,,,50.0
+2019,510340,CUIABA,CUIABA,Meningite por Hib/Hemófilo,2,2,2,1,,,,50.0
+2019,510340,CUIABA,CUIABA,Meningite tuberculosa,4,4,4,0,,,,0.0
+2019,510340,CUIABA,CUIABA,Meningite viral/asséptica,5,5,5,0,,,,0.0
+2019,510340,CUIABA,CUIABA,Outras etiologias,16,0,16,0,,,,
+2019,510343,CURVELANDIA,CACERES,Outras etiologias,1,0,1,0,,,,
+2019,510350,DIAMANTINO,DIAMANTINO,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510350,DIAMANTINO,DIAMANTINO,Outras etiologias,1,0,0,0,,,,
+2019,510370,FELIZ NATAL,SINOP,Outras etiologias,1,0,1,0,,,,
+2019,510380,FIGUEIROPOLIS D OESTE,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510385,GAUCHA DO NORTE,AGUA BOA,Outras etiologias,1,0,1,0,,,,
+2019,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite não especificada,4,4,4,0,,,,0.0
+2019,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite pneumocócica,1,1,1,0,,,,0.0
+2019,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,5,3,5,0,,,,0.0
+2019,510420,GUIRATINGA,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2019,510420,GUIRATINGA,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2019,510452,IPIRANGA DO NORTE,SINOP,Meningite não especificada,1,1,1,1,,,,100.0
+2019,510515,JUINA,JUINA,Meningite pneumocócica,1,1,1,1,,,,100.0
+2019,510515,JUINA,JUINA,Outras etiologias,2,0,2,0,,,,
+2019,510517,JURUENA,JUINA,Outras etiologias,2,0,2,0,,,,
+2019,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,1,0,1,0,,,,
+2019,510558,MARCELANDIA,COLIDER,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510560,MATUPA,PEIXOTO DE AZEVEDO,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2019,510562,MIRASSOL D OESTE,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2019,510562,MIRASSOL D OESTE,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510610,NOSSA SENHORA DO LIVRAMENTO,CUIABA,Meningite fúngica,1,1,1,0,,,,0.0
+2019,510619,NOVA SANTA HELENA,COLIDER,Outras etiologias,1,0,1,0,,,,
+2019,510620,NOVA BRASILANDIA,CUIABA,Meningite não especificada,1,1,1,1,,,,100.0
+2019,510622,NOVA MUTUM,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510622,NOVA MUTUM,SINOP,Outras etiologias,2,0,2,0,,,,
+2019,510623,NOVA OLIMPIA,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2019,510645,PLANALTO DA SERRA,CUIABA,Outras etiologias,1,0,0,0,,,,
+2019,510650,POCONE,CUIABA,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510650,POCONE,CUIABA,Outras etiologias,1,0,1,0,,,,
+2019,510665,PONTAL DO ARAGUAIA,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510665,PONTAL DO ARAGUAIA,BARRA DO GARCAS,Outras etiologias,1,0,1,0,,,,
+2019,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2019,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,1,0,0,0,,,,
+2019,510677,PORTO ALEGRE DO NORTE,PORTO ALEGRE DO NORTE,Outras etiologias,1,1,1,0,,,,0.0
+2019,510682,PORTO ESPERIDIAO,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2019,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Doença meningocócica,1,1,1,0,,,,0.0
+2019,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2019,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2019,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,7,1,7,1,,,,100.0
+2019,510718,RIBEIRAO CASCALHEIRA,AGUA BOA,Meningite viral/asséptica,1,1,0,0,,,,0.0
+2019,510729,SAO JOSE DO POVO,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2019,510740,SAO PEDRO DA CIPA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2019,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2019,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite fúngica,1,1,1,0,,,,0.0
+2019,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,3,3,2,0,,,,0.0
+2019,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,4,4,4,0,,,,0.0
+2019,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2019,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,4,0,2,0,,,,
+2019,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,2,0,2,0,,,,
+2019,510787,SAPEZAL,TANGARA DA SERRA,Doença meningocócica,1,1,1,1,,,,100.0
+2019,510787,SAPEZAL,TANGARA DA SERRA,Outras etiologias,3,1,2,1,,,,100.0
+2019,510790,SINOP,SINOP,Doença meningocócica,2,2,1,0,,,,0.0
+2019,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2019,510790,SINOP,SINOP,Meningite não especificada,1,1,0,0,,,,0.0
+2019,510790,SINOP,SINOP,Meningite viral/asséptica,9,9,9,0,,,,0.0
+2019,510790,SINOP,SINOP,Outras etiologias,4,0,3,0,,,,
+2019,510792,SORRISO,SINOP,Meningite não especificada,3,3,3,0,,,,0.0
+2019,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2019,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite não especificada,2,2,2,0,,,,0.0
+2019,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,2,0,2,0,,,,
+2019,510840,VARZEA GRANDE,CUIABA,Doença meningocócica,2,2,2,2,,,,100.0
+2019,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,2,2,2,0,,,,0.0
+2019,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,5,5,5,0,,,,0.0
+2019,510840,VARZEA GRANDE,CUIABA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2019,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2019,510840,VARZEA GRANDE,CUIABA,Outras etiologias,24,1,24,0,,,,0.0
+2019,510860,VILA RICA,PORTO ALEGRE DO NORTE,Meningite pneumocócica,1,1,1,0,,,,0.0
+2019,510880,NOVA GUARITA,COLIDER,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2019,510890,NOVA MARINGA,DIAMANTINO,Outras etiologias,1,0,1,0,,,,
+2020,510020,AGUA BOA,AGUA BOA,Meningite não especificada,1,1,1,0,26204.0,3.816211265455656,0.0,0.0
+2020,510025,ALTA FLORESTA,ALTA FLORESTA,Outras etiologias,2,0,1,0,51959.0,3.849188783463885,0.0,
+2020,510080,APIACAS,ALTA FLORESTA,Meningite tuberculosa,1,1,1,0,10283.0,9.724788485850432,0.0,0.0
+2020,510125,ARAPUTANGA,CACERES,Outras etiologias,1,0,1,0,16951.0,5.89935697009026,0.0,
+2020,510170,BARRA DO BUGRES,TANGARA DA SERRA,Outras etiologias,2,0,2,0,35307.0,5.664599087999547,0.0,
+2020,510180,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,1,1,1,0,61135.0,1.6357242168970312,0.0,0.0
+2020,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,61135.0,1.6357242168970312,0.0,0.0
+2020,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,2,0,2,0,61135.0,3.2714484337940624,0.0,
+2020,510267,CAMPO VERDE,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,45740.0,2.1862702229995628,0.0,0.0
+2020,510270,CANARANA,AGUA BOA,Meningite bacteriana/outras bactérias,1,1,1,1,21842.0,4.578335317278638,4.578335317278638,100.0
+2020,510270,CANARANA,AGUA BOA,Outras etiologias,1,0,1,0,21842.0,4.578335317278638,0.0,
+2020,510285,CASTANHEIRA,JUINA,Meningite viral/asséptica,1,1,1,0,8749.0,11.429877700308607,0.0,0.0
+2020,510300,CHAPADA DOS GUIMARAES,CUIABA,Outras etiologias,1,0,1,0,19453.0,5.140595280933533,0.0,
+2020,510335,CONFRESA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,31510.0,3.17359568390987,0.0,
+2020,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,3,3,3,1,618124.0,0.4853395111660443,0.16177983705534812,33.33333333333333
+2020,510340,CUIABA,CUIABA,Meningite fúngica,1,1,1,0,618124.0,0.16177983705534812,0.0,0.0
+2020,510340,CUIABA,CUIABA,Meningite não especificada,3,3,3,1,618124.0,0.4853395111660443,0.16177983705534812,33.33333333333333
+2020,510340,CUIABA,CUIABA,Meningite tuberculosa,5,5,5,0,618124.0,0.8088991852767407,0.0,0.0
+2020,510340,CUIABA,CUIABA,Meningite viral/asséptica,6,6,6,0,618124.0,0.9706790223320886,0.0,0.0
+2020,510340,CUIABA,CUIABA,Outras etiologias,13,1,12,0,618124.0,2.1031378817195256,0.0,0.0
+2020,510350,DIAMANTINO,DIAMANTINO,Outras etiologias,1,0,1,0,22178.0,4.508972855983408,0.0,
+2020,510385,GAUCHA DO NORTE,AGUA BOA,Meningite bacteriana/outras bactérias,1,1,1,0,7782.0,12.85016705217168,0.0,0.0
+2020,510385,GAUCHA DO NORTE,AGUA BOA,Outras etiologias,1,0,1,0,7782.0,12.85016705217168,0.0,
+2020,510390,GENERAL CARNEIRO,BARRA DO GARCAS,Outras etiologias,1,0,1,0,5592.0,17.8826895565093,0.0,
+2020,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite fúngica,1,1,1,1,36130.0,2.7677830058123445,2.7677830058123445,100.0
+2020,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite não especificada,3,3,3,0,36130.0,8.303349017437034,0.0,0.0
+2020,510420,GUIRATINGA,RONDONOPOLIS,Outras etiologias,1,0,1,0,15245.0,6.5595277140045924,0.0,
+2020,510454,ITANHANGA,SINOP,Outras etiologias,1,0,1,0,6885.0,14.524328249818446,0.0,
+2020,510455,ITAUBA,COLIDER,Outras etiologias,1,0,1,0,3704.0,26.99784017278618,0.0,
+2020,510460,ITIQUIRA,RONDONOPOLIS,Meningite fúngica,1,1,1,0,13552.0,7.378984651711924,0.0,0.0
+2020,510515,JUINA,JUINA,Outras etiologias,1,0,1,0,41101.0,2.433030826500572,0.0,
+2020,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,1,0,0,0,67620.0,1.4788524105294292,0.0,
+2020,510562,MIRASSOL D OESTE,CACERES,Meningite viral/asséptica,1,1,1,0,27941.0,3.5789699724419317,0.0,0.0
+2020,510615,NOVA BANDEIRANTES,ALTA FLORESTA,Outras etiologias,1,0,0,0,15685.0,6.37551801083838,0.0,
+2020,510621,NOVA CANAA DO NORTE,COLIDER,Outras etiologias,1,0,0,0,12831.0,7.793624814901411,0.0,
+2020,510622,NOVA MUTUM,SINOP,Outras etiologias,1,0,1,0,46813.0,2.1361587593189926,0.0,
+2020,510623,NOVA OLIMPIA,TANGARA DA SERRA,Outras etiologias,2,0,2,0,20563.0,9.726207265476827,0.0,
+2020,510625,NOVA XAVANTINA,BARRA DO GARCAS,Outras etiologias,1,0,1,0,20944.0,4.774637127578304,0.0,
+2020,510630,PARANATINGA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,22861.0,4.37426184331394,0.0,0.0
+2020,510630,PARANATINGA,RONDONOPOLIS,Outras etiologias,1,0,1,0,22861.0,4.37426184331394,0.0,
+2020,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Meningite fúngica,1,1,1,0,35338.0,2.8298149301035713,0.0,0.0
+2020,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,1,1,1,0,45774.0,2.184646305763097,0.0,0.0
+2020,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,2,1,2,0,45774.0,4.369292611526194,0.0,0.0
+2020,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite não especificada,2,2,2,0,63092.0,3.1699740062131494,0.0,0.0
+2020,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,63092.0,1.5849870031065747,0.0,0.0
+2020,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,1,0,1,0,63092.0,1.5849870031065747,0.0,
+2020,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Meningite fúngica,1,1,1,0,18846.0,5.306165764618487,0.0,0.0
+2020,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Outras etiologias,2,0,2,0,18846.0,10.612331529236974,0.0,
+2020,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Meningite bacteriana/outras bactérias,1,1,1,0,21011.0,4.7594117367093425,0.0,0.0
+2020,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,236042.0,0.4236534176121199,0.0,0.0
+2020,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,1,1,1,0,236042.0,0.4236534176121199,0.0,0.0
+2020,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,3,3,3,0,236042.0,1.2709602528363595,0.0,0.0
+2020,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,3,1,3,0,236042.0,1.2709602528363595,0.0,0.0
+2020,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,0,16999.0,5.882698982293076,0.0,0.0
+2020,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,1,0,1,0,16999.0,5.882698982293076,0.0,
+2020,510787,SAPEZAL,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,26688.0,3.7470023980815346,0.0,0.0
+2020,510787,SAPEZAL,TANGARA DA SERRA,Outras etiologias,1,0,0,0,26688.0,3.7470023980815346,0.0,
+2020,510792,SORRISO,SINOP,Doença meningocócica,2,2,2,0,92769.0,2.155892593430995,0.0,0.0
+2020,510792,SORRISO,SINOP,Meningite pneumocócica,1,1,1,1,92769.0,1.0779462967154976,1.0779462967154976,100.0
+2020,510792,SORRISO,SINOP,Outras etiologias,1,0,1,0,92769.0,1.0779462967154976,0.0,
+2020,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,2,0,2,0,105711.0,1.8919506957648684,0.0,
+2020,510800,TAPURAH,SINOP,Meningite não especificada,2,2,2,2,14046.0,14.238929232521716,14.238929232521716,100.0
+2020,510805,TERRA NOVA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,9473.0,10.556317956296844,0.0,
+2020,510840,VARZEA GRANDE,CUIABA,Meningite fúngica,2,2,2,1,287526.0,0.6955892684487663,0.34779463422438317,50.0
+2020,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,2,2,2,0,287526.0,0.6955892684487663,0.0,0.0
+2020,510840,VARZEA GRANDE,CUIABA,Outras etiologias,9,0,8,0,287526.0,3.130151708019449,0.0,
+2020,510860,VILA RICA,PORTO ALEGRE DO NORTE,Meningite não especificada,1,1,1,0,26496.0,3.7741545893719803,0.0,0.0
+2021,510025,ALTA FLORESTA,ALTA FLORESTA,Doença meningocócica,1,1,1,1,52105.0,1.9192016121293543,1.9192016121293543,100.0
+2021,510160,BARAO DE MELGACO,CUIABA,Meningite viral/asséptica,1,1,1,0,8165.0,12.24739742804654,0.0,0.0
+2021,510160,BARAO DE MELGACO,CUIABA,Outras etiologias,1,0,1,0,8165.0,12.24739742804654,0.0,
+2021,510170,BARRA DO BUGRES,TANGARA DA SERRA,Outras etiologias,2,0,2,0,35642.0,5.611357387352,0.0,
+2021,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,3,3,3,0,61702.0,4.862079024991086,0.0,0.0
+2021,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,2,0,2,0,61702.0,3.2413860166607242,0.0,
+2021,510250,CACERES,CACERES,Doença meningocócica,1,1,1,1,95339.0,1.0488887024197862,1.0488887024197862,100.0
+2021,510250,CACERES,CACERES,Meningite não especificada,1,1,1,1,95339.0,1.0488887024197862,1.0488887024197862,100.0
+2021,510250,CACERES,CACERES,Meningite viral/asséptica,1,1,0,0,95339.0,1.0488887024197862,0.0,0.0
+2021,510250,CACERES,CACERES,Outras etiologias,1,1,1,1,95339.0,1.0488887024197862,1.0488887024197862,100.0
+2021,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Meningite tuberculosa,1,1,1,0,36917.0,2.7087791532356364,0.0,0.0
+2021,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,1,0,1,0,44033.0,2.27102400472373,0.0,
+2021,510300,CHAPADA DOS GUIMARAES,CUIABA,Outras etiologias,1,0,1,0,22521.0,4.440300164291107,0.0,
+2021,510320,COLIDER,COLIDER,Meningite não especificada,1,1,1,1,33855.0,2.9537734455767244,2.9537734455767244,100.0
+2021,510320,COLIDER,COLIDER,Outras etiologias,1,0,1,0,33855.0,2.9537734455767244,0.0,
+2021,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,2,2,1,1,623614.0,0.320711209177472,0.160355604588736,50.0
+2021,510340,CUIABA,CUIABA,Meningite fúngica,1,1,1,0,623614.0,0.160355604588736,0.0,0.0
+2021,510340,CUIABA,CUIABA,Meningite não especificada,1,1,1,0,623614.0,0.160355604588736,0.0,0.0
+2021,510340,CUIABA,CUIABA,Meningite pneumocócica,1,1,1,1,623614.0,0.160355604588736,0.160355604588736,100.0
+2021,510340,CUIABA,CUIABA,Meningite tuberculosa,1,1,1,0,623614.0,0.160355604588736,0.0,0.0
+2021,510340,CUIABA,CUIABA,Meningite viral/asséptica,3,3,3,0,623614.0,0.4810668137662079,0.0,0.0
+2021,510340,CUIABA,CUIABA,Outras etiologias,16,2,12,1,623614.0,2.565689673419776,0.160355604588736,50.0
+2021,510343,CURVELANDIA,CACERES,Meningite não especificada,1,1,1,1,5267.0,18.98614011771407,18.98614011771407,100.0
+2021,510343,CURVELANDIA,CACERES,Outras etiologias,1,0,1,0,5267.0,18.98614011771407,0.0,
+2021,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite não especificada,1,1,1,0,36439.0,2.7443124125250415,0.0,0.0
+2021,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,36439.0,2.7443124125250415,0.0,
+2021,510480,JACIARA,RONDONOPOLIS,Doença meningocócica,1,1,1,0,27696.0,3.6106296938186015,0.0,0.0
+2021,510480,JACIARA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,27696.0,3.6106296938186015,0.0,0.0
+2021,510515,JUINA,JUINA,Meningite pneumocócica,1,1,1,1,41190.0,2.4277737314882253,2.4277737314882253,100.0
+2021,510525,LUCAS DO RIO VERDE,SINOP,Meningite não especificada,1,1,1,0,69671.0,1.4353174204475319,0.0,0.0
+2021,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,2,0,1,0,69671.0,2.8706348408950637,0.0,
+2021,510558,MARCELANDIA,COLIDER,Outras etiologias,1,0,1,0,10107.0,9.894132779261898,0.0,
+2021,510621,NOVA CANAA DO NORTE,COLIDER,Outras etiologias,1,0,1,0,12876.0,7.766387076731904,0.0,
+2021,510622,NOVA MUTUM,SINOP,Meningite não especificada,1,1,1,0,48222.0,2.0737422753100243,0.0,0.0
+2021,510624,NOVA UBIRATA,SINOP,Outras etiologias,1,0,1,0,12492.0,8.005123278898495,0.0,
+2021,510625,NOVA XAVANTINA,BARRA DO GARCAS,Outras etiologias,2,0,2,0,21695.0,9.218713989398479,0.0,
+2021,510637,PEDRA PRETA,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,17547.0,5.698979882601015,0.0,0.0
+2021,510637,PEDRA PRETA,RONDONOPOLIS,Outras etiologias,1,0,0,0,17547.0,5.698979882601015,0.0,
+2021,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Outras etiologias,3,0,3,0,35695.0,8.404538450763411,0.0,
+2021,510682,PORTO ESPERIDIAO,CACERES,Meningite não especificada,1,1,1,0,12176.0,8.21287779237845,0.0,0.0
+2021,510700,POXOREO,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,0,0,15936.0,6.275100401606425,0.0,0.0
+2021,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite fúngica,1,1,1,0,63876.0,1.5655332206149415,0.0,0.0
+2021,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,1,1,1,0,63876.0,1.5655332206149415,0.0,0.0
+2021,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,3,3,3,2,239613.0,1.2520188804447172,0.8346792536298113,66.66666666666666
+2021,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,3,3,3,2,239613.0,1.2520188804447172,0.8346792536298113,66.66666666666666
+2021,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,2,2,2,0,239613.0,0.8346792536298113,0.0,0.0
+2021,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,4,4,3,0,239613.0,1.6693585072596226,0.0,0.0
+2021,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,5,2,4,0,239613.0,2.0866981340745285,0.0,0.0
+2021,510790,SINOP,SINOP,Doença meningocócica,1,1,1,0,148960.0,0.6713211600429646,0.0,0.0
+2021,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,2,2,2,1,148960.0,1.3426423200859292,0.6713211600429646,50.0
+2021,510790,SINOP,SINOP,Meningite não especificada,1,1,1,0,148960.0,0.6713211600429646,0.0,0.0
+2021,510790,SINOP,SINOP,Outras etiologias,2,0,2,0,148960.0,1.3426423200859292,0.0,
+2021,510792,SORRISO,SINOP,Outras etiologias,1,0,1,0,94941.0,1.0532857248185714,0.0,
+2021,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,2,2,2,1,290383.0,0.6887455532865217,0.3443727766432608,50.0
+2021,510840,VARZEA GRANDE,CUIABA,Outras etiologias,4,0,2,0,290383.0,1.3774911065730433,0.0,
+2022,510010,ACORIZAL,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,0,5014.0,19.94415636218588,0.0,0.0
+2022,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite bacteriana/outras bactérias,1,1,1,0,58613.0,1.7061061539248972,0.0,0.0
+2022,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite não especificada,2,2,2,0,58613.0,3.4122123078497943,0.0,0.0
+2022,510050,ALTO PARAGUAI,DIAMANTINO,Meningite bacteriana/outras bactérias,1,1,1,1,8009.0,12.48595330253465,12.48595330253465,100.0
+2022,510050,ALTO PARAGUAI,DIAMANTINO,Meningite não especificada,1,1,1,1,8009.0,12.48595330253465,12.48595330253465,100.0
+2022,510050,ALTO PARAGUAI,DIAMANTINO,Outras etiologias,1,0,0,0,8009.0,12.48595330253465,0.0,
+2022,510130,ARENAPOLIS,TANGARA DA SERRA,Outras etiologias,2,0,2,0,10576.0,18.910741301059,0.0,
+2022,510140,ARIPUANA,JUINA,Meningite não especificada,2,2,2,1,24626.0,8.121497604158208,4.060748802079104,50.0
+2022,510170,BARRA DO BUGRES,TANGARA DA SERRA,Outras etiologias,1,0,1,0,29403.0,3.401013502023603,0.0,
+2022,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,69210.0,1.4448779078167895,0.0,0.0
+2022,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,5,0,5,0,69210.0,7.224389539083947,0.0,
+2022,510250,CACERES,CACERES,Meningite não especificada,6,6,6,0,89681.0,6.690380348122791,0.0,0.0
+2022,510250,CACERES,CACERES,Outras etiologias,5,0,4,0,89681.0,5.575316956768993,0.0,
+2022,510260,CAMPINAPOLIS,BARRA DO GARCAS,Meningite não especificada,1,1,1,1,15347.0,6.515931452401121,6.515931452401121,100.0
+2022,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,1,0,1,0,45899.0,2.1786967036318874,0.0,
+2022,510270,CANARANA,AGUA BOA,Outras etiologias,1,0,1,0,25858.0,3.8672751179518907,0.0,
+2022,510285,CASTANHEIRA,JUINA,Meningite fúngica,2,2,2,0,7506.0,26.64535038635758,0.0,0.0
+2022,510285,CASTANHEIRA,JUINA,Outras etiologias,1,0,1,0,7506.0,13.32267519317879,0.0,
+2022,510300,CHAPADA DOS GUIMARAES,CUIABA,Outras etiologias,1,0,1,0,18990.0,5.265929436545551,0.0,
+2022,510320,COLIDER,COLIDER,Outras etiologias,2,0,2,0,31370.0,6.37551801083838,0.0,
+2022,510325,COLNIZA,JUINA,Meningite não especificada,1,1,1,0,25766.0,3.8810835985407124,0.0,0.0
+2022,510325,COLNIZA,JUINA,Meningite pneumocócica,1,1,1,0,25766.0,3.8810835985407124,0.0,0.0
+2022,510325,COLNIZA,JUINA,Outras etiologias,2,0,2,0,25766.0,7.762167197081425,0.0,
+2022,510330,COMODORO,PONTES E LACERDA,Meningite não especificada,1,1,1,0,18238.0,5.48305735277991,0.0,0.0
+2022,510335,CONFRESA,PORTO ALEGRE DO NORTE,Outras etiologias,2,0,2,0,35075.0,5.702066999287242,0.0,
+2022,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,6,6,4,3,650877.0,0.9218331574168391,0.46091657870841957,50.0
+2022,510340,CUIABA,CUIABA,Meningite fúngica,5,5,5,1,650877.0,0.768194297847366,0.15363885956947318,20.0
+2022,510340,CUIABA,CUIABA,Meningite não especificada,10,10,10,0,650877.0,1.536388595694732,0.0,0.0
+2022,510340,CUIABA,CUIABA,Meningite pneumocócica,1,1,1,0,650877.0,0.15363885956947318,0.0,0.0
+2022,510340,CUIABA,CUIABA,Meningite por Hib/Hemófilo,1,1,1,0,650877.0,0.15363885956947318,0.0,0.0
+2022,510340,CUIABA,CUIABA,Meningite tuberculosa,2,2,2,0,650877.0,0.30727771913894636,0.0,0.0
+2022,510340,CUIABA,CUIABA,Meningite viral/asséptica,9,9,9,2,650877.0,1.3827497361252588,0.30727771913894636,22.22222222222222
+2022,510340,CUIABA,CUIABA,Outras etiologias,23,2,20,0,650877.0,3.533693770097883,0.0,0.0
+2022,510345,DENISE,TANGARA DA SERRA,Outras etiologias,1,0,0,0,7014.0,14.257199885942402,0.0,
+2022,510370,FELIZ NATAL,SINOP,Outras etiologias,2,0,1,0,10521.0,19.0095998479232,0.0,
+2022,510510,JUARA,JUARA,Meningite não especificada,1,1,1,0,34906.0,2.864836990775225,0.0,0.0
+2022,510510,JUARA,JUARA,Outras etiologias,1,0,1,0,34906.0,2.864836990775225,0.0,
+2022,510520,JUSCIMEIRA,RONDONOPOLIS,Outras etiologias,1,0,1,0,11480.0,8.710801393728223,0.0,
+2022,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,12,0,11,0,83798.0,14.320150838922169,0.0,
+2022,510562,MIRASSOL D OESTE,CACERES,Meningite não especificada,1,1,1,0,26785.0,3.7334328915437744,0.0,0.0
+2022,510590,NOBRES,DIAMANTINO,Meningite viral/asséptica,1,1,1,0,15492.0,6.454944487477407,0.0,0.0
+2022,510590,NOBRES,DIAMANTINO,Outras etiologias,2,0,2,0,15492.0,12.909888974954814,0.0,
+2022,510615,NOVA BANDEIRANTES,ALTA FLORESTA,Meningite bacteriana/outras bactérias,1,1,1,1,13635.0,7.3340667400073345,7.3340667400073345,100.0
+2022,510622,NOVA MUTUM,SINOP,Meningite bacteriana/outras bactérias,2,2,2,0,55839.0,3.581726033775676,0.0,0.0
+2022,510631,NOVO SANTO ANTONIO,SAO FELIX DO ARAGUAIA,Outras etiologias,1,0,0,0,2015.0,49.62779156327544,0.0,
+2022,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Meningite não especificada,2,2,2,0,32714.0,6.1135905117075255,0.0,0.0
+2022,510650,POCONE,CUIABA,Outras etiologias,1,0,1,0,31217.0,3.2033827722074513,0.0,
+2022,510682,PORTO ESPERIDIAO,CACERES,Outras etiologias,1,0,1,0,10204.0,9.800078400627205,0.0,
+2022,510700,POXOREO,RONDONOPOLIS,Doença meningocócica,1,1,1,0,23283.0,4.294979169351029,0.0,0.0
+2022,510700,POXOREO,RONDONOPOLIS,Meningite não especificada,1,1,1,0,23283.0,4.294979169351029,0.0,0.0
+2022,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite não especificada,1,1,1,0,85146.0,1.1744532919925774,0.0,0.0
+2022,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,85146.0,1.1744532919925774,0.0,0.0
+2022,510706,QUERENCIA,AGUA BOA,Outras etiologias,1,0,0,0,26769.0,3.73566438791139,0.0,
+2022,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Outras etiologias,1,0,1,0,17849.0,5.602554764972827,0.0,
+2022,510720,RIO BRANCO,CACERES,Meningite viral/asséptica,1,1,1,0,4535.0,22.050716648291072,0.0,0.0
+2022,510740,SAO PEDRO DA CIPA,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,4191.0,23.860653781913623,0.0,0.0
+2022,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite fúngica,1,1,1,0,244911.0,0.40831159074112633,0.0,0.0
+2022,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,2,2,2,0,244911.0,0.8166231814822527,0.0,0.0
+2022,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,3,3,3,0,244911.0,1.2249347722233792,0.0,0.0
+2022,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,6,1,4,0,244911.0,2.4498695444467584,0.0,0.0
+2022,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Doença meningocócica,1,1,1,1,15246.0,6.559097468188377,6.559097468188377,100.0
+2022,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,2,0,1,0,15246.0,13.118194936376755,0.0,
+2022,510790,SINOP,SINOP,Doença meningocócica,2,2,2,1,196312.0,1.0187864216145728,0.5093932108072864,50.0
+2022,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,196312.0,0.5093932108072864,0.0,0.0
+2022,510790,SINOP,SINOP,Meningite não especificada,3,3,3,0,196312.0,1.528179632421859,0.0,0.0
+2022,510790,SINOP,SINOP,Outras etiologias,9,1,8,0,196312.0,4.584538897265578,0.0,0.0
+2022,510792,SORRISO,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,110635.0,0.9038730962172912,0.0,0.0
+2022,510792,SORRISO,SINOP,Meningite fúngica,1,1,1,0,110635.0,0.9038730962172912,0.0,0.0
+2022,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,106434.0,0.9395493921115432,0.0,
+2022,510805,TERRA NOVA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,0,0,10616.0,9.419743782969103,0.0,
+2022,510835,VALE DE SAO DOMINGOS,PONTES E LACERDA,Outras etiologias,1,0,1,0,2904.0,34.43526170798898,0.0,
+2022,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,0,300078.0,0.33324668919414285,0.0,0.0
+2022,510840,VARZEA GRANDE,CUIABA,Meningite fúngica,1,1,1,0,300078.0,0.33324668919414285,0.0,0.0
+2022,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,1,1,1,0,300078.0,0.33324668919414285,0.0,0.0
+2022,510840,VARZEA GRANDE,CUIABA,Meningite pneumocócica,1,1,1,0,300078.0,0.33324668919414285,0.0,0.0
+2022,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,2,2,2,0,300078.0,0.6664933783882857,0.0,0.0
+2022,510840,VARZEA GRANDE,CUIABA,Outras etiologias,8,0,8,0,300078.0,2.665973513553143,0.0,
+2022,510860,VILA RICA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,19888.0,5.028157683024939,0.0,
+2022,510895,NOVA MONTE VERDE,ALTA FLORESTA,Outras etiologias,1,1,1,0,8313.0,12.029351617947793,0.0,0.0
+2023,510020,AGUA BOA,AGUA BOA,Outras etiologias,7,0,7,0,30461.0,22.98020419552871,0.0,
+2023,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite não especificada,1,1,1,0,60595.0,1.6503011799653435,0.0,0.0
+2023,510030,ALTO ARAGUAIA,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,17567.0,5.692491603574885,0.0,0.0
+2023,510030,ALTO ARAGUAIA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,17567.0,5.692491603574885,0.0,0.0
+2023,510035,ALTO BOA VISTA,SAO FELIX DO ARAGUAIA,Outras etiologias,1,0,1,0,5827.0,17.16148961729878,0.0,
+2023,510050,ALTO PARAGUAI,DIAMANTINO,Meningite não especificada,1,1,1,0,7854.0,12.732365673542143,0.0,0.0
+2023,510050,ALTO PARAGUAI,DIAMANTINO,Outras etiologias,1,0,0,0,7854.0,12.732365673542143,0.0,
+2023,510140,ARIPUANA,JUINA,Doença meningocócica,1,1,1,0,25493.0,3.922645432079394,0.0,0.0
+2023,510140,ARIPUANA,JUINA,Outras etiologias,2,0,2,0,25493.0,7.845290864158788,0.0,
+2023,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,29765.0,3.359650596337981,0.0,0.0
+2023,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite pneumocócica,1,1,1,0,29765.0,3.359650596337981,0.0,0.0
+2023,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite fúngica,1,1,1,0,71550.0,1.397624039133473,0.0,0.0
+2023,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,2,2,2,1,71550.0,2.795248078266946,1.397624039133473,50.0
+2023,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,7,0,3,0,71550.0,9.783368273934311,0.0,
+2023,510185,BOM JESUS DO ARAGUAIA,AGUA BOA,Outras etiologias,1,0,1,0,7543.0,13.257324671881214,0.0,
+2023,510250,CACERES,CACERES,Meningite fúngica,2,2,2,0,91623.0,2.182858016000349,0.0,0.0
+2023,510250,CACERES,CACERES,Meningite não especificada,8,8,8,0,91623.0,8.731432064001396,0.0,0.0
+2023,510250,CACERES,CACERES,Outras etiologias,2,0,2,0,91623.0,2.182858016000349,0.0,
+2023,510260,CAMPINAPOLIS,BARRA DO GARCAS,Outras etiologias,3,0,3,0,15613.0,19.214756933324793,0.0,
+2023,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,1,0,1,0,48027.0,2.0821621171424405,0.0,
+2023,510267,CAMPO VERDE,RONDONOPOLIS,Meningite não especificada,1,1,1,0,46557.0,2.1479047189466676,0.0,0.0
+2023,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,2,0,2,0,46557.0,4.295809437893335,0.0,
+2023,510268,CAMPOS DE JULIO,PONTES E LACERDA,Outras etiologias,3,0,2,0,9272.0,32.35547886108714,0.0,
+2023,510270,CANARANA,AGUA BOA,Meningite não especificada,1,1,1,1,26904.0,3.716919417187035,3.716919417187035,100.0
+2023,510279,CARLINDA,ALTA FLORESTA,Outras etiologias,1,0,1,0,10415.0,9.601536245799327,0.0,
+2023,510305,CLAUDIA,SINOP,Meningite bacteriana/outras bactérias,2,2,2,1,9576.0,20.885547201336674,10.442773600668337,50.0
+2023,510310,COCALINHO,AGUA BOA,Outras etiologias,1,0,1,0,6377.0,15.681354869060687,0.0,
+2023,510320,COLIDER,COLIDER,Outras etiologias,1,0,1,0,32086.0,3.116624072804338,0.0,
+2023,510337,COTRIGUACU,JUINA,Outras etiologias,1,0,1,0,10624.0,9.41265060240964,0.0,
+2023,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,6,6,5,2,676124.0,0.8874111849305749,0.29580372831019164,33.33333333333333
+2023,510340,CUIABA,CUIABA,Meningite fúngica,1,1,1,0,676124.0,0.14790186415509582,0.0,0.0
+2023,510340,CUIABA,CUIABA,Meningite não especificada,14,14,14,1,676124.0,2.0706260981713416,0.14790186415509582,7.142857142857142
+2023,510340,CUIABA,CUIABA,Meningite por Hib/Hemófilo,1,1,1,0,676124.0,0.14790186415509582,0.0,0.0
+2023,510340,CUIABA,CUIABA,Meningite tuberculosa,1,1,1,0,676124.0,0.14790186415509582,0.0,0.0
+2023,510340,CUIABA,CUIABA,Meningite viral/asséptica,2,2,2,0,676124.0,0.29580372831019164,0.0,0.0
+2023,510340,CUIABA,CUIABA,Outras etiologias,39,1,35,0,676124.0,5.768172702048736,0.0,0.0
+2023,510343,CURVELANDIA,CACERES,Meningite não especificada,1,1,1,0,4970.0,20.120724346076457,0.0,0.0
+2023,510350,DIAMANTINO,DIAMANTINO,Meningite por Hib/Hemófilo,1,1,1,0,22368.0,4.470672389127325,0.0,0.0
+2023,510360,DOM AQUINO,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,7953.0,12.57387149503332,0.0,0.0
+2023,510385,GAUCHA DO NORTE,AGUA BOA,Doença meningocócica,1,1,1,0,8938.0,11.188185276348175,0.0,0.0
+2023,510385,GAUCHA DO NORTE,AGUA BOA,Outras etiologias,2,0,1,0,8938.0,22.37637055269635,0.0,
+2023,510395,GLORIA D OESTE,CACERES,Outras etiologias,1,0,1,0,2887.0,34.638032559750606,0.0,
+2023,510460,ITIQUIRA,RONDONOPOLIS,Meningite tuberculosa,1,1,1,0,12472.0,8.017960230917254,0.0,0.0
+2023,510480,JACIARA,RONDONOPOLIS,Doença meningocócica,1,1,1,0,29369.0,3.404950798460962,0.0,0.0
+2023,510490,JANGADA,CUIABA,Outras etiologias,1,0,1,0,7491.0,13.349352556401014,0.0,
+2023,510510,JUARA,JUARA,Meningite bacteriana/outras bactérias,1,1,1,0,35862.0,2.788466900897886,0.0,0.0
+2023,510510,JUARA,JUARA,Outras etiologias,4,0,4,0,35862.0,11.153867603591545,0.0,
+2023,510515,JUINA,JUINA,Outras etiologias,1,0,1,0,47397.0,2.1098381754119457,0.0,
+2023,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,3,0,3,0,88126.0,3.4042166897396906,0.0,
+2023,510560,MATUPA,PEIXOTO DE AZEVEDO,Meningite não especificada,1,1,1,0,20853.0,4.795473073418693,0.0,0.0
+2023,510562,MIRASSOL D OESTE,CACERES,Meningite não especificada,1,1,1,0,27434.0,3.645111904935481,0.0,0.0
+2023,510600,NORTELANDIA,DIAMANTINO,Outras etiologias,1,0,1,0,5960.0,16.778523489932883,0.0,
+2023,510610,NOSSA SENHORA DO LIVRAMENTO,CUIABA,Outras etiologias,1,0,1,0,11694.0,8.551393877201985,0.0,
+2023,510615,NOVA BANDEIRANTES,ALTA FLORESTA,Meningite não especificada,1,1,1,0,14036.0,7.124536905101169,0.0,0.0
+2023,510617,NOVA NAZARE,AGUA BOA,Doença meningocócica,1,1,1,0,4338.0,23.05209774089442,0.0,0.0
+2023,510617,NOVA NAZARE,AGUA BOA,Outras etiologias,1,0,0,0,4338.0,23.05209774089442,0.0,
+2023,510622,NOVA MUTUM,SINOP,Meningite não especificada,3,3,3,0,58541.0,5.124613518730462,0.0,0.0
+2023,510622,NOVA MUTUM,SINOP,Outras etiologias,1,0,1,0,58541.0,1.7082045062434876,0.0,
+2023,510623,NOVA OLIMPIA,TANGARA DA SERRA,Outras etiologias,2,0,2,0,16434.0,12.169891687963977,0.0,
+2023,510625,NOVA XAVANTINA,BARRA DO GARCAS,Outras etiologias,1,1,1,0,25084.0,3.9866050071758887,0.0,0.0
+2023,510650,POCONE,CUIABA,Outras etiologias,1,0,0,0,31394.0,3.1853220360578454,0.0,
+2023,510665,PONTAL DO ARAGUAIA,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,7169.0,13.948946854512483,0.0,0.0
+2023,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,2,2,2,0,53816.0,3.7163668797383673,0.0,0.0
+2023,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite tuberculosa,1,1,1,0,53816.0,1.8581834398691837,0.0,0.0
+2023,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,2,1,2,0,53816.0,3.7163668797383673,0.0,0.0
+2023,510677,PORTO ALEGRE DO NORTE,PORTO ALEGRE DO NORTE,Meningite tuberculosa,1,1,1,0,12420.0,8.051529790660226,0.0,0.0
+2023,510700,POXOREO,RONDONOPOLIS,Outras etiologias,1,0,1,0,24102.0,4.149033275246867,0.0,
+2023,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite não especificada,1,1,1,0,89513.0,1.1171561672606214,0.0,0.0
+2023,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,89513.0,1.1171561672606214,0.0,0.0
+2023,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,1,1,0,0,89513.0,1.1171561672606214,0.0,0.0
+2023,510718,RIBEIRAO CASCALHEIRA,AGUA BOA,Meningite não especificada,1,1,1,0,10340.0,9.671179883945841,0.0,0.0
+2023,510718,RIBEIRAO CASCALHEIRA,AGUA BOA,Outras etiologias,2,0,1,0,10340.0,19.342359767891683,0.0,
+2023,510720,RIO BRANCO,CACERES,Meningite não especificada,2,2,2,0,4509.0,44.35573297848747,0.0,0.0
+2023,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Meningite não especificada,1,1,1,0,14813.0,6.750826976304597,0.0,0.0
+2023,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,2,2,2,0,254728.0,0.785151220124996,0.0,0.0
+2023,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,4,4,4,0,254728.0,1.570302440249992,0.0,0.0
+2023,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,3,3,3,1,254728.0,1.1777268301874941,0.392575610062498,33.33333333333333
+2023,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,8,2,8,1,254728.0,3.140604880499984,0.392575610062498,50.0
+2023,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Meningite não especificada,2,2,2,0,16776.0,11.921793037672865,0.0,0.0
+2023,510787,SAPEZAL,TANGARA DA SERRA,Outras etiologias,2,0,2,0,30303.0,6.6000066000065996,0.0,
+2023,510788,SERRA NOVA DOURADA,SAO FELIX DO ARAGUAIA,Outras etiologias,1,0,1,0,1835.0,54.495912806539515,0.0,
+2023,510790,SINOP,SINOP,Doença meningocócica,2,2,2,0,206931.0,0.9665057434603805,0.0,0.0
+2023,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,206931.0,0.48325287173019027,0.0,0.0
+2023,510790,SINOP,SINOP,Meningite não especificada,4,4,4,0,206931.0,1.933011486920761,0.0,0.0
+2023,510790,SINOP,SINOP,Meningite pneumocócica,1,1,1,0,206931.0,0.48325287173019027,0.0,0.0
+2023,510790,SINOP,SINOP,Meningite viral/asséptica,6,6,6,0,206931.0,2.8995172303811416,0.0,0.0
+2023,510790,SINOP,SINOP,Outras etiologias,12,6,12,0,206931.0,5.799034460762283,0.0,0.0
+2023,510792,SORRISO,SINOP,Meningite viral/asséptica,1,1,1,0,116105.0,0.8612893501571853,0.0,0.0
+2023,510792,SORRISO,SINOP,Outras etiologias,3,0,3,0,116105.0,2.5838680504715557,0.0,
+2023,510794,TABAPORA,JUARA,Outras etiologias,1,0,1,0,9932.0,10.068465565847765,0.0,
+2023,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,110549.0,0.9045762512550996,0.0,0.0
+2023,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,4,0,4,0,110549.0,3.618305005020398,0.0,
+2023,510800,TAPURAH,SINOP,Outras etiologias,1,0,1,0,14872.0,6.7240451855836465,0.0,
+2023,510840,VARZEA GRANDE,CUIABA,Doença meningocócica,1,1,1,1,310941.0,0.32160442013115026,0.32160442013115026,100.0
+2023,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,1,310941.0,0.32160442013115026,0.32160442013115026,100.0
+2023,510840,VARZEA GRANDE,CUIABA,Meningite fúngica,1,1,1,0,310941.0,0.32160442013115026,0.0,0.0
+2023,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,7,7,7,1,310941.0,2.251230940918052,0.32160442013115026,14.285714285714285
+2023,510840,VARZEA GRANDE,CUIABA,Meningite pneumocócica,1,1,1,1,310941.0,0.32160442013115026,0.32160442013115026,100.0
+2023,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,2,2,2,0,310941.0,0.6432088402623005,0.0,0.0
+2023,510840,VARZEA GRANDE,CUIABA,Outras etiologias,18,2,17,0,310941.0,5.788879562360705,0.0,0.0
+2023,510860,VILA RICA,PORTO ALEGRE DO NORTE,Outras etiologias,5,0,1,0,19948.0,25.065169440545414,0.0,
+2024,510020,AGUA BOA,AGUA BOA,Outras etiologias,7,0,7,0,31314.0,22.354218560388325,0.0,
+2024,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite bacteriana/outras bactérias,1,1,1,1,61291.0,1.6315609143267364,1.6315609143267364,100.0
+2024,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite não especificada,1,1,1,0,61291.0,1.6315609143267364,0.0,0.0
+2024,510025,ALTA FLORESTA,ALTA FLORESTA,Outras etiologias,1,0,1,0,61291.0,1.6315609143267364,0.0,
+2024,510030,ALTO ARAGUAIA,RONDONOPOLIS,Meningite não especificada,2,2,2,1,17657.0,11.326952483434331,5.663476241717166,50.0
+2024,510040,ALTO GARCAS,RONDONOPOLIS,Outras etiologias,1,0,0,0,13707.0,7.295542423579193,0.0,
+2024,510050,ALTO PARAGUAI,DIAMANTINO,Outras etiologias,1,0,1,0,7717.0,12.95840352468576,0.0,
+2024,510060,ALTO TAQUARI,RONDONOPOLIS,Outras etiologias,1,0,1,0,11571.0,8.642295393656555,0.0,
+2024,510130,ARENAPOLIS,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,10747.0,9.304922303898763,0.0,0.0
+2024,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,29576.0,3.381119826886665,0.0,0.0
+2024,510170,BARRA DO BUGRES,TANGARA DA SERRA,Meningite viral/asséptica,1,1,1,0,29576.0,3.381119826886665,0.0,0.0
+2024,510170,BARRA DO BUGRES,TANGARA DA SERRA,Outras etiologias,1,0,1,0,29576.0,3.381119826886665,0.0,
+2024,510180,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,1,1,1,1,72694.0,1.3756293504278208,1.3756293504278208,100.0
+2024,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite bacteriana/outras bactérias,1,1,1,0,72694.0,1.3756293504278208,0.0,0.0
+2024,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,1,1,1,1,72694.0,1.3756293504278208,1.3756293504278208,100.0
+2024,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,3,0,3,0,72694.0,4.126888051283462,0.0,
+2024,510190,BRASNORTE,JUINA,Outras etiologias,1,0,1,0,17496.0,5.715592135345221,0.0,
+2024,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,1,1,1,1,91626.0,1.0913932726518674,1.0913932726518674,100.0
+2024,510250,CACERES,CACERES,Meningite não especificada,1,1,1,0,91626.0,1.0913932726518674,0.0,0.0
+2024,510250,CACERES,CACERES,Outras etiologias,2,0,0,0,91626.0,2.1827865453037347,0.0,
+2024,510260,CAMPINAPOLIS,BARRA DO GARCAS,Outras etiologias,2,0,2,0,15713.0,12.728314134792846,0.0,
+2024,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Meningite bacteriana/outras bactérias,2,2,2,0,50033.0,3.9973617412507743,0.0,0.0
+2024,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,2,0,2,0,50033.0,3.9973617412507743,0.0,
+2024,510267,CAMPO VERDE,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,47831.0,2.090694319583534,0.0,0.0
+2024,510267,CAMPO VERDE,RONDONOPOLIS,Meningite fúngica,1,1,1,0,47831.0,2.090694319583534,0.0,0.0
+2024,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,1,0,1,0,47831.0,2.090694319583534,0.0,
+2024,510270,CANARANA,AGUA BOA,Meningite bacteriana/outras bactérias,1,1,1,0,27657.0,3.6157211555844815,0.0,0.0
+2024,510270,CANARANA,AGUA BOA,Outras etiologias,4,0,3,0,27657.0,14.462884622337926,0.0,
+2024,510300,CHAPADA DOS GUIMARAES,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,0,19374.0,5.161556725508413,0.0,0.0
+2024,510300,CHAPADA DOS GUIMARAES,CUIABA,Meningite fúngica,1,1,1,0,19374.0,5.161556725508413,0.0,0.0
+2024,510300,CHAPADA DOS GUIMARAES,CUIABA,Outras etiologias,2,0,2,0,19374.0,10.323113451016827,0.0,
+2024,510310,COCALINHO,AGUA BOA,Outras etiologias,1,0,1,0,6428.0,15.556938394523957,0.0,
+2024,510320,COLIDER,COLIDER,Outras etiologias,4,0,4,0,32010.0,12.496094970321776,0.0,
+2024,510335,CONFRESA,PORTO ALEGRE DO NORTE,Outras etiologias,2,0,1,0,37541.0,5.327508590607602,0.0,
+2024,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,3,3,2,3,682932.0,0.43928238829048866,0.43928238829048866,100.0
+2024,510340,CUIABA,CUIABA,Meningite não especificada,5,5,5,0,682932.0,0.7321373138174812,0.0,0.0
+2024,510340,CUIABA,CUIABA,Meningite tuberculosa,2,2,2,0,682932.0,0.29285492552699244,0.0,0.0
+2024,510340,CUIABA,CUIABA,Meningite viral/asséptica,2,2,2,0,682932.0,0.29285492552699244,0.0,0.0
+2024,510340,CUIABA,CUIABA,Outras etiologias,35,0,29,0,682932.0,5.124961196722368,0.0,
+2024,510350,DIAMANTINO,DIAMANTINO,Doença meningocócica,1,1,1,0,22479.0,4.448596467814404,0.0,0.0
+2024,510360,DOM AQUINO,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,7915.0,12.634238787113077,0.0,0.0
+2024,510370,FELIZ NATAL,SINOP,Outras etiologias,1,0,1,0,10564.0,9.46611132146914,0.0,
+2024,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Meningite bacteriana/outras bactérias,1,1,1,1,31328.0,3.192032686414709,3.192032686414709,100.0
+2024,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,4,0,4,0,31328.0,12.768130745658835,0.0,
+2024,510420,GUIRATINGA,RONDONOPOLIS,Meningite fúngica,1,1,1,0,10532.0,9.4948727687049,0.0,0.0
+2024,510454,ITANHANGA,SINOP,Meningite fúngica,1,1,1,0,8049.0,12.423903590508138,0.0,0.0
+2024,510454,ITANHANGA,SINOP,Outras etiologias,1,0,1,0,8049.0,12.423903590508138,0.0,
+2024,510480,JACIARA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,29560.0,3.3829499323410017,0.0,0.0
+2024,510510,JUARA,JUARA,Meningite não especificada,1,1,1,0,35899.0,2.785592913451628,0.0,0.0
+2024,510510,JUARA,JUARA,Outras etiologias,4,0,3,0,35899.0,11.142371653806512,0.0,
+2024,510515,JUINA,JUINA,Meningite bacteriana/outras bactérias,1,1,1,0,47800.0,2.0920502092050213,0.0,0.0
+2024,510515,JUINA,JUINA,Meningite não especificada,1,1,1,0,47800.0,2.0920502092050213,0.0,0.0
+2024,510515,JUINA,JUINA,Outras etiologias,2,0,2,0,47800.0,4.1841004184100425,0.0,
+2024,510517,JURUENA,JUINA,Outras etiologias,1,0,1,0,10149.0,9.853187506158243,0.0,
+2024,510520,JUSCIMEIRA,RONDONOPOLIS,Outras etiologias,1,0,1,0,11620.0,8.605851979345957,0.0,
+2024,510523,LAMBARI D OESTE,CACERES,Meningite não especificada,1,1,1,0,4724.0,21.168501270110074,0.0,0.0
+2024,510525,LUCAS DO RIO VERDE,SINOP,Meningite bacteriana/outras bactérias,2,2,0,2,92256.0,2.1678806798473813,2.1678806798473813,100.0
+2024,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,4,0,4,0,92256.0,4.335761359694763,0.0,
+2024,510562,MIRASSOL D OESTE,CACERES,Meningite fúngica,1,1,1,0,27511.0,3.6349096724946386,0.0,0.0
+2024,510562,MIRASSOL D OESTE,CACERES,Meningite não especificada,1,1,1,0,27511.0,3.6349096724946386,0.0,0.0
+2024,510562,MIRASSOL D OESTE,CACERES,Outras etiologias,1,0,0,0,27511.0,3.6349096724946386,0.0,
+2024,510590,NOBRES,DIAMANTINO,Meningite não especificada,1,1,1,1,15753.0,6.347997206881229,6.347997206881229,100.0
+2024,510619,NOVA SANTA HELENA,COLIDER,Outras etiologias,1,0,1,0,4431.0,22.568269013766646,0.0,
+2024,510622,NOVA MUTUM,SINOP,Meningite não especificada,3,3,3,0,61223.0,4.900119236234748,0.0,0.0
+2024,510625,NOVA XAVANTINA,BARRA DO GARCAS,Meningite não especificada,1,1,1,1,25486.0,3.9237228282194145,3.9237228282194145,100.0
+2024,510627,NOVO HORIZONTE DO NORTE,JUARA,Outras etiologias,1,0,1,0,3307.0,30.23888720895071,0.0,
+2024,510637,PEDRA PRETA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,18722.0,5.341309689135776,0.0,0.0
+2024,510637,PEDRA PRETA,RONDONOPOLIS,Outras etiologias,1,0,1,0,18722.0,5.341309689135776,0.0,
+2024,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Meningite não especificada,1,1,1,0,33599.0,2.9762790559242838,0.0,0.0
+2024,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,33599.0,2.9762790559242838,0.0,
+2024,510650,POCONE,CUIABA,Outras etiologias,1,0,1,0,31269.0,3.1980555822060186,0.0,
+2024,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,54795.0,1.8249840313897252,0.0,0.0
+2024,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,3,3,3,1,54795.0,5.4749520941691765,1.8249840313897252,33.33333333333333
+2024,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,2,0,2,0,54795.0,3.6499680627794504,0.0,
+2024,510680,PORTO DOS GAUCHOS,JUARA,Outras etiologias,1,0,0,0,5690.0,17.574692442882252,0.0,
+2024,510700,POXOREO,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,24587.0,4.067189978443893,0.0,0.0
+2024,510700,POXOREO,RONDONOPOLIS,Meningite não especificada,2,2,2,0,24587.0,8.134379956887786,0.0,0.0
+2024,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite bacteriana/outras bactérias,4,4,4,1,92927.0,4.304454033811487,1.0761135084528717,25.0
+2024,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite não especificada,2,2,2,0,92927.0,2.1522270169057434,0.0,0.0
+2024,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite viral/asséptica,1,1,1,0,92927.0,1.0761135084528717,0.0,0.0
+2024,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,1,1,1,0,92927.0,1.0761135084528717,0.0,0.0
+2024,510706,QUERENCIA,AGUA BOA,Outras etiologias,3,0,1,0,29820.0,10.060362173038229,0.0,
+2024,510720,RIO BRANCO,CACERES,Meningite não especificada,1,1,1,0,4489.0,22.276676319893074,0.0,0.0
+2024,510724,SANTA CARMEM,SINOP,Outras etiologias,2,0,2,0,5677.0,35.22987493394398,0.0,
+2024,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Meningite fúngica,1,1,1,1,14662.0,6.820351930159596,6.820351930159596,100.0
+2024,510740,SAO PEDRO DA CIPA,RONDONOPOLIS,Meningite não especificada,2,2,2,1,4247.0,47.09206498704968,23.54603249352484,50.0
+2024,510740,SAO PEDRO DA CIPA,RONDONOPOLIS,Outras etiologias,1,0,1,0,4247.0,23.54603249352484,0.0,
+2024,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,3,3,2,0,259167.0,1.157554781280024,0.0,0.0
+2024,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,8,8,8,2,259167.0,3.0868127500800644,0.7717031875200161,25.0
+2024,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,4,4,4,1,259167.0,1.5434063750400322,0.38585159376000805,25.0
+2024,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite tuberculosa,1,1,1,0,259167.0,0.38585159376000805,0.0,0.0
+2024,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite viral/asséptica,2,2,2,0,259167.0,0.7717031875200161,0.0,0.0
+2024,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,9,0,7,0,259167.0,3.4726643438400724,0.0,
+2024,510770,ROSARIO OESTE,DIAMANTINO,Meningite tuberculosa,1,1,1,0,15236.0,6.563402467839328,0.0,0.0
+2024,510787,SAPEZAL,TANGARA DA SERRA,Meningite não especificada,1,1,1,1,31499.0,3.174703958855837,3.174703958855837,100.0
+2024,510787,SAPEZAL,TANGARA DA SERRA,Outras etiologias,1,0,1,0,31499.0,3.174703958855837,0.0,
+2024,510790,SINOP,SINOP,Meningite não especificada,5,5,4,0,216029.0,2.314504071212661,0.0,0.0
+2024,510790,SINOP,SINOP,Meningite pneumocócica,1,1,1,0,216029.0,0.46290081424253227,0.0,0.0
+2024,510790,SINOP,SINOP,Outras etiologias,11,2,10,0,216029.0,5.091908956667855,0.0,0.0
+2024,510792,SORRISO,SINOP,Meningite bacteriana/outras bactérias,1,1,1,1,120561.0,0.8294556282711656,0.8294556282711656,100.0
+2024,510792,SORRISO,SINOP,Meningite fúngica,1,1,1,0,120561.0,0.8294556282711656,0.0,0.0
+2024,510792,SORRISO,SINOP,Meningite pneumocócica,1,1,1,0,120561.0,0.8294556282711656,0.0,0.0
+2024,510792,SORRISO,SINOP,Outras etiologias,1,0,1,0,120561.0,0.8294556282711656,0.0,
+2024,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite bacteriana/outras bactérias,1,1,1,0,112547.0,0.8885176859445387,0.0,0.0
+2024,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite não especificada,1,1,1,1,112547.0,0.8885176859445387,0.8885176859445387,100.0
+2024,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,8,0,8,0,112547.0,7.10814148755631,0.0,
+2024,510805,TERRA NOVA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,10641.0,9.3976130062964,0.0,
+2024,510830,UNIAO DO SUL,SINOP,Outras etiologias,1,0,1,0,3897.0,25.660764690787786,0.0,
+2024,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,5,5,5,0,314627.0,1.5891833822272086,0.0,0.0
+2024,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,2,2,2,1,314627.0,0.6356733528908836,0.3178366764454418,50.0
+2024,510840,VARZEA GRANDE,CUIABA,Outras etiologias,18,0,14,0,314627.0,5.721060176017952,0.0,
+2024,510850,VERA,SINOP,Outras etiologias,1,0,1,0,10584.0,9.44822373393802,0.0,
+2024,510860,VILA RICA,PORTO ALEGRE DO NORTE,Outras etiologias,2,0,2,0,19827.0,10.087254753618803,0.0,
+2024,510885,NOVA MARILANDIA,TANGARA DA SERRA,Meningite bacteriana/outras bactérias,1,1,1,1,3678.0,27.188689505165847,27.188689505165847,100.0
+2025,510020,AGUA BOA,AGUA BOA,Outras etiologias,2,0,2,0,32099.0,6.230723698557587,0.0,
+2025,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite não especificada,1,1,1,0,62158.0,1.608803372051868,0.0,0.0
+2025,510025,ALTA FLORESTA,ALTA FLORESTA,Meningite pneumocócica,1,1,1,1,62158.0,1.608803372051868,1.608803372051868,100.0
+2025,510025,ALTA FLORESTA,ALTA FLORESTA,Outras etiologias,1,0,1,0,62158.0,1.608803372051868,0.0,
+2025,510130,ARENAPOLIS,TANGARA DA SERRA,Outras etiologias,1,0,1,0,10769.0,9.285913269570061,0.0,
+2025,510140,ARIPUANA,JUINA,Outras etiologias,1,0,0,0,26558.0,3.7653437758867385,0.0,
+2025,510180,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,1,1,1,0,73878.0,1.3535829340263679,0.0,0.0
+2025,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite bacteriana/outras bactérias,1,1,1,0,73878.0,1.3535829340263679,0.0,0.0
+2025,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,73878.0,1.3535829340263679,0.0,0.0
+2025,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,4,0,4,0,73878.0,5.4143317361054715,0.0,
+2025,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,91767.0,1.089716346834919,0.0,0.0
+2025,510250,CACERES,CACERES,Meningite não especificada,6,6,6,1,91767.0,6.538298081009513,1.089716346834919,16.666666666666664
+2025,510250,CACERES,CACERES,Outras etiologias,3,0,2,0,91767.0,3.2691490405047565,0.0,
+2025,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Meningite não especificada,1,1,1,0,51722.0,1.9334132477475734,0.0,0.0
+2025,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,6,0,6,0,51722.0,11.600479486485442,0.0,
+2025,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,2,0,2,0,49053.0,4.077222595967627,0.0,
+2025,510269,CANABRAVA DO NORTE,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,4451.0,22.46686137946529,0.0,
+2025,510270,CANARANA,AGUA BOA,Outras etiologias,2,0,2,0,28324.0,7.061149555147578,0.0,
+2025,510279,CARLINDA,ALTA FLORESTA,Meningite não especificada,1,1,1,0,10260.0,9.746588693957115,0.0,0.0
+2025,510300,CHAPADA DOS GUIMARAES,CUIABA,Meningite fúngica,1,1,1,0,19458.0,5.139274334463974,0.0,0.0
+2025,510300,CHAPADA DOS GUIMARAES,CUIABA,Outras etiologias,2,0,1,0,19458.0,10.278548668927948,0.0,
+2025,510320,COLIDER,COLIDER,Meningite fúngica,1,1,1,0,32054.0,3.1197354464341425,0.0,0.0
+2025,510320,COLIDER,COLIDER,Meningite tuberculosa,1,1,1,0,32054.0,3.1197354464341425,0.0,0.0
+2025,510325,COLNIZA,JUINA,Outras etiologias,1,0,1,0,26026.0,3.8423115346192267,0.0,
+2025,510330,COMODORO,PONTES E LACERDA,Meningite não especificada,1,1,1,0,18469.0,5.414478315014349,0.0,0.0
+2025,510335,CONFRESA,PORTO ALEGRE DO NORTE,Meningite pneumocócica,1,1,1,1,38460.0,2.6001040041601664,2.6001040041601664,100.0
+2025,510335,CONFRESA,PORTO ALEGRE DO NORTE,Outras etiologias,3,0,3,0,38460.0,7.800312012480499,0.0,
+2025,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,7,7,7,2,691875.0,1.011743450767841,0.28906955736224027,28.57142857142857
+2025,510340,CUIABA,CUIABA,Meningite fúngica,5,5,5,2,691875.0,0.7226738934056007,0.28906955736224027,40.0
+2025,510340,CUIABA,CUIABA,Meningite não especificada,6,6,6,0,691875.0,0.8672086720867208,0.0,0.0
+2025,510340,CUIABA,CUIABA,Meningite pneumocócica,2,2,2,1,691875.0,0.28906955736224027,0.14453477868112014,50.0
+2025,510340,CUIABA,CUIABA,Meningite por Hib/Hemófilo,2,2,2,0,691875.0,0.28906955736224027,0.0,0.0
+2025,510340,CUIABA,CUIABA,Meningite tuberculosa,1,1,1,0,691875.0,0.14453477868112014,0.0,0.0
+2025,510340,CUIABA,CUIABA,Meningite viral/asséptica,1,1,1,0,691875.0,0.14453477868112014,0.0,0.0
+2025,510340,CUIABA,CUIABA,Outras etiologias,48,1,41,0,691875.0,6.9376693766937665,0.0,0.0
+2025,510350,DIAMANTINO,DIAMANTINO,Doença meningocócica,1,1,0,1,22623.0,4.420280245767581,4.420280245767581,100.0
+2025,510350,DIAMANTINO,DIAMANTINO,Meningite bacteriana/outras bactérias,1,1,1,1,22623.0,4.420280245767581,4.420280245767581,100.0
+2025,510350,DIAMANTINO,DIAMANTINO,Outras etiologias,1,0,1,0,22623.0,4.420280245767581,0.0,
+2025,510370,FELIZ NATAL,SINOP,Meningite não especificada,1,1,1,0,10523.0,9.502993442934525,0.0,0.0
+2025,510370,FELIZ NATAL,SINOP,Outras etiologias,1,0,1,0,10523.0,9.502993442934525,0.0,
+2025,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,31209.0,3.2042039155371844,0.0,
+2025,510510,JUARA,JUARA,Outras etiologias,5,0,5,0,36089.0,13.85463714705312,0.0,
+2025,510515,JUINA,JUINA,Meningite não especificada,1,1,1,0,48396.0,2.0662864699561947,0.0,0.0
+2025,510517,JURUENA,JUINA,Outras etiologias,1,0,1,0,10057.0,9.943323058566172,0.0,
+2025,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,2,0,2,0,95792.0,2.0878570235510274,0.0,
+2025,510558,MARCELANDIA,COLIDER,Outras etiologias,4,0,4,0,11355.0,35.22677234698371,0.0,
+2025,510560,MATUPA,PEIXOTO DE AZEVEDO,Meningite não especificada,1,1,1,0,21959.0,4.553941436313129,0.0,0.0
+2025,510560,MATUPA,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,1,0,21959.0,4.553941436313129,0.0,
+2025,510562,MIRASSOL D OESTE,CACERES,Meningite não especificada,1,1,1,0,27637.0,3.618337735644245,0.0,0.0
+2025,510590,NOBRES,DIAMANTINO,Meningite viral/asséptica,1,1,1,0,15796.0,6.330716637123322,0.0,0.0
+2025,510620,NOVA BRASILANDIA,CUIABA,Meningite viral/asséptica,1,1,1,0,3791.0,26.37826431020839,0.0,0.0
+2025,510623,NOVA OLIMPIA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,16204.0,6.171315724512466,0.0,
+2025,510628,NOVO SAO JOAQUIM,BARRA DO GARCAS,Outras etiologias,1,0,1,0,7239.0,13.814062715844731,0.0,
+2025,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Outras etiologias,2,1,2,1,33754.0,5.925223677193815,2.9626118385969074,100.0
+2025,510650,POCONE,CUIABA,Outras etiologias,3,0,3,0,31203.0,9.614460148062687,0.0,
+2025,510675,PONTES E LACERDA,PONTES E LACERDA,Meningite não especificada,3,3,3,0,55762.0,5.38000789067824,0.0,0.0
+2025,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,7,0,1,0,55762.0,12.553351744915892,0.0,
+2025,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Outras etiologias,1,0,1,0,96006.0,1.0416015665687561,0.0,
+2025,510706,QUERENCIA,AGUA BOA,Outras etiologias,1,0,1,0,31100.0,3.215434083601286,0.0,
+2025,510718,RIBEIRAO CASCALHEIRA,AGUA BOA,Outras etiologias,1,0,1,0,10541.0,9.48676596148373,0.0,
+2025,510729,SAO JOSE DO POVO,RONDONOPOLIS,Outras etiologias,1,0,1,0,2716.0,36.81885125184094,0.0,
+2025,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Outras etiologias,2,0,2,0,14455.0,13.836042891732966,0.0,
+2025,510735,SAO JOSE DO XINGU,PORTO ALEGRE DO NORTE,Outras etiologias,2,0,2,0,6234.0,32.08213025344883,0.0,
+2025,510760,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2,2,2,0,263708.0,0.758414610099049,0.0,0.0
+2025,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,6,6,6,3,263708.0,2.2752438302971467,1.1376219151485734,50.0
+2025,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,7,0,5,0,263708.0,2.654451135346671,0.0,
+2025,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,2,0,1,0,16839.0,11.877189856879863,0.0,
+2025,510787,SAPEZAL,TANGARA DA SERRA,Outras etiologias,1,0,1,0,32514.0,3.075598203850649,0.0,
+2025,510790,SINOP,SINOP,Doença meningocócica,1,1,1,0,223780.0,0.44686745911162745,0.0,0.0
+2025,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,223780.0,0.44686745911162745,0.0,0.0
+2025,510790,SINOP,SINOP,Meningite não especificada,6,6,6,1,223780.0,2.6812047546697646,0.44686745911162745,16.666666666666664
+2025,510790,SINOP,SINOP,Meningite tuberculosa,2,2,2,0,223780.0,0.8937349182232549,0.0,0.0
+2025,510790,SINOP,SINOP,Outras etiologias,13,0,12,0,223780.0,5.809276968451157,0.0,
+2025,510792,SORRISO,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,124665.0,0.8021497613604459,0.0,0.0
+2025,510792,SORRISO,SINOP,Meningite não especificada,1,1,1,0,124665.0,0.8021497613604459,0.0,0.0
+2025,510792,SORRISO,SINOP,Outras etiologias,1,0,1,0,124665.0,0.8021497613604459,0.0,
+2025,510794,TABAPORA,JUARA,Outras etiologias,1,0,1,0,9895.0,10.106114199090449,0.0,
+2025,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite viral/asséptica,3,3,3,0,114603.0,2.617732520091097,0.0,0.0
+2025,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,114603.0,0.8725775066970323,0.0,
+2025,510810,TESOURO,RONDONOPOLIS,Meningite fúngica,1,1,1,0,2935.0,34.07155025553663,0.0,0.0
+2025,510840,VARZEA GRANDE,CUIABA,Doença meningocócica,1,1,1,0,318922.0,0.3135562927612394,0.0,0.0
+2025,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,0,318922.0,0.3135562927612394,0.0,0.0
+2025,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,2,2,2,0,318922.0,0.6271125855224788,0.0,0.0
+2025,510840,VARZEA GRANDE,CUIABA,Meningite pneumocócica,1,1,1,1,318922.0,0.3135562927612394,0.3135562927612394,100.0
+2025,510840,VARZEA GRANDE,CUIABA,Meningite viral/asséptica,2,2,2,0,318922.0,0.6271125855224788,0.0,0.0
+2025,510840,VARZEA GRANDE,CUIABA,Outras etiologias,18,0,15,0,318922.0,5.6440132697023095,0.0,
+2025,510860,VILA RICA,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,1,0,19686.0,5.079752108097125,0.0,
+2025,510885,NOVA MARILANDIA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,3731.0,26.80246582685607,0.0,
+2026,510020,AGUA BOA,AGUA BOA,Outras etiologias,1,0,1,0,,,,
+2026,510025,ALTA FLORESTA,ALTA FLORESTA,Outras etiologias,2,0,2,0,,,,
+2026,510100,ARAGUAIANA,BARRA DO GARCAS,Meningite não especificada,1,1,1,0,,,,0.0
+2026,510130,ARENAPOLIS,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2026,510140,ARIPUANA,JUINA,Outras etiologias,1,0,1,0,,,,
+2026,510170,BARRA DO BUGRES,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2026,510180,BARRA DO GARCAS,BARRA DO GARCAS,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2026,510180,BARRA DO GARCAS,BARRA DO GARCAS,Outras etiologias,3,0,3,0,,,,
+2026,510250,CACERES,CACERES,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2026,510250,CACERES,CACERES,Meningite fúngica,1,1,1,0,,,,0.0
+2026,510250,CACERES,CACERES,Meningite viral/asséptica,1,1,1,1,,,,100.0
+2026,510250,CACERES,CACERES,Outras etiologias,4,0,4,0,,,,
+2026,510260,CAMPINAPOLIS,BARRA DO GARCAS,Outras etiologias,1,0,1,0,,,,
+2026,510263,CAMPO NOVO DO PARECIS,TANGARA DA SERRA,Outras etiologias,3,0,1,0,,,,
+2026,510267,CAMPO VERDE,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2026,510267,CAMPO VERDE,RONDONOPOLIS,Outras etiologias,1,0,0,0,,,,
+2026,510269,CANABRAVA DO NORTE,PORTO ALEGRE DO NORTE,Outras etiologias,1,0,0,0,,,,
+2026,510270,CANARANA,AGUA BOA,Meningite não especificada,2,2,2,0,,,,0.0
+2026,510270,CANARANA,AGUA BOA,Outras etiologias,2,0,2,0,,,,
+2026,510320,COLIDER,COLIDER,Outras etiologias,1,0,1,0,,,,
+2026,510340,CUIABA,CUIABA,Meningite bacteriana/outras bactérias,2,2,2,1,,,,50.0
+2026,510340,CUIABA,CUIABA,Meningite não especificada,9,9,9,1,,,,11.11111111111111
+2026,510340,CUIABA,CUIABA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2026,510340,CUIABA,CUIABA,Meningite viral/asséptica,4,4,4,0,,,,0.0
+2026,510340,CUIABA,CUIABA,Outras etiologias,20,1,20,0,,,,0.0
+2026,510395,GLORIA D OESTE,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2026,510410,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Outras etiologias,2,0,2,0,,,,
+2026,510452,IPIRANGA DO NORTE,SINOP,Outras etiologias,1,0,0,0,,,,
+2026,510510,JUARA,JUARA,Doença meningocócica,1,1,1,0,,,,0.0
+2026,510510,JUARA,JUARA,Outras etiologias,2,0,2,0,,,,
+2026,510515,JUINA,JUINA,Meningite pneumocócica,1,1,1,0,,,,0.0
+2026,510515,JUINA,JUINA,Outras etiologias,1,0,0,0,,,,
+2026,510517,JURUENA,JUINA,Meningite tuberculosa,1,1,1,0,,,,0.0
+2026,510517,JURUENA,JUINA,Outras etiologias,1,0,0,0,,,,
+2026,510520,JUSCIMEIRA,RONDONOPOLIS,Meningite não especificada,1,1,1,0,,,,0.0
+2026,510525,LUCAS DO RIO VERDE,SINOP,Outras etiologias,1,0,1,0,,,,
+2026,510550,VILA BELA DA S TRINDADE,PONTES E LACERDA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2026,510550,VILA BELA DA S TRINDADE,PONTES E LACERDA,Meningite não especificada,1,1,1,1,,,,100.0
+2026,510558,MARCELANDIA,COLIDER,Outras etiologias,1,0,1,0,,,,
+2026,510562,MIRASSOL D OESTE,CACERES,Outras etiologias,1,0,1,0,,,,
+2026,510618,NOVA LACERDA,PONTES E LACERDA,Meningite não especificada,1,1,1,0,,,,0.0
+2026,510619,NOVA SANTA HELENA,COLIDER,Outras etiologias,3,0,3,0,,,,
+2026,510620,NOVA BRASILANDIA,CUIABA,Outras etiologias,2,0,2,0,,,,
+2026,510622,NOVA MUTUM,SINOP,Outras etiologias,2,0,2,0,,,,
+2026,510623,NOVA OLIMPIA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2026,510627,NOVO HORIZONTE DO NORTE,JUARA,Outras etiologias,1,0,1,0,,,,
+2026,510628,NOVO SAO JOAQUIM,BARRA DO GARCAS,Outras etiologias,2,0,1,0,,,,
+2026,510629,PARANAITA,ALTA FLORESTA,Outras etiologias,2,0,2,0,,,,
+2026,510642,PEIXOTO DE AZEVEDO,PEIXOTO DE AZEVEDO,Outras etiologias,1,0,0,0,,,,
+2026,510675,PONTES E LACERDA,PONTES E LACERDA,Outras etiologias,1,0,1,0,,,,
+2026,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2026,510704,PRIMAVERA DO LESTE,RONDONOPOLIS,Meningite por Hib/Hemófilo,1,1,1,0,,,,0.0
+2026,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Meningite não especificada,1,1,1,0,,,,0.0
+2026,510710,SAO JOSE DOS QUATRO MARCOS,CACERES,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2026,510724,SANTA CARMEM,SINOP,Meningite viral/asséptica,1,1,1,0,,,,0.0
+2026,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2026,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Meningite não especificada,1,1,1,0,,,,0.0
+2026,510730,SAO JOSE DO RIO CLARO,DIAMANTINO,Outras etiologias,2,0,2,0,,,,
+2026,510735,SAO JOSE DO XINGU,PORTO ALEGRE DO NORTE,Outras etiologias,2,0,2,0,,,,
+2026,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2026,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite não especificada,4,4,4,0,,,,0.0
+2026,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite pneumocócica,1,1,1,0,,,,0.0
+2026,510760,RONDONOPOLIS,RONDONOPOLIS,Meningite tuberculosa,1,1,1,0,,,,0.0
+2026,510760,RONDONOPOLIS,RONDONOPOLIS,Outras etiologias,1,0,1,0,,,,
+2026,510780,SANTO ANTONIO DO LEVERGER,CUIABA,Outras etiologias,1,0,1,0,,,,
+2026,510790,SINOP,SINOP,Doença meningocócica,2,2,2,2,,,,100.0
+2026,510790,SINOP,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2026,510790,SINOP,SINOP,Outras etiologias,17,0,13,0,,,,
+2026,510792,SORRISO,SINOP,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2026,510792,SORRISO,SINOP,Meningite não especificada,2,2,2,2,,,,100.0
+2026,510792,SORRISO,SINOP,Meningite pneumocócica,2,2,2,0,,,,0.0
+2026,510792,SORRISO,SINOP,Outras etiologias,4,0,2,0,,,,
+2026,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite bacteriana/outras bactérias,1,1,1,1,,,,100.0
+2026,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite fúngica,1,1,1,1,,,,100.0
+2026,510795,TANGARA DA SERRA,TANGARA DA SERRA,Meningite viral/asséptica,2,2,2,0,,,,0.0
+2026,510795,TANGARA DA SERRA,TANGARA DA SERRA,Outras etiologias,1,0,1,0,,,,
+2026,510800,TAPURAH,SINOP,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2026,510800,TAPURAH,SINOP,Meningite não especificada,1,1,1,0,,,,0.0
+2026,510840,VARZEA GRANDE,CUIABA,Meningite bacteriana/outras bactérias,1,1,1,0,,,,0.0
+2026,510840,VARZEA GRANDE,CUIABA,Meningite não especificada,3,3,3,0,,,,0.0
+2026,510840,VARZEA GRANDE,CUIABA,Meningite pneumocócica,2,2,2,0,,,,0.0
+2026,510840,VARZEA GRANDE,CUIABA,Outras etiologias,11,0,11,0,,,,
+2026,510880,NOVA GUARITA,COLIDER,Outras etiologias,1,0,0,0,,,,

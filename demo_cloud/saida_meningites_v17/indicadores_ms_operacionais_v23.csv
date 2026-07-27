@@ -1,0 +1,8 @@
+﻿indicador,indicador_rotulo,numerador,denominador,valor_pct,referencia_brasil_2024,semaforo,fonte,interpretacao,quimioprofilaxia_indevida_n
+pct_confirmacao_laboratorial_pcr_cultura,% confirmação laboratorial (PCR/cultura) — Informe MS,472.0,1063,44.402634054562554,36.1,Verde,Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS,"44,4% das meningites bacterianas confirmadas encerradas com PCR ou cultura (ref. BR 36,1%).",47
+pct_confirmacao_laboratorial_caderno,% confirmação laboratorial (cultura/CIE/PCR/látex) — Caderno SINAN,604.0,1063,56.820319849482594,,Vermelho,Caderno de Análises SINAN — Meningites,"56,8% com critério laboratorial ampliado (cultura/CIE/PCR/látex).",47
+pct_investigados_48h,% casos investigados em até 48h da notificação,5566.0,5944,93.64064602960968,97.8,Vermelho,Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS,"93,6% investigados ≤48h (entre com data: 97,1%).",47
+pct_encerrados_60d,% casos encerrados em até 60 dias da notificação,4968.0,5944,83.58008075370121,94.4,Vermelho,Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS,"83,6% encerrados ≤60 dias (entre com data: 88,1%).",47
+pct_quimioprofilaxia_dm_48h,% doença meningocócica com quimioprofilaxia ≤48h,152.0,278,54.67625899280576,45.5,Verde,Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS; NT 97/2024,"54,7% dos casos de DM com quimio ≤48h (qualquer quimio registrada: 75,2%).",47
+pct_sorogrupo_identificado_dm,% DM com sorogrupo identificado,85.0,278,30.575539568345324,,Vermelho,Guia de Vigilância / monitoramento de sorogrupos,"Sorogrupo preenchido em 30,6% dos casos de DM.",47
+pct_notificacao_24h,% notificação em até 24h do início dos sintomas,,5944,29.768541983443146,,Vermelho,Notificação compulsória imediata (≤24h),"29,8% com lead time sintomas→notificação ≤1 dia.",47

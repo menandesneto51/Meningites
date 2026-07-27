@@ -1,0 +1,11 @@
+﻿criterio,indicador,pontuacao,interpretacao
+Completude,77.73490074024227,1,"Completude média dos campos críticos: 77,7%."
+Validade,79.00067294751008,0,"Valores válidos em regras básicas: 79,0%."
+Consistência,100.0,2,Inconsistências lógicas estimadas: 0%.
+Oportunidade,71.66339678929829,1,"Média dos % oportunos MS (invest.≤48h, encerr.≤60d, notif.≤24h): 71,7%."
+Duplicidade,99.04104979811575,2,"Duplicidade estimada: 1,0%."
+Acurácia,58.64737550471063,1,"Proxy por critério de confirmação. Acurácia plena exige auditoria com ficha, prontuário, GAL/LACEN ou SIM."
+Plausibilidade,100.0,2,Plausibilidade epidemiológica básica: 100%.
+Representatividade,98.59154929577466,2,"Municípios com pelo menos um registro: 140 de 142 (98,6%)."
+Padronização,100.0,2,"Avalia código IBGE, datas padronizadas e classificação agrupada."
+Rastreabilidade,100.0,2,"Avalia fonte, script, dicionário e base versionada."

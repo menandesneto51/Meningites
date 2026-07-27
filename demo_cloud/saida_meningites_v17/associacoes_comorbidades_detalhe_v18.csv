@@ -1,0 +1,57 @@
+﻿variavel,desfecho,categoria_desfecho,expostos_n,nao_expostos_n,eventos_expostos,eventos_nao_expostos,percentual_expostos,percentual_nao_expostos
+DoencasPreexistentesAIDS,Evolução,Alta,364,4265,198,2993,54.395604395604394,70.17584994138335
+DoencasPreexistentesAIDS,Evolução,Ignorado/em branco,364,4265,81,752,22.252747252747252,17.631887456037514
+DoencasPreexistentesAIDS,Evolução,Óbito por meningite,364,4265,22,307,6.043956043956044,7.198124267291911
+DoencasPreexistentesAIDS,Evolução,Óbito por outra causa,364,4265,63,213,17.307692307692307,4.9941383352872215
+DoencasPreexistentesAIDS,Classificação final,Confirmado,364,4265,272,2631,74.72527472527473,61.68815943728019
+DoencasPreexistentesAIDS,Classificação final,Descartado,364,4265,62,1452,17.032967032967033,34.04454865181712
+DoencasPreexistentesAIDS,Classificação final,Ignorado/em branco,364,4265,19,86,5.21978021978022,2.0164126611957793
+DoencasPreexistentesAIDS,Classificação final,Meningite por outra etiologia,364,4265,11,96,3.021978021978022,2.2508792497069168
+DoencasPreexistentesImunodepressoras,Evolução,Alta,80,4518,35,3124,43.75,69.14563966356795
+DoencasPreexistentesImunodepressoras,Evolução,Ignorado/em branco,80,4518,21,821,26.25,18.171757414785304
+DoencasPreexistentesImunodepressoras,Evolução,Óbito por meningite,80,4518,10,319,12.5,7.060646303674193
+DoencasPreexistentesImunodepressoras,Evolução,Óbito por outra causa,80,4518,14,254,17.5,5.621956617972555
+DoencasPreexistentesImunodepressoras,Classificação final,Confirmado,80,4518,53,2820,66.25,62.41699867197875
+DoencasPreexistentesImunodepressoras,Classificação final,Descartado,80,4518,23,1490,28.749999999999996,32.97919433377601
+DoencasPreexistentesImunodepressoras,Classificação final,Ignorado/em branco,80,4518,2,108,2.5,2.3904382470119523
+DoencasPreexistentesImunodepressoras,Classificação final,Meningite por outra etiologia,80,4518,2,100,2.5,2.213368747233289
+DoencasPreexistentesIRA,Evolução,Alta,95,4582,45,3172,47.368421052631575,69.22741161065036
+DoencasPreexistentesIRA,Evolução,Ignorado/em branco,95,4582,23,821,24.210526315789473,17.917939764295067
+DoencasPreexistentesIRA,Evolução,Óbito por meningite,95,4582,9,324,9.473684210526317,7.071147970318638
+DoencasPreexistentesIRA,Evolução,Óbito por outra causa,95,4582,18,265,18.947368421052634,5.7835006547359225
+DoencasPreexistentesIRA,Classificação final,Confirmado,95,4582,58,2875,61.05263157894737,62.74552597119162
+DoencasPreexistentesIRA,Classificação final,Descartado,95,4582,34,1498,35.78947368421053,32.6931470973374
+DoencasPreexistentesIRA,Classificação final,Ignorado/em branco,95,4582,3,107,3.1578947368421053,2.3352247926669576
+DoencasPreexistentesIRA,Classificação final,Meningite por outra etiologia,95,4582,0,102,0.0,2.226102138804016
+DoencasPreexistentesTuberculose,Evolução,Alta,92,4564,48,3154,52.17391304347826,69.10604732690622
+DoencasPreexistentesTuberculose,Evolução,Ignorado/em branco,92,4564,24,819,26.08695652173913,17.94478527607362
+DoencasPreexistentesTuberculose,Evolução,Óbito por meningite,92,4564,2,331,2.1739130434782608,7.252410166520596
+DoencasPreexistentesTuberculose,Evolução,Óbito por outra causa,92,4564,18,260,19.565217391304348,5.696757230499562
+DoencasPreexistentesTuberculose,Classificação final,Confirmado,92,4564,66,2862,71.73913043478261,62.708150744960555
+DoencasPreexistentesTuberculose,Classificação final,Descartado,92,4564,20,1496,21.73913043478261,32.778264680105174
+DoencasPreexistentesTuberculose,Classificação final,Ignorado/em branco,92,4564,6,104,6.521739130434782,2.2787028921998247
+DoencasPreexistentesTuberculose,Classificação final,Meningite por outra etiologia,92,4564,0,102,0.0,2.2348816827344433
+DoencasPreexistentesTraumatismo,Evolução,Alta,185,4539,119,3134,64.32432432432432,69.0460453844459
+DoencasPreexistentesTraumatismo,Evolução,Ignorado/em branco,185,4539,34,821,18.37837837837838,18.087684512007048
+DoencasPreexistentesTraumatismo,Evolução,Óbito por meningite,185,4539,15,320,8.108108108108109,7.0500110156422116
+DoencasPreexistentesTraumatismo,Evolução,Óbito por outra causa,185,4539,17,264,9.18918918918919,5.816259087904825
+DoencasPreexistentesTraumatismo,Classificação final,Confirmado,185,4539,144,2820,77.83783783783784,62.128222075347
+DoencasPreexistentesTraumatismo,Classificação final,Descartado,185,4539,36,1506,19.45945945945946,33.17911434236616
+DoencasPreexistentesTraumatismo,Classificação final,Ignorado/em branco,185,4539,4,109,2.1621621621621623,2.401410002203128
+DoencasPreexistentesTraumatismo,Classificação final,Meningite por outra etiologia,185,4539,1,104,0.5405405405405406,2.291253580083719
+DoencasPreexistentesInfeccaoHospitalar,Evolução,Alta,57,4631,21,3200,36.84210526315789,69.09954653422587
+DoencasPreexistentesInfeccaoHospitalar,Evolução,Ignorado/em branco,57,4631,17,838,29.82456140350877,18.0954437486504
+DoencasPreexistentesInfeccaoHospitalar,Evolução,Óbito por meningite,57,4631,3,331,5.263157894736842,7.1474843446339875
+DoencasPreexistentesInfeccaoHospitalar,Evolução,Óbito por outra causa,57,4631,16,262,28.07017543859649,5.657525372489744
+DoencasPreexistentesInfeccaoHospitalar,Classificação final,Confirmado,57,4631,47,2896,82.45614035087719,62.53508961347441
+DoencasPreexistentesInfeccaoHospitalar,Classificação final,Descartado,57,4631,7,1518,12.280701754385964,32.779097387173394
+DoencasPreexistentesInfeccaoHospitalar,Classificação final,Ignorado/em branco,57,4631,2,112,3.508771929824561,2.4184841286979055
+DoencasPreexistentesInfeccaoHospitalar,Classificação final,Meningite por outra etiologia,57,4631,1,105,1.7543859649122806,2.267328870654286
+DoencasPreexistentesOutras,Evolução,Alta,729,3573,427,2520,58.57338820301783,70.52896725440806
+DoencasPreexistentesOutras,Evolução,Ignorado/em branco,729,3573,144,638,19.753086419753085,17.85614329694934
+DoencasPreexistentesOutras,Evolução,Óbito por meningite,729,3573,85,235,11.659807956104252,6.5771060733277364
+DoencasPreexistentesOutras,Evolução,Óbito por outra causa,729,3573,73,180,10.013717421124829,5.037783375314862
+DoencasPreexistentesOutras,Classificação final,Confirmado,729,3573,454,2257,62.27709190672154,63.16820598936468
+DoencasPreexistentesOutras,Classificação final,Descartado,729,3573,243,1153,33.33333333333333,32.26980128743353
+DoencasPreexistentesOutras,Classificação final,Ignorado/em branco,729,3573,20,81,2.7434842249657065,2.2670025188916876
+DoencasPreexistentesOutras,Classificação final,Meningite por outra etiologia,729,3573,12,82,1.646090534979424,2.2949902043101034

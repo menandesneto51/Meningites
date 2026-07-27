@@ -1,0 +1,5 @@
+﻿indicador,n_valido,media_dias,mediana_dias,p75_dias,p90_dias
+lt_sintomas_notificacao_dias_v17,5837,9.778310776083604,3.0,6.0,14.0
+lt_notificacao_investigacao_dias_v17,5633,1.225102077045979,0.0,0.0,0.0
+lt_sintomas_coleta_dias_v17,4845,8.763054695562435,2.0,5.0,11.0
+lt_notificacao_encerramento_dias_v17,5536,26.472362716763005,12.0,30.0,63.0

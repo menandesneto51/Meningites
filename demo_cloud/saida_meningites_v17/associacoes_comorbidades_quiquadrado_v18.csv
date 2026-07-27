@@ -1,0 +1,15 @@
+﻿variavel,desfecho,n,categorias_desfecho,chi2,p_value,cramers_v,interpretacao_estatistica,relevancia_pratica
+DoencasPreexistentesAIDS,Evolução,4629,4,102.0090344727549,5.74745393192737e-22,0.14844847076041953,p=0.0000: diferença/associação estatisticamente significativa ao nível de 5%.,Associação moderada/forte
+DoencasPreexistentesAIDS,Classificação final,4629,4,54.798718016211346,7.579730225758237e-12,0.10880318505264543,p=0.0000: diferença/associação estatisticamente significativa ao nível de 5%.,Associação moderada/forte
+DoencasPreexistentesImunodepressoras,Evolução,4598,4,32.458716667191915,4.1888526930461216e-07,0.08401971209087158,p=0.0000: diferença/associação estatisticamente significativa ao nível de 5%.,Associação fraca
+DoencasPreexistentesImunodepressoras,Classificação final,4598,4,0.6451695504816468,0.8860183566214288,0.011845474103558296,p=0.8860: não há evidência estatística suficiente ao nível de 5%.,Associação fraca
+DoencasPreexistentesIRA,Evolução,4677,4,35.9158052717894,7.801678866599787e-08,0.08763127270262608,p=0.0000: diferença/associação estatisticamente significativa ao nível de 5%.,Associação fraca
+DoencasPreexistentesIRA,Classificação final,4677,4,2.697550506466977,0.4406437206367687,0.02401602391834414,p=0.4406: não há evidência estatística suficiente ao nível de 5%.,Associação fraca
+DoencasPreexistentesTuberculose,Evolução,4656,4,39.36362030057943,1.4535376105462e-08,0.09194773408512605,p=0.0000: diferença/associação estatisticamente significativa ao nível de 5%.,Associação fraca
+DoencasPreexistentesTuberculose,Classificação final,4656,4,13.473089966803348,0.0037176059402675354,0.053793167686773675,p=0.0037: diferença/associação estatisticamente significativa ao nível de 5%.,Associação fraca
+DoencasPreexistentesTraumatismo,Evolução,4724,4,4.264133530624477,0.23431882807681845,0.030044186801932785,p=0.2343: não há evidência estatística suficiente ao nível de 5%.,Associação fraca
+DoencasPreexistentesTraumatismo,Classificação final,4724,4,19.735670428856196,0.00019255472738076394,0.06463548286658934,p=0.0002: diferença/associação estatisticamente significativa ao nível de 5%.,Associação fraca
+DoencasPreexistentesInfeccaoHospitalar,Evolução,4688,4,60.7523934475603,4.059635661920052e-13,0.11383816712828809,p=0.0000: diferença/associação estatisticamente significativa ao nível de 5%.,Associação moderada/forte
+DoencasPreexistentesInfeccaoHospitalar,Classificação final,4688,4,11.173328526063848,0.010824611042915232,0.04881996713142357,p=0.0108: diferença/associação estatisticamente significativa ao nível de 5%.,Associação fraca
+DoencasPreexistentesOutras,Evolução,4302,4,60.351238212883246,4.945423903455897e-13,0.11844258830948175,p=0.0000: diferença/associação estatisticamente significativa ao nível de 5%.,Associação moderada/forte
+DoencasPreexistentesOutras,Classificação final,4302,4,2.039624079918076,0.564223442550349,0.02177408240978304,p=0.5642: não há evidência estatística suficiente ao nível de 5%.,Associação fraca

@@ -1,0 +1,4 @@
+﻿desfecho,ano_epi,semana_epi,observado_ultima_semana,mediana_8_semanas_anteriores,nowcast,atraso_estimado,fator_correcao,interpretacao
+casos,2026,28,1.0,6.0,6.0,5.0,6.0,Nowcasting operacional simples: corrige a semana mais recente pela mediana das 8 semanas anteriores quando há possível atraso de entrada.
+hospitalizacoes,2026,28,1.0,5.0,5.0,4.0,5.0,Nowcasting operacional simples: corrige a semana mais recente pela mediana das 8 semanas anteriores quando há possível atraso de entrada.
+obitos_meningite,2026,28,0.0,0.0,0.0,0.0,,Nowcasting operacional simples: corrige a semana mais recente pela mediana das 8 semanas anteriores quando há possível atraso de entrada.

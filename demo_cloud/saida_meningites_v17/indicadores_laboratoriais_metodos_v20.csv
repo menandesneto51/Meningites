@@ -1,0 +1,19 @@
+﻿metodo,coluna,resultados_validos,concludentes_pos_neg,positivos,negativos,inconclusivos,taxa_positividade_real_pct,taxa_positividade_inclui_inconclusivo_pct,cobertura_resultado_sobre_notificacoes_pct
+Cultura líquor,ResultadoCulturaLiquor,0,0,0,0,0,,,0.0
+Cultura petequias,ResultadoCulturaPetequias,0,0,0,0,0,,,0.0
+Cultura sangue/soro,ResultadoCulturaSangueSoro,0,0,0,0,0,,,0.0
+Cultura escarro,ResultadoCulturaEscarro,0,0,0,0,0,,,0.0
+Bacterioscopia líquor,ResultadoBacterioscopiaLiquor,490,490,278,212,0,56.734693877551024,56.734693877551024,8.243606998654105
+Bacterioscopia petequias,ResultadoBacterioscopiaPetequias,7,7,2,5,0,28.57142857142857,28.57142857142857,0.11776581426648722
+Bacterioscopia sangue/soro,ResultadoBacterioscopiaSangueSoro,3,3,2,1,0,66.66666666666666,66.66666666666666,0.05047106325706595
+Bacterioscopia escarro,ResultadoBacterioscopiaEscarro,3,3,1,2,0,33.33333333333333,33.33333333333333,0.05047106325706595
+CIE líquor,ResultadoCIELiquor,0,0,0,0,0,,,0.0
+CIE sangue/soro,ResultadoCIESangueSoro,0,0,0,0,0,,,0.0
+Látex líquor,ResultadoAglutinacaoLatexLiquor,0,0,0,0,0,,,0.0
+Látex sangue/soro,ResultadoAglutinacaoLatexSangueSoro,0,0,0,0,0,,,0.0
+Isolamento viral líquor,ResultadoIsolamentoViralLiquor,687,687,687,0,0,100.0,100.0,11.557873485868102
+Isolamento viral fezes,ResultadoIsolamentoViralFezes,585,585,585,0,0,100.0,100.0,9.84185733512786
+PCR líquor,ResultadoPCRLiquor,125,125,125,0,0,100.0,100.0,2.1029609690444144
+PCR petequias,ResultadoPCRPetequias,43,43,43,0,0,100.0,100.0,0.7234185733512786
+PCR sangue/soro,ResultadoPCRSangueSoro,53,53,53,0,0,100.0,100.0,0.8916554508748318
+PCR escarro,ResultadoPCREscarro,45,45,45,0,0,100.0,100.0,0.7570659488559892

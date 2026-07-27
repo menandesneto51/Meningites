@@ -13,10 +13,33 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent
-OUT = ROOT / "saida_meningites_v17"
-REL = ROOT / "relatorios"
-OUT.mkdir(exist_ok=True)
-REL.mkdir(exist_ok=True)
+
+
+def _resolve_out_rel() -> tuple[Path, Path]:
+    """Usa saídas locais; se ausentes (ex.: Streamlit Cloud), cai no pacote demo_cloud."""
+    out = ROOT / "saida_meningites_v17"
+    rel = ROOT / "relatorios"
+    demo_out = ROOT / "demo_cloud" / "saida_meningites_v17"
+    demo_rel = ROOT / "demo_cloud" / "relatorios"
+    # marcadores de painel operacional
+    markers = [
+        "base_unica_meningites_v17.csv",
+        "indicadores_ms_operacionais_v23.csv",
+        "indicadores_gestao_semana_v24.csv",
+    ]
+    if any((out / m).exists() for m in markers):
+        out.mkdir(exist_ok=True)
+        rel.mkdir(exist_ok=True)
+        return out, rel
+    if demo_out.exists() and any((demo_out / m).exists() for m in markers):
+        return demo_out, demo_rel if demo_rel.exists() else rel
+    out.mkdir(exist_ok=True)
+    rel.mkdir(exist_ok=True)
+    return out, rel
+
+
+OUT, REL = _resolve_out_rel()
+
 
 MISSING = {"", "nan", "none", "null", "*em branco", "em branco", "ignorado", "ign", "na", "não informado", "nao informado"}
 

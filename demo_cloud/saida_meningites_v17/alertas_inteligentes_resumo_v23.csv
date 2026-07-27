@@ -1,0 +1,10 @@
+﻿tipo_alerta,severidade,n,origem
+Encerramento fora do prazo,Atenção,679,caso
+Confirmação laboratorial fraca,Atenção,591,caso
+Encerramento em risco/atrasado,Crítico,292,caso
+Investigação atrasada,Alto,210,caso
+Investigação fora do prazo,Atenção,168,caso
+Quimioprofilaxia ausente,Crítico,69,caso
+Quimioprofilaxia inconsistente,Atenção,47,caso
+Quimioprofilaxia fora do prazo,Alto,28,caso
+Quimioprofilaxia ausente,Alto,11,caso

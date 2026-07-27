@@ -1,0 +1,10 @@
+﻿ano_evento_v17,classificacao_agrupada_v17,casos,confirmados,obitos_meningite,populacao_estado,populacao_origem,populacao_ref,incidencia_100mil,mortalidade_100mil,letalidade_pct
+2025,Doença meningocócica,6,6,1,3039100.0,municipal_soma_com_carry,3039100.0,0.19742686979697935,0.03290447829949656,16.666666666666664
+2025,Meningite bacteriana/outras bactérias,13,13,3,3039100.0,municipal_soma_com_carry,3039100.0,0.4277582178934553,0.09871343489848967,23.076923076923077
+2025,Meningite fúngica,8,8,2,3039100.0,municipal_soma_com_carry,3039100.0,0.2632358263959725,0.06580895659899312,25.0
+2025,Meningite não especificada,39,39,5,3039100.0,municipal_soma_com_carry,3039100.0,1.2832746536803659,0.1645223914974828,12.82051282051282
+2025,Meningite pneumocócica,5,5,4,3039100.0,municipal_soma_com_carry,3039100.0,0.1645223914974828,0.13161791319798624,80.0
+2025,Meningite por Hib/Hemófilo,2,2,0,3039100.0,municipal_soma_com_carry,3039100.0,0.06580895659899312,0.0,0.0
+2025,Meningite tuberculosa,4,4,0,3039100.0,municipal_soma_com_carry,3039100.0,0.13161791319798624,0.0,0.0
+2025,Meningite viral/asséptica,8,8,0,3039100.0,municipal_soma_com_carry,3039100.0,0.2632358263959725,0.0,0.0
+2025,Outras etiologias,2,2,1,3039100.0,municipal_soma_com_carry,3039100.0,0.06580895659899312,0.03290447829949656,50.0

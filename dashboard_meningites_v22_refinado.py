@@ -1712,6 +1712,11 @@ def main():
         "Sistema exclusivo de vigilância de meningites · Indicadores do Ministério da Saúde · "
         "Alertas CIEVS (NT 97/2024) · Não é o SIS Clima-Saúde."
     )
+    if "demo_cloud" in str(OUT).replace("\\", "/"):
+        st.warning(
+            "Modo **demonstração / Streamlit Cloud**: dados anonimizados, sem acesso ao DW da SES-MT. "
+            "Para operação completa use o painel local (porta 8510) após o pipeline."
+        )
 
     with st.sidebar:
         st.header("Filtros globais")

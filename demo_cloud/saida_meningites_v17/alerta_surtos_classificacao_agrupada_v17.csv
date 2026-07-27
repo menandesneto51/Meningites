@@ -1,0 +1,4 @@
+﻿ano_epi_v17,semana_epi_v17,codigo_municipio_v17,municipio_v17,regional_v17,classificacao_agrupada_v17,casos_semana,confirmados_semana,hospitalizacoes_semana,obitos_semana,media_hist,dp_hist,max_hist,q95_hist,media_mais_2dp,limite_historico,casos_14d_mesma_classificacao,confirmados_14d_mesma_classificacao,obitos_14d_mesma_classificacao,pontuacao_alerta,classe_alerta,motivos,recomendacao_vigilancia,classe_ordem
+2026,27,510452,IPIRANGA DO NORTE,SINOP,Outras etiologias,1,0,0,0,,,,,,,1,0,0,0,Rotina,sem sinal,Manter monitoramento de rotina e qualificação da completude.,1
+2026,27,510515,JUINA,JUINA,Meningite pneumocócica,1,1,1,0,,,,,,,1,1,0,0,Rotina,sem sinal,Manter monitoramento de rotina e qualificação da completude.,1
+2026,27,510515,JUINA,JUINA,Outras etiologias,1,0,0,0,1.0,0.0,1.0,1.0,1.0,1.0,1,0,0,0,Rotina,sem sinal,Manter monitoramento de rotina e qualificação da completude.,1

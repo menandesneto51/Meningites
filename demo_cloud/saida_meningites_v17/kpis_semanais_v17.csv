@@ -1,0 +1,7 @@
+﻿ano_epi_atual_fechado,semana_epi_atual_fechada,ano_epi_semana_anterior,semana_epi_anterior,indicador,indicador_rotulo,valor_atual_fechado,valor_semana_anterior,variacao_absoluta,variacao_percentual,semaforo,interpretacao
+2026,27,2026,26,casos,Casos,3.0,6.0,-3.0,-50.0,Verde,Casos: verde (-50% vs semana anterior).
+2026,27,2026,26,confirmados,Confirmados,1.0,1.0,0.0,0.0,Amarelo,Confirmados: amarelo (0% vs semana anterior).
+2026,27,2026,26,hospitalizacoes,Hospitalizações,1.0,5.0,-4.0,-80.0,Verde,Hospitalizações: verde (-80% vs semana anterior).
+2026,27,2026,26,obitos_meningite,Óbitos por meningite,0.0,0.0,0.0,0.0,Amarelo,Óbitos por meningite: amarelo (0% vs semana anterior).
+2026,27,2026,26,altas,Altas,1.0,4.0,-3.0,-75.0,Verde,Altas: verde (-75% vs semana anterior).
+2026,27,2026,26,letalidade_confirmados,Letalidade entre confirmados (%),0.0,0.0,0.0,0.0,Amarelo,Letalidade entre confirmados (%): amarelo (0% vs semana anterior).

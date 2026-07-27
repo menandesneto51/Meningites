@@ -1,0 +1,11 @@
+﻿codigo,classificacao_original,classificacao_agrupada
+1,Meningococcemia,Doença meningocócica
+2,Meningite meningocócica,Doença meningocócica
+3,Meningite meningocócica com meningococcemia,Doença meningocócica
+4,Meningite tuberculosa,Meningite tuberculosa
+5,Meningite por outras bactérias,Meningite bacteriana/outras bactérias
+6,Meningite não especificada,Meningite não especificada
+7,Meningite asséptica,Meningite viral/asséptica
+8,Meningite por outra etiologia,Outras etiologias
+9,Meningite por Hemófilo,Meningite por Hib/Hemófilo
+10,Meningite por Pneumococo,Meningite pneumocócica

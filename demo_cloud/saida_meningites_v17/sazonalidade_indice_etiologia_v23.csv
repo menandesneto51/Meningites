@@ -1,0 +1,108 @@
+﻿mes,classificacao_agrupada_v17,casos,media_mensal,indice_sazonal,mes_rotulo
+1,Doença meningocócica,22,1.1,0.9496402877697842,Jan
+1,Meningite bacteriana/outras bactérias,35,1.75,0.8433734939759038,Jan
+1,Meningite fúngica,13,0.65,0.9176470588235294,Jan
+1,Meningite não especificada,100,5.0,1.03359173126615,Jan
+1,Meningite pneumocócica,11,0.55,0.5972850678733032,Jan
+1,Meningite por Hib/Hemófilo,1,0.05,0.5238095238095238,Jan
+1,Meningite tuberculosa,3,0.15,0.7659574468085106,Jan
+1,Meningite viral/asséptica,82,4.1,1.0813186813186813,Jan
+1,Outras etiologias,214,10.7,0.9790316431566907,Jan
+2,Doença meningocócica,16,0.8,0.6906474820143884,Fev
+2,Meningite bacteriana/outras bactérias,44,2.2,1.060240963855422,Fev
+2,Meningite fúngica,14,0.7,0.988235294117647,Fev
+2,Meningite não especificada,84,4.2,0.868217054263566,Fev
+2,Meningite pneumocócica,11,0.55,0.5972850678733032,Fev
+2,Meningite por Hib/Hemófilo,2,0.1,1.0476190476190477,Fev
+2,Meningite tuberculosa,3,0.15,0.7659574468085106,Fev
+2,Meningite viral/asséptica,56,2.8,0.7384615384615384,Fev
+2,Outras etiologias,202,10.1,0.9241326725123903,Fev
+3,Doença meningocócica,20,1.0,0.8633093525179856,Mar
+3,Meningite bacteriana/outras bactérias,56,2.8,1.349397590361446,Mar
+3,Meningite fúngica,9,0.45,0.6352941176470588,Mar
+3,Meningite não especificada,117,5.85,1.2093023255813955,Mar
+3,Meningite pneumocócica,23,1.15,1.2488687782805428,Mar
+3,Meningite por Hib/Hemófilo,1,0.05,0.5238095238095238,Mar
+3,Meningite tuberculosa,6,0.3,1.5319148936170213,Mar
+3,Meningite viral/asséptica,75,3.75,0.989010989010989,Mar
+3,Outras etiologias,264,13.2,1.207777354174609,Mar
+4,Doença meningocócica,23,1.15,0.9928057553956833,Abr
+4,Meningite bacteriana/outras bactérias,45,2.25,1.0843373493975905,Abr
+4,Meningite fúngica,18,0.9,1.2705882352941176,Abr
+4,Meningite não especificada,97,4.85,1.0025839793281655,Abr
+4,Meningite pneumocócica,20,1.0,1.085972850678733,Abr
+4,Meningite por Hib/Hemófilo,3,0.15,1.5714285714285714,Abr
+4,Meningite tuberculosa,1,0.05,0.25531914893617025,Abr
+4,Meningite viral/asséptica,78,3.9,1.0285714285714287,Abr
+4,Outras etiologias,265,13.25,1.2123522683949675,Abr
+5,Doença meningocócica,33,1.65,1.424460431654676,Mai
+5,Meningite bacteriana/outras bactérias,47,2.35,1.1325301204819278,Mai
+5,Meningite fúngica,12,0.6,0.8470588235294116,Mai
+5,Meningite não especificada,95,4.75,0.9819121447028425,Mai
+5,Meningite pneumocócica,26,1.3,1.4117647058823528,Mai
+5,Meningite por Hib/Hemófilo,1,0.05,0.5238095238095238,Mai
+5,Meningite tuberculosa,8,0.4,2.042553191489362,Mai
+5,Meningite viral/asséptica,87,4.35,1.1472527472527472,Mai
+5,Outras etiologias,230,11.5,1.0522302706824247,Mai
+6,Doença meningocócica,25,1.25,1.079136690647482,Jun
+6,Meningite bacteriana/outras bactérias,45,2.25,1.0843373493975905,Jun
+6,Meningite fúngica,13,0.65,0.9176470588235294,Jun
+6,Meningite não especificada,120,6.0,1.24031007751938,Jun
+6,Meningite pneumocócica,29,1.45,1.5746606334841629,Jun
+6,Meningite por Hib/Hemófilo,3,0.15,1.5714285714285714,Jun
+6,Meningite tuberculosa,2,0.1,0.5106382978723405,Jun
+6,Meningite viral/asséptica,90,4.5,1.1868131868131868,Jun
+6,Outras etiologias,230,11.5,1.0522302706824247,Jun
+7,Doença meningocócica,30,1.5,1.2949640287769784,Jul
+7,Meningite bacteriana/outras bactérias,46,2.3,1.108433734939759,Jul
+7,Meningite fúngica,11,0.55,0.7764705882352941,Jul
+7,Meningite não especificada,106,5.3,1.0956072351421189,Jul
+7,Meningite pneumocócica,22,1.1,1.1945701357466063,Jul
+7,Meningite por Hib/Hemófilo,4,0.2,2.0952380952380953,Jul
+7,Meningite tuberculosa,4,0.2,1.021276595744681,Jul
+7,Meningite viral/asséptica,72,3.6,0.9494505494505495,Jul
+7,Outras etiologias,207,10.35,0.9470072436141822,Jul
+8,Doença meningocócica,33,1.65,1.424460431654676,Ago
+8,Meningite bacteriana/outras bactérias,33,1.65,0.7951807228915663,Ago
+8,Meningite fúngica,11,0.55,0.7764705882352941,Ago
+8,Meningite não especificada,90,4.5,0.930232558139535,Ago
+8,Meningite pneumocócica,18,0.9,0.9773755656108597,Ago
+8,Meningite por Hib/Hemófilo,2,0.1,1.0476190476190477,Ago
+8,Meningite tuberculosa,3,0.15,0.7659574468085106,Ago
+8,Meningite viral/asséptica,50,2.5,0.6593406593406593,Ago
+8,Outras etiologias,212,10.6,0.969881814715974,Ago
+9,Doença meningocócica,22,1.1,0.9496402877697842,Set
+9,Meningite bacteriana/outras bactérias,36,1.8,0.8674698795180724,Set
+9,Meningite fúngica,22,1.1,1.5529411764705883,Set
+9,Meningite não especificada,97,4.85,1.0025839793281655,Set
+9,Meningite pneumocócica,17,0.85,0.923076923076923,Set
+9,Meningite por Hib/Hemófilo,1,0.05,0.5238095238095238,Set
+9,Meningite tuberculosa,3,0.15,0.7659574468085106,Set
+9,Meningite viral/asséptica,50,2.5,0.6593406593406593,Set
+9,Outras etiologias,207,10.35,0.9470072436141822,Set
+10,Doença meningocócica,13,0.65,0.5611510791366906,Out
+10,Meningite bacteriana/outras bactérias,26,1.3,0.6265060240963857,Out
+10,Meningite fúngica,11,0.55,0.7764705882352941,Out
+10,Meningite não especificada,81,4.05,0.8372093023255814,Out
+10,Meningite pneumocócica,14,0.7,0.760180995475113,Out
+10,Meningite por Hib/Hemófilo,1,0.05,0.5238095238095238,Out
+10,Meningite tuberculosa,3,0.15,0.7659574468085106,Out
+10,Meningite viral/asséptica,69,3.45,0.90989010989011,Out
+10,Outras etiologias,218,10.9,0.9973313000381243,Out
+11,Doença meningocócica,13,0.65,0.5611510791366906,Nov
+11,Meningite bacteriana/outras bactérias,42,2.1,1.0120481927710845,Nov
+11,Meningite fúngica,21,1.05,1.4823529411764707,Nov
+11,Meningite não especificada,89,4.45,0.9198966408268735,Nov
+11,Meningite pneumocócica,19,0.95,1.0316742081447963,Nov
+11,Meningite tuberculosa,7,0.35,1.7872340425531914,Nov
+11,Meningite viral/asséptica,94,4.7,1.2395604395604396,Nov
+11,Outras etiologias,178,8.9,0.8143347312237895,Nov
+12,Doença meningocócica,28,1.4,1.2086330935251797,Dez
+12,Meningite bacteriana/outras bactérias,43,2.15,1.036144578313253,Dez
+12,Meningite fúngica,15,0.75,1.0588235294117647,Dez
+12,Meningite não especificada,85,4.25,0.8785529715762275,Dez
+12,Meningite pneumocócica,11,0.55,0.5972850678733032,Dez
+12,Meningite por Hib/Hemófilo,2,0.1,1.0476190476190477,Dez
+12,Meningite tuberculosa,4,0.2,1.021276595744681,Dez
+12,Meningite viral/asséptica,107,5.35,1.4109890109890109,Dez
+12,Outras etiologias,196,9.8,0.8966831871902402,Dez

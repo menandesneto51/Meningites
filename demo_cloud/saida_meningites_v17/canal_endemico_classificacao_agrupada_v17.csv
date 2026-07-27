@@ -1,0 +1,413 @@
+﻿semana_epi_v17,classificacao_agrupada_v17,minimo,q25,media,mediana,q75,maximo,p95,observado,ano_observado
+1,Doença meningocócica,1,1.75,2.5,2.5,3.25,4,3.8499999999999996,0.0,2026
+1,Meningite bacteriana/outras bactérias,1,1.0,1.2,1.0,1.0,2,1.7999999999999998,1.0,2026
+1,Meningite fúngica,1,1.5,2.0,2.0,2.5,3,2.9,0.0,2026
+1,Meningite não especificada,1,1.0,1.7142857142857142,1.5,2.0,4,3.3499999999999996,1.0,2026
+1,Meningite pneumocócica,2,2.0,2.0,2.0,2.0,2,2.0,0.0,2026
+1,Meningite viral/asséptica,1,1.0,2.375,2.0,2.25,7,5.599999999999998,0.0,2026
+1,Outras etiologias,1,1.75,2.5,2.0,3.25,5,4.25,3.0,2026
+2,Doença meningocócica,1,1.5,1.6666666666666667,2.0,2.0,2,2.0,0.0,2026
+2,Meningite bacteriana/outras bactérias,1,1.0,1.125,1.0,1.0,2,1.6499999999999995,0.0,2026
+2,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+2,Meningite não especificada,1,1.0,2.0,1.0,3.0,5,4.449999999999999,0.0,2026
+2,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+2,Meningite viral/asséptica,1,1.0,1.9090909090909092,1.0,2.0,6,5.0,1.0,2026
+2,Outras etiologias,1,1.0,3.0,2.0,3.25,8,8.0,5.0,2026
+3,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+3,Meningite bacteriana/outras bactérias,1,1.0,2.0,1.5,2.5,4,3.6999999999999993,0.0,2026
+3,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+3,Meningite não especificada,1,1.0,1.5714285714285714,1.0,2.0,3,2.6999999999999993,0.0,2026
+3,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+3,Meningite viral/asséptica,1,1.0,1.7272727272727273,1.0,2.0,6,4.0,0.0,2026
+3,Outras etiologias,1,1.0,2.3125,2.0,3.0,6,4.5,4.0,2026
+4,Doença meningocócica,1,1.0,1.3333333333333333,1.0,1.5,2,1.9,0.0,2026
+4,Meningite bacteriana/outras bactérias,1,1.0,1.1428571428571428,1.0,1.0,2,1.6999999999999993,1.0,2026
+4,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+4,Meningite não especificada,1,1.0,1.8461538461538463,2.0,2.0,4,3.3999999999999986,0.0,2026
+4,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+4,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+4,Meningite viral/asséptica,1,1.0,1.7777777777777777,2.0,2.0,3,2.5999999999999996,1.0,2026
+4,Outras etiologias,1,1.0,2.611111111111111,2.0,3.0,9,7.299999999999997,3.0,2026
+5,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+5,Meningite bacteriana/outras bactérias,1,1.0,1.25,1.0,1.25,2,1.8499999999999996,0.0,2026
+5,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+5,Meningite não especificada,1,1.0,2.0,2.0,2.0,4,4.0,0.0,2026
+5,Meningite pneumocócica,1,1.25,1.5,1.5,1.75,2,1.95,0.0,2026
+5,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+5,Meningite viral/asséptica,1,1.0,1.3333333333333333,1.0,2.0,2,2.0,0.0,2026
+5,Outras etiologias,1,2.0,2.6875,2.0,3.0,8,5.75,4.0,2026
+6,Doença meningocócica,1,1.0,1.2,1.0,1.0,2,1.7999999999999998,0.0,2026
+6,Meningite bacteriana/outras bactérias,1,1.0,1.5714285714285714,1.0,2.0,3,3.0,0.0,2026
+6,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+6,Meningite não especificada,1,1.0,1.7692307692307692,1.0,1.0,8,4.999999999999993,2.0,2026
+6,Meningite viral/asséptica,1,1.0,1.4545454545454546,1.0,2.0,2,2.0,1.0,2026
+6,Outras etiologias,1,1.0,2.6470588235294117,2.0,3.0,11,6.199999999999996,3.0,2026
+7,Meningite bacteriana/outras bactérias,1,1.0,1.2727272727272727,1.0,1.5,2,2.0,0.0,2026
+7,Meningite fúngica,1,1.0,1.1111111111111112,1.0,1.0,2,1.5999999999999996,0.0,2026
+7,Meningite não especificada,1,1.0,2.5,2.5,4.0,4,4.0,1.0,2026
+7,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+7,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+7,Meningite viral/asséptica,1,1.0,1.5714285714285714,1.0,2.0,3,2.6999999999999993,0.0,2026
+7,Outras etiologias,1,1.25,2.9444444444444446,2.5,4.0,7,6.149999999999999,6.0,2026
+8,Doença meningocócica,1,1.0,1.2,1.0,1.0,2,1.7999999999999998,0.0,2026
+8,Meningite bacteriana/outras bactérias,1,1.0,1.1428571428571428,1.0,1.0,2,1.6999999999999993,1.0,2026
+8,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+8,Meningite não especificada,1,1.0,1.9,2.0,2.75,3,3.0,1.0,2026
+8,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+8,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+8,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+8,Meningite viral/asséptica,1,1.0,2.0,1.0,1.5,7,5.4999999999999964,0.0,2026
+8,Outras etiologias,1,1.0,2.625,2.0,3.25,8,5.75,0.0,2026
+9,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+9,Meningite bacteriana/outras bactérias,1,1.0,1.1818181818181819,1.0,1.0,2,2.0,0.0,2026
+9,Meningite não especificada,1,1.0,2.272727272727273,2.0,3.5,5,4.5,2.0,2026
+9,Meningite pneumocócica,1,1.0,1.25,1.0,1.25,2,1.8499999999999996,0.0,2026
+9,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+9,Meningite viral/asséptica,1,1.0,1.5,1.0,2.0,3,2.6499999999999995,0.0,2026
+9,Outras etiologias,1,2.0,3.0588235294117645,3.0,4.0,6,5.199999999999999,4.0,2026
+10,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+10,Meningite bacteriana/outras bactérias,1,1.0,1.2222222222222223,1.0,1.0,2,2.0,1.0,2026
+10,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+10,Meningite não especificada,1,1.0,2.076923076923077,2.0,3.0,5,3.799999999999997,1.0,2026
+10,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+10,Meningite viral/asséptica,1,1.0,1.6,1.0,1.75,5,3.649999999999997,0.0,2026
+10,Outras etiologias,1,2.0,2.9473684210526314,3.0,4.0,6,6.0,6.0,2026
+11,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+11,Meningite bacteriana/outras bactérias,1,1.0,2.0,2.0,2.5,4,3.6999999999999993,1.0,2026
+11,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+11,Meningite não especificada,1,1.0,1.9090909090909092,2.0,2.0,4,3.5,2.0,2026
+11,Meningite pneumocócica,1,1.0,1.3333333333333333,1.0,1.5,2,1.9,0.0,2026
+11,Meningite viral/asséptica,1,1.0,1.375,1.0,2.0,2,2.0,0.0,2026
+11,Outras etiologias,1,2.0,2.9411764705882355,2.0,5.0,6,5.199999999999999,2.0,2026
+12,Doença meningocócica,1,1.0,1.1666666666666667,1.0,1.0,2,1.75,0.0,2026
+12,Meningite bacteriana/outras bactérias,1,1.0,1.0,1.0,1.0,1,1.0,1.0,2026
+12,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+12,Meningite não especificada,1,1.0,2.6,2.0,3.75,6,5.549999999999999,1.0,2026
+12,Meningite pneumocócica,1,1.0,1.1428571428571428,1.0,1.0,2,1.6999999999999993,2.0,2026
+12,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+12,Meningite viral/asséptica,1,1.0,1.8461538461538463,2.0,2.0,4,3.3999999999999986,0.0,2026
+12,Outras etiologias,1,2.0,3.2941176470588234,3.0,4.0,8,6.399999999999999,1.0,2026
+13,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+13,Meningite bacteriana/outras bactérias,1,1.0,1.5555555555555556,1.0,2.0,4,3.1999999999999993,0.0,2026
+13,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+13,Meningite não especificada,1,1.0,1.7692307692307692,1.0,2.0,4,4.0,0.0,2026
+13,Meningite pneumocócica,1,1.0,1.3333333333333333,1.0,1.5,2,1.9,0.0,2026
+13,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+13,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+13,Meningite viral/asséptica,1,1.0,2.3333333333333335,1.0,3.0,7,5.799999999999999,0.0,2026
+13,Outras etiologias,1,2.0,3.5,2.5,5.0,8,7.149999999999999,7.0,2026
+14,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+14,Meningite bacteriana/outras bactérias,1,1.0,1.5,1.0,1.75,3,2.75,1.0,2026
+14,Meningite fúngica,1,1.0,1.25,1.0,1.25,2,1.8499999999999996,0.0,2026
+14,Meningite não especificada,1,1.0,1.4375,1.0,1.25,4,3.25,1.0,2026
+14,Meningite pneumocócica,2,2.0,2.0,2.0,2.0,2,2.0,0.0,2026
+14,Meningite por Hib/Hemófilo,2,2.0,2.0,2.0,2.0,2,2.0,0.0,2026
+14,Meningite viral/asséptica,1,1.0,1.8571428571428572,1.0,1.5,6,4.799999999999997,0.0,2026
+14,Outras etiologias,1,2.0,3.588235294117647,2.0,4.0,13,10.599999999999998,2.0,2026
+15,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+15,Meningite bacteriana/outras bactérias,1,1.0,1.0833333333333333,1.0,1.0,2,1.4499999999999993,1.0,2026
+15,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+15,Meningite não especificada,1,1.0,2.25,2.0,2.25,7,5.349999999999998,1.0,2026
+15,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+15,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+15,Meningite viral/asséptica,1,1.0,2.5,1.5,2.25,9,6.899999999999997,1.0,2026
+15,Outras etiologias,1,2.0,3.5789473684210527,3.0,4.0,19,7.299999999999972,1.0,2026
+16,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,2.0,2026
+16,Meningite bacteriana/outras bactérias,1,1.0,1.1666666666666667,1.0,1.0,2,1.75,0.0,2026
+16,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+16,Meningite não especificada,1,1.0,1.5,1.0,2.0,3,3.0,0.0,2026
+16,Meningite pneumocócica,1,1.0,1.25,1.0,1.25,2,1.8499999999999996,1.0,2026
+16,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+16,Meningite viral/asséptica,1,1.0,1.9,1.0,2.0,7,4.749999999999995,0.0,2026
+16,Outras etiologias,1,1.25,3.0,3.0,3.0,11,5.8999999999999915,5.0,2026
+17,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+17,Meningite bacteriana/outras bactérias,1,1.0,1.1111111111111112,1.0,1.0,2,1.5999999999999996,2.0,2026
+17,Meningite fúngica,1,1.0,1.25,1.0,1.25,2,1.8499999999999996,0.0,2026
+17,Meningite não especificada,1,1.0,1.5833333333333333,1.5,2.0,3,2.4499999999999993,3.0,2026
+17,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+17,Meningite viral/asséptica,1,1.0,2.25,1.0,1.25,10,7.199999999999996,1.0,2026
+17,Outras etiologias,1,2.0,3.235294117647059,3.0,3.0,9,6.599999999999998,4.0,2026
+18,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+18,Meningite bacteriana/outras bactérias,1,1.0,1.25,1.0,1.25,2,2.0,0.0,2026
+18,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,2.0,2026
+18,Meningite não especificada,1,1.0,1.6666666666666667,1.0,2.0,4,3.4499999999999993,3.0,2026
+18,Meningite pneumocócica,1,1.0,1.1428571428571428,1.0,1.0,2,1.6999999999999993,3.0,2026
+18,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+18,Meningite viral/asséptica,1,1.0,2.090909090909091,2.0,2.5,5,4.5,0.0,2026
+18,Outras etiologias,1,1.0,2.888888888888889,3.0,3.0,7,6.149999999999999,9.0,2026
+19,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+19,Meningite bacteriana/outras bactérias,1,1.0,1.3333333333333333,1.0,2.0,2,2.0,0.0,2026
+19,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+19,Meningite não especificada,1,1.0,1.5384615384615385,1.0,2.0,3,3.0,1.0,2026
+19,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+19,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,1.0,2026
+19,Meningite viral/asséptica,1,1.0,1.8461538461538463,1.0,2.0,7,3.999999999999993,2.0,2026
+19,Outras etiologias,1,1.75,2.8125,3.0,3.25,6,5.25,8.0,2026
+20,Doença meningocócica,1,1.0,1.5714285714285714,1.0,2.0,3,2.6999999999999993,1.0,2026
+20,Meningite bacteriana/outras bactérias,1,1.0,1.2222222222222223,1.0,1.0,2,2.0,0.0,2026
+20,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+20,Meningite não especificada,1,1.25,2.0,2.0,2.0,4,3.549999999999999,1.0,2026
+20,Meningite pneumocócica,1,1.0,1.4,1.0,1.0,3,2.5999999999999996,0.0,2026
+20,Meningite tuberculosa,1,1.25,1.5,1.5,1.75,2,1.95,0.0,2026
+20,Meningite viral/asséptica,1,1.0,1.9,1.5,3.0,3,3.0,0.0,2026
+20,Outras etiologias,1,1.0,2.8666666666666667,2.0,4.0,7,6.299999999999999,2.0,2026
+21,Doença meningocócica,1,1.5,1.6666666666666667,2.0,2.0,2,2.0,0.0,2026
+21,Meningite bacteriana/outras bactérias,1,1.0,1.3,1.0,1.0,3,2.549999999999999,0.0,2026
+21,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+21,Meningite não especificada,1,1.0,2.0,2.0,2.0,4,4.0,2.0,2026
+21,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+21,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+21,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+21,Meningite viral/asséptica,1,1.0,1.75,2.0,2.0,3,2.6499999999999995,1.0,2026
+21,Outras etiologias,1,1.0,2.9375,2.5,3.25,8,7.25,3.0,2026
+22,Doença meningocócica,1,1.0,1.2,1.0,1.0,2,1.7999999999999998,0.0,2026
+22,Meningite bacteriana/outras bactérias,1,1.0,1.0,1.0,1.0,1,1.0,1.0,2026
+22,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+22,Meningite não especificada,1,1.0,1.7777777777777777,2.0,2.0,3,3.0,1.0,2026
+22,Meningite pneumocócica,1,1.0,1.2,1.0,1.0,2,1.7999999999999998,0.0,2026
+22,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+22,Meningite viral/asséptica,1,1.0,1.8888888888888888,2.0,2.0,4,3.5999999999999996,1.0,2026
+22,Outras etiologias,1,1.25,2.7222222222222223,2.0,4.0,6,5.149999999999999,5.0,2026
+23,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+23,Meningite bacteriana/outras bactérias,1,1.0,1.2,1.0,1.0,2,2.0,0.0,2026
+23,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+23,Meningite não especificada,1,1.0,2.1666666666666665,2.0,2.25,6,4.899999999999999,2.0,2026
+23,Meningite pneumocócica,1,1.0,1.1428571428571428,1.0,1.0,2,1.6999999999999993,1.0,2026
+23,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+23,Meningite viral/asséptica,1,1.5,2.7142857142857144,3.0,3.5,5,4.699999999999999,1.0,2026
+23,Outras etiologias,1,1.25,2.7777777777777777,2.0,4.0,6,5.149999999999999,2.0,2026
+24,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+24,Meningite bacteriana/outras bactérias,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+24,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+24,Meningite não especificada,1,1.0,2.0,2.0,3.0,4,3.299999999999999,0.0,2026
+24,Meningite pneumocócica,1,1.0,1.6,2.0,2.0,2,2.0,0.0,2026
+24,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+24,Meningite viral/asséptica,1,1.0,2.25,1.5,3.0,8,5.2499999999999964,0.0,2026
+24,Outras etiologias,1,1.0,3.1333333333333333,3.0,4.5,8,6.599999999999998,7.0,2026
+25,Doença meningocócica,1,1.0,1.3333333333333333,1.0,1.5,2,1.9,0.0,2026
+25,Meningite bacteriana/outras bactérias,1,1.0,1.3636363636363635,1.0,2.0,2,2.0,0.0,2026
+25,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+25,Meningite não especificada,1,1.0,2.2,2.0,3.0,6,5.299999999999999,2.0,2026
+25,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+25,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+25,Meningite viral/asséptica,1,1.0,1.8888888888888888,2.0,2.0,3,3.0,0.0,2026
+25,Outras etiologias,1,2.0,3.533333333333333,3.0,5.0,6,6.0,3.0,2026
+26,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+26,Meningite bacteriana/outras bactérias,1,1.0,1.375,1.0,2.0,2,2.0,0.0,2026
+26,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+26,Meningite não especificada,1,1.0,1.9166666666666667,1.0,2.25,7,4.799999999999997,1.0,2026
+26,Meningite pneumocócica,1,1.0,1.2,1.0,1.0,2,1.7999999999999998,0.0,2026
+26,Meningite viral/asséptica,1,1.0,1.5555555555555556,1.0,1.0,5,3.799999999999999,0.0,2026
+26,Outras etiologias,2,2.0,3.2857142857142856,2.5,4.5,7,6.35,5.0,2026
+27,Doença meningocócica,1,1.0,1.1666666666666667,1.0,1.0,2,1.75,0.0,2026
+27,Meningite bacteriana/outras bactérias,1,1.0,2.0,2.0,3.0,3,3.0,0.0,2026
+27,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+27,Meningite não especificada,1,1.0,1.75,1.5,2.0,4,3.25,0.0,2026
+27,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,1.0,2026
+27,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+27,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+27,Meningite viral/asséptica,1,2.0,2.6,2.0,3.5,6,5.099999999999998,0.0,2026
+27,Outras etiologias,1,1.0,3.25,3.0,4.25,7,6.25,2.0,2026
+28,Doença meningocócica,1,1.0,1.2,1.0,1.0,2,1.7999999999999998,0.0,2026
+28,Meningite bacteriana/outras bactérias,1,1.0,1.6,1.5,2.0,3,2.549999999999999,0.0,2026
+28,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+28,Meningite não especificada,1,1.0,1.3846153846153846,1.0,2.0,3,2.3999999999999986,0.0,2026
+28,Meningite pneumocócica,1,1.0,1.5,1.0,1.5,3,2.6999999999999993,0.0,2026
+28,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+28,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+28,Meningite viral/asséptica,1,1.0,1.2,1.0,1.0,2,2.0,0.0,2026
+28,Outras etiologias,1,1.25,2.6666666666666665,2.5,3.0,6,6.0,1.0,2026
+29,Doença meningocócica,1,1.0,1.4,1.0,1.0,3,2.5999999999999996,0.0,2026
+29,Meningite bacteriana/outras bactérias,1,1.0,1.3,1.0,1.0,3,2.549999999999999,0.0,2026
+29,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+29,Meningite não especificada,1,1.0,1.7857142857142858,2.0,2.0,3,3.0,0.0,2026
+29,Meningite pneumocócica,1,1.0,1.3333333333333333,1.0,1.5,2,1.9,0.0,2026
+29,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+29,Meningite viral/asséptica,1,1.0,1.4,1.0,1.75,3,2.549999999999999,0.0,2026
+29,Outras etiologias,1,1.0,2.8125,3.0,4.0,6,5.25,0.0,2026
+30,Doença meningocócica,1,1.0,1.4,1.0,2.0,2,2.0,0.0,2026
+30,Meningite bacteriana/outras bactérias,1,1.0,1.1666666666666667,1.0,1.0,2,1.75,0.0,2026
+30,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+30,Meningite não especificada,1,1.0,1.6666666666666667,1.0,2.0,4,3.4499999999999993,0.0,2026
+30,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+30,Meningite viral/asséptica,1,1.0,1.8888888888888888,1.0,3.0,4,3.5999999999999996,0.0,2026
+30,Outras etiologias,1,1.0,2.125,2.0,2.25,5,5.0,0.0,2026
+31,Doença meningocócica,1,1.0,2.6666666666666665,2.5,4.0,5,4.75,0.0,2026
+31,Meningite bacteriana/outras bactérias,1,1.0,1.25,1.0,1.25,2,1.8499999999999996,0.0,2026
+31,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+31,Meningite não especificada,1,1.0,2.5714285714285716,3.0,3.0,6,5.099999999999998,0.0,2026
+31,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+31,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+31,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+31,Meningite viral/asséptica,1,1.5,1.8571428571428572,2.0,2.0,3,2.6999999999999993,0.0,2026
+31,Outras etiologias,1,2.0,3.588235294117647,3.0,5.0,11,7.799999999999997,0.0,2026
+32,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+32,Meningite bacteriana/outras bactérias,1,1.0,1.1428571428571428,1.0,1.0,2,1.6999999999999993,0.0,2026
+32,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+32,Meningite não especificada,1,1.0,1.5,1.0,2.0,3,3.0,0.0,2026
+32,Meningite pneumocócica,1,1.0,1.1666666666666667,1.0,1.0,2,1.75,0.0,2026
+32,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+32,Meningite viral/asséptica,1,1.0,1.4285714285714286,1.0,2.0,2,2.0,0.0,2026
+32,Outras etiologias,1,1.25,3.0,3.0,3.75,8,8.0,0.0,2026
+33,Doença meningocócica,1,2.0,1.8,2.0,2.0,2,2.0,0.0,2026
+33,Meningite bacteriana/outras bactérias,1,1.75,2.25,2.5,3.0,3,3.0,0.0,2026
+33,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+33,Meningite não especificada,1,1.0,1.7142857142857142,2.0,2.0,3,3.0,0.0,2026
+33,Meningite pneumocócica,1,1.0,1.4,1.0,1.0,3,2.5999999999999996,0.0,2026
+33,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+33,Meningite viral/asséptica,1,1.0,1.7777777777777777,1.0,2.0,4,3.5999999999999996,0.0,2026
+33,Outras etiologias,1,1.0,2.5294117647058822,3.0,4.0,4,4.0,0.0,2026
+34,Doença meningocócica,1,1.0,1.25,1.0,1.25,2,1.8499999999999996,0.0,2026
+34,Meningite bacteriana/outras bactérias,1,1.0,1.1666666666666667,1.0,1.0,2,1.75,0.0,2026
+34,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+34,Meningite não especificada,1,1.0,1.6666666666666667,1.0,2.0,5,3.8999999999999986,0.0,2026
+34,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+34,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+34,Meningite viral/asséptica,1,1.0,1.4,1.0,2.0,2,2.0,0.0,2026
+34,Outras etiologias,1,2.0,2.3529411764705883,2.0,3.0,4,4.0,0.0,2026
+35,Doença meningocócica,1,1.0,1.6,1.0,1.0,4,3.3999999999999995,0.0,2026
+35,Meningite bacteriana/outras bactérias,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+35,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+35,Meningite não especificada,1,1.0,1.375,1.0,2.0,3,2.25,0.0,2026
+35,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+35,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+35,Meningite viral/asséptica,1,1.0,1.25,1.0,1.25,2,2.0,0.0,2026
+35,Outras etiologias,1,1.0,2.4444444444444446,2.0,3.75,5,5.0,0.0,2026
+36,Doença meningocócica,1,1.0,1.2,1.0,1.0,2,1.7999999999999998,0.0,2026
+36,Meningite bacteriana/outras bactérias,1,1.0,1.3333333333333333,1.0,1.0,3,2.5999999999999996,0.0,2026
+36,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+36,Meningite não especificada,1,1.0,1.6363636363636365,2.0,2.0,3,2.5,0.0,2026
+36,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+36,Meningite viral/asséptica,1,1.0,1.125,1.0,1.0,2,1.6499999999999995,0.0,2026
+36,Outras etiologias,1,2.0,2.933333333333333,3.0,3.5,6,5.299999999999999,0.0,2026
+37,Doença meningocócica,1,1.0,1.5,1.5,2.0,2,2.0,0.0,2026
+37,Meningite bacteriana/outras bactérias,1,1.0,1.5714285714285714,1.0,2.0,3,2.6999999999999993,0.0,2026
+37,Meningite fúngica,1,1.0,1.2,1.0,1.0,2,1.7999999999999998,0.0,2026
+37,Meningite não especificada,1,1.0,2.0,2.0,2.0,4,3.3999999999999986,0.0,2026
+37,Meningite pneumocócica,1,1.0,1.2,1.0,1.0,2,1.7999999999999998,0.0,2026
+37,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+37,Meningite viral/asséptica,1,1.0,1.5,1.5,2.0,2,2.0,0.0,2026
+37,Outras etiologias,1,2.0,3.0555555555555554,2.5,3.75,9,6.449999999999996,0.0,2026
+38,Doença meningocócica,1,1.0,1.5,1.5,2.0,2,2.0,0.0,2026
+38,Meningite bacteriana/outras bactérias,1,1.0,1.5,1.0,1.5,3,2.6999999999999993,0.0,2026
+38,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+38,Meningite não especificada,1,1.0,1.9166666666666667,1.5,2.25,5,3.8999999999999986,0.0,2026
+38,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+38,Meningite viral/asséptica,1,1.0,1.125,1.0,1.0,2,1.6499999999999995,0.0,2026
+38,Outras etiologias,1,2.0,3.235294117647059,3.0,4.0,8,5.599999999999998,0.0,2026
+39,Doença meningocócica,1,1.25,1.5,1.5,1.75,2,1.95,0.0,2026
+39,Meningite bacteriana/outras bactérias,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+39,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+39,Meningite não especificada,1,1.0,1.5833333333333333,1.0,1.5,4,3.4499999999999993,0.0,2026
+39,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+39,Meningite viral/asséptica,1,1.5,2.857142857142857,3.0,3.0,7,5.799999999999997,0.0,2026
+39,Outras etiologias,1,1.0,2.5555555555555554,2.0,3.0,6,5.149999999999999,0.0,2026
+40,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+40,Meningite bacteriana/outras bactérias,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+40,Meningite fúngica,1,1.0,1.3333333333333333,1.0,1.5,2,1.9,0.0,2026
+40,Meningite não especificada,1,1.5,2.1818181818181817,2.0,2.5,5,4.0,0.0,2026
+40,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+40,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+40,Meningite viral/asséptica,1,1.0,1.6,1.0,2.0,4,3.099999999999998,0.0,2026
+40,Outras etiologias,1,2.0,2.9473684210526314,3.0,4.0,5,5.0,0.0,2026
+41,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+41,Meningite bacteriana/outras bactérias,1,1.0,1.3333333333333333,1.0,1.0,3,2.5,0.0,2026
+41,Meningite fúngica,1,1.25,1.5,1.5,1.75,2,1.95,0.0,2026
+41,Meningite não especificada,1,1.0,1.5555555555555556,2.0,2.0,2,2.0,0.0,2026
+41,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+41,Meningite viral/asséptica,1,1.0,1.625,1.0,1.5,4,3.6499999999999995,0.0,2026
+41,Outras etiologias,1,1.5,2.3684210526315788,2.0,3.0,5,5.0,0.0,2026
+42,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+42,Meningite bacteriana/outras bactérias,1,1.0,1.1666666666666667,1.0,1.0,2,1.75,0.0,2026
+42,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+42,Meningite não especificada,1,1.0,1.9,1.0,2.0,5,4.549999999999999,0.0,2026
+42,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+42,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+42,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+42,Meningite viral/asséptica,1,1.0,2.8,3.0,4.0,5,4.8,0.0,2026
+42,Outras etiologias,1,2.0,3.125,2.5,4.0,7,5.5,0.0,2026
+43,Doença meningocócica,1,1.0,1.3333333333333333,1.0,1.5,2,1.9,0.0,2026
+43,Meningite bacteriana/outras bactérias,1,1.0,1.3333333333333333,1.0,1.5,2,1.9,0.0,2026
+43,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+43,Meningite não especificada,1,1.0,1.8333333333333333,2.0,2.0,4,3.4499999999999993,0.0,2026
+43,Meningite pneumocócica,1,1.25,1.5,1.5,1.75,2,1.95,0.0,2026
+43,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+43,Meningite viral/asséptica,1,1.0,2.111111111111111,1.0,3.0,5,4.6,0.0,2026
+43,Outras etiologias,1,2.0,2.8333333333333335,2.0,3.75,6,6.0,0.0,2026
+44,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+44,Meningite bacteriana/outras bactérias,1,1.0,1.1111111111111112,1.0,1.0,2,1.5999999999999996,0.0,2026
+44,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+44,Meningite não especificada,1,1.0,1.8571428571428572,2.0,2.5,3,3.0,0.0,2026
+44,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+44,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+44,Meningite viral/asséptica,1,1.0,1.5454545454545454,1.0,2.0,3,3.0,0.0,2026
+44,Outras etiologias,1,1.0,2.066666666666667,2.0,2.0,7,4.199999999999996,0.0,2026
+45,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+45,Meningite bacteriana/outras bactérias,1,1.0,1.375,1.0,2.0,2,2.0,0.0,2026
+45,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+45,Meningite não especificada,1,1.0,1.75,1.0,2.0,5,4.449999999999999,0.0,2026
+45,Meningite pneumocócica,1,1.0,1.25,1.0,1.25,2,1.8499999999999996,0.0,2026
+45,Meningite viral/asséptica,1,1.0,2.076923076923077,2.0,2.0,7,4.599999999999994,0.0,2026
+45,Outras etiologias,1,1.25,2.2777777777777777,2.0,3.0,4,4.0,0.0,2026
+46,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+46,Meningite bacteriana/outras bactérias,1,1.25,1.6666666666666667,2.0,2.0,2,2.0,0.0,2026
+46,Meningite fúngica,1,1.0,1.125,1.0,1.0,2,1.6499999999999995,0.0,2026
+46,Meningite não especificada,1,1.0,1.6923076923076923,2.0,2.0,3,3.0,0.0,2026
+46,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+46,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+46,Meningite viral/asséptica,1,1.0,2.0,1.0,3.0,5,4.5,0.0,2026
+46,Outras etiologias,1,1.0,2.375,2.5,3.0,5,4.25,0.0,2026
+47,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+47,Meningite bacteriana/outras bactérias,1,1.0,1.1,1.0,1.0,2,1.549999999999999,0.0,2026
+47,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+47,Meningite não especificada,1,1.0,1.5454545454545454,1.0,2.0,3,2.5,0.0,2026
+47,Meningite pneumocócica,1,1.0,1.3333333333333333,1.0,1.5,2,1.9,0.0,2026
+47,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+47,Meningite viral/asséptica,1,1.0,1.6153846153846154,1.0,2.0,4,4.0,0.0,2026
+47,Outras etiologias,1,2.0,3.176470588235294,3.0,4.0,8,7.199999999999999,0.0,2026
+48,Doença meningocócica,1,1.0,1.25,1.0,1.25,2,1.8499999999999996,0.0,2026
+48,Meningite bacteriana/outras bactérias,1,1.25,1.5,1.5,1.75,2,1.95,0.0,2026
+48,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+48,Meningite não especificada,1,1.0,1.8571428571428572,1.0,2.0,6,4.049999999999999,0.0,2026
+48,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+48,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+48,Meningite viral/asséptica,1,1.0,2.1,2.0,3.0,4,3.549999999999999,0.0,2026
+48,Outras etiologias,1,1.75,2.9375,2.5,4.0,7,6.25,0.0,2026
+49,Doença meningocócica,1,1.0,1.1666666666666667,1.0,1.0,2,1.75,0.0,2026
+49,Meningite bacteriana/outras bactérias,1,1.0,1.4444444444444444,1.0,2.0,3,2.5999999999999996,0.0,2026
+49,Meningite fúngica,1,1.0,1.2,1.0,1.0,2,1.7999999999999998,0.0,2026
+49,Meningite não especificada,1,1.0,1.5714285714285714,1.0,2.0,4,2.6999999999999993,0.0,2026
+49,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+49,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+49,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+49,Meningite viral/asséptica,1,1.0,2.4444444444444446,2.0,3.0,6,4.799999999999999,0.0,2026
+49,Outras etiologias,1,2.0,3.0,2.5,3.75,6,6.0,0.0,2026
+50,Doença meningocócica,1,1.0,1.1666666666666667,1.0,1.0,2,1.75,0.0,2026
+50,Meningite bacteriana/outras bactérias,1,1.0,2.2,2.0,2.0,5,4.3999999999999995,0.0,2026
+50,Meningite fúngica,1,1.25,1.5,1.5,1.75,2,1.95,0.0,2026
+50,Meningite não especificada,1,1.0,1.4545454545454546,1.0,2.0,3,2.5,0.0,2026
+50,Meningite pneumocócica,1,1.25,1.5,1.5,1.75,2,1.95,0.0,2026
+50,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+50,Meningite viral/asséptica,1,1.0,2.3333333333333335,1.5,2.75,6,5.449999999999999,0.0,2026
+50,Outras etiologias,1,2.0,2.9411764705882355,3.0,4.0,6,5.199999999999999,0.0,2026
+51,Doença meningocócica,1,1.5,1.6666666666666667,2.0,2.0,2,2.0,0.0,2026
+51,Meningite bacteriana/outras bactérias,1,1.0,1.25,1.0,1.25,2,2.0,0.0,2026
+51,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+51,Meningite não especificada,1,1.0,1.6153846153846154,1.0,2.0,3,3.0,0.0,2026
+51,Meningite pneumocócica,2,2.0,2.0,2.0,2.0,2,2.0,0.0,2026
+51,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+51,Meningite viral/asséptica,1,1.0,2.0,1.0,3.0,5,4.449999999999999,0.0,2026
+51,Outras etiologias,1,2.0,2.375,2.0,3.0,6,4.5,0.0,2026
+52,Doença meningocócica,1,1.0,1.2,1.0,1.0,2,1.7999999999999998,0.0,2026
+52,Meningite bacteriana/outras bactérias,1,1.0,1.25,1.0,1.25,2,2.0,0.0,2026
+52,Meningite fúngica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+52,Meningite não especificada,1,1.0,1.6923076923076923,1.0,2.0,4,3.3999999999999986,0.0,2026
+52,Meningite pneumocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+52,Meningite tuberculosa,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+52,Meningite viral/asséptica,1,1.0,2.0,1.5,2.25,5,4.449999999999999,0.0,2026
+52,Outras etiologias,1,1.0,2.6,2.0,4.0,5,5.0,0.0,2026
+53,Doença meningocócica,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+53,Meningite não especificada,1,1.5,1.6666666666666667,2.0,2.0,2,2.0,0.0,2026
+53,Meningite por Hib/Hemófilo,1,1.0,1.0,1.0,1.0,1,1.0,0.0,2026
+53,Meningite viral/asséptica,1,1.25,1.5,1.5,1.75,2,1.95,0.0,2026
+53,Outras etiologias,1,1.75,2.5,2.5,3.25,4,3.8499999999999996,0.0,2026

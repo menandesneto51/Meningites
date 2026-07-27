@@ -20,19 +20,22 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Large / regenerable data dumps and outputs
-data/
-outputs/
-saida_meningites*/
-exports_dashboard_*/
-relatorios/
-logs_orquestrador/
-entradas_linkage/
-_arquivo_legado/
-robo_meningite_avancado_v1/
-pacote_completo_meningites_dashboard_abas_relatorio_word/
-pacote_meningites_v2_refinado/
+# Large / regenerable data dumps and outputs (raiz do projeto)
+/data/
+/outputs/
+/saida_meningites*/
+/exports_dashboard_*/
+/relatorios/
+/logs_orquestrador/
+/entradas_linkage/
+/_arquivo_legado/
+/robo_meningite_avancado_v1/
+/pacote_completo_meningites_dashboard_abas_relatorio_word/
+/pacote_meningites_v2_refinado/
 
+# Pacote anonimizado para Streamlit Cloud (versionado)
+!demo_cloud/
+!demo_cloud/**
 # Local caches / streamlit
 .streamlit/secrets.toml
 

@@ -1,0 +1,104 @@
+﻿fonte,sid,eid,score,motivos,numero_notificacao,metodo,resultado,agente,cid,data_obito
+sim,106,51,0.6,data_nascimento;sexo,1105136,,,,A87.9 Meningite viral não especificada,2023-04-21
+sim,161,17,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2191424,,,,G00.9 Meningite bacteriana não especificada,2022-07-13
+sim,171,51,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2376787,,,,A87.9 Meningite viral não especificada,2023-04-21
+sim,172,51,0.55,sexo;codigo_municipio;data_obito_15d,2376797,,,,A87.9 Meningite viral não especificada,2023-04-21
+sim,173,51,0.55,sexo;codigo_municipio;data_obito_15d,2376797,,,,A87.9 Meningite viral não especificada,2023-04-21
+sim,188,61,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2369122,,,,G03.9 Meningite não especificada,2023-07-18
+sim,189,16,0.55,sexo;codigo_municipio;data_obito_15d,2369123,,,,A87.2 Coriomeningite linfocitária,2023-05-09
+sim,206,36,0.55,sexo;codigo_municipio;data_obito_15d,2385467,,,,G03.9 Meningite não especificada,2023-06-22
+sim,255,19,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2336634,,,,G00.9 Meningite bacteriana não especificada,2023-05-13
+sim,256,12,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2336697,,,,G00.9 Meningite bacteriana não especificada,2023-05-18
+sim,297,17,0.55,sexo;codigo_municipio;data_obito_15d,2234312,,,,G00.9 Meningite bacteriana não especificada,2022-07-13
+sim,299,6,0.6,data_nascimento_aprox;sexo;data_obito_15d,2234330,,,,G03.0 Meningite não-piogênica,2022-08-15
+sim,451,62,0.55,sexo;codigo_municipio;data_obito_15d,2063077,,,,G00.3 Meningite estafilocócica,2021-06-03
+sim,462,49,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2278823,,,,A39.4 Meningococcemia não especificada,2022-11-12
+sim,463,49,0.55,sexo;codigo_municipio;data_obito_15d,2278845,,,,A39.4 Meningococcemia não especificada,2022-11-12
+sim,506,49,0.55,sexo;codigo_municipio;data_obito_15d,2278847,,,,A39.4 Meningococcemia não especificada,2022-11-12
+sim,532,79,0.9299999999999999,data_nascimento;sexo;codigo_municipio;data_obito_45d,2362236,,,,G00.9 Meningite bacteriana não especificada,2023-04-07
+sim,535,74,0.9299999999999999,data_nascimento;sexo;codigo_municipio;data_obito_45d,2365377,,,,G00.9 Meningite bacteriana não especificada,2023-04-03
+sim,536,79,0.9299999999999999,data_nascimento;sexo;codigo_municipio;data_obito_45d,2365378,,,,G00.9 Meningite bacteriana não especificada,2023-04-07
+sim,540,47,0.55,sexo;codigo_municipio;data_obito_15d,2197479,,,,G00.9 Meningite bacteriana não especificada,2022-01-01
+sim,568,70,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2282250,,,,G00.9 Meningite bacteriana não especificada,2023-08-01
+sim,580,48,0.55,sexo;codigo_municipio;data_obito_15d,2176212,,,,A39.4 Meningococcemia não especificada,2022-01-17
+sim,581,48,0.9299999999999999,data_nascimento;sexo;codigo_municipio;data_obito_45d,2176214,,,,A39.4 Meningococcemia não especificada,2022-01-17
+sim,584,6,0.9299999999999999,data_nascimento;sexo;codigo_municipio;data_obito_45d,2178887,,,,G03.0 Meningite não-piogênica,2022-08-15
+sim,601,45,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2308041,,,,G00.9 Meningite bacteriana não especificada,2024-12-13
+sim,602,11,0.9299999999999999,data_nascimento;sexo;codigo_municipio;data_obito_45d,2308306,,,,G03.9 Meningite não especificada,2024-04-18
+sim,617,83,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,1984438,,,,G00.8 Outras meningites bacterianas,2021-03-09
+sim,619,62,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2063087,,,,G00.3 Meningite estafilocócica,2021-06-03
+sim,620,59,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2063118,,,,G00.9 Meningite bacteriana não especificada,2021-06-25
+sim,621,59,0.55,sexo;codigo_municipio;data_obito_15d,2063125,,,,G00.9 Meningite bacteriana não especificada,2021-06-25
+sim,629,5,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2207577,,,,G00.9 Meningite bacteriana não especificada,2022-10-05
+sim,635,33,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2209995,,,,G00.9 Meningite bacteriana não especificada,2022-04-20
+sim,636,15,0.9299999999999999,data_nascimento;sexo;codigo_municipio;data_obito_45d,2210131,,,,G00.9 Meningite bacteriana não especificada,2022-07-04
+sim,686,69,0.85,data_nascimento;sexo;codigo_municipio,2164165,,,,G00.9 Meningite bacteriana não especificada,2024-12-27
+sim,712,35,0.55,sexo;codigo_municipio;data_obito_15d,2207006,,,,G00.9 Meningite bacteriana não especificada,2022-03-13
+sim,738,46,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2074968,,,,G00.1 Meningite pneumocócica,2023-04-30
+sim,762,57,0.75,data_nascimento;sexo;data_obito_15d,1940882,,,,A39.0 Meningite meningocócica (G01*),2021-04-05
+sim,1739,2,0.7,data_nascimento_aprox;sexo;codigo_municipio,765388,,,,G00.9 Meningite bacteriana não especificada,2024-09-04
+sim,2267,13,0.6,data_nascimento;sexo,294935,,,,G00.9 Meningite bacteriana não especificada,2025-04-06
+sim,3139,44,0.6,data_nascimento;sexo,1077283,,,,A39.2 Meningococcemia aguda,2024-12-18
+sim,3433,28,0.6,data_nascimento;sexo,2095744,,,,A87.9 Meningite viral não especificada,2023-07-04
+sim,3460,18,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2191077,,,,G00.3 Meningite estafilocócica,2022-06-05
+sim,3477,77,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2190835,,,,G00.9 Meningite bacteriana não especificada,2021-08-04
+sim,3504,35,0.55,sexo;codigo_municipio;data_obito_15d,1855543,,,,G00.9 Meningite bacteriana não especificada,2022-03-13
+sim,3505,35,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,1855554,,,,G00.9 Meningite bacteriana não especificada,2022-03-13
+sim,3550,4,0.9299999999999999,data_nascimento;sexo;codigo_municipio;data_obito_45d,1959956,,,,G03.9 Meningite não especificada,2021-06-16
+sim,3552,24,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,1959962,,,,G00.9 Meningite bacteriana não especificada,2021-10-09
+sim,3560,8,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2047761,,,,G00.9 Meningite bacteriana não especificada,2022-04-16
+sim,3727,5,0.85,data_nascimento;sexo;codigo_municipio,1777019,,,,G00.9 Meningite bacteriana não especificada,2022-10-05
+sim,3870,43,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,1146030,,,,G00.9 Meningite bacteriana não especificada,2022-03-14
+sim,3894,43,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,1146304,,,,G00.9 Meningite bacteriana não especificada,2022-03-14
+sim,3910,21,0.7,data_nascimento_aprox;sexo;codigo_municipio,1642241,,,,G03.9 Meningite não especificada,2022-01-29
+sim,4271,2,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,1150209,,,,G00.9 Meningite bacteriana não especificada,2024-09-04
+sim,5147,8,1.0,numero_notificacao_igual,1,,,,G00.9 Meningite bacteriana não especificada,2022-04-16
+sim,5165,36,0.55,sexo;codigo_municipio;data_obito_15d,2385766,,,,G03.9 Meningite não especificada,2023-06-22
+sim,5189,16,0.55,sexo;codigo_municipio;data_obito_15d,2423529,,,,A87.2 Coriomeningite linfocitária,2023-05-09
+sim,5224,78,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2454567,,,,G03.9 Meningite não especificada,2023-09-02
+sim,5234,51,0.55,sexo;codigo_municipio;data_obito_15d,2455371,,,,A87.9 Meningite viral não especificada,2023-04-21
+sim,5290,52,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2487528,,,,G00.9 Meningite bacteriana não especificada,2023-11-07
+sim,5292,58,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2489959,,,,G00.9 Meningite bacteriana não especificada,2024-01-08
+sim,5300,36,0.55,sexo;codigo_municipio;data_obito_15d,2491310,,,,G03.9 Meningite não especificada,2023-06-22
+sim,5342,38,0.55,sexo;codigo_municipio;data_obito_15d,2514624,,,,G01. Meningite em doenças bacterianas classificadas em outra parte,2024-07-27
+sim,5388,29,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2571375,,,,G00.9 Meningite bacteriana não especificada,2024-05-17
+sim,5396,68,0.6799999999999999,data_nascimento;sexo;data_obito_45d,2572382,,,,G00.9 Meningite bacteriana não especificada,2024-05-20
+sim,5436,34,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2600775,,,,A87.9 Meningite viral não especificada,2024-06-25
+sim,5437,20,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2600796,,,,G00.2 Meningite estreptocócica,2024-07-28
+sim,5440,23,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2602914,,,,G00.9 Meningite bacteriana não especificada,2024-08-28
+sim,5456,1,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2625360,,,,G00.9 Meningite bacteriana não especificada,2024-07-18
+sim,5461,32,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2644023,,,,G03.9 Meningite não especificada,2025-02-28
+sim,5463,30,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2651093,,,,G00.9 Meningite bacteriana não especificada,2024-07-06
+sim,5467,3,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2652409,,,,G00.9 Meningite bacteriana não especificada,2024-08-20
+sim,5476,44,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2654382,,,,A39.2 Meningococcemia aguda,2024-12-18
+sim,5489,14,0.85,data_nascimento;sexo;codigo_municipio,2673263,,,,G00.1 Meningite pneumocócica,2025-04-19
+sim,5492,13,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2675957,,,,G00.9 Meningite bacteriana não especificada,2025-04-06
+sim,5493,13,0.55,sexo;codigo_municipio;data_obito_15d,2675958,,,,G00.9 Meningite bacteriana não especificada,2025-04-06
+sim,5496,7,0.55,sexo;codigo_municipio;data_obito_15d,2676551,,,,G00.1 Meningite pneumocócica,2024-11-10
+sim,5514,41,0.9299999999999999,data_nascimento;sexo;codigo_municipio;data_obito_45d,2681300,,,,G00.9 Meningite bacteriana não especificada,2025-01-05
+sim,5523,69,0.55,sexo;codigo_municipio;data_obito_15d,2689580,,,,G00.9 Meningite bacteriana não especificada,2024-12-27
+sim,5524,2,0.55,sexo;codigo_municipio;data_obito_15d,2689607,,,,G00.9 Meningite bacteriana não especificada,2024-09-04
+sim,5539,22,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2694179,,,,A87.9 Meningite viral não especificada,2025-01-10
+sim,5546,44,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2696729,,,,A39.2 Meningococcemia aguda,2024-12-18
+sim,5549,45,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2698494,,,,G00.9 Meningite bacteriana não especificada,2024-12-13
+sim,5557,26,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2701008,,,,G00.9 Meningite bacteriana não especificada,2024-10-14
+sim,5569,26,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2706404,,,,G00.9 Meningite bacteriana não especificada,2024-10-14
+sim,5586,53,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2714054,,,,A39.0 Meningite meningocócica (G01*),2026-04-17
+sim,5587,53,0.55,sexo;codigo_municipio;data_obito_15d,2714066,,,,A39.0 Meningite meningocócica (G01*),2026-04-17
+sim,5589,53,0.55,sexo;codigo_municipio;data_obito_15d,2714098,,,,A39.0 Meningite meningocócica (G01*),2026-04-17
+sim,5591,53,0.55,sexo;codigo_municipio;data_obito_15d,2714215,,,,A39.0 Meningite meningocócica (G01*),2026-04-17
+sim,5593,63,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2714389,,,,A39.0 Meningite meningocócica (G01*),2026-04-24
+sim,5594,53,0.55,sexo;codigo_municipio;data_obito_15d,2714407,,,,A39.0 Meningite meningocócica (G01*),2026-04-17
+sim,5622,66,0.55,sexo;codigo_municipio;data_obito_15d,2784796,,,,G00.9 Meningite bacteriana não especificada,2025-01-28
+sim,5635,25,0.9299999999999999,data_nascimento;sexo;codigo_municipio;data_obito_45d,2822683,,,,G03.9 Meningite não especificada,2026-02-26
+sim,5692,10,0.6,data_nascimento;sexo,2899096,,,,G03.9 Meningite não especificada,2025-09-07
+sim,5704,55,0.55,sexo;codigo_municipio;data_obito_15d,2913649,,,,G03.9 Meningite não especificada,2026-03-19
+sim,5763,56,0.9299999999999999,data_nascimento;sexo;codigo_municipio;data_obito_45d,2971917,,,,G00.9 Meningite bacteriana não especificada,2025-11-29
+sim,5792,72,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2992044,,,,G00.9 Meningite bacteriana não especificada,2025-11-23
+sim,5802,80,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,2995951,,,,A87.9 Meningite viral não especificada,2025-12-28
+sim,5808,65,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,3000483,,,,A87.9 Meningite viral não especificada,2026-05-28
+sim,5810,65,0.55,sexo;codigo_municipio;data_obito_15d,3000603,,,,A87.9 Meningite viral não especificada,2026-05-28
+sim,5852,55,0.9299999999999999,data_nascimento;sexo;codigo_municipio;data_obito_45d,3012813,,,,G03.9 Meningite não especificada,2026-03-19
+sim,5865,31,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,3022042,,,,G03.9 Meningite não especificada,2026-01-26
+sim,5886,50,0.99,data_nascimento;sexo;codigo_municipio;data_obito_15d,3046644,,,,G00.8 Outras meningites bacterianas,2026-05-29
+sim,5911,17,0.7,data_nascimento_aprox;sexo;codigo_municipio,3055722,,,,G00.9 Meningite bacteriana não especificada,2022-07-13
