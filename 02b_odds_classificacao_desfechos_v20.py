@@ -101,7 +101,9 @@ def main():
         df["possui_comorbidade_v20"] = 0
 
     outcomes = {
-        "obito_meningite_v17": "Óbito por meningite",
+        "obito_meningite_uniao_v23": "Óbito (SINAN∪SIM)",
+        "obito_meningite_v17": "Óbito SINAN (EvolucaoCaso)",
+        "obito_sim_link_v23": "Óbito SIM (linkage)",
         "hospitalizacao_v17": "Internação/hospitalização",
         "possui_comorbidade_v20": "Presença de comorbidades",
     }

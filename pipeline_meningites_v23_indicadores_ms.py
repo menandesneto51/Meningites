@@ -37,6 +37,12 @@ def research_steps(rebuild_base: bool = False, from_dw: bool = False):
         rebuild_base = True
     if rebuild_base:
         run("00_base_unica_meningites_v17.py")
+
+    # Linkage/SIM antes dos OR de mortalidade
+    hard = from_dw
+    run("17_linkage_gal_lacen_sim_v23.py", allow_fail=not hard)
+    run("20_enriquecimento_dw_fila_cievs_v23.py", allow_fail=not hard)
+
     run("01_kpis_semanais_meningites_v17.py", allow_fail=True)
     run("02_estatisticas_or_meningites_v17.py", allow_fail=True)
     run("02b_odds_classificacao_desfechos_v20.py", allow_fail=True)
@@ -51,11 +57,16 @@ def research_steps(rebuild_base: bool = False, from_dw: bool = False):
     run("10_comorbidades_associacoes_v18.py", allow_fail=True)
     run("11_qualidade_score_v20.py", allow_fail=True)
     run("09_relatorio_tecnico_meningites_v20.py", allow_fail=True)
-    ops_steps(from_dw=False, skip_dw_extract=True, fail_closed=from_dw)
+    ops_steps(from_dw=False, skip_dw_extract=True, skip_linkage=True, fail_closed=False)
     print("\n[OK] Pipeline pesquisa (--research / --all) concluído.")
 
 
-def ops_steps(from_dw: bool = False, skip_dw_extract: bool = False, fail_closed: bool = False):
+def ops_steps(
+    from_dw: bool = False,
+    skip_dw_extract: bool = False,
+    skip_linkage: bool = False,
+    fail_closed: bool = False,
+):
     """Rotina operacional: MS, alertas, fila, nowcast/gestão V24."""
     if from_dw and not skip_dw_extract:
         run("19_dw_descobrir_e_extrair_v23.py", allow_fail=False)
@@ -71,8 +82,12 @@ def ops_steps(from_dw: bool = False, skip_dw_extract: bool = False, fail_closed:
     run("16_assistente_cievs_v23.py", allow_fail=True)
     if not from_dw and not skip_dw_extract:
         run("19_dw_descobrir_e_extrair_v23.py", allow_fail=True)
-    run("17_linkage_gal_lacen_sim_v23.py", allow_fail=not hard)
-    run("20_enriquecimento_dw_fila_cievs_v23.py", allow_fail=not hard)
+    if not skip_linkage:
+        run("17_linkage_gal_lacen_sim_v23.py", allow_fail=not hard)
+        run("20_enriquecimento_dw_fila_cievs_v23.py", allow_fail=not hard)
+        # Recalcula OR de mortalidade com SINAN∪SIM após enriquecimento
+        run("02b_odds_classificacao_desfechos_v20.py", allow_fail=True)
+        run("02c_odds_clinico_socio_comorb_v21.py", allow_fail=True)
     run("21_sazonalidade_meningites_v23.py", allow_fail=True)
     run("22_nowcast_forecast_refinado_v23.py", allow_fail=True)
     run("24_nowcast_operacional_gestao_v24.py", allow_fail=False)
@@ -137,6 +152,8 @@ def validate(strict: bool = True) -> int:
         "saida_meningites_v17/correlacao_clima_casos_v17.csv",
         "saida_meningites_v17/moran_global_v17.csv",
         "demo_cloud/geo/MT_Municipios_simplificado.geojson",
+        "saida_meningites_v17/desfechos_mortalidade_sim_v23.csv",
+        "saida_meningites_v17/mortalidade_sinan_sim_resumo_v23.csv",
     ]
     print("\nVALIDAÇÃO OPERACIONAL V23/V24")
     print("=" * 90)

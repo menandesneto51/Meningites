@@ -868,7 +868,9 @@ def or_interpretation_guide():
 • <span style="color:#16a34a;font-weight:700;">OR &lt; 1 (verde)</span>: associação com <b>menor chance</b> do desfecho → <b>proteção</b>.<br/>
 • <b>OR ≈ 1</b> ou IC95% que passa por 1: sem evidência clara de associação.<br/>
 • <b>p &lt; 0,05</b> (ou &lt; 0,005 nos destaques): associação estatisticamente relevante, mas <i>não prova causalidade</i>.<br/>
-• Use o gráfico: pontos à <b>direita</b> da linha tracejada (1) = risco; à <b>esquerda</b> = proteção.
+• Use o gráfico: pontos à <b>direita</b> da linha tracejada (1) = risco; à <b>esquerda</b> = proteção.<br/>
+• <b>Mortalidade:</b> desfecho padrão <b>Óbito (SINAN∪SIM)</b> = EvolucaoCaso do SINAN <i>ou</i> match no SIM (CID meningite, score≥0,75).
+  Mantém-se sensibilidade <b>só SINAN</b> e <b>só SIM</b>. KPIs MS de óbito no painel epi continuam no SINAN.
 </div>
         """,
         unsafe_allow_html=True,
@@ -2667,6 +2669,15 @@ def main():
     with tabs[6]:
         st.subheader("Odds Ratio separado por domínio analítico")
         or_interpretation_guide()
+        mort = read_any(OUT / "mortalidade_sinan_sim_resumo_v23.csv")
+        if not mort.empty:
+            r = mort.iloc[0]
+            c1, c2, c3, c4 = st.columns(4)
+            c1.metric("Óbitos SINAN", fmt(r.get("obitos_sinan_evolucao"), 0))
+            c2.metric("Óbitos SIM (link)", fmt(r.get("obitos_sim_linkage"), 0))
+            c3.metric("União SINAN∪SIM", fmt(r.get("obitos_uniao_sinan_sim"), 0))
+            c4.metric("SIM sem SINAN", fmt(r.get("obitos_sim_sem_sinan"), 0))
+            st.caption(str(r.get("nota") or ""))
         ors21 = read_any(OUT / "odds_ratio_clinico_socio_comorb_v21.csv")
         if not ors21.empty:
             for dominio, titulo in [

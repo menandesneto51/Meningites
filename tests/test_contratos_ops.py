@@ -53,6 +53,16 @@ class TestContratosOps(unittest.TestCase):
         data = json.loads(p.read_text(encoding="utf-8"))
         self.assertTrue(data.get("fonte_escolhida") or data.get("fonte"))
 
+    def test_mortalidade_sinan_sim_uniao(self):
+        p = _pick(OUT / "mortalidade_sinan_sim_resumo_v23.csv", DEMO / "mortalidade_sinan_sim_resumo_v23.csv")
+        if p is None:
+            self.skipTest("resumo mortalidade SIM ainda não gerado no demo")
+        df = pd.read_csv(p)
+        self.assertIn("obitos_sinan_evolucao", df.columns)
+        self.assertIn("obitos_uniao_sinan_sim", df.columns)
+        r = df.iloc[0]
+        self.assertGreaterEqual(int(r["obitos_uniao_sinan_sim"]), int(r["obitos_sinan_evolucao"]))
+
     def test_scrub_pii_heuristic(self):
         from preparar_pacote_cloud_demo import is_pii, scrub_df
 

@@ -298,6 +298,15 @@ def write_report(enr: pd.DataFrame, fila: pd.DataFrame, gal_n: int, sim_n: int, 
         f"- Casos com GAL positivo: **{int(enr['dw_gal_positivo_v23'].sum())}**",
         f"- Casos com match SIM: **{int(enr['dw_sim_match_v23'].sum())}**",
         "",
+        "## Mortalidade SINAN × SIM (para Odds Ratio)",
+        "",
+        f"- Óbitos SINAN (EvolucaoCaso): **{int(pd.to_numeric(enr.get('obito_meningite_v17'), errors='coerce').fillna(0).sum())}**",
+        f"- Óbitos SIM (linkage ≥ {MIN_SCORE}): **{int(enr.get('obito_sim_link_v23', pd.Series(dtype=int)).sum()) if 'obito_sim_link_v23' in enr.columns else 0}**",
+        f"- União SINAN∪SIM (desfecho padrão dos OR): **{int(enr.get('obito_meningite_uniao_v23', pd.Series(dtype=int)).sum()) if 'obito_meningite_uniao_v23' in enr.columns else 0}**",
+        f"- SIM sem óbito meningite no SINAN: **{int(enr.get('obito_sim_sem_sinan_v23', pd.Series(dtype=int)).sum()) if 'obito_sim_sem_sinan_v23' in enr.columns else 0}**",
+        "",
+        "Arquivo: `desfechos_mortalidade_sim_v23.csv` · resumo: `mortalidade_sinan_sim_resumo_v23.csv`.",
+        "",
         f"## Alertas linkage DW: {len(adw)}",
         f"## Alertas qualidade: {len(aq)}",
         f"## Fila unificada: {len(fila)} itens",
@@ -332,9 +341,36 @@ def main():
     gal, sim = prepare_matches()
     enr = enrich_cases(df, gal, sim)
 
+    # Desfechos de mortalidade para OR / painel: SINAN, SIM (linkage) e união
+    sinan_ob = pd.to_numeric(enr.get("obito_meningite_v17"), errors="coerce").fillna(0).astype(int)
+    sim_ob = pd.to_numeric(enr.get("dw_sim_match_v23"), errors="coerce").fillna(0).astype(int)
+    enr["obito_sim_link_v23"] = sim_ob
+    enr["obito_meningite_uniao_v23"] = ((sinan_ob == 1) | (sim_ob == 1)).astype(int)
+    enr["obito_sim_sem_sinan_v23"] = ((sim_ob == 1) & (sinan_ob == 0)).astype(int)
+
+    mort_cols = [c for c in [
+        "NumeroNotificacao",
+        "obito_meningite_v17", "obito_sim_link_v23", "obito_meningite_uniao_v23", "obito_sim_sem_sinan_v23",
+        "dw_sim_match_v23", "dw_sim_score_v23", "dw_sim_cid_v23",
+    ] if c in enr.columns]
+    enr[mort_cols].to_csv(OUT / "desfechos_mortalidade_sim_v23.csv", index=False, encoding="utf-8-sig")
+
+    mort_resumo = pd.DataFrame([{
+        "obitos_sinan_evolucao": int(sinan_ob.sum()),
+        "obitos_sim_linkage": int(sim_ob.sum()),
+        "obitos_uniao_sinan_sim": int(enr["obito_meningite_uniao_v23"].sum()),
+        "obitos_sim_sem_sinan": int(enr["obito_sim_sem_sinan_v23"].sum()),
+        "nota": (
+            "OR de mortalidade deve usar obito_meningite_uniao_v23 (padrão). "
+            "obito_meningite_v17 = só EvolucaoCaso SINAN; obito_sim_link_v23 = match SIM score≥0.75."
+        ),
+    }])
+    mort_resumo.to_csv(OUT / "mortalidade_sinan_sim_resumo_v23.csv", index=False, encoding="utf-8-sig")
+
     keep = [c for c in [
         "NumeroNotificacao", "municipio_v17", "regional_v17", "data_ref_v17",
         "classificacao_agrupada_v17", "confirmado_v17", "obito_meningite_v17",
+        "obito_sim_link_v23", "obito_meningite_uniao_v23", "obito_sim_sem_sinan_v23",
         "fonte_sinan_v23",
         "dw_gal_match_v23", "dw_gal_score_v23", "dw_gal_metodo_v23",
         "dw_gal_resultado_v23", "dw_gal_positivo_v23",
@@ -365,6 +401,9 @@ def main():
         "casos_gal": int(enr["dw_gal_match_v23"].sum()),
         "casos_gal_positivo": int(enr["dw_gal_positivo_v23"].sum()),
         "casos_sim": int(enr["dw_sim_match_v23"].sum()),
+        "obitos_sinan": int(pd.to_numeric(enr.get("obito_meningite_v17"), errors="coerce").fillna(0).sum()),
+        "obitos_uniao_sinan_sim": int(enr["obito_meningite_uniao_v23"].sum()),
+        "obitos_sim_sem_sinan": int(enr["obito_sim_sem_sinan_v23"].sum()),
         "alertas_linkage": len(adw),
         "alertas_qualidade": len(aq),
         "fila_unificada": len(fila),

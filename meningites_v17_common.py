@@ -232,7 +232,77 @@ def load_base_v17() -> pd.DataFrame:
             df = _read_via_temp(csv, "csv")
     if "data_ref_v17" in df.columns:
         df["data_ref_v17"] = pd.to_datetime(df["data_ref_v17"], errors="coerce")
-    return df
+    return attach_mortalidade_sim_v23(df)
+
+
+def attach_mortalidade_sim_v23(df: pd.DataFrame) -> pd.DataFrame:
+    """Anexa desfechos de mortalidade SINAN∪SIM gerados pelo módulo 20 (se existirem)."""
+    path = OUT / "desfechos_mortalidade_sim_v23.csv"
+    if df is None or df.empty or not path.exists():
+        # Sem linkage: união = SINAN; SIM = 0
+        if "obito_meningite_v17" in df.columns:
+            sinan = pd.to_numeric(df["obito_meningite_v17"], errors="coerce").fillna(0).astype(int)
+            if "obito_sim_link_v23" not in df.columns:
+                df["obito_sim_link_v23"] = 0
+            if "obito_meningite_uniao_v23" not in df.columns:
+                df["obito_meningite_uniao_v23"] = sinan
+            if "obito_sim_sem_sinan_v23" not in df.columns:
+                df["obito_sim_sem_sinan_v23"] = 0
+        return df
+
+    try:
+        m = pd.read_csv(path, encoding="utf-8-sig", low_memory=False)
+    except Exception:
+        return df
+
+    key = None
+    for cand in ["NumeroNotificacao", "numero_notificacao"]:
+        if cand in df.columns and cand in m.columns:
+            key = cand
+            break
+    cols = [c for c in [
+        "obito_sim_link_v23", "obito_meningite_uniao_v23", "obito_sim_sem_sinan_v23",
+        "dw_sim_match_v23", "dw_sim_score_v23", "dw_sim_cid_v23",
+    ] if c in m.columns]
+    if not cols:
+        return df
+
+    out = df.copy()
+    # remove versões anteriores para re-merge
+    for c in cols:
+        if c in out.columns:
+            out = out.drop(columns=[c])
+
+    if key is not None:
+        left = out[key].astype(str).str.strip()
+        right = m[key].astype(str).str.strip()
+        m2 = m.copy()
+        m2[key] = right
+        m2 = m2.drop_duplicates(key, keep="first")
+        out["_join_key"] = left
+        m2 = m2.rename(columns={key: "_join_key"})
+        out = out.merge(m2[["_join_key"] + cols], on="_join_key", how="left")
+        out = out.drop(columns=["_join_key"])
+    else:
+        # fallback posicional se mesmos N
+        if len(m) == len(out):
+            for c in cols:
+                out[c] = m[c].values
+
+    sinan = pd.to_numeric(out.get("obito_meningite_v17"), errors="coerce").fillna(0).astype(int)
+    if "obito_sim_link_v23" in out.columns:
+        out["obito_sim_link_v23"] = pd.to_numeric(out["obito_sim_link_v23"], errors="coerce").fillna(0).astype(int)
+    else:
+        out["obito_sim_link_v23"] = 0
+    if "obito_meningite_uniao_v23" not in out.columns:
+        out["obito_meningite_uniao_v23"] = ((sinan == 1) | (out["obito_sim_link_v23"] == 1)).astype(int)
+    else:
+        out["obito_meningite_uniao_v23"] = pd.to_numeric(out["obito_meningite_uniao_v23"], errors="coerce").fillna(0).astype(int)
+    if "obito_sim_sem_sinan_v23" not in out.columns:
+        out["obito_sim_sem_sinan_v23"] = ((out["obito_sim_link_v23"] == 1) & (sinan == 0)).astype(int)
+    else:
+        out["obito_sim_sem_sinan_v23"] = pd.to_numeric(out["obito_sim_sem_sinan_v23"], errors="coerce").fillna(0).astype(int)
+    return out
 
 def fmt_num(x, nd=1):
     try:

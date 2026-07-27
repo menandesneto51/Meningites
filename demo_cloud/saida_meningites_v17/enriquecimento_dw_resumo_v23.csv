@@ -1,2 +1,2 @@
-﻿n_base,gal_matches_usados,sim_matches_usados,casos_gal,casos_gal_positivo,casos_sim,alertas_linkage,alertas_qualidade,fila_unificada,min_score,gerado_em
-5944,415,64,415,70,64,29,43,257,0.75,2026-07-27T11:39:33
+﻿n_base,gal_matches_usados,sim_matches_usados,casos_gal,casos_gal_positivo,casos_sim,obitos_sinan,obitos_uniao_sinan_sim,obitos_sim_sem_sinan,alertas_linkage,alertas_qualidade,fila_unificada,min_score,gerado_em
+5944,415,64,415,70,64,395,415,20,29,43,257,0.75,2026-07-27T13:46:11
