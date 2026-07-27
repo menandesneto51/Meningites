@@ -406,25 +406,45 @@ def inject_ui_css():
     st.markdown(
         """
 <style>
-  .stApp { background: linear-gradient(180deg, #f3f7f5 0%, #ffffff 220px); }
-  h1 { letter-spacing: -0.02em !important; color: #0b3d2e !important; }
-  h2, h3 { color: #12352a !important; }
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap');
+  html, body, [class*="css"]  { font-family: 'Source Sans 3', 'Segoe UI', sans-serif; }
+  .stApp { background: linear-gradient(165deg, #e8f2ec 0%, #f7faf8 180px, #ffffff 420px); }
+  h1 { letter-spacing: -0.03em !important; color: #0a3326 !important; font-weight: 800 !important; }
+  h2, h3 { color: #12352a !important; font-weight: 700 !important; }
   div[data-testid="stTabs"] button[role="tab"] {
-    font-size: 0.92rem !important;
+    font-size: 0.9rem !important;
     white-space: nowrap !important;
+    font-weight: 600 !important;
   }
   div[data-testid="stTabs"] [data-baseweb="tab-list"] {
-    gap: 0.15rem;
+    gap: 0.2rem;
     overflow-x: auto !important;
     flex-wrap: nowrap !important;
+    border-bottom: 2px solid #d7e5dd;
+    padding-bottom: 2px;
   }
+  div[data-testid="stTabs"] button[aria-selected="true"] {
+    color: #0b6e4f !important;
+    border-bottom: 3px solid #0b6e4f !important;
+  }
+  .hero-band {
+    background: linear-gradient(120deg, #0b6e4f 0%, #147a5a 45%, #1a8f6a 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin: 0 0 16px 0;
+    box-shadow: 0 8px 24px rgba(11,110,79,.18);
+  }
+  .hero-band h1 { color: #fff !important; margin: 0 !important; font-size: 1.55rem !important; }
+  .hero-band p { margin: 6px 0 0 0; opacity: .92; font-size: 0.95rem; }
   .kpi-card {
     background: #fff;
     border: 1px solid #d7e3dc;
-    border-radius: 14px;
+    border-radius: 16px;
     padding: 14px 16px;
-    box-shadow: 0 1px 3px rgba(16,42,35,.06);
+    box-shadow: 0 2px 8px rgba(16,42,35,.06);
     min-height: 200px;
+    transition: box-shadow .15s ease;
   }
   .kpi-label { font-size: 0.95rem; font-weight: 700; color: #374151; }
   .kpi-value { font-size: 2.05rem; font-weight: 800; color: #111827; line-height: 1.15; }
@@ -434,14 +454,32 @@ def inject_ui_css():
   .section-card {
     background: #fff;
     border: 1px solid #e5ebe7;
+    border-left: 4px solid #0b6e4f;
     border-radius: 12px;
-    padding: 12px 14px 4px 14px;
-    margin-bottom: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(16,42,35,.04);
   }
+  .guide-card {
+    background: linear-gradient(135deg, #f0faf5 0%, #ffffff 70%);
+    border: 1px solid #cfe3d7;
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+  .ai-box {
+    background: #0f172a;
+    color: #e2e8f0;
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-top: 10px;
+    line-height: 1.55;
+  }
+  .ai-box strong { color: #6ee7b7; }
   div[data-testid="stMetricDelta"] svg { display: none !important; }
-  /* Garante que deltas nativos do Streamlit respeitem a cor do texto */
   div[data-testid="stMetricDelta"] { font-weight: 700 !important; }
-  .block-container { padding-top: 1.2rem !important; max-width: 1400px; }
+  .block-container { padding-top: 1rem !important; max-width: 1420px; }
+  [data-testid="stSidebar"] { background: #f3f8f5; }
 </style>
         """,
         unsafe_allow_html=True,
@@ -974,34 +1012,237 @@ def climate_correlation_visual():
     st.caption("Correlação ecológica: indica associação temporal exploratória, não causalidade individual.")
 
 
+def _comorb_label(name: str) -> str:
+    s = str(name or "")
+    s = s.replace("DoencasPreexistentes", "").replace("_bin_v17", "")
+    mapa = {
+        "AIDS": "AIDS/HIV",
+        "Imunodepressoras": "Doenças imunodepressoras",
+        "IRA": "Infecção respiratória aguda (IRA)",
+        "Tuberculose": "Tuberculose",
+        "Traumatismo": "Traumatismo",
+        "InfeccaoHospitalar": "Infecção hospitalar",
+        "Outras": "Outras comorbidades",
+    }
+    return mapa.get(s, s)
+
+
+def _comorb_hint(name: str) -> str:
+    s = str(name or "").lower()
+    if "aids" in s:
+        return "Imunossupressão aumenta risco de infecções graves e pior evolução clínica."
+    if "imuno" in s:
+        return "Condições imunodepressoras elevam vulnerabilidade a infecções do SNC."
+    if "ira" in s:
+        return "IRA pode preceder/coexistir com meningite; avaliar via aérea e etiologia."
+    if "tuber" in s:
+        return "Relevante para meningite tuberculosa e investigação de contatos/TB."
+    if "hospital" in s:
+        return "Sugere gravidade, internação prolongada ou complicação hospitalar."
+    if "trauma" in s:
+        return "Trauma pode relacionar-se a falhas de barreira e infecção secundária."
+    return "Avaliar plausibilidade clínica e qualidade do preenchimento SINAN."
+
+
+def _cramer_nivel(v) -> tuple[str, str]:
+    try:
+        x = float(v)
+    except Exception:
+        return "—", "#64748b"
+    if x >= 0.15:
+        return "moderada/forte", "#b91c1c"
+    if x >= 0.10:
+        return "moderada", "#ea580c"
+    if x >= 0.05:
+        return "fraca–moderada", "#ca8a04"
+    return "fraca", "#64748b"
+
+
+def comorb_interpretation_guide():
+    st.markdown(
+        """
+<div class="guide-card">
+<b>Como ler esta aba (para gestores e vigilância)</b><br/><br/>
+• <b>p-valor</b>: chance de o achado ser só “acaso”. Em geral, <b>p &lt; 0,05</b> sugere associação estatística;
+  usamos também <b>p &lt; 0,005</b> para destacar achados mais robustos.<br/>
+• <b>Cramér's V</b>: força da associação (0 a 1). Guia prático:
+  &lt;0,05 fraca · 0,05–0,10 fraca–moderada · 0,10–0,15 moderada · ≥0,15 moderada/forte.<br/>
+• <b>Não é causalidade</b>: associação entre comorbidade e evolução/classificação <i>não prova</i> que a comorbidade causou o desfecho.
+  Pode haver idade, gravidade, acesso ao serviço e preenchimento incompleto.<br/>
+• <b>Uso operacional</b>: priorizar investigação clínica, completar campos SINAN e discutir casos com pior evolução
+  (óbito/grave) quando a comorbidade for frequente e significativa.
+</div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def narrativa_comorbidades(com: pd.DataFrame, use_llm: bool = False) -> str:
+    """Texto justificativo offline (+ LLM opcional via assistente)."""
+    d = com.copy()
+    for c in ["p_value", "cramers_v"]:
+        if c in d.columns:
+            d[c] = pd.to_numeric(d[c], errors="coerce")
+    top = d[d["p_value"] < 0.005].sort_values(["p_value", "cramers_v"], ascending=[True, False]).head(8)
+    if top.empty:
+        top = d.sort_values("p_value").head(5)
+
+    bullets = []
+    for _, r in top.iterrows():
+        lab = _comorb_label(r.get("variavel"))
+        nivel, _ = _cramer_nivel(r.get("cramers_v"))
+        hint = _comorb_hint(str(r.get("variavel")))
+        bullets.append(
+            f"- **{lab}** × {r.get('desfecho')}: p={fmt(r.get('p_value'), 4)}, "
+            f"Cramér's V={fmt(r.get('cramers_v'), 3)} ({nivel}). {hint}"
+        )
+
+    texto = [
+        "### Leitura assistida dos achados de comorbidades",
+        "",
+        "Com base nos testes de associação (qui-quadrado / Cramér's V) da base SINAN de meningites do MT:",
+        "",
+        *bullets,
+        "",
+        "**Justificativa epidemiológica (síntese):** comorbidades que comprometem imunidade "
+        "(HIV/AIDS, doenças imunodepressoras), infecção respiratória prévia e tuberculose "
+        "são biologicamente plausíveis em meningites e devem orientar investigação clínica, "
+        "oportunidade diagnóstica e completude da ficha. Infecção hospitalar associada à evolução "
+        "pode indicar gravidade e necessidade de revisar cuidado hospitalar e notificação.",
+        "",
+        "> Texto de apoio à vigilância. **Validar com a equipe CIEVS** antes de comunicação oficial. "
+        "Associação estatística ≠ causalidade.",
+    ]
+    base_txt = "\n".join(texto)
+
+    # RAG normativo + LLM opcional
+    try:
+        assist = __import__("16_assistente_cievs_v23")
+        ctx = "Achados de comorbidades (top):\n" + "\n".join(bullets[:6])
+        q = (
+            "Justifique epidemiologicamente associações entre comorbidades pré-existentes "
+            "(HIV/AIDS, imunodepressão, IRA, tuberculose, infecção hospitalar) e evolução/desfecho "
+            "em meningites, citando boas práticas de vigilância MS/CIEVS."
+        )
+        ans = assist.answer(q, contexto_dados=ctx, use_llm=use_llm)
+        extra = ans.get("resposta_llm") or ""
+        fontes = ans.get("fontes") or []
+        if use_llm and extra:
+            base_txt += "\n\n### Narrativa IA (revisar)\n\n" + extra
+        elif fontes:
+            base_txt += "\n\n### Apoio normativo recuperado\n\n"
+            for f in fontes[:3]:
+                base_txt += f"- {f.get('titulo')} — {f.get('fonte')}\n"
+            # incluir trecho offline resumido
+            offline = ans.get("resposta", "")
+            if offline and not use_llm:
+                base_txt += "\n" + offline[:1800]
+    except Exception as e:
+        base_txt += f"\n\n_Assistente indisponível: {e}_"
+    return base_txt
+
+
 def comorb_section_v21():
     com = read_any(OUT / "associacoes_comorbidades_quiquadrado_v18.csv")
     detail = read_any(OUT / "associacoes_comorbidades_detalhe_v18.csv")
     if com.empty:
         st.info("Rode o script 10_comorbidades_associacoes_v18.py para gerar esta aba.")
         return
+
     for c in ["p_value", "cramers_v"]:
         if c in com.columns:
             com[c] = pd.to_numeric(com[c], errors="coerce")
+
+    st.caption("Associações entre doenças pré-existentes (SINAN) e evolução / classificação final do caso.")
+    comorb_interpretation_guide()
+
+    # KPIs resumidos
+    n_sig = int((com["p_value"] < 0.05).sum()) if "p_value" in com.columns else 0
+    n_strong = int((com["p_value"] < 0.005).sum()) if "p_value" in com.columns else 0
+    k1, k2, k3 = st.columns(3)
+    with k1:
+        mini_metric_card("Testes analisados", fmt(len(com), 0))
+    with k2:
+        mini_metric_card("Assoc. p < 0,05", fmt(n_sig, 0))
+    with k3:
+        mini_metric_card("Destaques p < 0,005", fmt(n_strong, 0))
+
     significant_alerts_from_frames([("comorbidades", com)], threshold=0.005, title="Comorbidades com p < 0,005")
+
+    # Narrativa IA / assistente
+    st.subheader("Justificativa dos achados (assistente CIEVS)")
+    usar_llm = st.checkbox(
+        "Enriquecer com LLM (se OPENAI_API_KEY estiver configurada)",
+        value=False,
+        key="comorb_llm",
+    )
+    if st.button("Gerar / atualizar texto justificativo", key="btn_comorb_narr"):
+        with st.spinner("Montando leitura assistida…"):
+            narr = narrativa_comorbidades(com, use_llm=usar_llm)
+            st.session_state["comorb_narrativa"] = narr
+    narr = st.session_state.get("comorb_narrativa")
+    if not narr:
+        narr = narrativa_comorbidades(com, use_llm=False)
+        st.session_state["comorb_narrativa"] = narr
+    st.markdown(f'<div class="ai-box">{narr.replace(chr(10), "<br/>")}</div>', unsafe_allow_html=True)
+    st.download_button(
+        "Baixar justificativa (.md)",
+        data=narr.encode("utf-8"),
+        file_name="justificativa_comorbidades_cievs.md",
+        mime="text/markdown",
+        key="dl_comorb_narr",
+    )
+
     for des in ["Evolução", "Classificação final"]:
-        st.subheader(f"Comorbidades x {des}")
+        st.markdown("---")
+        st.subheader(f"Comorbidades × {des}")
         sub = com[com["desfecho"].astype(str).eq(des)].copy()
         if sub.empty:
             st.info(f"Sem resultados para {des}.")
             continue
-        fig = px.bar(sub.sort_values("p_value").head(20), x="cramers_v", y="variavel", orientation="h",
-                     text=[f"p={p:.4f}" if pd.notna(p) else "p=NA" for p in sub.sort_values("p_value").head(20)["p_value"]],
-                     title=f"Força da associação — comorbidades x {des}")
-        fig.update_traces(textposition="outside")
-        fig.update_layout(height=520, xaxis_title="Cramér's V", yaxis_title="Comorbidade")
+        sub = sub.sort_values("p_value")
+        top = sub.head(20).copy()
+        top["comorbidade"] = top["variavel"].map(_comorb_label)
+        top["forca"] = top["cramers_v"].map(lambda v: _cramer_nivel(v)[0])
+        top["cor"] = top["cramers_v"].map(lambda v: _cramer_nivel(v)[1])
+
+        fig = go.Figure()
+        fig.add_bar(
+            x=pd.to_numeric(top["cramers_v"], errors="coerce"),
+            y=top["comorbidade"],
+            orientation="h",
+            marker_color=top["cor"],
+            text=[f"V={fmt(v,3)} · p={fmt(p,4)}" for v, p in zip(top["cramers_v"], top["p_value"])],
+            textposition="outside",
+            cliponaxis=False,
+            hovertemplate="<b>%{y}</b><br>Cramér's V=%{x:.3f}<extra></extra>",
+        )
+        fig.update_layout(
+            title=f"Força da associação (Cramér's V) — {des}",
+            height=max(420, 28 * len(top) + 120),
+            xaxis_title="Cramér's V (0=sem associação · 1=máxima)",
+            yaxis_title="",
+            margin=dict(l=20, r=80, t=60, b=40),
+        )
         st.plotly_chart(fig, use_container_width=True, key=uid())
-        st.dataframe(sub.sort_values("p_value"), use_container_width=True)
+
+        # Tabela amigável
+        show = pd.DataFrame({
+            "Comorbidade": top["comorbidade"].values,
+            "Desfecho": top["desfecho"].values,
+            "N": top["n"].values,
+            "p-valor": top["p_value"].values,
+            "Cramér's V": top["cramers_v"].values,
+            "Força": top["forca"].values,
+            "Leitura clínica/vigilância": [_comorb_hint(v) for v in top["variavel"]],
+        })
+        st.dataframe(show, use_container_width=True)
+
         if not detail.empty:
             det = detail[detail["desfecho"].astype(str).eq(des)]
             if not det.empty:
-                st.markdown("Detalhamento dos grupos comparados")
-                st.dataframe(det, use_container_width=True)
+                with st.expander(f"Detalhamento dos grupos comparados — {des}"):
+                    st.dataframe(det, use_container_width=True)
 
 def indicators_by_year(ind):
     needed = {"ano_evento_v17","casos","obitos_meningite","confirmados","populacao"}
@@ -2090,10 +2331,14 @@ def main():
     latlon = load_latlong()
     shapefile = load_shapefile()
 
-    st.title("Robô de Meningites — CIEVS-MT")
-    st.caption(
-        "Sistema exclusivo de vigilância de meningites · Indicadores do Ministério da Saúde · "
-        "Alertas CIEVS (NT 97/2024) · Não é o SIS Clima-Saúde."
+    st.markdown(
+        """
+<div class="hero-band">
+  <h1>Robô de Meningites — CIEVS-MT</h1>
+  <p>Vigilância de meningites · Indicadores MS · Alertas CIEVS (NT 97/2024) · Nowcast/forecast · Não é o SIS Clima-Saúde.</p>
+</div>
+        """,
+        unsafe_allow_html=True,
     )
     if "demo_cloud" in str(OUT).replace("\\", "/"):
         st.warning(
