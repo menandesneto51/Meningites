@@ -2419,8 +2419,41 @@ def main():
             "Para operação completa use o painel local (porta 8510) após o pipeline."
         )
 
+    # Idade da extração / fonte SINAN
+    try:
+        import json
+        audit_p = OUT / "auditoria_sinan_fonte_v23.json"
+        dw_p = OUT / "dw_descoberta_resumo_v23.json"
+        bits = []
+        if audit_p.exists():
+            aud = json.loads(audit_p.read_text(encoding="utf-8"))
+            fonte = aud.get("fonte_escolhida") or aud.get("fonte") or "?"
+            gerado = aud.get("gerado_em") or ""
+            bits.append(f"Fonte SINAN: **{fonte}**" + (f" · gerado {gerado}" if gerado else ""))
+        if dw_p.exists():
+            dwm = json.loads(dw_p.read_text(encoding="utf-8"))
+            conn = dwm.get("conectado_em") or ""
+            n = (dwm.get("extracoes") or {}).get("sinan_meningites_dw", {}).get("n")
+            if conn:
+                bits.append(f"DW: {conn}" + (f" · {n} linhas SINAN" if n is not None else ""))
+        if bits:
+            st.caption(" · ".join(bits) + " · Atualizar: `ATUALIZAR_MENINGITES.bat`")
+    except Exception:
+        pass
+
     with st.sidebar:
         st.header("Filtros globais")
+        try:
+            import json
+            audit_p = OUT / "auditoria_sinan_fonte_v23.json"
+            if audit_p.exists():
+                aud = json.loads(audit_p.read_text(encoding="utf-8"))
+                st.info(
+                    f"Fonte: {aud.get('fonte_escolhida') or aud.get('fonte') or '?'}\n\n"
+                    f"{aud.get('gerado_em') or ''}"
+                )
+        except Exception:
+            pass
         anos = sorted(pd.to_numeric(base["ano_evento_v17"], errors="coerce").dropna().astype(int).unique()) if "ano_evento_v17" in base.columns else []
         ano_sel = st.multiselect("Ano", anos, default=[max(anos)] if anos else [])
         reg_sel = st.multiselect("Regional de Saúde", sorted(base["regional_v17"].dropna().astype(str).unique()) if "regional_v17" in base.columns else [], default=[])

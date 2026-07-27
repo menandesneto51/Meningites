@@ -27,7 +27,7 @@ Preencha exatamente:
 |--------|--------|
 | **Repository** | `menandesneto51/Meningites` |
 | **Branch** | `main` |
-| **Main file path** | `dashboard_meningites_v22_refinado.py` |
+| **Main file path** | `streamlit_app.py` (ou `dashboard_meningites_v22_refinado.py`) |
 | **App URL** (opcional) | ex.: `meningites-cievs-mt` |
 
 3. Clique em **Deploy**
@@ -78,6 +78,12 @@ git push
 ```
 
 No Streamlit Cloud: o app **redeploya sozinho** após o push (ou use **Reboot app**).
+
+Atalho local equivalente:
+
+```bat
+ATUALIZAR_MENINGITES.bat --cloud
+```
 
 ---
 

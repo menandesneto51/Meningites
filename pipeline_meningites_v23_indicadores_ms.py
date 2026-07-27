@@ -57,7 +57,8 @@ def all_steps(rebuild_base: bool = False, from_dw: bool = False):
     run("14_painel_epidemiologico_ms_v23.py", allow_fail=False)
     run("15_boletim_semanal_rascunho_v23.py", allow_fail=True)
     run("16_assistente_cievs_v23.py", allow_fail=True)
-    run("19_dw_descobrir_e_extrair_v23.py", allow_fail=True)
+    if not from_dw:
+        run("19_dw_descobrir_e_extrair_v23.py", allow_fail=True)
     run("17_linkage_gal_lacen_sim_v23.py", allow_fail=True)
     run("20_enriquecimento_dw_fila_cievs_v23.py", allow_fail=True)
     run("21_sazonalidade_meningites_v23.py", allow_fail=True)
@@ -105,8 +106,9 @@ def open_dashboard():
     )
 
 
-def validate():
-    items = [
+def validate(strict: bool = True) -> int:
+    """Retorna 0 se críticos ok; 1 se faltar artefato obrigatório."""
+    required = [
         "saida_meningites_v17/base_unica_meningites_v17.csv",
         "saida_meningites_v17/indicadores_ms_operacionais_v23.csv",
         "saida_meningites_v17/indicadores_ms_operacionais_resumo_v23.csv",
@@ -116,6 +118,13 @@ def validate():
         "saida_meningites_v17/painel_epi_resumo_ano_v23.csv",
         "saida_meningites_v17/painel_epi_etiologia_ano_v23.csv",
         "saida_meningites_v17/painel_epi_snapshot_etiologia_v23.csv",
+        "saida_meningites_v17/fila_cievs_unificada_v23.csv",
+        "saida_meningites_v17/indicadores_gestao_semana_v24.csv",
+        "saida_meningites_v17/nowcast_operacional_resumo_v24.csv",
+        "saida_meningites_v17/auditoria_sinan_fonte_v23.json",
+        "LEIA-ME_V23.md",
+    ]
+    optional = [
         "relatorios/BOLETIM_SEMANAL_MENINGITES_V23_RASCUNHO.md",
         "saida_meningites_v17/assistente_kb_documentos_v23.csv",
         "relatorios/BOLETIM_SEMANAL_MENINGITES_V23_NARRATIVA_IA.md",
@@ -125,19 +134,36 @@ def validate():
         "relatorios/DW_EXTRACAO_MENINGITES_V23.md",
         "saida_meningites_v17/dw_descoberta_resumo_v23.json",
         "relatorios/BASE_UNICA_FONTE_DW_V23.md",
-        "saida_meningites_v17/auditoria_sinan_fonte_v23.json",
         "saida_meningites_v17/enriquecimento_dw_resumo_v23.csv",
-        "saida_meningites_v17/fila_cievs_unificada_v23.csv",
         "relatorios/FILA_CIEVS_UNIFICADA_V23.md",
-        "saida_meningites_v17/indicadores_gestao_semana_v24.csv",
-        "saida_meningites_v17/nowcast_operacional_resumo_v24.csv",
         "relatorios/NOWCAST_OPERACIONAL_GESTAO_V24.md",
-        "LEIA-ME_V23.md",
+        "saida_meningites_v17/sazonalidade_resumo_v23.csv",
+        "saida_meningites_v17/nowcast_forecast_resumo_v23.csv",
+        "saida_meningites_v17/correlacao_clima_casos_v17.csv",
+        "saida_meningites_v17/moran_global_v17.csv",
     ]
-    print("\nVALIDAÇÃO V23")
+    print("\nVALIDAÇÃO OPERACIONAL V23/V24")
     print("=" * 90)
-    for i in items:
-        print(("[OK]      " if (ROOT / i).exists() else "[AUSENTE] "), i)
+    missing_req = []
+    for i in required:
+        ok = (ROOT / i).exists()
+        print(("[OK]      " if ok else "[AUSENTE*] "), i)
+        if not ok:
+            missing_req.append(i)
+    print("-" * 90)
+    missing_opt = []
+    for i in optional:
+        ok = (ROOT / i).exists()
+        print(("[OK]      " if ok else "[AUSENTE]  "), i)
+        if not ok:
+            missing_opt.append(i)
+    print("=" * 90)
+    print(f"Críticos ausentes: {len(missing_req)} | Opcionais ausentes: {len(missing_opt)}")
+    if missing_req and strict:
+        print("[FALHA] Validação estrita — rode ATUALIZAR_MENINGITES.bat")
+        return 1
+    print("[OK] Validação concluída.")
+    return 0
 
 
 def main():
@@ -168,15 +194,17 @@ def main():
             open_dashboard()
         return
     if args.validate:
-        validate()
+        raise SystemExit(validate(strict=True))
     if args.open_dashboard:
         open_dashboard()
+        return
     if not any(vars(args).values()):
         print("Use:")
-        print("  python pipeline_meningites_v23_indicadores_ms.py --from-dw")
+        print("  ATUALIZAR_MENINGITES.bat")
+        print("  ATUALIZAR_MENINGITES.bat --cloud")
         print("  python pipeline_meningites_v23_indicadores_ms.py --only-v23 --from-dw")
-        print("  python pipeline_meningites_v23_indicadores_ms.py --only-v23 --open-dashboard")
-        print("  python pipeline_meningites_v23_indicadores_ms.py --all-open")
+        print("  python pipeline_meningites_v23_indicadores_ms.py --validate")
+        print("  python pipeline_meningites_v23_indicadores_ms.py --all --from-dw")
         print("  python pipeline_meningites_v23_indicadores_ms.py --only-v23 --open-dashboard")
 
 

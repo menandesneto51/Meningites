@@ -34,8 +34,29 @@ Use **Python 3.13** neste ambiente (o 3.12 padrão pode não ter numpy/pandas).
 | 21 | Sazonalidade (índice mensal, heatmap SE×ano) |
 | 22 | Nowcast com atraso de notificação + forecast semanal + backtest |
 | 23 | Alertas personalizados (digests regional/lab) + narrativa IA |
+| 24 | Nowcast operacional + indicadores de gestão da semana |
 
-Dashboard atual: `dashboard_meningites_v22_refinado.py` (abas V23).
+Dashboard atual: `dashboard_meningites_v22_refinado.py` (abas V23/V24 + Clima×casos exploratório).
+
+## Rotina operacional (preferencial)
+
+```bat
+ATUALIZAR_MENINGITES.bat
+ATUALIZAR_MENINGITES.bat --cloud
+MENU_FINAL_MENINGITES.bat
+```
+
+Fluxo semanal oficial:
+1. Extrai DW + regenera base
+2. Roda módulos MS / alertas / fila / nowcast V24
+3. Valida artefatos críticos (exit ≠ 0 se faltar)
+4. Com `--cloud`, regenera `demo_cloud/` para push no GitHub/Streamlit Cloud
+
+Instalação local (Python 3.13 + ODBC Driver 18):
+
+```bat
+00_INSTALAR_DEPENDENCIAS_MENINGITES_V17.bat
+```
 
 ## Sazonalidade, nowcast e alertas personalizados
 
@@ -104,3 +125,5 @@ py -3.13 18_arquivar_legado_v23.py --apply
 ```powershell
 py -3.13 pipeline_meningites_v23_indicadores_ms.py --validate
 ```
+
+Retorna código de saída **1** se faltar artefato crítico (base, indicadores MS, fila, gestão V24).
