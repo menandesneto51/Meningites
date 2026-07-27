@@ -18,8 +18,8 @@ set CLOUD=
 if /I "%~1"=="--cloud" set CLOUD=1
 if /I "%~1"=="/cloud" set CLOUD=1
 
-echo [1/3] Pipeline operacional (--only-v23 --from-dw)...
-py -3.13 pipeline_meningites_v23_indicadores_ms.py --only-v23 --from-dw
+echo [1/3] Pipeline operacional (--ops --from-dw)...
+py -3.13 pipeline_meningites_v23_indicadores_ms.py --ops --from-dw
 if errorlevel 1 (
   echo.
   echo [ERRO] Pipeline falhou. Verifique .env / DW / Python 3.13.

@@ -49,7 +49,8 @@ Se der erro:
 | Erro comum | O que fazer |
 |------------|-------------|
 | `ModuleNotFoundError` | Confirme que `requirements.txt` está na raiz do repo e faça **Reboot app** |
-| App vazio / sem indicadores | Rode local `py -3.13 preparar_pacote_cloud_demo.py`, commit + push de `demo_cloud/`, depois **Reboot** |
+| App vazio / sem indicadores | Rode local `ATUALIZAR_MENINGITES.bat --cloud` (ou `preparar_pacote_cloud_demo.py`), commit + push de `demo_cloud/`, depois **Reboot** |
+| Mapa sem polígonos | Confirme `demo_cloud/geo/MT_Municipios_simplificado.geojson` no repo; **Reboot** |
 | Falha no GeoPandas/GDAL | Confirme `packages.txt` na raiz; **Reboot** |
 | Repo não aparece | Em Settings do Streamlit → GitHub → reconectar e liberar repos privados |
 

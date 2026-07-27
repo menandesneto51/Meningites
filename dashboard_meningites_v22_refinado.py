@@ -117,6 +117,8 @@ def load_shapefile():
         st.warning(f"GeoPandas indisponível — mapas usarão pontos. ({e})")
         return None
 
+    last_err = None
+
     def _norm_codes(gdf):
         code_col = next(
             (c for c in gdf.columns if str(c).upper() in {"CD_MUN", "COD_MUN", "GEOCODIGO", "CD_GEOCMU"}
@@ -146,6 +148,23 @@ def load_shapefile():
                 pass
         return gdf
 
+    # 0) GeoJSON simplificado (Cloud / demo)
+    geojson_candidates = [
+        ROOT / "demo_cloud" / "geo" / "MT_Municipios_simplificado.geojson",
+        ROOT / "geo" / "MT_Municipios_simplificado.geojson",
+    ]
+    for gj in geojson_candidates:
+        if not gj.exists():
+            continue
+        try:
+            gdf = gpd.read_file(gj)
+            if "codigo_municipio_v17" in gdf.columns and len(gdf) > 0:
+                return gdf
+            gdf = _norm_codes(gdf)
+            return gdf
+        except Exception as e:
+            last_err = e
+
     # 1) cache parquet local (rápido)
     try:
         if cache_pq.exists():
@@ -156,7 +175,6 @@ def load_shapefile():
         pass
 
     # 2) shapefile oficial (via TEMP — evita lock OneDrive)
-    last_err = None
     if shp is not None:
         try:
             with tempfile.TemporaryDirectory() as td:

@@ -12,8 +12,10 @@ echo  [2] Atualizar + regenerar demo_cloud (para upar Cloud)
 echo  [3] Pipeline V23 + abrir painel
 echo  [4] So abrir painel (http://localhost:8510)
 echo  [5] Validar saidas
-echo  [6] Pipeline completo pesquisa (--all --from-dw)
+echo  [6] Pipeline pesquisa completo (--research --from-dw)
 echo  [7] Instalar dependencias locais
+echo  [8] Agendar atualizacao semanal (Task Scheduler)
+echo  [9] Rodar testes de contrato
 echo  [0] Sair
 echo.
 
@@ -41,8 +43,17 @@ if "%OPCAO%"=="5" (
     goto FIM
 )
 if "%OPCAO%"=="6" (
-    py -3.13 pipeline_meningites_v23_indicadores_ms.py --all --from-dw
+    py -3.13 pipeline_meningites_v23_indicadores_ms.py --research --from-dw
     if errorlevel 1 pause
+    pause
+    goto FIM
+)
+if "%OPCAO%"=="8" (
+    call "%~dp0AGENDAR_ATUALIZACAO_SEMANAL.bat"
+    goto FIM
+)
+if "%OPCAO%"=="9" (
+    py -3.13 -m unittest tests.test_contratos_ops -v
     pause
     goto FIM
 )

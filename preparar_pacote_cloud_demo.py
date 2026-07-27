@@ -111,9 +111,19 @@ def main():
         if md.stat().st_size < 2_000_000:
             shutil.copy2(md, DEST_REL / md.name)
 
+    # Malha municipal simplificada para mapas no Cloud
+    geo_ok = False
+    try:
+        from importlib import import_module
+        geo_mod = import_module("25_exportar_geo_cloud_simplificado")
+        geo_ok = geo_mod.main() == 0
+    except Exception as e:
+        print(f"[AVISO] Geo Cloud não gerado: {e}")
+
     meta = {
         "n_arquivos_csv": len(copied),
         "pulados_grandes": skipped,
+        "geojson_simplificado": geo_ok,
         "aviso": (
             "Pacote DEMO para avaliação pública/cloud. "
             "Colunas nominais removidas da base e filas. Sem acesso ao DW."

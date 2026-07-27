@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 pipeline_meningites_v23_indicadores_ms.py
-Orquestrador V23: mantém V22 e adiciona indicadores MS + alertas inteligentes.
+Orquestrador V23/V24: ops semanal, pesquisa completa e validação estrita.
 """
 
 from pathlib import Path
@@ -30,7 +30,8 @@ def run(script: str, allow_fail: bool = False):
             raise SystemExit(proc.returncode)
 
 
-def all_steps(rebuild_base: bool = False, from_dw: bool = False):
+def research_steps(rebuild_base: bool = False, from_dw: bool = False):
+    """Pipeline completo: OR, Moran, clima, lab, vacina + V23/V24."""
     if from_dw:
         run("19_dw_descobrir_e_extrair_v23.py", allow_fail=False)
         rebuild_base = True
@@ -50,47 +51,41 @@ def all_steps(rebuild_base: bool = False, from_dw: bool = False):
     run("10_comorbidades_associacoes_v18.py", allow_fail=True)
     run("11_qualidade_score_v20.py", allow_fail=True)
     run("09_relatorio_tecnico_meningites_v20.py", allow_fail=True)
-
-    # Novos módulos V23
-    run("12_indicadores_ms_operacionais_v23.py", allow_fail=False)
-    run("13_alertas_inteligentes_v23.py", allow_fail=False)
-    run("14_painel_epidemiologico_ms_v23.py", allow_fail=False)
-    run("15_boletim_semanal_rascunho_v23.py", allow_fail=True)
-    run("16_assistente_cievs_v23.py", allow_fail=True)
-    if not from_dw:
-        run("19_dw_descobrir_e_extrair_v23.py", allow_fail=True)
-    run("17_linkage_gal_lacen_sim_v23.py", allow_fail=True)
-    run("20_enriquecimento_dw_fila_cievs_v23.py", allow_fail=True)
-    run("21_sazonalidade_meningites_v23.py", allow_fail=True)
-    run("22_nowcast_forecast_refinado_v23.py", allow_fail=True)
-    run("24_nowcast_operacional_gestao_v24.py", allow_fail=True)
-    run("23_alertas_personalizados_ia_v23.py", allow_fail=True)
-    print("\n[OK] Pipeline V23 concluído.")
+    ops_steps(from_dw=False, skip_dw_extract=True, fail_closed=from_dw)
+    print("\n[OK] Pipeline pesquisa (--research / --all) concluído.")
 
 
-def only_v23(from_dw: bool = False):
-    if from_dw:
+def ops_steps(from_dw: bool = False, skip_dw_extract: bool = False, fail_closed: bool = False):
+    """Rotina operacional: MS, alertas, fila, nowcast/gestão V24."""
+    if from_dw and not skip_dw_extract:
         run("19_dw_descobrir_e_extrair_v23.py", allow_fail=False)
         run("00_base_unica_meningites_v17.py", allow_fail=False)
+
+    hard = fail_closed or from_dw
+
     run("12_indicadores_ms_operacionais_v23.py", allow_fail=False)
     run("13_alertas_inteligentes_v23.py", allow_fail=False)
     run("14_painel_epidemiologico_ms_v23.py", allow_fail=False)
     run("11_qualidade_score_v20.py", allow_fail=True)
     run("15_boletim_semanal_rascunho_v23.py", allow_fail=True)
     run("16_assistente_cievs_v23.py", allow_fail=True)
-    if not from_dw:
+    if not from_dw and not skip_dw_extract:
         run("19_dw_descobrir_e_extrair_v23.py", allow_fail=True)
-    run("17_linkage_gal_lacen_sim_v23.py", allow_fail=True)
-    run("20_enriquecimento_dw_fila_cievs_v23.py", allow_fail=True)
+    run("17_linkage_gal_lacen_sim_v23.py", allow_fail=not hard)
+    run("20_enriquecimento_dw_fila_cievs_v23.py", allow_fail=not hard)
     run("21_sazonalidade_meningites_v23.py", allow_fail=True)
     run("22_nowcast_forecast_refinado_v23.py", allow_fail=True)
-    run("24_nowcast_operacional_gestao_v24.py", allow_fail=True)
+    run("24_nowcast_operacional_gestao_v24.py", allow_fail=False)
     run("23_alertas_personalizados_ia_v23.py", allow_fail=True)
-    print("\n[OK] Módulos V23 (MS + alertas + sazonalidade + nowcast + digests) concluídos.")
+    print("\n[OK] Pipeline operacional (--ops) concluído.")
+
+
+# Compatibilidade com nomes antigos
+all_steps = research_steps
+only_v23 = ops_steps
 
 
 def open_dashboard():
-    # Porta dedicada — NÃO usar 8501 (costuma ser o SIS Clima-Saúde).
     dash = "dashboard_meningites_v22_refinado.py"
     port = "8510"
     print(f"\n[DASHBOARD] Meningites em http://localhost:{port}")
@@ -141,6 +136,7 @@ def validate(strict: bool = True) -> int:
         "saida_meningites_v17/nowcast_forecast_resumo_v23.csv",
         "saida_meningites_v17/correlacao_clima_casos_v17.csv",
         "saida_meningites_v17/moran_global_v17.csv",
+        "demo_cloud/geo/MT_Municipios_simplificado.geojson",
     ]
     print("\nVALIDAÇÃO OPERACIONAL V23/V24")
     print("=" * 90)
@@ -168,26 +164,31 @@ def validate(strict: bool = True) -> int:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--all", action="store_true", help="Pipeline completo V22 + V23")
+    ap.add_argument("--ops", action="store_true", help="Rotina operacional (MS/alertas/fila/V24)")
+    ap.add_argument("--research", action="store_true", help="Pipeline completo pesquisa (OR/Moran/clima+V23)")
+    ap.add_argument("--all", action="store_true", help="Alias de --research")
     ap.add_argument("--all-open", action="store_true")
     ap.add_argument("--rebuild-base", action="store_true", help="Regenera base única antes do pipeline")
-    ap.add_argument("--from-dw", action="store_true", help="Extrai DW e regenera base única (VW_SINAN_MENINGITE)")
-    ap.add_argument("--only-v23", action="store_true", help="Só indicadores MS + alertas")
+    ap.add_argument("--from-dw", action="store_true", help="Extrai DW e regenera base única")
+    ap.add_argument("--only-v23", action="store_true", help="Alias de --ops")
     ap.add_argument("--open-dashboard", action="store_true")
     ap.add_argument("--validate", action="store_true")
     args = ap.parse_args()
 
-    if args.only_v23:
-        only_v23(from_dw=args.from_dw)
+    want_ops = args.ops or args.only_v23
+    want_research = args.research or args.all or args.all_open
+
+    if want_ops and not want_research:
+        ops_steps(from_dw=args.from_dw, fail_closed=args.from_dw)
         if args.open_dashboard or args.all_open:
             open_dashboard()
         return
-    if args.all or args.all_open:
-        all_steps(rebuild_base=args.rebuild_base, from_dw=args.from_dw)
+    if want_research:
+        research_steps(rebuild_base=args.rebuild_base, from_dw=args.from_dw)
         if args.all_open:
             open_dashboard()
         return
-    if args.from_dw and not (args.all or args.all_open or args.only_v23):
+    if args.from_dw:
         run("19_dw_descobrir_e_extrair_v23.py", allow_fail=False)
         run("00_base_unica_meningites_v17.py", allow_fail=False)
         if args.open_dashboard:
@@ -198,14 +199,11 @@ def main():
     if args.open_dashboard:
         open_dashboard()
         return
-    if not any(vars(args).values()):
-        print("Use:")
-        print("  ATUALIZAR_MENINGITES.bat")
-        print("  ATUALIZAR_MENINGITES.bat --cloud")
-        print("  python pipeline_meningites_v23_indicadores_ms.py --only-v23 --from-dw")
-        print("  python pipeline_meningites_v23_indicadores_ms.py --validate")
-        print("  python pipeline_meningites_v23_indicadores_ms.py --all --from-dw")
-        print("  python pipeline_meningites_v23_indicadores_ms.py --only-v23 --open-dashboard")
+    print("Use:")
+    print("  ATUALIZAR_MENINGITES.bat")
+    print("  python pipeline_meningites_v23_indicadores_ms.py --ops --from-dw")
+    print("  python pipeline_meningites_v23_indicadores_ms.py --research --from-dw")
+    print("  python pipeline_meningites_v23_indicadores_ms.py --validate")
 
 
 if __name__ == "__main__":

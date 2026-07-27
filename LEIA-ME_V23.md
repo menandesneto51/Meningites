@@ -44,13 +44,30 @@ Dashboard atual: `dashboard_meningites_v22_refinado.py` (abas V23/V24 + Clima×c
 ATUALIZAR_MENINGITES.bat
 ATUALIZAR_MENINGITES.bat --cloud
 MENU_FINAL_MENINGITES.bat
+AGENDAR_ATUALIZACAO_SEMANAL.bat
+```
+
+Modos do pipeline:
+
+| Flag | Uso |
+|------|-----|
+| `--ops --from-dw` | Rotina semanal (MS, alertas, fila, gestão V24) — **fail-closed** em linkage/fila |
+| `--research --from-dw` | Completo (OR, Moran, clima, lab, vacina + V23) |
+| `--validate` | Contratos de artefatos (exit 1 se faltar crítico) |
+| `--only-v23` | Alias de `--ops` |
+| `--all` | Alias de `--research` |
+
+Testes de contrato:
+
+```powershell
+py -3.13 -m unittest tests.test_contratos_ops -v
 ```
 
 Fluxo semanal oficial:
 1. Extrai DW + regenera base
 2. Roda módulos MS / alertas / fila / nowcast V24
 3. Valida artefatos críticos (exit ≠ 0 se faltar)
-4. Com `--cloud`, regenera `demo_cloud/` para push no GitHub/Streamlit Cloud
+4. Com `--cloud`, regenera `demo_cloud/` (+ GeoJSON simplificado) para push no GitHub/Streamlit Cloud
 
 Instalação local (Python 3.13 + ODBC Driver 18):
 
