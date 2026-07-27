@@ -23,7 +23,7 @@ Use **Python 3.13** neste ambiente (o 3.12 padrão pode não ter numpy/pandas).
 | Módulo | Função |
 |---|---|
 | 12 | Indicadores oficiais MS (lab, 48h, 60d, quimio) |
-| 13 | Alertas inteligentes + NT 97/2024 |
+| 13 | Alertas inteligentes + NT 154/2024 |
 | 14 | Painel epidemiológico (incidência/mortalidade/letalidade) |
 | 15 | Boletim semanal (rascunho) |
 | 16 | Assistente CIEVS (RAG normas + narrativa) |
@@ -35,7 +35,7 @@ Use **Python 3.13** neste ambiente (o 3.12 padrão pode não ter numpy/pandas).
 | 22 | Nowcast com atraso de notificação + forecast semanal + backtest |
 | 23 | Alertas personalizados (digests regional/lab) + narrativa IA |
 | 24 | Nowcast operacional + indicadores de gestão da semana |
-| 25/26 | Ops avançados: quimio Hib, backlog, linkage, sorogrupos, score NT97, PL/vacina, boletim envio |
+| 25/26 | Ops avançados: quimio Hib, backlog, linkage, sorogrupos, score NT154, PL/vacina, boletim envio |
 
 Dashboard atual: `dashboard_meningites_v22_refinado.py` (abas V23/V24/V25 + Clima×casos exploratório).
 

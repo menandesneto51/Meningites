@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 13_alertas_inteligentes_v23.py
-Alertas acionáveis alinhados ao Informe MS, Caderno SINAN e NT 97/2024.
+Alertas acionáveis alinhados ao Informe MS, Caderno SINAN e NT Conjunta 154/2024
+(retifica/revoga a NT 97/2024).
 """
 
 from __future__ import annotations
@@ -16,6 +17,7 @@ from meningites_v17_common import OUT, MISSING, load_base_v17, text_key
 ms = import_module("12_indicadores_ms_operacionais_v23")
 
 SEVERIDADE_ORDEM = {"Crítico": 4, "Alto": 3, "Atenção": 2, "Informativo": 1}
+NORMA_NT154 = "NT Conjunta nº 154/2024-DPNI/SVSA/MS (retifica NT 97/2024)"
 
 
 def _id_caso(df: pd.DataFrame) -> pd.Series:
@@ -109,11 +111,11 @@ def alertas_caso(df: pd.DataFrame) -> pd.DataFrame:
         sub["severidade"] = np.where(clas.loc[m].eq("Doença meningocócica"), "Crítico", "Alto")
         sub["evidencia"] = "Sem data/registro de quimioprofilaxia de comunicantes"
         sub["acao_recomendada"] = (
-            "Identificar contatos próximos (NT 97/2024) e administrar quimioprofilaxia "
-            "idealmente em ≤24–48h (rifampicina ou alternativa)."
+            "Identificar contatos próximos (NT 154/2024) e administrar quimioprofilaxia "
+            "idealmente em ≤24–48h (rifampicina ou alternativa; Hib até 30 dias)."
         )
         sub["prazo"] = "≤24–48h"
-        sub["norma"] = "NT nº 97/2024-DPNI/SVSA/MS; Informe Meningites 2024"
+        sub["norma"] = f"{NORMA_NT154}; Informe Meningites 2024"
         rows.append(sub)
 
     m = dm_hib & q_real & lt_q.notna() & (lt_q > 2)
@@ -122,9 +124,12 @@ def alertas_caso(df: pd.DataFrame) -> pd.DataFrame:
         sub["tipo_alerta"] = "Quimioprofilaxia fora do prazo"
         sub["severidade"] = "Alto"
         sub["evidencia"] = "Quimio em " + lt_q.loc[m].astype(int).astype(str) + " dia(s) após notificação"
-        sub["acao_recomendada"] = "Revisar oportunidade; NT 97: valor limitado após 10 dias da exposição."
-        sub["prazo"] = "Imediato se ainda ≤10 dias da exposição"
-        sub["norma"] = "NT nº 97/2024-DPNI/SVSA/MS"
+        sub["acao_recomendada"] = (
+            "Revisar oportunidade; NT 154: valor limitado após 10 dias (DM); "
+            "DIHib pode ir até 30 dias após exposição."
+        )
+        sub["prazo"] = "Imediato se ainda ≤10 dias da exposição (Hib ≤30d)"
+        sub["norma"] = NORMA_NT154
         rows.append(sub)
 
     m = (~dm_hib) & q_real
@@ -136,6 +141,37 @@ def alertas_caso(df: pd.DataFrame) -> pd.DataFrame:
         sub["acao_recomendada"] = "Auditar ficha SINAN — possível erro de classificação ou de quimio."
         sub["prazo"] = "Semanal"
         sub["norma"] = "Caderno de Análises SINAN — Meningites"
+        rows.append(sub)
+
+    # Vacinação complementar pós-DIHib (NT 154) — <2 anos
+    hib = clas.eq("Meningite por Hib/Hemófilo")
+    idade_raw = d.get("IdadePaciente", pd.Series(index=d.index, dtype=object)).astype(str)
+    idade_anos = pd.Series(np.nan, index=d.index, dtype=float)
+    m_a = idade_raw.str.contains(r"\d+\s*a", case=False, na=False)
+    m_m = idade_raw.str.contains(r"\d+\s*m", case=False, na=False) & ~m_a
+    m_d = idade_raw.str.contains(r"\d+\s*d", case=False, na=False) & ~m_a & ~m_m
+    idade_anos.loc[m_a] = pd.to_numeric(idade_raw.loc[m_a].str.extract(r"(\d+)", expand=False), errors="coerce")
+    idade_anos.loc[m_m] = pd.to_numeric(idade_raw.loc[m_m].str.extract(r"(\d+)", expand=False), errors="coerce") / 12.0
+    idade_anos.loc[m_d] = pd.to_numeric(idade_raw.loc[m_d].str.extract(r"(\d+)", expand=False), errors="coerce") / 365.0
+    m = hib & idade_anos.notna() & (idade_anos < 2)
+    if m.any():
+        vac = d.get("VacinaContraHemofilos", pd.Series(index=d.index, dtype=object)).astype(str)
+        sub = base.loc[m].copy()
+        sub["tipo_alerta"] = "Vacinação complementar pós-DIHib (<2 anos)"
+        sub["severidade"] = np.where(
+            vac.loc[m].str.lower().isin(["não", "nao", "não informado", "*em branco", "ignorado", "nan", ""]),
+            "Alto",
+            "Atenção",
+        )
+        sub["evidencia"] = (
+            "DIHib em <2 anos (Idade=" + idade_raw.loc[m] + "; VacinaContraHemofilos=" + vac.loc[m] + ")"
+        )
+        sub["acao_recomendada"] = (
+            "NT 154: iniciar/completar esquema Hib (penta/hexa) ou dose adicional se esquema completo "
+            "(6m–<2a; intervalo ≥60d); iniciar ~30 dias após início da doença."
+        )
+        sub["prazo"] = "~30 dias após início da DIHib"
+        sub["norma"] = NORMA_NT154
         rows.append(sub)
 
     # Lab fraco
@@ -196,7 +232,7 @@ def alertas_surto_nt97(df: pd.DataFrame) -> pd.DataFrame:
     max_date = dm["data_ref_v17"].max()
     recent = dm[dm["data_ref_v17"].between(max_date - timedelta(days=90), max_date)].copy()
 
-    # Incidência esperada: média anual DM lab+ dos 5 anos anteriores (NT 97)
+    # Incidência esperada: média anual DM lab+ dos 5 anos anteriores (NT 154)
     pop_lookup = {}
     if "populacao_v17" in d.columns and "codigo_municipio_v17" in d.columns:
         tmp = d[["ano_evento_v17", "codigo_municipio_v17", "populacao_v17"]].copy()
@@ -254,11 +290,11 @@ def alertas_surto_nt97(df: pd.DataFrame) -> pd.DataFrame:
             dobra = any(vals[i] >= 2 * vals[i - 1] and vals[i - 1] >= 1 for i in range(1, len(vals)))
 
         if soro.startswith("Não informado"):
-            sev, tipo = "Atenção", "Aglomerado DM sem sorogrupo (avaliar NT 97)"
+            sev, tipo = "Atenção", "Aglomerado DM sem sorogrupo (avaliar NT 154)"
         elif acima_esperado or dobra or media_hist == 0:
-            sev, tipo = "Crítico", "Surto comunitário DM — critério NT 97/2024"
+            sev, tipo = "Crítico", "Surto comunitário DM — critério NT 154/2024"
         else:
-            sev, tipo = "Alto", "Aglomerado DM lab+ (avaliar surto NT 97)"
+            sev, tipo = "Alto", "Aglomerado DM lab+ (avaliar surto NT 154)"
 
         evidencia = (
             f"{n} casos DM lab+ (cultura/PCR), sorogrupo={soro}, janela ≤90 dias no mesmo município"
@@ -287,10 +323,10 @@ def alertas_surto_nt97(df: pd.DataFrame) -> pd.DataFrame:
             "evidencia": evidencia,
             "acao_recomendada": (
                 "Discutir nos três níveis; avaliar incidência vs canal endêmico; "
-                "considerar quimioprofilaxia ampliada e vacinação conforme GVS/NT 97."
+                "considerar quimioprofilaxia ampliada e vacinação conforme GVS/NT 154."
             ),
             "prazo": "Imediato CIEVS",
-            "norma": "NT nº 97/2024-DPNI/SVSA/MS — surto comunitário DM",
+            "norma": f"{NORMA_NT154} — surto comunitário DM",
         })
 
     inst_col = next(
@@ -307,7 +343,7 @@ def alertas_surto_nt97(df: pd.DataFrame) -> pd.DataFrame:
                 keys = (keys,)
             meta = {k: v for k, v in zip(gk, keys)}
             rows.append({
-                "tipo_alerta": "Surto institucional DM — critério NT 97/2024",
+                "tipo_alerta": "Surto institucional DM — critério NT 154/2024",
                 "severidade": "Crítico",
                 "municipio_v17": meta.get("municipio_v17", ""),
                 "regional_v17": "",
@@ -321,9 +357,9 @@ def alertas_surto_nt97(df: pd.DataFrame) -> pd.DataFrame:
                 "periodo_inicio": g["data_ref_v17"].min(),
                 "periodo_fim": g["data_ref_v17"].max(),
                 "evidencia": f"{len(g)} casos DM lab+ na instituição {meta.get(inst_col)} (≤90 dias)",
-                "acao_recomendada": "Investigação institucional + quimioprofilaxia conforme NT 97.",
+                "acao_recomendada": "Investigação institucional + quimioprofilaxia ampliada conforme NT 154.",
                 "prazo": "Imediato CIEVS",
-                "norma": "NT nº 97/2024-DPNI/SVSA/MS — surto institucional DM",
+                "norma": f"{NORMA_NT154} — surto institucional DM",
             })
 
     out = pd.DataFrame(rows)
@@ -341,7 +377,7 @@ def resumo_alertas(casos: pd.DataFrame, surtos: pd.DataFrame) -> pd.DataFrame:
         parts.append(g)
     if not surtos.empty:
         g = surtos.groupby(["tipo_alerta", "severidade"], dropna=False).size().reset_index(name="n")
-        g["origem"] = "surto_nt97"
+        g["origem"] = "surto_nt154"
         parts.append(g)
     if not parts:
         return pd.DataFrame(columns=["origem", "tipo_alerta", "severidade", "n"])
@@ -397,7 +433,7 @@ def main():
     fila_df.to_csv(OUT / "alertas_inteligentes_fila_cievs_v23.csv", index=False, encoding="utf-8-sig")
 
     print("[OK] Alertas inteligentes V23 gerados.")
-    print(f"  Casos: {len(casos)} | Surtos NT97: {len(surtos)} | Fila CIEVS: {len(fila_df)}")
+    print(f"  Casos: {len(casos)} | Surtos NT154: {len(surtos)} | Fila CIEVS: {len(fila_df)}")
     if not resumo.empty:
         print(resumo.head(15).to_string(index=False))
 

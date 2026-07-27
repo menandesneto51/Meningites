@@ -1,6 +1,6 @@
 # Boletim CIEVS-MT — Meningites (pronta para envio)
 
-**Gerado em:** 27/07/2026 14:21
+**Gerado em:** 27/07/2026 15:31
 
 > Validar com a equipe antes de divulgação oficial.
 
@@ -19,12 +19,12 @@
 - Bacterianas lab+ com GAL: **6,8%**
 - Discordância SIM sem óbito SINAN: **20** (0,3%)
 
-## Sorogrupos / NT 97
+## Sorogrupos / NT 154
 
-- Variação de 50.0 p.p. no sorogrupo B (2025→2026)
 - Variação de -50.0 p.p. no sorogrupo *Em Branco (2025→2026)
+- Variação de 50.0 p.p. no sorogrupo B (2025→2026)
 
-### Municípios com maior score NT97 (90d)
+### Municípios com maior score NT154 (90d)
 - JUARA (JUARA): score 35 · DM lab+ 90d=1
 - ACORIZAL (CUIABA): score 0 · DM lab+ 90d=0
 - ALTA FLORESTA (ALTA FLORESTA): score 0 · DM lab+ 90d=0

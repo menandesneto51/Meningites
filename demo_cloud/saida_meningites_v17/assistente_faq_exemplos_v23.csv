@@ -1,17 +1,29 @@
 ﻿pergunta,doc_ids,resposta_resumo,n_fontes
-O que fazer diante de um caso de doença meningocócica?,notif_24h|contato_proximo_nt97|quimio_nt97|investigacao_analise,"Com base nas normas indexadas para a pergunta «O que fazer diante de um caso de doença meningocócica?»:
+Qual norma vigora após a NT 97 — a NT 154?,norma_vigente_nt154,"Com base nas normas indexadas para a pergunta «Qual norma vigora após a NT 97 — a NT 154?»:
 
-**Surto comunitário de DM (NT 97/2024)** (NT nº 97/2024-DPNI/SVSA/MS):
-Surto comunitário de doença meningocócica: ocorrência de pelo menos três casos primários (sem vínculo entre si), do mesmo sorogrupo, confirmados por cultura ou PCR, no período ≤3 meses, em uma mesma localidade (distrito, bairro, cidade). A incidência atual deve estar superior à incidência média esperada dos últimos cinco a",4
-Quando caracterizar surto comunitário de DM?,surto_comunitario_nt97,"Com base nas normas indexadas para a pergunta «Quando caracterizar surto comunitário de DM?»:
+**Norma vigente — NT Conjunta 154/2024** (NT Conjunta nº 154/2024-DPNI/SVSA/MS (retifica e revoga a NT nº 97/2024-DPNI/SVSA/MS)):
+A Nota Técnica Conjunta nº 154/2024-DPNI/SVSA/MS (SEI 25000.108654/2024-97) revisa definições de caso suspeito, contatos, surto de doença meningocócica e orientações de quimioprofilaxia para DM e doença invasiva por Hib; inclui orientações de vacinação pós-DIHib; e revoga/reti",4
+O que fazer diante de um caso de doença meningocócica?,notif_24h|contato_proximo_nt154|quimio_nt154|investigacao_analise,"Com base nas normas indexadas para a pergunta «O que fazer diante de um caso de doença meningocócica?»:
 
-**Surto comunitário de DM (NT 97/2024)** (NT nº 97/2024-DPNI/SVSA/MS):
-Surto comunitário de doença meningocócica: ocorrência de pelo menos três casos primários (sem vínculo entre si), do mesmo sorogrupo, confirmados por cultura ou PCR, no período ≤3 meses, em uma mesma localidade (distrito, bairro, cidade). A incidência atual deve estar superior à incidência média esperada dos últimos cinco anos (diagr",4
+**Inconsistência quimioprofilaxia × etiologia** (Caderno de Análises SINAN — Meningites; NT 154/2024):
+A quimioprofilaxia é medida de controle para prevenir casos secundários e só está indicada para doença meningocócica (MM, MCC, MM+MCC) e doença invasiva/meningite por Haemophilus (Hib/Hi até tipagem). Não deve ser realizada para as demais etiologias. Quimio registrada em etiologia não elegív",4
+Quando caracterizar surto comunitário de DM?,surto_comunitario_nt154,"Com base nas normas indexadas para a pergunta «Quando caracterizar surto comunitário de DM?»:
+
+**Surto comunitário de DM (NT 154/2024)** (NT Conjunta nº 154/2024-DPNI/SVSA/MS (retifica e revoga a NT nº 97/2024-DPNI/SVSA/MS)):
+Surto comunitário de DM (NT 154/2024): ≥3 casos primários (sem vínculo entre si), do mesmo sorogrupo, confirmados por cultura ou PCR, em período ≤3 meses, na mesma localidade (distrito, bairro, cidade). A incidência atual deve superar a média esperada dos últimos 5 anos (di",4
 Quais indicadores o MS monitora para meningites?,indicadores_ms_2024|criterio_lab_caderno,"Com base nas normas indexadas para a pergunta «Quais indicadores o MS monitora para meningites?»:
 
 **Indicadores operacionais nacionais (Informe 2024)** (Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS):
 Indicadores de vigilância epidemiológica e laboratorial monitorados nacionalmente: (1) percentual de casos confirmados por critério laboratorial (RT-qPCR e cultura) — Brasil 2024: 36,1%; (2) percentual de casos investigados em até 48h da notificação — 97,8%; (3) percentual de casos encerrados em at",4
-Quimioprofilaxia é indicada para meningite viral?,quimio_inconsistencia|quimio_nt97,"Com base nas normas indexadas para a pergunta «Quimioprofilaxia é indicada para meningite viral?»:
+Quimioprofilaxia é indicada para meningite viral?,quimio_inconsistencia|quimio_nt154,"Com base nas normas indexadas para a pergunta «Quimioprofilaxia é indicada para meningite viral?»:
 
-**Inconsistência quimioprofilaxia × etiologia** (Caderno de Análises SINAN — Meningites):
-A quimioprofilaxia é medida de controle para prevenir casos secundários e só está indicada para doença meningocócica (MM, MCC, MM+MCC) e meningite por Haemophilus (MH/Hib). Não deve ser realizada para as demais etiologias. Quimio registrada em etiologia não elegível deve ser auditada (erro de classificação ou",4
+**Inconsistência quimioprofilaxia × etiologia** (Caderno de Análises SINAN — Meningites; NT 154/2024):
+A quimioprofilaxia é medida de controle para prevenir casos secundários e só está indicada para doença meningocócica (MM, MCC, MM+MCC) e doença invasiva/meningite por Haemophilus (Hib/Hi até tipagem). Não deve ser realizada para as demais etiologias. Quimio registrada em etiologia não elegível de",4
+Como proceder a vacinação após doença invasiva por Hib?,vacina_pos_hib_nt154,"Com base nas normas indexadas para a pergunta «Como proceder a vacinação após doença invasiva por Hib?»:
+
+**Vacinação complementar pós-DIHib (NT 154/2024)** (NT Conjunta nº 154/2024-DPNI/SVSA/MS (retifica e revoga a NT nº 97/2024-DPNI/SVSA/MS)):
+Crianças com doença invasiva por Hib antes dos 2 anos podem ter risco de 2º episódio (infecção natural nessa idade não gera proteção robusta). (a) <2 anos sem vacina ou esquema incompleto: iniciar/completar com penta (rotina) ou hexa acelular (CRIE), con",4
+Quem recebe quimioprofilaxia em DIHib / creche?,quimio_hib_detalhe_nt154|contato_proximo_nt154,"Com base nas normas indexadas para a pergunta «Quem recebe quimioprofilaxia em DIHib / creche?»:
+
+**Quimioprofilaxia específica — DIHib (NT 154/2024)** (NT Conjunta nº 154/2024-DPNI/SVSA/MS (retifica e revoga a NT nº 97/2024-DPNI/SVSA/MS)):
+DIHib — devem receber quimio: (a) o paciente se não tratado com cefalosporina 3ª geração; (b) todos os contatos domiciliares se houver imunocomprometido ou criança <2 anos (independentemente da vacina) OU criança <4 anos não vacinada/esquema incompleto; (c) d",4

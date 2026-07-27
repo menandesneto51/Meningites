@@ -36,7 +36,7 @@ def main():
         "# Boletim semanal — Meningites | CIEVS-MT (rascunho automático V23)",
         "",
         f"**Gerado em:** {hoje}",
-        "**Fontes:** SINAN (base única), indicadores MS (Informe/Caderno), NT 97/2024, canal de alertas V23.",
+        "**Fontes:** SINAN (base única), indicadores MS (Informe/Caderno), NT 154/2024, canal de alertas V23.",
         "",
         "> Documento de apoio à vigilância. Validar com a equipe antes de divulgação oficial.",
         "",
@@ -94,12 +94,12 @@ def main():
 
     lines += ["## 4. Alertas e fila CIEVS", ""]
     if not surtos.empty and len(surtos) > 0:
-        lines.append(f"**Sinais de surto NT 97/2024:** {len(surtos)}")
+        lines.append(f"**Sinais de surto NT 154/2024:** {len(surtos)}")
         for _, r in surtos.head(10).iterrows():
             lines.append(f"- [{r.get('severidade')}] {r.get('tipo_alerta')} — {r.get('municipio_v17')}: {r.get('evidencia')}")
         lines.append("")
     else:
-        lines.append("Nenhum surto comunitário/institucional de DM detectado pelos critérios NT 97 nesta rodada.")
+        lines.append("Nenhum surto comunitário/institucional de DM detectado pelos critérios NT 154 nesta rodada.")
         lines.append("")
 
     if not resumo_al.empty:
@@ -161,7 +161,7 @@ def main():
         "## 5. Recomendações operacionais",
         "",
         "1. Priorizar casos com **encerramento >60 dias** e **investigação >48h** (indicadores MS).",
-        "2. Para **doença meningocócica** sem quimioprofilaxia: aplicar NT 97/2024 (contatos próximos, ≤24–48h).",
+        "2. Para **doença meningocócica** sem quimioprofilaxia: aplicar NT 154/2024 (contatos próximos, ≤24–48h).",
         "3. Buscar resultado **cultura/PCR** em bacterianas confirmadas sem critério laboratorial.",
         "4. Monitorar canal endêmico e agregados territoriais na aba de surtos do dashboard.",
         "",

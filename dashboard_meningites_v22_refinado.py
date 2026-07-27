@@ -1319,7 +1319,7 @@ def outbreak_section():
     st.markdown("### Critérios do Ministério da Saúde / CIEVS")
     st.markdown(
         """
-**Doença meningocócica (NT nº 97/2024-DPNI/SVSA/MS)**  
+**Doença meningocócica (NT Conjunta nº 154/2024-DPNI/SVSA/MS)**  
 - **Surto comunitário:** elevação de casos DM lab+ acima do esperado histórico no território (ex.: > média anual dos anos anteriores), com investigação de vínculo e resposta (quimioprofilaxia/vacinação conforme GVS).  
 - **Surto institucional:** ≥2 casos DM associados a instituição (escola, creche, quartel, etc.) em janela epidemiológica.  
 - **Resposta sensível:** 1 caso de DM já exige investigação de contatos e oportunidade de quimioprofilaxia.
@@ -1333,12 +1333,12 @@ def outbreak_section():
 """
         + f'{semaforo_badge("Atenção")} sinais iniciais · '
         + f'{semaforo_badge("Alto")} múltiplos critérios · '
-        + f'{semaforo_badge("Crítico")} excedência/óbito/surto NT97',
+        + f'{semaforo_badge("Crítico")} excedência/óbito/surto NT154',
         unsafe_allow_html=True,
     )
 
     if not nt97.empty:
-        st.subheader("Surtos / aglomerados — critérios NT 97 (DM)")
+        st.subheader("Surtos / aglomerados — critérios NT 154 (DM)")
         ycol = "municipio_v17" if "municipio_v17" in nt97.columns else nt97.columns[1]
         xcol = "n_casos_90d_lab" if "n_casos_90d_lab" in nt97.columns else (
             "n_casos" if "n_casos" in nt97.columns else nt97.select_dtypes("number").columns[0]
@@ -1350,7 +1350,7 @@ def outbreak_section():
             color="severidade" if "severidade" in nt97.columns else None,
             color_discrete_map=plotly_semaforo_map(nt97.get("severidade")),
             orientation="h",
-            title="Alertas NT 97 — doença meningocócica",
+            title="Alertas NT 154 — doença meningocócica",
             hover_data=[c for c in ["tipo_alerta", "acao_recomendada", "norma", "evidencia"] if c in nt97.columns],
         )
         fig_nt.update_layout(
@@ -2057,9 +2057,9 @@ def quality_section():
 
 
 def ops_avancados_v25_section():
-    """Backlog, linkage, sorogrupos, score NT97, PL/vacina, gravidade SE (roadmap V25)."""
+    """Backlog, linkage, sorogrupos, score NT154, PL/vacina, gravidade SE (roadmap V25)."""
     st.subheader("Operação avançada V25")
-    st.caption("Quimio Hib · backlog · linkage · sorogrupos · score NT97 · PL/vacina · gravidade SE")
+    st.caption("Quimio Hib · backlog · linkage · sorogrupos · score NT154 · PL/vacina · gravidade SE")
 
     br = read_any(OUT / "backlog_operacional_resumo_v25.csv")
     bg = read_any(OUT / "backlog_operacional_regional_v25.csv")
@@ -2109,7 +2109,7 @@ def ops_avancados_v25_section():
 
     score = read_any(OUT / "score_risco_municipal_nt97_v25.csv")
     if not score.empty:
-        st.subheader("Score municipal NT 97 (90 dias)")
+        st.subheader("Score municipal NT 154 (90 dias)")
         st.dataframe(score.head(25), use_container_width=True)
 
     lab = read_any(OUT / "indicadores_pl_lab_v25.csv")
@@ -2236,7 +2236,7 @@ def ms_indicators_section():
 
 
 def smart_alerts_section():
-    """Fila CIEVS + alertas de prazo e surto NT 97/2024."""
+    """Fila CIEVS + alertas de prazo e surto NT 154/2024."""
     fila = read_any(OUT / "alertas_inteligentes_fila_cievs_v23.csv")
     resumo = read_any(OUT / "alertas_inteligentes_resumo_v23.csv")
     casos = read_any(OUT / "alertas_inteligentes_casos_v23.csv")
@@ -2247,14 +2247,14 @@ def smart_alerts_section():
         return
 
     st.caption(
-        "Alertas baseados em prazos do Informe MS, quimioprofilaxia (NT 97/2024) e "
+        "Alertas baseados em prazos do Informe MS, quimioprofilaxia (NT 154/2024) e "
         "definição de surto comunitário/institucional de doença meningocócica."
     )
 
     c1, c2, c3 = st.columns(3)
     c1.metric("Itens na fila CIEVS", fmt(len(fila), 0))
     c2.metric("Alertas de caso", fmt(len(casos), 0))
-    c3.metric("Sinais de surto NT97", fmt(len(surtos), 0))
+    c3.metric("Sinais de surto NT154", fmt(len(surtos), 0))
 
     if not resumo.empty:
         st.subheader("Resumo por tipo")
@@ -2282,7 +2282,7 @@ def smart_alerts_section():
         st.dataframe(fila, use_container_width=True)
 
     if not surtos.empty:
-        st.subheader("Surtos / aglomerados — NT 97/2024")
+        st.subheader("Surtos / aglomerados — NT 154/2024")
         st.dataframe(surtos, use_container_width=True)
 
     if not casos.empty:
@@ -2409,7 +2409,7 @@ def epi_panel_section():
 def assistant_section():
     """Assistente normativo CIEVS (RAG local + LLM opcional)."""
     st.caption(
-        "Perguntas respondidas com recuperação de trechos da NT 97/2024, Informe Meningites, "
+        "Perguntas respondidas com recuperação de trechos da NT 154/2024, Informe Meningites, "
         "Caderno SINAN e Guia de Vigilância. Sempre valide com a equipe antes de comunicação oficial. "
         "LLM opcional (Gemini/OpenAI) se as chaves estiverem no `.env` local."
     )
@@ -2527,7 +2527,7 @@ def main():
         """
 <div class="hero-band">
   <h1>Robô de Meningites — CIEVS-MT</h1>
-  <p>Vigilância de meningites · Indicadores MS · Alertas CIEVS (NT 97/2024) · Clima×casos exploratório · Nowcast/forecast.</p>
+  <p>Vigilância de meningites · Indicadores MS · Alertas CIEVS (NT 154/2024) · Clima×casos exploratório · Nowcast/forecast.</p>
 </div>
         """,
         unsafe_allow_html=True,
@@ -2772,8 +2772,8 @@ def main():
             )
         score = read_any(OUT / "score_risco_municipal_nt97_v25.csv")
         if not score.empty and "score_risco_nt97_v25" in score.columns:
-            st.subheader("Score de risco NT 97 (90 dias)")
-            choropleth_or_points(score, shapefile, latlon, "score_risco_nt97_v25", "Score municipal NT 97")
+            st.subheader("Score de risco NT 154 (90 dias)")
+            choropleth_or_points(score, shapefile, latlon, "score_risco_nt97_v25", "Score municipal NT 154")
             st.markdown("---")
         ind_full = read_any(OUT / "indicadores_municipio_ano_v17.csv")
         if not ind_full.empty:

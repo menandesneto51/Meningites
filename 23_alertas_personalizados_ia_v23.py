@@ -301,7 +301,7 @@ def narrativa_ia(idx: pd.DataFrame) -> str:
     try:
         assist = __import__("16_assistente_cievs_v23")
         if hasattr(assist, "answer"):
-            q = "Quais ações prioritárias do CIEVS para meningites conforme Informe MS e NT 97?"
+            q = "Quais ações prioritárias do CIEVS para meningites conforme Informe MS e NT 154?"
             resp = assist.answer(q, use_llm=False)
             if isinstance(resp, dict) and resp.get("resposta"):
                 partes += ["## Trecho normativo recuperado (RAG)", "", resp["resposta"][:1200], ""]

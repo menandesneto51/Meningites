@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 26_indicadores_ops_avancados_v25.py
-Roadmap CIEVS-MT: quimio Hib, backlog, linkage, sorogrupos, score NT97,
+Roadmap CIEVS-MT: quimio Hib, backlog, linkage, sorogrupos, score NT154,
 PL/lab, vacinação elegíveis, gravidade SE, bloco boletim.
 """
 from __future__ import annotations
@@ -103,7 +103,7 @@ def build_hib_and_extend_ms(df: pd.DataFrame) -> pd.DataFrame:
         "valor_pct": pct_hib,
         "referencia_brasil_2024": np.nan,
         "semaforo": ms._semaforo_vs_ref(pct_hib, 45.5, tol=5.0) if n_hib else "Cinza",
-        "fonte": "NT 97/2024 — quimioprofilaxia em Hib",
+        "fonte": "NT 154/2024 — quimioprofilaxia em Hib",
         "interpretacao": (
             f"{fmt_num(pct_hib)}% dos casos Hib com quimio ≤48h "
             f"(qualquer quimio: {fmt_num(_pct(n_hib_any, n_hib))}%; n={n_hib})."
@@ -540,14 +540,14 @@ def write_boletim_envio(
                 f"({fmt_num(r.get('pct_discordancia_sim_sem_sinan'))}%)",
                 "",
             ]
-    lines += ["## Sorogrupos / NT 97", ""]
+    lines += ["## Sorogrupos / NT 154", ""]
     if not soro_alert.empty:
         for _, r in soro_alert.head(5).iterrows():
             lines.append(f"- {r.get('alerta', '')}")
         lines.append("")
     if not score.empty:
         top = score.head(5)
-        lines.append("### Municípios com maior score NT97 (90d)")
+        lines.append("### Municípios com maior score NT154 (90d)")
         for _, r in top.iterrows():
             lines.append(
                 f"- {r.get('municipio_v17')} ({r.get('regional_v17')}): "
@@ -601,7 +601,7 @@ def main():
     link = build_linkage_kpis(df)
     link.to_csv(OUT / "linkage_completude_kpis_v25.csv", index=False, encoding="utf-8-sig")
 
-    # Sprint C — sorogrupos + score NT97
+    # Sprint C — sorogrupos + score NT154 (arquivo score_risco_municipal_nt97_v25.csv)
     soro_trend, soro_alert = build_sorogrupos(df)
     soro_trend.to_csv(OUT / "sorogrupos_dm_tendencia_v25.csv", index=False, encoding="utf-8-sig")
     soro_alert.to_csv(OUT / "sorogrupos_dm_alertas_v25.csv", index=False, encoding="utf-8-sig")

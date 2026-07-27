@@ -1,3 +1,3 @@
 ﻿tipo,sorogrupo,ano_atual,ano_anterior,pct_atual,pct_anterior,delta_pp,alerta
-mudanca_perfil_sorogrupo,B,2026,2025,66.66666666666666,16.666666666666664,50.0,Variação de 50.0 p.p. no sorogrupo B (2025→2026)
 mudanca_perfil_sorogrupo,*Em Branco,2026,2025,33.33333333333333,83.33333333333334,-50.0,Variação de -50.0 p.p. no sorogrupo *Em Branco (2025→2026)
+mudanca_perfil_sorogrupo,B,2026,2025,66.66666666666666,16.666666666666664,50.0,Variação de 50.0 p.p. no sorogrupo B (2025→2026)

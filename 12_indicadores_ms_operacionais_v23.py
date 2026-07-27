@@ -156,7 +156,7 @@ def compute_ms_kpis(df: pd.DataFrame) -> dict:
     q_realizada = _quimio_realizada(d)
     n_q_any = int((dm & q_realizada).sum())
 
-    # 4b) Quimioprofilaxia Hib ≤48h (NT 97)
+    # 4b) Quimioprofilaxia Hib ≤48h (NT 154)
     hib = clas.eq("Meningite por Hib/Hemófilo")
     n_hib = int(hib.sum())
     n_hib_q48 = int((hib & lt_q.notna() & (lt_q >= 0) & (lt_q <= 2)).sum())
@@ -286,7 +286,7 @@ def kpis_to_frame(kpis: dict) -> pd.DataFrame:
                 REF_BRASIL_2024["pct_quimioprofilaxia_dm_48h"],
                 tol=5.0,
             ),
-            "fonte": "Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS; NT 97/2024",
+            "fonte": "Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS; NT 154/2024",
             "interpretacao": (
                 f"{fmt_num(kpis['pct_quimioprofilaxia_dm_48h'])}% dos casos de DM com quimio ≤48h "
                 f"(qualquer quimio registrada: {fmt_num(kpis['pct_quimioprofilaxia_dm_qualquer'])}%)."
@@ -300,7 +300,7 @@ def kpis_to_frame(kpis: dict) -> pd.DataFrame:
             "valor_pct": kpis["pct_quimioprofilaxia_hib_48h"],
             "referencia_brasil_2024": np.nan,
             "semaforo": _semaforo_vs_ref(kpis["pct_quimioprofilaxia_hib_48h"], 45.5, tol=5.0) if kpis["hib_casos"] else "Cinza",
-            "fonte": "NT 97/2024 — quimioprofilaxia em Hib",
+            "fonte": "NT 154/2024 — quimioprofilaxia em Hib",
             "interpretacao": (
                 f"{fmt_num(kpis['pct_quimioprofilaxia_hib_48h'])}% dos casos Hib com quimio ≤48h "
                 f"(n={kpis['hib_casos']}; qualquer quimio: {fmt_num(_pct(kpis['hib_quimio_qualquer'], kpis['hib_casos']))}%)."

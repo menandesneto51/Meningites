@@ -93,8 +93,8 @@ def answer_offline(query: str, contexto_dados: str = "") -> dict:
             "pergunta": query,
             "resposta": (
                 "Não encontrei trecho normativo correspondente na base local. "
-                "Reformule a pergunta (ex.: quimioprofilaxia, surto NT 97, indicadores MS) "
-                "ou consulte o Guia de Vigilância / NT 97/2024."
+                "Reformule a pergunta (ex.: quimioprofilaxia, surto NT 154, indicadores MS) "
+                "ou consulte o Guia de Vigilância / NT 154/2024."
             ),
             "fontes": [],
             "scores": [],
@@ -324,7 +324,7 @@ def narrativa_boletim() -> str:
         "1. Reduzir backlog de **encerramento >60 dias** e **investigação >48h** (indicadores MS).",
         "2. Garantir **quimioprofilaxia oportuna** em DM/Hib e auditar quimio em etiologias não elegíveis.",
         "3. Buscar **cultura/PCR** em bacterianas confirmadas sem critério laboratorial.",
-        "4. Manter vigilância de **aglomerados DM** (mesmo sorogrupo, ≤90 dias) segundo NT 97/2024.",
+        "4. Manter vigilância de **aglomerados DM** (mesmo sorogrupo, ≤90 dias) segundo NT 154/2024.",
         "",
         "## Contexto de dados usado",
         "",
