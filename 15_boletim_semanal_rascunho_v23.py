@@ -124,6 +124,39 @@ def main():
         lines.append("Fila prioritária vazia ou não gerada.")
         lines.append("")
 
+    backlog = _read("backlog_operacional_resumo_v25.csv")
+    link = _read("linkage_completude_kpis_v25.csv")
+    grav = _read("gravidade_letalidade_se_corrente_v25.csv")
+    if not backlog.empty or not link.empty or not grav.empty:
+        lines += ["## 4b. Operação avançada (V25)", ""]
+        if not backlog.empty:
+            r = backlog.iloc[0]
+            lines.append(
+                f"- Backlog: abertos **{fmt_num(r.get('casos_abertos'), 0)}**; "
+                f"inv. atrasada **{fmt_num(r.get('investigacao_atrasada'), 0)}**; "
+                f"quimio pendente DM/Hib **{fmt_num(r.get('quimio_pendente_dm_hib'), 0)}**"
+            )
+        if not link.empty:
+            e = link[link["escopo"].astype(str).eq("ESTADUAL")]
+            if not e.empty:
+                r = e.iloc[0]
+                lines.append(
+                    f"- Linkage: GAL **{fmt_num(r.get('pct_match_gal'))}%**; "
+                    f"discordância SIM **{fmt_num(r.get('n_discordancia_sim_sem_sinan'), 0)}**"
+                )
+        if not grav.empty:
+            tot = grav[grav["classificacao_agrupada_v17"].astype(str).eq("TOTAL")]
+            if not tot.empty:
+                r = tot.iloc[0]
+                lines.append(
+                    f"- Gravidade SE {fmt_num(r.get('semana_epi'), 0)}/{fmt_num(r.get('ano'), 0)}: "
+                    f"letalidade **{fmt_num(r.get('letalidade_pct'))}%**; "
+                    f"óbitos <7d **{fmt_num(r.get('obitos_lt_7d'), 0)}**"
+                )
+        lines.append("")
+        lines.append("Ver também `relatorios/BOLETIM_CIEVS_MENINGITES_ENVIO_V25.md`.")
+        lines.append("")
+
     lines += [
         "## 5. Recomendações operacionais",
         "",

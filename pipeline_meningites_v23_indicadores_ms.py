@@ -90,6 +90,7 @@ def ops_steps(
         run("02c_odds_clinico_socio_comorb_v21.py", allow_fail=True)
     run("21_sazonalidade_meningites_v23.py", allow_fail=True)
     run("22_nowcast_forecast_refinado_v23.py", allow_fail=True)
+    run("26_indicadores_ops_avancados_v25.py", allow_fail=True)
     run("24_nowcast_operacional_gestao_v24.py", allow_fail=False)
     run("23_alertas_personalizados_ia_v23.py", allow_fail=True)
     print("\n[OK] Pipeline operacional (--ops) concluído.")
@@ -154,6 +155,10 @@ def validate(strict: bool = True) -> int:
         "demo_cloud/geo/MT_Municipios_simplificado.geojson",
         "saida_meningites_v17/desfechos_mortalidade_sim_v23.csv",
         "saida_meningites_v17/mortalidade_sinan_sim_resumo_v23.csv",
+        "saida_meningites_v17/backlog_operacional_resumo_v25.csv",
+        "saida_meningites_v17/linkage_completude_kpis_v25.csv",
+        "saida_meningites_v17/score_risco_municipal_nt97_v25.csv",
+        "relatorios/BOLETIM_CIEVS_MENINGITES_ENVIO_V25.md",
     ]
     print("\nVALIDAÇÃO OPERACIONAL V23/V24")
     print("=" * 90)

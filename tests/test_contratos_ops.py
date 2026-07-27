@@ -63,6 +63,30 @@ class TestContratosOps(unittest.TestCase):
         r = df.iloc[0]
         self.assertGreaterEqual(int(r["obitos_uniao_sinan_sim"]), int(r["obitos_sinan_evolucao"]))
 
+    def test_backlog_v25(self):
+        p = _pick(OUT / "backlog_operacional_resumo_v25.csv", DEMO / "backlog_operacional_resumo_v25.csv")
+        if p is None:
+            self.skipTest("backlog V25 ainda não gerado")
+        df = pd.read_csv(p)
+        for col in ["casos_abertos", "investigacao_atrasada", "quimio_pendente_dm_hib"]:
+            self.assertIn(col, df.columns)
+
+    def test_linkage_completude_v25(self):
+        p = _pick(OUT / "linkage_completude_kpis_v25.csv", DEMO / "linkage_completude_kpis_v25.csv")
+        if p is None:
+            self.skipTest("linkage V25 ainda não gerado")
+        df = pd.read_csv(p)
+        self.assertIn("pct_match_gal", df.columns)
+        self.assertTrue((df["escopo"].astype(str) == "ESTADUAL").any())
+
+    def test_score_nt97_v25(self):
+        p = _pick(OUT / "score_risco_municipal_nt97_v25.csv", DEMO / "score_risco_municipal_nt97_v25.csv")
+        if p is None:
+            self.skipTest("score NT97 V25 ainda não gerado")
+        df = pd.read_csv(p)
+        self.assertIn("score_risco_nt97_v25", df.columns)
+        self.assertGreater(len(df), 10)
+
     def test_scrub_pii_heuristic(self):
         from preparar_pacote_cloud_demo import is_pii, scrub_df
 

@@ -156,6 +156,12 @@ def compute_ms_kpis(df: pd.DataFrame) -> dict:
     q_realizada = _quimio_realizada(d)
     n_q_any = int((dm & q_realizada).sum())
 
+    # 4b) Quimioprofilaxia Hib ≤48h (NT 97)
+    hib = clas.eq("Meningite por Hib/Hemófilo")
+    n_hib = int(hib.sum())
+    n_hib_q48 = int((hib & lt_q.notna() & (lt_q >= 0) & (lt_q <= 2)).sum())
+    n_hib_q_any = int((hib & q_realizada).sum())
+
     # Extra: notificação ≤24h (compulsória imediata)
     lt_notif = pd.to_numeric(d.get("lt_sintomas_notificacao_dias_v17"), errors="coerce")
     notif_valid = lt_notif.notna() & (lt_notif >= 0) & (lt_notif < 365)
@@ -193,6 +199,10 @@ def compute_ms_kpis(df: pd.DataFrame) -> dict:
         "dm_quimio_48h": n_q48,
         "pct_quimioprofilaxia_dm_48h": _pct(n_q48, n_dm),
         "pct_quimioprofilaxia_dm_qualquer": _pct(n_q_any, n_dm),
+        "hib_casos": n_hib,
+        "hib_quimio_48h": n_hib_q48,
+        "hib_quimio_qualquer": n_hib_q_any,
+        "pct_quimioprofilaxia_hib_48h": _pct(n_hib_q48, n_hib),
         "pct_notificacao_24h": _pct(n_notif24, int(notif_valid.sum()) or n),
         "pct_sorogrupo_identificado_dm": _pct(n_soro, n_dm),
         "quimioprofilaxia_indevida_n": quimio_indevida,
@@ -280,6 +290,20 @@ def kpis_to_frame(kpis: dict) -> pd.DataFrame:
             "interpretacao": (
                 f"{fmt_num(kpis['pct_quimioprofilaxia_dm_48h'])}% dos casos de DM com quimio ≤48h "
                 f"(qualquer quimio registrada: {fmt_num(kpis['pct_quimioprofilaxia_dm_qualquer'])}%)."
+            ),
+        },
+        {
+            "indicador": "pct_quimioprofilaxia_hib_48h",
+            "indicador_rotulo": "% meningite Hib/Hemófilo com quimioprofilaxia ≤48h",
+            "numerador": kpis["hib_quimio_48h"],
+            "denominador": kpis["hib_casos"],
+            "valor_pct": kpis["pct_quimioprofilaxia_hib_48h"],
+            "referencia_brasil_2024": np.nan,
+            "semaforo": _semaforo_vs_ref(kpis["pct_quimioprofilaxia_hib_48h"], 45.5, tol=5.0) if kpis["hib_casos"] else "Cinza",
+            "fonte": "NT 97/2024 — quimioprofilaxia em Hib",
+            "interpretacao": (
+                f"{fmt_num(kpis['pct_quimioprofilaxia_hib_48h'])}% dos casos Hib com quimio ≤48h "
+                f"(n={kpis['hib_casos']}; qualquer quimio: {fmt_num(_pct(kpis['hib_quimio_qualquer'], kpis['hib_casos']))}%)."
             ),
         },
         {

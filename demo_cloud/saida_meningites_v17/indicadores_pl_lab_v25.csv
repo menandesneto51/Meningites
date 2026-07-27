@@ -1,0 +1,5 @@
+﻿indicador,valor_pct,numerador,denominador,nota
+pct_pl_realizada_bact_dm,92.4953095684803,986,1066,PL realizada em bacterianas/DM
+pct_lab_pendente_bact_dm,30.206378986866795,322,1066,Sem resultado PCR/cultura/CIE/látex/bacterioscopia preenchido
+p50_sintomas_pl_dias,2.0,4918,4918,P50 lead sintomas→PL (dias)
+p90_sintomas_pl_dias,11.0,4918,4918,P90 lead sintomas→PL (dias)

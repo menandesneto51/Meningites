@@ -331,6 +331,8 @@ def gestao_semana(d: pd.DataFrame, nc_est: pd.DataFrame, nc_dm: pd.DataFrame, al
     if not fila.exists():
         fila = OUT / "alertas_inteligentes_fila_cievs_v23.csv"
     ms_row = pd.read_csv(ms).iloc[0].to_dict() if ms.exists() else {}
+    backlog_path = OUT / "backlog_operacional_resumo_v25.csv"
+    backlog_row = pd.read_csv(backlog_path).iloc[0].to_dict() if backlog_path.exists() else {}
     n_fila = 0
     n_crit = 0
     if fila.exists():
@@ -403,9 +405,12 @@ def gestao_semana(d: pd.DataFrame, nc_est: pd.DataFrame, nc_dm: pd.DataFrame, al
         "pct_investigados_48h": ms_row.get("pct_investigados_48h"),
         "pct_encerrados_60d": ms_row.get("pct_encerrados_60d"),
         "pct_quimioprofilaxia_dm_48h": ms_row.get("pct_quimioprofilaxia_dm_48h"),
+        "pct_quimioprofilaxia_hib_48h": ms_row.get("pct_quimioprofilaxia_hib_48h"),
         "pct_sorogrupo_dm": ms_row.get("pct_sorogrupo_identificado_dm"),
         "pct_notificacao_24h": ms_row.get("pct_notificacao_24h"),
-
+        "backlog_abertos": backlog_row.get("casos_abertos"),
+        "backlog_inv_atrasada": backlog_row.get("investigacao_atrasada"),
+        "backlog_quimio_pendente": backlog_row.get("quimio_pendente_dm_hib"),
         "fila_cievs_n": n_fila,
         "fila_cievs_criticos_n": n_crit,
         "atraso_notif_p50_dias": float(lt.median()) if len(lt) else np.nan,

@@ -6,3 +6,4 @@ pct_encerrados_60d,% casos encerrados em até 60 dias da notificação,4968.0,59
 pct_quimioprofilaxia_dm_48h,% doença meningocócica com quimioprofilaxia ≤48h,152.0,278,54.67625899280576,45.5,Verde,Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS; NT 97/2024,"54,7% dos casos de DM com quimio ≤48h (qualquer quimio registrada: 75,2%).",47
 pct_sorogrupo_identificado_dm,% DM com sorogrupo identificado,85.0,278,30.575539568345324,,Vermelho,Guia de Vigilância / monitoramento de sorogrupos,"Sorogrupo preenchido em 30,6% dos casos de DM.",47
 pct_notificacao_24h,% notificação em até 24h do início dos sintomas,,5944,29.768541983443146,,Vermelho,Notificação compulsória imediata (≤24h),"29,8% com lead time sintomas→notificação ≤1 dia.",47
+pct_quimioprofilaxia_hib_48h,% meningite Hib/Hemófilo com quimioprofilaxia ≤48h,8.0,21,38.095238095238095,,Vermelho,NT 97/2024 — quimioprofilaxia em Hib,"38,1% dos casos Hib com quimio ≤48h (qualquer quimio: 47,6%; n=21).",47

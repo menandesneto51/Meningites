@@ -1566,6 +1566,11 @@ def parse_positive(x):
 
 
 def lab_section(df):
+    lab_v25 = read_any(OUT / "indicadores_pl_lab_v25.csv")
+    if not lab_v25.empty:
+        st.subheader("Oportunidade de PL / lab pendente (V25)")
+        st.dataframe(lab_v25, use_container_width=True)
+        st.markdown("---")
     lab_cols = [
         "PuncaoLombar", "DataPuncaoLombar", "AspectoLiquor", "ResultadoCulturaLiquor", "ResultadoCulturaPetequias",
         "ResultadoCulturaSangueSoro", "ResultadoCulturaEscarro", "ResultadoBacterioscopiaLiquor", "ResultadoBacterioscopiaPetequias",
@@ -1617,6 +1622,12 @@ def lab_section(df):
 
 
 def vaccine_section(df):
+    vac_v25 = read_any(OUT / "indicadores_vacina_elegiveis_v25.csv")
+    if not vac_v25.empty:
+        st.subheader("Vacinação em elegíveis (qualidade V25)")
+        st.caption("Completude/coerência vacinal por etiologia — separado do OR observacional.")
+        st.dataframe(vac_v25, use_container_width=True)
+        st.markdown("---")
     vac_cols = [
         "VacinaContraPolissacaridicaAC", "VacinaContraPolissacaridicaBC", "VacinaConjugadaMeningoC", "VacinaContraBCG",
         "VacinaContraTriplice", "VacinaContraHemofilos", "VacinaContraPneumococo", "VacinaOutras", "VacinaOutrasEspecificar"
@@ -2045,6 +2056,86 @@ def quality_section():
         st.dataframe(val, use_container_width=True)
 
 
+def ops_avancados_v25_section():
+    """Backlog, linkage, sorogrupos, score NT97, PL/vacina, gravidade SE (roadmap V25)."""
+    st.subheader("Operação avançada V25")
+    st.caption("Quimio Hib · backlog · linkage · sorogrupos · score NT97 · PL/vacina · gravidade SE")
+
+    br = read_any(OUT / "backlog_operacional_resumo_v25.csv")
+    bg = read_any(OUT / "backlog_operacional_regional_v25.csv")
+    if not br.empty:
+        r = br.iloc[0]
+        c = st.columns(5)
+        c[0].metric("Abertos", fmt(r.get("casos_abertos"), 0))
+        c[1].metric("Inv. atrasada", fmt(r.get("investigacao_atrasada"), 0))
+        c[2].metric("Enc. D45–60", fmt(r.get("encerramento_d45_d60"), 0))
+        c[3].metric("Enc. >60d", fmt(r.get("encerramento_gt60"), 0))
+        c[4].metric("Quimio pend. DM/Hib", fmt(r.get("quimio_pendente_dm_hib"), 0))
+    if not bg.empty:
+        st.dataframe(bg.sort_values("quimio_pendente_dm_hib", ascending=False), use_container_width=True)
+
+    link = read_any(OUT / "linkage_completude_kpis_v25.csv")
+    if not link.empty:
+        st.subheader("Completude de linkage GAL/SIM")
+        est = link[link["escopo"].astype(str).eq("ESTADUAL")]
+        if not est.empty:
+            e = est.iloc[0]
+            lc = st.columns(4)
+            lc[0].metric("Match GAL %", fmt(e.get("pct_match_gal")))
+            lc[1].metric("Bact+ com GAL %", fmt(e.get("pct_bact_lab_com_gal")))
+            lc[2].metric("SIM / união óbitos %", fmt(e.get("pct_obitos_sim_sobre_uniao")))
+            lc[3].metric("Discordância SIM", fmt(e.get("n_discordancia_sim_sem_sinan"), 0))
+        with st.expander("Por regional"):
+            st.dataframe(link[link["escopo"].astype(str).ne("ESTADUAL")], use_container_width=True)
+
+    soro = read_any(OUT / "sorogrupos_dm_tendencia_v25.csv")
+    salert = read_any(OUT / "sorogrupos_dm_alertas_v25.csv")
+    if not soro.empty:
+        st.subheader("Sorogrupos DM — tendência")
+        if not salert.empty:
+            for _, a in salert.head(5).iterrows():
+                st.info(str(a.get("alerta", "")))
+        recent = soro.copy()
+        if "ano_evento_v17" in recent.columns:
+            ymax = pd.to_numeric(recent["ano_evento_v17"], errors="coerce").max()
+            recent = recent[pd.to_numeric(recent["ano_evento_v17"], errors="coerce") == ymax]
+        if not recent.empty and {"semana_epi_v17", "casos", "sorogrupo"}.issubset(recent.columns):
+            fig = px.bar(
+                recent, x="semana_epi_v17", y="casos", color="sorogrupo",
+                title=f"Sorogrupos DM por SE ({int(ymax) if 'ymax' in dir() else ''})",
+            )
+            fig.update_layout(height=380)
+            st.plotly_chart(fig, use_container_width=True, key=uid())
+
+    score = read_any(OUT / "score_risco_municipal_nt97_v25.csv")
+    if not score.empty:
+        st.subheader("Score municipal NT 97 (90 dias)")
+        st.dataframe(score.head(25), use_container_width=True)
+
+    lab = read_any(OUT / "indicadores_pl_lab_v25.csv")
+    vac = read_any(OUT / "indicadores_vacina_elegiveis_v25.csv")
+    grav = read_any(OUT / "gravidade_letalidade_se_corrente_v25.csv")
+    if not lab.empty or not vac.empty or not grav.empty:
+        st.subheader("PL / vacina elegíveis / gravidade SE")
+        cols = st.columns(3)
+        with cols[0]:
+            if not lab.empty:
+                st.dataframe(lab, use_container_width=True)
+        with cols[1]:
+            if not vac.empty:
+                st.dataframe(vac, use_container_width=True)
+        with cols[2]:
+            if not grav.empty:
+                st.dataframe(grav, use_container_width=True)
+
+    boletim = REL / "BOLETIM_CIEVS_MENINGITES_ENVIO_V25.md"
+    if boletim.exists():
+        with st.expander("Boletim pronto para envio (V25)"):
+            st.markdown(boletim.read_text(encoding="utf-8")[:12000])
+            with open(boletim, "rb") as fp:
+                st.download_button("Baixar boletim envio (.md)", fp, file_name=boletim.name)
+
+
 def ms_indicators_section():
     """Indicadores oficiais MS (Informe Meningites / Caderno SINAN)."""
     painel = read_any(OUT / "indicadores_ms_operacionais_v23.csv")
@@ -2378,8 +2469,16 @@ def assistant_section():
 
 
 def report_section(df):
+    envio = REL / "BOLETIM_CIEVS_MENINGITES_ENVIO_V25.md"
     narr = REL / "BOLETIM_SEMANAL_MENINGITES_V23_NARRATIVA_IA.md"
     boletim = REL / "BOLETIM_SEMANAL_MENINGITES_V23_RASCUNHO.md"
+    if envio.exists():
+        st.subheader("Boletim pronto para envio (V25)")
+        with open(envio, "rb") as fp:
+            st.download_button("Baixar boletim envio CIEVS (.md)", fp, file_name=envio.name, key="dl_boletim_v25")
+        with st.expander("Prévia do boletim de envio"):
+            st.markdown(envio.read_text(encoding="utf-8")[:8000])
+        st.markdown("---")
     if narr.exists() or boletim.exists():
         st.subheader("Boletins V23")
         c1, c2 = st.columns(2)
@@ -2524,6 +2623,32 @@ def main():
             st.caption(f"{g.get('status_sazonal')} — {g.get('status_detalhe', '')}")
             st.write(g.get("acao_sugerida", ""))
 
+        # Backlog V25 no executivo
+        br = read_any(OUT / "backlog_operacional_resumo_v25.csv")
+        gx = read_any(OUT / "indicadores_gestao_extras_v25.csv")
+        if not br.empty or not gx.empty:
+            st.markdown("---")
+            st.subheader("Backlog operacional (V25)")
+            bcols = st.columns(5)
+            if not br.empty:
+                r = br.iloc[0]
+                bcols[0].metric("Abertos", fmt(r.get("casos_abertos"), 0))
+                bcols[1].metric("Inv. >48h", fmt(r.get("investigacao_atrasada"), 0))
+                bcols[2].metric("Enc. D45–60", fmt(r.get("encerramento_d45_d60"), 0))
+                bcols[3].metric("Quimio pend.", fmt(r.get("quimio_pendente_dm_hib"), 0))
+            if not gx.empty:
+                bcols[4].metric("Quimio Hib %", fmt(gx.iloc[0].get("pct_quimioprofilaxia_hib_48h")))
+            grav = read_any(OUT / "gravidade_letalidade_se_corrente_v25.csv")
+            if not grav.empty:
+                tot = grav[grav["classificacao_agrupada_v17"].astype(str).eq("TOTAL")]
+                if not tot.empty:
+                    t = tot.iloc[0]
+                    st.caption(
+                        f"SE {int(t.get('semana_epi'))}/{int(t.get('ano'))}: "
+                        f"{fmt(t.get('casos'), 0)} casos · letalidade {fmt(t.get('letalidade_pct'))}% · "
+                        f"óbitos <7d {fmt(t.get('obitos_lt_7d'), 0)}"
+                    )
+
         # Mapa + nowcast/forecast no executivo
         st.markdown("---")
         st.subheader("Território e projeções")
@@ -2614,12 +2739,19 @@ def main():
 
     with tabs[1]:
         ms_indicators_section()
+        st.markdown("---")
+        ops_avancados_v25_section()
 
     with tabs[2]:
         smart_alerts_section()
         st.markdown("---")
         st.subheader("Alertas personalizados por regional / perfil")
         alertas_personalizados_section()
+        link = read_any(OUT / "linkage_completude_kpis_v25.csv")
+        if not link.empty:
+            st.markdown("---")
+            st.subheader("Discordância / completude linkage (V25)")
+            st.dataframe(link, use_container_width=True)
 
     with tabs[3]:
         epi_panel_section()
@@ -2638,6 +2770,11 @@ def main():
                 "Shapefile municipal não carregado. Verifique `MT_Municipios_2024.shp` na pasta do projeto "
                 "e pressione **C** no app para limpar o cache."
             )
+        score = read_any(OUT / "score_risco_municipal_nt97_v25.csv")
+        if not score.empty and "score_risco_nt97_v25" in score.columns:
+            st.subheader("Score de risco NT 97 (90 dias)")
+            choropleth_or_points(score, shapefile, latlon, "score_risco_nt97_v25", "Score municipal NT 97")
+            st.markdown("---")
         ind_full = read_any(OUT / "indicadores_municipio_ano_v17.csv")
         if not ind_full.empty:
             ind_map = ind_full.copy()

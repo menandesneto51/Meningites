@@ -35,8 +35,9 @@ Use **Python 3.13** neste ambiente (o 3.12 padrão pode não ter numpy/pandas).
 | 22 | Nowcast com atraso de notificação + forecast semanal + backtest |
 | 23 | Alertas personalizados (digests regional/lab) + narrativa IA |
 | 24 | Nowcast operacional + indicadores de gestão da semana |
+| 25/26 | Ops avançados: quimio Hib, backlog, linkage, sorogrupos, score NT97, PL/vacina, boletim envio |
 
-Dashboard atual: `dashboard_meningites_v22_refinado.py` (abas V23/V24 + Clima×casos exploratório).
+Dashboard atual: `dashboard_meningites_v22_refinado.py` (abas V23/V24/V25 + Clima×casos exploratório).
 
 ## Rotina operacional (preferencial)
 
