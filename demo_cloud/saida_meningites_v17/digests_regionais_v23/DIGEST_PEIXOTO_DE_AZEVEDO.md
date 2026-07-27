@@ -1,5 +1,5 @@
 # Digest Regional — PEIXOTO DE AZEVEDO
-**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 07:41
+**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 11:39
 
 ## Indicadores MS (regional)
 Casos=142 | inv48h=98.5% | enc60d=87.8% | quimio=0.0%

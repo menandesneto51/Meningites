@@ -1,5 +1,5 @@
 # Digest Regional — AGUA BOA
-**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 07:41
+**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 11:39
 
 ## Indicadores MS (regional)
 Casos=115 | inv48h=96.2% | enc60d=94.9% | quimio=37.5%

@@ -1,5 +1,5 @@
 # Digest Regional — COLIDER
-**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 07:41
+**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 11:39
 
 ## Indicadores MS (regional)
 Casos=89 | inv48h=100.0% | enc60d=87.7% | quimio=0.0%

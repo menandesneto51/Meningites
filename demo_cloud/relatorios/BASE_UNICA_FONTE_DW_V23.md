@@ -2,7 +2,7 @@
 
 **Fonte:** `DW_VW_SINAN_MENINGITE` ← `sinan_meningites_dw.csv`
 **Residentes MT:** 5944 casos | **Colunas:** 186
-**Gerado em:** 27/07/2026 07:39
+**Gerado em:** 27/07/2026 11:36
 
 ## Auditoria DW × local
 

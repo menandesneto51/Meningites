@@ -1,12 +1,12 @@
 # Narrativa operacional — Meningites (IA assistida)
 
-**Gerado:** 27/07/2026 07:41
+**Gerado:** 27/07/2026 11:39
 
 ## Síntese
 
 O padrão sazonal histórico aponta maior risco relativo em **Mar** (índice 1,13). Na SE 31, a vigilância deve comparar o observado com a média/P75 do perfil semanal.
  O nowcast corrigido por atraso estima **1,1** casos (observado 1), status **rotina**. Projeção SE+1 ≈ 4,3; backtest MAPE ≈ 85,7%.
- A fila unificada tem **256** itens; foram gerados **18** digests personalizados (estadual, regionais e laboratório) para disparo manual aos perfis CIEVS.
+ A fila unificada tem **257** itens; foram gerados **18** digests personalizados (estadual, regionais e laboratório) para disparo manual aos perfis CIEVS.
 
 ## Recomendações alinhadas ao MS
 

@@ -1,13 +1,13 @@
 # Digest Regional — RONDONOPOLIS
-**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 07:41
+**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 11:39
 
 ## Indicadores MS (regional)
 Casos=888 | inv48h=98.0% | enc60d=91.3% | quimio=56.2%
 
 ## Fila local: 39 itens · Crítico/Alto: 36
 
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA | caso 2362236 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
 - **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JACIARA | caso 2365377 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA | caso 2362236 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
 - **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA | caso 2365378 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
 - **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · POXOREO | caso 1 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
 - **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SAO PEDRO DA CIPA | caso 2654382 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
@@ -24,8 +24,8 @@ Casos=888 | inv48h=98.0% | enc60d=91.3% | quimio=56.2%
 
 ## Linkage DW (5)
 
-- Óbito no SIM sem desfecho meningite no SINAN · caso 2362236 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; EvolucaoCaso/SINAN sem óbito por meningite
 - Óbito no SIM sem desfecho meningite no SINAN · caso 2365377 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; EvolucaoCaso/SINAN sem óbito por meningite
+- Óbito no SIM sem desfecho meningite no SINAN · caso 2362236 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; EvolucaoCaso/SINAN sem óbito por meningite
 - Óbito no SIM sem desfecho meningite no SINAN · caso 2365378 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; EvolucaoCaso/SINAN sem óbito por meningite
 - Óbito no SIM sem desfecho meningite no SINAN · caso 1 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; EvolucaoCaso/SINAN sem óbito por meningite
 - Óbito no SIM sem desfecho meningite no SINAN · caso 2654382 — Match DW SIM score≥0.75; CID=A39.2 Meningococcemi; EvolucaoCaso/SINAN sem óbito por meningite

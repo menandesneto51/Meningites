@@ -1,6 +1,6 @@
 # Sazonalidade — Meningites MT V23
 
-**Período:** 2007-2026 · **Casos:** 5929 · **Gerado:** 27/07/2026 07:41
+**Período:** 2007-2026 · **Casos:** 5929 · **Gerado:** 27/07/2026 11:39
 
 ## Picos sazonais (índice mensal)
 

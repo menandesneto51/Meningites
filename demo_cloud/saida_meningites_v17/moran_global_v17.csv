@@ -1,2 +1,2 @@
 ﻿indicador,moran_i,p_value,interpretacao
-score_risco,,,Autocorrelação indisponível: No module named 'libpysal'
+score_risco,0.027542044424412118,0.237,Sem evidência robusta de autocorrelação espacial.

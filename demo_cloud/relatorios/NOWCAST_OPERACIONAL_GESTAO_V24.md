@@ -1,6 +1,6 @@
 # Nowcast operacional + gestão — Meningites V24
 
-**Gerado:** 27/07/2026 07:41
+**Gerado:** 27/07/2026 11:39
 
 ## Método
 
@@ -15,7 +15,7 @@
 - Nowcast estadual: **1.0777777777777777** (obs 1.0; Δ -2.0773946360153257)
 - Nowcast DM: **0.0** (obs 0.0)
 - Status sazonal: **rotina** — Nowcast SE28=1.1 ≤ P75 histórico 8.0
-- Fila CIEVS: 256 (críticos 220)
+- Fila CIEVS: 257 (críticos 220)
 - Atraso notif P50/P90 (dias): 3.0 / 13.0
 - Ação sugerida: Manter rotina: acompanhar fila CIEVS e indicadores MS em vermelho.
 

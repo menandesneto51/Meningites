@@ -1,6 +1,6 @@
 # Boletim semanal — Meningites | CIEVS-MT (rascunho automático V23)
 
-**Gerado em:** 27/07/2026 07:40
+**Gerado em:** 27/07/2026 11:38
 **Fontes:** SINAN (base única), indicadores MS (Informe/Caderno), NT 97/2024, canal de alertas V23.
 
 > Documento de apoio à vigilância. Validar com a equipe antes de divulgação oficial.

@@ -1,5 +1,5 @@
 # Digest Regional — BARRA DO GARCAS
-**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 07:41
+**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 11:39
 
 ## Indicadores MS (regional)
 Casos=253 | inv48h=96.6% | enc60d=77.3% | quimio=22.2%

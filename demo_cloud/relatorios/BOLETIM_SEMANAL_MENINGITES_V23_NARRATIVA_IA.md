@@ -1,11 +1,15 @@
 # Narrativa assistida — Boletim Meningites CIEVS-MT
 
-**Gerado em:** 27/07/2026 07:40
+**Gerado em:** 27/07/2026 11:38
 **Modo:** recuperação normativa local (RAG) + síntese operacional
 
 > Texto de apoio. Revisar e validar antes de divulgação oficial.
 
 ## Síntese executiva
+## Parágrafo executivo (LLM)
+
+O cenário epidemiológico das meningites em 2025 no estado de Mato Grosso registra 87 casos confirmados, resultando em uma incidência de 2,9/100 mil habitantes e letalidade de 18,4%, com 16 óbitos. A análise dos indicadores do Ministério da Saúde revela que o estado superou a referência nacional na % de confirmação laboratorial (44,4% vs BR 36,1%) e na % de quimioprofilaxia para Doença Meningocócica em até 48h (54,7% vs BR 45,5%). Contudo, persistem desafios significativos, com o estado abaixo da referência nacional na % de casos investigados em até 48h (93,6% vs BR 97,8%) e na % de encerramento em até 60 dias (83,6% vs BR 94,4%). Adicionalmente, a identificação de sorogrupo em DM (30,6%) e a notificação em até 24h do início dos sintomas (29,8%) demandam aprimoramento. Os principais alertas incluem 679 encerramentos fora do prazo e 292 encerramentos em risco/atrasados, além de 210 investigações atrasadas. A fila do CIEVS-MT atualmente possui 200 itens prioritários. Este panorama exige atenção contínua e ações estratégicas para qualificar a vigilância. A validação humana deste boletim é obrigatória.
+
 
 **Pontos favoráveis**
 - % confirmação laboratorial (PCR/cultura) — Informe MS em 44,4% (acima ou alinhado à referência nacional).

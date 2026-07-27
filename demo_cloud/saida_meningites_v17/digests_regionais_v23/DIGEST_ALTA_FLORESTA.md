@@ -1,5 +1,5 @@
 # Digest Regional — ALTA FLORESTA
-**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 07:41
+**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 11:39
 
 ## Indicadores MS (regional)
 Casos=120 | inv48h=93.8% | enc60d=86.0% | quimio=63.6%

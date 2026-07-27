@@ -1,5 +1,5 @@
 # Digest Regional — JUINA
-**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 07:41
+**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 11:39
 
 ## Indicadores MS (regional)
 Casos=95 | inv48h=96.7% | enc60d=87.4% | quimio=50.0%

@@ -1,5 +1,5 @@
 # Digest Regional — CACERES
-**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 07:41
+**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 11:39
 
 ## Indicadores MS (regional)
 Casos=362 | inv48h=97.2% | enc60d=96.8% | quimio=50.0%

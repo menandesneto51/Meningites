@@ -53,13 +53,29 @@ def copy_csv(name: str, scrub: bool = False) -> bool:
     return True
 
 
+def _clear_dir(path: Path) -> None:
+    """Remove conteúdo com tolerância a locks do OneDrive/Windows."""
+    if not path.exists():
+        return
+    for child in sorted(path.rglob("*"), reverse=True):
+        try:
+            if child.is_file() or child.is_symlink():
+                child.unlink(missing_ok=True)
+            elif child.is_dir():
+                child.rmdir()
+        except OSError:
+            pass
+    try:
+        path.rmdir()
+    except OSError:
+        pass
+
+
 def main():
-    if DEST.exists():
-        shutil.rmtree(DEST)
-    if DEST_REL.exists():
-        shutil.rmtree(DEST_REL)
-    DEST.mkdir(parents=True)
-    DEST_REL.mkdir(parents=True)
+    _clear_dir(DEST)
+    _clear_dir(DEST_REL)
+    DEST.mkdir(parents=True, exist_ok=True)
+    DEST_REL.mkdir(parents=True, exist_ok=True)
 
     # Tudo que o dashboard costuma ler
     patterns = [

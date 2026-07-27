@@ -1,5 +1,5 @@
 # Digest Regional — TANGARA DA SERRA
-**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 07:41
+**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 11:39
 
 ## Indicadores MS (regional)
 Casos=344 | inv48h=98.5% | enc60d=63.9% | quimio=100.0%

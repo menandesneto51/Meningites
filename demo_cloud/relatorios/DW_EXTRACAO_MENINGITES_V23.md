@@ -1,6 +1,6 @@
 # Extração DW — Meningites V23
 
-**Quando:** 2026-07-27T07:40:52
+**Quando:** 2026-07-27T11:38:21
 **Host:** 10.15.1.50 · **DB:** Datawarehouse
 
 ## Views/tabelas candidatas (*MENING*)

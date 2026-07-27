@@ -1,5 +1,5 @@
 # Digest Regional — SINOP
-**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 07:41
+**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 11:39
 
 ## Indicadores MS (regional)
 Casos=832 | inv48h=98.7% | enc60d=89.1% | quimio=65.2%

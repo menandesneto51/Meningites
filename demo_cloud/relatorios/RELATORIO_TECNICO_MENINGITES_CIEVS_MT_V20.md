@@ -33,7 +33,7 @@ Distribuição por classificação agrupada: Outras etiologias: 2.629; Meningite
 - Meningite tuberculosa | Óbito por meningite: OR=0,62 (IC95% 0,15–2,58), p=0,7682. p=0.7682: não há evidência estatística suficiente ao nível de 5%. Associação protetora de magnitude potencialmente relevante.
 
 ## 4. Geoespacial, distância de Cuiabá e uso do laboratório
-- Moran: I=NA; p=NA. Autocorrelação indisponível: No module named 'libpysal'
+- Moran: I=0,028; p=0,2370. Sem evidência robusta de autocorrelação espacial.
 - Distância x taxa_uso_laboratorio_pct: Spearman=-0,108; n=131.
 - Distância x taxa_positividade_real_pct: Spearman=-0,010; n=99.
 - Distância x casos: Spearman=-0,090; n=131.

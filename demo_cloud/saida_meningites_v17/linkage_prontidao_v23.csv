@@ -1,4 +1,4 @@
 ﻿fonte,status,arquivo,n_registros,n_matches,acao
-gal,OK,gal_lacen_meningites.csv,5835,574,Usar matches em alertas/confirmacao laboratorial/obitos
+gal,OK,gal_lacen_meningites.csv,5835,580,Usar matches em alertas/confirmacao laboratorial/obitos
 lacen,OK_MESMO_ARQUIVO_GAL,gal_lacen_meningites.csv,0,0,LACEN já coberto por gal_lacen_meningites (VW_GAL); matches em linkage_matches_gal_v23.csv
 sim,OK,sim_obitos_meningites.csv,84,103,Usar matches em alertas/confirmacao laboratorial/obitos
