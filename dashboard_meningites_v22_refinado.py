@@ -12,6 +12,7 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 from meningites_v17_common import *
+import interpretacoes_painel_v26 as interp
 
 st.set_page_config(
     page_title="Meningites CIEVS-MT",
@@ -22,6 +23,41 @@ st.set_page_config(
 
 def uid():
     return uuid.uuid4().hex
+
+
+def render_interpretacao(
+    session_key: str,
+    guide_html: str | None,
+    build_narr,
+    *,
+    download_name: str,
+    titulo: str = "Justificativa dos achados (assistente CIEVS)",
+    llm_key: str | None = None,
+):
+    """Guia + narrativa offline (RAG/LLM opcional) — padrão Comorbidades/Clima."""
+    if guide_html:
+        st.markdown(guide_html, unsafe_allow_html=True)
+    st.subheader(titulo)
+    usar_llm = st.checkbox(
+        "Enriquecer com LLM (Gemini/OpenAI se configurado no .env)",
+        value=False,
+        key=llm_key or f"{session_key}_llm",
+    )
+    if st.button("Gerar / atualizar texto justificativo", key=f"btn_{session_key}"):
+        with st.spinner("Montando leitura assistida…"):
+            st.session_state[session_key] = build_narr(usar_llm)
+    narr = st.session_state.get(session_key)
+    if not narr:
+        narr = build_narr(False)
+        st.session_state[session_key] = narr
+    st.markdown(f'<div class="ai-box">{narr.replace(chr(10), "<br/>")}</div>', unsafe_allow_html=True)
+    st.download_button(
+        "Baixar justificativa (.md)",
+        data=narr.encode("utf-8"),
+        file_name=download_name,
+        mime="text/markdown",
+        key=f"dl_{session_key}",
+    )
 
 
 @st.cache_data(show_spinner=False)
@@ -1317,6 +1353,12 @@ def outbreak_section():
     nt97 = read_any(OUT / "alertas_inteligentes_surtos_nt97_v23.csv")
 
     st.markdown("### Critérios do Ministério da Saúde / CIEVS")
+    render_interpretacao(
+        "narr_surtos",
+        interp.GUIDE_SURTOS,
+        lambda use_llm: interp.narrativa_surtos(alerts, nt97, use_llm=use_llm),
+        download_name="justificativa_surtos_cievs.md",
+    )
     st.markdown(
         """
 **Doença meningocócica (NT Conjunta nº 154/2024-DPNI/SVSA/MS)**  
@@ -1450,15 +1492,190 @@ def nowcasting_chart(base, now):
     st.dataframe(now, use_container_width=True)
 
 
+def _clima_var_label(name: str) -> str:
+    mapa = {
+        "temperatura_media": "Temperatura média",
+        "temperatura_maxima": "Temperatura máxima",
+        "temperatura_minima": "Temperatura mínima",
+        "chuva_mm": "Precipitação (mm)",
+        "umidade_relativa": "Umidade relativa",
+        "indice_calor_maximo": "Índice de calor máximo",
+        "horas_calor_critico": "Horas de calor crítico",
+    }
+    return mapa.get(str(name or ""), str(name or ""))
+
+
+def _clima_forca(abs_r) -> tuple[str, str]:
+    try:
+        v = float(abs_r)
+    except (TypeError, ValueError):
+        return "indefinida", "#94a3b8"
+    if pd.isna(v):
+        return "indefinida", "#94a3b8"
+    if v < 0.10:
+        return "desprezível/muito fraca", "#94a3b8"
+    if v < 0.30:
+        return "fraca", "#f59e0b"
+    if v < 0.50:
+        return "moderada", "#ea580c"
+    return "forte", "#dc2626"
+
+
+def _clima_sentido(r) -> str:
+    try:
+        v = float(r)
+    except (TypeError, ValueError):
+        return "sem direção clara"
+    if pd.isna(v) or abs(v) < 1e-9:
+        return "sem direção clara"
+    if v > 0:
+        return "positiva (variável climática e desfecho sobem juntos)"
+    return "negativa (variável climática sobe e desfecho tende a cair)"
+
+
+def _clima_hint(name: str) -> str:
+    s = str(name or "").lower()
+    if "umidade" in s:
+        return "Umidade pode modular transmissão respiratória e agregação indoor; validar com sazonalidade."
+    if "chuva" in s or "precip" in s:
+        return "Chuva altera mobilidade e permanência em ambientes fechados — confundidores comuns."
+    if "indice_calor" in s or "calor_critico" in s or "horas_calor" in s:
+        return "Calor extremo pode alterar comportamento e busca por serviço; leitura ecológica."
+    if "temperatura" in s:
+        return "Temperatura costuma marcar sazonalidade; não confundir com causalidade individual."
+    return "Avaliar plausibilidade, lag (incubação + atraso notificação) e canal endêmico."
+
+
+def _clima_interpret_row(r: pd.Series) -> str:
+    spear = r.get("spearman")
+    abs_r = r.get("abs_r")
+    if abs_r is None or (isinstance(abs_r, float) and pd.isna(abs_r)):
+        try:
+            abs_r = abs(float(spear)) if pd.notna(spear) else np.nan
+        except (TypeError, ValueError):
+            abs_r = np.nan
+    forca, _ = _clima_forca(abs_r)
+    sentido = _clima_sentido(spear)
+    lag = r.get("lag_dias", "")
+    lag_txt = f" lag {int(lag)}d" if pd.notna(lag) and str(lag) != "" else ""
+    return f"Associação {forca}, {sentido}{lag_txt}. {_clima_hint(r.get('variavel_climatica'))}"
+
+
+def clima_interpretation_guide():
+    st.markdown(
+        """
+<div class="guide-card">
+<b>Como ler esta aba (para gestores e vigilância)</b><br/><br/>
+• <b>Spearman (ρ)</b>: correlação de postos entre variável climática (com <b>lag</b>) e o desfecho diário.
+  Guia de |ρ|: &lt;0,10 desprezível · 0,10–0,30 fraca · 0,30–0,50 moderada · ≥0,50 forte.<br/>
+• <b>Lag (0–30 dias)</b>: atraso em dias entre o clima e o sinal de casos — incorpora incubação,
+  procura por cuidado e atraso de notificação SINAN.<br/>
+• <b>R² (Pearson²)</b>: fração da variância linear explicada; em séries diárias costuma ser baixa
+  mesmo quando ρ é “interessante”.<br/>
+• <b>Não é causalidade</b>: correlação <i>ecológica</i> (agregada no tempo). Sazonalidade, feriados,
+  surtos pontuais e qualidade da série climática confundem o achado.<br/>
+• <b>Uso operacional CIEVS</b>: gerar hipótese e cruzar com canal endêmico, alertas NT 154 e
+  investigação de contatos — <b>não</b> dispara resposta isolada. Não substitui o SIS Clima-Saúde.
+</div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def narrativa_clima(corr: pd.DataFrame, desfecho: str, use_llm: bool = False) -> str:
+    """Texto justificativo offline (+ LLM/RAG opcional), no padrão da aba de comorbidades."""
+    d = corr.copy()
+    for c in ["spearman", "pearson", "r2", "lag_dias", "abs_r"]:
+        if c in d.columns:
+            d[c] = pd.to_numeric(d[c], errors="coerce")
+    if "abs_r" not in d.columns and "spearman" in d.columns:
+        d["abs_r"] = d["spearman"].abs()
+    if "desfecho" in d.columns:
+        d = d[d["desfecho"].astype(str).eq(str(desfecho))].copy()
+    top = d.sort_values("abs_r", ascending=False).head(8) if "abs_r" in d.columns else d.head(8)
+
+    bullets = []
+    for _, r in top.iterrows():
+        lab = _clima_var_label(r.get("variavel_climatica"))
+        forca, _ = _clima_forca(r.get("abs_r"))
+        bullets.append(
+            f"- **{lab}** (lag {fmt(r.get('lag_dias'), 0)}d) × {desfecho}: "
+            f"Spearman={fmt(r.get('spearman'), 3)}, |ρ|={fmt(r.get('abs_r'), 3)} ({forca}), "
+            f"R²={fmt(r.get('r2'), 3)}. {_clima_hint(r.get('variavel_climatica'))}"
+        )
+
+    n_mod = int((d["abs_r"] >= 0.10).sum()) if "abs_r" in d.columns else 0
+    n_forte = int((d["abs_r"] >= 0.30).sum()) if "abs_r" in d.columns else 0
+    max_r = float(d["abs_r"].max()) if "abs_r" in d.columns and d["abs_r"].notna().any() else np.nan
+
+    texto = [
+        "### Leitura assistida dos achados clima × meningites",
+        "",
+        f"Desfecho selecionado: **{desfecho}**. "
+        f"Pares avaliados: {len(d)} · |ρ|≥0,10: {n_mod} · |ρ|≥0,30: {n_forte} · "
+        f"maior |ρ|: {fmt(max_r, 3)}.",
+        "",
+        "Principais sinais (maiores |Spearman|):",
+        "",
+        *bullets,
+        "",
+        "**Justificativa epidemiológica (síntese):** clima e meningites podem coincidir no tempo "
+        "por sazonalidade de patógenos respiratórios, agregação em ambientes fechados e mudanças "
+        "de comportamento (chuva/calor). O lag ajuda a acomodar incubação e atraso de notificação, "
+        "mas **não prova** mecanismo biológico. Trate os achados como hipótese exploratória para "
+        "o CIEVS-MT: cruzar com canal endêmico, classificação etiológica e alertas NT 154/2024.",
+        "",
+        "> Texto de apoio à vigilância. **Validar com a equipe CIEVS** antes de comunicação oficial. "
+        "Correlação ecológica ≠ causalidade. Não substitui o SIS Integrado Clima-Saúde.",
+    ]
+    base_txt = "\n".join(texto)
+
+    try:
+        try:
+            from meningites_env import load_meningites_env
+            load_meningites_env()
+        except Exception:
+            pass
+        assist = __import__("16_assistente_cievs_v23")
+        ctx = f"Desfecho: {desfecho}\n" + "\n".join(bullets[:6])
+        q = (
+            "Interprete correlações ecológicas exploratórias entre clima (temperatura, umidade, "
+            "chuva, índice de calor) e casos/desfechos de meningites para o CIEVS. "
+            "Enfatize ausência de causalidade, papel da sazonalidade e do atraso de notificação, "
+            "e uso apenas como hipótese operacional (não substitui SIS Clima-Saúde)."
+        )
+        ans = assist.answer(q, contexto_dados=ctx, use_llm=use_llm)
+        extra = ans.get("resposta_llm") or ""
+        fontes = ans.get("fontes") or []
+        if use_llm and extra:
+            base_txt += "\n\n### Narrativa IA (revisar)\n\n" + extra
+        elif fontes:
+            base_txt += "\n\n### Apoio normativo recuperado\n\n"
+            for f in fontes[:3]:
+                base_txt += f"- {f.get('titulo')} — {f.get('fonte')}\n"
+            offline = ans.get("resposta", "")
+            if offline and not use_llm:
+                base_txt += "\n" + offline[:1800]
+        elif ans.get("resposta") and not use_llm:
+            base_txt += "\n\n### Apoio do assistente (offline)\n\n" + str(ans.get("resposta"))[:1800]
+    except Exception as e:
+        base_txt += f"\n\n_Assistente indisponível: {e}_"
+    return base_txt
+
+
 def climate_section():
     """Correlação exploratória clima × casos/desfechos (módulo 06). Não é o SIS Clima-Saúde."""
     st.caption(
         "Análise **exploratória** de associação temporal entre variáveis climáticas e meningites. "
         "Não implica causalidade e **não** substitui o SIS Integrado Clima-Saúde."
     )
+    clima_interpretation_guide()
+
     diag = OUT / "diagnostico_clima_v17.txt"
     if diag.exists():
-        st.info(diag.read_text(encoding="utf-8"))
+        with st.expander("Diagnóstico da série climática", expanded=False):
+            st.text(diag.read_text(encoding="utf-8"))
+
     corr = read_any(OUT / "correlacao_clima_casos_v17.csv")
     top = read_any(OUT / "correlacao_clima_desfechos_top_v17.csv")
     daily = read_any(OUT / "clima_casos_diario_v17.csv")
@@ -1471,11 +1688,55 @@ def climate_section():
             corr[c] = pd.to_numeric(corr[c], errors="coerce")
     if "abs_r" not in corr.columns and "spearman" in corr.columns:
         corr["abs_r"] = corr["spearman"].abs()
+    corr["forca"] = corr["abs_r"].map(lambda v: _clima_forca(v)[0])
+    corr["interpretacao"] = corr.apply(_clima_interpret_row, axis=1)
 
     desfechos = sorted(corr["desfecho"].dropna().astype(str).unique()) if "desfecho" in corr.columns else ["casos"]
-    escolha = st.selectbox("Desfecho", desfechos, index=0 if "casos" not in desfechos else desfechos.index("casos"))
+    escolha = st.selectbox(
+        "Desfecho",
+        desfechos,
+        index=0 if "casos" not in desfechos else desfechos.index("casos"),
+        key="clima_desfecho",
+    )
     sub = corr[corr["desfecho"].astype(str).eq(escolha)].copy() if "desfecho" in corr.columns else corr.copy()
     best = sub.sort_values("abs_r", ascending=False).head(20) if "abs_r" in sub.columns else sub.head(20)
+
+    n_mod = int((sub["abs_r"] >= 0.10).sum()) if "abs_r" in sub.columns else 0
+    n_forte = int((sub["abs_r"] >= 0.30).sum()) if "abs_r" in sub.columns else 0
+    max_r = float(sub["abs_r"].max()) if "abs_r" in sub.columns and sub["abs_r"].notna().any() else np.nan
+    k1, k2, k3, k4 = st.columns(4)
+    with k1:
+        mini_metric_card("Pares testados", fmt(len(sub), 0))
+    with k2:
+        mini_metric_card("|ρ| ≥ 0,10", fmt(n_mod, 0))
+    with k3:
+        mini_metric_card("|ρ| ≥ 0,30", fmt(n_forte, 0))
+    with k4:
+        mini_metric_card("Maior |ρ|", fmt(max_r, 3))
+
+    # Narrativa no padrão comorbidades / OR
+    st.subheader("Justificativa dos achados (assistente CIEVS)")
+    usar_llm = st.checkbox(
+        "Enriquecer com LLM (Gemini/OpenAI se configurado no .env)",
+        value=False,
+        key="clima_llm",
+    )
+    narr_key = f"clima_narrativa_{escolha}"
+    if st.button("Gerar / atualizar texto justificativo", key="btn_clima_narr"):
+        with st.spinner("Montando leitura assistida dos achados climáticos…"):
+            st.session_state[narr_key] = narrativa_clima(corr, escolha, use_llm=usar_llm)
+    narr = st.session_state.get(narr_key)
+    if not narr:
+        narr = narrativa_clima(corr, escolha, use_llm=False)
+        st.session_state[narr_key] = narr
+    st.markdown(f'<div class="ai-box">{narr.replace(chr(10), "<br/>")}</div>', unsafe_allow_html=True)
+    st.download_button(
+        "Baixar justificativa (.md)",
+        data=narr.encode("utf-8"),
+        file_name=f"justificativa_clima_{escolha}_cievs.md",
+        mime="text/markdown",
+        key="dl_clima_narr",
+    )
 
     st.subheader(f"Maiores |correlações| — {escolha}")
     if not best.empty:
@@ -1487,54 +1748,68 @@ def climate_section():
             orientation="h",
             text=[fmt(v, 2) for v in best["spearman"]],
             title=f"Spearman clima × {escolha} (lags 0–30 dias)",
+            hover_data=[c for c in ["forca", "interpretacao", "r2", "pearson"] if c in best.columns],
         )
         fig.update_traces(textposition="outside", cliponaxis=False)
         fig.update_layout(height=max(420, 26 * len(best) + 120), margin=dict(b=40, t=60))
         st.plotly_chart(fig, use_container_width=True, key=uid())
-        st.dataframe(best, use_container_width=True)
+        cols_show = [
+            c for c in [
+                "variavel_climatica", "lag_dias", "spearman", "abs_r", "forca",
+                "pearson", "r2", "n_dias_validos", "interpretacao",
+            ] if c in best.columns
+        ]
+        st.dataframe(best[cols_show] if cols_show else best, use_container_width=True)
 
     if not top.empty:
-        with st.expander("Top correlações por desfecho"):
+        top = top.copy()
+        if "abs_r" not in top.columns and "spearman" in top.columns:
+            top["abs_r"] = pd.to_numeric(top["spearman"], errors="coerce").abs()
+        top["forca"] = top["abs_r"].map(lambda v: _clima_forca(v)[0]) if "abs_r" in top.columns else ""
+        top["interpretacao"] = top.apply(_clima_interpret_row, axis=1)
+        with st.expander("Top correlações por desfecho (com interpretação)"):
             st.dataframe(top, use_container_width=True)
-
-    # Narrativa assistida
-    st.subheader("Interpretação assistida (IA / RAG)")
-    usar_llm = st.checkbox("Usar LLM (Gemini/OpenAI se configurado no .env)", value=False, key="clima_llm")
-    if st.button("Gerar leitura dos achados climáticos", key="btn_clima_narr"):
-        linhas = []
-        for _, r in best.head(5).iterrows():
-            linhas.append(
-                f"- {r.get('variavel_climatica')} lag {r.get('lag_dias')}d: "
-                f"Spearman={fmt(r.get('spearman'), 3)}, R²={fmt(r.get('r2'), 3)}"
-            )
-        ctx = f"Desfecho: {escolha}\n" + "\n".join(linhas)
-        try:
-            from meningites_env import load_meningites_env
-            load_meningites_env()
-            assist = __import__("16_assistente_cievs_v23")
-            ans = assist.answer(
-                "Interprete correlações ecológicas entre clima e meningites para o CIEVS. "
-                "Enfatize que não há causalidade e que sazonalidade/atraso de notificação confundem.",
-                contexto_dados=ctx,
-                use_llm=usar_llm,
-            )
-            st.markdown(
-                f'<div class="ai-box">{(ans.get("resposta") or "").replace(chr(10), "<br/>")}</div>',
-                unsafe_allow_html=True,
-            )
-        except Exception as e:
-            st.warning(f"Assistente indisponível: {e}")
 
     if not daily.empty and {"data", "casos"}.issubset(daily.columns):
         daily = daily.copy()
         daily["data"] = pd.to_datetime(daily["data"], errors="coerce")
-        vars_ = [c for c in daily.columns if c not in ["data", "casos", "confirmados", "hospitalizacoes", "obitos", "altas"]
-                 and pd.api.types.is_numeric_dtype(daily[c])]
-        st.subheader("Dispersão exploratória (casos)")
-        for var in vars_[:4]:
-            fig = px.scatter(daily, x=var, y="casos", trendline="ols", title=f"Casos vs {var}")
-            fig.update_layout(height=380)
-            st.plotly_chart(fig, use_container_width=True, key=uid())
+        st.subheader("Dispersão exploratória — top sinais do desfecho")
+        top3 = best.head(3)
+        if top3.empty:
+            vars_ = [
+                c for c in daily.columns
+                if c not in ["data", "casos", "confirmados", "hospitalizacoes", "obitos", "altas"]
+                and pd.api.types.is_numeric_dtype(daily[c])
+            ]
+            for var in vars_[:4]:
+                fig = px.scatter(daily, x=var, y="casos", trendline="ols", title=f"Casos vs {var}")
+                fig.update_layout(height=380)
+                st.plotly_chart(fig, use_container_width=True, key=uid())
+        else:
+            cols = st.columns(min(3, len(top3)))
+            for i, (_, r) in enumerate(top3.iterrows()):
+                var = str(r.get("variavel_climatica", ""))
+                if var not in daily.columns:
+                    continue
+                lag = int(r.get("lag_dias", 0)) if pd.notna(r.get("lag_dias", np.nan)) else 0
+                dd = daily[[var, "casos"]].copy()
+                xcol = f"{var}_lag{lag}"
+                dd[xcol] = dd[var].shift(lag) if lag > 0 else dd[var]
+                with cols[i]:
+                    fig = px.scatter(
+                        dd.dropna(subset=[xcol, "casos"]),
+                        x=xcol,
+                        y="casos",
+                        trendline="ols",
+                        title=(
+                            f"{_clima_var_label(var)} · lag {lag}d<br>"
+                            f"ρ={fmt(r.get('spearman'), 2)} · {_clima_forca(r.get('abs_r'))[0]}"
+                        ),
+                    )
+                    fig.update_traces(marker=dict(size=7))
+                    fig.update_layout(height=400, xaxis_title=_clima_var_label(var), yaxis_title="Casos")
+                    st.plotly_chart(fig, use_container_width=True, key=uid())
+                    st.caption(str(r.get("interpretacao", ""))[:220])
 
 
 def parse_positive(x):
@@ -1589,6 +1864,7 @@ def lab_section(df):
     c3.metric("Critérios distintos", fmt(len(crit), 0))
     st.caption("Taxa de positividade real = positivos / resultados concludentes (positivo + negativo). Inconclusivos e não realizados não entram no denominador principal.")
 
+    labdf = pd.DataFrame()
     if existing:
         rows = []
         for c in existing:
@@ -1597,6 +1873,15 @@ def lab_section(df):
             positivo = int((s == 1).sum())
             rows.append({"metodologia": c, "realizados/preenchidos": realizado, "positivos": positivo, "taxa_positividade_pct": positivo / realizado * 100 if realizado else np.nan})
         labdf = pd.DataFrame(rows)
+
+    render_interpretacao(
+        "narr_lab",
+        interp.GUIDE_LAB,
+        lambda use_llm: interp.narrativa_lab(labdf, crit, use_llm=use_llm),
+        download_name="justificativa_laboratorio_cievs.md",
+    )
+
+    if not labdf.empty:
         bar_with_labels(labdf.sort_values("realizados/preenchidos", ascending=False).head(20), "realizados/preenchidos", "metodologia", "KPIs laboratoriais por metodologia", color="taxa_positividade_pct", orient="h", height=620)
         st.dataframe(labdf, use_container_width=True)
 
@@ -1645,6 +1930,13 @@ def vaccine_section(df):
             sim = df[c].map(simnao_bin)
             rows.append({"variavel_vacinal": c, "informado": int(sim.notna().sum()), "vacinados_sim": int((sim == 1).sum())})
     vacdf = pd.DataFrame(rows)
+    ev = read_any(OUT / "efetividade_vacinal_etiologia_coerente_v17.csv")
+    render_interpretacao(
+        "narr_vacina",
+        interp.GUIDE_VACINA,
+        lambda use_llm: interp.narrativa_vacina(vacdf, ev, use_llm=use_llm),
+        download_name="justificativa_vacina_cievs.md",
+    )
     bar_with_labels(vacdf.fillna(0), "vacinados_sim", "variavel_vacinal", "Registros vacinais — respostas positivas", orient="h", height=450)
     st.dataframe(vacdf, use_container_width=True)
 
@@ -1654,7 +1946,6 @@ def vaccine_section(df):
         top.columns = ["VacinaOutrasEspecificar", "n"]
         bar_with_labels(top, "n", "VacinaOutrasEspecificar", "Principais registros em VacinaOutrasEspecificar", orient="h", height=420)
 
-    ev = read_any(OUT / "efetividade_vacinal_etiologia_coerente_v17.csv")
     if not ev.empty:
         st.subheader("Odds Ratio e análise de eficácia vacinal")
         ev["or"] = pd.to_numeric(ev.get("or"), errors="coerce")
@@ -1699,6 +1990,12 @@ def sazonalidade_section():
         st.info("Rode: py -3.13 21_sazonalidade_meningites_v23.py")
         return
     st.caption("Sazonalidade de meningites (SE e mês) — apoio à vigilância MS / CIEVS. Sem misturar clima.")
+    render_interpretacao(
+        "narr_sazonal",
+        interp.GUIDE_SAZONAL,
+        lambda use_llm: interp.narrativa_sazonal(resumo, use_llm=use_llm),
+        download_name="justificativa_sazonalidade_cievs.md",
+    )
     if not resumo.empty:
         r = resumo.iloc[0]
         c1, c2, c3, c4 = st.columns(4)
@@ -1866,6 +2163,12 @@ def nowcast_refinado_section():
             "Nowcast operacional V24: atraso SE sintomas→notificação "
             "(DT_DIGITA ainda ausente no VW). Estratos: estadual, DM e regionais."
         )
+        render_interpretacao(
+            "narr_projecoes",
+            interp.GUIDE_PROJECOES,
+            lambda use_llm: interp.narrativa_projecoes(gest, resumo24, use_llm=use_llm),
+            download_name="justificativa_projecoes_cievs.md",
+        )
         if not gest.empty:
             g = gest.iloc[0]
             c1, c2, c3, c4, c5 = st.columns(5)
@@ -1992,6 +2295,14 @@ def quality_section():
     link = read_any(OUT / "linkage_prontidao_v23.csv")
     proxy = read_any(OUT / "linkage_proxy_interno_resumo_v23.csv")
     enr = read_any(OUT / "enriquecimento_dw_resumo_v23.csv")
+    resumo = read_any(OUT / "qualidade_score_resumo_v20.csv")
+    link_kpis = read_any(OUT / "linkage_completude_kpis_v25.csv")
+    render_interpretacao(
+        "narr_qualidade",
+        interp.GUIDE_QUALIDADE,
+        lambda use_llm: interp.narrativa_qualidade(resumo, link_kpis, enr, use_llm=use_llm),
+        download_name="justificativa_qualidade_cievs.md",
+    )
     if not link.empty or not proxy.empty or not enr.empty:
         st.subheader("Linkage GAL / LACEN / SIM (DW)")
         st.caption("Extratos do Data Warehouse SES/MT (`VW_GAL`, `SIM`) + proxy SINAN.")
@@ -2028,7 +2339,6 @@ def quality_section():
                 st.markdown(rel_link.read_text(encoding="utf-8")[:5000])
         st.markdown("---")
 
-    resumo = read_any(OUT / "qualidade_score_resumo_v20.csv")
     score = read_any(OUT / "qualidade_score_v20.csv")
     if not resumo.empty:
         r = resumo.iloc[0]
@@ -2060,8 +2370,15 @@ def ops_avancados_v25_section():
     """Backlog, linkage, sorogrupos, score NT154, PL/vacina, gravidade SE (roadmap V25)."""
     st.subheader("Operação avançada V25")
     st.caption("Quimio Hib · backlog · linkage · sorogrupos · score NT154 · PL/vacina · gravidade SE")
-
     br = read_any(OUT / "backlog_operacional_resumo_v25.csv")
+    score = read_any(OUT / "score_risco_municipal_nt97_v25.csv")
+    render_interpretacao(
+        "narr_ops_v25",
+        interp.GUIDE_OPS,
+        lambda use_llm: interp.narrativa_ops_v25(br, score, use_llm=use_llm),
+        download_name="justificativa_ops_v25_cievs.md",
+    )
+
     bg = read_any(OUT / "backlog_operacional_regional_v25.csv")
     if not br.empty:
         r = br.iloc[0]
@@ -2147,6 +2464,12 @@ def ms_indicators_section():
         "Indicadores alinhados ao Informe Meningites 2024 (CGVDI/DPNI/SVSA/MS), "
         "Caderno de Análises SINAN e notificação compulsória ≤24h. "
         "Referência Brasil = SE 1–36/2024."
+    )
+    render_interpretacao(
+        "narr_ms",
+        interp.GUIDE_MS,
+        lambda use_llm: interp.narrativa_ms(painel, use_llm=use_llm),
+        download_name="justificativa_indicadores_ms_cievs.md",
     )
 
     # Cards dos 4 KPIs principais do Informe
@@ -2250,6 +2573,12 @@ def smart_alerts_section():
         "Alertas baseados em prazos do Informe MS, quimioprofilaxia (NT 154/2024) e "
         "definição de surto comunitário/institucional de doença meningocócica."
     )
+    render_interpretacao(
+        "narr_alertas",
+        interp.GUIDE_ALERTAS,
+        lambda use_llm: interp.narrativa_alertas(fila, resumo, surtos, use_llm=use_llm),
+        download_name="justificativa_alertas_cievs.md",
+    )
 
     c1, c2, c3 = st.columns(3)
     c1.metric("Itens na fila CIEVS", fmt(len(fila), 0))
@@ -2313,6 +2642,12 @@ def epi_panel_section():
     st.caption(
         f"Confirmados SINAN · incidência/mortalidade ×100 mil · letalidade (%). "
         f"Snapshot de referência: {ano_ref}. População municipal com carry-forward quando necessário."
+    )
+    render_interpretacao(
+        "narr_epi",
+        interp.GUIDE_EPI,
+        lambda use_llm: interp.narrativa_epi(resumo, ano_ref, use_llm=use_llm),
+        download_name="justificativa_painel_epi_cievs.md",
     )
 
     row = resumo[resumo["ano_evento_v17"] == ano_ref]
@@ -2469,6 +2804,12 @@ def assistant_section():
 
 
 def report_section(df):
+    render_interpretacao(
+        "narr_relatorio",
+        interp.GUIDE_RELATORIO,
+        lambda use_llm: interp.narrativa_relatorio(use_llm=use_llm),
+        download_name="justificativa_relatorios_cievs.md",
+    )
     envio = REL / "BOLETIM_CIEVS_MENINGITES_ENVIO_V25.md"
     narr = REL / "BOLETIM_SEMANAL_MENINGITES_V23_NARRATIVA_IA.md"
     boletim = REL / "BOLETIM_SEMANAL_MENINGITES_V23_RASCUNHO.md"
@@ -2603,8 +2944,17 @@ def main():
     ])
 
     with tabs[0]:
-        build_metric_cards(df)
         gest = read_any(OUT / "indicadores_gestao_semana_v24.csv")
+        br = read_any(OUT / "backlog_operacional_resumo_v25.csv")
+        fila_ex = read_any(OUT / "alertas_inteligentes_fila_cievs_v23.csv")
+        ms_resumo = read_any(OUT / "indicadores_ms_operacionais_v23.csv")
+        render_interpretacao(
+            "narr_executivo",
+            interp.GUIDE_EXECUTIVO,
+            lambda use_llm: interp.narrativa_executivo(gest, br, fila_ex, ms_resumo, use_llm=use_llm),
+            download_name="justificativa_executivo_cievs.md",
+        )
+        build_metric_cards(df)
         if not gest.empty:
             g = gest.iloc[0]
             st.markdown("---")
@@ -2624,7 +2974,6 @@ def main():
             st.write(g.get("acao_sugerida", ""))
 
         # Backlog V25 no executivo
-        br = read_any(OUT / "backlog_operacional_resumo_v25.csv")
         gx = read_any(OUT / "indicadores_gestao_extras_v25.csv")
         if not br.empty or not gx.empty:
             st.markdown("---")
@@ -2679,8 +3028,6 @@ def main():
                 timeseries_cases(df)
 
         # Destaque rápido MS + fila
-        ms_resumo = read_any(OUT / "indicadores_ms_operacionais_v23.csv")
-        fila_ex = read_any(OUT / "alertas_inteligentes_fila_cievs_v23.csv")
         epi_ex = read_any(OUT / "painel_epi_resumo_ano_v23.csv")
         if not ms_resumo.empty or not fila_ex.empty or not epi_ex.empty:
             st.markdown("---")
@@ -2760,6 +3107,21 @@ def main():
         assistant_section()
 
     with tabs[5]:
+        score = read_any(OUT / "score_risco_municipal_nt97_v25.csv")
+        ind_full = read_any(OUT / "indicadores_municipio_ano_v17.csv")
+        ind_map_preview = pd.DataFrame()
+        if not ind_full.empty:
+            ind_map_preview = ind_full.copy()
+            if ano_sel and "ano_evento_v17" in ind_map_preview.columns:
+                ind_map_preview = ind_map_preview[ind_map_preview["ano_evento_v17"].isin(ano_sel)]
+            latest = pd.to_numeric(ind_map_preview["ano_evento_v17"], errors="coerce").max() if "ano_evento_v17" in ind_map_preview.columns else np.nan
+            ind_map_preview = ind_map_preview[pd.to_numeric(ind_map_preview["ano_evento_v17"], errors="coerce").eq(latest)].copy() if "ano_evento_v17" in ind_map_preview.columns else ind_map_preview
+        render_interpretacao(
+            "narr_mapas",
+            interp.GUIDE_MAPAS,
+            lambda use_llm: interp.narrativa_mapas(ind_map_preview, score, use_llm=use_llm),
+            download_name="justificativa_mapas_cievs.md",
+        )
         if shapefile is not None:
             st.success(
                 f"Malha municipal ativa: **{len(shapefile)}** municípios "
@@ -2770,12 +3132,10 @@ def main():
                 "Shapefile municipal não carregado. Verifique `MT_Municipios_2024.shp` na pasta do projeto "
                 "e pressione **C** no app para limpar o cache."
             )
-        score = read_any(OUT / "score_risco_municipal_nt97_v25.csv")
         if not score.empty and "score_risco_nt97_v25" in score.columns:
             st.subheader("Score de risco NT 154 (90 dias)")
             choropleth_or_points(score, shapefile, latlon, "score_risco_nt97_v25", "Score municipal NT 154")
             st.markdown("---")
-        ind_full = read_any(OUT / "indicadores_municipio_ano_v17.csv")
         if not ind_full.empty:
             ind_map = ind_full.copy()
             if ano_sel and "ano_evento_v17" in ind_map.columns:
@@ -2805,6 +3165,14 @@ def main():
 
     with tabs[6]:
         st.subheader("Odds Ratio separado por domínio analítico")
+        ors21 = read_any(OUT / "odds_ratio_clinico_socio_comorb_v21.csv")
+        or_class = read_any(OUT / "odds_classificacao_desfechos_v20.csv")
+        render_interpretacao(
+            "narr_or",
+            interp.GUIDE_OR,
+            lambda use_llm: interp.narrativa_or(ors21, or_class, use_llm=use_llm),
+            download_name="justificativa_or_cievs.md",
+        )
         or_interpretation_guide()
         mort = read_any(OUT / "mortalidade_sinan_sim_resumo_v23.csv")
         if not mort.empty:
@@ -2815,7 +3183,6 @@ def main():
             c3.metric("União SINAN∪SIM", fmt(r.get("obitos_uniao_sinan_sim"), 0))
             c4.metric("SIM sem SINAN", fmt(r.get("obitos_sim_sem_sinan"), 0))
             st.caption(str(r.get("nota") or ""))
-        ors21 = read_any(OUT / "odds_ratio_clinico_socio_comorb_v21.csv")
         if not ors21.empty:
             for dominio, titulo in [
                 ("Clínico", "ODDS RATIO clínico — sinais e sintomas"),
@@ -2831,7 +3198,6 @@ def main():
 
         st.markdown("---")
         st.subheader("OR por classificação agrupada: óbito, internação e presença de comorbidades")
-        or_class = read_any(OUT / "odds_classificacao_desfechos_v20.csv")
         if not or_class.empty:
             forest_plot_or_labeled(
                 or_class.rename(columns={"classificacao_agrupada": "exposicao"}),
@@ -2881,14 +3247,20 @@ def main():
         moran = read_any(OUT / "moran_global_v17.csv")
         lisa = read_any(OUT / "lisa_clusters_v17.csv")
         rank = read_any(OUT / "ranking_risco_territorial_v17.csv")
+        dist = read_any(OUT / "geoespacial_laboratorio_distancia_v20.csv")
+        corr_dist = read_any(OUT / "correlacao_distancia_laboratorio_v20.csv")
+        render_interpretacao(
+            "narr_geo",
+            interp.GUIDE_GEO,
+            lambda use_llm: interp.narrativa_geo(moran, rank, corr_dist, use_llm=use_llm),
+            download_name="justificativa_geoespacial_cievs.md",
+        )
         if not moran.empty:
             st.dataframe(moran, use_container_width=True)
         if not rank.empty:
             choropleth_or_points(rank, shapefile, latlon, "score_risco", "Score de risco territorial")
         if not lisa.empty:
             st.dataframe(lisa, use_container_width=True)
-        dist = read_any(OUT / "geoespacial_laboratorio_distancia_v20.csv")
-        corr_dist = read_any(OUT / "correlacao_distancia_laboratorio_v20.csv")
         if not dist.empty:
             if "distancia_cuiaba_km" in dist.columns:
                 dist["distancia_cuiaba_km"] = pd.to_numeric(dist["distancia_cuiaba_km"], errors="coerce")
