@@ -2,7 +2,8 @@
 """
 16_assistente_cievs_v23.py
 Assistente CIEVS: recuperação normativa (RAG local) + narrativa do boletim.
-Funciona offline; se OPENAI_API_KEY estiver definida, enriquece com LLM opcional.
+Funciona offline; com LLM_API_KEY / GEMINI_API_KEY no .env enriquece via Gemini
+(OpenAI-compatible). OPENAI_API_KEY também é aceita como alternativa.
 """
 
 from __future__ import annotations
@@ -128,8 +129,8 @@ def answer_offline(query: str, contexto_dados: str = "") -> dict:
     }
 
 
-def _openai_enrich(prompt: str) -> str | None:
-    """Chamada opcional LLM (OpenAI ou Gemini OpenAI-compatible)."""
+def llm_credentials() -> dict:
+    """Resolve chave/URL/modelo a partir do .env (Gemini primeiro neste projeto)."""
     try:
         from meningites_env import load_meningites_env
         load_meningites_env()
@@ -137,28 +138,50 @@ def _openai_enrich(prompt: str) -> str | None:
         pass
 
     api_key = (
-        os.environ.get("OPENAI_API_KEY")
-        or os.environ.get("MENINGITES_OPENAI_API_KEY")
-        or os.environ.get("LLM_API_KEY")
+        os.environ.get("LLM_API_KEY")
         or os.environ.get("GEMINI_API_KEY")
-    )
-    if not api_key:
-        return None
-
-    url = (
-        os.environ.get("LLM_API_URL")
-        or os.environ.get("OPENAI_BASE_URL")
-        or "https://api.openai.com/v1/chat/completions"
+        or os.environ.get("MENINGITES_OPENAI_API_KEY")
+        or os.environ.get("OPENAI_API_KEY")
     )
     model = (
         os.environ.get("LLM_MODEL")
         or os.environ.get("GEMINI_MODEL")
         or os.environ.get("MENINGITES_OPENAI_MODEL")
-        or "gpt-4o-mini"
+        or "gemini-2.5-flash"
     )
-    # Gemini 2.0-flash foi descontinuado na API; mapear para modelo atual.
-    if model.strip().lower() in {"gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"}:
+    # Gemini 2.0-flash / 1.5 foram descontinuados na API; mapear para modelo atual.
+    if str(model).strip().lower() in {"gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"}:
         model = "gemini-2.5-flash"
+
+    url = os.environ.get("LLM_API_URL") or os.environ.get("OPENAI_BASE_URL") or ""
+    gemini_default = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+    if not url:
+        if "gemini" in str(model).lower() or os.environ.get("GEMINI_API_KEY") or os.environ.get("LLM_API_KEY"):
+            url = gemini_default
+        else:
+            url = "https://api.openai.com/v1/chat/completions"
+    # Se a URL ainda aponta para OpenAI mas o modelo é Gemini, forçar endpoint Gemini.
+    if "gemini" in str(model).lower() and "googleapis.com" not in url and "openai.com" in url:
+        url = gemini_default
+
+    provider = "gemini" if "googleapis.com" in url or "gemini" in str(model).lower() else "openai"
+    return {
+        "api_key": api_key or "",
+        "url": url,
+        "model": model,
+        "provider": provider,
+        "disponivel": bool(api_key),
+    }
+
+
+def _openai_enrich(prompt: str) -> str | None:
+    """Chamada opcional LLM (Gemini OpenAI-compatible ou OpenAI)."""
+    cfg = llm_credentials()
+    api_key = cfg["api_key"]
+    if not api_key:
+        return None
+    url = cfg["url"]
+    model = cfg["model"]
 
     try:
         import urllib.request
@@ -388,15 +411,18 @@ def main():
         })
     pd.DataFrame(resultados).to_csv(OUT / "assistente_smoke_test_v23.csv", index=False, encoding="utf-8-sig")
 
+    cfg = llm_credentials()
     meta = {
         "gerado_em": datetime.now().isoformat(timespec="seconds"),
         "n_documentos_kb": len(DOCS),
-        "llm_disponivel": bool(os.environ.get("OPENAI_API_KEY") or os.environ.get("MENINGITES_OPENAI_API_KEY")),
+        "llm_disponivel": cfg["disponivel"],
+        "llm_provider": cfg["provider"],
+        "llm_model": cfg["model"],
         "arquivos": [str(KB_PATH.name), str(NARR_PATH.name), str(NARR_REL.name)],
     }
     META_PATH.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
     print("[OK] Assistente CIEVS V23 gerado.")
-    print(f"  KB: {len(DOCS)} docs | LLM: {meta['llm_disponivel']}")
+    print(f"  KB: {len(DOCS)} docs | LLM: {meta['llm_disponivel']} ({cfg['provider']}:{cfg['model']})")
     print(f"  Narrativa: {NARR_REL}")
     for r in resultados:
         print(f"  Q: {r['pergunta'][:50]}... -> {r['top_fonte']} ({r['top_score']})")

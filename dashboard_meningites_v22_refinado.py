@@ -14,15 +14,91 @@ import plotly.graph_objects as go
 from meningites_v17_common import *
 import interpretacoes_painel_v26 as interp
 
+# Identidade visual GOV-MT / SES-MT — azul oficial #1B3281 (Pantone 2758C)
+SES_AZUL = {
+    "oficial": "#1B3281",
+    "navy": "#0D1A4A",
+    "deep": "#121F54",
+    "primary": "#1B3281",
+    "mid": "#2A4499",
+    "bright": "#3A5BB8",
+    "accent": "#4A6FCF",
+    "sky": "#6B8FDE",
+    "soft": "#8AA6E6",
+    "ice": "#B8C9F2",
+    "mist": "#D6E0F7",
+    "wash": "#EEF2FB",
+    "bg": "#F5F7FC",
+    "text": "#0F1B4A",
+    "muted": "#5B6B8C",
+    "border": "#C5D0EA",
+    "white": "#FFFFFF",
+    # Semáforo / gravidade em intensidade de azul (claro=ok → escuro=crítico)
+    "ok": "#5B8DEF",
+    "atencao": "#3A5BB8",
+    "alto": "#1B3281",
+    "critico": "#0D1A4A",
+    "rotina": "#8AA6E6",
+    "neutro": "#7A8FB5",
+    # OR / tendência
+    "risco": "#0D1A4A",
+    "protecao": "#6B8FDE",
+    "piora": "#121F54",
+    "melhora": "#4A6FCF",
+    "estavel": "#8AA6E6",
+}
+PLOTLY_BLUES = [
+    SES_AZUL["wash"],
+    SES_AZUL["ice"],
+    SES_AZUL["soft"],
+    SES_AZUL["sky"],
+    SES_AZUL["accent"],
+    SES_AZUL["bright"],
+    SES_AZUL["mid"],
+    SES_AZUL["oficial"],
+    SES_AZUL["navy"],
+]
+
 st.set_page_config(
     page_title="Meningites CIEVS-MT",
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
+# Paleta Plotly padrão do painel (tons SES-MT)
+try:
+    px.defaults.color_continuous_scale = PLOTLY_BLUES
+    px.defaults.color_discrete_sequence = [
+        SES_AZUL["oficial"],
+        SES_AZUL["accent"],
+        SES_AZUL["sky"],
+        SES_AZUL["mid"],
+        SES_AZUL["bright"],
+        SES_AZUL["soft"],
+        SES_AZUL["ice"],
+        SES_AZUL["navy"],
+    ]
+except Exception:
+    pass
+
 
 def uid():
     return uuid.uuid4().hex
+
+
+def llm_enrich_checkbox_label() -> str:
+    """Rótulo único: projeto usa Gemini via .env (LLM_API_KEY)."""
+    try:
+        assist = __import__("16_assistente_cievs_v23")
+        cfg = assist.llm_credentials()
+        if cfg.get("disponivel"):
+            return (
+                f"Enriquecer com LLM ({cfg.get('provider', 'gemini')}: "
+                f"{cfg.get('model', 'gemini-2.5-flash')} · .env)"
+            )
+    except Exception:
+        pass
+    return "Enriquecer com LLM (Gemini via LLM_API_KEY / GEMINI_API_KEY no .env)"
 
 
 def render_interpretacao(
@@ -39,7 +115,7 @@ def render_interpretacao(
         st.markdown(guide_html, unsafe_allow_html=True)
     st.subheader(titulo)
     usar_llm = st.checkbox(
-        "Enriquecer com LLM (Gemini/OpenAI se configurado no .env)",
+        llm_enrich_checkbox_label(),
         value=False,
         key=llm_key or f"{session_key}_llm",
     )
@@ -336,7 +412,7 @@ def choropleth_or_points(ind, shapefile, latlon, metric, title):
                 color=metric,
                 hover_name="municipio_v17",
                 hover_data=hover,
-                color_continuous_scale="YlOrRd",
+                color_continuous_scale=PLOTLY_BLUES,
                 range_color=(0, zmax),
                 mapbox_style="carto-positron",
                 center={"lat": -12.8, "lon": -55.8},
@@ -347,7 +423,7 @@ def choropleth_or_points(ind, shapefile, latlon, metric, title):
             )
             fig.update_traces(
                 marker_line_width=0.35,
-                marker_line_color="#6b7280",
+                marker_line_color=SES_AZUL["neutro"],
             )
             fig.update_layout(margin=dict(l=0, r=0, t=40, b=0))
             st.caption(f"{len(g)} municípios na malha · valor 0 = sem registro no filtro (cor mais clara).")
@@ -374,7 +450,7 @@ def choropleth_or_points(ind, shapefile, latlon, metric, title):
         hover_data={"casos": True, "confirmados": True, "obitos_meningite": True},
         zoom=4.5,
         height=560,
-        color_continuous_scale="YlOrRd",
+        color_continuous_scale=PLOTLY_BLUES,
         title=title + " (pontos — fallback)",
     )
     fig.update_layout(mapbox_style="carto-positron")
@@ -456,84 +532,94 @@ def significant_alerts_from_frames(frames, threshold=0.005, title="Achados estat
     st.dataframe(out.sort_values("p_value"), use_container_width=True)
 
 def inject_ui_css():
-    """Visual / UX: tipografia, contraste, deltas e abas legíveis."""
+    """Visual SES-MT: azul oficial #1B3281 e tons derivados."""
+    a = SES_AZUL
     st.markdown(
-        """
+        f"""
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap');
-  html, body, [class*="css"]  { font-family: 'Source Sans 3', 'Segoe UI', sans-serif; }
-  .stApp { background: linear-gradient(165deg, #e8f2ec 0%, #f7faf8 180px, #ffffff 420px); }
-  h1 { letter-spacing: -0.03em !important; color: #0a3326 !important; font-weight: 800 !important; }
-  h2, h3 { color: #12352a !important; font-weight: 700 !important; }
-  div[data-testid="stTabs"] button[role="tab"] {
+  html, body, [class*="css"]  {{ font-family: 'Source Sans 3', 'Segoe UI', sans-serif; }}
+  .stApp {{ background: linear-gradient(165deg, {a['wash']} 0%, {a['bg']} 180px, {a['white']} 420px); }}
+  h1 {{ letter-spacing: -0.03em !important; color: {a['navy']} !important; font-weight: 800 !important; }}
+  h2, h3 {{ color: {a['deep']} !important; font-weight: 700 !important; }}
+  div[data-testid="stTabs"] button[role="tab"] {{
     font-size: 0.9rem !important;
     white-space: nowrap !important;
     font-weight: 600 !important;
-  }
-  div[data-testid="stTabs"] [data-baseweb="tab-list"] {
+  }}
+  div[data-testid="stTabs"] [data-baseweb="tab-list"] {{
     gap: 0.2rem;
     overflow-x: auto !important;
     flex-wrap: nowrap !important;
-    border-bottom: 2px solid #d7e5dd;
+    border-bottom: 2px solid {a['border']};
     padding-bottom: 2px;
-  }
-  div[data-testid="stTabs"] button[aria-selected="true"] {
-    color: #0b6e4f !important;
-    border-bottom: 3px solid #0b6e4f !important;
-  }
-  .hero-band {
-    background: linear-gradient(120deg, #0b6e4f 0%, #147a5a 45%, #1a8f6a 100%);
+  }}
+  div[data-testid="stTabs"] button[aria-selected="true"] {{
+    color: {a['oficial']} !important;
+    border-bottom: 3px solid {a['oficial']} !important;
+  }}
+  .hero-band {{
+    background: linear-gradient(120deg, {a['navy']} 0%, {a['oficial']} 48%, {a['bright']} 100%);
     color: #fff;
     border-radius: 16px;
     padding: 16px 20px;
     margin: 0 0 16px 0;
-    box-shadow: 0 8px 24px rgba(11,110,79,.18);
-  }
-  .hero-band h1 { color: #fff !important; margin: 0 !important; font-size: 1.55rem !important; }
-  .hero-band p { margin: 6px 0 0 0; opacity: .92; font-size: 0.95rem; }
-  .kpi-card {
-    background: #fff;
-    border: 1px solid #d7e3dc;
+    box-shadow: 0 8px 24px rgba(27,50,129,.22);
+  }}
+  .hero-band h1 {{ color: #fff !important; margin: 0 !important; font-size: 1.55rem !important; }}
+  .hero-band p {{ margin: 6px 0 0 0; opacity: .92; font-size: 0.95rem; }}
+  .kpi-card {{
+    background: {a['white']};
+    border: 1px solid {a['border']};
     border-radius: 16px;
     padding: 14px 16px;
-    box-shadow: 0 2px 8px rgba(16,42,35,.06);
+    box-shadow: 0 2px 8px rgba(15,27,74,.06);
     min-height: 200px;
     transition: box-shadow .15s ease;
-  }
-  .kpi-label { font-size: 0.95rem; font-weight: 700; color: #374151; }
-  .kpi-value { font-size: 2.05rem; font-weight: 800; color: #111827; line-height: 1.15; }
-  .kpi-sub { font-size: 0.78rem; color: #6b7280; margin-top: 2px; }
-  .kpi-line { font-size: 0.86rem; color: #374151; margin-top: 8px; }
-  .kpi-delta { font-size: 1.15rem; font-weight: 800; margin-top: 8px; }
-  .section-card {
-    background: #fff;
-    border: 1px solid #e5ebe7;
-    border-left: 4px solid #0b6e4f;
+  }}
+  .kpi-label {{ font-size: 0.95rem; font-weight: 700; color: {a['muted']}; }}
+  .kpi-value {{ font-size: 2.05rem; font-weight: 800; color: {a['text']}; line-height: 1.15; }}
+  .kpi-sub {{ font-size: 0.78rem; color: {a['neutro']}; margin-top: 2px; }}
+  .kpi-line {{ font-size: 0.86rem; color: {a['muted']}; margin-top: 8px; }}
+  .kpi-delta {{ font-size: 1.15rem; font-weight: 800; margin-top: 8px; }}
+  .section-card {{
+    background: {a['white']};
+    border: 1px solid {a['border']};
+    border-left: 4px solid {a['oficial']};
     border-radius: 12px;
     padding: 14px 16px;
     margin-bottom: 12px;
-    box-shadow: 0 1px 4px rgba(16,42,35,.04);
-  }
-  .guide-card {
-    background: linear-gradient(135deg, #f0faf5 0%, #ffffff 70%);
-    border: 1px solid #cfe3d7;
+    box-shadow: 0 1px 4px rgba(15,27,74,.04);
+  }}
+  .guide-card {{
+    background: linear-gradient(135deg, {a['wash']} 0%, {a['white']} 70%);
+    border: 1px solid {a['border']};
     border-radius: 14px;
     padding: 14px 16px;
     margin-bottom: 14px;
-  }
-  .ai-box {
-    background: #0f172a;
-    color: #e2e8f0;
+  }}
+  .ai-box {{
+    background: {a['navy']};
+    color: {a['mist']};
     border-radius: 14px;
     padding: 16px 18px;
     margin-top: 10px;
     line-height: 1.55;
-  }
-  .ai-box strong { color: #6ee7b7; }
-  div[data-testid="stMetricDelta"] svg { display: none !important; }
-  div[data-testid="stMetricDelta"] { font-weight: 700 !important; }
-  .block-container { padding-top: 1rem !important; max-width: 1420px; }
-  [data-testid="stSidebar"] { background: #f3f8f5; }
+  }}
+  .ai-box strong {{ color: {a['ice']}; }}
+  div[data-testid="stMetricDelta"] svg {{ display: none !important; }}
+  div[data-testid="stMetricDelta"] {{ font-weight: 700 !important; }}
+  .block-container {{ padding-top: 1rem !important; max-width: 1420px; }}
+  [data-testid="stSidebar"] {{ background: {a['wash']}; }}
+  .stButton > button {{
+    background: {a['oficial']} !important;
+    color: #fff !important;
+    border: 1px solid {a['deep']} !important;
+  }}
+  .stButton > button:hover {{
+    background: {a['bright']} !important;
+    border-color: {a['oficial']} !important;
+  }}
 </style>
         """,
         unsafe_allow_html=True,
@@ -543,19 +629,19 @@ def inject_ui_css():
 def trend_arrow_color(delta, *, higher_is_bad=True):
     """
     Seta segue a tendência (▲ aumento / ▼ queda).
-    Cor epidemiológica padrão: aumento = vermelho, queda = verde.
+    Cores SES-MT: piora = azul navy; melhora = azul médio; estável = azul suave.
     """
     if pd.isna(delta):
-        return "→", "#6b7280"
+        return "→", SES_AZUL["neutro"]
     try:
         d = float(delta)
     except Exception:
-        return "→", "#6b7280"
+        return "→", SES_AZUL["neutro"]
     if abs(d) < 1e-12:
-        return "●", "#d97706"
+        return "●", SES_AZUL["estavel"]
     if d > 0:
-        return "▲", ("#dc2626" if higher_is_bad else "#16a34a")
-    return "▼", ("#16a34a" if higher_is_bad else "#dc2626")
+        return "▲", (SES_AZUL["piora"] if higher_is_bad else SES_AZUL["melhora"])
+    return "▼", (SES_AZUL["melhora"] if higher_is_bad else SES_AZUL["piora"])
 
 
 def arrow_html(var):
@@ -563,18 +649,20 @@ def arrow_html(var):
 
 
 SEMAFORO_COLORS = {
-    "Verde": "#16a34a",
-    "verde": "#16a34a",
-    "Vermelho": "#dc2626",
-    "vermelho": "#dc2626",
-    "Amarelo": "#ca8a04",
-    "amarelo": "#ca8a04",
-    "Atenção": "#ca8a04",
-    "Atencao": "#ca8a04",
-    "Alto": "#ea580c",
-    "Crítico": "#b91c1c",
-    "Critico": "#b91c1c",
-    "Rotina": "#64748b",
+    "Verde": SES_AZUL["ok"],
+    "verde": SES_AZUL["ok"],
+    "Vermelho": SES_AZUL["critico"],
+    "vermelho": SES_AZUL["critico"],
+    "Amarelo": SES_AZUL["atencao"],
+    "amarelo": SES_AZUL["atencao"],
+    "Atenção": SES_AZUL["atencao"],
+    "Atencao": SES_AZUL["atencao"],
+    "Alto": SES_AZUL["alto"],
+    "Crítico": SES_AZUL["critico"],
+    "Critico": SES_AZUL["critico"],
+    "Rotina": SES_AZUL["rotina"],
+    "Informativo": SES_AZUL["sky"],
+    "Cinza": SES_AZUL["neutro"],
 }
 
 
@@ -583,19 +671,19 @@ def semaforo_color(txt):
     if s in SEMAFORO_COLORS:
         return SEMAFORO_COLORS[s]
     low = s.lower()
-    if "verde" in low:
-        return "#16a34a"
+    if "verde" in low or low in {"ok", "bom"}:
+        return SES_AZUL["ok"]
     if "vermel" in low or "crít" in low or "crit" in low:
-        return "#dc2626"
+        return SES_AZUL["critico"]
     if "amarelo" in low or "aten" in low:
-        return "#ca8a04"
+        return SES_AZUL["atencao"]
     if "alto" in low:
-        return "#ea580c"
-    return "#6b7280"
+        return SES_AZUL["alto"]
+    return SES_AZUL["neutro"]
 
 
 def semaforo_badge(txt):
-    """Badge colorido — fonte/fundo seguem Verde/Vermelho/Amarelo (visível no Streamlit)."""
+    """Badge em tons de azul SES-MT (intensidade = gravidade)."""
     label = str(txt or "—")
     c = semaforo_color(label)
     return (
@@ -606,15 +694,17 @@ def semaforo_badge(txt):
 
 
 def plotly_semaforo_map(series=None):
-    """Mapa de cores Plotly para coluna semaforo / classe_alerta."""
+    """Mapa de cores Plotly — semáforo em tons SES-MT."""
     base = {
-        "Verde": "#16a34a",
-        "Vermelho": "#dc2626",
-        "Amarelo": "#eab308",
-        "Atenção": "#eab308",
-        "Alto": "#ea580c",
-        "Crítico": "#b91c1c",
-        "Rotina": "#94a3b8",
+        "Verde": SES_AZUL["ok"],
+        "Vermelho": SES_AZUL["critico"],
+        "Amarelo": SES_AZUL["atencao"],
+        "Atenção": SES_AZUL["atencao"],
+        "Alto": SES_AZUL["alto"],
+        "Crítico": SES_AZUL["critico"],
+        "Rotina": SES_AZUL["rotina"],
+        "Informativo": SES_AZUL["sky"],
+        "Cinza": SES_AZUL["neutro"],
     }
     if series is not None:
         for v in pd.Series(series).dropna().astype(str).unique():
@@ -837,7 +927,7 @@ def forest_plot_or_labeled(data, title, max_items=25):
     d = d.sort_values(["p_value", "or"], ascending=[True, False]).head(max_items).copy()
     d["rotulo"] = d["exposicao"].astype(str).str.replace("_", " ").str[:78]
     d["interpretacao"] = d.apply(_or_interpret_row, axis=1)
-    d["cor"] = d["or"].apply(lambda x: "#dc2626" if x > 1 else ("#16a34a" if x < 1 else "#64748b"))
+    d["cor"] = d["or"].apply(lambda x: SES_AZUL["risco"] if x > 1 else (SES_AZUL["protecao"] if x < 1 else SES_AZUL["neutro"]))
     d["texto_or"] = d.apply(
         lambda r: f"OR {fmt(r['or'],2)} | IC95% {fmt(r['ic95_inferior'],2)}–{fmt(r['ic95_superior'],2)} | p={fmt(r.get('p_value', np.nan),4)} · {r['interpretacao']}",
         axis=1,
@@ -847,7 +937,7 @@ def forest_plot_or_labeled(data, title, max_items=25):
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x=d["or"], y=yvals, mode="markers",
-        marker=dict(size=12, color=d["cor"], line=dict(width=1, color="#111827")),
+        marker=dict(size=12, color=d["cor"], line=dict(width=1, color=SES_AZUL['navy'])),
         customdata=np.stack([d["rotulo"], d["desfecho"], d["p_value"], d["texto_or"], d["interpretacao"]], axis=-1),
         hovertemplate="<b>%{customdata[0]}</b><br>Desfecho: %{customdata[1]}<br>%{customdata[3]}<extra></extra>",
         name="OR",
@@ -862,7 +952,7 @@ def forest_plot_or_labeled(data, title, max_items=25):
             font=dict(size=10, color=r["cor"]),
         )
 
-    fig.add_vline(x=1, line_dash="dash", line_color="#111827")
+    fig.add_vline(x=1, line_dash='dash', line_color=SES_AZUL['navy'])
     fig.update_layout(
         title=title,
         height=max(580, 36 * len(d) + 200),
@@ -900,8 +990,8 @@ def or_interpretation_guide():
         """
 <div class="section-card">
 <b>Como ler Odds Ratio (OR) — guia rápido</b><br/>
-• <span style="color:#dc2626;font-weight:700;">OR &gt; 1 (vermelho)</span>: associação com <b>maior chance</b> do desfecho → <b>risco</b>.<br/>
-• <span style="color:#16a34a;font-weight:700;">OR &lt; 1 (verde)</span>: associação com <b>menor chance</b> do desfecho → <b>proteção</b>.<br/>
+• <span style="color:#0D1A4A;font-weight:700;">OR &gt; 1 (azul navy)</span>: associação com <b>maior chance</b> do desfecho → <b>risco</b>.<br/>
+• <span style="color:#6B8FDE;font-weight:700;">OR &lt; 1 (azul claro)</span>: associação com <b>menor chance</b> do desfecho → <b>proteção</b>.<br/>
 • <b>OR ≈ 1</b> ou IC95% que passa por 1: sem evidência clara de associação.<br/>
 • <b>p &lt; 0,05</b> (ou &lt; 0,005 nos destaques): associação estatisticamente relevante, mas <i>não prova causalidade</i>.<br/>
 • Use o gráfico: pontos à <b>direita</b> da linha tracejada (1) = risco; à <b>esquerda</b> = proteção.<br/>
@@ -1006,7 +1096,7 @@ def forecast_nowcast_visual(base, fc, nowdf, desfecho):
         s = dfc[pd.to_numeric(dfc["horizonte_dias"], errors="coerce").eq(float(h))].copy().sort_values("data_prevista")
         if not s.empty:
             x0, x1 = s["data_prevista"].min(), s["data_prevista"].max()
-            fig.add_vrect(x0=x0, x1=x1, fillcolor="red", opacity=0.07, line_width=0, annotation_text="Janela preditiva", annotation_position="top left")
+            fig.add_vrect(x0=x0, x1=x1, fillcolor=SES_AZUL['accent'], opacity=0.10, line_width=0, annotation_text="Janela preditiva", annotation_position="top left")
             if {"lower_95", "upper_95"}.issubset(s.columns):
                 fig.add_trace(go.Scatter(x=s["data_prevista"], y=s["upper_95"], mode="lines", line=dict(width=0), showlegend=False))
                 fig.add_trace(go.Scatter(x=s["data_prevista"], y=s["lower_95"], mode="lines", fill="tonexty", line=dict(width=0), name="IC95%"))
@@ -1104,14 +1194,14 @@ def _cramer_nivel(v) -> tuple[str, str]:
     try:
         x = float(v)
     except Exception:
-        return "—", "#64748b"
+        return "—", SES_AZUL["neutro"]
     if x >= 0.15:
-        return "moderada/forte", "#b91c1c"
+        return "moderada/forte", SES_AZUL["critico"]
     if x >= 0.10:
-        return "moderada", "#ea580c"
+        return "moderada", SES_AZUL["alto"]
     if x >= 0.05:
-        return "fraca–moderada", "#ca8a04"
-    return "fraca", "#64748b"
+        return "fraca–moderada", SES_AZUL["atencao"]
+    return "fraca", SES_AZUL["rotina"]
 
 
 def comorb_interpretation_guide():
@@ -1228,7 +1318,7 @@ def comorb_section_v21():
     # Narrativa IA / assistente
     st.subheader("Justificativa dos achados (assistente CIEVS)")
     usar_llm = st.checkbox(
-        "Enriquecer com LLM (se OPENAI_API_KEY estiver configurada)",
+        llm_enrich_checkbox_label(),
         value=False,
         key="comorb_llm",
     )
@@ -1509,16 +1599,16 @@ def _clima_forca(abs_r) -> tuple[str, str]:
     try:
         v = float(abs_r)
     except (TypeError, ValueError):
-        return "indefinida", "#94a3b8"
+        return "indefinida", SES_AZUL["neutro"]
     if pd.isna(v):
-        return "indefinida", "#94a3b8"
+        return "indefinida", SES_AZUL["neutro"]
     if v < 0.10:
-        return "desprezível/muito fraca", "#94a3b8"
+        return "desprezível/muito fraca", SES_AZUL["neutro"]
     if v < 0.30:
-        return "fraca", "#f59e0b"
+        return "fraca", SES_AZUL["sky"]
     if v < 0.50:
-        return "moderada", "#ea580c"
-    return "forte", "#dc2626"
+        return "moderada", SES_AZUL["alto"]
+    return "forte", SES_AZUL["critico"]
 
 
 def _clima_sentido(r) -> str:
@@ -1716,11 +1806,7 @@ def climate_section():
 
     # Narrativa no padrão comorbidades / OR
     st.subheader("Justificativa dos achados (assistente CIEVS)")
-    usar_llm = st.checkbox(
-        "Enriquecer com LLM (Gemini/OpenAI se configurado no .env)",
-        value=False,
-        key="clima_llm",
-    )
+    usar_llm = st.checkbox(llm_enrich_checkbox_label(), value=False, key="clima_llm")
     narr_key = f"clima_narrativa_{escolha}"
     if st.button("Gerar / atualizar texto justificativo", key="btn_clima_narr"):
         with st.spinner("Montando leitura assistida dos achados climáticos…"):
@@ -2055,7 +2141,7 @@ def plot_nowcast_forecast_historico(estrato: str, nc24: pd.DataFrame, fc24: pd.D
         fig.add_trace(go.Scatter(
             x=hist["periodo"], y=pd.to_numeric(hist["y"], errors="coerce"),
             mode="lines", name="Histórico (casos/SE)",
-            line=dict(color="#64748b", width=1.6),
+            line=dict(color=SES_AZUL['neutro'], width=1.6),
         ))
 
     sub = nc24[nc24["estrato"].astype(str).eq(estrato)].copy() if not nc24.empty and "estrato" in nc24.columns else pd.DataFrame()
@@ -2063,14 +2149,14 @@ def plot_nowcast_forecast_historico(estrato: str, nc24: pd.DataFrame, fc24: pd.D
         fig.add_trace(go.Scatter(
             x=sub["periodo"], y=pd.to_numeric(sub["observado"], errors="coerce"),
             mode="markers+lines", name="Observado (recente)",
-            marker=dict(size=9, color="#0f766e"), line=dict(color="#0f766e", width=2),
+            marker=dict(size=9, color=SES_AZUL['oficial']), line=dict(color=SES_AZUL['oficial'], width=2),
         ))
         y_nc = pd.to_numeric(sub["nowcast"], errors="coerce")
         fig.add_trace(go.Scatter(
             x=sub["periodo"], y=y_nc,
             mode="markers+lines", name="Nowcast",
-            marker=dict(size=10, symbol="diamond", color="#c2410c"),
-            line=dict(color="#c2410c", width=2, dash="dot"),
+            marker=dict(size=10, symbol='diamond', color=SES_AZUL['accent']),
+            line=dict(color=SES_AZUL['accent'], width=2, dash='dot'),
         ))
         if {"nowcast_p10", "nowcast_p90"}.issubset(sub.columns):
             fig.add_trace(go.Scatter(
@@ -2080,7 +2166,7 @@ def plot_nowcast_forecast_historico(estrato: str, nc24: pd.DataFrame, fc24: pd.D
             fig.add_trace(go.Scatter(
                 x=sub["periodo"], y=pd.to_numeric(sub["nowcast_p10"], errors="coerce"),
                 mode="lines", fill="tonexty", name="IC nowcast",
-                line=dict(width=0), fillcolor="rgba(194,65,12,0.18)",
+                line=dict(width=0), fillcolor="rgba(74,111,207,0.18)",
             ))
 
     fc_sub = pd.DataFrame()
@@ -2091,7 +2177,7 @@ def plot_nowcast_forecast_historico(estrato: str, nc24: pd.DataFrame, fc24: pd.D
         fig.add_trace(go.Scatter(
             x=fc_sub["periodo"], y=pd.to_numeric(fc_sub["pred"], errors="coerce"),
             mode="lines+markers", name="Forecast",
-            marker=dict(size=8, color="#1d4ed8"), line=dict(color="#1d4ed8", width=2.4),
+            marker=dict(size=8, color=SES_AZUL['bright']), line=dict(color=SES_AZUL['bright'], width=2.4),
         ))
         if {"lower_80", "upper_80"}.issubset(fc_sub.columns):
             fig.add_trace(go.Scatter(
@@ -2101,7 +2187,7 @@ def plot_nowcast_forecast_historico(estrato: str, nc24: pd.DataFrame, fc24: pd.D
             fig.add_trace(go.Scatter(
                 x=fc_sub["periodo"], y=pd.to_numeric(fc_sub["lower_80"], errors="coerce"),
                 mode="lines", fill="tonexty", name="IC 80% forecast",
-                line=dict(width=0), fillcolor="rgba(29,78,216,0.16)",
+                line=dict(width=0), fillcolor="rgba(27,50,129,0.16)",
             ))
 
     fig.update_layout(
@@ -2116,7 +2202,7 @@ def plot_nowcast_forecast_historico(estrato: str, nc24: pd.DataFrame, fc24: pd.D
             x=0,
             xanchor="left",
             bgcolor="rgba(255,255,255,0.9)",
-            bordercolor="#e5e7eb",
+            bordercolor=SES_AZUL['border'],
             borderwidth=1,
         ),
         margin=dict(l=50, r=30, t=70, b=110),
@@ -2746,7 +2832,7 @@ def assistant_section():
     st.caption(
         "Perguntas respondidas com recuperação de trechos da NT 154/2024, Informe Meningites, "
         "Caderno SINAN e Guia de Vigilância. Sempre valide com a equipe antes de comunicação oficial. "
-        "LLM opcional (Gemini/OpenAI) se as chaves estiverem no `.env` local."
+        "LLM opcional: **Gemini** (`LLM_API_KEY` / `GEMINI_API_KEY` + `LLM_MODEL` no `.env` local)."
     )
     try:
         from conhecimento_ms_meningites_v23 import FAQ_RAPIDO
@@ -2756,6 +2842,7 @@ def assistant_section():
         st.error(f"Assistente indisponível: {e}. Rode python 16_assistente_cievs_v23.py")
         return
 
+    cfg = assist.llm_credentials()
     meta_p = OUT / "assistente_meta_v23.json"
     if meta_p.exists():
         try:
@@ -2763,10 +2850,13 @@ def assistant_section():
             meta = json.loads(meta_p.read_text(encoding="utf-8"))
             st.info(
                 f"Base local: {meta.get('n_documentos_kb', '?')} documentos · "
-                f"LLM: {'disponível' if meta.get('llm_disponivel') else 'offline (só RAG local)'}"
+                f"LLM: {'disponível' if cfg.get('disponivel') else 'offline (só RAG local)'} "
+                f"({cfg.get('provider', '?')}: {cfg.get('model', '?')})"
             )
         except Exception:
             pass
+    elif cfg.get("disponivel"):
+        st.info(f"LLM: disponível ({cfg.get('provider')}: {cfg.get('model')})")
 
     narr = REL / "BOLETIM_SEMANAL_MENINGITES_V23_NARRATIVA_IA.md"
     if narr.exists():
@@ -2783,7 +2873,7 @@ def assistant_section():
         height=90,
         placeholder="Ex.: O que fazer em caso de DM em escola? Quando é surto comunitário?",
     )
-    usar_llm = st.checkbox("Tentar enriquecer com LLM (Gemini/OpenAI do .env)", value=False)
+    usar_llm = st.checkbox(llm_enrich_checkbox_label(), value=False)
     if st.button("Consultar normas", type="primary") and pergunta.strip():
         with st.spinner("Recuperando normas e montando resposta..."):
             ctx = assist.build_contexto_operacional()
