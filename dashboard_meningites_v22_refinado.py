@@ -86,11 +86,58 @@ def uid():
     return uuid.uuid4().hex
 
 
+def _safe_llm_credentials() -> dict:
+    """Credenciais LLM com fallback (Cloud pode falhar no import do módulo 16_*)."""
+    try:
+        from importlib import import_module
+        assist = import_module("16_assistente_cievs_v23")
+        fn = getattr(assist, "llm_credentials", None)
+        if callable(fn):
+            return fn()
+    except Exception:
+        pass
+    # Fallback local (mesmo contrato do assistente) — útil no Streamlit Cloud
+    try:
+        from meningites_env import load_meningites_env
+        load_meningites_env()
+    except Exception:
+        pass
+    import os
+    api_key = (
+        os.environ.get("LLM_API_KEY")
+        or os.environ.get("GEMINI_API_KEY")
+        or os.environ.get("MENINGITES_OPENAI_API_KEY")
+        or os.environ.get("OPENAI_API_KEY")
+        or ""
+    )
+    model = (
+        os.environ.get("LLM_MODEL")
+        or os.environ.get("GEMINI_MODEL")
+        or os.environ.get("MENINGITES_OPENAI_MODEL")
+        or "gemini-2.5-flash"
+    )
+    if str(model).strip().lower() in {"gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro"}:
+        model = "gemini-2.5-flash"
+    url = os.environ.get("LLM_API_URL") or os.environ.get("OPENAI_BASE_URL") or ""
+    gemini_default = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+    if not url:
+        url = gemini_default if ("gemini" in str(model).lower() or api_key) else "https://api.openai.com/v1/chat/completions"
+    if "gemini" in str(model).lower() and "googleapis.com" not in url:
+        url = gemini_default
+    provider = "gemini" if ("googleapis.com" in url or "gemini" in str(model).lower()) else "openai"
+    return {
+        "api_key": api_key,
+        "url": url,
+        "model": model,
+        "provider": provider,
+        "disponivel": bool(api_key),
+    }
+
+
 def llm_enrich_checkbox_label() -> str:
     """Rótulo único: projeto usa Gemini via .env (LLM_API_KEY)."""
     try:
-        assist = __import__("16_assistente_cievs_v23")
-        cfg = assist.llm_credentials()
+        cfg = _safe_llm_credentials()
         if cfg.get("disponivel"):
             return (
                 f"Enriquecer com LLM ({cfg.get('provider', 'gemini')}: "
@@ -2910,7 +2957,10 @@ def assistant_section():
         st.error(f"Assistente indisponível: {e}. Rode python 16_assistente_cievs_v23.py")
         return
 
-    cfg = assist.llm_credentials()
+    try:
+        cfg = _safe_llm_credentials()
+    except Exception:
+        cfg = {"disponivel": False, "provider": "offline", "model": "—"}
     meta_p = OUT / "assistente_meta_v23.json"
     if meta_p.exists():
         try:
