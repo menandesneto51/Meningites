@@ -33,19 +33,19 @@ SES_AZUL = {
     "muted": "#5B6B8C",
     "border": "#C5D0EA",
     "white": "#FFFFFF",
-    # Semáforo / gravidade em intensidade de azul (claro=ok → escuro=crítico)
-    "ok": "#5B8DEF",
-    "atencao": "#3A5BB8",
-    "alto": "#1B3281",
-    "critico": "#0D1A4A",
-    "rotina": "#8AA6E6",
     "neutro": "#7A8FB5",
-    # OR / tendência
-    "risco": "#0D1A4A",
-    "protecao": "#6B8FDE",
-    "piora": "#121F54",
-    "melhora": "#4A6FCF",
-    "estavel": "#8AA6E6",
+}
+
+# Semáforo e risco/proteção — cores semânticas (não confundir com identidade azul SES)
+SEMAFORO = {
+    "verde": "#16a34a",
+    "amarelo": "#ca8a04",
+    "laranja": "#ea580c",
+    "vermelho": "#dc2626",
+    "critico": "#b91c1c",
+    "rotina": "#64748b",
+    "neutro": "#6b7280",
+    "estavel": "#d97706",
 }
 PLOTLY_BLUES = [
     SES_AZUL["wash"],
@@ -629,19 +629,19 @@ def inject_ui_css():
 def trend_arrow_color(delta, *, higher_is_bad=True):
     """
     Seta segue a tendência (▲ aumento / ▼ queda).
-    Cores SES-MT: piora = azul navy; melhora = azul médio; estável = azul suave.
+    Cor epidemiológica: piora = vermelho, melhora = verde (identidade SES permanece azul).
     """
     if pd.isna(delta):
-        return "→", SES_AZUL["neutro"]
+        return "→", SEMAFORO["neutro"]
     try:
         d = float(delta)
     except Exception:
-        return "→", SES_AZUL["neutro"]
+        return "→", SEMAFORO["neutro"]
     if abs(d) < 1e-12:
-        return "●", SES_AZUL["estavel"]
+        return "●", SEMAFORO["estavel"]
     if d > 0:
-        return "▲", (SES_AZUL["piora"] if higher_is_bad else SES_AZUL["melhora"])
-    return "▼", (SES_AZUL["melhora"] if higher_is_bad else SES_AZUL["piora"])
+        return "▲", (SEMAFORO["vermelho"] if higher_is_bad else SEMAFORO["verde"])
+    return "▼", (SEMAFORO["verde"] if higher_is_bad else SEMAFORO["vermelho"])
 
 
 def arrow_html(var):
@@ -649,20 +649,20 @@ def arrow_html(var):
 
 
 SEMAFORO_COLORS = {
-    "Verde": SES_AZUL["ok"],
-    "verde": SES_AZUL["ok"],
-    "Vermelho": SES_AZUL["critico"],
-    "vermelho": SES_AZUL["critico"],
-    "Amarelo": SES_AZUL["atencao"],
-    "amarelo": SES_AZUL["atencao"],
-    "Atenção": SES_AZUL["atencao"],
-    "Atencao": SES_AZUL["atencao"],
-    "Alto": SES_AZUL["alto"],
-    "Crítico": SES_AZUL["critico"],
-    "Critico": SES_AZUL["critico"],
-    "Rotina": SES_AZUL["rotina"],
+    "Verde": SEMAFORO["verde"],
+    "verde": SEMAFORO["verde"],
+    "Vermelho": SEMAFORO["vermelho"],
+    "vermelho": SEMAFORO["vermelho"],
+    "Amarelo": SEMAFORO["amarelo"],
+    "amarelo": SEMAFORO["amarelo"],
+    "Atenção": SEMAFORO["amarelo"],
+    "Atencao": SEMAFORO["amarelo"],
+    "Alto": SEMAFORO["laranja"],
+    "Crítico": SEMAFORO["critico"],
+    "Critico": SEMAFORO["critico"],
+    "Rotina": SEMAFORO["rotina"],
     "Informativo": SES_AZUL["sky"],
-    "Cinza": SES_AZUL["neutro"],
+    "Cinza": SEMAFORO["neutro"],
 }
 
 
@@ -672,18 +672,18 @@ def semaforo_color(txt):
         return SEMAFORO_COLORS[s]
     low = s.lower()
     if "verde" in low or low in {"ok", "bom"}:
-        return SES_AZUL["ok"]
+        return SEMAFORO["verde"]
     if "vermel" in low or "crít" in low or "crit" in low:
-        return SES_AZUL["critico"]
+        return SEMAFORO["critico"]
     if "amarelo" in low or "aten" in low:
-        return SES_AZUL["atencao"]
+        return SEMAFORO["amarelo"]
     if "alto" in low:
-        return SES_AZUL["alto"]
-    return SES_AZUL["neutro"]
+        return SEMAFORO["laranja"]
+    return SEMAFORO["neutro"]
 
 
 def semaforo_badge(txt):
-    """Badge em tons de azul SES-MT (intensidade = gravidade)."""
+    """Badge verde/amarelo/vermelho — semáforo operacional (independente do tema azul SES)."""
     label = str(txt or "—")
     c = semaforo_color(label)
     return (
@@ -694,17 +694,17 @@ def semaforo_badge(txt):
 
 
 def plotly_semaforo_map(series=None):
-    """Mapa de cores Plotly — semáforo em tons SES-MT."""
+    """Mapa Plotly do semáforo operacional (verde/amarelo/vermelho)."""
     base = {
-        "Verde": SES_AZUL["ok"],
-        "Vermelho": SES_AZUL["critico"],
-        "Amarelo": SES_AZUL["atencao"],
-        "Atenção": SES_AZUL["atencao"],
-        "Alto": SES_AZUL["alto"],
-        "Crítico": SES_AZUL["critico"],
-        "Rotina": SES_AZUL["rotina"],
+        "Verde": SEMAFORO["verde"],
+        "Vermelho": SEMAFORO["vermelho"],
+        "Amarelo": SEMAFORO["amarelo"],
+        "Atenção": SEMAFORO["amarelo"],
+        "Alto": SEMAFORO["laranja"],
+        "Crítico": SEMAFORO["critico"],
+        "Rotina": SEMAFORO["rotina"],
         "Informativo": SES_AZUL["sky"],
-        "Cinza": SES_AZUL["neutro"],
+        "Cinza": SEMAFORO["neutro"],
     }
     if series is not None:
         for v in pd.Series(series).dropna().astype(str).unique():
@@ -927,7 +927,7 @@ def forest_plot_or_labeled(data, title, max_items=25):
     d = d.sort_values(["p_value", "or"], ascending=[True, False]).head(max_items).copy()
     d["rotulo"] = d["exposicao"].astype(str).str.replace("_", " ").str[:78]
     d["interpretacao"] = d.apply(_or_interpret_row, axis=1)
-    d["cor"] = d["or"].apply(lambda x: SES_AZUL["risco"] if x > 1 else (SES_AZUL["protecao"] if x < 1 else SES_AZUL["neutro"]))
+    d["cor"] = d["or"].apply(lambda x: SEMAFORO["vermelho"] if x > 1 else (SEMAFORO["verde"] if x < 1 else SEMAFORO["neutro"]))
     d["texto_or"] = d.apply(
         lambda r: f"OR {fmt(r['or'],2)} | IC95% {fmt(r['ic95_inferior'],2)}–{fmt(r['ic95_superior'],2)} | p={fmt(r.get('p_value', np.nan),4)} · {r['interpretacao']}",
         axis=1,
@@ -990,8 +990,8 @@ def or_interpretation_guide():
         """
 <div class="section-card">
 <b>Como ler Odds Ratio (OR) — guia rápido</b><br/>
-• <span style="color:#0D1A4A;font-weight:700;">OR &gt; 1 (azul navy)</span>: associação com <b>maior chance</b> do desfecho → <b>risco</b>.<br/>
-• <span style="color:#6B8FDE;font-weight:700;">OR &lt; 1 (azul claro)</span>: associação com <b>menor chance</b> do desfecho → <b>proteção</b>.<br/>
+• <span style="color:#dc2626;font-weight:700;">OR &gt; 1 (vermelho)</span>: associação com <b>maior chance</b> do desfecho → <b>risco</b>.<br/>
+• <span style="color:#16a34a;font-weight:700;">OR &lt; 1 (verde)</span>: associação com <b>menor chance</b> do desfecho → <b>proteção</b>.<br/>
 • <b>OR ≈ 1</b> ou IC95% que passa por 1: sem evidência clara de associação.<br/>
 • <b>p &lt; 0,05</b> (ou &lt; 0,005 nos destaques): associação estatisticamente relevante, mas <i>não prova causalidade</i>.<br/>
 • Use o gráfico: pontos à <b>direita</b> da linha tracejada (1) = risco; à <b>esquerda</b> = proteção.<br/>
@@ -1194,14 +1194,14 @@ def _cramer_nivel(v) -> tuple[str, str]:
     try:
         x = float(v)
     except Exception:
-        return "—", SES_AZUL["neutro"]
+        return "—", SEMAFORO["neutro"]
     if x >= 0.15:
-        return "moderada/forte", SES_AZUL["critico"]
+        return "moderada/forte", SEMAFORO["critico"]
     if x >= 0.10:
-        return "moderada", SES_AZUL["alto"]
+        return "moderada", SEMAFORO["laranja"]
     if x >= 0.05:
-        return "fraca–moderada", SES_AZUL["atencao"]
-    return "fraca", SES_AZUL["rotina"]
+        return "fraca–moderada", SEMAFORO["amarelo"]
+    return "fraca", SEMAFORO["rotina"]
 
 
 def comorb_interpretation_guide():
@@ -1599,16 +1599,16 @@ def _clima_forca(abs_r) -> tuple[str, str]:
     try:
         v = float(abs_r)
     except (TypeError, ValueError):
-        return "indefinida", SES_AZUL["neutro"]
+        return "indefinida", SEMAFORO["neutro"]
     if pd.isna(v):
-        return "indefinida", SES_AZUL["neutro"]
+        return "indefinida", SEMAFORO["neutro"]
     if v < 0.10:
-        return "desprezível/muito fraca", SES_AZUL["neutro"]
+        return "desprezível/muito fraca", SEMAFORO["neutro"]
     if v < 0.30:
-        return "fraca", SES_AZUL["sky"]
+        return "fraca", SEMAFORO["amarelo"]
     if v < 0.50:
-        return "moderada", SES_AZUL["alto"]
-    return "forte", SES_AZUL["critico"]
+        return "moderada", SEMAFORO["laranja"]
+    return "forte", SEMAFORO["critico"]
 
 
 def _clima_sentido(r) -> str:
@@ -1901,7 +1901,10 @@ def climate_section():
 def parse_positive(x):
     """
     Retorna:
-    1 = positivo; 0 = negativo; 2 = inconclusivo/outro resultado válido; NaN = não realizado/ignorado/vazio.
+    1 = positivo / agente identificado;
+    0 = negativo / nenhum agente;
+    2 = inconclusivo/outro resultado válido;
+    NaN = não realizado/ignorado/vazio.
     """
     if pd.isna(x):
         return np.nan
@@ -1909,6 +1912,8 @@ def parse_positive(x):
     if raw == "" or raw.lower() in MISSING:
         return np.nan
     s = text_key(raw)
+
+    # Códigos SINAN clássicos (1/2/3/4/9)
     if s.startswith("1"):
         return 1
     if s.startswith("2"):
@@ -1917,10 +1922,38 @@ def parse_positive(x):
         return 2
     if s.startswith("4") or s.startswith("9"):
         return np.nan
-    if any(t in s for t in ["POSITIVO", "REAGENTE", "DETECTADO", "DETECTAVEL", "ISOLADO", "IDENTIFICADO"]):
-        return 1
-    if any(t in s for t in ["NEGATIVO", "NAO REAGENTE", "NAO DETECTADO", "NAO DETECTAVEL", "AUSENTE"]):
+
+    # Não realizado / vazio operacional
+    if any(t in s for t in [
+        "NAO REALIZADO", "NAO SE APLICA", "EM BRANCO", "IGNORADO", "SEM INFORMACAO",
+    ]):
+        return np.nan
+
+    # Negativos textuais (antes de 'IDENTIFICADO', para não capturar 'NAO IDENTIFICADO')
+    if any(t in s for t in [
+        "NENHUM AGENTE", "NAO IDENTIFICADO", "NAO DETECTADO", "NAO DETECTAVEL",
+        "NAO REAGENTE", "NEGATIVO", "AUSENTE", "SEM CRESCIMENTO",
+    ]):
         return 0
+
+    # Positivos textuais / morfologia
+    if any(t in s for t in [
+        "POSITIVO", "REAGENTE", "DETECTADO", "DETECTAVEL", "ISOLADO",
+    ]):
+        return 1
+
+    # Agente nomeado (cultura/PCR/isolamento) = resultado positivo conclusivo
+    agentes = [
+        "NEISSERIA", "MENINGITIDIS", "STREPTOCOC", "PNEUMONIAE", "HAEMOPHILUS",
+        "INFLUENZAE", "CRIPTOCOC", "CRYPTOCOC", "LISTERIA", "ENTEROVIR",
+        "HERPES", "ADENOVIR", "VARICELA", "MICOBAC", "TUBERCUL", "CANDIDA",
+        "OUTRAS BACTER", "OUTROS VIRUS", "OUTROS ENTERO", "COCOS", "BACILOS",
+        "DIPLOCOC", "DIPLOBACILOS", "BASTONETES", "COCOBACILOS", "FUNGO",
+        "LEVEDURA",
+    ]
+    if any(t in s for t in agentes):
+        return 1
+
     if any(t in s for t in ["INCONCLUSIVO", "INDETERMINADO", "INVALIDO", "PREJUDICADO"]):
         return 2
     return np.nan
@@ -1948,16 +1981,32 @@ def lab_section(df):
     crit = df.get("CriterioConfirmacao", pd.Series(index=df.index, dtype=object)).fillna("Ignorado").astype(str).value_counts().reset_index()
     crit.columns = ["Critério de confirmação", "n"]
     c3.metric("Critérios distintos", fmt(len(crit), 0))
-    st.caption("Taxa de positividade real = positivos / resultados concludentes (positivo + negativo). Inconclusivos e não realizados não entram no denominador principal.")
+    st.caption(
+        "Taxa de positividade = positivos / (positivo + negativo). "
+        "‘Nenhum agente’ e ‘Não identificado’ contam como negativo; "
+        "agente nomeado (cultura/PCR) conta como positivo. "
+        "Inconclusivos e não realizados ficam fora do denominador."
+    )
 
     labdf = pd.DataFrame()
     if existing:
         rows = []
         for c in existing:
-            s = df[c].map(parse_positive) if c.startswith("Resultado") else pd.Series(np.where(df[c].notna(), 1, np.nan), index=df.index)
-            realizado = int(s.notna().sum())
-            positivo = int((s == 1).sum())
-            rows.append({"metodologia": c, "realizados/preenchidos": realizado, "positivos": positivo, "taxa_positividade_pct": positivo / realizado * 100 if realizado else np.nan})
+            if c.startswith("Resultado"):
+                s = df[c].map(parse_positive)
+                conclusivo = s.isin([0, 1])
+                realizado = int(conclusivo.sum())
+                positivo = int((s == 1).sum())
+            else:
+                s = pd.Series(np.where(df[c].notna(), 1, np.nan), index=df.index)
+                realizado = int(s.notna().sum())
+                positivo = int((s == 1).sum())
+            rows.append({
+                "metodologia": c,
+                "realizados/preenchidos": realizado,
+                "positivos": positivo,
+                "taxa_positividade_pct": (positivo / realizado * 100) if realizado else np.nan,
+            })
         labdf = pd.DataFrame(rows)
 
     render_interpretacao(
@@ -1974,18 +2023,37 @@ def lab_section(df):
     result_cols = [c for c in existing if c.startswith("Resultado")]
     if result_cols and "classificacao_agrupada_v17" in df.columns:
         any_pos = pd.Series(False, index=df.index)
-        any_done = pd.Series(False, index=df.index)
+        any_neg = pd.Series(False, index=df.index)
         for c in result_cols:
             parsed = df[c].map(parse_positive)
             any_pos = any_pos | (parsed == 1)
-            any_done = any_done | parsed.notna()
+            any_neg = any_neg | (parsed == 0)
+        # Caso com ao menos um resultado conclusivo (pos ou neg) em qualquer metodologia
+        any_concl = any_pos | any_neg
         tmp = df.copy()
         tmp["any_lab_pos"] = any_pos.astype(int)
-        tmp["any_lab_done"] = any_done.astype(int)
-        g = tmp.groupby("classificacao_agrupada_v17").agg(total=("caso_v17", "sum"), com_resultado=("any_lab_done", "sum"), positivos=("any_lab_pos", "sum")).reset_index()
-        g["taxa_positividade_pct"] = g["positivos"] / g["com_resultado"].replace(0, np.nan) * 100
-        bar_with_labels(g, "taxa_positividade_pct", "classificacao_agrupada_v17", "Taxa de positividade por classificação agrupada", orient="h", height=420)
+        tmp["any_lab_concl"] = any_concl.astype(int)
+        g = tmp.groupby("classificacao_agrupada_v17").agg(
+            total=("caso_v17", "sum"),
+            com_resultado_conclusivo=("any_lab_concl", "sum"),
+            positivos=("any_lab_pos", "sum"),
+        ).reset_index()
+        g["taxa_positividade_pct"] = (
+            g["positivos"] / g["com_resultado_conclusivo"].replace(0, np.nan) * 100
+        )
+        bar_with_labels(
+            g,
+            "taxa_positividade_pct",
+            "classificacao_agrupada_v17",
+            "Taxa de positividade por classificação agrupada",
+            orient="h",
+            height=420,
+        )
         st.dataframe(g, use_container_width=True)
+        st.caption(
+            "Denominador = casos com ≥1 resultado lab conclusivo (pos+neg). "
+            "Numerador = casos com ≥1 positivo em qualquer metodologia Resultado*."
+        )
 
     st.subheader("Critério de confirmação")
     bar_with_labels(crit, "n", "Critério de confirmação", "Distribuição do critério de confirmação", orient="h", height=400)
