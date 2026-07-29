@@ -79,6 +79,7 @@ def ops_steps(
     run("14_painel_epidemiologico_ms_v23.py", allow_fail=False)
     run("11_qualidade_score_v20.py", allow_fail=True)
     run("15_boletim_semanal_rascunho_v23.py", allow_fail=True)
+    run("27_ingestao_docs_ms_rag_v27.py", allow_fail=True)
     run("16_assistente_cievs_v23.py", allow_fail=True)
     if not from_dw and not skip_dw_extract:
         run("19_dw_descobrir_e_extrair_v23.py", allow_fail=True)

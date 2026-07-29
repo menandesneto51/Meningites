@@ -2945,8 +2945,9 @@ def epi_panel_section():
 def assistant_section():
     """Assistente normativo CIEVS (RAG local + LLM opcional)."""
     st.caption(
-        "Perguntas respondidas com recuperação de trechos da NT 154/2024, Informe Meningites, "
-        "Caderno SINAN e Guia de Vigilância. Sempre valide com a equipe antes de comunicação oficial. "
+        "RAG normativo: trechos curados + corpus em `docs_ms/` (NT 154/2024, Guia de Vigilância, "
+        "Informe Meningites, Caderno SINAN; PDFs locais opcionais). "
+        "Sempre valide com a equipe antes de comunicação oficial. "
         "LLM opcional: **Gemini** (`LLM_API_KEY` / `GEMINI_API_KEY` + `LLM_MODEL` no `.env` local)."
     )
     try:
@@ -2966,8 +2967,13 @@ def assistant_section():
         try:
             import json
             meta = json.loads(meta_p.read_text(encoding="utf-8"))
+            extra = ""
+            if meta.get("n_docs_ms") is not None:
+                extra = (
+                    f" · curados {meta.get('n_curados', '?')} + docs_ms {meta.get('n_docs_ms', '?')}"
+                )
             st.info(
-                f"Base local: {meta.get('n_documentos_kb', '?')} documentos · "
+                f"Base local: {meta.get('n_documentos_kb', '?')} trechos{extra} · "
                 f"LLM: {'disponível' if cfg.get('disponivel') else 'offline (só RAG local)'} "
                 f"({cfg.get('provider', '?')}: {cfg.get('model', '?')})"
             )

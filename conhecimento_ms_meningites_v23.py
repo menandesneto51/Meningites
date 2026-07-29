@@ -19,7 +19,7 @@ DOCS = [
         "id": "norma_vigente_nt154",
         "titulo": "Norma vigente — NT Conjunta 154/2024",
         "tema": "norma",
-        "tags": "nt 154 97 retifica revoga vigilancia meningite dm hib",
+        "tags": "nt 154 97 retifica revoga vigilancia meningite dm hib vigente vale ainda",
         "fonte": NORMA_SURTO_QUIMIO,
         "texto": (
             "A Nota Técnica Conjunta nº 154/2024-DPNI/SVSA/MS (SEI 25000.108654/2024-97) "
@@ -213,7 +213,7 @@ DOCS = [
         "id": "quimio_inconsistencia",
         "titulo": "Inconsistência quimioprofilaxia × etiologia",
         "tema": "qualidade",
-        "tags": "inconsistencia quimio etiologia dm hib qualidade sinan",
+        "tags": "inconsistencia quimio etiologia dm hib qualidade sinan viral nao indicada demais etiologias",
         "fonte": "Caderno de Análises SINAN — Meningites; NT 154/2024",
         "texto": (
             "A quimioprofilaxia é medida de controle para prevenir casos secundários e só está indicada "
@@ -312,5 +312,13 @@ FAQ_RAPIDO = [
     {
         "pergunta": "Quem recebe quimioprofilaxia em DIHib / creche?",
         "doc_ids": ["quimio_hib_detalhe_nt154", "contato_proximo_nt154"],
+    },
+    {
+        "pergunta": "O que o Guia de Vigilância recomenda na investigação de meningite?",
+        "doc_ids": ["investigacao_analise", "monitoramento_semanal", "notif_24h"],
+    },
+    {
+        "pergunta": "Como calcular incidência e letalidade de meningites?",
+        "doc_ids": ["incidencia_letalidade"],
     },
 ]
