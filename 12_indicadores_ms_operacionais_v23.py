@@ -6,17 +6,43 @@ Indicadores oficiais de vigilância das meningites (MS / Informe / Caderno SINAN
 
 from __future__ import annotations
 
+from datetime import datetime
+
 import numpy as np
 import pandas as pd
 from meningites_v17_common import OUT, MISSING, fmt_num, load_base_v17, text_key
 
-# Referências Brasil 2024 (Informe Meningites CGVDI/DPNI/SVSA — SE 1–36/2024)
-REF_BRASIL_2024 = {
-    "pct_confirmacao_laboratorial_pcr_cultura": 36.1,
-    "pct_investigados_48h": 97.8,
-    "pct_encerrados_60d": 94.4,
-    "pct_quimioprofilaxia_dm_48h": 45.5,
+MODULO = "12_indicadores_ms_operacionais_v23.py"
+
+# Referência nacional versionada. Para trocar de Informe basta acrescentar uma
+# entrada em REF_NACIONAL_VERSOES e apontar REF_NACIONAL_VIGENTE para ela — a
+# lógica de cálculo e o semáforo não mudam.
+REF_NACIONAL_VERSOES = {
+    "2024": {
+        "referencia_ano": 2024,
+        "referencia_periodo": "SE 1–36/2024",
+        "referencia_fonte": "Informe Meningites CGVDI/DPNI/SVSA/MS",
+        "referencia_vigencia_desde": "2024-10-01",
+        "valores": {
+            "pct_confirmacao_laboratorial_pcr_cultura": 36.1,
+            "pct_investigados_48h": 97.8,
+            "pct_encerrados_60d": 94.4,
+            "pct_quimioprofilaxia_dm_48h": 45.5,
+        },
+    },
 }
+
+REF_NACIONAL_VIGENTE = "2024"
+REF_NACIONAL = REF_NACIONAL_VERSOES[REF_NACIONAL_VIGENTE]
+
+REF_ANO = REF_NACIONAL["referencia_ano"]
+REF_PERIODO = REF_NACIONAL["referencia_periodo"]
+REF_FONTE = REF_NACIONAL["referencia_fonte"]
+REF_VIGENCIA = REF_NACIONAL["referencia_vigencia_desde"]
+
+# Nome mantido porque o painel e outros módulos leem a coluna
+# `referencia_brasil_2024`; o conteúdo vem sempre da versão vigente.
+REF_BRASIL_2024 = REF_NACIONAL["valores"]
 
 BACTERIANAS = {
     "Doença meningocócica",
@@ -331,6 +357,24 @@ def kpis_to_frame(kpis: dict) -> pd.DataFrame:
     ]
     out = pd.DataFrame(rows)
     out["quimioprofilaxia_indevida_n"] = kpis["quimioprofilaxia_indevida_n"]
+    return anotar_referencia(out)
+
+
+def anotar_referencia(df: pd.DataFrame) -> pd.DataFrame:
+    """Acrescenta ano/período/fonte da referência nacional ao lado do semáforo."""
+    out = df.copy()
+    out["referencia_ano"] = REF_ANO
+    out["referencia_periodo"] = REF_PERIODO
+    out["referencia_fonte"] = REF_FONTE
+    out["referencia_vigencia_desde"] = REF_VIGENCIA
+    return out
+
+
+def anotar_procedencia(df: pd.DataFrame, modulo: str = MODULO) -> pd.DataFrame:
+    """Marca de qual módulo veio a linha e quando foi gerada (auditoria 12 × 26)."""
+    out = df.copy()
+    out["modulo_origem"] = modulo
+    out["gerado_em"] = datetime.now().isoformat(timespec="seconds")
     return out
 
 
@@ -389,10 +433,14 @@ def main():
     # é calculado em memória via _ensure_lead_times.
 
     kpis = compute_ms_kpis(df)
-    painel = kpis_to_frame(kpis)
+    painel = anotar_procedencia(kpis_to_frame(kpis))
+    # Cópia canônica do módulo 12: nunca é sobrescrita pelo 26, serve de
+    # referência para auditar divergência entre as duas versões do indicador.
+    painel.to_csv(OUT / "indicadores_ms_operacionais_base_v23.csv", index=False, encoding="utf-8-sig")
     painel.to_csv(OUT / "indicadores_ms_operacionais_v23.csv", index=False, encoding="utf-8-sig")
 
-    resumo = pd.DataFrame([kpis])
+    resumo = anotar_procedencia(anotar_referencia(pd.DataFrame([kpis])))
+    resumo.to_csv(OUT / "indicadores_ms_operacionais_resumo_base_v23.csv", index=False, encoding="utf-8-sig")
     resumo.to_csv(OUT / "indicadores_ms_operacionais_resumo_v23.csv", index=False, encoding="utf-8-sig")
 
     by_ano(df).to_csv(OUT / "indicadores_ms_operacionais_ano_v23.csv", index=False, encoding="utf-8-sig")
@@ -402,7 +450,8 @@ def main():
     )
 
     print("[OK] Indicadores MS operacionais V23 gerados.")
-    print(painel[["indicador_rotulo", "valor_pct", "referencia_brasil_2024", "semaforo"]].to_string(index=False))
+    print(f"     Referência nacional: {REF_PERIODO} — {REF_FONTE}")
+    print(painel[["indicador_rotulo", "valor_pct", "referencia_brasil_2024", "referencia_ano", "semaforo"]].to_string(index=False))
 
 
 if __name__ == "__main__":

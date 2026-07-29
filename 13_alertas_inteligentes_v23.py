@@ -195,7 +195,7 @@ def alertas_caso(df: pd.DataFrame) -> pd.DataFrame:
     return out.sort_values(["severidade_ordem", "tipo_alerta", "municipio_v17"], ascending=[False, True, True])
 
 
-def alertas_surto_nt97(df: pd.DataFrame) -> pd.DataFrame:
+def alertas_surto_nt154(df: pd.DataFrame) -> pd.DataFrame:
     d = df.copy()
     clas = d.get("classificacao_agrupada_v17", pd.Series(dtype=object)).astype(str)
     dm = d[clas.eq("Doença meningocócica")].copy()
@@ -390,7 +390,7 @@ def main():
         raise SystemExit("Base ausente.")
 
     casos = alertas_caso(df)
-    surtos = alertas_surto_nt97(df)
+    surtos = alertas_surto_nt154(df)
     resumo = resumo_alertas(casos, surtos)
 
     casos.to_csv(OUT / "alertas_inteligentes_casos_v23.csv", index=False, encoding="utf-8-sig")
@@ -401,6 +401,9 @@ def main():
             "acima_incidencia_esperada", "duplicacao_semanal", "periodo_inicio", "periodo_fim",
             "evidencia", "acao_recomendada", "prazo", "norma", "severidade_ordem",
         ])
+    surtos.to_csv(OUT / "alertas_inteligentes_surtos_nt154_v23.csv", index=False, encoding="utf-8-sig")
+    # Alias de compatibilidade do painel (nome da NT 97/2024, revogada);
+    # pode ser removido quando o dashboard ler o arquivo nt154.
     surtos.to_csv(OUT / "alertas_inteligentes_surtos_nt97_v23.csv", index=False, encoding="utf-8-sig")
     resumo.to_csv(OUT / "alertas_inteligentes_resumo_v23.csv", index=False, encoding="utf-8-sig")
 

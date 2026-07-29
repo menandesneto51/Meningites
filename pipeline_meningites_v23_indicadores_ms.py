@@ -4,30 +4,123 @@ pipeline_meningites_v23_indicadores_ms.py
 Orquestrador V23/V24: ops semanal, pesquisa completa e validação estrita.
 """
 
+from datetime import datetime
 from pathlib import Path
 import argparse
+import json
 import subprocess
 import sys
+import time
 
 ROOT = Path(__file__).resolve().parent
 
+PROCEDENCIA_STEP = "29_procedencia_artefatos_v28.py"
+EXEC_JSON = ROOT / "saida_meningites_v17" / "pipeline_execucao_v28.json"
+
+# Registro da execução corrente: cada passo vira uma linha do JSON lido pelo
+# módulo 29 e pelo painel, para que uma falha silenciosa fique visível.
+EXECUCAO: list[dict] = []
+EXEC_INICIO = datetime.now()
+EXEC_ROTINA = "indefinida"
+
+
+def _registrar(script: str, obrigatorio: bool, status: str, duracao_s: float, erro: str = ""):
+    EXECUCAO.append({
+        "ordem": len(EXECUCAO) + 1,
+        "script": script,
+        "obrigatorio": bool(obrigatorio),
+        "status": status,
+        "duracao_s": round(float(duracao_s), 2),
+        "erro": erro,
+        "fim": datetime.now().isoformat(timespec="seconds"),
+    })
+
+
+def _falhas_obrigatorias() -> list[dict]:
+    return [p for p in EXECUCAO if p["obrigatorio"] and p["status"] != "ok"]
+
+
+def gravar_execucao(rotina: str | None = None) -> Path:
+    payload = {
+        "rotina": rotina or EXEC_ROTINA,
+        "inicio": EXEC_INICIO.isoformat(timespec="seconds"),
+        "fim": datetime.now().isoformat(timespec="seconds"),
+        "python": sys.executable,
+        "passos": EXECUCAO,
+        "resumo": {
+            "total": len(EXECUCAO),
+            "ok": sum(1 for p in EXECUCAO if p["status"] == "ok"),
+            "falhou": sum(1 for p in EXECUCAO if p["status"] == "falhou"),
+            "pulado": sum(1 for p in EXECUCAO if p["status"] == "pulado"),
+            "obrigatorios_falhos": len(_falhas_obrigatorias()),
+        },
+    }
+    EXEC_JSON.parent.mkdir(exist_ok=True)
+    EXEC_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return EXEC_JSON
+
+
+def imprimir_resumo_execucao():
+    problemas = [p for p in EXECUCAO if p["status"] != "ok"]
+    print("\n" + "=" * 90)
+    print("RESUMO DA EXECUÇÃO DO PIPELINE")
+    print("=" * 90)
+    print(
+        f"Passos: {len(EXECUCAO)} · ok={sum(1 for p in EXECUCAO if p['status'] == 'ok')} "
+        f"· falhou={sum(1 for p in EXECUCAO if p['status'] == 'falhou')} "
+        f"· pulado={sum(1 for p in EXECUCAO if p['status'] == 'pulado')}"
+    )
+    if not problemas:
+        print("[OK] Nenhum passo com problema.")
+    for p in problemas:
+        marca = "OBRIGATÓRIO" if p["obrigatorio"] else "opcional"
+        print(f"  [{p['status'].upper():7}] {p['script']} ({marca}) — {p['erro'] or 'sem detalhe'}")
+    print(f"Registro: {EXEC_JSON}")
+    print("=" * 90)
+
+
+def _abortar(codigo: int):
+    gravar_execucao()
+    imprimir_resumo_execucao()
+    raise SystemExit(codigo)
+
 
 def run(script: str, allow_fail: bool = False):
+    obrigatorio = not allow_fail
     p = ROOT / script
     if not p.exists():
         print("[AUSENTE]", script)
+        _registrar(script, obrigatorio, "pulado", 0.0, "script não encontrado no diretório")
         if allow_fail:
             return
-        raise SystemExit(2)
+        _abortar(2)
     print("\n" + "=" * 90)
     print("[CMD]", sys.executable, script)
     print("=" * 90)
+    t0 = time.perf_counter()
     proc = subprocess.run([sys.executable, script], cwd=str(ROOT))
+    dur = time.perf_counter() - t0
     if proc.returncode != 0:
+        _registrar(script, obrigatorio, "falhou", dur, f"código de saída {proc.returncode}")
         if allow_fail:
             print(f"[AVISO] {script} falhou; continuando.")
-        else:
-            raise SystemExit(proc.returncode)
+            return
+        _abortar(proc.returncode)
+    _registrar(script, obrigatorio, "ok", dur)
+
+
+def finalizar(rotina: str):
+    """Grava o JSON, roda o selo de procedência por último e imprime o resumo."""
+    global EXEC_ROTINA
+    EXEC_ROTINA = rotina
+    gravar_execucao(rotina)
+    # O 29 precisa enxergar o resultado dos demais passos, por isso roda depois
+    # do JSON já existir; o próprio passo 29 é anexado ao registro em seguida.
+    run(PROCEDENCIA_STEP, allow_fail=True)
+    gravar_execucao(rotina)
+    imprimir_resumo_execucao()
+    if _falhas_obrigatorias():
+        raise SystemExit(1)
 
 
 def research_steps(rebuild_base: bool = False, from_dw: bool = False):
@@ -57,8 +150,15 @@ def research_steps(rebuild_base: bool = False, from_dw: bool = False):
     run("10_comorbidades_associacoes_v18.py", allow_fail=True)
     run("11_qualidade_score_v20.py", allow_fail=True)
     run("09_relatorio_tecnico_meningites_v20.py", allow_fail=True)
-    ops_steps(from_dw=False, skip_dw_extract=True, skip_linkage=True, fail_closed=False)
+    ops_steps(
+        from_dw=False,
+        skip_dw_extract=True,
+        skip_linkage=True,
+        fail_closed=False,
+        finalizar_execucao=False,
+    )
     print("\n[OK] Pipeline pesquisa (--research / --all) concluído.")
+    finalizar("research")
 
 
 def ops_steps(
@@ -66,6 +166,7 @@ def ops_steps(
     skip_dw_extract: bool = False,
     skip_linkage: bool = False,
     fail_closed: bool = False,
+    finalizar_execucao: bool = True,
 ):
     """Rotina operacional: MS, alertas, fila, nowcast/gestão V24."""
     if from_dw and not skip_dw_extract:
@@ -94,7 +195,10 @@ def ops_steps(
     run("26_indicadores_ops_avancados_v25.py", allow_fail=True)
     run("24_nowcast_operacional_gestao_v24.py", allow_fail=False)
     run("23_alertas_personalizados_ia_v23.py", allow_fail=True)
+    run("28_indicadores_novos_v28.py", allow_fail=True)
     print("\n[OK] Pipeline operacional (--ops) concluído.")
+    if finalizar_execucao:
+        finalizar("ops")
 
 
 # Compatibilidade com nomes antigos
@@ -125,7 +229,7 @@ def validate(strict: bool = True) -> int:
         "saida_meningites_v17/indicadores_ms_operacionais_v23.csv",
         "saida_meningites_v17/indicadores_ms_operacionais_resumo_v23.csv",
         "saida_meningites_v17/alertas_inteligentes_casos_v23.csv",
-        "saida_meningites_v17/alertas_inteligentes_surtos_nt97_v23.csv",
+        "saida_meningites_v17/alertas_inteligentes_surtos_nt154_v23.csv",
         "saida_meningites_v17/alertas_inteligentes_fila_cievs_v23.csv",
         "saida_meningites_v17/painel_epi_resumo_ano_v23.csv",
         "saida_meningites_v17/painel_epi_etiologia_ano_v23.csv",
@@ -160,6 +264,15 @@ def validate(strict: bool = True) -> int:
         "saida_meningites_v17/linkage_completude_kpis_v25.csv",
         "saida_meningites_v17/score_risco_municipal_nt97_v25.csv",
         "relatorios/BOLETIM_CIEVS_MENINGITES_ENVIO_V25.md",
+        # V28 — procedência/execução e nomes alinhados à NT 154/2024
+        "saida_meningites_v17/pipeline_execucao_v28.json",
+        "saida_meningites_v17/procedencia_artefatos_v28.csv",
+        "saida_meningites_v17/indicadores_ms_operacionais_base_v23.csv",
+        "saida_meningites_v17/indicadores_ms_operacionais_v25.csv",
+        "saida_meningites_v17/score_risco_municipal_nt154_v25.csv",
+        # aliases legados NT 97 mantidos enquanto o painel não migrar
+        "saida_meningites_v17/alertas_inteligentes_surtos_nt97_v23.csv",
+        "saida_meningites_v17/score_risco_municipal_nt97_v25.csv",
     ]
     print("\nVALIDAÇÃO OPERACIONAL V23/V24")
     print("=" * 90)
@@ -214,6 +327,7 @@ def main():
     if args.from_dw:
         run("19_dw_descobrir_e_extrair_v23.py", allow_fail=False)
         run("00_base_unica_meningites_v17.py", allow_fail=False)
+        finalizar("extracao_dw")
         if args.open_dashboard:
             open_dashboard()
         return

@@ -16,6 +16,8 @@ import importlib
 
 ms = importlib.import_module("12_indicadores_ms_operacionais_v23")
 
+MODULO = "26_indicadores_ops_avancados_v25.py"
+
 BACT = ms.BACTERIANAS
 DM = "Doença meningocócica"
 HIB = "Meningite por Hib/Hemófilo"
@@ -82,7 +84,14 @@ def _lab_pendente(df: pd.DataFrame) -> pd.Series:
 
 
 def build_hib_and_extend_ms(df: pd.DataFrame) -> pd.DataFrame:
-    """Atualiza indicadores MS com KPI Hib e regrava painel."""
+    """Indicadores MS enriquecidos com o KPI Hib.
+
+    Grava a versão própria do módulo 26 (`indicadores_ms_operacionais_v25.csv`)
+    e mantém o nome legado (`..._v23.csv`) atualizado apenas para não quebrar o
+    painel. A cópia canônica do módulo 12 (`..._base_v23.csv`) fica intocada,
+    de modo que a divergência entre os dois módulos é sempre auditável pelas
+    colunas `modulo_origem` / `gerado_em`.
+    """
     d = ms._ensure_lead_times(df)
     clas = d["classificacao_agrupada_v17"].astype(str)
     hib = clas.eq(HIB)
@@ -112,13 +121,22 @@ def build_hib_and_extend_ms(df: pd.DataFrame) -> pd.DataFrame:
     }
     painel = painel[painel["indicador"] != "pct_quimioprofilaxia_hib_48h"]
     painel = pd.concat([painel, pd.DataFrame([hib_row])], ignore_index=True)
+    painel = ms.anotar_procedencia(ms.anotar_referencia(painel), MODULO)
+    painel.to_csv(OUT / "indicadores_ms_operacionais_v25.csv", index=False, encoding="utf-8-sig")
+    # Alias de compatibilidade do painel; pode ser removido quando o dashboard
+    # passar a ler indicadores_ms_operacionais_v25.csv.
     painel.to_csv(OUT / "indicadores_ms_operacionais_v23.csv", index=False, encoding="utf-8-sig")
 
-    resumo = pd.read_csv(OUT / "indicadores_ms_operacionais_resumo_v23.csv") if (OUT / "indicadores_ms_operacionais_resumo_v23.csv").exists() else pd.DataFrame([ms.compute_ms_kpis(d)])
+    base_resumo = OUT / "indicadores_ms_operacionais_resumo_base_v23.csv"
+    legado_resumo = OUT / "indicadores_ms_operacionais_resumo_v23.csv"
+    fonte_resumo = base_resumo if base_resumo.exists() else legado_resumo
+    resumo = pd.read_csv(fonte_resumo) if fonte_resumo.exists() else pd.DataFrame([ms.compute_ms_kpis(d)])
     resumo["hib_casos"] = n_hib
     resumo["hib_quimio_48h"] = n_hib_48
     resumo["pct_quimioprofilaxia_hib_48h"] = pct_hib
-    resumo.to_csv(OUT / "indicadores_ms_operacionais_resumo_v23.csv", index=False, encoding="utf-8-sig")
+    resumo = ms.anotar_procedencia(ms.anotar_referencia(resumo), MODULO)
+    resumo.to_csv(OUT / "indicadores_ms_operacionais_resumo_v25.csv", index=False, encoding="utf-8-sig")
+    resumo.to_csv(legado_resumo, index=False, encoding="utf-8-sig")
     return painel
 
 
@@ -293,7 +311,8 @@ def build_sorogrupos(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     return trend, pd.DataFrame(alertas)
 
 
-def build_score_nt97(df: pd.DataFrame) -> pd.DataFrame:
+def build_score_nt154(df: pd.DataFrame) -> pd.DataFrame:
+    """Score municipal de risco segundo a NT 154/2024 (revogou a NT 97/2024)."""
     d = ms._ensure_lead_times(df)
     ref = pd.to_datetime(d.get("data_ref_v17"), errors="coerce")
     corte = pd.Timestamp(datetime.now().date()) - timedelta(days=90)
@@ -354,11 +373,15 @@ def build_score_nt97(df: pd.DataFrame) -> pd.DataFrame:
             "pct_sorogrupo_dm_90d": pct_soro,
             "pct_quimio_dm_90d": pct_quimio,
             "incidencia_dm_90d_100mil": inc,
+            "score_risco_nt154_v25": round(min(score, 100), 1),
+            # Coluna legada mantida para compatibilidade do painel/interpretações;
+            # pode ser removida quando todos passarem a ler score_risco_nt154_v25.
             "score_risco_nt97_v25": round(min(score, 100), 1),
             "prioridade": "Alta" if score >= 50 else ("Média" if score >= 25 else "Baixa"),
+            "norma": "NT 154/2024",
         })
         rows.append(row)
-    out = pd.DataFrame(rows).sort_values("score_risco_nt97_v25", ascending=False)
+    out = pd.DataFrame(rows).sort_values("score_risco_nt154_v25", ascending=False)
     return out
 
 
@@ -551,7 +574,7 @@ def write_boletim_envio(
         for _, r in top.iterrows():
             lines.append(
                 f"- {r.get('municipio_v17')} ({r.get('regional_v17')}): "
-                f"score {fmt_num(r.get('score_risco_nt97_v25'))} · DM lab+ 90d={fmt_num(r.get('dm_lab_90d'), 0)}"
+                f"score {fmt_num(r.get('score_risco_nt154_v25'))} · DM lab+ 90d={fmt_num(r.get('dm_lab_90d'), 0)}"
             )
         lines.append("")
     lines += ["## Gravidade SE corrente", ""]
@@ -601,11 +624,14 @@ def main():
     link = build_linkage_kpis(df)
     link.to_csv(OUT / "linkage_completude_kpis_v25.csv", index=False, encoding="utf-8-sig")
 
-    # Sprint C — sorogrupos + score NT154 (arquivo score_risco_municipal_nt97_v25.csv)
+    # Sprint C — sorogrupos + score NT 154/2024
     soro_trend, soro_alert = build_sorogrupos(df)
     soro_trend.to_csv(OUT / "sorogrupos_dm_tendencia_v25.csv", index=False, encoding="utf-8-sig")
     soro_alert.to_csv(OUT / "sorogrupos_dm_alertas_v25.csv", index=False, encoding="utf-8-sig")
-    score = build_score_nt97(df)
+    score = build_score_nt154(df)
+    score.to_csv(OUT / "score_risco_municipal_nt154_v25.csv", index=False, encoding="utf-8-sig")
+    # Alias de compatibilidade do painel (nome da NT 97/2024, revogada);
+    # pode ser removido quando o dashboard ler o arquivo nt154.
     score.to_csv(OUT / "score_risco_municipal_nt97_v25.csv", index=False, encoding="utf-8-sig")
 
     # Sprint D — PL/lab + vacina

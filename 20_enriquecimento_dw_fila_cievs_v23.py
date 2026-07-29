@@ -24,6 +24,35 @@ from meningites_v17_common import OUT, REL, MISSING, load_base_v17, text_key
 SEVERIDADE_ORDEM = {"Crítico": 4, "Alto": 3, "Atenção": 2, "Informativo": 1}
 MIN_SCORE = 0.75
 
+# CIDs de meningite / doença meningocócica aceitos como evidência de óbito
+# pelo agravo no registro do SIM (CID-10).
+CID_MENINGITE_PREFIXOS = (
+    "A17.0", "A170", "A17.1", "A171",   # meningite tuberculosa
+    "A32.1", "A321",                    # meningite/meningoencefalite por Listeria
+    "A39",                              # doença meningocócica / meningococcemia
+    "A87",                              # meningite viral
+    "B00.3", "B003", "B01.0", "B010",   # meningite herpética / varicela
+    "B02.1", "B021", "B05.1", "B051",   # meningite por zoster / sarampo
+    "B26.1", "B261",                    # meningite por caxumba
+    "B37.5", "B375", "B38.4", "B384",   # meningite por Candida / coccidioidomicose
+    "B45.1", "B451", "B58.2", "B582",   # meningite criptocócica / toxoplasmose
+    "G00", "G01", "G02", "G03",         # meningites bacterianas e demais
+)
+
+
+def cid_meningite(cid) -> bool:
+    """True se o CID do SIM é compatível com meningite/doença meningocócica."""
+    if cid is None or (isinstance(cid, float) and pd.isna(cid)):
+        return False
+    bruto = str(cid).strip()
+    if not bruto or bruto.lower() in MISSING:
+        return False
+    chave = bruto.upper().replace(" ", "")
+    if any(chave.startswith(p) for p in CID_MENINGITE_PREFIXOS):
+        return True
+    txt = text_key(bruto)
+    return "MENINGIT" in txt or "MENINGOCOC" in txt
+
 
 def _read(path: Path) -> pd.DataFrame:
     if not path.exists():
@@ -75,6 +104,7 @@ def enrich_cases(df: pd.DataFrame, gal: pd.DataFrame, sim: pd.DataFrame) -> pd.D
     out["dw_sim_match_v23"] = 0
     out["dw_sim_score_v23"] = np.nan
     out["dw_sim_cid_v23"] = ""
+    out["dw_sim_data_obito_v23"] = ""
 
     def apply_gal(mask: pd.Series, row) -> None:
         if not mask.any():
@@ -107,6 +137,15 @@ def enrich_cases(df: pd.DataFrame, gal: pd.DataFrame, sim: pd.DataFrame) -> pd.D
                 continue
             apply_gal(out.index == sid, row)
 
+    def _sim_data_obito(row) -> str:
+        val = row.get("data_obito", None)
+        if val is None or (not isinstance(val, str) and pd.isna(val)):
+            return ""
+        parsed = pd.to_datetime(val, errors="coerce")
+        if pd.isna(parsed):
+            return ""
+        return parsed.strftime("%Y-%m-%d")
+
     if not sim.empty:
         if "numero_notificacao" in sim.columns:
             s2 = sim.copy()
@@ -119,6 +158,7 @@ def enrich_cases(df: pd.DataFrame, gal: pd.DataFrame, sim: pd.DataFrame) -> pd.D
                     out.loc[m, "dw_sim_match_v23"] = 1
                     out.loc[m, "dw_sim_score_v23"] = row.get("score", np.nan)
                     out.loc[m, "dw_sim_cid_v23"] = str(row.get("cid", "") or "")[:20]
+                    out.loc[m, "dw_sim_data_obito_v23"] = _sim_data_obito(row)
         s = sim.sort_values("score", ascending=False).drop_duplicates("sid", keep="first")
         for _, row in s.iterrows():
             try:
@@ -130,8 +170,39 @@ def enrich_cases(df: pd.DataFrame, gal: pd.DataFrame, sim: pd.DataFrame) -> pd.D
             out.at[sid, "dw_sim_match_v23"] = 1
             out.at[sid, "dw_sim_score_v23"] = row.get("score", np.nan)
             out.at[sid, "dw_sim_cid_v23"] = str(row.get("cid", "") or "")[:20]
+            out.at[sid, "dw_sim_data_obito_v23"] = _sim_data_obito(row)
 
     return out
+
+
+def classificar_obito_sim(enr: pd.DataFrame) -> tuple[pd.Series, pd.Series]:
+    """Óbito do SIM só conta com evidência real de óbito no registro linkado.
+
+    Antes, qualquer match do linkage virava óbito por meningite, o que
+    superestimava a mortalidade da união SINAN∪SIM (letalidade e odds ratio).
+    Agora exige data de óbito válida e/ou CID compatível com meningite.
+    Devolve (flag 0/1, motivo da classificação).
+    """
+    match = pd.to_numeric(enr.get("dw_sim_match_v23"), errors="coerce").fillna(0).astype(int) == 1
+
+    if "dw_sim_data_obito_v23" in enr.columns:
+        data_ok = pd.to_datetime(enr["dw_sim_data_obito_v23"], errors="coerce").notna()
+    else:
+        data_ok = pd.Series(False, index=enr.index)
+
+    if "dw_sim_cid_v23" in enr.columns:
+        cid_ok = enr["dw_sim_cid_v23"].map(cid_meningite).astype(bool)
+    else:
+        cid_ok = pd.Series(False, index=enr.index)
+
+    flag = (match & (data_ok | cid_ok)).astype(int)
+
+    motivo = pd.Series("sem_match_sim", index=enr.index, dtype=object)
+    motivo[match & data_ok & cid_ok] = "data_obito+cid_meningite"
+    motivo[match & data_ok & ~cid_ok] = "data_obito"
+    motivo[match & ~data_ok & cid_ok] = "cid_meningite"
+    motivo[match & ~data_ok & ~cid_ok] = "match_sem_evidencia_obito"
+    return flag, motivo
 
 
 def alertas_linkage(df: pd.DataFrame) -> pd.DataFrame:
@@ -159,8 +230,12 @@ def alertas_linkage(df: pd.DataFrame) -> pd.DataFrame:
         sub["norma"] = "Informe Meningites 2024 — confirmação laboratorial"
         rows.append(sub)
 
-    # Óbito no SIM sem óbito meningite no SINAN
-    m = (df["dw_sim_match_v23"] == 1) & (pd.to_numeric(df.get("obito_meningite_v17"), errors="coerce").fillna(0) == 0)
+    # Óbito no SIM sem óbito meningite no SINAN (só com evidência real de óbito)
+    if "obito_sim_link_v23" in df.columns:
+        sim_ob = pd.to_numeric(df["obito_sim_link_v23"], errors="coerce").fillna(0) == 1
+    else:
+        sim_ob = df["dw_sim_match_v23"] == 1
+    m = sim_ob & (pd.to_numeric(df.get("obito_meningite_v17"), errors="coerce").fillna(0) == 0)
     if m.any():
         sub = df.loc[m, base_cols].copy()
         sub["tipo_alerta"] = "Óbito no SIM sem desfecho meningite no SINAN"
@@ -168,6 +243,8 @@ def alertas_linkage(df: pd.DataFrame) -> pd.DataFrame:
         sub["evidencia"] = (
             "Match DW SIM score≥" + str(MIN_SCORE)
             + "; CID=" + df.loc[m, "dw_sim_cid_v23"].astype(str)
+            + "; data óbito=" + (df.loc[m, "dw_sim_data_obito_v23"].astype(str) if "dw_sim_data_obito_v23" in df.columns else "NA")
+            + "; evidência=" + (df.loc[m, "obito_sim_motivo_v23"].astype(str) if "obito_sim_motivo_v23" in df.columns else "NA")
             + "; EvolucaoCaso/SINAN sem óbito por meningite"
         )
         sub["acao_recomendada"] = "Revisar evolução/encerramento no SINAN e causa básica no SIM."
@@ -268,7 +345,7 @@ def build_fila_unificada(
                 "norma": r.get("norma", ""),
             })
 
-    add_rows(surtos, "surto_nt97", id_col=None)
+    add_rows(surtos, "surto_nt154", id_col=None)
     add_rows(alertas_dw, "linkage_dw", limit=150)
     if not alertas_prazo.empty:
         top = alertas_prazo[alertas_prazo["severidade"].isin(["Crítico", "Alto"])].head(200)
@@ -301,7 +378,11 @@ def write_report(enr: pd.DataFrame, fila: pd.DataFrame, gal_n: int, sim_n: int, 
         "## Mortalidade SINAN × SIM (para Odds Ratio)",
         "",
         f"- Óbitos SINAN (EvolucaoCaso): **{int(pd.to_numeric(enr.get('obito_meningite_v17'), errors='coerce').fillna(0).sum())}**",
-        f"- Óbitos SIM (linkage ≥ {MIN_SCORE}): **{int(enr.get('obito_sim_link_v23', pd.Series(dtype=int)).sum()) if 'obito_sim_link_v23' in enr.columns else 0}**",
+        f"- Óbitos SIM (linkage ≥ {MIN_SCORE} **com evidência de óbito**): "
+        f"**{int(enr.get('obito_sim_link_v23', pd.Series(dtype=int)).sum()) if 'obito_sim_link_v23' in enr.columns else 0}** "
+        f"— de {int(enr['dw_sim_match_v23'].sum())} matches; "
+        f"{int(enr['dw_sim_match_v23'].sum()) - (int(enr['obito_sim_link_v23'].sum()) if 'obito_sim_link_v23' in enr.columns else 0)} "
+        "descartados por não terem data de óbito nem CID de meningite",
         f"- União SINAN∪SIM (desfecho padrão dos OR): **{int(enr.get('obito_meningite_uniao_v23', pd.Series(dtype=int)).sum()) if 'obito_meningite_uniao_v23' in enr.columns else 0}**",
         f"- SIM sem óbito meningite no SINAN: **{int(enr.get('obito_sim_sem_sinan_v23', pd.Series(dtype=int)).sum()) if 'obito_sim_sem_sinan_v23' in enr.columns else 0}**",
         "",
@@ -343,26 +424,37 @@ def main():
 
     # Desfechos de mortalidade para OR / painel: SINAN, SIM (linkage) e união
     sinan_ob = pd.to_numeric(enr.get("obito_meningite_v17"), errors="coerce").fillna(0).astype(int)
-    sim_ob = pd.to_numeric(enr.get("dw_sim_match_v23"), errors="coerce").fillna(0).astype(int)
+    match_sim = pd.to_numeric(enr.get("dw_sim_match_v23"), errors="coerce").fillna(0).astype(int)
+    sim_ob, motivo_sim = classificar_obito_sim(enr)
     enr["obito_sim_link_v23"] = sim_ob
+    enr["obito_sim_motivo_v23"] = motivo_sim
     enr["obito_meningite_uniao_v23"] = ((sinan_ob == 1) | (sim_ob == 1)).astype(int)
     enr["obito_sim_sem_sinan_v23"] = ((sim_ob == 1) & (sinan_ob == 0)).astype(int)
+
+    n_match_sim = int(match_sim.sum())
+    n_obito_sim = int(sim_ob.sum())
+    n_descartado = n_match_sim - n_obito_sim
 
     mort_cols = [c for c in [
         "NumeroNotificacao",
         "obito_meningite_v17", "obito_sim_link_v23", "obito_meningite_uniao_v23", "obito_sim_sem_sinan_v23",
-        "dw_sim_match_v23", "dw_sim_score_v23", "dw_sim_cid_v23",
+        "obito_sim_motivo_v23",
+        "dw_sim_match_v23", "dw_sim_score_v23", "dw_sim_cid_v23", "dw_sim_data_obito_v23",
     ] if c in enr.columns]
     enr[mort_cols].to_csv(OUT / "desfechos_mortalidade_sim_v23.csv", index=False, encoding="utf-8-sig")
 
     mort_resumo = pd.DataFrame([{
         "obitos_sinan_evolucao": int(sinan_ob.sum()),
-        "obitos_sim_linkage": int(sim_ob.sum()),
+        "obitos_sim_linkage": n_obito_sim,
         "obitos_uniao_sinan_sim": int(enr["obito_meningite_uniao_v23"].sum()),
         "obitos_sim_sem_sinan": int(enr["obito_sim_sem_sinan_v23"].sum()),
+        "sim_matches_brutos": n_match_sim,
+        "sim_matches_sem_evidencia_obito": n_descartado,
         "nota": (
             "OR de mortalidade deve usar obito_meningite_uniao_v23 (padrão). "
-            "obito_meningite_v17 = só EvolucaoCaso SINAN; obito_sim_link_v23 = match SIM score≥0.75."
+            "obito_meningite_v17 = só EvolucaoCaso SINAN; obito_sim_link_v23 = match SIM "
+            "score≥0.75 COM evidência de óbito (data de óbito válida e/ou CID de meningite); "
+            "motivo em obito_sim_motivo_v23."
         ),
     }])
     mort_resumo.to_csv(OUT / "mortalidade_sinan_sim_resumo_v23.csv", index=False, encoding="utf-8-sig")
@@ -371,10 +463,11 @@ def main():
         "NumeroNotificacao", "municipio_v17", "regional_v17", "data_ref_v17",
         "classificacao_agrupada_v17", "confirmado_v17", "obito_meningite_v17",
         "obito_sim_link_v23", "obito_meningite_uniao_v23", "obito_sim_sem_sinan_v23",
+        "obito_sim_motivo_v23",
         "fonte_sinan_v23",
         "dw_gal_match_v23", "dw_gal_score_v23", "dw_gal_metodo_v23",
         "dw_gal_resultado_v23", "dw_gal_positivo_v23",
-        "dw_sim_match_v23", "dw_sim_score_v23", "dw_sim_cid_v23",
+        "dw_sim_match_v23", "dw_sim_score_v23", "dw_sim_cid_v23", "dw_sim_data_obito_v23",
     ] if c in enr.columns]
     enr[keep].to_csv(OUT / "enriquecimento_casos_dw_v23.csv", index=False, encoding="utf-8-sig")
 
@@ -384,7 +477,11 @@ def main():
     aq.to_csv(OUT / "alertas_qualidade_sinan_v23.csv", index=False, encoding="utf-8-sig")
 
     prazo = _read(OUT / "alertas_inteligentes_casos_v23.csv")
-    surtos = _read(OUT / "alertas_inteligentes_surtos_nt97_v23.csv")
+    # NT 154/2024 revogou a NT 97/2024: lê o nome novo quando existir e mantém
+    # o legado como alias enquanto o módulo 13 não for migrado.
+    surtos = _read(OUT / "alertas_inteligentes_surtos_nt154_v23.csv")
+    if surtos.empty:
+        surtos = _read(OUT / "alertas_inteligentes_surtos_nt97_v23.csv")
     fila = build_fila_unificada(prazo, surtos, adw, aq)
     fila.to_csv(OUT / "fila_cievs_unificada_v23.csv", index=False, encoding="utf-8-sig")
     # Espelha na fila “oficial” usada pelo dashboard (mantém compatibilidade)
@@ -400,7 +497,9 @@ def main():
         "sim_matches_usados": len(sim),
         "casos_gal": int(enr["dw_gal_match_v23"].sum()),
         "casos_gal_positivo": int(enr["dw_gal_positivo_v23"].sum()),
-        "casos_sim": int(enr["dw_sim_match_v23"].sum()),
+        "casos_sim": n_match_sim,
+        "casos_sim_com_evidencia_obito": n_obito_sim,
+        "casos_sim_sem_evidencia_obito": n_descartado,
         "obitos_sinan": int(pd.to_numeric(enr.get("obito_meningite_v17"), errors="coerce").fillna(0).sum()),
         "obitos_uniao_sinan_sim": int(enr["obito_meningite_uniao_v23"].sum()),
         "obitos_sim_sem_sinan": int(enr["obito_sim_sem_sinan_v23"].sum()),
@@ -413,6 +512,11 @@ def main():
     resumo.to_csv(OUT / "enriquecimento_dw_resumo_v23.csv", index=False, encoding="utf-8-sig")
 
     print("[OK] Enriquecimento DW + fila CIEVS unificada.")
+    print(
+        f"[SIM] matches={n_match_sim} · com evidência de óbito={n_obito_sim} · "
+        f"descartados sem evidência={n_descartado}"
+    )
+    print(motivo_sim[match_sim == 1].value_counts().to_string())
     print(resumo.to_string(index=False))
     if not fila.empty:
         print(fila["prioridade"].value_counts().to_string())

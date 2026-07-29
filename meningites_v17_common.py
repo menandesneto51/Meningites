@@ -262,7 +262,8 @@ def attach_mortalidade_sim_v23(df: pd.DataFrame) -> pd.DataFrame:
             break
     cols = [c for c in [
         "obito_sim_link_v23", "obito_meningite_uniao_v23", "obito_sim_sem_sinan_v23",
-        "dw_sim_match_v23", "dw_sim_score_v23", "dw_sim_cid_v23",
+        "obito_sim_motivo_v23",
+        "dw_sim_match_v23", "dw_sim_score_v23", "dw_sim_cid_v23", "dw_sim_data_obito_v23",
     ] if c in m.columns]
     if not cols:
         return df
