@@ -1,6 +1,6 @@
 # Fila CIEVS unificada — Meningites V23
 
-**Gerado em:** 27/07/2026 13:46
+**Gerado em:** 29/07/2026 12:37
 **Matches usados (score ≥ 0.75):** GAL=415 · SIM=64
 
 ## Enriquecimento DW na base
@@ -12,7 +12,7 @@
 ## Mortalidade SINAN × SIM (para Odds Ratio)
 
 - Óbitos SINAN (EvolucaoCaso): **395**
-- Óbitos SIM (linkage ≥ 0.75): **64**
+- Óbitos SIM (linkage ≥ 0.75 **com evidência de óbito**): **64** — de 64 matches; 0 descartados por não terem data de óbito nem CID de meningite
 - União SINAN∪SIM (desfecho padrão dos OR): **415**
 - SIM sem óbito meningite no SINAN: **20**
 
@@ -24,20 +24,20 @@ Arquivo: `desfechos_mortalidade_sim_v23.csv` · resumo: `mortalidade_sinan_sim_r
 
 ### Top 15 da fila
 
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JACIARA | caso 2365377 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · VILA RICA | caso 2376787 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · COCALINHO | caso 2336634 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA | caso 2362236 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SANTO ANTONIO DO LEVERGER | caso 1146304 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CUIABA | caso 1777019 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · DENISE | caso 2191077 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JUARA | caso 2074968 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · VARZEA GRANDE | caso 2164165 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SANTO ANTONIO DO LEVERGER | caso 2209995 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · PORTO DOS GAUCHOS | caso 2308306 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JUARA | caso 2308041 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA | caso 2365378 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CANARANA | caso 2644023 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JACIARA | CASO-F5445904 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · VILA RICA | CASO-E51DE037 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · COCALINHO | CASO-95E79F63 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA | CASO-A71162B4 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SANTO ANTONIO DO LEVERGER | CASO-2261A93C — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CUIABA | CASO-46B1CD97 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · DENISE | CASO-6B91DA6B — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JUARA | CASO-B1769A6A — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · VARZEA GRANDE | CASO-53F6B521 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SANTO ANTONIO DO LEVERGER | CASO-B66018CB — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · PORTO DOS GAUCHOS | CASO-B47F99E5 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JUARA | CASO-4E535C75 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA | CASO-A599BF31 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CANARANA | CASO-E7CD9527 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
 - **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · POXOREO | caso 1 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
 
 ## Como atualizar

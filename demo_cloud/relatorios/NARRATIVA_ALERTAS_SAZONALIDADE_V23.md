@@ -1,6 +1,6 @@
 # Narrativa operacional — Meningites (IA assistida)
 
-**Gerado:** 27/07/2026 11:39
+**Gerado:** 29/07/2026 12:37
 
 ## Síntese
 
@@ -20,12 +20,19 @@ O padrão sazonal histórico aponta maior risco relativo em **Mar** (índice 1,1
 
 ## Trecho normativo recuperado (RAG)
 
-Com base nas normas indexadas para a pergunta «Quais ações prioritárias do CIEVS para meningites conforme Informe MS e NT 97?»:
+Com base nas normas indexadas para a pergunta «Quais ações prioritárias do CIEVS para meningites conforme Informe MS e NT 154?»:
 
-**Indicadores operacionais nacionais (Informe 2024)** (Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS):
-Indicadores de vigilância epidemiológica e laboratorial monitorados nacionalmente: (1) percentual de casos confirmados por critério laboratorial (RT-qPCR e cultura) — Brasil 2024: 36,1%; (2) percentual de casos investigados em até 48h da notificação — 97,8%; (3) percentual de casos encerrados em até 60 dias da notificação — 94,4%; (4) percentual de casos de DM com quimioprofilaxia de contatos em até 48h da notificação — 45,5%. No Caderno SINAN, confirmação laboratorial de bacterianas também considera cultura, CIE, PCR e látex.
+**Informe Meningites — indicadores (MD) — Como usar no CIEVS-MT** (Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS):
+- Comparar o valor estadual/municipal ao parâmetro Brasil do Informe (não como meta absoluta isolada, mas como referência de desempenho).
+- Priorizar ação quando investigação >48h, encerramento >60 dias ou quimio DM atrasada.
+- Cruzar indicadores vermelhos com a fila operacional (casos abertos, backlog) e alertas de surto.
+- Sempre citar a fonte e a data de geração do painel em comunicações oficiais.
 
-**Inconsistência quimioprofilaxia × etiologia** (Caderno de Análises SINAN — Meningites):
-A quimioprofilaxia é medida de controle para prevenir casos secundários e só está indicada para doença meningocócica (MM, MCC, MM+MCC) e meningite por Haemophilus (MH/Hib). Não deve ser realizada para as demais etiologias. Quimio registrada em etiologia não elegível deve ser auditada (erro de classificação ou de preenchimento).
+**Informe Meningites — indicadores (MD) — Informe Meningites — Indicadores operacionais (MS)** (Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS):
+**Fonte:** Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS  
+**Uso CIEVS:** metas/referências nacionais e leitura de semáforo dos indicadores MS no painel.
 
-**Incidência, 
+**Informe Meningites 2024 (PDF oficial) — Por Meningite Bacteriana Segundo** (Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS):
+io do estado, não sendo apresentados neste informe.
+2Dados de 2024 notificados até 7/9/2024 (SE36).
+3Foram utilizadas as estimati

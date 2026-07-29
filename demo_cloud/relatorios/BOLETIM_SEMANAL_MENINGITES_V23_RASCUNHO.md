@@ -1,6 +1,6 @@
 # Boletim semanal — Meningites | CIEVS-MT (rascunho automático V23)
 
-**Gerado em:** 27/07/2026 15:31
+**Gerado em:** 29/07/2026 12:34
 **Fontes:** SINAN (base única), indicadores MS (Informe/Caderno), NT 154/2024, canal de alertas V23.
 
 > Documento de apoio à vigilância. Validar com a equipe antes de divulgação oficial.
@@ -13,9 +13,9 @@
 | % casos investigados em até 48h da notificação | 93,6 | 97,8 | Vermelho |
 | % casos encerrados em até 60 dias da notificação | 83,6 | 94,4 | Vermelho |
 | % doença meningocócica com quimioprofilaxia ≤48h | 54,7 | 45,5 | Verde |
+| % meningite Hib/Hemófilo com quimioprofilaxia ≤48h | 38,1 | — | Vermelho |
 | % DM com sorogrupo identificado | 30,6 | — | Vermelho |
 | % notificação em até 24h do início dos sintomas | 29,8 | — | Vermelho |
-| % meningite Hib/Hemófilo com quimioprofilaxia ≤48h | 38,1 | — | Vermelho |
 
 ## 2. Situação epidemiológica (confirmados)
 
@@ -59,21 +59,21 @@ Nenhum surto comunitário/institucional de DM detectado pelos critérios NT 154 
 
 ### Top 15 da fila prioritária
 
-1. **Crítico** — Encerramento em risco/atrasado | AGUA BOA | caso 382408 — Caso aberto há 6915 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-2. **Crítico** — Encerramento em risco/atrasado | ALTA FLORESTA | caso 1239565 — Caso aberto há 4239 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-3. **Crítico** — Encerramento em risco/atrasado | ALTO ARAGUAIA | caso 1408872 — Caso aberto há 3975 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-4. **Crítico** — Encerramento em risco/atrasado | ALTO GARCAS | caso 1457042 — Caso aberto há 3812 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-5. **Crítico** — Encerramento em risco/atrasado | ALTO GARCAS | caso 1592589 — Caso aberto há 3192 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-6. **Crítico** — Encerramento em risco/atrasado | ALTO PARAGUAI | caso 427327 — Caso aberto há 6792 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-7. **Crítico** — Encerramento em risco/atrasado | ALTO PARAGUAI | caso 2396400 — Caso aberto há 1109 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-8. **Crítico** — Encerramento em risco/atrasado | ALTO PARAGUAI | caso 2504191 — Caso aberto há 916 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-9. **Crítico** — Encerramento em risco/atrasado | APIACAS | caso 1848994 — Caso aberto há 2435 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-10. **Crítico** — Encerramento em risco/atrasado | ARAGUAIANA | caso 964665 — Caso aberto há 5214 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-11. **Crítico** — Encerramento em risco/atrasado | ARAGUAIANA | caso 1113495 — Caso aberto há 4641 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-12. **Crítico** — Encerramento em risco/atrasado | ARAPUTANGA | caso 1018575 — Caso aberto há 5011 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-13. **Crítico** — Encerramento em risco/atrasado | ARENAPOLIS | caso 2842275 — Caso aberto há 413 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-14. **Crítico** — Encerramento em risco/atrasado | ARIPUANA | caso 1652284 — Caso aberto há 2849 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-15. **Crítico** — Encerramento em risco/atrasado | ARIPUANA | caso 2865034 — Caso aberto há 427 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+1. **Crítico** — Encerramento em risco/atrasado | AGUA BOA | CASO-F72EA2B3 — Caso aberto há 6917 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+2. **Crítico** — Encerramento em risco/atrasado | ALTA FLORESTA | CASO-AE9A5E56 — Caso aberto há 4241 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+3. **Crítico** — Encerramento em risco/atrasado | ALTO ARAGUAIA | CASO-82D15451 — Caso aberto há 3977 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+4. **Crítico** — Encerramento em risco/atrasado | ALTO GARCAS | CASO-D6A8E432 — Caso aberto há 3814 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+5. **Crítico** — Encerramento em risco/atrasado | ALTO GARCAS | CASO-1E439534 — Caso aberto há 3194 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+6. **Crítico** — Encerramento em risco/atrasado | ALTO PARAGUAI | CASO-855BAA9D — Caso aberto há 6794 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+7. **Crítico** — Encerramento em risco/atrasado | ALTO PARAGUAI | CASO-04096DA7 — Caso aberto há 1111 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+8. **Crítico** — Encerramento em risco/atrasado | ALTO PARAGUAI | CASO-7A3D6228 — Caso aberto há 918 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+9. **Crítico** — Encerramento em risco/atrasado | APIACAS | CASO-580B0D48 — Caso aberto há 2437 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+10. **Crítico** — Encerramento em risco/atrasado | ARAGUAIANA | CASO-0F019DA4 — Caso aberto há 5216 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+11. **Crítico** — Encerramento em risco/atrasado | ARAGUAIANA | CASO-8E327790 — Caso aberto há 4643 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+12. **Crítico** — Encerramento em risco/atrasado | ARAPUTANGA | CASO-4D01FF81 — Caso aberto há 5013 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+13. **Crítico** — Encerramento em risco/atrasado | ARENAPOLIS | CASO-F5B767F4 — Caso aberto há 415 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+14. **Crítico** — Encerramento em risco/atrasado | ARIPUANA | CASO-4CE123FD — Caso aberto há 2851 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+15. **Crítico** — Encerramento em risco/atrasado | ARIPUANA | CASO-331A2459 — Caso aberto há 429 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
 
 ## 4b. Operação avançada (V25)
 

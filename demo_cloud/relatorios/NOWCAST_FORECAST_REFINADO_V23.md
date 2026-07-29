@@ -1,6 +1,6 @@
 # Nowcast / Forecast refinados — Meningites V23
 
-**Gerado:** 27/07/2026 11:39
+**Gerado:** 29/07/2026 12:37
 
 ## Nowcast (correção por atraso de notificação)
 

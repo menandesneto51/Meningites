@@ -1,2 +1,2 @@
-﻿obitos_sinan_evolucao,obitos_sim_linkage,obitos_uniao_sinan_sim,obitos_sim_sem_sinan,nota
-395,64,415,20,OR de mortalidade deve usar obito_meningite_uniao_v23 (padrão). obito_meningite_v17 = só EvolucaoCaso SINAN; obito_sim_link_v23 = match SIM score≥0.75.
+﻿obitos_sinan_evolucao,obitos_sim_linkage,obitos_uniao_sinan_sim,obitos_sim_sem_sinan,sim_matches_brutos,sim_matches_sem_evidencia_obito,nota
+395,64,415,20,64,0,OR de mortalidade deve usar obito_meningite_uniao_v23 (padrão). obito_meningite_v17 = só EvolucaoCaso SINAN; obito_sim_link_v23 = match SIM score≥0.75 COM evidência de óbito (data de óbito válida e/ou CID de meningite); motivo em obito_sim_motivo_v23.

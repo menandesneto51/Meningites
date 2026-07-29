@@ -65,3 +65,13 @@ docs_ms/**/*.pdf
 !docs_ms/**/*.txt
 !docs_ms/**/*.json
 !README.md
+
+# O pacote público tem de entrar inteiro: as regras de dump acima (*Popula*.csv)
+# deixavam de fora artefatos legítimos do demo_cloud (denominador populacional,
+# letalidade padronizada). Reafirmado no fim do arquivo porque a última regra
+# que casa é a que vale.
+!demo_cloud/**/*.csv
+!demo_cloud/**/*.json
+!demo_cloud/**/*.md
+!demo_cloud/**/*.txt
+!demo_cloud/**/*.geojson

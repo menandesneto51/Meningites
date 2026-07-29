@@ -1,0 +1,15 @@
+{
+  "gerado_em": "2026-07-29T12:35:19",
+  "n_documentos_kb": 522,
+  "n_curados": 20,
+  "n_docs_ms": 502,
+  "llm_disponivel": true,
+  "llm_provider": "gemini",
+  "llm_model": "gemini-2.5-flash",
+  "arquivos": [
+    "assistente_kb_documentos_v23.csv",
+    "assistente_kb_docs_ms_v27.csv",
+    "assistente_narrativa_boletim_v23.md",
+    "BOLETIM_SEMANAL_MENINGITES_V23_NARRATIVA_IA.md"
+  ]
+}

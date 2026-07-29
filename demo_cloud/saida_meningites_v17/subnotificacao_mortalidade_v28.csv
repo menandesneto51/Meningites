@@ -1,0 +1,46 @@
+﻿escopo,recorte,casos_total,obitos_sinan_n,obitos_sim_link_n,obitos_uniao_n,obitos_sim_sem_sinan_n,pct_sobre_obitos_sim,pct_sobre_obitos_uniao,pct_sobre_casos,fonte_linkage,disponivel
+ESTADUAL,MATO GROSSO,5944,395,64,415,20,31.25,4.819277108433735,0.3364737550471063,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,AGUA BOA,115,6,3,8,2,66.66666666666666,25.0,1.7391304347826086,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,ALTA FLORESTA,120,14,2,14,0,0.0,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,BARRA DO GARCAS,253,24,3,25,1,33.33333333333333,4.0,0.3952569169960474,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,CACERES,362,30,5,30,0,0.0,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,COLIDER,89,4,0,4,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,CUIABA,2295,127,14,131,4,28.57142857142857,3.0534351145038165,0.17429193899782133,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,DIAMANTINO,105,10,1,10,0,0.0,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,JUARA,69,3,4,7,4,100.0,57.14285714285714,5.797101449275362,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,JUINA,95,9,2,9,0,0.0,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,PEIXOTO DE AZEVEDO,142,8,0,8,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,PONTES E LACERDA,162,10,1,10,0,0.0,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,PORTO ALEGRE DO NORTE,62,3,1,4,1,100.0,25.0,1.6129032258064515,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,RONDONOPOLIS,888,64,14,69,5,35.714285714285715,7.246376811594203,0.5630630630630631,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,SAO FELIX DO ARAGUAIA,11,0,0,0,0,,,0.0,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,SINOP,832,66,9,67,1,11.11111111111111,1.4925373134328357,0.1201923076923077,desfechos_mortalidade_sim_v23.csv,1
+REGIONAL,TANGARA DA SERRA,344,17,5,19,2,40.0,10.526315789473683,0.5813953488372093,desfechos_mortalidade_sim_v23.csv,1
+ANO,1966,1,1,0,1,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,1975,1,0,0,0,0,,,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,1976,1,0,0,0,0,,,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,1980,1,0,0,0,0,,,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2000,1,0,0,0,0,,,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2002,1,0,0,0,0,,,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2004,1,0,0,0,0,,,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2006,8,0,0,0,0,,,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2007,663,27,0,27,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2008,441,13,0,13,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2009,366,26,1,27,1,100.0,3.7037037037037033,0.273224043715847,desfechos_mortalidade_sim_v23.csv,1
+ANO,2010,308,22,0,22,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2011,343,33,0,33,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2012,338,27,0,27,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2013,359,32,0,32,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2014,345,15,0,15,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2015,270,20,0,20,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2016,291,16,0,16,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2017,310,27,0,27,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2018,287,17,1,18,1,100.0,5.555555555555555,0.34843205574912894,desfechos_mortalidade_sim_v23.csv,1
+ANO,2019,246,18,0,18,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2020,118,8,0,8,0,,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2021,99,16,8,16,0,0.0,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1
+ANO,2022,191,13,11,16,3,27.27272727272727,18.75,1.5706806282722512,desfechos_mortalidade_sim_v23.csv,1
+ANO,2023,268,12,11,18,6,54.54545454545454,33.33333333333333,2.2388059701492535,desfechos_mortalidade_sim_v23.csv,1
+ANO,2024,267,25,19,33,8,42.10526315789473,24.242424242424242,2.9962546816479403,desfechos_mortalidade_sim_v23.csv,1
+ANO,2025,246,16,6,17,1,16.666666666666664,5.88235294117647,0.40650406504065045,desfechos_mortalidade_sim_v23.csv,1
+ANO,2026,173,11,7,11,0,0.0,0.0,0.0,desfechos_mortalidade_sim_v23.csv,1

@@ -1,0 +1,186 @@
+{
+  "rotina": "ops",
+  "inicio": "2026-07-29T12:34:43",
+  "fim": "2026-07-29T12:37:51",
+  "python": "C:\\Users\\Menandesneto\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe",
+  "passos": [
+    {
+      "ordem": 1,
+      "script": "12_indicadores_ms_operacionais_v23.py",
+      "obrigatorio": true,
+      "status": "ok",
+      "duracao_s": 2.82,
+      "erro": "",
+      "fim": "2026-07-29T12:34:46"
+    },
+    {
+      "ordem": 2,
+      "script": "13_alertas_inteligentes_v23.py",
+      "obrigatorio": true,
+      "status": "ok",
+      "duracao_s": 1.23,
+      "erro": "",
+      "fim": "2026-07-29T12:34:47"
+    },
+    {
+      "ordem": 3,
+      "script": "14_painel_epidemiologico_ms_v23.py",
+      "obrigatorio": true,
+      "status": "ok",
+      "duracao_s": 1.65,
+      "erro": "",
+      "fim": "2026-07-29T12:34:49"
+    },
+    {
+      "ordem": 4,
+      "script": "11_qualidade_score_v20.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 1.02,
+      "erro": "",
+      "fim": "2026-07-29T12:34:50"
+    },
+    {
+      "ordem": 5,
+      "script": "15_boletim_semanal_rascunho_v23.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 0.86,
+      "erro": "",
+      "fim": "2026-07-29T12:34:51"
+    },
+    {
+      "ordem": 6,
+      "script": "27_ingestao_docs_ms_rag_v27.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 5.69,
+      "erro": "",
+      "fim": "2026-07-29T12:34:57"
+    },
+    {
+      "ordem": 7,
+      "script": "16_assistente_cievs_v23.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 22.31,
+      "erro": "",
+      "fim": "2026-07-29T12:35:19"
+    },
+    {
+      "ordem": 8,
+      "script": "19_dw_descobrir_e_extrair_v23.py",
+      "obrigatorio": false,
+      "status": "falhou",
+      "duracao_s": 46.26,
+      "erro": "código de saída 1",
+      "fim": "2026-07-29T12:36:05"
+    },
+    {
+      "ordem": 9,
+      "script": "17_linkage_gal_lacen_sim_v23.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 76.26,
+      "erro": "",
+      "fim": "2026-07-29T12:37:21"
+    },
+    {
+      "ordem": 10,
+      "script": "20_enriquecimento_dw_fila_cievs_v23.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 1.93,
+      "erro": "",
+      "fim": "2026-07-29T12:37:23"
+    },
+    {
+      "ordem": 11,
+      "script": "02b_odds_classificacao_desfechos_v20.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 2.41,
+      "erro": "",
+      "fim": "2026-07-29T12:37:26"
+    },
+    {
+      "ordem": 12,
+      "script": "02c_odds_clinico_socio_comorb_v21.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 4.09,
+      "erro": "",
+      "fim": "2026-07-29T12:37:30"
+    },
+    {
+      "ordem": 13,
+      "script": "21_sazonalidade_meningites_v23.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 1.06,
+      "erro": "",
+      "fim": "2026-07-29T12:37:31"
+    },
+    {
+      "ordem": 14,
+      "script": "22_nowcast_forecast_refinado_v23.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 0.92,
+      "erro": "",
+      "fim": "2026-07-29T12:37:32"
+    },
+    {
+      "ordem": 15,
+      "script": "26_indicadores_ops_avancados_v25.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 1.83,
+      "erro": "",
+      "fim": "2026-07-29T12:37:34"
+    },
+    {
+      "ordem": 16,
+      "script": "24_nowcast_operacional_gestao_v24.py",
+      "obrigatorio": true,
+      "status": "ok",
+      "duracao_s": 2.41,
+      "erro": "",
+      "fim": "2026-07-29T12:37:36"
+    },
+    {
+      "ordem": 17,
+      "script": "23_alertas_personalizados_ia_v23.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 6.53,
+      "erro": "",
+      "fim": "2026-07-29T12:37:43"
+    },
+    {
+      "ordem": 18,
+      "script": "28_indicadores_novos_v28.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 6.27,
+      "erro": "",
+      "fim": "2026-07-29T12:37:49"
+    },
+    {
+      "ordem": 19,
+      "script": "29_procedencia_artefatos_v28.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 1.78,
+      "erro": "",
+      "fim": "2026-07-29T12:37:51"
+    }
+  ],
+  "resumo": {
+    "total": 19,
+    "ok": 18,
+    "falhou": 1,
+    "pulado": 0,
+    "obrigatorios_falhos": 0
+  }
+}

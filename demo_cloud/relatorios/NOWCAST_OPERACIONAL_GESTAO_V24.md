@@ -1,6 +1,6 @@
 # Nowcast operacional + gestão — Meningites V24
 
-**Gerado:** 27/07/2026 14:21
+**Gerado:** 29/07/2026 12:37
 
 ## Método
 

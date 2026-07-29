@@ -1,6 +1,17 @@
 {
-  "n_arquivos_csv": 128,
+  "n_arquivos_csv": 141,
+  "n_arquivos_json": 3,
+  "excluidos_por_politica": [
+    "auditoria_sinan_somente_dw_v23.csv",
+    "auditoria_sinan_somente_local_v23.csv",
+    "dw_objetos_descobertos_v23.csv",
+    "dw_schema_cnes_estabelecimentos.csv",
+    "dw_schema_gal_lacen_meningites.csv",
+    "dw_schema_sim_obitos_meningites.csv",
+    "dw_schema_sinan_meningites_dw.csv",
+    "dw_schema_sinasc_dw.csv"
+  ],
   "pulados_grandes": [],
   "geojson_simplificado": true,
-  "aviso": "Pacote DEMO para avaliação pública/cloud. Colunas nominais removidas da base e filas. Sem acesso ao DW."
+  "aviso": "Pacote DEMO para avaliação pública/cloud. Colunas nominais, de endereço e de data de nascimento removidas; identificadores de caso pseudonimizados com sal sorteado por execução e não persistido. Sem acesso ao DW."
 }

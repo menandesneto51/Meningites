@@ -1,31 +1,31 @@
 # Digest Regional — SINOP
-**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 11:39
+**Perfil:** COORD_REGIONAL · **Gerado:** 29/07/2026 12:37
 
 ## Indicadores MS (regional)
 Casos=832 | inv48h=98.7% | enc60d=89.1% | quimio=65.2%
 
 ## Fila local: 21 itens · Crítico/Alto: 19
 
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SORRISO | caso 2673263 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Encerramento em risco/atrasado · CLAUDIA | caso 507114 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CLAUDIA | caso 396961 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CLAUDIA | caso 920568 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CLAUDIA | caso 1953847 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · FELIZ NATAL | caso 2276220 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · IPIRANGA DO NORTE | caso 1520120 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · IPIRANGA DO NORTE | caso 1522301 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · ITANHANGA | caso 2012855 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · LUCAS DO RIO VERDE | caso 396962 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · LUCAS DO RIO VERDE | caso 661540 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · LUCAS DO RIO VERDE | caso 677593 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · LUCAS DO RIO VERDE | caso 2122720 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · LUCAS DO RIO VERDE | caso 691812 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · LUCAS DO RIO VERDE | caso 2680001 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SORRISO | CASO-A7857542 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Encerramento em risco/atrasado · CLAUDIA | CASO-A84A1BAE — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CLAUDIA | CASO-0B140656 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CLAUDIA | CASO-8C37483C — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CLAUDIA | CASO-45BE997F — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · FELIZ NATAL | CASO-D5AB2122 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · IPIRANGA DO NORTE | CASO-F5914EA4 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · IPIRANGA DO NORTE | CASO-1C1EDC19 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · ITANHANGA | CASO-0140E340 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · LUCAS DO RIO VERDE | CASO-6546681A — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · LUCAS DO RIO VERDE | CASO-ADE3C25A — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · LUCAS DO RIO VERDE | CASO-5B312922 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · LUCAS DO RIO VERDE | CASO-262F8613 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · LUCAS DO RIO VERDE | CASO-3C873B07 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · LUCAS DO RIO VERDE | CASO-9EA64A6B — Priorizar encerramento com critério de confirmação e evolução preenchidos.
 
 ## Linkage DW (2)
 
-- Óbito no SIM sem desfecho meningite no SINAN · caso 2673263 — Match DW SIM score≥0.75; CID=G00.1 Meningite pneu; EvolucaoCaso/SINAN sem óbito por meningite
-- GAL/LACEN positivo — atualizar SINAN · caso 3051700 — Match DW VW_GAL score≥0.75; método=Teste de Sensibilidade; resultado=Microrganismo Isolado:  
+- Óbito no SIM sem desfecho meningite no SINAN · CASO-A7857542 — Match DW SIM score≥0.75; CID=G00.1 Meningite pneu; data óbito=2025-04-19; evidência=data_obito+cid_m
+- GAL/LACEN positivo — atualizar SINAN · CASO-C64A06B0 — Match DW VW_GAL score≥0.75; método=Teste de Sensibilidade; resultado=Microrganismo Isolado:  
 
 ## Ações sugeridas (meningites / MS)
 1. Resolver quimioprofilaxia DM/Hib pendente (≤48h).

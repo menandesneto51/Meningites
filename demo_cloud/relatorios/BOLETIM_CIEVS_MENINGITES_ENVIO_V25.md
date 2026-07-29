@@ -1,6 +1,6 @@
 # Boletim CIEVS-MT — Meningites (pronta para envio)
 
-**Gerado em:** 27/07/2026 15:31
+**Gerado em:** 29/07/2026 12:37
 
 > Validar com a equipe antes de divulgação oficial.
 

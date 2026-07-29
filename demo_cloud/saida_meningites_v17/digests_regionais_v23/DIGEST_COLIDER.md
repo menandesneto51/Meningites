@@ -1,20 +1,20 @@
 # Digest Regional — COLIDER
-**Perfil:** COORD_REGIONAL · **Gerado:** 27/07/2026 11:39
+**Perfil:** COORD_REGIONAL · **Gerado:** 29/07/2026 12:37
 
 ## Indicadores MS (regional)
 Casos=89 | inv48h=100.0% | enc60d=87.7% | quimio=0.0%
 
 ## Fila local: 9 itens · Crítico/Alto: 8
 
-- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | caso 2172716 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | caso 360021 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | caso 406853 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | caso 551946 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | caso 481510 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | caso 339609 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVA CANAA DO NORTE | caso 384699 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVA GUARITA | caso 2929875 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Atenção** · Duplicidade NumeroNotificacao · MARCELANDIA | caso 406853 — Auditar e consolidar registros duplicados no SINAN/DW.
+- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-3DEA96EB — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-3BDD8F76 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-6B787FD9 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-5F585BA8 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-FF11B2FD — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-BA305D69 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVA CANAA DO NORTE | CASO-8ED3C156 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVA GUARITA | CASO-F28C7651 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Atenção** · Duplicidade NumeroNotificacao · MARCELANDIA | CASO-6B787FD9 — Auditar e consolidar registros duplicados no SINAN/DW.
 
 ## Ações sugeridas (meningites / MS)
 1. Resolver quimioprofilaxia DM/Hib pendente (≤48h).

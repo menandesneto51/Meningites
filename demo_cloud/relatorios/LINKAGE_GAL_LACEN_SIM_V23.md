@@ -1,6 +1,6 @@
 # Relatório de linkage GAL / LACEN / SIM — V23
 
-**Gerado em:** 27/07/2026 11:39
+**Gerado em:** 29/07/2026 12:37
 
 ## Prontidão das fontes
 

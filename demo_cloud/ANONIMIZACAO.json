@@ -1,0 +1,210 @@
+{
+  "politica": {
+    "removidas": "colunas nominais, contato, endereço e data de nascimento",
+    "pseudonimizadas": [
+      "NumeroDN",
+      "NumeroDO",
+      "NumeroNotificacao",
+      "_sid",
+      "id_caso",
+      "numero_dn",
+      "numero_do",
+      "numero_notificacao",
+      "sid"
+    ],
+    "texto_livre": "número de caso com 5+ dígitos substituído por pseudônimo",
+    "arquivos_excluidos": [
+      "dw_schema_",
+      "dw_objetos_descobertos",
+      "auditoria_sinan_somente_"
+    ]
+  },
+  "n_identificadores_pseudonimizados": 6812,
+  "por_arquivo": {
+    "alertas_inteligentes_casos_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "id_caso"
+      ]
+    },
+    "alertas_inteligentes_fila_cievs_v23.csv": {
+      "colunas_texto_sanitizadas": [
+        "territorio"
+      ]
+    },
+    "alertas_linkage_dw_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "id_caso"
+      ]
+    },
+    "alertas_qualidade_sinan_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "id_caso"
+      ]
+    },
+    "base_unica_meningites_v17.csv": {
+      "colunas_removidas": [
+        "CodigoUnidadeNotificacao",
+        "UnidadeNotificacao",
+        "NomePaciente",
+        "NumeroCartaoSUS",
+        "NomeMaePaciente",
+        "DataNascimento",
+        "AnoNascimento",
+        "MesNascimento",
+        "BairroResidencia",
+        "Logradouro",
+        "EnderecoNumero",
+        "EnderecoComplemento",
+        "GeoCampo1",
+        "GeoCampo2",
+        "PontoReferencia",
+        "Cep"
+      ],
+      "colunas_pseudonimizadas": [
+        "NumeroNotificacao"
+      ]
+    },
+    "desfechos_mortalidade_sim_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "NumeroNotificacao"
+      ]
+    },
+    "enriquecimento_casos_dw_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "NumeroNotificacao"
+      ]
+    },
+    "fila_cievs_unificada_v23.csv": {
+      "colunas_texto_sanitizadas": [
+        "territorio"
+      ]
+    },
+    "linkage_fila_busca_gal_lacen_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "NumeroNotificacao"
+      ]
+    },
+    "linkage_matches_gal_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "sid",
+        "numero_notificacao"
+      ]
+    },
+    "linkage_matches_lacen_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "sid",
+        "numero_notificacao"
+      ]
+    },
+    "linkage_matches_sim_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "sid",
+        "numero_notificacao"
+      ]
+    },
+    "linkage_matches_todos_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "sid",
+        "numero_notificacao"
+      ]
+    },
+    "linkage_proxy_interno_casos_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "NumeroNotificacao"
+      ]
+    },
+    "digests_regionais_v23/DIGEST_AGUA_BOA.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_ALTA_FLORESTA.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_BARRA_DO_GARCAS.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_CACERES.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_CIEVS_ESTADUAL.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_COLIDER.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_CUIABA.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_DIAMANTINO.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_JUARA.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_JUINA.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_LAB_REFERENCIA.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_PEIXOTO_DE_AZEVEDO.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_PONTES_E_LACERDA.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_PORTO_ALEGRE_DO_NORTE.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_RONDONOPOLIS.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_SAO_FELIX_DO_ARAGUAIA.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_SINOP.md": {
+      "texto_sanitizado": true
+    },
+    "digests_regionais_v23/DIGEST_TANGARA_DA_SERRA.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/ALERTAS_PERSONALIZADOS_V23.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/ANALISE_SINAN_MENINGITES_DW_V23.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/BASE_UNICA_FONTE_DW_V23.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/BOLETIM_CIEVS_MENINGITES_ENVIO_V25.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/BOLETIM_SEMANAL_MENINGITES_V23_RASCUNHO.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/DW_EXTRACAO_MENINGITES_V23.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/FILA_CIEVS_UNIFICADA_V23.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/INDICADORES_NOVOS_V28.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/INTERPRETACAO_ODDS_RATIO_EFETIVIDADE_VACINAL_V13_1.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/LINKAGE_GAL_LACEN_SIM_V23.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/NARRATIVA_ALERTAS_SAZONALIDADE_V23.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/NOWCAST_FORECAST_REFINADO_V23.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/SAZONALIDADE_MENINGITES_V23.md": {
+      "texto_sanitizado": true
+    }
+  }
+}

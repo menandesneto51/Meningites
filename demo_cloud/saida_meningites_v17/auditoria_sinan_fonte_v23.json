@@ -1,0 +1,17 @@
+{
+  "gerado_em": "2026-07-27T11:36:50",
+  "fonte_escolhida": "DW_VW_SINAN_MENINGITE",
+  "arquivo_escolhido": "sinan_meningites_dw.csv",
+  "modo": "auto",
+  "comparacao": {
+    "local_arquivo": "meningite.csv",
+    "local_n": 5925,
+    "local_unique_notif": 5896,
+    "dw_n": 6032,
+    "dw_unique_notif": 6003,
+    "overlap": 5894,
+    "somente_local": 2,
+    "somente_dw": 109,
+    "ganho_dw_vs_local": 107
+  }
+}

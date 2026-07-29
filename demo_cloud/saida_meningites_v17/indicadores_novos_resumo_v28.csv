@@ -1,0 +1,1371 @@
+﻿familia,indicador,escopo,recorte,valor,numerador,denominador,unidade,gerado_em
+oportunidade_coleta_liquor,pct_coleta_le_1d,ESTADUAL,MATO GROSSO,40.82960553070354,2008.0,4918,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ESTADUAL,MATO GROSSO,55.652704351362345,2737.0,4918,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ESTADUAL,MATO GROSSO,2.0,,4918,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ESTADUAL,MATO GROSSO,11.0,,4918,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,AGUA BOA,36.84210526315789,35.0,95,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,AGUA BOA,51.578947368421055,49.0,95,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,AGUA BOA,2.0,,95,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,AGUA BOA,13.600000000000009,,95,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,ALTA FLORESTA,39.21568627450981,40.0,102,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,ALTA FLORESTA,56.86274509803921,58.0,102,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,ALTA FLORESTA,2.0,,102,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,ALTA FLORESTA,6.900000000000006,,102,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,BARRA DO GARCAS,46.1139896373057,89.0,193,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,BARRA DO GARCAS,62.69430051813472,121.0,193,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,BARRA DO GARCAS,2.0,,193,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,BARRA DO GARCAS,8.0,,193,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,CACERES,42.08860759493671,133.0,316,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,CACERES,56.9620253164557,180.0,316,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,CACERES,2.0,,316,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,CACERES,14.0,,316,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,COLIDER,35.714285714285715,25.0,70,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,COLIDER,51.42857142857142,36.0,70,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,COLIDER,2.0,,70,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,COLIDER,11.100000000000001,,70,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,CUIABA,39.95597138139791,726.0,1817,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,CUIABA,54.870665932856355,997.0,1817,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,CUIABA,2.0,,1817,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,CUIABA,12.0,,1817,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,DIAMANTINO,31.16883116883117,24.0,77,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,DIAMANTINO,42.857142857142854,33.0,77,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,DIAMANTINO,4.0,,77,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,DIAMANTINO,14.0,,77,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,JUARA,38.18181818181819,21.0,55,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,JUARA,54.54545454545454,30.0,55,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,JUARA,2.0,,55,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,JUARA,9.200000000000003,,55,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,JUINA,24.358974358974358,19.0,78,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,JUINA,39.743589743589745,31.0,78,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,JUINA,3.0,,78,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,JUINA,13.299999999999997,,78,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,PEIXOTO DE AZEVEDO,45.21739130434783,52.0,115,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,PEIXOTO DE AZEVEDO,54.78260869565217,63.0,115,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,PEIXOTO DE AZEVEDO,2.0,,115,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,PEIXOTO DE AZEVEDO,10.600000000000009,,115,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,PONTES E LACERDA,36.885245901639344,45.0,122,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,PONTES E LACERDA,53.278688524590166,65.0,122,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,PONTES E LACERDA,2.0,,122,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,PONTES E LACERDA,13.0,,122,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,PORTO ALEGRE DO NORTE,23.52941176470588,8.0,34,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,PORTO ALEGRE DO NORTE,32.35294117647059,11.0,34,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,PORTO ALEGRE DO NORTE,4.5,,34,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,PORTO ALEGRE DO NORTE,15.099999999999998,,34,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,RONDONOPOLIS,43.15245478036176,334.0,774,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,RONDONOPOLIS,55.68475452196382,431.0,774,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,RONDONOPOLIS,2.0,,774,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,RONDONOPOLIS,10.700000000000045,,774,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,SAO FELIX DO ARAGUAIA,66.66666666666666,2.0,3,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,SAO FELIX DO ARAGUAIA,100.0,3.0,3,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,SAO FELIX DO ARAGUAIA,1.0,,3,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,SAO FELIX DO ARAGUAIA,1.8,,3,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,SINOP,41.86351706036746,319.0,762,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,SINOP,58.79265091863517,448.0,762,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,SINOP,2.0,,762,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,SINOP,9.0,,762,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,REGIONAL,TANGARA DA SERRA,44.59016393442623,136.0,305,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,REGIONAL,TANGARA DA SERRA,59.34426229508196,181.0,305,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,REGIONAL,TANGARA DA SERRA,2.0,,305,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,REGIONAL,TANGARA DA SERRA,7.0,,305,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,1966,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,1966,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,1966,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,1966,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,1975,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,1975,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,1975,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,1975,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,1976,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,1976,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,1976,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,1976,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,1980,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,1980,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,1980,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,1980,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2000,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2000,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2000,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2000,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2002,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2002,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2002,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2002,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2004,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2004,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2004,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2004,,,0,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2006,0.0,0.0,7,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2006,0.0,0.0,7,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2006,6.0,,7,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2006,31.800000000000004,,7,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2007,58.01652892561984,351.0,605,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2007,70.41322314049587,426.0,605,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2007,1.0,,605,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2007,7.0,,605,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2008,52.01005025125628,207.0,398,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2008,65.32663316582915,260.0,398,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2008,1.0,,398,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2008,7.300000000000011,,398,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2009,44.89164086687307,145.0,323,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2009,59.44272445820433,192.0,323,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2009,2.0,,323,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2009,9.0,,323,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2010,42.96875,110.0,256,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2010,58.59375,150.0,256,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2010,2.0,,256,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2010,10.0,,256,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2011,38.18770226537217,118.0,309,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2011,56.957928802588995,176.0,309,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2011,2.0,,309,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2011,10.0,,309,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2012,37.45704467353952,109.0,291,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2012,58.76288659793815,171.0,291,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2012,2.0,,291,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2012,8.0,,291,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2013,42.66211604095563,125.0,293,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2013,58.703071672354945,172.0,293,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2013,2.0,,293,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2013,9.0,,293,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2014,42.54545454545455,117.0,275,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2014,57.45454545454546,158.0,275,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2014,2.0,,275,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2014,9.0,,275,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2015,38.63636363636363,85.0,220,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2015,52.27272727272727,115.0,220,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2015,2.0,,220,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2015,12.0,,220,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2016,44.6078431372549,91.0,204,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2016,54.41176470588235,111.0,204,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2016,2.0,,204,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2016,13.0,,204,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2017,37.05179282868526,93.0,251,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2017,55.77689243027888,140.0,251,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2017,2.0,,251,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2017,14.0,,251,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2018,36.36363636363637,84.0,231,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2018,52.38095238095239,121.0,231,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2018,2.0,,231,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2018,12.0,,231,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2019,35.233160621761655,68.0,193,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2019,52.331606217616574,101.0,193,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2019,2.0,,193,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2019,9.0,,193,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2020,38.297872340425535,36.0,94,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2020,46.808510638297875,44.0,94,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2020,3.0,,94,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2020,23.70000000000003,,94,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2021,29.333333333333332,22.0,75,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2021,38.666666666666664,29.0,75,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2021,4.0,,75,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2021,20.60000000000001,,75,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2022,26.08695652173913,36.0,138,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2022,38.405797101449274,53.0,138,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2022,4.0,,138,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2022,16.0,,138,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2023,26.291079812206576,56.0,213,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2023,42.72300469483568,91.0,213,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2023,3.0,,213,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2023,16.0,,213,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2024,27.31707317073171,56.0,205,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2024,39.51219512195122,81.0,205,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2024,3.0,,205,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2024,14.0,,205,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2025,30.303030303030305,60.0,198,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2025,42.42424242424242,84.0,198,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2025,3.0,,198,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2025,15.0,,198,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_1d,ANO,2026,28.05755395683453,39.0,139,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,pct_coleta_le_2d,ANO,2026,44.60431654676259,62.0,139,%,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p50_coleta_dias,ANO,2026,3.0,,139,dias,2026-07-29T12:37:49
+oportunidade_coleta_liquor,p90_coleta_dias,ANO,2026,11.0,,139,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ESTADUAL,MATO GROSSO,53.51170568561873,160.0,299,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ESTADUAL,MATO GROSSO,85.1063829787234,160.0,188,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ESTADUAL,MATO GROSSO,73.24414715719062,219.0,299,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ESTADUAL,MATO GROSSO,1.0,,188,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ESTADUAL,MATO GROSSO,4.0,,188,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,AGUA BOA,30.0,3.0,10,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,AGUA BOA,75.0,3.0,4,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,AGUA BOA,50.0,5.0,10,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,AGUA BOA,1.0,,4,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,AGUA BOA,3.4000000000000004,,4,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,ALTA FLORESTA,63.63636363636363,7.0,11,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,ALTA FLORESTA,77.77777777777779,7.0,9,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,ALTA FLORESTA,81.81818181818183,9.0,11,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,ALTA FLORESTA,1.0,,9,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,ALTA FLORESTA,5.000000000000001,,9,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,BARRA DO GARCAS,21.052631578947366,4.0,19,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,BARRA DO GARCAS,50.0,4.0,8,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,BARRA DO GARCAS,47.368421052631575,9.0,19,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,BARRA DO GARCAS,1.5,,8,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,BARRA DO GARCAS,6.3,,8,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,CACERES,46.666666666666664,7.0,15,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,CACERES,87.5,7.0,8,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,CACERES,66.66666666666666,10.0,15,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,CACERES,0.0,,8,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,CACERES,2.499999999999999,,8,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,COLIDER,0.0,0.0,2,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,COLIDER,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,COLIDER,0.0,0.0,2,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,COLIDER,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,COLIDER,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,CUIABA,63.829787234042556,60.0,94,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,CUIABA,88.23529411764706,60.0,68,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,CUIABA,78.72340425531915,74.0,94,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,CUIABA,1.0,,68,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,CUIABA,3.0,,68,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,DIAMANTINO,40.0,2.0,5,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,DIAMANTINO,66.66666666666666,2.0,3,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,DIAMANTINO,60.0,3.0,5,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,DIAMANTINO,2.0,,3,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,DIAMANTINO,2.8,,3,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,JUARA,33.33333333333333,1.0,3,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,JUARA,100.0,1.0,1,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,JUARA,66.66666666666666,2.0,3,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,JUARA,0.0,,1,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,JUARA,0.0,,1,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,JUINA,33.33333333333333,2.0,6,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,JUINA,66.66666666666666,2.0,3,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,JUINA,66.66666666666666,4.0,6,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,JUINA,1.0,,3,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,JUINA,10.600000000000001,,3,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,PEIXOTO DE AZEVEDO,0.0,0.0,4,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,PEIXOTO DE AZEVEDO,0.0,0.0,1,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,PEIXOTO DE AZEVEDO,25.0,1.0,4,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,PEIXOTO DE AZEVEDO,6.0,,1,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,PEIXOTO DE AZEVEDO,6.0,,1,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,PONTES E LACERDA,66.66666666666666,2.0,3,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,PONTES E LACERDA,100.0,2.0,2,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,PONTES E LACERDA,66.66666666666666,2.0,3,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,PONTES E LACERDA,0.0,,2,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,PONTES E LACERDA,0.0,,2,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,PORTO ALEGRE DO NORTE,100.0,2.0,2,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,PORTO ALEGRE DO NORTE,100.0,2.0,2,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,PORTO ALEGRE DO NORTE,100.0,2.0,2,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,PORTO ALEGRE DO NORTE,1.0,,2,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,PORTO ALEGRE DO NORTE,1.8,,2,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,RONDONOPOLIS,53.06122448979592,26.0,49,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,RONDONOPOLIS,86.66666666666667,26.0,30,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,RONDONOPOLIS,71.42857142857143,35.0,49,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,RONDONOPOLIS,0.0,,30,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,RONDONOPOLIS,5.100000000000001,,30,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,SAO FELIX DO ARAGUAIA,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,SAO FELIX DO ARAGUAIA,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,SAO FELIX DO ARAGUAIA,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,SAO FELIX DO ARAGUAIA,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,SAO FELIX DO ARAGUAIA,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,SINOP,57.35294117647059,39.0,68,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,SINOP,88.63636363636364,39.0,44,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,SINOP,80.88235294117648,55.0,68,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,SINOP,0.0,,44,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,SINOP,2.700000000000003,,44,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,REGIONAL,TANGARA DA SERRA,62.5,5.0,8,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,REGIONAL,TANGARA DA SERRA,100.0,5.0,5,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,REGIONAL,TANGARA DA SERRA,100.0,8.0,8,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,REGIONAL,TANGARA DA SERRA,0.0,,5,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,REGIONAL,TANGARA DA SERRA,1.0,,5,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,1966,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,1966,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,1966,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,1966,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,1966,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,1975,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,1975,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,1975,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,1975,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,1975,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,1976,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,1976,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,1976,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,1976,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,1976,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,1980,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,1980,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,1980,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,1980,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,1980,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2000,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2000,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2000,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2000,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2000,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2002,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2002,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2002,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2002,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2002,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2004,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2004,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2004,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2004,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2004,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2006,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2006,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2006,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2006,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2006,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2007,45.0,9.0,20,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2007,75.0,9.0,12,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2007,75.0,15.0,20,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2007,1.5,,12,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2007,6.800000000000001,,12,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2008,45.45454545454545,5.0,11,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2008,83.33333333333334,5.0,6,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2008,72.72727272727273,8.0,11,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2008,1.0,,6,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2008,4.0,,6,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2009,50.0,11.0,22,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2009,84.61538461538461,11.0,13,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2009,72.72727272727273,16.0,22,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2009,1.0,,13,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2009,9.000000000000007,,13,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2010,62.96296296296296,17.0,27,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2010,89.47368421052632,17.0,19,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2010,81.48148148148148,22.0,27,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2010,1.0,,19,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2010,2.3999999999999986,,19,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2011,59.375,19.0,32,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2011,95.0,19.0,20,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2011,71.875,23.0,32,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2011,1.0,,20,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2011,2.0,,20,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2012,57.89473684210527,22.0,38,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2012,81.48148148148148,22.0,27,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2012,84.21052631578947,32.0,38,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2012,0.0,,27,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2012,3.0,,27,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2013,58.82352941176471,20.0,34,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2013,90.9090909090909,20.0,22,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2013,73.52941176470588,25.0,34,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2013,1.0,,22,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2013,2.0,,22,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2014,44.44444444444444,8.0,18,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2014,61.53846153846154,8.0,13,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2014,77.77777777777779,14.0,18,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2014,2.0,,13,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2014,6.0,,13,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2015,61.111111111111114,11.0,18,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2015,100.0,11.0,11,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2015,66.66666666666666,12.0,18,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2015,1.0,,11,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2015,2.0,,11,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2016,50.0,6.0,12,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2016,75.0,6.0,8,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2016,83.33333333333334,10.0,12,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2016,0.0,,8,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2016,3.8999999999999995,,8,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2017,78.57142857142857,11.0,14,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2017,91.66666666666666,11.0,12,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2017,92.85714285714286,13.0,14,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2017,0.0,,12,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2017,1.9000000000000004,,12,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2018,50.0,5.0,10,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2018,100.0,5.0,5,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2018,60.0,6.0,10,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2018,1.0,,5,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2018,1.0,,5,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2019,62.5,5.0,8,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2019,100.0,5.0,5,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2019,75.0,6.0,8,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2019,0.0,,5,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2019,1.2000000000000002,,5,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2020,66.66666666666666,2.0,3,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2020,100.0,2.0,2,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2020,100.0,3.0,3,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2020,0.5,,2,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2020,0.9,,2,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2021,0.0,0.0,4,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2021,,0.0,0,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2021,0.0,0.0,4,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2021,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2021,,,0,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2022,40.0,2.0,5,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2022,100.0,2.0,2,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2022,60.0,3.0,5,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2022,2.0,,2,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2022,2.0,,2,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2023,22.22222222222222,2.0,9,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2023,100.0,2.0,2,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2023,22.22222222222222,2.0,9,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2023,0.0,,2,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2023,0.0,,2,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2024,50.0,1.0,2,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2024,50.0,1.0,2,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2024,100.0,2.0,2,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2024,1.5,,2,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2024,2.7,,2,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2025,25.0,2.0,8,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2025,50.0,2.0,4,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2025,50.0,4.0,8,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2025,4.0,,4,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2025,24.900000000000006,,4,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_elegiveis,ANO,2026,50.0,2.0,4,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_le_2d_entre_com_data,ANO,2026,66.66666666666666,2.0,3,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,pct_quimio_realizada,ANO,2026,75.0,3.0,4,%,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p50_quimio_dias,ANO,2026,1.0,,3,dias,2026-07-29T12:37:49
+tempo_quimioprofilaxia,p90_quimio_dias,ANO,2026,5.0,,3,dias,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ESTADUAL,MATO GROSSO,30.575539568345324,85.0,278,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,AGUA BOA,0.0,0.0,8,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,ALTA FLORESTA,9.090909090909092,1.0,11,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,BARRA DO GARCAS,11.11111111111111,2.0,18,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,CACERES,21.428571428571427,3.0,14,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,COLIDER,0.0,0.0,2,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,CUIABA,46.34146341463415,38.0,82,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,DIAMANTINO,25.0,1.0,4,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,JUARA,0.0,0.0,3,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,JUINA,0.0,0.0,6,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,PEIXOTO DE AZEVEDO,25.0,1.0,4,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,PONTES E LACERDA,0.0,0.0,3,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,PORTO ALEGRE DO NORTE,50.0,1.0,2,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,RONDONOPOLIS,22.916666666666664,11.0,48,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,SAO FELIX DO ARAGUAIA,,0.0,0,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,SINOP,39.39393939393939,26.0,66,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,REGIONAL,TANGARA DA SERRA,14.285714285714285,1.0,7,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,1966,,0.0,0,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,1975,,0.0,0,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,1976,,0.0,0,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,1980,,0.0,0,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2000,,0.0,0,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2002,,0.0,0,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2004,,0.0,0,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2006,,0.0,0,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2007,17.647058823529413,3.0,17,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2008,44.44444444444444,4.0,9,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2009,27.27272727272727,6.0,22,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2010,20.833333333333336,5.0,24,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2011,44.827586206896555,13.0,29,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2012,44.73684210526316,17.0,38,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2013,35.294117647058826,12.0,34,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2014,44.44444444444444,8.0,18,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2015,35.294117647058826,6.0,17,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2016,18.181818181818183,2.0,11,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2017,42.857142857142854,6.0,14,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2018,0.0,0.0,10,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2019,0.0,0.0,6,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2020,0.0,0.0,3,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2021,0.0,0.0,4,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2022,0.0,0.0,4,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2023,0.0,0.0,7,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2024,0.0,0.0,2,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2025,16.666666666666664,1.0,6,%,2026-07-29T12:37:49
+cobertura_sorogrupo_dm,pct_sorogrupo_preenchido,ANO,2026,66.66666666666666,2.0,3,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ESTADUAL,MATO GROSSO,7.0,,224,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ESTADUAL,MATO GROSSO,29.700000000000017,,224,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ESTADUAL,MATO GROSSO,20.14388489208633,56.0,278,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,AGUA BOA,16.0,,3,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,AGUA BOA,25.6,,3,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,AGUA BOA,62.5,5.0,8,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,ALTA FLORESTA,3.0,,9,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,ALTA FLORESTA,12.200000000000003,,9,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,ALTA FLORESTA,18.181818181818183,2.0,11,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,BARRA DO GARCAS,5.0,,9,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,BARRA DO GARCAS,10.0,,9,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,BARRA DO GARCAS,50.0,9.0,18,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,CACERES,8.0,,12,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,CACERES,31.300000000000004,,12,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,CACERES,14.285714285714285,2.0,14,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,COLIDER,5.0,,1,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,COLIDER,5.0,,1,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,COLIDER,50.0,1.0,2,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,CUIABA,10.0,,71,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,CUIABA,39.0,,71,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,CUIABA,13.414634146341465,11.0,82,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,DIAMANTINO,12.0,,4,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,DIAMANTINO,18.5,,4,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,DIAMANTINO,0.0,0.0,4,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,JUARA,30.0,,3,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,JUARA,62.0,,3,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,JUARA,0.0,0.0,3,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,JUINA,6.0,,6,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,JUINA,13.5,,6,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,JUINA,16.666666666666664,1.0,6,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,PEIXOTO DE AZEVEDO,8.0,,2,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,PEIXOTO DE AZEVEDO,10.4,,2,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,PEIXOTO DE AZEVEDO,50.0,2.0,4,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,PONTES E LACERDA,6.5,,2,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,PONTES E LACERDA,7.7,,2,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,PONTES E LACERDA,33.33333333333333,1.0,3,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,PORTO ALEGRE DO NORTE,7.0,,2,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,PORTO ALEGRE DO NORTE,9.4,,2,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,PORTO ALEGRE DO NORTE,0.0,0.0,2,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,RONDONOPOLIS,6.0,,33,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,RONDONOPOLIS,19.6,,33,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,RONDONOPOLIS,31.25,15.0,48,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,SAO FELIX DO ARAGUAIA,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,SAO FELIX DO ARAGUAIA,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,SAO FELIX DO ARAGUAIA,,0.0,0,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,SINOP,7.0,,60,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,SINOP,32.2,,60,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,SINOP,10.606060606060606,7.0,66,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,REGIONAL,TANGARA DA SERRA,3.0,,7,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,REGIONAL,TANGARA DA SERRA,5.800000000000001,,7,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,REGIONAL,TANGARA DA SERRA,0.0,0.0,7,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,1966,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,1966,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,1966,,0.0,0,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,1975,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,1975,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,1975,,0.0,0,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,1976,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,1976,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,1976,,0.0,0,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,1980,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,1980,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,1980,,0.0,0,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2000,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2000,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2000,,0.0,0,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2002,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2002,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2002,,0.0,0,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2004,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2004,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2004,,0.0,0,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2006,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2006,,,0,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2006,,0.0,0,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2007,4.0,,15,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2007,13.599999999999998,,15,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2007,11.76470588235294,2.0,17,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2008,9.0,,8,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2008,20.9,,8,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2008,11.11111111111111,1.0,9,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2009,10.0,,19,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2009,21.0,,19,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2009,13.636363636363635,3.0,22,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2010,7.0,,20,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2010,13.70000000000001,,20,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2010,16.666666666666664,4.0,24,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2011,8.0,,25,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2011,28.6,,25,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2011,13.793103448275861,4.0,29,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2012,8.0,,32,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2012,39.40000000000001,,32,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2012,15.789473684210526,6.0,38,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2013,6.0,,29,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2013,50.39999999999999,,29,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2013,14.705882352941178,5.0,34,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2014,11.0,,14,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2014,22.200000000000006,,14,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2014,22.22222222222222,4.0,18,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2015,6.0,,11,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2015,20.0,,11,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2015,35.294117647058826,6.0,17,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2016,8.0,,7,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2016,40.400000000000006,,7,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2016,36.36363636363637,4.0,11,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2017,7.0,,11,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2017,32.0,,11,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2017,21.428571428571427,3.0,14,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2018,4.0,,6,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2018,13.0,,6,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2018,50.0,5.0,10,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2019,10.0,,5,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2019,21.0,,5,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2019,16.666666666666664,1.0,6,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2020,4.0,,3,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2020,12.0,,3,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2020,0.0,0.0,3,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2021,2.0,,2,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2021,2.8,,2,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2021,50.0,2.0,4,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2022,7.0,,3,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2022,11.8,,3,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2022,25.0,1.0,4,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2023,2.0,,5,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2023,4.2,,5,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2023,42.857142857142854,3.0,7,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2024,10.0,,2,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2024,14.0,,2,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2024,0.0,0.0,2,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2025,5.0,,4,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2025,15.800000000000002,,4,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2025,33.33333333333333,2.0,6,%,2026-07-29T12:37:49
+contatos_por_caso_dm,p50_comunicantes_por_caso,ANO,2026,26.0,,3,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,p90_comunicantes_por_caso,ANO,2026,61.2,,3,contatos,2026-07-29T12:37:49
+contatos_por_caso_dm,pct_dm_zero_ou_sem_info,ANO,2026,0.0,0.0,3,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ESTADUAL,MATO GROSSO,31.25,20.0,64,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ESTADUAL,MATO GROSSO,4.819277108433735,20.0,415,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ESTADUAL,MATO GROSSO,0.3364737550471063,20.0,5944,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,AGUA BOA,66.66666666666666,2.0,3,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,AGUA BOA,25.0,2.0,8,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,AGUA BOA,1.7391304347826086,2.0,115,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,ALTA FLORESTA,0.0,0.0,2,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,ALTA FLORESTA,0.0,0.0,14,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,ALTA FLORESTA,0.0,0.0,120,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,BARRA DO GARCAS,33.33333333333333,1.0,3,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,BARRA DO GARCAS,4.0,1.0,25,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,BARRA DO GARCAS,0.3952569169960474,1.0,253,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,CACERES,0.0,0.0,5,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,CACERES,0.0,0.0,30,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,CACERES,0.0,0.0,362,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,COLIDER,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,COLIDER,0.0,0.0,4,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,COLIDER,0.0,0.0,89,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,CUIABA,28.57142857142857,4.0,14,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,CUIABA,3.0534351145038165,4.0,131,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,CUIABA,0.17429193899782133,4.0,2295,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,DIAMANTINO,0.0,0.0,1,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,DIAMANTINO,0.0,0.0,10,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,DIAMANTINO,0.0,0.0,105,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,JUARA,100.0,4.0,4,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,JUARA,57.14285714285714,4.0,7,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,JUARA,5.797101449275362,4.0,69,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,JUINA,0.0,0.0,2,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,JUINA,0.0,0.0,9,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,JUINA,0.0,0.0,95,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,PEIXOTO DE AZEVEDO,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,PEIXOTO DE AZEVEDO,0.0,0.0,8,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,PEIXOTO DE AZEVEDO,0.0,0.0,142,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,PONTES E LACERDA,0.0,0.0,1,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,PONTES E LACERDA,0.0,0.0,10,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,PONTES E LACERDA,0.0,0.0,162,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,PORTO ALEGRE DO NORTE,100.0,1.0,1,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,PORTO ALEGRE DO NORTE,25.0,1.0,4,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,PORTO ALEGRE DO NORTE,1.6129032258064515,1.0,62,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,RONDONOPOLIS,35.714285714285715,5.0,14,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,RONDONOPOLIS,7.246376811594203,5.0,69,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,RONDONOPOLIS,0.5630630630630631,5.0,888,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,SAO FELIX DO ARAGUAIA,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,SAO FELIX DO ARAGUAIA,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,SAO FELIX DO ARAGUAIA,0.0,0.0,11,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,SINOP,11.11111111111111,1.0,9,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,SINOP,1.4925373134328357,1.0,67,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,SINOP,0.1201923076923077,1.0,832,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,REGIONAL,TANGARA DA SERRA,40.0,2.0,5,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,REGIONAL,TANGARA DA SERRA,10.526315789473683,2.0,19,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,REGIONAL,TANGARA DA SERRA,0.5813953488372093,2.0,344,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,1966,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,1966,0.0,0.0,1,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,1966,0.0,0.0,1,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,1975,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,1975,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,1975,0.0,0.0,1,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,1976,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,1976,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,1976,0.0,0.0,1,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,1980,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,1980,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,1980,0.0,0.0,1,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2000,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2000,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2000,0.0,0.0,1,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2002,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2002,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2002,0.0,0.0,1,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2004,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2004,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2004,0.0,0.0,1,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2006,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2006,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2006,0.0,0.0,8,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2007,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2007,0.0,0.0,27,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2007,0.0,0.0,663,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2008,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2008,0.0,0.0,13,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2008,0.0,0.0,441,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2009,100.0,1.0,1,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2009,3.7037037037037033,1.0,27,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2009,0.273224043715847,1.0,366,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2010,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2010,0.0,0.0,22,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2010,0.0,0.0,308,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2011,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2011,0.0,0.0,33,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2011,0.0,0.0,343,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2012,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2012,0.0,0.0,27,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2012,0.0,0.0,338,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2013,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2013,0.0,0.0,32,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2013,0.0,0.0,359,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2014,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2014,0.0,0.0,15,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2014,0.0,0.0,345,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2015,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2015,0.0,0.0,20,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2015,0.0,0.0,270,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2016,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2016,0.0,0.0,16,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2016,0.0,0.0,291,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2017,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2017,0.0,0.0,27,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2017,0.0,0.0,310,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2018,100.0,1.0,1,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2018,5.555555555555555,1.0,18,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2018,0.34843205574912894,1.0,287,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2019,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2019,0.0,0.0,18,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2019,0.0,0.0,246,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2020,,0.0,0,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2020,0.0,0.0,8,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2020,0.0,0.0,118,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2021,0.0,0.0,8,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2021,0.0,0.0,16,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2021,0.0,0.0,99,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2022,27.27272727272727,3.0,11,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2022,18.75,3.0,16,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2022,1.5706806282722512,3.0,191,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2023,54.54545454545454,6.0,11,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2023,33.33333333333333,6.0,18,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2023,2.2388059701492535,6.0,268,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2024,42.10526315789473,8.0,19,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2024,24.242424242424242,8.0,33,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2024,2.9962546816479403,8.0,267,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2025,16.666666666666664,1.0,6,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2025,5.88235294117647,1.0,17,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2025,0.40650406504065045,1.0,246,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_sim,ANO,2026,0.0,0.0,7,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_obitos_uniao,ANO,2026,0.0,0.0,11,%,2026-07-29T12:37:49
+subnotificacao_mortalidade,pct_sobre_casos,ANO,2026,0.0,0.0,173,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ESTADUAL,MATO GROSSO,3.0,,5919,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ESTADUAL,MATO GROSSO,13.0,,5919,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ESTADUAL,MATO GROSSO,29.768541983443146,1762.0,5919,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,AGUA BOA,3.0,,115,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,AGUA BOA,13.200000000000017,,115,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,AGUA BOA,29.565217391304348,34.0,115,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,ALTA FLORESTA,2.0,,119,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,ALTA FLORESTA,10.0,,119,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,ALTA FLORESTA,33.61344537815126,40.0,119,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,BARRA DO GARCAS,2.0,,253,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,BARRA DO GARCAS,10.800000000000011,,253,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,BARRA DO GARCAS,37.15415019762846,94.0,253,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,CACERES,4.0,,360,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,CACERES,19.0,,360,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,CACERES,22.22222222222222,80.0,360,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,COLIDER,3.0,,89,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,COLIDER,12.0,,89,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,COLIDER,26.96629213483146,24.0,89,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,CUIABA,3.0,,2285,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,CUIABA,13.0,,2285,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,CUIABA,32.647702407002186,746.0,2285,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,DIAMANTINO,4.0,,104,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,DIAMANTINO,15.700000000000003,,104,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,DIAMANTINO,22.115384615384613,23.0,104,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,JUARA,3.0,,68,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,JUARA,9.0,,68,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,JUARA,25.0,17.0,68,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,JUINA,4.0,,95,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,JUINA,21.60000000000001,,95,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,JUINA,22.105263157894736,21.0,95,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,PEIXOTO DE AZEVEDO,3.0,,142,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,PEIXOTO DE AZEVEDO,13.0,,142,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,PEIXOTO DE AZEVEDO,34.50704225352113,49.0,142,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,PONTES E LACERDA,4.0,,161,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,PONTES E LACERDA,18.0,,161,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,PONTES E LACERDA,21.11801242236025,34.0,161,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,PORTO ALEGRE DO NORTE,4.0,,62,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,PORTO ALEGRE DO NORTE,20.799999999999997,,62,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,PORTO ALEGRE DO NORTE,25.806451612903224,16.0,62,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,RONDONOPOLIS,3.0,,884,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,RONDONOPOLIS,12.0,,884,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,RONDONOPOLIS,25.565610859728505,226.0,884,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,SAO FELIX DO ARAGUAIA,2.0,,10,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,SAO FELIX DO ARAGUAIA,4.599999999999998,,10,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,SAO FELIX DO ARAGUAIA,30.0,3.0,10,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,SINOP,3.0,,828,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,SINOP,10.0,,828,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,SINOP,27.657004830917874,229.0,828,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL,TANGARA DA SERRA,2.0,,344,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL,TANGARA DA SERRA,10.0,,344,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL,TANGARA DA SERRA,36.627906976744185,126.0,344,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,1966,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,1966,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,1966,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,1975,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,1975,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,1975,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,1976,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,1976,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,1976,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,1980,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,1980,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,1980,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2000,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2000,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2000,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2002,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2002,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2002,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2004,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2004,,,0,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2004,,0.0,0,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2006,9.0,,8,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2006,31.599999999999998,,8,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2006,0.0,0.0,8,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2007,2.0,,663,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2007,9.0,,663,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2007,41.93061840120664,278.0,663,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2008,2.0,,440,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2008,10.0,,440,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2008,40.0,176.0,440,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2009,3.0,,365,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2009,10.0,,365,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2009,32.32876712328767,118.0,365,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2010,3.0,,308,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2010,15.0,,308,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2010,33.44155844155844,103.0,308,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2011,3.0,,342,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2011,13.0,,342,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2011,25.146198830409354,86.0,342,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2012,3.0,,337,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2012,9.400000000000034,,337,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2012,27.596439169139465,93.0,337,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2013,3.0,,358,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2013,11.0,,358,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2013,29.05027932960894,104.0,358,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2014,3.0,,345,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2014,10.0,,345,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2014,29.855072463768117,103.0,345,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2015,3.0,,269,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2015,13.0,,269,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2015,25.650557620817843,69.0,269,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2016,3.0,,289,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2016,14.0,,289,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2016,30.103806228373703,87.0,289,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2017,3.0,,310,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2017,14.100000000000023,,310,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2017,27.09677419354839,84.0,310,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2018,3.0,,285,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2018,13.0,,285,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2018,27.719298245614034,79.0,285,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2019,3.0,,244,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2019,11.0,,244,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2019,28.688524590163933,70.0,244,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2020,4.0,,118,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2020,15.599999999999994,,118,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2020,27.11864406779661,32.0,118,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2021,6.0,,96,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2021,38.0,,96,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2021,18.75,18.0,96,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2022,4.5,,190,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2022,17.19999999999999,,190,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2022,21.052631578947366,40.0,190,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2023,4.0,,267,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2023,16.0,,267,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2023,23.970037453183522,64.0,267,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2024,4.0,,266,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2024,15.0,,266,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2024,20.676691729323306,55.0,266,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2025,3.5,,246,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2025,17.0,,246,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2025,25.609756097560975,63.0,246,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,ANO,2026,4.0,,173,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,ANO,2026,11.800000000000011,,173,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,ANO,2026,23.121387283236995,40.0,173,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,CLASSIFICACAO,Doença meningocócica,2.0,,278,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,CLASSIFICACAO,Doença meningocócica,7.0,,278,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,CLASSIFICACAO,Doença meningocócica,34.89208633093525,97.0,278,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,CLASSIFICACAO,Meningite bacteriana/outras bactérias,3.0,,494,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,CLASSIFICACAO,Meningite bacteriana/outras bactérias,13.0,,494,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,CLASSIFICACAO,Meningite bacteriana/outras bactérias,27.125506072874494,134.0,494,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,CLASSIFICACAO,Meningite fúngica,10.0,,170,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,CLASSIFICACAO,Meningite fúngica,53.799999999999955,,170,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,CLASSIFICACAO,Meningite fúngica,11.176470588235295,19.0,170,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,CLASSIFICACAO,Meningite não especificada,3.0,,1163,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,CLASSIFICACAO,Meningite não especificada,13.0,,1163,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,CLASSIFICACAO,Meningite não especificada,28.20292347377472,328.0,1163,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,CLASSIFICACAO,Meningite pneumocócica,3.0,,221,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,CLASSIFICACAO,Meningite pneumocócica,11.0,,221,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,CLASSIFICACAO,Meningite pneumocócica,27.601809954751133,61.0,221,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,CLASSIFICACAO,Meningite por Hib/Hemófilo,7.0,,21,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,CLASSIFICACAO,Meningite por Hib/Hemófilo,30.0,,21,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,CLASSIFICACAO,Meningite por Hib/Hemófilo,33.33333333333333,7.0,21,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,CLASSIFICACAO,Meningite tuberculosa,17.0,,46,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,CLASSIFICACAO,Meningite tuberculosa,137.5,,46,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,CLASSIFICACAO,Meningite tuberculosa,6.521739130434782,3.0,46,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,CLASSIFICACAO,Meningite viral/asséptica,3.0,,908,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,CLASSIFICACAO,Meningite viral/asséptica,10.0,,908,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,CLASSIFICACAO,Meningite viral/asséptica,24.779735682819386,225.0,908,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,CLASSIFICACAO,Outras etiologias,3.0,,2618,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,CLASSIFICACAO,Outras etiologias,13.0,,2618,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,CLASSIFICACAO,Outras etiologias,33.919022154316266,888.0,2618,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Doença meningocócica,2.5,,8,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Doença meningocócica,6.3,,8,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,AGUA BOA | Doença meningocócica,25.0,2.0,8,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite bacteriana/outras bactérias,5.0,,8,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite bacteriana/outras bactérias,9.2,,8,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite bacteriana/outras bactérias,25.0,2.0,8,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite fúngica,3.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite fúngica,3.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite fúngica,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite não especificada,4.0,,15,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite não especificada,18.0,,15,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite não especificada,46.666666666666664,7.0,15,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite por Hib/Hemófilo,1.0,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite por Hib/Hemófilo,1.0,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite por Hib/Hemófilo,100.0,2.0,2,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite tuberculosa,107.0,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite tuberculosa,143.0,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite tuberculosa,0.0,0.0,2,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite viral/asséptica,5.5,,6,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite viral/asséptica,6.5,,6,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,AGUA BOA | Meningite viral/asséptica,33.33333333333333,2.0,6,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Outras etiologias,3.0,,73,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,AGUA BOA | Outras etiologias,12.0,,73,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,AGUA BOA | Outras etiologias,26.027397260273972,19.0,73,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Doença meningocócica,1.0,,11,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Doença meningocócica,5.0,,11,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Doença meningocócica,54.54545454545454,6.0,11,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite bacteriana/outras bactérias,3.5,,8,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite bacteriana/outras bactérias,12.2,,8,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite bacteriana/outras bactérias,25.0,2.0,8,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite fúngica,17.0,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite fúngica,19.4,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite fúngica,0.0,0.0,3,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite não especificada,2.0,,38,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite não especificada,6.900000000000013,,38,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite não especificada,39.473684210526315,15.0,38,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite pneumocócica,2.0,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite pneumocócica,18.800000000000004,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite pneumocócica,0.0,0.0,4,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite tuberculosa,2.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite tuberculosa,2.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite tuberculosa,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite viral/asséptica,5.5,,8,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite viral/asséptica,12.999999999999998,,8,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Meningite viral/asséptica,0.0,0.0,8,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Outras etiologias,2.0,,46,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Outras etiologias,12.5,,46,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,ALTA FLORESTA | Outras etiologias,36.95652173913043,17.0,46,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Doença meningocócica,1.0,,18,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Doença meningocócica,13.0,,18,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Doença meningocócica,55.55555555555556,10.0,18,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite bacteriana/outras bactérias,1.5,,8,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite bacteriana/outras bactérias,6.0,,8,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite bacteriana/outras bactérias,50.0,4.0,8,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite fúngica,2.0,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite fúngica,7.6000000000000005,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite fúngica,33.33333333333333,1.0,3,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite não especificada,3.0,,74,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite não especificada,14.0,,74,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite não especificada,18.91891891891892,14.0,74,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite pneumocócica,2.0,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite pneumocócica,3.4000000000000004,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite pneumocócica,25.0,1.0,4,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite por Hib/Hemófilo,0.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite por Hib/Hemófilo,0.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite por Hib/Hemófilo,100.0,1.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite viral/asséptica,4.5,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite viral/asséptica,5.7,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Meningite viral/asséptica,0.0,0.0,2,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Outras etiologias,2.0,,143,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Outras etiologias,8.799999999999997,,143,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,BARRA DO GARCAS | Outras etiologias,44.05594405594406,63.0,143,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Doença meningocócica,3.0,,14,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Doença meningocócica,11.200000000000006,,14,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CACERES | Doença meningocócica,28.57142857142857,4.0,14,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite bacteriana/outras bactérias,2.0,,65,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite bacteriana/outras bactérias,10.600000000000001,,65,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CACERES | Meningite bacteriana/outras bactérias,32.30769230769231,21.0,65,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite fúngica,23.0,,10,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite fúngica,71.29999999999993,,10,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CACERES | Meningite fúngica,0.0,0.0,10,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite não especificada,4.0,,95,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite não especificada,17.60000000000001,,95,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CACERES | Meningite não especificada,14.736842105263156,14.0,95,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite pneumocócica,4.0,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite pneumocócica,8.0,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CACERES | Meningite pneumocócica,33.33333333333333,1.0,3,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite por Hib/Hemófilo,7.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite por Hib/Hemófilo,7.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CACERES | Meningite por Hib/Hemófilo,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite tuberculosa,8.5,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite tuberculosa,11.8,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CACERES | Meningite tuberculosa,0.0,0.0,4,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite viral/asséptica,4.0,,104,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Meningite viral/asséptica,10.0,,104,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CACERES | Meningite viral/asséptica,22.115384615384613,23.0,104,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Outras etiologias,4.0,,64,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CACERES | Outras etiologias,54.90000000000005,,64,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CACERES | Outras etiologias,26.5625,17.0,64,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Doença meningocócica,4.5,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Doença meningocócica,6.5,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,COLIDER | Doença meningocócica,0.0,0.0,2,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Meningite bacteriana/outras bactérias,2.0,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Meningite bacteriana/outras bactérias,5.800000000000001,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,COLIDER | Meningite bacteriana/outras bactérias,50.0,2.0,4,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Meningite fúngica,51.0,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Meningite fúngica,84.6,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,COLIDER | Meningite fúngica,0.0,0.0,2,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Meningite não especificada,7.0,,9,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Meningite não especificada,11.600000000000001,,9,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,COLIDER | Meningite não especificada,11.11111111111111,1.0,9,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Meningite pneumocócica,2.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Meningite pneumocócica,2.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,COLIDER | Meningite pneumocócica,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Meningite tuberculosa,114.0,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Meningite tuberculosa,196.4,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,COLIDER | Meningite tuberculosa,0.0,0.0,2,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Meningite viral/asséptica,5.5,,6,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Meningite viral/asséptica,11.0,,6,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,COLIDER | Meningite viral/asséptica,0.0,0.0,6,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Outras etiologias,3.0,,63,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,COLIDER | Outras etiologias,9.800000000000004,,63,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,COLIDER | Outras etiologias,33.33333333333333,21.0,63,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Doença meningocócica,2.0,,82,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Doença meningocócica,5.0,,82,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CUIABA | Doença meningocócica,36.58536585365854,30.0,82,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite bacteriana/outras bactérias,2.0,,188,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite bacteriana/outras bactérias,12.0,,188,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CUIABA | Meningite bacteriana/outras bactérias,33.51063829787234,63.0,188,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite fúngica,10.0,,76,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite fúngica,69.5,,76,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CUIABA | Meningite fúngica,14.473684210526317,11.0,76,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite não especificada,2.0,,438,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite não especificada,10.0,,438,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CUIABA | Meningite não especificada,35.61643835616438,156.0,438,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite pneumocócica,3.0,,63,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite pneumocócica,7.0,,63,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CUIABA | Meningite pneumocócica,31.746031746031743,20.0,63,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite por Hib/Hemófilo,6.0,,12,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite por Hib/Hemófilo,28.000000000000007,,12,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CUIABA | Meningite por Hib/Hemófilo,25.0,3.0,12,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite tuberculosa,31.0,,21,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite tuberculosa,142.0,,21,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CUIABA | Meningite tuberculosa,4.761904761904762,1.0,21,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite viral/asséptica,3.0,,291,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Meningite viral/asséptica,10.0,,291,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CUIABA | Meningite viral/asséptica,32.98969072164948,96.0,291,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Outras etiologias,3.0,,1114,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,CUIABA | Outras etiologias,13.0,,1114,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,CUIABA | Outras etiologias,32.85457809694793,366.0,1114,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Doença meningocócica,2.5,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Doença meningocócica,4.4,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,DIAMANTINO | Doença meningocócica,25.0,1.0,4,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite bacteriana/outras bactérias,2.5,,10,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite bacteriana/outras bactérias,7.89999999999999,,10,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite bacteriana/outras bactérias,30.0,3.0,10,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite fúngica,11.0,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite fúngica,19.0,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite fúngica,33.33333333333333,1.0,3,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite não especificada,4.0,,23,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite não especificada,11.8,,23,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite não especificada,13.043478260869565,3.0,23,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite pneumocócica,2.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite pneumocócica,2.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite pneumocócica,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite por Hib/Hemófilo,16.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite por Hib/Hemófilo,16.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite por Hib/Hemófilo,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite tuberculosa,3.0,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite tuberculosa,5.4,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite tuberculosa,50.0,1.0,2,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite viral/asséptica,6.0,,9,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite viral/asséptica,14.2,,9,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,DIAMANTINO | Meningite viral/asséptica,0.0,0.0,9,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Outras etiologias,4.0,,51,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,DIAMANTINO | Outras etiologias,21.0,,51,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,DIAMANTINO | Outras etiologias,27.450980392156865,14.0,51,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Doença meningocócica,2.0,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Doença meningocócica,2.0,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUARA | Doença meningocócica,0.0,0.0,3,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Meningite bacteriana/outras bactérias,1.0,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Meningite bacteriana/outras bactérias,3.1000000000000005,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUARA | Meningite bacteriana/outras bactérias,75.0,3.0,4,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Meningite fúngica,2.5,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Meningite fúngica,4.5,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUARA | Meningite fúngica,50.0,1.0,2,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Meningite não especificada,5.0,,7,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Meningite não especificada,12.400000000000002,,7,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUARA | Meningite não especificada,14.285714285714285,1.0,7,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Meningite pneumocócica,4.5,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Meningite pneumocócica,8.100000000000001,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUARA | Meningite pneumocócica,0.0,0.0,4,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Meningite tuberculosa,7.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Meningite tuberculosa,7.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUARA | Meningite tuberculosa,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Meningite viral/asséptica,5.0,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Meningite viral/asséptica,7.4,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUARA | Meningite viral/asséptica,0.0,0.0,3,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Outras etiologias,3.0,,44,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUARA | Outras etiologias,9.0,,44,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUARA | Outras etiologias,27.27272727272727,12.0,44,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Doença meningocócica,6.0,,6,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Doença meningocócica,19.5,,6,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUINA | Doença meningocócica,16.666666666666664,1.0,6,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Meningite bacteriana/outras bactérias,3.0,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Meningite bacteriana/outras bactérias,4.7,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUINA | Meningite bacteriana/outras bactérias,0.0,0.0,4,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Meningite fúngica,34.0,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Meningite fúngica,49.2,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUINA | Meningite fúngica,0.0,0.0,3,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Meningite não especificada,4.0,,15,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Meningite não especificada,11.999999999999998,,15,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUINA | Meningite não especificada,20.0,3.0,15,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Meningite pneumocócica,1.0,,7,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Meningite pneumocócica,7.000000000000002,,7,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUINA | Meningite pneumocócica,71.42857142857143,5.0,7,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Meningite tuberculosa,22.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Meningite tuberculosa,22.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUINA | Meningite tuberculosa,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Meningite viral/asséptica,10.0,,5,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Meningite viral/asséptica,27.6,,5,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUINA | Meningite viral/asséptica,0.0,0.0,5,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Outras etiologias,4.0,,54,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,JUINA | Outras etiologias,14.400000000000006,,54,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,JUINA | Outras etiologias,22.22222222222222,12.0,54,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Doença meningocócica,7.0,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Doença meningocócica,13.7,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Doença meningocócica,50.0,2.0,4,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite bacteriana/outras bactérias,3.0,,9,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite bacteriana/outras bactérias,6.4,,9,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite bacteriana/outras bactérias,11.11111111111111,1.0,9,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite fúngica,13.0,,6,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite fúngica,20.0,,6,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite fúngica,0.0,0.0,6,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite não especificada,3.0,,24,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite não especificada,32.19999999999998,,24,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite não especificada,33.33333333333333,8.0,24,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite pneumocócica,1.0,,5,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite pneumocócica,1.6,,5,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite pneumocócica,80.0,4.0,5,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite tuberculosa,4.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite tuberculosa,4.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite tuberculosa,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite viral/asséptica,2.0,,5,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite viral/asséptica,6.4,,5,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Meningite viral/asséptica,20.0,1.0,5,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Outras etiologias,3.0,,88,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Outras etiologias,10.599999999999994,,88,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PEIXOTO DE AZEVEDO | Outras etiologias,37.5,33.0,88,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Doença meningocócica,2.0,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Doença meningocócica,5.2,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Doença meningocócica,33.33333333333333,1.0,3,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite bacteriana/outras bactérias,4.0,,27,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite bacteriana/outras bactérias,12.800000000000004,,27,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite bacteriana/outras bactérias,11.11111111111111,3.0,27,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite não especificada,5.0,,39,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite não especificada,14.600000000000009,,39,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite não especificada,12.82051282051282,5.0,39,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite pneumocócica,35.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite pneumocócica,35.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite pneumocócica,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite tuberculosa,31.0,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite tuberculosa,39.0,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite tuberculosa,0.0,0.0,2,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite viral/asséptica,4.0,,34,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite viral/asséptica,13.499999999999996,,34,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Meningite viral/asséptica,23.52941176470588,8.0,34,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Outras etiologias,3.0,,55,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Outras etiologias,26.200000000000003,,55,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PONTES E LACERDA | Outras etiologias,30.909090909090907,17.0,55,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Doença meningocócica,2.0,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Doença meningocócica,2.8,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Doença meningocócica,50.0,1.0,2,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite bacteriana/outras bactérias,6.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite bacteriana/outras bactérias,6.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite bacteriana/outras bactérias,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite fúngica,21.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite fúngica,21.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite fúngica,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite não especificada,10.0,,10,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite não especificada,22.699999999999996,,10,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite não especificada,20.0,2.0,10,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite pneumocócica,5.5,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite pneumocócica,8.3,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite pneumocócica,0.0,0.0,2,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite tuberculosa,34.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite tuberculosa,34.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Meningite tuberculosa,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Outras etiologias,3.0,,45,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Outras etiologias,13.600000000000001,,45,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,PORTO ALEGRE DO NORTE | Outras etiologias,28.888888888888886,13.0,45,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Doença meningocócica,2.0,,48,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Doença meningocócica,6.0,,48,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Doença meningocócica,41.66666666666667,20.0,48,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite bacteriana/outras bactérias,5.0,,75,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite bacteriana/outras bactérias,16.800000000000026,,75,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite bacteriana/outras bactérias,25.333333333333336,19.0,75,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite fúngica,6.0,,31,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite fúngica,31.0,,31,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite fúngica,12.903225806451612,4.0,31,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite não especificada,4.0,,170,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite não especificada,11.099999999999994,,170,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite não especificada,23.52941176470588,40.0,170,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite pneumocócica,3.0,,90,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite pneumocócica,12.200000000000017,,90,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite pneumocócica,21.11111111111111,19.0,90,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite por Hib/Hemófilo,13.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite por Hib/Hemófilo,13.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite por Hib/Hemófilo,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite tuberculosa,10.5,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite tuberculosa,28.800000000000004,,4,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite tuberculosa,25.0,1.0,4,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite viral/asséptica,4.0,,218,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite viral/asséptica,9.0,,218,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Meningite viral/asséptica,20.642201834862387,45.0,218,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Outras etiologias,3.0,,247,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Outras etiologias,12.0,,247,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,RONDONOPOLIS | Outras etiologias,31.57894736842105,78.0,247,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,SAO FELIX DO ARAGUAIA | Outras etiologias,2.0,,10,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,SAO FELIX DO ARAGUAIA | Outras etiologias,4.599999999999998,,10,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,SAO FELIX DO ARAGUAIA | Outras etiologias,30.0,3.0,10,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Doença meningocócica,2.5,,66,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Doença meningocócica,7.5,,66,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,SINOP | Doença meningocócica,24.242424242424242,16.0,66,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite bacteriana/outras bactérias,4.0,,67,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite bacteriana/outras bactérias,13.399999999999999,,67,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,SINOP | Meningite bacteriana/outras bactérias,14.925373134328357,10.0,67,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite fúngica,10.0,,24,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite fúngica,28.499999999999996,,24,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,SINOP | Meningite fúngica,4.166666666666666,1.0,24,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite não especificada,3.0,,157,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite não especificada,11.0,,157,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,SINOP | Meningite não especificada,27.388535031847134,43.0,157,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite pneumocócica,3.0,,25,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite pneumocócica,12.600000000000001,,25,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,SINOP | Meningite pneumocócica,32.0,8.0,25,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite por Hib/Hemófilo,16.0,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite por Hib/Hemófilo,28.0,,2,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,SINOP | Meningite por Hib/Hemófilo,50.0,1.0,2,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite tuberculosa,10.0,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite tuberculosa,21.2,,3,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,SINOP | Meningite tuberculosa,0.0,0.0,3,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite viral/asséptica,3.0,,186,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Meningite viral/asséptica,7.0,,186,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,SINOP | Meningite viral/asséptica,23.655913978494624,44.0,186,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Outras etiologias,2.0,,298,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,SINOP | Outras etiologias,9.300000000000011,,298,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,SINOP | Outras etiologias,35.57046979865772,106.0,298,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Doença meningocócica,2.0,,7,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Doença meningocócica,5.4,,7,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Doença meningocócica,42.857142857142854,3.0,7,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite bacteriana/outras bactérias,3.5,,16,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite bacteriana/outras bactérias,13.5,,16,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite bacteriana/outras bactérias,6.25,1.0,16,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite fúngica,17.0,,5,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite fúngica,51.60000000000001,,5,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite fúngica,0.0,0.0,5,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite não especificada,3.0,,49,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite não especificada,9.200000000000003,,49,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite não especificada,32.6530612244898,16.0,49,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite pneumocócica,4.0,,11,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite pneumocócica,31.0,,11,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite pneumocócica,27.27272727272727,3.0,11,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite por Hib/Hemófilo,13.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite por Hib/Hemófilo,13.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite por Hib/Hemófilo,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite tuberculosa,29.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite tuberculosa,29.0,,1,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite tuberculosa,0.0,0.0,1,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite viral/asséptica,3.0,,31,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite viral/asséptica,10.0,,31,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Meningite viral/asséptica,19.35483870967742,6.0,31,%,2026-07-29T12:37:49
+oportunidade_deteccao,p50_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Outras etiologias,2.0,,223,dias,2026-07-29T12:37:49
+oportunidade_deteccao,p90_deteccao_dias,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Outras etiologias,8.0,,223,dias,2026-07-29T12:37:49
+oportunidade_deteccao,pct_notificacao_le_1d,REGIONAL_CLASSIFICACAO,TANGARA DA SERRA | Outras etiologias,43.49775784753363,97.0,223,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ESTADUAL,MATO GROSSO,79.99663526244953,4755.0,5944,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,AGUA BOA,59.130434782608695,68.0,115,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,ALTA FLORESTA,83.33333333333334,100.0,120,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,BARRA DO GARCAS,79.44664031620553,201.0,253,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,CACERES,82.32044198895028,298.0,362,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,COLIDER,77.52808988764045,69.0,89,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,CUIABA,80.7843137254902,1854.0,2295,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,DIAMANTINO,77.14285714285715,81.0,105,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,JUARA,69.56521739130434,48.0,69,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,JUINA,71.57894736842105,68.0,95,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,PEIXOTO DE AZEVEDO,80.28169014084507,114.0,142,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,PONTES E LACERDA,81.48148148148148,132.0,162,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,PORTO ALEGRE DO NORTE,62.903225806451616,39.0,62,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,RONDONOPOLIS,81.64414414414415,725.0,888,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,SAO FELIX DO ARAGUAIA,72.72727272727273,8.0,11,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,SINOP,80.64903846153845,671.0,832,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,REGIONAL,TANGARA DA SERRA,81.1046511627907,279.0,344,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,1966,100.0,1.0,1,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,1975,100.0,1.0,1,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,1976,100.0,1.0,1,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,1980,100.0,1.0,1,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2000,100.0,1.0,1,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2002,100.0,1.0,1,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2004,100.0,1.0,1,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2006,100.0,8.0,8,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2007,100.0,663.0,663,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2008,100.0,441.0,441,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2009,100.0,366.0,366,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2010,100.0,308.0,308,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2011,100.0,343.0,343,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2012,100.0,338.0,338,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2013,100.0,359.0,359,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2014,100.0,345.0,345,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2015,100.0,270.0,270,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2016,100.0,291.0,291,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2017,100.0,310.0,310,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2018,100.0,287.0,287,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2019,100.0,246.0,246,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2020,0.0,0.0,118,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2021,0.0,0.0,99,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2022,0.0,0.0,191,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2023,0.0,0.0,268,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2024,0.0,0.0,267,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2025,0.0,0.0,246,%,2026-07-29T12:37:49
+casos_sem_denominador_populacional,pct_sem_denominador,ANO,2026,100.0,173.0,173,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,ESTADUAL,MATO GROSSO,77.73490074024227,,5944,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,ESTADUAL,MATO GROSSO,1.4300134589502018,,5944,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,SAO FELIX DO ARAGUAIA,58.522727272727266,,11,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,SAO FELIX DO ARAGUAIA,0.0,,11,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,PORTO ALEGRE DO NORTE,68.4475806451613,,62,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,PORTO ALEGRE DO NORTE,1.6129032258064515,,62,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,COLIDER,71.27808988764045,,89,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,COLIDER,0.0,,89,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,JUARA,71.46739130434784,,69,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,JUARA,0.0,,69,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,BARRA DO GARCAS,72.1096837944664,,253,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,BARRA DO GARCAS,0.7905138339920948,,253,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,TANGARA DA SERRA,72.76526162790697,,344,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,TANGARA DA SERRA,0.29069767441860467,,344,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,AGUA BOA,73.04347826086956,,115,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,AGUA BOA,0.0,,115,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,PEIXOTO DE AZEVEDO,73.5475352112676,,142,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,PEIXOTO DE AZEVEDO,0.7042253521126761,,142,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,DIAMANTINO,76.48809523809524,,105,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,DIAMANTINO,0.9523809523809524,,105,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,ALTA FLORESTA,76.66666666666666,,120,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,ALTA FLORESTA,0.8333333333333334,,120,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,JUINA,76.77631578947368,,95,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,JUINA,0.0,,95,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,CUIABA,77.92211328976035,,2295,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,CUIABA,1.6557734204793026,,2295,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,PONTES E LACERDA,78.16358024691358,,162,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,PONTES E LACERDA,0.0,,162,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,SINOP,79.40204326923077,,832,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,SINOP,3.125,,832,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,RONDONOPOLIS,81.22888513513513,,888,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,RONDONOPOLIS,1.2387387387387387,,888,%,2026-07-29T12:37:49
+completude_essenciais,pct_completude_media,REGIONAL,CACERES,81.66436464088397,,362,%,2026-07-29T12:37:49
+completude_essenciais,pct_campo_pior,REGIONAL,CACERES,0.8287292817679558,,362,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,ESTADUAL,MATO GROSSO,11.530758226037197,403.0,3495,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,ESTADUAL,MATO GROSSO,11.530758226037197,403.0,3495,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,AGUA BOA,13.953488372093023,6.0,43,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,AGUA BOA,16.48581306628517,6.0,43,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,ALTA FLORESTA,18.421052631578945,14.0,76,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,ALTA FLORESTA,22.030315416581512,14.0,76,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,BARRA DO GARCAS,21.052631578947366,24.0,114,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,BARRA DO GARCAS,20.926357381293005,24.0,114,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,CACERES,9.646302250803858,30.0,311,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,CACERES,10.38345202722885,30.0,311,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,COLIDER,14.814814814814813,4.0,27,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,COLIDER,17.8826895565093,4.0,27,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,CUIABA,10.174880763116057,128.0,1258,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,CUIABA,10.625448055911402,128.0,1258,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,DIAMANTINO,17.543859649122805,10.0,57,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,DIAMANTINO,17.5265840501892,10.0,57,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,JUARA,16.0,4.0,25,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,JUARA,14.601769911504425,4.0,25,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,JUINA,21.428571428571427,9.0,42,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,JUINA,26.47959183673469,9.0,42,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,PEIXOTO DE AZEVEDO,13.793103448275861,8.0,58,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,PEIXOTO DE AZEVEDO,14.66762041010968,8.0,58,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,PONTES E LACERDA,8.771929824561402,10.0,114,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,PONTES E LACERDA,8.178979233417905,10.0,114,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,PORTO ALEGRE DO NORTE,16.666666666666664,3.0,18,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,PORTO ALEGRE DO NORTE,22.74442538593482,3.0,18,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,RONDONOPOLIS,9.970674486803519,68.0,682,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,RONDONOPOLIS,8.9178104603529,68.0,682,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,SAO FELIX DO ARAGUAIA,0.0,0.0,11,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,SAO FELIX DO ARAGUAIA,0.0,0.0,11,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,SINOP,12.248628884826324,67.0,547,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,SINOP,12.84146357718376,67.0,547,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_bruta_pct,REGIONAL,TANGARA DA SERRA,14.634146341463413,18.0,123,%,2026-07-29T12:37:49
+letalidade_padronizada_idade,letalidade_padronizada_pct,REGIONAL,TANGARA DA SERRA,12.027452996414869,18.0,123,%,2026-07-29T12:37:49
