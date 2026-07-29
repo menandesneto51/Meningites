@@ -232,6 +232,75 @@ GUIDE_OPS = guide_card(
     ],
 )
 
+GUIDE_FILA_DIA = guide_card(
+    "Como ler a Fila do dia",
+    [
+        "<b>Tela única de trabalho</b>: reúne a fila CIEVS unificada (linkage, prazos, surtos) e os "
+        "alertas por caso que antes ficavam espalhados em três abas.",
+        "<b>Ordem</b>: criticidade decrescente (Crítico → Alto → Médio → Baixo). Comece pelo topo.",
+        "<b>Prazo</b>: 24h notificação · 48h investigação e quimioprofilaxia · 60 dias encerramento "
+        "(Informe Meningites e NT 154/2024).",
+        "<b>Ação recomendada</b> é sugestão operacional automática — a conduta final é da equipe "
+        "que investiga o caso no território.",
+        "Use os filtros do bloco (regional e severidade) e baixe o CSV para distribuir a fila.",
+    ],
+)
+
+GUIDE_SUPERVISAO = guide_card(
+    "Como ler a Supervisão regional",
+    [
+        "<b>Scorecard</b>: compara as regionais de saúde nos indicadores do Informe (investigação ≤48h, "
+        "encerramento ≤60d, quimio DM ≤48h) somados aos indicadores novos V28.",
+        "<b>Semáforo</b>: referência Brasil 2024 do Informe Meningites (mesma do módulo 12). "
+        "Verde ≈ na referência ou acima · Amarelo dentro da tolerância · Vermelho abaixo.",
+        "<b>Regionais pequenas</b>: percentual instável com poucos casos — leia sempre o n ao lado.",
+        "<b>Abaixo da meta</b>: lista de pauta para supervisão / apoio técnico, não ranking punitivo.",
+        "Diferenças de completude (sorogrupo, campos essenciais) explicam parte da variação de KPI.",
+    ],
+)
+
+GUIDE_CONTATOS = guide_card(
+    "Como ler Contatos e quimioprofilaxia",
+    [
+        "<b>Elegibilidade</b>: doença meningocócica e Hib/Hemófilo (NT 154/2024). Outras etiologias "
+        "não têm indicação de quimioprofilaxia de contatos.",
+        "<b>Prazo</b>: contatos próximos idealmente ≤24–48h da notificação; em Hib a janela pode "
+        "chegar a 30 dias após a exposição.",
+        "<b>Contatos por caso</b>: mediana de comunicantes registrados. Zero ou campo vazio quase "
+        "sempre é falha de registro, não ausência real de contato.",
+        "<b>Quimio indevida</b>: profilaxia registrada fora de DM/Hib — revisar conduta e digitação.",
+        "<b>% ≤2 dias</b> entre elegíveis mistura atraso real e falta de data; compare com o "
+        "percentual entre os casos que têm data preenchida.",
+    ],
+)
+
+GUIDE_LINHA_TEMPO = guide_card(
+    "Como ler a Linha do tempo do caso",
+    [
+        "<b>Cronologia</b>: sintomas → notificação → investigação → punção lombar → quimioprofilaxia "
+        "→ encerramento, com os dias decorridos entre etapas.",
+        "<b>Marcos avaliados</b>: notificação ≤24h · investigação ≤48h · quimioprofilaxia ≤48h "
+        "(DM/Hib) · encerramento ≤60 dias.",
+        "<b>Etapa sem data</b> aparece como pendente/sem registro: pode ser não realizada ou "
+        "não digitada — confirmar na ficha antes de concluir.",
+        "<b>Quimioprofilaxia</b> só é cobrada em DM e Hib; nas demais etiologias o marco é informativo.",
+        "Ferramenta de conferência caso a caso — não substitui a ficha de investigação.",
+    ],
+)
+
+GUIDE_PROCEDENCIA = guide_card(
+    "Como ler Procedência dos dados",
+    [
+        "<b>Frescor</b>: quando cada artefato do painel foi gerado. Números antigos ao lado de "
+        "números novos produzem leitura errada da situação.",
+        "<b>Origem</b>: fonte SINAN escolhida (DW da SES-MT ou arquivo local) registrada em "
+        "`auditoria_sinan_fonte_v23.json`.",
+        "<b>DW × base local</b>: registros só no DW indicam base local desatualizada; só no local "
+        "indicam atraso de carga no DW ou chave divergente.",
+        "Antes de citar qualquer indicador em boletim, confirme aqui a data da extração.",
+    ],
+)
+
 
 # ── Narrativas ───────────────────────────────────────────────────────────────
 
@@ -796,5 +865,240 @@ def narrativa_relatorio(use_llm: bool = False) -> str:
         txt,
         "Oriente o uso de boletins e base filtrada de meningites no CIEVS-MT.",
         "Boletins rascunho + assistente normativo NT 154",
+        use_llm=use_llm,
+    )
+
+
+# ── Narrativas V28 (abas novas) ──────────────────────────────────────────────
+
+def narrativa_fila_dia(
+    fila: Optional[pd.DataFrame] = None,
+    alertas: Optional[pd.DataFrame] = None,
+    use_llm: bool = False,
+) -> str:
+    bullets = []
+    if fila is not None and not fila.empty:
+        bullets.append(f"- Fila CIEVS unificada: **{_fmt(len(fila), 0)}** item(ns).")
+        if "prioridade" in fila.columns:
+            for pri, n in fila["prioridade"].astype(str).value_counts().head(4).items():
+                bullets.append(f"  - Prioridade {pri}: **{_fmt(n, 0)}**")
+        if "tipo" in fila.columns:
+            top = fila["tipo"].astype(str).value_counts().head(3)
+            for tipo, n in top.items():
+                bullets.append(f"- Motivo mais frequente: {tipo} (**{_fmt(n, 0)}**)")
+    if alertas is not None and not alertas.empty:
+        bullets.append(f"- Alertas por caso: **{_fmt(len(alertas), 0)}**.")
+        if "severidade" in alertas.columns:
+            crit = alertas[alertas["severidade"].astype(str).isin(["Crítico", "Critico", "Alto"])]
+            bullets.append(f"  - Crítico/Alto: **{_fmt(len(crit), 0)}**")
+        if "regional_v17" in alertas.columns:
+            top = alertas["regional_v17"].astype(str).value_counts().head(3)
+            for reg, n in top.items():
+                bullets.append(f"  - Maior volume: {reg} (**{_fmt(n, 0)}**)")
+    txt = _fecho(
+        "\n".join([
+            "### Leitura assistida — Fila do dia",
+            "",
+            *(bullets[:14] if bullets else ["- Fila e alertas indisponíveis (rode os módulos 13 e 20)."]),
+            "",
+            "**Justificativa:** a fila concentra em uma tela o que exige ação hoje — prazo de "
+            "notificação, investigação, quimioprofilaxia e encerramento, mais discordâncias de "
+            "linkage. Itens Crítico/Alto vêm primeiro porque perdem valor operacional se atrasarem. "
+            "A ação sugerida é automática: confirme na ficha antes de executar.",
+        ])
+    )
+    return enrich_assistente(
+        txt,
+        "Priorize a fila operacional diária de meningites do CIEVS-MT.",
+        "\n".join(bullets[:10]),
+        use_llm=use_llm,
+    )
+
+
+def narrativa_supervisao(
+    reg_ms: Optional[pd.DataFrame] = None,
+    reg_v28: Optional[pd.DataFrame] = None,
+    use_llm: bool = False,
+) -> str:
+    bullets = []
+    if reg_ms is not None and not reg_ms.empty:
+        nome = "regional_v17" if "regional_v17" in reg_ms.columns else reg_ms.columns[0]
+        for col, rot, meta in [
+            ("pct_encerrados_60d", "encerramento ≤60d", 94.4),
+            ("pct_investigados_48h", "investigação ≤48h", 97.8),
+            ("pct_quimioprofilaxia_dm_48h", "quimio DM ≤48h", 45.5),
+        ]:
+            if col not in reg_ms.columns:
+                continue
+            s = pd.to_numeric(reg_ms[col], errors="coerce")
+            if s.dropna().empty:
+                continue
+            pior = reg_ms.loc[s.idxmin()]
+            melhor = reg_ms.loc[s.idxmax()]
+            abaixo = int((s < meta).sum())
+            bullets.append(
+                f"- {rot}: de **{_fmt(s.min())}%** ({pior.get(nome)}) a **{_fmt(s.max())}%** "
+                f"({melhor.get(nome)}) · {_fmt(abaixo, 0)} regional(is) abaixo da referência "
+                f"Brasil ({_fmt(meta)}%)."
+            )
+    if reg_v28 is not None and not reg_v28.empty and "indicador" in reg_v28.columns:
+        for ind, rot in [
+            ("pct_sorogrupo_preenchido", "sorogrupo em DM confirmada"),
+            ("pct_completude_media", "completude dos campos essenciais"),
+            ("pct_coleta_le_2d", "coleta liquórica ≤2 dias"),
+        ]:
+            sub = reg_v28[reg_v28["indicador"].astype(str).eq(ind)]
+            sub = sub[sub["escopo"].astype(str).eq("REGIONAL")] if "escopo" in sub.columns else sub
+            v = pd.to_numeric(sub.get("valor"), errors="coerce").dropna() if not sub.empty else pd.Series(dtype=float)
+            if v.empty:
+                continue
+            bullets.append(f"- {rot} (V28): mediana entre regionais **{_fmt(v.median())}%** "
+                           f"(mín. {_fmt(v.min())}% · máx. {_fmt(v.max())}%).")
+    txt = _fecho(
+        "\n".join([
+            "### Leitura assistida — Supervisão regional",
+            "",
+            *(bullets[:14] if bullets else ["- Indicadores por regional indisponíveis (rode os módulos 12 e 28)."]),
+            "",
+            "**Justificativa:** a amplitude entre regionais mostra que o gargalo é de processo local, "
+            "não do estado como um todo. Regionais com poucos casos oscilam muito — priorize as que "
+            "combinam volume relevante e indicador abaixo da referência. Baixa completude de "
+            "sorogrupo e de campos essenciais rebaixa vários KPIs ao mesmo tempo.",
+        ])
+    )
+    return enrich_assistente(
+        txt,
+        "Compare regionais de saúde nos indicadores MS de meningites e aponte prioridades de supervisão.",
+        "\n".join(bullets[:10]),
+        use_llm=use_llm,
+    )
+
+
+def narrativa_contatos(
+    quimio: Optional[pd.DataFrame] = None,
+    contatos: Optional[pd.DataFrame] = None,
+    ms_painel: Optional[pd.DataFrame] = None,
+    use_llm: bool = False,
+) -> str:
+    bullets = []
+
+    def est(frame, col):
+        if frame is None or frame.empty or col not in frame.columns:
+            return None
+        sub = frame[frame["escopo"].astype(str).eq("ESTADUAL")] if "escopo" in frame.columns else frame
+        if sub.empty:
+            return None
+        return sub.iloc[0].get(col)
+
+    v = est(quimio, "elegiveis_dm_hib")
+    if v is not None:
+        bullets.append(f"- Casos elegíveis (DM + Hib): **{_fmt(v, 0)}**.")
+    for col, rot in [
+        ("pct_quimio_realizada", "quimioprofilaxia registrada"),
+        ("pct_quimio_le_2d_entre_elegiveis", "quimio ≤2 dias entre elegíveis"),
+        ("pct_quimio_le_2d_entre_com_data", "quimio ≤2 dias entre casos com data"),
+    ]:
+        v = est(quimio, col)
+        if v is not None:
+            bullets.append(f"- {rot.capitalize()}: **{_fmt(v)}%**.")
+    for col, rot, un in [
+        ("p50_quimio_dias", "mediana notificação→quimio", "dia(s)"),
+        ("p90_quimio_dias", "P90 notificação→quimio", "dia(s)"),
+    ]:
+        v = est(quimio, col)
+        if v is not None:
+            bullets.append(f"- {rot.capitalize()}: **{_fmt(v)} {un}**.")
+    for col, rot in [
+        ("p50_comunicantes_por_caso", "mediana de comunicantes por caso de DM"),
+        ("pct_dm_zero_ou_sem_info", "% de DM com zero ou sem informação de comunicantes"),
+    ]:
+        v = est(contatos, col)
+        if v is not None:
+            suf = "%" if col.startswith("pct") else ""
+            bullets.append(f"- {rot.capitalize()}: **{_fmt(v)}{suf}**.")
+    if ms_painel is not None and not ms_painel.empty and "quimioprofilaxia_indevida_n" in ms_painel.columns:
+        bullets.append(
+            f"- Quimioprofilaxia registrada fora de DM/Hib: "
+            f"**{_fmt(ms_painel['quimioprofilaxia_indevida_n'].iloc[0], 0)}** caso(s)."
+        )
+    txt = _fecho(
+        "\n".join([
+            "### Leitura assistida — Contatos e quimioprofilaxia",
+            "",
+            *(bullets[:16] if bullets else ["- Indicadores de quimioprofilaxia indisponíveis (rode os módulos 12 e 28)."]),
+            "",
+            "**Justificativa:** a quimioprofilaxia de contatos é a principal medida de controle da "
+            "doença meningocócica e só funciona nas primeiras 24–48h. A distância entre o percentual "
+            "medido entre elegíveis e o medido entre casos com data indica quanto do problema é "
+            "atraso real e quanto é ausência de registro. Comunicante zero ou vazio em caso de DM "
+            "deve ser tratado como pendência de investigação.",
+        ])
+    )
+    return enrich_assistente(
+        txt,
+        "Avalie quimioprofilaxia de contatos em doença meningocócica e Hib conforme NT 154/2024.",
+        "\n".join(bullets[:10]),
+        use_llm=use_llm,
+    )
+
+
+def narrativa_linha_tempo(caso: Optional[dict] = None, use_llm: bool = False) -> str:
+    bullets = []
+    if caso:
+        for rot, val in caso.items():
+            bullets.append(f"- {rot}: {val}")
+    txt = _fecho(
+        "\n".join([
+            "### Leitura assistida — Linha do tempo do caso",
+            "",
+            *(bullets[:16] if bullets else ["- Selecione um caso para ver a cronologia."]),
+            "",
+            "**Justificativa:** a cronologia mostra em qual etapa o caso perdeu tempo — detecção "
+            "(sintomas→notificação), resposta (investigação e quimioprofilaxia) ou fechamento "
+            "documental (encerramento ≤60 dias). Etapa sem data pode ser não realizada ou apenas "
+            "não digitada: confirmar na ficha antes de classificar como falha assistencial.",
+        ])
+    )
+    return enrich_assistente(
+        txt,
+        "Explique os prazos da NT 154/2024 e do Informe Meningites na cronologia de um caso.",
+        "\n".join(bullets[:10]),
+        use_llm=use_llm,
+    )
+
+
+def narrativa_procedencia(
+    proc: Optional[pd.DataFrame] = None,
+    fonte: Optional[dict] = None,
+    use_llm: bool = False,
+) -> str:
+    bullets = []
+    if fonte:
+        bullets.append(f"- Fonte SINAN em uso: **{fonte.get('fonte_escolhida') or fonte.get('fonte') or '—'}**.")
+        if fonte.get("gerado_em"):
+            bullets.append(f"- Auditoria de fonte gerada em: {fonte.get('gerado_em')}.")
+    if proc is not None and not proc.empty:
+        bullets.append(f"- Artefatos inventariados: **{_fmt(len(proc), 0)}**.")
+        col_idade = next((c for c in proc.columns if "idade" in c.lower() or "dias" in c.lower()), None)
+        if col_idade:
+            v = pd.to_numeric(proc[col_idade], errors="coerce").dropna()
+            if not v.empty:
+                bullets.append(f"- Idade dos artefatos: mediana **{_fmt(v.median())}** · máx. **{_fmt(v.max())}**.")
+    txt = _fecho(
+        "\n".join([
+            "### Leitura assistida — Procedência dos dados",
+            "",
+            *(bullets[:12] if bullets else ["- Inventário de procedência ainda não gerado."]),
+            "",
+            "**Justificativa:** todo indicador do painel herda a data e a origem do artefato que o "
+            "gerou. Artefatos de execuções diferentes convivendo na mesma tela produzem leitura "
+            "inconsistente. Divergências entre DW e base local apontam atraso de carga ou chave de "
+            "pareamento divergente, não necessariamente erro de digitação.",
+        ])
+    )
+    return enrich_assistente(
+        txt,
+        "Explique frescor e origem dos artefatos do painel de meningites do CIEVS-MT.",
+        "\n".join(bullets[:10]),
         use_llm=use_llm,
     )

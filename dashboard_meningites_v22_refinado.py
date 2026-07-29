@@ -515,6 +515,35 @@ def fmt(x, nd=1):
         return str(x)
 
 
+# Escopo real de cada bloco: CSV pré-agregado ignora os filtros da barra lateral.
+ESCOPO_TEXTOS = {
+    "filtrado": (
+        "Recorte filtrado — responde aos filtros da barra lateral "
+        "(ano, regional, município, classificação, evolução)."
+    ),
+    "estadual": (
+        "Estadual — bloco pré-agregado pelo pipeline, NÃO afetado pelos filtros da barra lateral."
+    ),
+    "ano": (
+        "Estadual com recorte apenas pelo filtro de ano — os demais filtros da barra lateral "
+        "não afetam este bloco."
+    ),
+}
+
+
+def scope_caption(escopo: str, detalhe: str = ""):
+    """Rótulo padronizado do escopo do bloco (ver ESCOPO_TEXTOS)."""
+    txt = ESCOPO_TEXTOS.get(escopo, escopo)
+    if detalhe:
+        txt = f"{txt} {detalhe}"
+    cor = SES_AZUL["oficial"] if escopo == "filtrado" else SES_AZUL["muted"]
+    st.markdown(
+        f'<div style="border-left:3px solid {cor};padding:2px 0 2px 8px;margin:2px 0 8px 0;'
+        f'color:{SES_AZUL["muted"]};font-size:0.82rem;">{txt}</div>',
+        unsafe_allow_html=True,
+    )
+
+
 
 def norm_coord_value(x, kind):
     """Normaliza coordenadas em graus decimais e corrige formatos escalados."""
@@ -2850,6 +2879,11 @@ def epi_panel_section():
         lambda use_llm: interp.narrativa_epi(resumo, ano_ref, use_llm=use_llm),
         download_name="justificativa_painel_epi_cievs.md",
     )
+    scope_caption(
+        "estadual",
+        f"Todo o painel epidemiológico vem dos CSVs `painel_epi_*_v23.csv` "
+        f"(ano de referência {ano_ref}).",
+    )
 
     row = resumo[resumo["ano_evento_v17"] == ano_ref]
     if row.empty:
@@ -3063,6 +3097,696 @@ def report_section(df):
     st.dataframe(df.head(1000), use_container_width=True)
 
 
+# ── Abas V28 ────────────────────────────────────────────────────────────────
+
+CRITICIDADE_ORDEM = {
+    "crítico": 4, "critico": 4, "imediato": 4,
+    "alto": 3, "alta": 3,
+    "médio": 2, "medio": 2, "média": 2, "media": 2, "moderado": 2,
+    "baixo": 1, "baixa": 1, "rotina": 1,
+}
+
+
+def _criticidade_rank(s):
+    return s.astype(str).str.strip().str.lower().map(CRITICIDADE_ORDEM).fillna(0)
+
+
+def read_v28(nome):
+    """Artefato do módulo 28 (indicadores novos)."""
+    return read_any(OUT / nome)
+
+
+def _v28_por_regional(resumo, indicadores):
+    """Pivota o resumo longo V28 (escopo REGIONAL) em colunas por indicador."""
+    if resumo is None or resumo.empty or "indicador" not in resumo.columns:
+        return pd.DataFrame()
+    sub = resumo[
+        resumo["escopo"].astype(str).eq("REGIONAL")
+        & resumo["indicador"].astype(str).isin(indicadores)
+    ]
+    if sub.empty:
+        return pd.DataFrame()
+    piv = sub.pivot_table(index="recorte", columns="indicador", values="valor", aggfunc="first")
+    return piv.rename_axis("regional_v17").reset_index()
+
+
+def _escopo_estadual_row(frame):
+    if frame is None or frame.empty or "escopo" not in frame.columns:
+        return None
+    sub = frame[frame["escopo"].astype(str).eq("ESTADUAL")]
+    return sub.iloc[0] if not sub.empty else None
+
+
+def fila_do_dia_section():
+    """Tela única acionável: fila CIEVS unificada + alertas por caso."""
+    fila = read_any(OUT / "fila_cievs_unificada_v23.csv")
+    casos = read_any(OUT / "alertas_inteligentes_casos_v23.csv")
+
+    render_interpretacao(
+        "narr_fila_dia",
+        interp.GUIDE_FILA_DIA,
+        lambda use_llm: interp.narrativa_fila_dia(fila, casos, use_llm=use_llm),
+        download_name="justificativa_fila_do_dia_cievs.md",
+    )
+
+    if fila.empty and casos.empty:
+        st.warning(
+            "Fila e alertas ausentes. Rode: `py -3.13 13_alertas_inteligentes_v23.py` e "
+            "`py -3.13 20_enriquecimento_dw_fila_cievs_v23.py`."
+        )
+        return
+    if fila.empty:
+        st.info("`fila_cievs_unificada_v23.csv` ausente — exibindo apenas os alertas por caso.")
+    if casos.empty:
+        st.info("`alertas_inteligentes_casos_v23.csv` ausente — exibindo apenas a fila unificada.")
+
+    scope_caption(
+        "estadual",
+        "A fila é gerada pelo pipeline sobre a base completa; use os filtros do próprio bloco.",
+    )
+
+    blocos = []
+    if not fila.empty:
+        f = pd.DataFrame({
+            "criticidade": fila.get("prioridade", pd.Series(index=fila.index, dtype=object)),
+            "caso": fila.get("territorio", pd.Series(index=fila.index, dtype=object)),
+            "regional_v17": fila.get("regional_v17", pd.Series(index=fila.index, dtype=object)),
+            "tipo": fila.get("tipo", pd.Series(index=fila.index, dtype=object)),
+            "prazo": fila.get("prazo", pd.Series(index=fila.index, dtype=object)),
+            "acao_recomendada": fila.get("acao", pd.Series(index=fila.index, dtype=object)),
+            "norma": fila.get("norma", pd.Series(index=fila.index, dtype=object)),
+            "evidencia": fila.get("evidencia", pd.Series(index=fila.index, dtype=object)),
+            "origem": "fila CIEVS unificada",
+        })
+        blocos.append(f)
+    if not casos.empty:
+        ident = casos.get("id_caso", pd.Series(index=casos.index, dtype=object)).astype(str)
+        mun = casos.get("municipio_v17", pd.Series(index=casos.index, dtype=object)).astype(str)
+        c = pd.DataFrame({
+            "criticidade": casos.get("severidade", pd.Series(index=casos.index, dtype=object)),
+            "caso": mun + " | caso " + ident,
+            "regional_v17": casos.get("regional_v17", pd.Series(index=casos.index, dtype=object)),
+            "tipo": casos.get("tipo_alerta", pd.Series(index=casos.index, dtype=object)),
+            "prazo": casos.get("prazo", pd.Series(index=casos.index, dtype=object)),
+            "acao_recomendada": casos.get("acao_recomendada", pd.Series(index=casos.index, dtype=object)),
+            "norma": casos.get("norma", pd.Series(index=casos.index, dtype=object)),
+            "evidencia": casos.get("evidencia", pd.Series(index=casos.index, dtype=object)),
+            "origem": "alerta por caso",
+        })
+        if "classificacao_agrupada_v17" in casos.columns:
+            c["classificacao_agrupada_v17"] = casos["classificacao_agrupada_v17"]
+        blocos.append(c)
+
+    unificada = pd.concat(blocos, ignore_index=True)
+    unificada["_rank"] = _criticidade_rank(unificada["criticidade"])
+
+    regionais = sorted(unificada["regional_v17"].dropna().astype(str).unique())
+    criticidades = (
+        unificada.assign(_r=unificada["_rank"])
+        .sort_values("_r", ascending=False)["criticidade"]
+        .dropna().astype(str).unique().tolist()
+    )
+    f1, f2 = st.columns(2)
+    reg_pick = f1.multiselect("Regional de Saúde (fila)", regionais, default=[], key="fila_dia_reg")
+    crit_pick = f2.multiselect(
+        "Prioridade / severidade", criticidades,
+        default=[c for c in criticidades if str(c).strip().lower() in {"crítico", "critico", "alto", "alta"}],
+        key="fila_dia_crit",
+    )
+    view = unificada.copy()
+    if reg_pick:
+        view = view[view["regional_v17"].astype(str).isin(reg_pick)]
+    if crit_pick:
+        view = view[view["criticidade"].astype(str).isin(crit_pick)]
+
+    k1, k2, k3, k4 = st.columns(4)
+    k1.metric("Itens na fila (filtro)", fmt(len(view), 0))
+    k2.metric("Crítico/Alto", fmt(int((view["_rank"] >= 3).sum()), 0))
+    k3.metric("Fila unificada", fmt(len(fila), 0))
+    k4.metric("Alertas por caso", fmt(len(casos), 0))
+
+    if view.empty:
+        st.info("Nenhum item com os filtros escolhidos.")
+        return
+
+    if "tipo" in view.columns:
+        resumo_tipo = (
+            view.groupby([view["tipo"].astype(str), view["criticidade"].astype(str)])
+            .size().rename("n").reset_index()
+        )
+        resumo_tipo.columns = ["tipo", "criticidade", "n"]
+        fig = px.bar(
+            resumo_tipo.sort_values("n"),
+            x="n", y="tipo", color="criticidade",
+            color_discrete_map=plotly_semaforo_map(resumo_tipo["criticidade"]),
+            orientation="h", text="n", title="Fila por motivo e criticidade",
+        )
+        fig.update_traces(textposition="outside", cliponaxis=False)
+        fig.update_layout(height=460, xaxis_title="N", yaxis_title="", legend=dict(orientation="h", y=-0.18), margin=dict(b=90, t=60))
+        st.plotly_chart(fig, use_container_width=True, key=uid())
+
+    st.subheader("Lista de trabalho — ordenada por criticidade")
+    cols_show = [c for c in [
+        "criticidade", "caso", "regional_v17", "classificacao_agrupada_v17", "tipo",
+        "prazo", "acao_recomendada", "norma", "evidencia", "origem",
+    ] if c in view.columns]
+    ordenada = view.sort_values(["_rank", "regional_v17"], ascending=[False, True])[cols_show]
+    st.dataframe(ordenada, use_container_width=True, height=520)
+    st.download_button(
+        "Baixar fila do dia (.csv)",
+        data=ordenada.to_csv(index=False).encode("utf-8-sig"),
+        file_name="fila_do_dia_cievs_meningites.csv",
+        mime="text/csv",
+        key="dl_fila_do_dia",
+    )
+
+
+def supervisao_regional_section():
+    """Scorecard comparativo das regionais de saúde (MS V23 + indicadores novos V28)."""
+    reg = read_any(OUT / "indicadores_ms_por_regional_v23.csv")
+    if reg.empty:
+        reg = read_any(OUT / "indicadores_ms_operacionais_regional_v23.csv")
+    painel = read_any(OUT / "indicadores_ms_operacionais_v23.csv")
+    resumo28 = read_v28("indicadores_novos_resumo_v28.csv")
+
+    render_interpretacao(
+        "narr_supervisao",
+        interp.GUIDE_SUPERVISAO,
+        lambda use_llm: interp.narrativa_supervisao(reg, resumo28, use_llm=use_llm),
+        download_name="justificativa_supervisao_regional_cievs.md",
+    )
+
+    if reg.empty:
+        st.warning(
+            "Indicadores por regional ausentes. Rode: `py -3.13 12_indicadores_ms_operacionais_v23.py`."
+        )
+        return
+    scope_caption(
+        "estadual",
+        "Todas as regionais são exibidas; o filtro de regional da barra lateral não recorta este bloco.",
+    )
+
+    # Referência nacional (Informe 2024) vinda do próprio módulo 12
+    refs = {}
+    if not painel.empty and {"indicador", "referencia_brasil_2024"}.issubset(painel.columns):
+        for _, r in painel.iterrows():
+            v = pd.to_numeric(pd.Series([r.get("referencia_brasil_2024")]), errors="coerce").iloc[0]
+            if pd.notna(v):
+                refs[str(r.get("indicador"))] = float(v)
+    refs.setdefault("pct_investigados_48h", 97.8)
+    refs.setdefault("pct_encerrados_60d", 94.4)
+    refs.setdefault("pct_quimioprofilaxia_dm_48h", 45.5)
+
+    nome_col = "regional_v17" if "regional_v17" in reg.columns else reg.columns[0]
+    n_col = next((c for c in ["n_casos", "total_notificacoes"] if c in reg.columns), None)
+    score = reg.copy()
+
+    indicadores_v28 = [
+        "pct_coleta_le_2d", "pct_sorogrupo_preenchido", "pct_completude_media",
+        "pct_quimio_le_2d_entre_elegiveis", "pct_notificacao_le_1d", "letalidade_padronizada_pct",
+    ]
+    v28 = _v28_por_regional(resumo28, indicadores_v28)
+    if not v28.empty:
+        score[nome_col] = score[nome_col].astype(str)
+        v28["regional_v17"] = v28["regional_v17"].astype(str)
+        score = score.merge(v28, left_on=nome_col, right_on="regional_v17", how="left",
+                            suffixes=("", "_v28"))
+        if "regional_v17_v28" in score.columns:
+            score = score.drop(columns=["regional_v17_v28"])
+    else:
+        st.info(
+            "Indicadores novos por regional ausentes — exibindo somente os KPIs MS V23. "
+            "Rode: `py -3.13 28_indicadores_novos_v28.py`."
+        )
+
+    metas = {
+        "pct_investigados_48h": ("Investigação ≤48h", refs["pct_investigados_48h"], 3.0),
+        "pct_encerrados_60d": ("Encerramento ≤60d", refs["pct_encerrados_60d"], 3.0),
+        "pct_quimioprofilaxia_dm_48h": ("Quimio DM ≤48h", refs["pct_quimioprofilaxia_dm_48h"], 5.0),
+        "pct_coleta_le_2d": ("Coleta liquórica ≤2d", 70.0, 5.0),
+        "pct_sorogrupo_preenchido": ("Sorogrupo em DM confirmada", 70.0, 5.0),
+        "pct_completude_media": ("Completude essenciais", 95.0, 5.0),
+    }
+    for col, (_, ref, tol) in metas.items():
+        if col in score.columns:
+            v = pd.to_numeric(score[col], errors="coerce")
+            score[f"semaforo_{col}"] = np.where(
+                v.isna(), "Cinza",
+                np.where(v >= ref, "Verde", np.where(v >= ref - tol, "Amarelo", "Vermelho")),
+            )
+
+    sem_cols = [f"semaforo_{c}" for c in metas if f"semaforo_{c}" in score.columns]
+    if sem_cols:
+        score["indicadores_vermelhos"] = (score[sem_cols] == "Vermelho").sum(axis=1)
+        score["indicadores_verdes"] = (score[sem_cols] == "Verde").sum(axis=1)
+        score = score.sort_values(["indicadores_vermelhos", nome_col], ascending=[False, True])
+
+    st.subheader("Regionais abaixo da referência nacional")
+    alertas = []
+    for col, (rot, ref, _tol) in metas.items():
+        if col not in score.columns:
+            continue
+        v = pd.to_numeric(score[col], errors="coerce")
+        abaixo = score[v < ref]
+        if abaixo.empty:
+            continue
+        piores = abaixo.assign(_v=pd.to_numeric(abaixo[col], errors="coerce")).nsmallest(3, "_v")
+        detalhe = " · ".join(
+            f"{r[nome_col]} {fmt(r['_v'])}%" + (f" (n={fmt(r.get(n_col), 0)})" if n_col else "")
+            for _, r in piores.iterrows()
+        )
+        alertas.append({
+            "indicador": rot,
+            "referencia_pct": ref,
+            "regionais_abaixo": int(len(abaixo)),
+            "piores": detalhe,
+        })
+    if alertas:
+        st.dataframe(pd.DataFrame(alertas), use_container_width=True)
+    else:
+        st.success("Nenhuma regional abaixo das referências avaliadas.")
+
+    st.markdown("---")
+    st.subheader("Amplitude entre regionais")
+    disponiveis = [c for c in metas if c in score.columns]
+    escolha = st.selectbox(
+        "Indicador do gráfico",
+        disponiveis,
+        format_func=lambda c: metas[c][0],
+        key="superv_ind",
+    ) if disponiveis else None
+    if escolha:
+        g = score[[nome_col, escolha, f"semaforo_{escolha}"]].copy()
+        g[escolha] = pd.to_numeric(g[escolha], errors="coerce")
+        g = g.dropna(subset=[escolha]).sort_values(escolha)
+        fig = px.bar(
+            g, x=escolha, y=nome_col, orientation="h",
+            color=f"semaforo_{escolha}", color_discrete_map=plotly_semaforo_map(g[f"semaforo_{escolha}"]),
+            text=[fmt(v) for v in g[escolha]],
+            title=f"{metas[escolha][0]} por regional (referência {fmt(metas[escolha][1])}%)",
+        )
+        fig.add_vline(x=metas[escolha][1], line_dash="dash", line_color=SEMAFORO["vermelho"])
+        fig.update_traces(textposition="outside", cliponaxis=False)
+        fig.update_layout(height=560, xaxis_title="%", yaxis_title="", legend=dict(orientation="h", y=-0.12), margin=dict(t=60, b=70))
+        st.plotly_chart(fig, use_container_width=True, key=uid())
+
+    st.markdown("---")
+    st.subheader("Scorecard completo")
+    st.dataframe(score, use_container_width=True, height=520)
+    st.download_button(
+        "Baixar scorecard regional (.csv)",
+        data=score.to_csv(index=False).encode("utf-8-sig"),
+        file_name="supervisao_regional_meningites.csv",
+        mime="text/csv",
+        key="dl_supervisao_regional",
+    )
+
+
+def contatos_quimio_section():
+    """Contatos e quimioprofilaxia — principal medida de controle da DM."""
+    quimio = read_v28("tempo_quimioprofilaxia_v28.csv")
+    contatos = read_v28("contatos_por_caso_dm_v28.csv")
+    painel = read_any(OUT / "indicadores_ms_operacionais_v23.csv")
+    reg_ms = read_any(OUT / "indicadores_ms_operacionais_regional_v23.csv")
+    backlog = read_any(OUT / "backlog_operacional_regional_v25.csv")
+
+    render_interpretacao(
+        "narr_contatos",
+        interp.GUIDE_CONTATOS,
+        lambda use_llm: interp.narrativa_contatos(quimio, contatos, painel, use_llm=use_llm),
+        download_name="justificativa_contatos_quimio_cievs.md",
+    )
+
+    if quimio.empty and contatos.empty:
+        st.warning(
+            "Indicadores de quimioprofilaxia/contatos ausentes. "
+            "Rode: `py -3.13 28_indicadores_novos_v28.py`."
+        )
+        return
+    scope_caption("estadual", "Blocos pré-agregados pelo módulo 28 sobre a base completa.")
+
+    q = _escopo_estadual_row(quimio)
+    c = _escopo_estadual_row(contatos)
+
+    st.subheader("Elegibilidade e prazo de execução (NT 154/2024)")
+    k = st.columns(5)
+    if q is not None:
+        k[0].metric("Elegíveis DM + Hib", fmt(q.get("elegiveis_dm_hib"), 0))
+        k[1].metric("Quimio registrada %", fmt(q.get("pct_quimio_realizada")))
+        k[2].metric("Quimio ≤2d (elegíveis) %", fmt(q.get("pct_quimio_le_2d_entre_elegiveis")))
+        k[3].metric("Mediana notif.→quimio", f"{fmt(q.get('p50_quimio_dias'))} d")
+        k[4].metric("P90 notif.→quimio", f"{fmt(q.get('p90_quimio_dias'))} d")
+        st.caption(
+            f"Entre os casos com data de quimioprofilaxia preenchida, "
+            f"{fmt(q.get('pct_quimio_le_2d_entre_com_data'))}% ficaram em ≤2 dias "
+            f"(n={fmt(q.get('quimio_com_lead_time'), 0)} de {fmt(q.get('elegiveis_dm_hib'), 0)} elegíveis). "
+            "A diferença entre os dois percentuais é ausência de registro, não necessariamente atraso."
+        )
+
+    st.markdown("---")
+    st.subheader("Contatos (comunicantes) por caso de doença meningocócica")
+    if c is not None:
+        k = st.columns(5)
+        k[0].metric("Casos de DM", fmt(c.get("dm_n"), 0))
+        k[1].metric("Mediana de contatos", fmt(c.get("p50_comunicantes_por_caso")))
+        k[2].metric("P90 de contatos", fmt(c.get("p90_comunicantes_por_caso")))
+        k[3].metric("Zero ou sem info %", fmt(c.get("pct_dm_zero_ou_sem_info")))
+        k[4].metric("Contatos registrados", fmt(c.get("total_comunicantes"), 0))
+        st.caption(
+            f"Sem informação em {fmt(c.get('dm_sem_info_comunicantes'), 0)} caso(s) e zero contatos em "
+            f"{fmt(c.get('dm_zero_comunicantes'), 0)} — em DM, contato zero é quase sempre falha de registro."
+        )
+
+    if not painel.empty and "quimioprofilaxia_indevida_n" in painel.columns:
+        indevida = pd.to_numeric(painel["quimioprofilaxia_indevida_n"], errors="coerce").dropna()
+        if not indevida.empty:
+            st.markdown("---")
+            st.subheader("Quimioprofilaxia indevida (fora de DM/Hib)")
+            st.metric("Casos com quimio registrada sem indicação", fmt(indevida.iloc[0], 0))
+            st.caption(
+                "Etiologias sem indicação de quimioprofilaxia de contatos segundo a NT 154/2024. "
+                "Revisar conduta e digitação da ficha."
+            )
+
+    st.markdown("---")
+    st.subheader("Pendências por regional")
+    partes = []
+    if not quimio.empty and "escopo" in quimio.columns:
+        qr = quimio[quimio["escopo"].astype(str).eq("REGIONAL")].copy()
+        cols = [c for c in [
+            "recorte", "elegiveis_dm_hib", "quimio_realizada_n", "pct_quimio_realizada",
+            "pct_quimio_le_2d_entre_elegiveis", "p50_quimio_dias", "p90_quimio_dias",
+        ] if c in qr.columns]
+        if cols:
+            partes.append(qr[cols].rename(columns={"recorte": "regional_v17"}))
+    if not contatos.empty and "escopo" in contatos.columns:
+        cr = contatos[contatos["escopo"].astype(str).eq("REGIONAL")].copy()
+        cols = [c for c in [
+            "recorte", "dm_n", "p50_comunicantes_por_caso", "pct_dm_zero_ou_sem_info",
+        ] if c in cr.columns]
+        if cols:
+            partes.append(cr[cols].rename(columns={"recorte": "regional_v17"}))
+    tabela = pd.DataFrame()
+    for parte in partes:
+        parte["regional_v17"] = parte["regional_v17"].astype(str)
+        tabela = parte if tabela.empty else tabela.merge(parte, on="regional_v17", how="outer")
+    if not tabela.empty:
+        if not backlog.empty and "regional_v17" in backlog.columns and "quimio_pendente_dm_hib" in backlog.columns:
+            b = backlog[["regional_v17", "quimio_pendente_dm_hib"]].copy()
+            b["regional_v17"] = b["regional_v17"].astype(str)
+            tabela = tabela.merge(b, on="regional_v17", how="left")
+        if not reg_ms.empty and {"regional_v17", "quimioprofilaxia_indevida_n"}.issubset(reg_ms.columns):
+            r = reg_ms[["regional_v17", "quimioprofilaxia_indevida_n"]].copy()
+            r["regional_v17"] = r["regional_v17"].astype(str)
+            tabela = tabela.merge(r, on="regional_v17", how="left")
+        ordem = "pct_quimio_le_2d_entre_elegiveis" if "pct_quimio_le_2d_entre_elegiveis" in tabela.columns else tabela.columns[1]
+        tabela = tabela.sort_values(ordem, ascending=True, na_position="last")
+        st.dataframe(tabela, use_container_width=True, height=520)
+        st.download_button(
+            "Baixar pendências de quimioprofilaxia (.csv)",
+            data=tabela.to_csv(index=False).encode("utf-8-sig"),
+            file_name="contatos_quimioprofilaxia_regional.csv",
+            mime="text/csv",
+            key="dl_contatos_quimio",
+        )
+    else:
+        st.info("Sem recorte regional disponível nos artefatos do módulo 28.")
+
+
+# Marcos de prazo (Informe Meningites + NT 154/2024)
+LINHA_TEMPO_ETAPAS = [
+    ("Primeiros sintomas", "data_sintomas_v17", None, None, ""),
+    ("Notificação", "data_notificacao_v17", "lt_sintomas_notificacao_dias_v17", 1,
+     "≤24h dos sintomas (notificação compulsória imediata)"),
+    ("Investigação", "data_investigacao_v17", "lt_notificacao_investigacao_dias_v17", 2,
+     "≤48h da notificação (Informe Meningites)"),
+    ("Punção lombar / coleta", "data_puncao_lombar_v17", "lt_sintomas_coleta_dias_v17", 2,
+     "≤48h dos sintomas (oportunidade de coleta liquórica)"),
+    ("Quimioprofilaxia de contatos", "data_quimioprofilaxia_v17", "lt_notificacao_quimioprofilaxia_dias_v17", 2,
+     "≤48h da notificação em DM/Hib (NT 154/2024)"),
+    ("Encerramento", "data_encerramento_v17", "lt_notificacao_encerramento_dias_v17", 60,
+     "≤60 dias da notificação (Informe Meningites)"),
+]
+
+DM_HIB_LINHA_TEMPO = {"Doença meningocócica", "Meningite por Hib/Hemófilo"}
+
+
+def linha_tempo_caso_section(df, base):
+    """Cronologia de um caso com os marcos de prazo da NT 154/2024 e do Informe."""
+    render_interpretacao(
+        "narr_linha_tempo",
+        interp.GUIDE_LINHA_TEMPO,
+        lambda use_llm: interp.narrativa_linha_tempo(None, use_llm=use_llm),
+        download_name="justificativa_linha_tempo_cievs.md",
+    )
+
+    if base is None or base.empty:
+        st.warning("Base V17 ausente. Rode: `py -3.13 00_base_unica_meningites_v17.py`.")
+        return
+
+    id_col = next((c for c in ["NumeroNotificacao", "numero_notificacao"] if c in base.columns), None)
+    if id_col is None:
+        st.warning("Base sem coluna de identificador de caso (`NumeroNotificacao`).")
+        return
+
+    restringir = st.checkbox(
+        "Restringir a busca ao recorte filtrado da barra lateral", value=False, key="lt_restringe"
+    )
+    fonte = df if (restringir and df is not None and not df.empty) else base
+    scope_caption(
+        "filtrado" if restringir else "estadual",
+        "" if restringir else "A busca varre toda a base; marque a opção acima para usar o recorte filtrado.",
+    )
+
+    busca = st.text_input(
+        "Identificador do caso (número da notificação)", value="", key="lt_busca",
+        placeholder="ex.: 2365377",
+    ).strip()
+    ids = fonte[id_col].astype(str).str.strip()
+    if busca:
+        cand = fonte[ids.str.contains(busca, na=False, regex=False)]
+    else:
+        cand = fonte.head(200)
+        st.caption("Digite um identificador para filtrar; abaixo os 200 primeiros casos da fonte.")
+    if cand.empty:
+        st.info(f"Nenhum caso encontrado para “{busca}”.")
+        return
+
+    def _rotulo(i):
+        r = cand.loc[i]
+        return (
+            f"{r.get(id_col)} · {r.get('municipio_v17', '—')} · "
+            f"{r.get('classificacao_agrupada_v17', '—')}"
+        )
+
+    escolha = st.selectbox(
+        f"Caso ({len(cand)} encontrado(s))", list(cand.index), format_func=_rotulo, key="lt_caso"
+    )
+    caso = cand.loc[escolha]
+
+    clas = str(caso.get("classificacao_agrupada_v17", ""))
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Caso", str(caso.get(id_col)))
+    c2.metric("Município", str(caso.get("municipio_v17", "—")))
+    c3.metric("Regional", str(caso.get("regional_v17", "—")))
+    c4.metric("Classificação", clas if clas else "—")
+    st.caption(
+        f"Evolução: {caso.get('evolucao_padronizada_v17', '—')} · "
+        f"Classificação final: {caso.get('classificacao_caso_padronizada_v17', '—')} · "
+        f"Ano do evento: {fmt(caso.get('ano_evento_v17'), 0)}"
+    )
+
+    elegivel_quimio = clas in DM_HIB_LINHA_TEMPO
+    linhas = []
+    for rotulo, col_data, col_lt, meta, nota in LINHA_TEMPO_ETAPAS:
+        data = pd.to_datetime(caso.get(col_data), errors="coerce") if col_data in caso.index else pd.NaT
+        lt = pd.to_numeric(caso.get(col_lt), errors="coerce") if col_lt and col_lt in caso.index else np.nan
+        if rotulo.startswith("Quimioprofilaxia") and not elegivel_quimio:
+            situacao = "Não se aplica (etiologia sem indicação)"
+        elif pd.isna(data):
+            situacao = "Sem registro"
+        elif meta is None or pd.isna(lt):
+            situacao = "Registrado"
+        elif lt < 0:
+            situacao = "Data inconsistente"
+        elif lt <= meta:
+            situacao = "No prazo"
+        else:
+            situacao = "Fora do prazo"
+        linhas.append({
+            "etapa": rotulo,
+            "data": data.date() if pd.notna(data) else None,
+            "dias_decorridos": lt if pd.notna(lt) else None,
+            "meta_dias": meta,
+            "situacao": situacao,
+            "marco": nota,
+        })
+    crono = pd.DataFrame(linhas)
+
+    fora = crono[crono["situacao"].eq("Fora do prazo")]
+    sem = crono[crono["situacao"].eq("Sem registro")]
+    if not fora.empty:
+        st.error("Fora do prazo: " + " · ".join(fora["etapa"].tolist()))
+    if not sem.empty:
+        st.warning("Sem data registrada: " + " · ".join(sem["etapa"].tolist()))
+    if fora.empty and sem.empty:
+        st.success("Todas as etapas com data registrada e dentro dos prazos avaliados.")
+
+    plot = crono.dropna(subset=["data"]).copy()
+    if not plot.empty:
+        plot["data"] = pd.to_datetime(plot["data"])
+        fig = px.scatter(
+            plot, x="data", y="etapa", color="situacao", text="etapa",
+            color_discrete_map={
+                "No prazo": SEMAFORO["verde"],
+                "Fora do prazo": SEMAFORO["vermelho"],
+                "Registrado": SES_AZUL["accent"],
+                "Data inconsistente": SEMAFORO["laranja"],
+            },
+            title="Cronologia do caso",
+        )
+        fig.update_traces(marker=dict(size=16), textposition="top center")
+        fig.add_trace(go.Scatter(
+            x=plot["data"], y=plot["etapa"], mode="lines",
+            line=dict(color=SES_AZUL["ice"], width=2), showlegend=False,
+        ))
+        fig.update_layout(height=430, xaxis_title="Data", yaxis_title="", legend=dict(orientation="h", y=-0.2), margin=dict(t=60, b=80))
+        st.plotly_chart(fig, use_container_width=True, key=uid())
+
+    st.subheader("Etapas e prazos")
+    st.dataframe(crono, use_container_width=True)
+    st.download_button(
+        "Baixar cronologia do caso (.csv)",
+        data=crono.to_csv(index=False).encode("utf-8-sig"),
+        file_name=f"linha_tempo_caso_{caso.get(id_col)}.csv",
+        mime="text/csv",
+        key="dl_linha_tempo",
+    )
+
+
+PROCEDENCIA_ARTEFATOS_CHAVE = [
+    "base_unica_meningites_v17.csv",
+    "indicadores_ms_operacionais_v23.csv",
+    "indicadores_ms_por_regional_v23.csv",
+    "alertas_inteligentes_casos_v23.csv",
+    "fila_cievs_unificada_v23.csv",
+    "desfechos_mortalidade_sim_v23.csv",
+    "enriquecimento_casos_dw_v23.csv",
+    "indicadores_gestao_semana_v24.csv",
+    "score_risco_municipal_nt97_v25.csv",
+    "indicadores_novos_resumo_v28.csv",
+]
+
+
+def procedencia_dados_section():
+    """Frescor e origem de cada artefato do painel."""
+    import json
+    from datetime import datetime
+
+    proc = read_v28("procedencia_artefatos_v28.csv")
+    fonte = {}
+    audit_p = OUT / "auditoria_sinan_fonte_v23.json"
+    if audit_p.exists():
+        try:
+            fonte = json.loads(audit_p.read_text(encoding="utf-8"))
+        except Exception:
+            fonte = {}
+
+    render_interpretacao(
+        "narr_procedencia",
+        interp.GUIDE_PROCEDENCIA,
+        lambda use_llm: interp.narrativa_procedencia(proc, fonte, use_llm=use_llm),
+        download_name="justificativa_procedencia_cievs.md",
+    )
+    scope_caption("estadual", "Inventário de artefatos do pipeline; independe dos filtros da barra lateral.")
+
+    st.subheader("Fonte SINAN em uso")
+    if fonte:
+        c1, c2 = st.columns(2)
+        c1.metric("Fonte escolhida", str(fonte.get("fonte_escolhida") or fonte.get("fonte") or "—"))
+        c2.metric("Auditoria gerada em", str(fonte.get("gerado_em") or "—"))
+        with st.expander("auditoria_sinan_fonte_v23.json (íntegra)"):
+            st.json(fonte)
+    else:
+        st.info(
+            "`auditoria_sinan_fonte_v23.json` ausente. Rode: "
+            "`py -3.13 19_dw_descobrir_e_extrair_v23.py`."
+        )
+
+    st.markdown("---")
+    st.subheader("Procedência declarada dos artefatos")
+    if proc.empty:
+        st.info(
+            "`procedencia_artefatos_v28.csv` ainda não existe — o módulo de procedência não rodou. "
+            "Enquanto isso, o inventário abaixo usa a data de modificação dos arquivos em "
+            "`saida_meningites_v17/`."
+        )
+    else:
+        st.dataframe(proc, use_container_width=True, height=460)
+        st.download_button(
+            "Baixar procedência (.csv)",
+            data=proc.to_csv(index=False).encode("utf-8-sig"),
+            file_name="procedencia_artefatos_v28.csv",
+            mime="text/csv",
+            key="dl_procedencia",
+        )
+
+    st.markdown("---")
+    st.subheader("Frescor dos artefatos principais")
+    agora = datetime.now()
+    inv = []
+    for nome in PROCEDENCIA_ARTEFATOS_CHAVE:
+        p = OUT / nome
+        if not p.exists():
+            inv.append({"artefato": nome, "existe": "não", "modificado_em": None,
+                        "idade_horas": None, "tamanho_mb": None})
+            continue
+        mt = datetime.fromtimestamp(p.stat().st_mtime)
+        inv.append({
+            "artefato": nome,
+            "existe": "sim",
+            "modificado_em": mt.strftime("%Y-%m-%d %H:%M"),
+            "idade_horas": round((agora - mt).total_seconds() / 3600, 1),
+            "tamanho_mb": round(p.stat().st_size / 1_048_576, 2),
+        })
+    inv = pd.DataFrame(inv)
+    idade = pd.to_numeric(inv["idade_horas"], errors="coerce")
+    if idade.notna().any():
+        span = float(idade.max() - idade.min())
+        if span > 24:
+            st.warning(
+                f"Os artefatos foram gerados em execuções diferentes: até {fmt(span)} horas de "
+                "diferença entre o mais novo e o mais antigo. Reexecute o pipeline antes de "
+                "comparar indicadores entre abas."
+            )
+        else:
+            st.success("Artefatos principais na mesma janela de execução (diferença ≤24h).")
+    st.dataframe(inv, use_container_width=True)
+
+    st.markdown("---")
+    st.subheader("Auditoria DW × base local")
+    dw_only = read_any(OUT / "auditoria_sinan_somente_dw_v23.csv")
+    loc_only = read_any(OUT / "auditoria_sinan_somente_local_v23.csv")
+    if dw_only.empty and loc_only.empty:
+        st.info(
+            "Auditorias DW × local ausentes. Rode: `py -3.13 19_dw_descobrir_e_extrair_v23.py`."
+        )
+        return
+    c1, c2 = st.columns(2)
+    c1.metric("Registros só no DW", fmt(len(dw_only), 0))
+    c2.metric("Registros só na base local", fmt(len(loc_only), 0))
+    st.caption(
+        "Só no DW: base local desatualizada. Só no local: atraso de carga no DW ou chave de "
+        "pareamento divergente."
+    )
+    if not dw_only.empty:
+        with st.expander(f"Somente no DW ({len(dw_only)})"):
+            st.dataframe(dw_only.head(300), use_container_width=True)
+    if not loc_only.empty:
+        with st.expander(f"Somente na base local ({len(loc_only)})"):
+            st.dataframe(loc_only.head(300), use_container_width=True)
+
+
 def main():
     try:
         from meningites_env import load_meningites_env
@@ -3155,6 +3879,8 @@ def main():
         "05 Assistente IA", "06 Mapas", "07 Estatística/OR", "08 Surtos", "09 Sazonalidade/Canal",
         "10 Projeções", "11 Geoespacial", "12 Laboratório", "13 Vacina",
         "14 Comorbidades", "15 Qualidade", "16 Relatório/Base", "17 Clima×casos",
+        "18 Fila do dia", "19 Supervisão regional", "20 Contatos/Quimio",
+        "21 Linha do tempo", "22 Procedência",
     ])
 
     with tabs[0]:
@@ -3168,11 +3894,13 @@ def main():
             lambda use_llm: interp.narrativa_executivo(gest, br, fila_ex, ms_resumo, use_llm=use_llm),
             download_name="justificativa_executivo_cievs.md",
         )
+        scope_caption("filtrado")
         build_metric_cards(df)
         if not gest.empty:
             g = gest.iloc[0]
             st.markdown("---")
             st.subheader("Decisão da semana (gestão V24)")
+            scope_caption("estadual")
             gcols = st.columns(5)
             with gcols[0]:
                 mini_metric_card("Nowcast SE", fmt(g.get("casos_nowcast_se")), g.get("delta_nowcast_vs_se_anterior"), True)
@@ -3192,6 +3920,7 @@ def main():
         if not br.empty or not gx.empty:
             st.markdown("---")
             st.subheader("Backlog operacional (V25)")
+            scope_caption("estadual")
             bcols = st.columns(5)
             if not br.empty:
                 r = br.iloc[0]
@@ -3215,6 +3944,7 @@ def main():
         # Mapa + nowcast/forecast no executivo
         st.markdown("---")
         st.subheader("Território e projeções")
+        scope_caption("ano", "O mapa usa o indicador municipal pré-agregado; o nowcast é estadual.")
         m1, m2 = st.columns([1.05, 1])
         with m1:
             ind_full = read_any(OUT / "indicadores_municipio_ano_v17.csv")
@@ -3246,6 +3976,7 @@ def main():
         if not ms_resumo.empty or not fila_ex.empty or not epi_ex.empty:
             st.markdown("---")
             st.subheader("Painel MS e fila CIEVS (V23)")
+            scope_caption("estadual")
             if not ms_resumo.empty:
                 top4 = ms_resumo[ms_resumo["indicador"].isin([
                     "pct_confirmacao_laboratorial_pcr_cultura",
@@ -3282,6 +4013,7 @@ def main():
                 st.warning(f"{len(fila_ex)} item(ns) na fila prioritária CIEVS — ver aba 03 Alertas CIEVS.")
                 st.dataframe(fila_ex.head(10), use_container_width=True)
         st.markdown("---")
+        scope_caption("filtrado")
         c1, c2 = st.columns(2)
         with c1:
             timeseries_cases(df)
@@ -3290,6 +4022,7 @@ def main():
         st.markdown("---")
         socio_profile(df)
         st.markdown("---")
+        scope_caption("estadual")
         # Destaque geral p<0,005 na aba executiva
         significant_alerts_from_frames([
             ("testes comparativos", read_any(OUT / "testes_comparativos_v17.csv")),
@@ -3348,6 +4081,7 @@ def main():
             )
         if not score.empty and "score_risco_nt97_v25" in score.columns:
             st.subheader("Score de risco NT 154 (90 dias)")
+            scope_caption("estadual", "Score dos últimos 90 dias para todos os municípios.")
             choropleth_or_points(score, shapefile, latlon, "score_risco_nt97_v25", "Score municipal NT 154")
             st.markdown("---")
         if not ind_full.empty:
@@ -3356,6 +4090,10 @@ def main():
                 ind_map = ind_map[ind_map["ano_evento_v17"].isin(ano_sel)]
             latest = pd.to_numeric(ind_map["ano_evento_v17"], errors="coerce").max() if "ano_evento_v17" in ind_map.columns else np.nan
             m = ind_map[pd.to_numeric(ind_map["ano_evento_v17"], errors="coerce").eq(latest)].copy() if "ano_evento_v17" in ind_map.columns else ind_map.copy()
+            scope_caption(
+                "ano",
+                f"Mapas do indicador municipal pré-agregado, ano {fmt(latest, 0)}.",
+            )
             mapas = [
                 ("casos", "Mapa coroplético — casos"),
                 ("confirmados", "Mapa coroplético — confirmados"),
@@ -3373,6 +4111,7 @@ def main():
                             choropleth_or_points(m, shapefile, latlon, metric, title)
             st.markdown("---")
             st.subheader("Séries históricas — independentes do filtro de ano")
+            scope_caption("estadual")
             indicators_by_year(ind_full)
         else:
             st.info("Indicadores municipais não disponíveis.")
@@ -3514,6 +4253,21 @@ def main():
 
     with tabs[16]:
         climate_section()
+
+    with tabs[17]:
+        fila_do_dia_section()
+
+    with tabs[18]:
+        supervisao_regional_section()
+
+    with tabs[19]:
+        contatos_quimio_section()
+
+    with tabs[20]:
+        linha_tempo_caso_section(df, base)
+
+    with tabs[21]:
+        procedencia_dados_section()
 
 
 if __name__ == "__main__":
