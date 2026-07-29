@@ -25,6 +25,54 @@ QA_PATH = OUT / "assistente_faq_exemplos_v23.csv"
 NARR_PATH = OUT / "assistente_narrativa_boletim_v23.md"
 NARR_REL = REL / "BOLETIM_SEMANAL_MENINGITES_V23_NARRATIVA_IA.md"
 META_PATH = OUT / "assistente_meta_v23.json"
+KB_DOCS_MS_PATH = OUT / "assistente_kb_docs_ms_v27.csv"
+
+_KB_CACHE: list[dict] | None = None
+
+
+def _curated_docs() -> list[dict]:
+    rows = []
+    for d in DOCS:
+        row = dict(d)
+        row.setdefault("vigente", True)
+        row.setdefault("prioridade", 95)
+        row.setdefault("origem", "curado")
+        rows.append(row)
+    return rows
+
+
+def load_kb(force: bool = False) -> list[dict]:
+    """Base unificada: trechos curados + chunks de docs_ms/."""
+    global _KB_CACHE
+    if _KB_CACHE is not None and not force:
+        return _KB_CACHE
+    rows = _curated_docs()
+    seen = {str(r.get("id")) for r in rows}
+    # 1) ingestão fresca da pasta docs_ms
+    try:
+        from importlib import import_module
+        ing = import_module("27_ingestao_docs_ms_rag_v27")
+        for r in ing.load_docs_ms_chunks(prefer_fresh=True):
+            rid = str(r.get("id") or "")
+            if not rid or rid in seen:
+                continue
+            seen.add(rid)
+            rows.append(dict(r))
+    except Exception:
+        # 2) fallback CSV já gerado
+        if KB_DOCS_MS_PATH.exists():
+            try:
+                df = pd.read_csv(KB_DOCS_MS_PATH, encoding="utf-8-sig", low_memory=False)
+                for r in df.to_dict(orient="records"):
+                    rid = str(r.get("id") or "")
+                    if not rid or rid in seen:
+                        continue
+                    seen.add(rid)
+                    rows.append(dict(r))
+            except Exception:
+                pass
+    _KB_CACHE = rows
+    return rows
 
 
 def _strip(s: str) -> str:
@@ -39,15 +87,22 @@ def _tokens(s: str) -> set[str]:
         "um", "uma", "os", "as", "no", "na", "que", "se", "ao", "ou", "como",
         "quais", "qual", "quando", "onde", "sobre", "mais", "menos",
     }
+    raw = _strip(s)
     out = set()
-    for t in _strip(s).split():
-        if len(t) <= 2 or t in stop:
+    # Mantém referências NT 97 / NT 154 mesmo com espaço
+    for m in re.finditer(r"\bnt\s*(\d+)\b", raw):
+        out.add("nt" + m.group(1))
+        out.add(m.group(1))
+    for t in raw.split():
+        if t in stop:
+            continue
+        if len(t) <= 2 and not t.isdigit():
             continue
         out.add(t)
         # singular/plural leve
         if t.endswith("s") and len(t) > 4:
             out.add(t[:-1])
-        else:
+        elif not t.isdigit():
             out.add(t + "s")
     return out
 
@@ -56,10 +111,10 @@ def score_doc(query: str, doc: dict) -> float:
     q = _tokens(query)
     if not q:
         return 0.0
-    title = _tokens(doc.get("titulo", ""))
-    tags = _tokens(doc.get("tags", ""))
-    tema = _tokens(doc.get("tema", ""))
-    body = _tokens(doc.get("texto", ""))
+    title = _tokens(str(doc.get("titulo", "")))
+    tags = _tokens(str(doc.get("tags", "")))
+    tema = _tokens(str(doc.get("tema", "")))
+    body = _tokens(str(doc.get("texto", "")))
     blob = title | tags | tema | body
     if not blob:
         return 0.0
@@ -74,12 +129,27 @@ def score_doc(query: str, doc: dict) -> float:
         bonus += 0.20 * (len(q & tags) / len(q))
     if q & tema:
         bonus += 0.15 * (len(q & tema) / len(q))
-    return min(1.0, 0.30 * jacc + 0.45 * cov + bonus)
+    # Prioriza documentos vigentes e de maior prioridade de catálogo
+    vigente = doc.get("vigente", True)
+    if isinstance(vigente, str):
+        vigente = vigente.strip().lower() in {"1", "true", "sim", "yes"}
+    if not vigente:
+        bonus -= 0.35
+    try:
+        pr = float(doc.get("prioridade", 50) or 50)
+        bonus += min(0.12, pr / 1000.0)
+    except Exception:
+        pass
+    # Trechos curados tendem a ser mais precisos que OCR/PDF longo
+    if str(doc.get("origem", "")) == "curado":
+        bonus += 0.08
+    return max(0.0, min(1.0, 0.30 * jacc + 0.45 * cov + bonus))
 
 
-def retrieve(query: str, top_k: int = 4) -> list[dict]:
+def retrieve(query: str, top_k: int = 5) -> list[dict]:
+    kb = load_kb()
     ranked = sorted(
-        ({**d, "score": score_doc(query, d)} for d in DOCS),
+        ({**d, "score": score_doc(query, d)} for d in kb),
         key=lambda x: x["score"],
         reverse=True,
     )
@@ -371,7 +441,8 @@ def narrativa_boletim() -> str:
 
 
 def export_kb():
-    pd.DataFrame(DOCS).to_csv(KB_PATH, index=False, encoding="utf-8-sig")
+    kb = load_kb(force=True)
+    pd.DataFrame(kb).to_csv(KB_PATH, index=False, encoding="utf-8-sig")
     rows = []
     ctx = build_contexto_operacional()
     for faq in FAQ_RAPIDO:
@@ -383,12 +454,19 @@ def export_kb():
             "n_fontes": len(ans["fontes"]),
         })
     pd.DataFrame(rows).to_csv(QA_PATH, index=False, encoding="utf-8-sig")
+    return kb
 
 
 def main():
     OUT.mkdir(exist_ok=True)
     REL.mkdir(exist_ok=True)
-    export_kb()
+    # Garante ingestão docs_ms antes de montar a KB
+    try:
+        from importlib import import_module
+        import_module("27_ingestao_docs_ms_rag_v27").export()
+    except Exception as e:
+        print(f"[AVISO] Ingestão docs_ms: {e}")
+    kb = export_kb()
     narr = narrativa_boletim()
     NARR_PATH.write_text(narr, encoding="utf-8")
     NARR_REL.write_text(narr, encoding="utf-8")
@@ -398,6 +476,8 @@ def main():
         "quando fazer quimioprofilaxia?",
         "como definir surto comunitário de doença meningocócica?",
         "quais indicadores o ministério da saúde monitora?",
+        "o que diz o guia de vigilância sobre investigação?",
+        "a NT 97 ainda vale?",
     ]
     resultados = []
     ctx = build_contexto_operacional()
@@ -412,17 +492,24 @@ def main():
     pd.DataFrame(resultados).to_csv(OUT / "assistente_smoke_test_v23.csv", index=False, encoding="utf-8-sig")
 
     cfg = llm_credentials()
+    n_docs_ms = sum(1 for d in kb if str(d.get("origem", "")) == "docs_ms")
     meta = {
         "gerado_em": datetime.now().isoformat(timespec="seconds"),
-        "n_documentos_kb": len(DOCS),
+        "n_documentos_kb": len(kb),
+        "n_curados": sum(1 for d in kb if str(d.get("origem", "curado")) == "curado"),
+        "n_docs_ms": n_docs_ms,
         "llm_disponivel": cfg["disponivel"],
         "llm_provider": cfg["provider"],
         "llm_model": cfg["model"],
-        "arquivos": [str(KB_PATH.name), str(NARR_PATH.name), str(NARR_REL.name)],
+        "arquivos": [str(KB_PATH.name), str(KB_DOCS_MS_PATH.name), str(NARR_PATH.name), str(NARR_REL.name)],
     }
     META_PATH.write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
     print("[OK] Assistente CIEVS V23 gerado.")
-    print(f"  KB: {len(DOCS)} docs | LLM: {meta['llm_disponivel']} ({cfg['provider']}:{cfg['model']})")
+    print(
+        f"  KB: {len(kb)} trechos "
+        f"(curados={meta['n_curados']} + docs_ms={n_docs_ms}) | "
+        f"LLM: {meta['llm_disponivel']} ({cfg['provider']}:{cfg['model']})"
+    )
     print(f"  Narrativa: {NARR_REL}")
     for r in resultados:
         print(f"  Q: {r['pergunta'][:50]}... -> {r['top_fonte']} ({r['top_score']})")

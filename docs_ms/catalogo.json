@@ -1,0 +1,136 @@
+{
+  "versao": 2,
+  "descricao": "Catálogo do corpus MS para RAG do Assistente CIEVS-MT",
+  "documentos": [
+    {
+      "id": "nt154_md",
+      "arquivo": "vigentes/01_nt154_orientacoes_operacionais.md",
+      "titulo": "NT 154/2024 — resumo operacional (MD)",
+      "fonte": "NT Conjunta nº 154/2024-DPNI/SVSA/MS",
+      "tema": "norma",
+      "vigente": true,
+      "prioridade": 98,
+      "tags": "nt154 quimioprofilaxia surto dm hib contato"
+    },
+    {
+      "id": "nt154_pdf",
+      "arquivo": "vigentes/NT154_2024_DPNI_SVSA_MS.pdf",
+      "titulo": "NT Conjunta nº 154/2024-DPNI/SVSA/MS (PDF oficial)",
+      "fonte": "NT Conjunta nº 154/2024-DPNI/SVSA/MS",
+      "tema": "norma",
+      "vigente": true,
+      "prioridade": 100,
+      "tags": "nt154 pdf oficial quimioprofilaxia surto dm hib"
+    },
+    {
+      "id": "nt201_pdf",
+      "arquivo": "vigentes/NT201_2025_Vigilancia_Sentinela_DIHi_DPI.pdf",
+      "titulo": "NT Conjunta nº 201/2025 — Vigilância Sentinela DIHi/DPI",
+      "fonte": "NT Conjunta nº 201/2025-CGVDI/DPNI/SVSA/MS-CGLAB/SVSA",
+      "tema": "laboratorio",
+      "vigente": true,
+      "prioridade": 88,
+      "tags": "nt201 sentinela dihi dpi haemophilus pneumococo"
+    },
+    {
+      "id": "nt77_pdf",
+      "arquivo": "vigentes/NT77_2025_MenACWY_reforco.pdf",
+      "titulo": "NT nº 77/2025 — reforço MenACWY",
+      "fonte": "NT nº 77/2025-CGICI/DPNI/SVSA/MS",
+      "tema": "vacina",
+      "vigente": true,
+      "prioridade": 82,
+      "tags": "nt77 menacwy meningococica c reforco vacina"
+    },
+    {
+      "id": "guia_md",
+      "arquivo": "vigentes/02_guia_vigilancia_meningites.md",
+      "titulo": "Guia de Vigilância — Meningites (MD)",
+      "fonte": "Guia de Vigilância em Saúde (MS) — capítulo Meningites",
+      "tema": "vigilancia",
+      "vigente": true,
+      "prioridade": 90,
+      "tags": "guia investigacao monitoramento notificacao"
+    },
+    {
+      "id": "guia_pdf_extrato",
+      "arquivo": "vigentes/Guia_Vigilancia_capitulo_Meningites_extrato.pdf",
+      "titulo": "Guia de Vigilância — capítulo Meningites (PDF)",
+      "fonte": "Guia de Vigilância em Saúde 6ª ed. — capítulo Meningites",
+      "tema": "vigilancia",
+      "vigente": true,
+      "prioridade": 92,
+      "tags": "guia pdf meningites liquórica viral bacteriana"
+    },
+    {
+      "id": "informe_md",
+      "arquivo": "vigentes/03_informe_meningites_indicadores.md",
+      "titulo": "Informe Meningites — indicadores (MD)",
+      "fonte": "Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS",
+      "tema": "indicadores",
+      "vigente": true,
+      "prioridade": 85,
+      "tags": "informe indicadores pcr cultura investigacao encerramento"
+    },
+    {
+      "id": "informe_pdf",
+      "arquivo": "vigentes/Informe_Meningites_2024_CGVDI.pdf",
+      "titulo": "Informe Meningites 2024 (PDF oficial)",
+      "fonte": "Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS",
+      "tema": "indicadores",
+      "vigente": true,
+      "prioridade": 87,
+      "tags": "informe pdf epidemiologia letalidade bacteriana viral"
+    },
+    {
+      "id": "caderno_md",
+      "arquivo": "vigentes/04_caderno_sinan_meningites.md",
+      "titulo": "Caderno SINAN Meningites (MD)",
+      "fonte": "Caderno de Análises SINAN — Meningites",
+      "tema": "sinan",
+      "vigente": true,
+      "prioridade": 80,
+      "tags": "sinan laboratorio classificacao qualidade"
+    },
+    {
+      "id": "caderno_pdf",
+      "arquivo": "vigentes/Caderno_analises_SINAN_Meningites.pdf",
+      "titulo": "Caderno de Análises SINAN — Meningites (PDF)",
+      "fonte": "Caderno de Análises SINAN — Meningites (Portal SINAN/MS)",
+      "tema": "sinan",
+      "vigente": true,
+      "prioridade": 84,
+      "tags": "sinan pdf indicadores qualidade dbf tabwin"
+    },
+    {
+      "id": "tutorial_sinan_pdf",
+      "arquivo": "vigentes/Tutorial_analises_epi_Meningites_SINAN.pdf",
+      "titulo": "Tutorial análises epidemiológicas Meningites (SINAN)",
+      "fonte": "Tutorial análises epi Meningites bacterianas — SVS/MS",
+      "tema": "sinan",
+      "vigente": true,
+      "prioridade": 70,
+      "tags": "tutorial sinan tabwin histograma analise"
+    },
+    {
+      "id": "nt97_md",
+      "arquivo": "historicos/00_nt97_revogada_aviso.md",
+      "titulo": "NT 97/2024 — aviso de revogação (MD)",
+      "fonte": "NT nº 97/2024-DPNI/SVSA/MS (revogada pela NT 154/2024)",
+      "tema": "historico",
+      "vigente": false,
+      "prioridade": 10,
+      "tags": "nt97 revogada historico"
+    },
+    {
+      "id": "nt97_pdf",
+      "arquivo": "historicos/NT97_2024_DPNI_SVSA_MS_REVOGADA.pdf",
+      "titulo": "NT nº 97/2024 (PDF — revogada)",
+      "fonte": "NT nº 97/2024-DPNI/SVSA/MS (revogada pela NT 154/2024)",
+      "tema": "historico",
+      "vigente": false,
+      "prioridade": 8,
+      "tags": "nt97 pdf revogada historico"
+    }
+  ]
+}

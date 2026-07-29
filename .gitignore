@@ -57,4 +57,11 @@ AUDITORIA_FINAL*.csv
 *Popula*.csv
 *.zip
 *.pdf
+# Corpus MS: versionar só texto/catálogo; PDFs oficiais ficam locais
+!docs_ms/
+!docs_ms/**
+docs_ms/**/*.pdf
+!docs_ms/**/*.md
+!docs_ms/**/*.txt
+!docs_ms/**/*.json
 !README.md
