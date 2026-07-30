@@ -6,25 +6,25 @@ Casos=253 | inv48h=96.6% | enc60d=77.3% | quimio=22.2%
 
 ## Fila local: 16 itens · Crítico/Alto: 15
 
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CAMPINAPOLIS | CASO-A4124DB4 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Encerramento em risco/atrasado · ARAGUAIANA | CASO-0F019DA4 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · ARAGUAIANA | CASO-8E327790 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · BARRA DO GARCAS | CASO-815FCCEF — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · BARRA DO GARCAS | CASO-DF89EE94 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · BARRA DO GARCAS | CASO-C95F7DAB — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · BARRA DO GARCAS | CASO-0394DC0D — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CAMPINAPOLIS | CASO-E090531F — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CAMPINAPOLIS | CASO-F23FECD8 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CAMPINAPOLIS | CASO-7A54B5E4 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CAMPINAPOLIS | CASO-6A221024 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CAMPINAPOLIS | CASO-6B2C7EDE — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · GENERAL CARNEIRO | CASO-3B63744B — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · GENERAL CARNEIRO | CASO-CB522C5E — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVA XAVANTINA | CASO-DBFC4981 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CAMPINAPOLIS | CASO-E4AF4779 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Encerramento em risco/atrasado · ARAGUAIANA | CASO-57A1C236 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · ARAGUAIANA | CASO-34A3E95E — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · BARRA DO GARCAS | CASO-B5120D0A — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · BARRA DO GARCAS | CASO-F2099322 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · BARRA DO GARCAS | CASO-8B30F67E — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · BARRA DO GARCAS | CASO-035DFB6D — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CAMPINAPOLIS | CASO-6EF02BF4 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CAMPINAPOLIS | CASO-1CC62D56 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CAMPINAPOLIS | CASO-AC2695C9 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CAMPINAPOLIS | CASO-FDBA5DC0 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CAMPINAPOLIS | CASO-8D67C9C1 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · GENERAL CARNEIRO | CASO-E1046DD7 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · GENERAL CARNEIRO | CASO-E77468E0 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVA XAVANTINA | CASO-D217F2FC — Priorizar encerramento com critério de confirmação e evolução preenchidos.
 
 ## Linkage DW (1)
 
-- Óbito no SIM sem desfecho meningite no SINAN · CASO-A4124DB4 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2024-05-17; evidência=data_obito+cid_m
+- Óbito no SIM sem desfecho meningite no SINAN · CASO-E4AF4779 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2024-05-17; evidência=data_obito+cid_m
 
 ## Ações sugeridas (meningites / MS)
 1. Resolver quimioprofilaxia DM/Hib pendente (≤48h).

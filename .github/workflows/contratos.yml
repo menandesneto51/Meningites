@@ -16,9 +16,10 @@ jobs:
           python-version: "3.12"
       - name: Install deps
         run: pip install pandas numpy
-      - name: Contract tests (demo_cloud, V28, V29)
+      - name: Contract tests (demo_cloud, V28, V29, V30)
         run: >
           python -m unittest -v
           tests.test_contratos_ops
           tests.test_contratos_v28
           tests.test_contratos_v29
+          tests.test_contratos_v30

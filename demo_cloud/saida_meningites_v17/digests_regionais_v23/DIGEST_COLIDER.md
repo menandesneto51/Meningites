@@ -6,15 +6,15 @@ Casos=89 | inv48h=100.0% | enc60d=87.7% | quimio=0.0%
 
 ## Fila local: 9 itens · Crítico/Alto: 8
 
-- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-3DEA96EB — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-3BDD8F76 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-6B787FD9 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-5F585BA8 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-FF11B2FD — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-BA305D69 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVA CANAA DO NORTE | CASO-8ED3C156 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVA GUARITA | CASO-F28C7651 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Atenção** · Duplicidade NumeroNotificacao · MARCELANDIA | CASO-6B787FD9 — Auditar e consolidar registros duplicados no SINAN/DW.
+- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-02EED205 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-69849AA2 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-5CEA43B7 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-09DD8127 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-43F740CF — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · MARCELANDIA | CASO-2DEEBC13 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVA CANAA DO NORTE | CASO-0A974F72 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVA GUARITA | CASO-BE7A0FE8 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Atenção** · Duplicidade NumeroNotificacao · MARCELANDIA | CASO-5CEA43B7 — Auditar e consolidar registros duplicados no SINAN/DW.
 
 ## Ações sugeridas (meningites / MS)
 1. Resolver quimioprofilaxia DM/Hib pendente (≤48h).

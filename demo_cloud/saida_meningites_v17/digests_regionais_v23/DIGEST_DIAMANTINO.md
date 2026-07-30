@@ -6,11 +6,11 @@ Casos=105 | inv48h=92.2% | enc60d=87.0% | quimio=50.0%
 
 ## Fila local: 5 itens · Crítico/Alto: 4
 
-- **Crítico** · Encerramento em risco/atrasado · ALTO PARAGUAI | CASO-855BAA9D — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · ALTO PARAGUAI | CASO-04096DA7 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · ALTO PARAGUAI | CASO-7A3D6228 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · DIAMANTINO | CASO-FBD93D69 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Atenção** · Duplicidade NumeroNotificacao · NOVA MARINGA | CASO-67A3F12C — Auditar e consolidar registros duplicados no SINAN/DW.
+- **Crítico** · Encerramento em risco/atrasado · ALTO PARAGUAI | CASO-5FF6A769 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · ALTO PARAGUAI | CASO-21183B61 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · ALTO PARAGUAI | CASO-0161EAC4 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · DIAMANTINO | CASO-68B93311 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Atenção** · Duplicidade NumeroNotificacao · NOVA MARINGA | CASO-29E1D833 — Auditar e consolidar registros duplicados no SINAN/DW.
 
 ## Ações sugeridas (meningites / MS)
 1. Resolver quimioprofilaxia DM/Hib pendente (≤48h).

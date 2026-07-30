@@ -319,6 +319,53 @@ def calc_sem_denominador(d: pd.DataFrame) -> dict:
     }
 
 
+def build_denominador_por_ano(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Transparência por ano: quais anos têm população IBGE real (match exato
+    município×ano) vs sem denominador. Não há carry-forward no módulo 00 —
+    fora da série disponível a incidência fica vazia.
+    """
+    if df.empty or "ano_evento_v17" not in df.columns:
+        return pd.DataFrame()
+    d = df.copy()
+    flag = _num(d, "tem_denominador_populacional_v17")
+    if flag.isna().all():
+        pop = _num(d, "populacao_v17")
+        flag = (pop.notna() & (pop > 0)).astype(int)
+    else:
+        flag = flag.fillna(0).astype(int)
+    d["_tem_denom"] = flag
+    rows = []
+    for ano, g in d.groupby(pd.to_numeric(d["ano_evento_v17"], errors="coerce"), dropna=False):
+        if pd.isna(ano):
+            continue
+        total = int(len(g))
+        com = int(g["_tem_denom"].sum())
+        sem = total - com
+        if com == total and total > 0:
+            status = "denominador_real_ibge"
+        elif com == 0:
+            status = "sem_denominador"
+        else:
+            status = "parcial"
+        rows.append({
+            "ano_evento_v17": int(ano),
+            "casos_total": total,
+            "com_denominador_n": com,
+            "sem_denominador_n": sem,
+            "pct_sem_denominador": _pct(sem, total),
+            "status_denominador": status,
+            "politica": "match_exato_municipio_ano_sem_carry_forward",
+            "serie_populacional_disponivel": "2020-2025 (populacao_padronizada_mt.csv)",
+            "nota": (
+                "Anos fora de 2020–2025 não têm população no repositório; "
+                "não inventar IBGE. Para integrar 2010–2019, acrescente linhas "
+                "em populacao_padronizada_mt.csv e rode o módulo 00."
+            ),
+        })
+    return pd.DataFrame(rows).sort_values("ano_evento_v17")
+
+
 # ── 8. Completude dos campos essenciais ──────────────────────────────────────
 
 def calc_completude(d: pd.DataFrame) -> dict:
@@ -779,6 +826,15 @@ def main() -> int:
     longo += _to_long(denom, {
         "pct_sem_denominador": ("pct_sem_denominador", "%", "sem_denominador_n", "casos_total"),
     }, "casos_sem_denominador_populacional")
+    denom_ano = build_denominador_por_ano(df)
+    if not denom_ano.empty:
+        denom_ano.to_csv(OUT / "denominador_populacional_por_ano_v28.csv", index=False, encoding="utf-8-sig")
+        print(
+            f"[OK] Denominador por ano: "
+            f"{int((denom_ano['status_denominador'] == 'denominador_real_ibge').sum())} anos com IBGE real · "
+            f"{int((denom_ano['status_denominador'] == 'sem_denominador').sum())} sem denominador "
+            f"(sem carry-forward)."
+        )
     print(f"[OK] Casos sem denominador populacional: {len(denom)} linhas de escopo.")
 
     # 8) Completude dos campos essenciais

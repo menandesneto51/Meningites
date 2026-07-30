@@ -114,6 +114,18 @@ def parse_dates_smart(series: pd.Series) -> pd.Series:
 
 
 def load_population():
+    """
+    População municipal MT.
+
+    Fonte preferida: `populacao_padronizada_mt.csv` (codigo_municipio, ano, populacao).
+    Série atual no repositório: 2020–2025. Não há carry-forward — anos sem linha
+    ficam sem denominador (tem_denominador_populacional_v17=False).
+
+    Para integrar IBGE 2010–2019 (ou 2026+), acrescente linhas no CSV padronizado
+    ou um arquivo `População Municípios Brasil AAAA-BBBB*.csv` com colunas de ano
+    e rode: `py -3.13 00_base_unica_meningites_v17.py`.
+    Não inventar população.
+    """
     pad = ROOT / "populacao_padronizada_mt.csv"
     if pad.exists():
         pop = read_csv_smart(pad)

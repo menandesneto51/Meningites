@@ -196,6 +196,7 @@ def ops_steps(
     run("24_nowcast_operacional_gestao_v24.py", allow_fail=False)
     run("23_alertas_personalizados_ia_v23.py", allow_fail=True)
     run("28_indicadores_novos_v28.py", allow_fail=True)
+    run("30_cnes_sinasc_enriquecimento_v30.py", allow_fail=True)
     print("\n[OK] Pipeline operacional (--ops) concluído.")
     if finalizar_execucao:
         finalizar("ops")
@@ -273,6 +274,10 @@ def validate(strict: bool = True) -> int:
         # aliases legados NT 97 mantidos enquanto o painel não migrar
         "saida_meningites_v17/alertas_inteligentes_surtos_nt97_v23.csv",
         "saida_meningites_v17/score_risco_municipal_nt97_v25.csv",
+        # V30 — CNES / SINASC
+        "saida_meningites_v17/cnes_perfil_unidade_notificante_v30.csv",
+        "saida_meningites_v17/cnes_acesso_complexidade_regional_v30.csv",
+        "relatorios/CNES_SINASC_ENRIQUECIMENTO_V30.md",
     ]
     print("\nVALIDAÇÃO OPERACIONAL V23/V24")
     print("=" * 90)

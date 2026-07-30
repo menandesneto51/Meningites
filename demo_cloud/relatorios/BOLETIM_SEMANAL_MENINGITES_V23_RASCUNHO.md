@@ -1,6 +1,6 @@
 # Boletim semanal — Meningites | CIEVS-MT (rascunho automático V23)
 
-**Gerado em:** 29/07/2026 12:34
+**Gerado em:** 30/07/2026 09:54
 **Fontes:** SINAN (base única), indicadores MS (Informe/Caderno), NT 154/2024, canal de alertas V23.
 
 > Documento de apoio à vigilância. Validar com a equipe antes de divulgação oficial.
@@ -13,9 +13,9 @@
 | % casos investigados em até 48h da notificação | 93,6 | 97,8 | Vermelho |
 | % casos encerrados em até 60 dias da notificação | 83,6 | 94,4 | Vermelho |
 | % doença meningocócica com quimioprofilaxia ≤48h | 54,7 | 45,5 | Verde |
-| % meningite Hib/Hemófilo com quimioprofilaxia ≤48h | 38,1 | — | Vermelho |
 | % DM com sorogrupo identificado | 30,6 | — | Vermelho |
 | % notificação em até 24h do início dos sintomas | 29,8 | — | Vermelho |
+| % meningite Hib/Hemófilo com quimioprofilaxia ≤48h | 38,1 | — | Vermelho |
 
 ## 2. Situação epidemiológica (confirmados)
 
@@ -59,21 +59,21 @@ Nenhum surto comunitário/institucional de DM detectado pelos critérios NT 154 
 
 ### Top 15 da fila prioritária
 
-1. **Crítico** — Encerramento em risco/atrasado | AGUA BOA | CASO-F72EA2B3 — Caso aberto há 6917 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-2. **Crítico** — Encerramento em risco/atrasado | ALTA FLORESTA | CASO-AE9A5E56 — Caso aberto há 4241 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-3. **Crítico** — Encerramento em risco/atrasado | ALTO ARAGUAIA | CASO-82D15451 — Caso aberto há 3977 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-4. **Crítico** — Encerramento em risco/atrasado | ALTO GARCAS | CASO-D6A8E432 — Caso aberto há 3814 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-5. **Crítico** — Encerramento em risco/atrasado | ALTO GARCAS | CASO-1E439534 — Caso aberto há 3194 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-6. **Crítico** — Encerramento em risco/atrasado | ALTO PARAGUAI | CASO-855BAA9D — Caso aberto há 6794 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-7. **Crítico** — Encerramento em risco/atrasado | ALTO PARAGUAI | CASO-04096DA7 — Caso aberto há 1111 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-8. **Crítico** — Encerramento em risco/atrasado | ALTO PARAGUAI | CASO-7A3D6228 — Caso aberto há 918 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-9. **Crítico** — Encerramento em risco/atrasado | APIACAS | CASO-580B0D48 — Caso aberto há 2437 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-10. **Crítico** — Encerramento em risco/atrasado | ARAGUAIANA | CASO-0F019DA4 — Caso aberto há 5216 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-11. **Crítico** — Encerramento em risco/atrasado | ARAGUAIANA | CASO-8E327790 — Caso aberto há 4643 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-12. **Crítico** — Encerramento em risco/atrasado | ARAPUTANGA | CASO-4D01FF81 — Caso aberto há 5013 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-13. **Crítico** — Encerramento em risco/atrasado | ARENAPOLIS | CASO-F5B767F4 — Caso aberto há 415 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-14. **Crítico** — Encerramento em risco/atrasado | ARIPUANA | CASO-4CE123FD — Caso aberto há 2851 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
-15. **Crítico** — Encerramento em risco/atrasado | ARIPUANA | CASO-331A2459 — Caso aberto há 429 dia(s) (meta ≤60) → _Priorizar encerramento com critério de confirmação e evolução preenchidos._ (prazo: Imediato)
+1. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | JACIARA | CASO-7654F73D — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2023-04-03; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+2. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | VILA RICA | CASO-8DC7E574 — Match DW SIM score≥0.75; CID=A87.9 Meningite vira; data óbito=2023-04-21; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+3. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | COCALINHO | CASO-06108C82 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2023-05-13; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+4. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | ALTO ARAGUAIA | CASO-987A52F3 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2023-04-07; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+5. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | SANTO ANTONIO DO LEVERGER | CASO-F2BEA0E7 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2022-03-14; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+6. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | CUIABA | CASO-47E2E02D — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2022-10-05; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+7. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | DENISE | CASO-0CC91ABC — Match DW SIM score≥0.75; CID=G00.3 Meningite esta; data óbito=2022-06-05; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+8. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | JUARA | CASO-7DC15045 — Match DW SIM score≥0.75; CID=G00.1 Meningite pneu; data óbito=2023-04-30; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+9. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | VARZEA GRANDE | CASO-9066EA04 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2024-12-27; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+10. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | SANTO ANTONIO DO LEVERGER | CASO-EC6CA0C0 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2022-04-20; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+11. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | PORTO DOS GAUCHOS | CASO-4DE4C08D — Match DW SIM score≥0.75; CID=G03.9 Meningite não ; data óbito=2024-04-18; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+12. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | JUARA | CASO-8649C824 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2024-12-13; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+13. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | ALTO ARAGUAIA | CASO-F61A6975 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2023-04-07; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+14. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | CANARANA | CASO-3B942580 — Match DW SIM score≥0.75; CID=G03.9 Meningite não ; data óbito=2025-02-28; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
+15. **Crítico** — Óbito no SIM sem desfecho meningite no SINAN | POXOREO | caso 1 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2022-04-16; evidência=data_obito+cid_meningite; EvolucaoCaso/SINAN sem óbito por meningite → _Revisar evolução/encerramento no SINAN e causa básica no SIM._ (prazo: Imediato)
 
 ## 4b. Operação avançada (V25)
 

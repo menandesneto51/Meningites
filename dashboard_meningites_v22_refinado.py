@@ -196,6 +196,38 @@ def read_any(path):
     return pd.read_csv(p, low_memory=False)
 
 
+def read_prefer(*names):
+    """Lê o primeiro CSV existente em OUT entre os nomes (preferência canônica)."""
+    for name in names:
+        df = read_any(OUT / name)
+        if not df.empty:
+            return df, name
+    return pd.DataFrame(), None
+
+
+def read_nt154_surtos():
+    df, nome = read_prefer(
+        "alertas_inteligentes_surtos_nt154_v23.csv",
+        "alertas_inteligentes_surtos_nt97_v23.csv",
+    )
+    return df, nome
+
+
+def read_nt154_score():
+    df, nome = read_prefer(
+        "score_risco_municipal_nt154_v25.csv",
+        "score_risco_municipal_nt97_v25.csv",
+    )
+    return df, nome
+
+
+def score_risco_col(df: pd.DataFrame) -> str | None:
+    for c in ("score_risco_nt154_v25", "score_risco_nt97_v25"):
+        if c in df.columns:
+            return c
+    return None
+
+
 @st.cache_data(show_spinner=False)
 def load_base():
     p = OUT / "base_unica_meningites_v17.csv"
@@ -1467,24 +1499,69 @@ def comorb_section_v21():
                     st.dataframe(det, use_container_width=True)
 
 def indicators_by_year(ind):
-    needed = {"ano_evento_v17","casos","obitos_meningite","confirmados","populacao"}
-    if not needed.issubset(ind.columns):
+    """
+    Séries históricas estaduais: caminho feliz = painel_epi_resumo_ano_v23.csv
+    (módulo 14) ou colunas já calculadas em indicadores_municipio_ano_v17.csv
+    (módulo 00). Recálculo no painel só como fallback documentado.
+    """
+    epi, fonte_epi = read_prefer("painel_epi_resumo_ano_v23.csv")
+    hist = pd.DataFrame()
+    fonte = None
+    if not epi.empty and {"ano_evento_v17"}.issubset(epi.columns):
+        hist = epi.copy()
+        rename = {
+            "obitos_meningite": "obitos",
+            "letalidade_pct": "letalidade_confirmados",
+            "populacao_ref": "populacao",
+        }
+        hist = hist.rename(columns={k: v for k, v in rename.items() if k in hist.columns})
+        if "casos" not in hist.columns and "notificados" in hist.columns:
+            hist["casos"] = hist["notificados"]
+        fonte = f"pipeline → `{fonte_epi}` (módulo 14)"
+    else:
+        needed = {"ano_evento_v17", "casos", "obitos_meningite", "confirmados", "populacao"}
+        if ind is not None and not ind.empty and needed.issubset(ind.columns):
+            # Preferir médias ponderadas já gravadas no CSV municipal quando
+            # incidências pré-calculadas existem; agregar numeradores/denominadores.
+            pre = ind.copy()
+            if {"incidencia_100mil", "mortalidade_100mil", "letalidade_confirmados"}.issubset(pre.columns):
+                # Agrega casos/óbitos/pop e REUTILIZA a fórmula do módulo 00
+                # (mesma regra), marcado como fallback de agregação estadual.
+                agg_dict = {
+                    "casos": ("casos", "sum"),
+                    "confirmados": ("confirmados", "sum"),
+                    "obitos": ("obitos_meningite", "sum"),
+                    "populacao": ("populacao", "sum"),
+                }
+                if "hospitalizacoes" in pre.columns:
+                    agg_dict["hospitalizacoes"] = ("hospitalizacoes", "sum")
+                hist = pre.groupby("ano_evento_v17").agg(**agg_dict).reset_index()
+                hist["incidencia_100mil"] = hist["casos"] / hist["populacao"] * 100000
+                hist["mortalidade_100mil"] = hist["obitos"] / hist["populacao"] * 100000
+                hist["letalidade_confirmados"] = (
+                    hist["obitos"] / hist["confirmados"].replace(0, np.nan) * 100
+                )
+                fonte = (
+                    "fallback: agregação estadual de `indicadores_municipio_ano_v17.csv` "
+                    "(mesma fórmula do módulo 00; rode o módulo 14 para o caminho feliz)"
+                )
+            else:
+                st.info("Indicadores históricos indisponíveis.")
+                return
+        else:
+            st.info("Indicadores históricos indisponíveis.")
+            return
+
+    if hist.empty:
         st.info("Indicadores históricos indisponíveis.")
         return
-    agg_dict = {
-        "casos": ("casos","sum"),
-        "confirmados": ("confirmados","sum"),
-        "obitos": ("obitos_meningite","sum"),
-        "populacao": ("populacao","sum"),
-    }
-    if "hospitalizacoes" in ind.columns:
-        agg_dict["hospitalizacoes"] = ("hospitalizacoes","sum")
-    else:
-        agg_dict["hospitalizacoes"] = ("casos","sum")
-    hist = ind.groupby("ano_evento_v17").agg(**agg_dict).reset_index()
-    hist["incidencia_100mil"] = hist["casos"] / hist["populacao"] * 100000
-    hist["mortalidade_100mil"] = hist["obitos"] / hist["populacao"] * 100000
-    hist["letalidade_confirmados"] = hist["obitos"] / hist["confirmados"].replace(0, np.nan) * 100
+
+    st.caption(f"Fonte das séries: {fonte}")
+
+    if "obitos" not in hist.columns and "obitos_meningite" in hist.columns:
+        hist["obitos"] = hist["obitos_meningite"]
+    if "hospitalizacoes" not in hist.columns:
+        hist["hospitalizacoes"] = hist["casos"] if "casos" in hist.columns else np.nan
 
     indicadores = [
         ("casos", "Casos", "Nº de casos"),
@@ -1497,7 +1574,7 @@ def indicators_by_year(ind):
     ]
     for i in range(0, len(indicadores), 2):
         cols = st.columns(2)
-        for j, (col, titulo, ytitle) in enumerate(indicadores[i:i+2]):
+        for j, (col, titulo, ytitle) in enumerate(indicadores[i:i + 2]):
             if col not in hist.columns:
                 continue
             with cols[j]:
@@ -1510,19 +1587,25 @@ def indicators_by_year(ind):
                     name=titulo,
                     line=dict(width=3)
                 ))
-                fig.update_layout(title=f"Série histórica — {titulo}", height=420, xaxis_title="Ano", yaxis_title=ytitle, margin=dict(l=40, r=30, t=60, b=40))
+                fig.update_layout(
+                    title=f"Série histórica — {titulo}",
+                    height=420,
+                    xaxis_title="Ano",
+                    yaxis_title=ytitle,
+                    margin=dict(l=40, r=30, t=60, b=40),
+                )
                 st.plotly_chart(fig, use_container_width=True, key=uid())
 
 
 def outbreak_section():
     alerts = read_any(OUT / "alerta_surtos_classificacao_agrupada_v17.csv")
-    nt97 = read_any(OUT / "alertas_inteligentes_surtos_nt97_v23.csv")
+    nt154, _nt_src = read_nt154_surtos()
 
     st.markdown("### Critérios do Ministério da Saúde / CIEVS")
     render_interpretacao(
         "narr_surtos",
         interp.GUIDE_SURTOS,
-        lambda use_llm: interp.narrativa_surtos(alerts, nt97, use_llm=use_llm),
+        lambda use_llm: interp.narrativa_surtos(alerts, nt154, use_llm=use_llm),
         download_name="justificativa_surtos_cievs.md",
     )
     st.markdown(
@@ -1545,29 +1628,29 @@ def outbreak_section():
         unsafe_allow_html=True,
     )
 
-    if not nt97.empty:
+    if not nt154.empty:
         st.subheader("Surtos / aglomerados — critérios NT 154 (DM)")
-        ycol = "municipio_v17" if "municipio_v17" in nt97.columns else nt97.columns[1]
-        xcol = "n_casos_90d_lab" if "n_casos_90d_lab" in nt97.columns else (
-            "n_casos" if "n_casos" in nt97.columns else nt97.select_dtypes("number").columns[0]
+        ycol = "municipio_v17" if "municipio_v17" in nt154.columns else nt154.columns[1]
+        xcol = "n_casos_90d_lab" if "n_casos_90d_lab" in nt154.columns else (
+            "n_casos" if "n_casos" in nt154.columns else nt154.select_dtypes("number").columns[0]
         )
         fig_nt = px.bar(
-            nt97.head(40),
+            nt154.head(40),
             x=xcol,
             y=ycol,
-            color="severidade" if "severidade" in nt97.columns else None,
-            color_discrete_map=plotly_semaforo_map(nt97.get("severidade")),
+            color="severidade" if "severidade" in nt154.columns else None,
+            color_discrete_map=plotly_semaforo_map(nt154.get("severidade")),
             orientation="h",
             title="Alertas NT 154 — doença meningocócica",
-            hover_data=[c for c in ["tipo_alerta", "acao_recomendada", "norma", "evidencia"] if c in nt97.columns],
+            hover_data=[c for c in ["tipo_alerta", "acao_recomendada", "norma", "evidencia"] if c in nt154.columns],
         )
         fig_nt.update_layout(
-            height=max(420, 28 * min(len(nt97), 40) + 120),
+            height=max(420, 28 * min(len(nt154), 40) + 120),
             legend=dict(orientation="h", y=-0.15),
             margin=dict(b=80, t=60),
         )
         st.plotly_chart(fig_nt, use_container_width=True, key=uid())
-        st.dataframe(nt97, use_container_width=True)
+        st.dataframe(nt154, use_container_width=True)
 
     if alerts.empty:
         st.info("Arquivo de alertas de surtos municipais não encontrado. Rode o módulo 03 do pipeline.")
@@ -1976,6 +2059,8 @@ def climate_section():
 
 def parse_positive(x):
     """
+    FALLBACK apenas — preferir CSVs do módulo 07
+    (`indicadores_laboratoriais_metodos_v20.csv`, `criterio_confirmacao_v20.csv`).
     Retorna:
     1 = positivo / agente identificado;
     0 = negativo / nenhum agente;
@@ -2036,54 +2121,120 @@ def parse_positive(x):
 
 
 def lab_section(df):
+    """
+    Positividade e critério de confirmação: caminho feliz = CSVs do módulo 07.
+    Fallback (SINAN cru + parse_positive) só se os artefatos faltarem.
+    """
     lab_v25 = read_any(OUT / "indicadores_pl_lab_v25.csv")
     if not lab_v25.empty:
         st.subheader("Oportunidade de PL / lab pendente (V25)")
         st.dataframe(lab_v25, use_container_width=True)
         st.markdown("---")
-    lab_cols = [
-        "PuncaoLombar", "DataPuncaoLombar", "AspectoLiquor", "ResultadoCulturaLiquor", "ResultadoCulturaPetequias",
-        "ResultadoCulturaSangueSoro", "ResultadoCulturaEscarro", "ResultadoBacterioscopiaLiquor", "ResultadoBacterioscopiaPetequias",
-        "ResultadoBacterioscopiaSangueSoro", "ResultadoBacterioscopiaEscarro", "ResultadoCIELiquor", "ResultadoCIESangueSoro",
-        "ResultadoAglutinacaoLatexLiquor", "ResultadoAglutinacaoLatexSangueSoro", "ResultadoIsolamentoViralLiquor", "ResultadoIsolamentoViralFezes",
-        "ResultadoPCRLiquor", "ResultadoPCRPetequias", "ResultadoPCRSangueSoro", "ResultadoPCREscarro"
-    ]
-    existing = [c for c in lab_cols if c in df.columns]
-    total_not = len(df)
-    total_conf = int(pd.to_numeric(df["confirmado_v17"], errors="coerce").sum()) if "confirmado_v17" in df.columns else 0
+
+    lab_metodos, fonte_met = read_prefer(
+        "indicadores_laboratoriais_metodos_v20.csv",
+        "indicadores_laboratoriais_metodos_v17.csv",
+    )
+    lab_clas, fonte_clas = read_prefer(
+        "indicadores_laboratoriais_classificacao_v20.csv",
+        "indicadores_laboratoriais_classificacao_v17.csv",
+    )
+    crit_pipe, fonte_crit = read_prefer("criterio_confirmacao_v20.csv")
+    kpis_lab, fonte_kpi = read_prefer("laboratorio_kpis_v20.csv")
+
+    usou_pipeline = not lab_metodos.empty or not crit_pipe.empty
+    if usou_pipeline:
+        st.caption(
+            "Fonte: pipeline módulo 07 (`07_laboratorio_qualidade_meningites_v20.py`) → "
+            f"`{fonte_met or fonte_crit or fonte_kpi}`. "
+            "Positividade e critério de confirmação não são recalculados no painel."
+        )
+    else:
+        st.warning(
+            "Artefatos laboratoriais do módulo 07 ausentes — usando fallback sobre o SINAN "
+            "filtrado (parse_positive). Rode: `py -3.13 07_laboratorio_qualidade_meningites_v20.py`."
+        )
+
+    # Critério de confirmação (pipeline → fallback)
+    if not crit_pipe.empty:
+        crit = crit_pipe.rename(columns={
+            "criterio_confirmacao": "Critério de confirmação",
+            "n": "n",
+        }).copy()
+        if "Critério de confirmação" not in crit.columns:
+            crit = crit_pipe.copy()
+            crit.columns = ["Critério de confirmação", "n"] + list(crit.columns[2:])
+    else:
+        crit = (
+            df.get("CriterioConfirmacao", pd.Series(index=df.index, dtype=object))
+            .fillna("Ignorado").astype(str).value_counts().reset_index()
+        )
+        crit.columns = ["Critério de confirmação", "n"]
+
     c1, c2, c3 = st.columns(3)
-    c1.metric("Total de notificações", fmt(total_not, 0))
-    c2.metric("Total de confirmados", fmt(total_conf, 0))
-    crit = df.get("CriterioConfirmacao", pd.Series(index=df.index, dtype=object)).fillna("Ignorado").astype(str).value_counts().reset_index()
-    crit.columns = ["Critério de confirmação", "n"]
-    c3.metric("Critérios distintos", fmt(len(crit), 0))
+    if not kpis_lab.empty:
+        r = kpis_lab.iloc[0]
+        c1.metric("Total de notificações", fmt(r.get("total_notificacoes"), 0))
+        c2.metric("Total de confirmados", fmt(r.get("total_confirmados"), 0))
+        c3.metric("Positividade lab real (%)", fmt(r.get("taxa_positividade_real_pct")))
+    else:
+        total_not = len(df)
+        total_conf = (
+            int(pd.to_numeric(df["confirmado_v17"], errors="coerce").sum())
+            if "confirmado_v17" in df.columns else 0
+        )
+        c1.metric("Total de notificações", fmt(total_not, 0))
+        c2.metric("Total de confirmados", fmt(total_conf, 0))
+        c3.metric("Critérios distintos", fmt(len(crit), 0))
+
     st.caption(
         "Taxa de positividade = positivos / (positivo + negativo). "
-        "‘Nenhum agente’ e ‘Não identificado’ contam como negativo; "
-        "agente nomeado (cultura/PCR) conta como positivo. "
-        "Inconclusivos e não realizados ficam fora do denominador."
+        "Inconclusivos e não realizados ficam fora do denominador. "
+        "Cálculo canônico no módulo 07."
     )
 
     labdf = pd.DataFrame()
-    if existing:
-        rows = []
-        for c in existing:
-            if c.startswith("Resultado"):
-                s = df[c].map(parse_positive)
-                conclusivo = s.isin([0, 1])
-                realizado = int(conclusivo.sum())
-                positivo = int((s == 1).sum())
-            else:
-                s = pd.Series(np.where(df[c].notna(), 1, np.nan), index=df.index)
-                realizado = int(s.notna().sum())
-                positivo = int((s == 1).sum())
-            rows.append({
-                "metodologia": c,
-                "realizados/preenchidos": realizado,
-                "positivos": positivo,
-                "taxa_positividade_pct": (positivo / realizado * 100) if realizado else np.nan,
-            })
-        labdf = pd.DataFrame(rows)
+    if not lab_metodos.empty:
+        labdf = lab_metodos.copy()
+        # Normaliza nomes para o gráfico legado
+        if "metodologia" not in labdf.columns and "metodo" in labdf.columns:
+            labdf["metodologia"] = labdf["metodo"]
+        if "realizados/preenchidos" not in labdf.columns:
+            if "concludentes_pos_neg" in labdf.columns:
+                labdf["realizados/preenchidos"] = labdf["concludentes_pos_neg"]
+            elif "resultados_validos" in labdf.columns:
+                labdf["realizados/preenchidos"] = labdf["resultados_validos"]
+        if "taxa_positividade_pct" not in labdf.columns and "taxa_positividade_real_pct" in labdf.columns:
+            labdf["taxa_positividade_pct"] = labdf["taxa_positividade_real_pct"]
+    else:
+        # Fallback documentado: recalcula a partir do SINAN cru
+        lab_cols = [
+            "PuncaoLombar", "DataPuncaoLombar", "AspectoLiquor", "ResultadoCulturaLiquor", "ResultadoCulturaPetequias",
+            "ResultadoCulturaSangueSoro", "ResultadoCulturaEscarro", "ResultadoBacterioscopiaLiquor", "ResultadoBacterioscopiaPetequias",
+            "ResultadoBacterioscopiaSangueSoro", "ResultadoBacterioscopiaEscarro", "ResultadoCIELiquor", "ResultadoCIESangueSoro",
+            "ResultadoAglutinacaoLatexLiquor", "ResultadoAglutinacaoLatexSangueSoro", "ResultadoIsolamentoViralLiquor", "ResultadoIsolamentoViralFezes",
+            "ResultadoPCRLiquor", "ResultadoPCRPetequias", "ResultadoPCRSangueSoro", "ResultadoPCREscarro"
+        ]
+        existing = [c for c in lab_cols if c in df.columns]
+        if existing:
+            rows = []
+            for c in existing:
+                if c.startswith("Resultado"):
+                    s = df[c].map(parse_positive)
+                    conclusivo = s.isin([0, 1])
+                    realizado = int(conclusivo.sum())
+                    positivo = int((s == 1).sum())
+                else:
+                    s = pd.Series(np.where(df[c].notna(), 1, np.nan), index=df.index)
+                    realizado = int(s.notna().sum())
+                    positivo = int((s == 1).sum())
+                rows.append({
+                    "metodologia": c,
+                    "realizados/preenchidos": realizado,
+                    "positivos": positivo,
+                    "taxa_positividade_pct": (positivo / realizado * 100) if realizado else np.nan,
+                })
+            labdf = pd.DataFrame(rows)
 
     render_interpretacao(
         "narr_lab",
@@ -2093,46 +2244,69 @@ def lab_section(df):
     )
 
     if not labdf.empty:
-        bar_with_labels(labdf.sort_values("realizados/preenchidos", ascending=False).head(20), "realizados/preenchidos", "metodologia", "KPIs laboratoriais por metodologia", color="taxa_positividade_pct", orient="h", height=620)
+        ycol = "metodologia" if "metodologia" in labdf.columns else labdf.columns[0]
+        xcol = "realizados/preenchidos" if "realizados/preenchidos" in labdf.columns else (
+            "positivos" if "positivos" in labdf.columns else labdf.select_dtypes("number").columns[0]
+        )
+        color = "taxa_positividade_pct" if "taxa_positividade_pct" in labdf.columns else None
+        bar_with_labels(
+            labdf.sort_values(xcol, ascending=False).head(20),
+            xcol, ycol,
+            "KPIs laboratoriais por metodologia",
+            color=color, orient="h", height=620,
+        )
         st.dataframe(labdf, use_container_width=True)
 
-    result_cols = [c for c in existing if c.startswith("Resultado")]
-    if result_cols and "classificacao_agrupada_v17" in df.columns:
-        any_pos = pd.Series(False, index=df.index)
-        any_neg = pd.Series(False, index=df.index)
-        for c in result_cols:
-            parsed = df[c].map(parse_positive)
-            any_pos = any_pos | (parsed == 1)
-            any_neg = any_neg | (parsed == 0)
-        # Caso com ao menos um resultado conclusivo (pos ou neg) em qualquer metodologia
-        any_concl = any_pos | any_neg
-        tmp = df.copy()
-        tmp["any_lab_pos"] = any_pos.astype(int)
-        tmp["any_lab_concl"] = any_concl.astype(int)
-        g = tmp.groupby("classificacao_agrupada_v17").agg(
-            total=("caso_v17", "sum"),
-            com_resultado_conclusivo=("any_lab_concl", "sum"),
-            positivos=("any_lab_pos", "sum"),
-        ).reset_index()
-        g["taxa_positividade_pct"] = (
-            g["positivos"] / g["com_resultado_conclusivo"].replace(0, np.nan) * 100
-        )
-        bar_with_labels(
-            g,
-            "taxa_positividade_pct",
-            "classificacao_agrupada_v17",
-            "Taxa de positividade por classificação agrupada",
-            orient="h",
-            height=420,
-        )
+    if not lab_clas.empty:
+        g = lab_clas.copy()
+        if "taxa_positividade_pct" not in g.columns and "taxa_positividade_real_pct" in g.columns:
+            g["taxa_positividade_pct"] = g["taxa_positividade_real_pct"]
+        y = "classificacao_agrupada_v17" if "classificacao_agrupada_v17" in g.columns else g.columns[0]
+        if "taxa_positividade_pct" in g.columns:
+            bar_with_labels(
+                g, "taxa_positividade_pct", y,
+                "Taxa de positividade por classificação agrupada",
+                orient="h", height=420,
+            )
         st.dataframe(g, use_container_width=True)
         st.caption(
-            "Denominador = casos com ≥1 resultado lab conclusivo (pos+neg). "
-            "Numerador = casos com ≥1 positivo em qualquer metodologia Resultado*."
+            f"Fonte: `{fonte_clas}`. Denominador = casos com ≥1 resultado lab concludente (pos+neg)."
         )
+    elif usou_pipeline is False and "classificacao_agrupada_v17" in df.columns:
+        result_cols = [c for c in df.columns if c.startswith("Resultado")]
+        if result_cols:
+            any_pos = pd.Series(False, index=df.index)
+            any_neg = pd.Series(False, index=df.index)
+            for c in result_cols:
+                parsed = df[c].map(parse_positive)
+                any_pos = any_pos | (parsed == 1)
+                any_neg = any_neg | (parsed == 0)
+            any_concl = any_pos | any_neg
+            tmp = df.copy()
+            tmp["any_lab_pos"] = any_pos.astype(int)
+            tmp["any_lab_concl"] = any_concl.astype(int)
+            g = tmp.groupby("classificacao_agrupada_v17").agg(
+                total=("caso_v17", "sum"),
+                com_resultado_conclusivo=("any_lab_concl", "sum"),
+                positivos=("any_lab_pos", "sum"),
+            ).reset_index()
+            g["taxa_positividade_pct"] = (
+                g["positivos"] / g["com_resultado_conclusivo"].replace(0, np.nan) * 100
+            )
+            bar_with_labels(
+                g, "taxa_positividade_pct", "classificacao_agrupada_v17",
+                "Taxa de positividade por classificação agrupada (fallback)",
+                orient="h", height=420,
+            )
+            st.dataframe(g, use_container_width=True)
 
     st.subheader("Critério de confirmação")
-    bar_with_labels(crit, "n", "Critério de confirmação", "Distribuição do critério de confirmação", orient="h", height=400)
+    bar_with_labels(
+        crit, "n",
+        "Critério de confirmação" if "Critério de confirmação" in crit.columns else crit.columns[0],
+        "Distribuição do critério de confirmação",
+        orient="h", height=400,
+    )
     st.dataframe(crit, use_container_width=True)
 
 
@@ -2595,13 +2769,54 @@ def quality_section():
         st.subheader("Validade/VPP operacional")
         st.dataframe(val, use_container_width=True)
 
+    # CNES / SINASC (módulo 30) — seção compacta na aba Qualidade
+    cnes_perfil = read_any(OUT / "cnes_perfil_unidade_notificante_v30.csv")
+    cnes_acesso = read_any(OUT / "cnes_acesso_complexidade_regional_v30.csv")
+    cnes_tipo = read_any(OUT / "cnes_tipo_unidade_casos_v30.csv")
+    if not cnes_perfil.empty or not cnes_acesso.empty:
+        st.markdown("---")
+        st.subheader("Unidade notificante (CNES) — V30")
+        st.caption(
+            "Cruzamento CodigoUnidadeNotificacao × CNES. Proxy de acesso = % de casos "
+            "notificados em alta complexidade vs atenção básica (complementa distância a Cuiabá)."
+        )
+        est = cnes_perfil[cnes_perfil["escopo"].astype(str).eq("ESTADUAL")] if not cnes_perfil.empty else pd.DataFrame()
+        if not est.empty:
+            r = est.iloc[0]
+            c1, c2, c3, c4 = st.columns(4)
+            c1.metric("Match CNES (%)", fmt(r.get("pct_match_cnes")))
+            c2.metric("Alta complexidade (%)", fmt(r.get("pct_alta_complexidade")))
+            c3.metric("Atenção básica (%)", fmt(r.get("pct_atencao_basica")))
+            c4.metric("Unidades distintas", fmt(r.get("unidades_distintas"), 0))
+        if not cnes_acesso.empty:
+            reg = cnes_acesso[cnes_acesso["escopo"].astype(str).eq("REGIONAL")].copy()
+            if not reg.empty:
+                st.dataframe(
+                    reg.sort_values("pct_casos_alta_complexidade", ascending=False)
+                    if "pct_casos_alta_complexidade" in reg.columns else reg,
+                    use_container_width=True,
+                )
+        if not cnes_tipo.empty:
+            with st.expander("Tipos de unidade notificante (top)"):
+                st.dataframe(cnes_tipo.head(25), use_container_width=True)
+        rel30 = REL / "CNES_SINASC_ENRIQUECIMENTO_V30.md"
+        if rel30.exists():
+            with st.expander("Nota técnica CNES/SINASC V30"):
+                st.markdown(rel30.read_text(encoding="utf-8")[:5000])
+    else:
+        st.markdown("---")
+        st.caption(
+            "CNES/SINASC V30 ainda não gerado. Rode: `py -3.13 30_cnes_sinasc_enriquecimento_v30.py` "
+            "(requer extratos em `entradas_linkage/`)."
+        )
+
 
 def ops_avancados_v25_section():
     """Backlog, linkage, sorogrupos, score NT154, PL/vacina, gravidade SE (roadmap V25)."""
     st.subheader("Operação avançada V25")
     st.caption("Quimio Hib · backlog · linkage · sorogrupos · score NT154 · PL/vacina · gravidade SE")
     br = read_any(OUT / "backlog_operacional_resumo_v25.csv")
-    score = read_any(OUT / "score_risco_municipal_nt97_v25.csv")
+    score, _ = read_nt154_score()
     render_interpretacao(
         "narr_ops_v25",
         interp.GUIDE_OPS,
@@ -2654,7 +2869,7 @@ def ops_avancados_v25_section():
             fig.update_layout(height=380)
             st.plotly_chart(fig, use_container_width=True, key=uid())
 
-    score = read_any(OUT / "score_risco_municipal_nt97_v25.csv")
+    score, _ = read_nt154_score()
     if not score.empty:
         st.subheader("Score municipal NT 154 (90 dias)")
         st.dataframe(score.head(25), use_container_width=True)
@@ -2793,7 +3008,7 @@ def smart_alerts_section():
     fila = read_any(OUT / "alertas_inteligentes_fila_cievs_v23.csv")
     resumo = read_any(OUT / "alertas_inteligentes_resumo_v23.csv")
     casos = read_any(OUT / "alertas_inteligentes_casos_v23.csv")
-    surtos = read_any(OUT / "alertas_inteligentes_surtos_nt97_v23.csv")
+    surtos, _ = read_nt154_surtos()
 
     if fila.empty and casos.empty and surtos.empty:
         st.warning("Rode: python 13_alertas_inteligentes_v23.py (ou pipeline V23 --only-v23)")
@@ -3393,6 +3608,20 @@ def supervisao_regional_section():
     st.markdown("---")
     st.subheader("Scorecard completo")
     st.dataframe(score, use_container_width=True, height=520)
+
+    denom_ano = read_v28("denominador_populacional_por_ano_v28.csv")
+    if denom_ano.empty:
+        denom_ano = read_any(OUT / "denominador_populacional_por_ano_v28.csv")
+    if not denom_ano.empty:
+        st.markdown("---")
+        st.subheader("Denominador populacional por ano")
+        st.caption(
+            "População IBGE real só onde há match município×ano (série 2020–2025). "
+            "Não há carry-forward: anos sem linha ficam sem incidência. "
+            "Para 2010–2019, acrescente `populacao_padronizada_mt.csv` e rode o módulo 00."
+        )
+        st.dataframe(denom_ano, use_container_width=True)
+
     st.download_button(
         "Baixar scorecard regional (.csv)",
         data=score.to_csv(index=False).encode("utf-8-sig"),
@@ -3673,6 +3902,7 @@ PROCEDENCIA_ARTEFATOS_CHAVE = [
     "desfechos_mortalidade_sim_v23.csv",
     "enriquecimento_casos_dw_v23.csv",
     "indicadores_gestao_semana_v24.csv",
+    "score_risco_municipal_nt154_v25.csv",
     "score_risco_municipal_nt97_v25.csv",
     "indicadores_novos_resumo_v28.csv",
 ]
@@ -4054,7 +4284,7 @@ def main():
         assistant_section()
 
     with tabs[5]:
-        score = read_any(OUT / "score_risco_municipal_nt97_v25.csv")
+        score, _ = read_nt154_score()
         ind_full = read_any(OUT / "indicadores_municipio_ano_v17.csv")
         ind_map_preview = pd.DataFrame()
         if not ind_full.empty:
@@ -4079,10 +4309,11 @@ def main():
                 "Shapefile municipal não carregado. Verifique `MT_Municipios_2024.shp` na pasta do projeto "
                 "e pressione **C** no app para limpar o cache."
             )
-        if not score.empty and "score_risco_nt97_v25" in score.columns:
+        score_col = score_risco_col(score) if not score.empty else None
+        if score_col:
             st.subheader("Score de risco NT 154 (90 dias)")
             scope_caption("estadual", "Score dos últimos 90 dias para todos os municípios.")
-            choropleth_or_points(score, shapefile, latlon, "score_risco_nt97_v25", "Score municipal NT 154")
+            choropleth_or_points(score, shapefile, latlon, score_col, "Score municipal NT 154")
             st.markdown("---")
         if not ind_full.empty:
             ind_map = ind_full.copy()

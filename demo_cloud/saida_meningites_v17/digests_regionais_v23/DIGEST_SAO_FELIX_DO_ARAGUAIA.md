@@ -6,7 +6,7 @@ Casos=11 | inv48h=100.0% | enc60d=50.0% | quimio=nan%
 
 ## Fila local: 1 itens · Crítico/Alto: 1
 
-- **Crítico** · Encerramento em risco/atrasado · LUCIARA | CASO-61EAC220 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · LUCIARA | CASO-CA23DBE6 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
 
 ## Ações sugeridas (meningites / MS)
 1. Resolver quimioprofilaxia DM/Hib pendente (≤48h).

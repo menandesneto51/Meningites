@@ -182,6 +182,9 @@
     "relatorios/BOLETIM_SEMANAL_MENINGITES_V23_RASCUNHO.md": {
       "texto_sanitizado": true
     },
+    "relatorios/CNES_SINASC_ENRIQUECIMENTO_V30.md": {
+      "texto_sanitizado": true
+    },
     "relatorios/DW_EXTRACAO_MENINGITES_V23.md": {
       "texto_sanitizado": true
     },

@@ -6,17 +6,17 @@ Casos=142 | inv48h=98.5% | enc60d=87.8% | quimio=0.0%
 
 ## Fila local: 11 itens · Crítico/Alto: 9
 
-- **Crítico** · Encerramento em risco/atrasado · GUARANTA DO NORTE | CASO-507F01AF — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · GUARANTA DO NORTE | CASO-414B500C — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · GUARANTA DO NORTE | CASO-EAF79411 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · MATUPA | CASO-9FD55643 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · MATUPA | CASO-1BB90531 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVO MUNDO | CASO-CFD274D7 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVO MUNDO | CASO-75CCD961 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · PEIXOTO DE AZEVEDO | CASO-3B707DD9 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · PEIXOTO DE AZEVEDO | CASO-FFB98B02 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Atenção** · Duplicidade NumeroNotificacao · TERRA NOVA DO NORTE | CASO-FCCFB2D3 — Auditar e consolidar registros duplicados no SINAN/DW.
-- **Atenção** · Duplicidade NumeroNotificacao · GUARANTA DO NORTE | CASO-414B500C — Auditar e consolidar registros duplicados no SINAN/DW.
+- **Crítico** · Encerramento em risco/atrasado · GUARANTA DO NORTE | CASO-BFB51CF2 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · GUARANTA DO NORTE | CASO-A8773753 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · GUARANTA DO NORTE | CASO-CA845CE7 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · MATUPA | CASO-9814F4DF — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · MATUPA | CASO-E34F9C8B — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVO MUNDO | CASO-85486A19 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVO MUNDO | CASO-3A1085AD — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · PEIXOTO DE AZEVEDO | CASO-2AA5BA5C — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · PEIXOTO DE AZEVEDO | CASO-4FD8773B — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Atenção** · Duplicidade NumeroNotificacao · TERRA NOVA DO NORTE | CASO-1FD81F5F — Auditar e consolidar registros duplicados no SINAN/DW.
+- **Atenção** · Duplicidade NumeroNotificacao · GUARANTA DO NORTE | CASO-A8773753 — Auditar e consolidar registros duplicados no SINAN/DW.
 
 ## Ações sugeridas (meningites / MS)
 1. Resolver quimioprofilaxia DM/Hib pendente (≤48h).

@@ -42,7 +42,69 @@ KNOWN = {
     "sinan_srag": "dbo.VW_SINAN_SINDROMERESPIRATORIAAGUDAGRAVE",
     "sinan_dengue": "dbo.VW_SINAN_DENGUE",
     "sinan_chik": "dbo.VW_SINAN_CHIKUNGUNYA",
+    "sinan_meningite": "dbo.VW_SINAN_MENINGITE",
 }
+
+# Nomes canônicos da view SINAN meningite (ordem = preferência).
+# Aceita com ou sem schema dbo.; comparação sem acento/case.
+CANONICAL_SINAN_MENINGITE = (
+    "VW_SINAN_MENINGITE",
+    "DW_VW_SINAN_MENINGITE",
+    "SINAN_MENINGITE",
+    "VW_SINAN_MENINGITES",
+)
+
+
+def _norm_view_name(name: str) -> str:
+    raw = str(name or "").strip()
+    if "." in raw:
+        raw = raw.split(".")[-1]
+    return re.sub(r"[^A-Z0-9_]", "", raw.upper())
+
+
+def pick_sinan_meningite_view(candidatas: list[str]) -> dict:
+    """
+    Escolhe a view SINAN meningite com preferência canônica.
+
+    Retorna dict com: view, metodo (canonico|heuristica|nenhuma),
+    warning, candidatas, canonicas_encontradas.
+    """
+    candidatas = [str(c).strip() for c in candidatas if str(c).strip()]
+    by_norm = {_norm_view_name(c): c for c in candidatas}
+    canon_hits = []
+    for pref in CANONICAL_SINAN_MENINGITE:
+        hit = by_norm.get(_norm_view_name(pref))
+        if hit and hit not in canon_hits:
+            canon_hits.append(hit)
+    if canon_hits:
+        return {
+            "view": canon_hits[0],
+            "metodo": "canonico",
+            "warning": None,
+            "candidatas": candidatas,
+            "canonicas_encontradas": canon_hits,
+        }
+    if candidatas:
+        warning = (
+            f"Nenhuma view canônica SINAN meningite "
+            f"({', '.join(CANONICAL_SINAN_MENINGITE)}). "
+            f"Fallback heurístico (*MENING*): usando '{candidatas[0]}' "
+            f"entre {len(candidatas)} candidata(s)."
+        )
+        return {
+            "view": candidatas[0],
+            "metodo": "heuristica",
+            "warning": warning,
+            "candidatas": candidatas,
+            "canonicas_encontradas": [],
+        }
+    return {
+        "view": None,
+        "metodo": "nenhuma",
+        "warning": "Nenhuma view *MENING* encontrada no INFORMATION_SCHEMA.",
+        "candidatas": [],
+        "canonicas_encontradas": [],
+    }
 
 # CIDs típicos de meningite / doença meningocócica no SIM
 SIM_CID_LIKE = (
@@ -300,6 +362,10 @@ def main():
         gal_ok = any(n.upper() == "VW_GAL" for n in names) or True
         sim_ok = any(n.upper() == "SIM" for n in names) or True
 
+        escolha = pick_sinan_meningite_view(mening_views)
+        if escolha.get("warning"):
+            log(f"[AVISO] {escolha['warning']}")
+
         resumo = {
             "conectado_em": datetime.now().isoformat(timespec="seconds"),
             "host": host,
@@ -307,6 +373,7 @@ def main():
             "n_objetos_filtrados": len(objs),
             "views_meningite_candidatas": mening_views,
             "views_sinasc_candidatas": sinasc_views,
+            "sinan_meningite_escolha": escolha,
             "known_map": KNOWN,
         }
 
@@ -328,9 +395,13 @@ def main():
         except Exception as e:
             log(f"[AVISO] CNES: {e}")
 
-        # SINAN meningite: prioriza view com MENING no nome
-        sinan_view = mening_views[0] if mening_views else None
+        # SINAN meningite: canônico primeiro; heurística *MENING* só como fallback
+        sinan_view = escolha.get("view")
         if sinan_view:
+            log(
+                f"[SINAN] View selecionada: {sinan_view} "
+                f"(método={escolha.get('metodo')})"
+            )
             extracts["sinan_meningites_dw"] = extract_sinan_meningite(conn, sinan_view)
         else:
             log("[AVISO] Nenhuma view *MENING* encontrada no INFORMATION_SCHEMA.")
@@ -366,6 +437,13 @@ def main():
             lines += [f"- `{v}`" for v in mening_views]
         else:
             lines.append("- (nenhuma encontrada pelo filtro INFORMATION_SCHEMA)")
+        lines += [
+            "",
+            f"**View SINAN escolhida:** `{sinan_view or '—'}` "
+            f"(método=`{escolha.get('metodo')}`)",
+        ]
+        if escolha.get("warning"):
+            lines.append(f"**Aviso:** {escolha['warning']}")
         lines += ["", "## Extratos gerados em `entradas_linkage/`", ""]
         for k, v in saved.items():
             lines.append(f"- **{k}**: {v['n']} linhas → `{v['arquivo']}`")

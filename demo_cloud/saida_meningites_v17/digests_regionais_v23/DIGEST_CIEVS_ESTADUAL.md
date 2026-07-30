@@ -11,23 +11,23 @@
 - Pico sazonal típico: **Mar** (índice 1.1325816891115985)
 
 ### Top 20 da fila
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JACIARA | CASO-F5445904 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · VILA RICA | CASO-E51DE037 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · COCALINHO | CASO-95E79F63 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA | CASO-A71162B4 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SANTO ANTONIO DO LEVERGER | CASO-2261A93C — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CUIABA | CASO-46B1CD97 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · DENISE | CASO-6B91DA6B — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JUARA | CASO-B1769A6A — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · VARZEA GRANDE | CASO-53F6B521 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SANTO ANTONIO DO LEVERGER | CASO-B66018CB — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · PORTO DOS GAUCHOS | CASO-B47F99E5 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JUARA | CASO-4E535C75 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA | CASO-A599BF31 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CANARANA | CASO-E7CD9527 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JACIARA | CASO-7654F73D — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · VILA RICA | CASO-8DC7E574 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · COCALINHO | CASO-06108C82 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA | CASO-987A52F3 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SANTO ANTONIO DO LEVERGER | CASO-F2BEA0E7 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CUIABA | CASO-47E2E02D — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · DENISE | CASO-0CC91ABC — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JUARA | CASO-7DC15045 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · VARZEA GRANDE | CASO-9066EA04 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SANTO ANTONIO DO LEVERGER | CASO-EC6CA0C0 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · PORTO DOS GAUCHOS | CASO-4DE4C08D — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JUARA | CASO-8649C824 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA | CASO-F61A6975 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CANARANA | CASO-3B942580 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
 - **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · POXOREO | caso 1 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CAMPINAPOLIS | CASO-A4124DB4 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CAMPO NOVO DO PARECIS | CASO-82A9196C — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SORRISO | CASO-A7857542 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SAO PEDRO DA CIPA | CASO-F980E7A7 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JUARA | CASO-779FC15B — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CAMPINAPOLIS | CASO-E4AF4779 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CAMPO NOVO DO PARECIS | CASO-E2C44C9D — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SORRISO | CASO-744170FE — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SAO PEDRO DA CIPA | CASO-ECA28272 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JUARA | CASO-D2B4AAFD — Revisar evolução/encerramento no SINAN e causa básica no SIM.

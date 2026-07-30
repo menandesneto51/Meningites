@@ -1,6 +1,6 @@
 # Indicadores novos V28 — Meningites CIEVS-MT
 
-**Gerado em:** 29/07/2026 12:37
+**Gerado em:** 30/07/2026 09:54
 
 > Números estaduais. Recortes por regional e por ano estão nos CSVs `*_v28.csv`.
 

@@ -1,5 +1,5 @@
 {
-  "n_arquivos_csv": 141,
+  "n_arquivos_csv": 147,
   "n_arquivos_json": 3,
   "excluidos_por_politica": [
     "auditoria_sinan_somente_dw_v23.csv",

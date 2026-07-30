@@ -1,0 +1,14 @@
+﻿TipoUnidade,complexidade_acesso_v30,casos,unidades
+HOSPITAL GERAL,Alta complexidade / hospitalar,4681,113
+Sem match/sem tipo,Sem match CNES,474,67
+HOSPITAL ESPECIALIZADO,Alta complexidade / hospitalar,388,2
+PRONTO ATENDIMENTO,Alta complexidade / hospitalar,222,24
+CENTRO DE SAUDE/UNIDADE BASICA,Atenção básica,77,62
+CLINICA/CENTRO DE ESPECIALIDADE,Alta complexidade / hospitalar,40,13
+CENTRAL DE GESTAO EM SAUDE,Outros / intermediário,29,10
+PRONTO SOCORRO GERAL,Alta complexidade / hospitalar,10,2
+POLICLINICA,Atenção básica,7,3
+UNIDADE MISTA,Alta complexidade / hospitalar,6,2
+UNIDADE DE APOIO DIAGNOSE E TERAPIA (SADT ISOLADO),Outros / intermediário,5,3
+CONSULTORIO ISOLADO,Outros / intermediário,4,2
+POSTO DE SAUDE,Atenção básica,1,1

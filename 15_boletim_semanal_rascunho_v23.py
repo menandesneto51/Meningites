@@ -26,7 +26,9 @@ def main():
     ms = _read("indicadores_ms_operacionais_v23.csv")
     fila = _read("alertas_inteligentes_fila_cievs_v23.csv")
     resumo_al = _read("alertas_inteligentes_resumo_v23.csv")
-    surtos = _read("alertas_inteligentes_surtos_nt97_v23.csv")
+    surtos = _read("alertas_inteligentes_surtos_nt154_v23.csv")
+    if surtos.empty:
+        surtos = _read("alertas_inteligentes_surtos_nt97_v23.csv")
     kpis = _read("kpis_semanais_v17.csv")
     epi = _read("painel_epi_resumo_ano_v23.csv")
     meta = _read("painel_epi_meta_v23.csv")

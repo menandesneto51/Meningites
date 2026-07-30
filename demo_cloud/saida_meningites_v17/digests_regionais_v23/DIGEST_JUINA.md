@@ -6,21 +6,21 @@ Casos=95 | inv48h=96.7% | enc60d=87.4% | quimio=50.0%
 
 ## Fila local: 10 itens · Crítico/Alto: 10
 
-- **Crítico** · Encerramento em risco/atrasado · ARIPUANA | CASO-4CE123FD — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · ARIPUANA | CASO-331A2459 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CASTANHEIRA | CASO-44C5195F — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CASTANHEIRA | CASO-6A282741 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · COLNIZA | CASO-27E1B220 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · COLNIZA | CASO-D33AD27E — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · JURUENA | CASO-C593CD0C — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · JURUENA | CASO-2BC0AAA3 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Alto** · GAL/LACEN positivo — atualizar SINAN · JUINA | CASO-96CF080F — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
-- **Alto** · GAL/LACEN positivo — atualizar SINAN · COLNIZA | CASO-D7E84F26 — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Crítico** · Encerramento em risco/atrasado · ARIPUANA | CASO-B1BCE9BC — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · ARIPUANA | CASO-F905C821 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CASTANHEIRA | CASO-572D5326 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CASTANHEIRA | CASO-C6B29484 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · COLNIZA | CASO-C12C001F — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · COLNIZA | CASO-A6A125CA — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · JURUENA | CASO-97C1727F — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · JURUENA | CASO-5D9D51AB — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · JUINA | CASO-12167102 — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · COLNIZA | CASO-216379A8 — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
 
 ## Linkage DW (2)
 
-- GAL/LACEN positivo — atualizar SINAN · CASO-96CF080F — Match DW VW_GAL score≥0.75; método=PCR em Tempo Real; resultado=Resultado: Detectável 
-- GAL/LACEN positivo — atualizar SINAN · CASO-D7E84F26 — Match DW VW_GAL score≥0.75; método=PCR em Tempo Real; resultado=Resultado: Detectável 
+- GAL/LACEN positivo — atualizar SINAN · CASO-12167102 — Match DW VW_GAL score≥0.75; método=PCR em Tempo Real; resultado=Resultado: Detectável 
+- GAL/LACEN positivo — atualizar SINAN · CASO-216379A8 — Match DW VW_GAL score≥0.75; método=PCR em Tempo Real; resultado=Resultado: Detectável 
 
 ## Ações sugeridas (meningites / MS)
 1. Resolver quimioprofilaxia DM/Hib pendente (≤48h).
