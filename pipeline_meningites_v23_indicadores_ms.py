@@ -197,6 +197,7 @@ def ops_steps(
     run("23_alertas_personalizados_ia_v23.py", allow_fail=True)
     run("28_indicadores_novos_v28.py", allow_fail=True)
     run("30_cnes_sinasc_enriquecimento_v30.py", allow_fail=True)
+    run("32_gal_laboratorio_detalhado_v32.py", allow_fail=True)
     print("\n[OK] Pipeline operacional (--ops) concluído.")
     if finalizar_execucao:
         finalizar("ops")
@@ -278,6 +279,11 @@ def validate(strict: bool = True) -> int:
         "saida_meningites_v17/cnes_perfil_unidade_notificante_v30.csv",
         "saida_meningites_v17/cnes_acesso_complexidade_regional_v30.csv",
         "relatorios/CNES_SINASC_ENRIQUECIMENTO_V30.md",
+        # V31/V32 — população RIPSA + GAL detalhado
+        "saida_meningites_v17/populacao_fonte_meta_v31.json",
+        "saida_meningites_v17/gal_kpis_laboratorio_v32.csv",
+        "relatorios/GAL_LABORATORIO_DETALHADO_V32.md",
+        "relatorios/POPULACAO_IBGE_RIPSA_V31.md",
     ]
     print("\nVALIDAÇÃO OPERACIONAL V23/V24")
     print("=" * 90)

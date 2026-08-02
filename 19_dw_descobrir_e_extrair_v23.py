@@ -279,6 +279,28 @@ def extract_cnes(conn) -> pd.DataFrame:
     return pd.read_sql(sql, conn)
 
 
+def extract_cnes_leitos(conn) -> pd.DataFrame:
+    """Leitos CNES (UTI e demais) — última competência disponível."""
+    sql = """
+    WITH ultima_competencia AS (
+        SELECT MAX(CONCAT(Ano, RIGHT('00' + CAST(Mes AS varchar(2)), 2))) AS comp
+        FROM dbo.CNES_LEITOS
+    )
+    SELECT *
+    FROM dbo.CNES_LEITOS
+    WHERE CONCAT(Ano, RIGHT('00' + CAST(Mes AS varchar(2)), 2)) = (SELECT comp FROM ultima_competencia)
+    """
+    try:
+        return pd.read_sql(sql, conn)
+    except Exception as e1:
+        log(f"[AVISO] CNES_LEITOS (filtro competência): {e1} — tentando TOP sem filtro")
+        try:
+            return pd.read_sql("SELECT TOP (200000) * FROM dbo.CNES_LEITOS", conn)
+        except Exception as e2:
+            log(f"[AVISO] CNES_LEITOS indisponível: {e2}")
+            return pd.DataFrame()
+
+
 def extract_sinan_meningite(conn, view_name: str | None) -> pd.DataFrame:
     if not view_name:
         return pd.DataFrame()
@@ -394,6 +416,14 @@ def main():
             extracts["cnes_estabelecimentos"] = extract_cnes(conn)
         except Exception as e:
             log(f"[AVISO] CNES: {e}")
+        try:
+            leitos = extract_cnes_leitos(conn)
+            if leitos is not None and not leitos.empty:
+                extracts["cnes_leitos"] = leitos
+            else:
+                log("[INFO] CNES_LEITOS sem linhas (objeto ausente ou vazio).")
+        except Exception as e:
+            log(f"[AVISO] CNES_LEITOS: {e}")
 
         # SINAN meningite: canônico primeiro; heurística *MENING* só como fallback
         sinan_view = escolha.get("view")

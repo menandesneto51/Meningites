@@ -188,6 +188,14 @@ MAPA_ARTEFATOS: dict[str, str] = {
     "letalidade_padronizada_idade_v28.csv": "28_indicadores_novos_v28.py",
     "letalidade_populacao_padrao_v28.csv": "28_indicadores_novos_v28.py",
     "aglomerado_espaco_temporal_v28.csv": "28_indicadores_novos_v28.py",
+    "cnes_perfil_unidade_notificante_v30.csv": "30_cnes_sinasc_enriquecimento_v30.py",
+    "cnes_acesso_complexidade_regional_v30.csv": "30_cnes_sinasc_enriquecimento_v30.py",
+    "cnes_leitos_capacidade_v30.csv": "30_cnes_sinasc_enriquecimento_v30.py",
+    "gal_kpis_laboratorio_v32.csv": "32_gal_laboratorio_detalhado_v32.py",
+    "gal_tipagem_nm_hib_v32.csv": "32_gal_laboratorio_detalhado_v32.py",
+    "gal_sinan_concordancia_lab_v32.csv": "32_gal_laboratorio_detalhado_v32.py",
+    "gal_tempo_coleta_liberacao_v32.csv": "32_gal_laboratorio_detalhado_v32.py",
+    "populacao_fonte_meta_v31.json": "31_atualizar_populacao_ibge_ripsa_v31.py",
     # 29 — este selo de procedência
     SAIDA_CSV: MODULO,
     EXEC_JSON: "pipeline_meningites_v23_indicadores_ms.py",
@@ -201,6 +209,9 @@ MAPA_RELATORIOS: dict[str, str] = {
     "LINKAGE_GAL_LACEN_SIM_V23.md": "17_linkage_gal_lacen_sim_v23.py",
     "NOWCAST_OPERACIONAL_GESTAO_V24.md": "24_nowcast_operacional_gestao_v24.py",
     "INDICADORES_NOVOS_V28.md": "28_indicadores_novos_v28.py",
+    "GAL_LABORATORIO_DETALHADO_V32.md": "32_gal_laboratorio_detalhado_v32.py",
+    "POPULACAO_IBGE_RIPSA_V31.md": "31_atualizar_populacao_ibge_ripsa_v31.py",
+    "CNES_SINASC_ENRIQUECIMENTO_V30.md": "30_cnes_sinasc_enriquecimento_v30.py",
 }
 
 

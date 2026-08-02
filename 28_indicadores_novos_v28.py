@@ -356,11 +356,12 @@ def build_denominador_por_ano(df: pd.DataFrame) -> pd.DataFrame:
             "pct_sem_denominador": _pct(sem, total),
             "status_denominador": status,
             "politica": "match_exato_municipio_ano_sem_carry_forward",
-            "serie_populacional_disponivel": "2020-2025 (populacao_padronizada_mt.csv)",
+            "serie_populacional_disponivel": "2010-2025 (populacao_padronizada_mt.csv; RIPSA/MS + arquivo local)",
             "nota": (
-                "Anos fora de 2020–2025 não têm população no repositório; "
-                "não inventar IBGE. Para integrar 2010–2019, acrescente linhas "
-                "em populacao_padronizada_mt.csv e rode o módulo 00."
+                "Série 2010–2025 via populacao_padronizada_mt.csv "
+                "(RIPSA/MS 2010–2019 + arquivo local 2020–2025). "
+                "Anos <2010 e 2026+ ficam sem denominador (sem carry-forward). "
+                "Atualize com 31_atualizar_populacao_ibge_ripsa_v31.py quando houver estimativa nova."
             ),
         })
     return pd.DataFrame(rows).sort_values("ano_evento_v17")

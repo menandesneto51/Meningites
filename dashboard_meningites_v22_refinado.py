@@ -2125,6 +2125,46 @@ def lab_section(df):
     Positividade e critério de confirmação: caminho feliz = CSVs do módulo 07.
     Fallback (SINAN cru + parse_positive) só se os artefatos faltarem.
     """
+    gal_kpi = read_any(OUT / "gal_kpis_laboratorio_v32.csv")
+    gal_tempo = read_any(OUT / "gal_tempo_coleta_liberacao_v32.csv")
+    if not gal_kpi.empty:
+        st.subheader("GAL detalhado (V32) — tipagem e oportunidade lab")
+        st.caption(
+            "Fonte: `gal_lacen_meningites.csv` (VW_GAL) via módulo 32. "
+            "Complementa o match binário do linkage com PCR/cultura, Nm/Hi e sorogrupo."
+        )
+        est = gal_kpi[gal_kpi["escopo"].astype(str).eq("ESTADUAL")]
+        if not est.empty:
+            r0 = est.iloc[0]
+            g1, g2, g3, g4 = st.columns(4)
+            if "n_exames" in r0:
+                g1.metric("Exames GAL (meningite)", fmt(r0.get("n_exames"), 0))
+            if "pct_pcr" in r0:
+                g2.metric("% PCR (exames)", fmt(r0.get("pct_pcr")))
+            if "n_nm_detectavel" in r0:
+                g3.metric("Nm detectável", fmt(r0.get("n_nm_detectavel"), 0))
+            if "n_com_sorogrupo_gal" in r0:
+                g4.metric("Com sorogrupo GAL", fmt(r0.get("n_com_sorogrupo_gal"), 0))
+            # Segunda linha: união SINAN×GAL
+            r1 = est[est["recorte"].astype(str).str.contains("SINAN", na=False)]
+            if not r1.empty:
+                rr = r1.iloc[0]
+                h1, h2, h3 = st.columns(3)
+                if "pct_dm_sorogrupo_sinan" in rr:
+                    h1.metric("% DM sorogrupo SINAN", fmt(rr.get("pct_dm_sorogrupo_sinan")))
+                if "pct_dm_sorogrupo_uniao" in rr:
+                    h2.metric("% DM sorogrupo SINAN∪GAL", fmt(rr.get("pct_dm_sorogrupo_uniao")))
+                if "n_dm_sorogrupo_so_gal" in rr:
+                    h3.metric("Sorogrupo só no GAL", fmt(rr.get("n_dm_sorogrupo_so_gal"), 0))
+        if not gal_tempo.empty:
+            t = gal_tempo.iloc[0]
+            st.caption(
+                f"Coleta→liberação: mediana {fmt(t.get('mediana_dias'))} dias · "
+                f"P90 {fmt(t.get('p90_dias'))} · "
+                f"≤48h {fmt(t.get('pct_liberado_48h'))}% · ≤7d {fmt(t.get('pct_liberado_7d'))}%."
+            )
+        st.markdown("---")
+
     lab_v25 = read_any(OUT / "indicadores_pl_lab_v25.csv")
     if not lab_v25.empty:
         st.subheader("Oportunidade de PL / lab pendente (V25)")

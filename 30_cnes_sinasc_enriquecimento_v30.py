@@ -22,6 +22,7 @@ menores de 1 ano. Linkage nominal mãe–caso não é feito (LGPD / utilidade fr
 
 from __future__ import annotations
 
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -33,6 +34,7 @@ from meningites_v17_common import OUT, REL, ROOT, load_base_v17, norm_code6, tex
 ENTRADAS = ROOT / "entradas_linkage"
 CNES_PATH = ENTRADAS / "cnes_estabelecimentos.csv"
 SINASC_PATH = ENTRADAS / "sinasc_dw.csv"
+CNES_LEITOS_PATH = ENTRADAS / "cnes_leitos.csv"
 
 # Classificação operacional do TipoUnidade CNES para proxy de acesso
 ATENCAO_BASICA = {
@@ -174,6 +176,81 @@ def enriquecer_cnes(df: pd.DataFrame, cnes: pd.DataFrame) -> tuple[pd.DataFrame,
         tipo = pd.DataFrame()
 
     return perfil, acesso, tipo
+
+
+def processar_cnes_leitos(leitos: pd.DataFrame) -> pd.DataFrame:
+    """Agrega leitos (UTI e totais) por município/regional — última competência no extrato."""
+    if leitos.empty:
+        return pd.DataFrame()
+    L = leitos.copy()
+    mun_col = next(
+        (c for c in L.columns if re.search(r"municipio.*codigo|cod.*munic|ibge", str(c), re.I)),
+        None,
+    )
+    if mun_col is None:
+        mun_col = next((c for c in L.columns if "Municipio" in str(c) and "Codigo" in str(c)), None)
+    qtd_col = next(
+        (c for c in ["Quantidade", "QT_EXIST", "LeitosExistentes", "qtde_leitos", "QtdeLeitos"] if c in L.columns),
+        None,
+    )
+    if qtd_col is None:
+        for c in L.columns:
+            if re.search(r"quantidade|qtde", str(c), re.I):
+                qtd_col = c
+                break
+    tipo_col = next(
+        (c for c in L.columns if re.search(r"tipo.*leito|descri|especialidade|nome_leito", str(c), re.I)),
+        None,
+    )
+    if qtd_col is None:
+        print("[AVISO] CNES_LEITOS sem coluna de quantidade reconhecível.")
+        return pd.DataFrame()
+
+    L["_qtd"] = pd.to_numeric(L[qtd_col], errors="coerce").fillna(0)
+    if tipo_col:
+        tipo_txt = L[tipo_col].astype(str).map(text_key)
+        L["_uti"] = tipo_txt.str.contains("UTI|INTENSIV", regex=True, na=False)
+    else:
+        L["_uti"] = False
+
+    if mun_col:
+        L["codigo_municipio"] = L[mun_col].map(norm_code6)
+        tot = L.groupby("codigo_municipio", dropna=False)["_qtd"].sum().rename("leitos_total")
+        uti = L.loc[L["_uti"]].groupby("codigo_municipio", dropna=False)["_qtd"].sum().rename("leitos_uti")
+        mun = pd.concat([tot, uti], axis=1).fillna(0).reset_index()
+    else:
+        mun = pd.DataFrame([{
+            "codigo_municipio": "",
+            "leitos_total": float(L["_qtd"].sum()),
+            "leitos_uti": float(L.loc[L["_uti"], "_qtd"].sum()),
+        }])
+
+    rows = [{
+        "escopo": "ESTADUAL",
+        "recorte": "MT",
+        "leitos_total": float(mun["leitos_total"].sum()),
+        "leitos_uti": float(mun["leitos_uti"].sum()),
+        "municipios_com_leito": int((mun["leitos_total"] > 0).sum()),
+        "municipios_com_uti": int((mun["leitos_uti"] > 0).sum()),
+    }]
+    reg_col = next((c for c in L.columns if re.search(r"regional", str(c), re.I)), None)
+    if reg_col:
+        L["_reg"] = L[reg_col].fillna("Sem regional").astype(str)
+        for reg, g in L.groupby("_reg"):
+            rows.append({
+                "escopo": "REGIONAL",
+                "recorte": reg,
+                "leitos_total": float(g["_qtd"].sum()),
+                "leitos_uti": float(g.loc[g["_uti"], "_qtd"].sum()),
+                "municipios_com_leito": int(g[mun_col].nunique()) if mun_col else np.nan,
+                "municipios_com_uti": int(g.loc[g["_uti"], mun_col].nunique()) if mun_col else np.nan,
+            })
+    out = pd.DataFrame(rows)
+    out["nota"] = (
+        "CNES_LEITOS última competência no extrato DW. "
+        "Cruzar com casos graves da fila CIEVS / nowcast para capacidade regional."
+    )
+    return out
 
 
 def processar_sinasc(df: pd.DataFrame, sinasc: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -387,6 +464,15 @@ def main() -> int:
             print(f"[OK] Incidência <1 ano (NV): {len(inc_m1)} linhas")
     else:
         print("[INFO] SINASC ausente — sem denominador de nascidos vivos.")
+
+    leitos = _read_csv(CNES_LEITOS_PATH)
+    if not leitos.empty:
+        lei = processar_cnes_leitos(leitos)
+        if not lei.empty:
+            lei.to_csv(OUT / "cnes_leitos_capacidade_v30.csv", index=False, encoding="utf-8-sig")
+            print(f"[OK] CNES_LEITOS: {len(lei)} escopos de capacidade")
+    else:
+        print("[INFO] CNES_LEITOS ausente — rode o módulo 19 com DW para extrair.")
 
     rel = write_report(perfil, acesso, tipo, nv, inc_m1, cnes_ok, sinasc_ok)
     print(f"[OK] Relatório: {rel}")
