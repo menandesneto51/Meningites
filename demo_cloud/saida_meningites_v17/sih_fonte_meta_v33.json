@@ -1,0 +1,37 @@
+{
+  "modulo": "33_sih_subnotificacao_v33.py",
+  "fonte_extrato": "sih_internacoes_meningite.csv",
+  "disponivel": true,
+  "mensagem": "Extrato com 462 linhas · 462 slots de internação · fila SIH-sem-SINAN=274",
+  "n_linhas_extrato": 462,
+  "n_linhas_prep": 462,
+  "n_slots_internacao": 462,
+  "janela_dias": 30,
+  "idade_tol": 1,
+  "cids": [
+    "A39",
+    "G00",
+    "G01",
+    "G02",
+    "G03",
+    "A87"
+  ],
+  "linkage": "Heurístico mun(IBGE-6)+sexo+idade±1+janela dias em torno de AnoInternacao/MesInternacao (dia 15) × data_internacao_v17/data_ref_v17. Sem chave AIH↔notificação.",
+  "gerado_em": "2026-09-05T22:01:15",
+  "kpis_estaduais": {
+    "escopo": "ESTADUAL",
+    "recorte": "MT",
+    "n_internacoes_sih": 462,
+    "n_match_sinan": 188,
+    "n_sih_sem_sinan": 274,
+    "pct_sih_sem_sinan": 59.307359307359306,
+    "pct_match_sinan": 40.692640692640694,
+    "n_com_uti": 98,
+    "pct_uti": 21.21212121212121,
+    "n_obito_hospitalar": 34,
+    "pct_obito_hospitalar": 7.35930735930736,
+    "n_casos_sinan": 5953.0,
+    "janela_dias": 30,
+    "idade_tol": 1
+  }
+}

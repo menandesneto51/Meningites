@@ -1,0 +1,45 @@
+{
+  "gerado_em": "2026-08-15T08:20:14",
+  "arquivo": "populacao_padronizada_mt.csv",
+  "n_linhas": 2115,
+  "n_municipios": 141,
+  "anos": [
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "anos_adicionados_ripsa": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "anos_preservados_locais": [
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019
+  ],
+  "fonte_ripsa_url": "https://raw.githubusercontent.com/lsbastos/popBR_mun/refs/heads/master/popBR2000-2024.long.csv",
+  "fonte_ripsa_descricao": "Estimativas populacionais municipais CGI Demográfico/RIPSA e CGIAE/SVSA/MS (popBR_mun / DATASUS POPSVS).",
+  "politica": "Anos já presentes em populacao_padronizada_mt.csv não são sobrescritos. 2026 não é inventado."
+}

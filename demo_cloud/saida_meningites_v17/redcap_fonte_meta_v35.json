@@ -1,0 +1,50 @@
+{
+  "modulo": "35_redcap_fila_cievs_v35",
+  "gerado_em": "2026-09-05T22:01:16",
+  "redcap_disponivel": false,
+  "entrada": "C:\\Users\\Menandesneto\\OneDrive\\CIEVS MT\\Meningites\\entradas_linkage\\redcap_fila_meningite_cievs.csv",
+  "entrada_default": "redcap_fila_meningite_cievs.csv",
+  "env_override": [
+    "REDCAP_FILA_CSV",
+    "REDCAP_MENINGITE_CSV",
+    "REDCAP_CIEVS_CSV"
+  ],
+  "n_linhas_raw": 0,
+  "n_linhas_prep": 0,
+  "colunas_esperadas": [
+    "record_id",
+    "data_notificacao",
+    "data_sintomas",
+    "codigo_municipio",
+    "municipio",
+    "regional",
+    "tipo_evento",
+    "etiologia",
+    "sorogrupo",
+    "faixa_etaria",
+    "sexo",
+    "status_fila",
+    "prioridade",
+    "acao_pendente",
+    "obito",
+    "surto_cluster",
+    "nu_notificacao_sinan"
+  ],
+  "lgpd": {
+    "cpf_cns_nome_exportados": false,
+    "record_id_hasheado": true,
+    "nu_notificacao_sinan_exportado": false,
+    "politica": "scrub nominal/documento; id hasheado; SINAN só como flag"
+  },
+  "nota": "Stub offline-safe: não há schema RedCap meningites no repositório CIEVS-MT. Deposite export CSV (sem PII desnecessário) em entradas_linkage/ ou defina REDCAP_FILA_CSV. Não inventa fila de produção.",
+  "mensagem": "redcap_fila_meningite_cievs.csv ausente — stub V35 ativo (sem inventar fila). Deposite CSV ou defina REDCAP_FILA_CSV.",
+  "kpis_resumo": [
+    {
+      "escopo": "STUB",
+      "indicador": "export_redcap",
+      "n": "0",
+      "pct": "",
+      "nota": "Export ausente — stub offline-safe; sem dados inventados"
+    }
+  ]
+}

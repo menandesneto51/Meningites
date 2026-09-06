@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 31_atualizar_populacao_ibge_ripsa_v31.py
-Completa `populacao_padronizada_mt.csv` com estimativas municipais 2010–2019
-(RIPSA / CGIAE-SVSA-MS via repositório popBR_mun), sem sobrescrever 2020–2025
-já usados no painel.
+Completa `populacao_padronizada_mt.csv` com estimativas municipais 2010–2024
+(RIPSA / CGIAE-SVSA-MS via repositório popBR_mun), sem sobrescrever anos
+já presentes no arquivo local.
 
 Fonte pública (formato longo):
   https://raw.githubusercontent.com/lsbastos/popBR_mun/refs/heads/master/popBR2000-2024.long.csv
@@ -36,7 +36,9 @@ OUT_CSV = ROOT / "populacao_padronizada_mt.csv"
 META_JSON = OUT / "populacao_fonte_meta_v31.json"
 BACKUP = ROOT / "populacao_padronizada_mt_backup_antes_v31.csv"
 
-ANOS_COMPLETAR = list(range(2010, 2020))  # 2010–2019
+# RIPSA/popBR cobre até 2024. Anos já no CSV local não são sobrescritos.
+# 2025+ só entram se o arquivo local já tiver; 2026 nunca é inventado.
+ANOS_COMPLETAR = list(range(2010, 2025))  # 2010–2024
 
 
 def _cod6(series: pd.Series) -> pd.Series:
@@ -82,7 +84,7 @@ def main() -> int:
     print(f"[INFO] Baixando estimativas RIPSA/MS …")
     ripsa = fetch_ripsa_mt()
     print(
-        f"[OK] RIPSA MT 2010–2019: {len(ripsa)} linhas · "
+        f"[OK] RIPSA MT {ANOS_COMPLETAR[0]}–{ANOS_COMPLETAR[-1]}: {len(ripsa)} linhas · "
         f"{ripsa['codigo_municipio'].nunique()} municípios"
     )
 

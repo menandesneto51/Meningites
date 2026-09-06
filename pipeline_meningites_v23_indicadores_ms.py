@@ -198,6 +198,9 @@ def ops_steps(
     run("28_indicadores_novos_v28.py", allow_fail=True)
     run("30_cnes_sinasc_enriquecimento_v30.py", allow_fail=True)
     run("32_gal_laboratorio_detalhado_v32.py", allow_fail=True)
+    run("33_sih_subnotificacao_v33.py", allow_fail=True)
+    run("34_cipv_cobertura_vacinal_v34.py", allow_fail=True)
+    run("35_redcap_fila_cievs_v35.py", allow_fail=True)
     print("\n[OK] Pipeline operacional (--ops) concluído.")
     if finalizar_execucao:
         finalizar("ops")
@@ -284,6 +287,19 @@ def validate(strict: bool = True) -> int:
         "saida_meningites_v17/gal_kpis_laboratorio_v32.csv",
         "relatorios/GAL_LABORATORIO_DETALHADO_V32.md",
         "relatorios/POPULACAO_IBGE_RIPSA_V31.md",
+        # V33 — SIH × SINAN (subnotificação hospitalar)
+        "saida_meningites_v17/sih_kpis_subnotificacao_v33.csv",
+        "saida_meningites_v17/sih_fonte_meta_v33.json",
+        "relatorios/SIH_SUBNOTIFICACAO_V33.md",
+        # V34 — CIPV / SI-PNI × SINAN (vacinal MenACWY/Hib)
+        "saida_meningites_v17/cipv_kpis_cobertura_v34.csv",
+        "saida_meningites_v17/cipv_fonte_meta_v34.json",
+        "relatorios/CIPV_COBERTURA_VACINAL_V34.md",
+        # V35 — Fila CIEVS / RedCap (stub offline-safe)
+        "saida_meningites_v17/redcap_kpis_fila_v35.csv",
+        "saida_meningites_v17/redcap_fonte_meta_v35.json",
+        "saida_meningites_v17/redcap_schema_esperado_v35.csv",
+        "relatorios/REDCAP_FILA_CIEVS_V35.md",
     ]
     print("\nVALIDAÇÃO OPERACIONAL V23/V24")
     print("=" * 90)

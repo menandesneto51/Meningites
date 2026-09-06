@@ -7,6 +7,7 @@ Saídas:
   - enriquecimento_casos_dw_v23.csv
   - alertas_linkage_dw_v23.csv
   - alertas_qualidade_sinan_v23.csv
+  - sim_fila_reconcilacao_v23.csv  (óbitos SIM sem desfecho meningite no SINAN)
   - fila_cievs_unificada_v23.csv
   - relatorios/FILA_CIEVS_UNIFICADA_V23.md
 """
@@ -459,6 +460,29 @@ def main():
     }])
     mort_resumo.to_csv(OUT / "mortalidade_sinan_sim_resumo_v23.csv", index=False, encoding="utf-8-sig")
 
+    # Lista operacional: óbitos SIM com evidência de meningite sem desfecho óbito no SINAN
+    sim_fila_cols = [
+        c for c in [
+            "NumeroNotificacao", "municipio_v17", "regional_v17", "data_ref_v17",
+            "classificacao_agrupada_v17", "obito_meningite_v17",
+            "obito_sim_link_v23", "obito_sim_sem_sinan_v23", "obito_sim_motivo_v23",
+            "dw_sim_match_v23", "dw_sim_score_v23", "dw_sim_cid_v23", "dw_sim_data_obito_v23",
+        ] if c in enr.columns
+    ]
+    sim_fila = enr.loc[
+        pd.to_numeric(enr.get("obito_sim_sem_sinan_v23"), errors="coerce").fillna(0).astype(int).eq(1),
+        sim_fila_cols,
+    ].copy() if sim_fila_cols else pd.DataFrame()
+    if not sim_fila.empty:
+        sim_fila["acao_sugerida_v23"] = "Reconciliar desfecho SINAN com óbito SIM (CID meningite)"
+        sort_sim = [c for c in ["regional_v17", "municipio_v17", "data_ref_v17"] if c in sim_fila.columns]
+        if sort_sim:
+            sim_fila = sim_fila.sort_values(sort_sim, ascending=True)
+    else:
+        if "acao_sugerida_v23" not in sim_fila.columns:
+            sim_fila["acao_sugerida_v23"] = pd.Series(dtype=str)
+    sim_fila.to_csv(OUT / "sim_fila_reconcilacao_v23.csv", index=False, encoding="utf-8-sig")
+
     keep = [c for c in [
         "NumeroNotificacao", "municipio_v17", "regional_v17", "data_ref_v17",
         "classificacao_agrupada_v17", "confirmado_v17", "obito_meningite_v17",
@@ -503,6 +527,7 @@ def main():
         "obitos_sinan": int(pd.to_numeric(enr.get("obito_meningite_v17"), errors="coerce").fillna(0).sum()),
         "obitos_uniao_sinan_sim": int(enr["obito_meningite_uniao_v23"].sum()),
         "obitos_sim_sem_sinan": int(enr["obito_sim_sem_sinan_v23"].sum()),
+        "sim_fila_reconcilacao": int(len(sim_fila)),
         "alertas_linkage": len(adw),
         "alertas_qualidade": len(aq),
         "fila_unificada": len(fila),
@@ -514,7 +539,7 @@ def main():
     print("[OK] Enriquecimento DW + fila CIEVS unificada.")
     print(
         f"[SIM] matches={n_match_sim} · com evidência de óbito={n_obito_sim} · "
-        f"descartados sem evidência={n_descartado}"
+        f"descartados sem evidência={n_descartado} · fila_reconcilacao={len(sim_fila)}"
     )
     print(motivo_sim[match_sim == 1].value_counts().to_string())
     print(resumo.to_string(index=False))

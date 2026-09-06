@@ -196,6 +196,22 @@ MAPA_ARTEFATOS: dict[str, str] = {
     "gal_sinan_concordancia_lab_v32.csv": "32_gal_laboratorio_detalhado_v32.py",
     "gal_tempo_coleta_liberacao_v32.csv": "32_gal_laboratorio_detalhado_v32.py",
     "populacao_fonte_meta_v31.json": "31_atualizar_populacao_ibge_ripsa_v31.py",
+    "sih_internacoes_prep_v33.csv": "33_sih_subnotificacao_v33.py",
+    "sih_sinan_linkage_v33.csv": "33_sih_subnotificacao_v33.py",
+    "sih_fila_investigacao_v33.csv": "33_sih_subnotificacao_v33.py",
+    "sih_kpis_subnotificacao_v33.csv": "33_sih_subnotificacao_v33.py",
+    "sih_contagens_ano_mun_v33.csv": "33_sih_subnotificacao_v33.py",
+    "sih_fonte_meta_v33.json": "33_sih_subnotificacao_v33.py",
+    "cipv_doses_agregadas_v34.csv": "34_cipv_cobertura_vacinal_v34.py",
+    "cipv_sinan_status_vacinal_v34.csv": "34_cipv_cobertura_vacinal_v34.py",
+    "cipv_kpis_cobertura_v34.csv": "34_cipv_cobertura_vacinal_v34.py",
+    "cipv_fonte_meta_v34.json": "34_cipv_cobertura_vacinal_v34.py",
+    "redcap_fila_prep_v35.csv": "35_redcap_fila_cievs_v35.py",
+    "redcap_kpis_fila_v35.csv": "35_redcap_fila_cievs_v35.py",
+    "redcap_gap_sinan_v35.csv": "35_redcap_fila_cievs_v35.py",
+    "redcap_schema_esperado_v35.csv": "35_redcap_fila_cievs_v35.py",
+    "redcap_fonte_meta_v35.json": "35_redcap_fila_cievs_v35.py",
+    "sim_fila_reconcilacao_v23.csv": "20_enriquecimento_dw_fila_cievs_v23.py",
     # 29 — este selo de procedência
     SAIDA_CSV: MODULO,
     EXEC_JSON: "pipeline_meningites_v23_indicadores_ms.py",
@@ -212,6 +228,9 @@ MAPA_RELATORIOS: dict[str, str] = {
     "GAL_LABORATORIO_DETALHADO_V32.md": "32_gal_laboratorio_detalhado_v32.py",
     "POPULACAO_IBGE_RIPSA_V31.md": "31_atualizar_populacao_ibge_ripsa_v31.py",
     "CNES_SINASC_ENRIQUECIMENTO_V30.md": "30_cnes_sinasc_enriquecimento_v30.py",
+    "SIH_SUBNOTIFICACAO_V33.md": "33_sih_subnotificacao_v33.py",
+    "CIPV_COBERTURA_VACINAL_V34.md": "34_cipv_cobertura_vacinal_v34.py",
+    "REDCAP_FILA_CIEVS_V35.md": "35_redcap_fila_cievs_v35.py",
 }
 
 

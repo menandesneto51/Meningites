@@ -79,6 +79,10 @@ JSON_PERMITIDOS = {
     "assistente_meta_v23.json",
     "painel_epi_meta_v23.json",
     "pipeline_execucao_v28.json",
+    "populacao_fonte_meta_v31.json",
+    "sih_fonte_meta_v33.json",
+    "cipv_fonte_meta_v34.json",
+    "redcap_fonte_meta_v35.json",
 }
 
 # Número de caso embutido em texto livre. Exige 5+ dígitos para não capturar ano

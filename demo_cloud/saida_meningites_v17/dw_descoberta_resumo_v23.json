@@ -1,0 +1,76 @@
+{
+  "conectado_em": "2026-08-15T08:17:12",
+  "host": "10.15.1.50",
+  "database": "Datawarehouse",
+  "n_objetos_filtrados": 40,
+  "views_meningite_candidatas": [
+    "VW_SINAN_MENINGITE"
+  ],
+  "views_sinasc_candidatas": [
+    "SINASC",
+    "VW_SINASC"
+  ],
+  "views_cipv_candidatas": [
+    "IMUNIZACAO",
+    "IMUNIZACAOCOBERTURA"
+  ],
+  "cipv_escolha": {
+    "schema": "dbo",
+    "table": "IMUNIZACAO",
+    "metodo": "canonico"
+  },
+  "sinan_meningite_escolha": {
+    "view": "VW_SINAN_MENINGITE",
+    "metodo": "canonico",
+    "warning": null,
+    "candidatas": [
+      "VW_SINAN_MENINGITE"
+    ],
+    "canonicas_encontradas": [
+      "VW_SINAN_MENINGITE"
+    ]
+  },
+  "known_map": {
+    "gal": "dbo.VW_GAL",
+    "sim": "dbo.SIM",
+    "cnes_estab": "dbo.CNES_ESTABELECIMENTOS",
+    "cnes_leitos": "dbo.CNES_LEITOS",
+    "sih_internacao": "dbo.VW_INTERNACAO",
+    "cipv": "dbo.VW_CIPV",
+    "sipni": "dbo.VW_SIPNI",
+    "sinan_srag": "dbo.VW_SINAN_SINDROMERESPIRATORIAAGUDAGRAVE",
+    "sinan_dengue": "dbo.VW_SINAN_DENGUE",
+    "sinan_chik": "dbo.VW_SINAN_CHIKUNGUNYA",
+    "sinan_meningite": "dbo.VW_SINAN_MENINGITE"
+  },
+  "extracoes": {
+    "gal_lacen_meningites": {
+      "arquivo": "gal_lacen_meningites.csv",
+      "n": 5803
+    },
+    "sim_obitos_meningites": {
+      "arquivo": "sim_obitos_meningites.csv",
+      "n": 84
+    },
+    "cnes_estabelecimentos": {
+      "arquivo": "cnes_estabelecimentos.csv",
+      "n": 11697
+    },
+    "cnes_leitos": {
+      "arquivo": "cnes_leitos.csv",
+      "n": 1224
+    },
+    "sih_internacoes_meningite": {
+      "arquivo": "sih_internacoes_meningite.csv",
+      "n": 462
+    },
+    "sinan_meningites_dw": {
+      "arquivo": "sinan_meningites_dw.csv",
+      "n": 6041
+    },
+    "sinasc_dw": {
+      "arquivo": "sinasc_dw.csv",
+      "n": 205209
+    }
+  }
+}

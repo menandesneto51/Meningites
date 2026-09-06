@@ -1,0 +1,26 @@
+{
+  "arquivo": "cnes_leitos.csv",
+  "n_linhas": 1224,
+  "n_colunas": 18,
+  "colunas": [
+    "Ano",
+    "Mes",
+    "CodigoCnes",
+    "EstabelecimentoNome",
+    "EstabelecimentoMunicipioCodigo",
+    "EstabelecimentoMunicipioNome",
+    "EstabelecimentoRegional",
+    "EstabelecimentoMacrorregiao",
+    "EstabelecimentoMicrorregiao",
+    "TipoUnidade",
+    "EsferaAdministrativa",
+    "Atividade",
+    "Natureza",
+    "TipoLeito",
+    "Especialidade",
+    "Especialidade2",
+    "QtdExistente",
+    "QtdSUS"
+  ],
+  "extraido_em": "2026-08-15T08:17:23"
+}

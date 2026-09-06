@@ -16,22 +16,19 @@ ROOT = Path(__file__).resolve().parent
 
 
 def _resolve_out_rel() -> tuple[Path, Path]:
-    """Usa saídas locais; se ausentes (ex.: Streamlit Cloud), cai no pacote demo_cloud."""
+    """Saída operacional local; demo_cloud só quando a pasta local não existir (Cloud).
+
+    Se `saida_meningites_v17` existir — mesmo incompleta — grava nela.
+    Caso contrário (Streamlit Cloud sem a pasta), lê o pacote demo_cloud.
+    """
     out = ROOT / "saida_meningites_v17"
     rel = ROOT / "relatorios"
     demo_out = ROOT / "demo_cloud" / "saida_meningites_v17"
     demo_rel = ROOT / "demo_cloud" / "relatorios"
-    # marcadores de painel operacional
-    markers = [
-        "base_unica_meningites_v17.csv",
-        "indicadores_ms_operacionais_v23.csv",
-        "indicadores_gestao_semana_v24.csv",
-    ]
-    if any((out / m).exists() for m in markers):
-        out.mkdir(exist_ok=True)
+    if out.exists():
         rel.mkdir(exist_ok=True)
         return out, rel
-    if demo_out.exists() and any((demo_out / m).exists() for m in markers):
+    if demo_out.exists():
         return demo_out, demo_rel if demo_rel.exists() else rel
     out.mkdir(exist_ok=True)
     rel.mkdir(exist_ok=True)

@@ -2850,6 +2850,226 @@ def quality_section():
             "(requer extratos em `entradas_linkage/`)."
         )
 
+    # SIH × SINAN (módulo 33) — sinal de subnotificação hospitalar
+    sih_kpi = read_any(OUT / "sih_kpis_subnotificacao_v33.csv")
+    sih_cont = read_any(OUT / "sih_contagens_ano_mun_v33.csv")
+    sih_meta_path = OUT / "sih_fonte_meta_v33.json"
+    st.markdown("---")
+    st.subheader("SIH × SINAN (V33) — subnotificação hospitalar")
+    st.caption(
+        "Sinal de vigilância: internações SIH (`VW_INTERNACAO`, CID A39/G00–G03/A87) "
+        "sem par heurístico no SINAN (município + sexo + idade ±1 + janela temporal). "
+        "Não há chave AIH↔notificação no extrato — interpretar como sinal, não como confirmação."
+    )
+    if not sih_kpi.empty:
+        est = sih_kpi[sih_kpi["escopo"].astype(str).eq("ESTADUAL")]
+        if not est.empty:
+            r = est.iloc[0]
+            c1, c2, c3, c4 = st.columns(4)
+            c1.metric("Internações SIH", fmt(r.get("n_internacoes_sih"), 0))
+            c2.metric("SIH sem SINAN", fmt(r.get("n_sih_sem_sinan"), 0), f"{fmt(r.get('pct_sih_sem_sinan'))}%")
+            c3.metric("% UTI", fmt(r.get("pct_uti")))
+            c4.metric("% óbito hospitalar", fmt(r.get("pct_obito_hospitalar")))
+        anos = sih_kpi[sih_kpi["escopo"].astype(str).eq("ANO")]
+        if not anos.empty:
+            with st.expander("SIH por ano"):
+                st.dataframe(anos, use_container_width=True)
+        sih_fila = read_any(OUT / "sih_fila_investigacao_v33.csv")
+        if not sih_fila.empty:
+            with st.expander(f"Fila operacional — SIH sem SINAN ({len(sih_fila)} casos)"):
+                st.caption(
+                    "Lista acionável para investigação de subnotificação hospitalar. "
+                    "Prioriza óbito hospitalar e UTI. Sem PII."
+                )
+                st.dataframe(sih_fila.head(200), use_container_width=True)
+        if not sih_cont.empty:
+            with st.expander("Top municípios (SIH sem par SINAN)"):
+                show = sih_cont.copy()
+                if "n_sih_sem_sinan" in show.columns:
+                    show = show.sort_values("n_sih_sem_sinan", ascending=False)
+                st.dataframe(show.head(30), use_container_width=True)
+        rel33 = REL / "SIH_SUBNOTIFICACAO_V33.md"
+        if rel33.exists():
+            with st.expander("Nota técnica SIH V33"):
+                st.markdown(rel33.read_text(encoding="utf-8")[:5000])
+    else:
+        meta_msg = ""
+        if sih_meta_path.exists():
+            try:
+                import json as _json
+                meta_msg = _json.loads(sih_meta_path.read_text(encoding="utf-8")).get("mensagem", "")
+            except Exception:
+                meta_msg = ""
+        st.caption(
+            "SIH V33 ainda não disponível. "
+            + (meta_msg or "Rode `py -3.13 19_dw_descobrir_e_extrair_v23.py` e depois "
+               "`py -3.13 33_sih_subnotificacao_v33.py`.")
+        )
+
+    # SIM sem desfecho SINAN — reconciliação de mortalidade (módulo 20)
+    sim_fila = read_any(OUT / "sim_fila_reconcilacao_v23.csv")
+    mort_resumo = read_any(OUT / "mortalidade_sinan_sim_resumo_v23.csv")
+    st.markdown("---")
+    st.subheader("SIM × SINAN — reconciliação de mortalidade")
+    st.caption(
+        "Óbitos SIM com evidência de meningite (CID/score) sem desfecho óbito no SINAN. "
+        "Lista acionável para revisão de EvolucaoCaso / linkage."
+    )
+    if not mort_resumo.empty:
+        r = mort_resumo.iloc[0]
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Óbitos SINAN", fmt(r.get("obitos_sinan_evolucao"), 0))
+        c2.metric("Óbitos SIM (link)", fmt(r.get("obitos_sim_linkage"), 0))
+        c3.metric("União SINAN∪SIM", fmt(r.get("obitos_uniao_sinan_sim"), 0))
+        c4.metric("SIM sem SINAN", fmt(r.get("obitos_sim_sem_sinan"), 0))
+    if not sim_fila.empty:
+        with st.expander(f"Fila operacional — SIM sem desfecho SINAN ({len(sim_fila)} casos)"):
+            st.dataframe(sim_fila.head(100), use_container_width=True)
+    elif mort_resumo.empty:
+        st.caption(
+            "Reconciliação ainda não gerada. Rode `py -3.13 20_enriquecimento_dw_fila_cievs_v23.py`."
+        )
+
+    # CIPV / SI-PNI × SINAN (módulo 34) — status vacinal MenACWY/MenC/Hib
+    cipv_kpi = read_any(OUT / "cipv_kpis_cobertura_v34.csv")
+    cipv_status = read_any(OUT / "cipv_sinan_status_vacinal_v34.csv")
+    cipv_doses = read_any(OUT / "cipv_doses_agregadas_v34.csv")
+    cipv_meta_path = OUT / "cipv_fonte_meta_v34.json"
+    st.markdown("---")
+    st.subheader("CIPV / SI-PNI × SINAN (V34) — vacinal MenACWY / Hib")
+    st.caption(
+        "Status vacinal nos casos SINAN (campo da ficha) e, quando disponível, "
+        "doses agregadas SI-PNI (`VW_Vacinas_PNI`, município×ano×código). "
+        "Cobertura entre casos SINAN ≠ cobertura populacional do PNI — caption explícito. "
+        "Sem CPF/CNS nos artefatos."
+    )
+    if not cipv_kpi.empty or not cipv_status.empty:
+        sinan_rows = cipv_kpi[cipv_kpi["escopo"].astype(str).str.startswith("SINAN|")] if not cipv_kpi.empty else pd.DataFrame()
+        cipv_rows = cipv_kpi[cipv_kpi["escopo"].astype(str).str.startswith("CIPV|")] if not cipv_kpi.empty else pd.DataFrame()
+        if not sinan_rows.empty:
+            c1, c2, c3 = st.columns(3)
+            for i, key in enumerate(["SINAN|DM", "SINAN|Hib", "SINAN|DM 11–14a"]):
+                r = sinan_rows[sinan_rows["escopo"].astype(str).eq(key)]
+                col = (c1, c2, c3)[i]
+                if not r.empty:
+                    col.metric(
+                        key.replace("SINAN|", ""),
+                        f"{fmt(r.iloc[0].get('pct_vacinados_sinan'))}%",
+                        f"n={fmt(r.iloc[0].get('n_casos'), 0)}",
+                    )
+        if not cipv_rows.empty:
+            est = cipv_rows[cipv_rows["escopo"].astype(str).eq("CIPV|ESTADUAL")]
+            if not est.empty and pd.notna(est.iloc[0].get("n_doses_cipv")):
+                st.metric("Doses SI-PNI (Men/Hib)", fmt(est.iloc[0].get("n_doses_cipv"), 0))
+        if cipv_meta_path.exists():
+            try:
+                import json as _json
+                _cm = _json.loads(cipv_meta_path.read_text(encoding="utf-8"))
+                modo = _cm.get("sipni_modo_extracao") or ""
+                if modo:
+                    st.caption(f"Modo extrato SI-PNI: `{modo}`")
+            except Exception:
+                pass
+        if not cipv_status.empty:
+            with st.expander("Status vacinal SINAN (detalhe)"):
+                show = cipv_status[~cipv_status["escopo"].astype(str).str.contains(r"\|faixa=", regex=True)].copy()
+                st.dataframe(show if not show.empty else cipv_status.head(40), use_container_width=True)
+        if not cipv_doses.empty:
+            with st.expander("Doses por imuno × ano (SI-PNI)"):
+                by = cipv_doses.copy()
+                if "n_doses" in by.columns and "imuno_grupo_v34" in by.columns:
+                    gcols = [c for c in ["ano_dose_v34", "imuno_grupo_v34"] if c in by.columns]
+                    piv = (
+                        by.groupby(gcols, dropna=False)["n_doses"]
+                        .sum()
+                        .reset_index()
+                        .sort_values(gcols, ascending=[False, True] if len(gcols) == 2 else [False])
+                    )
+                    st.dataframe(piv.head(80), use_container_width=True)
+                else:
+                    st.dataframe(by.head(40), use_container_width=True)
+            with st.expander("Doses CIPV agregadas (município / imuno)"):
+                st.dataframe(cipv_doses.head(80), use_container_width=True)
+        rel34 = REL / "CIPV_COBERTURA_VACINAL_V34.md"
+        if rel34.exists():
+            with st.expander("Nota técnica CIPV V34"):
+                st.markdown(rel34.read_text(encoding="utf-8")[:5000])
+    else:
+        meta_msg = ""
+        if cipv_meta_path.exists():
+            try:
+                import json as _json
+                meta_msg = _json.loads(cipv_meta_path.read_text(encoding="utf-8")).get("mensagem", "")
+            except Exception:
+                meta_msg = ""
+        st.caption(
+            "CIPV V34 ainda não gerado. "
+            + (meta_msg or "Rode `py -3.13 34_cipv_cobertura_vacinal_v34.py` "
+               "(SINAN offline; doses exigem extrato CIPV via módulo 19).")
+        )
+
+    # Fila CIEVS / RedCap (módulo 35) — stub offline-safe até existir export
+    rc_kpi = read_any(OUT / "redcap_kpis_fila_v35.csv")
+    rc_prep = read_any(OUT / "redcap_fila_prep_v35.csv")
+    rc_gap = read_any(OUT / "redcap_gap_sinan_v35.csv")
+    rc_meta_path = OUT / "redcap_fonte_meta_v35.json"
+    st.markdown("---")
+    st.subheader("Fila CIEVS / RedCap (V35) — notificação quase em tempo real")
+    st.caption(
+        "Canal RedCap CIEVS para meningites/DM (quando o export existir). "
+        "Complementa a fila SINAN unificada (módulo 20) — não a substitui. "
+        "Stub offline-safe: ausência do CSV não inventa casos. Sem PII nos artefatos."
+    )
+    disponivel = False
+    if rc_meta_path.exists():
+        try:
+            import json as _json
+            disponivel = bool(_json.loads(rc_meta_path.read_text(encoding="utf-8")).get("redcap_disponivel"))
+        except Exception:
+            disponivel = False
+    if disponivel and not rc_kpi.empty:
+        est = rc_kpi[rc_kpi["escopo"].astype(str).eq("ESTADUAL")]
+        if not est.empty:
+            c1, c2, c3, c4 = st.columns(4)
+            def _n(ind):
+                r = est[est["indicador"].astype(str).eq(ind)]
+                return r.iloc[0].get("n") if not r.empty else None
+            c1.metric("Registros RedCap", fmt(_n("registros_total"), 0))
+            c2.metric("Abertos / investigação", fmt(_n("abertos_ou_investigacao"), 0))
+            c3.metric("Prioridade crítica", fmt(_n("prioridade_critica"), 0))
+            c4.metric("Sem vínculo SINAN", fmt(_n("sem_vinculo_sinan"), 0))
+        if not rc_prep.empty:
+            with st.expander("Fila RedCap (scrubada)"):
+                st.dataframe(rc_prep.head(50), use_container_width=True)
+        if not rc_gap.empty:
+            with st.expander("Gap RedCap × SINAN (ativos sem vínculo)"):
+                st.dataframe(rc_gap.head(40), use_container_width=True)
+        rel35 = REL / "REDCAP_FILA_CIEVS_V35.md"
+        if rel35.exists():
+            with st.expander("Nota técnica RedCap V35"):
+                st.markdown(rel35.read_text(encoding="utf-8")[:5000])
+    else:
+        meta_msg = ""
+        if rc_meta_path.exists():
+            try:
+                import json as _json
+                meta_msg = _json.loads(rc_meta_path.read_text(encoding="utf-8")).get("mensagem", "")
+            except Exception:
+                meta_msg = ""
+        st.info(
+            "Stub V35 ativo — export RedCap meningites ainda não depositado. "
+            + (meta_msg or "Salve CSV em `entradas_linkage/redcap_fila_meningite_cievs.csv` "
+               "ou defina `REDCAP_FILA_CSV`, depois `py -3.13 35_redcap_fila_cievs_v35.py`.")
+            + " IndicaSUS permanece fora de escopo até confirmação de objeto útil."
+        )
+        if not rc_kpi.empty:
+            with st.expander("KPIs stub / schema"):
+                st.dataframe(rc_kpi, use_container_width=True)
+        rel35 = REL / "REDCAP_FILA_CIEVS_V35.md"
+        if rel35.exists():
+            with st.expander("Nota técnica RedCap V35 (colunas esperadas)"):
+                st.markdown(rel35.read_text(encoding="utf-8")[:5000])
+
 
 def ops_avancados_v25_section():
     """Backlog, linkage, sorogrupos, score NT154, PL/vacina, gravidade SE (roadmap V25)."""

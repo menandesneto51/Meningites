@@ -1,0 +1,134 @@
+{
+  "modulo": "34_cipv_cobertura_vacinal_v34",
+  "gerado_em": "2026-09-05T22:01:11",
+  "cipv_disponivel": true,
+  "sinan_disponivel": true,
+  "entrada_cipv": "cipv_doses_meningite.csv",
+  "n_linhas_cipv_raw": 3839,
+  "n_linhas_cipv_prep": 3839,
+  "n_casos_sinan": 5953,
+  "sipni_modo_extracao": "agregado_mun_ano",
+  "n_doses_total": 2201895.0,
+  "lgpd": {
+    "cpf_cns_nome_exportados": false,
+    "politica": "scrub de colunas nominais/documento; agregados apenas"
+  },
+  "imunos_alvo": [
+    "MenACWY",
+    "MenC",
+    "Hib",
+    "Penta/Hexa (Hib)"
+  ],
+  "nota": "Completude vacinal SINAN ≠ cobertura populacional PNI. Doses SI-PNI preferem agregado município×ano×código (módulo 19 / SIPNI_MSSQL_*).",
+  "mensagem": "SI-PNI/CIPV com 3839 linhas brutas → 3839 agregados filtrados (2201895 doses) · modo=`agregado_mun_ano`; SINAN=ok (5953 casos).",
+  "kpis_resumo": [
+    {
+      "escopo": "SINAN|DM",
+      "indicador": "MenC (SINAN)",
+      "n_casos": "278.0",
+      "n_doses_cipv": "",
+      "pct_completude_sinan": "46.76258992805755",
+      "pct_vacinados_sinan": "19.230769230769234",
+      "fonte_cipv": "ausente"
+    },
+    {
+      "escopo": "SINAN|DM",
+      "indicador": "MenAC (polissacarídica A/C SINAN)",
+      "n_casos": "278.0",
+      "n_doses_cipv": "",
+      "pct_completude_sinan": "44.24460431654676",
+      "pct_vacinados_sinan": "3.2520325203252036",
+      "fonte_cipv": "ausente"
+    },
+    {
+      "escopo": "SINAN|Hib",
+      "indicador": "Hib (SINAN)",
+      "n_casos": "21.0",
+      "n_doses_cipv": "",
+      "pct_completude_sinan": "57.14285714285714",
+      "pct_vacinados_sinan": "83.33333333333334",
+      "fonte_cipv": "ausente"
+    },
+    {
+      "escopo": "SINAN|DM <1–4a",
+      "indicador": "MenC (SINAN)",
+      "n_casos": "70.0",
+      "n_doses_cipv": "",
+      "pct_completude_sinan": "65.71428571428571",
+      "pct_vacinados_sinan": "32.608695652173914",
+      "fonte_cipv": "ausente"
+    },
+    {
+      "escopo": "SINAN|DM 11–14a",
+      "indicador": "MenC (SINAN)",
+      "n_casos": "29.0",
+      "n_doses_cipv": "",
+      "pct_completude_sinan": "37.93103448275862",
+      "pct_vacinados_sinan": "9.090909090909092",
+      "fonte_cipv": "ausente"
+    },
+    {
+      "escopo": "SINAN|Hib <5a",
+      "indicador": "Hib (SINAN)",
+      "n_casos": "10.0",
+      "n_doses_cipv": "",
+      "pct_completude_sinan": "80.0",
+      "pct_vacinados_sinan": "87.5",
+      "fonte_cipv": "ausente"
+    },
+    {
+      "escopo": "CIPV|ESTADUAL",
+      "indicador": "doses_meningo_hib_total",
+      "n_casos": "",
+      "n_doses_cipv": "2201895.0",
+      "pct_completude_sinan": "",
+      "pct_vacinados_sinan": "",
+      "fonte_cipv": "cipv_doses_meningite.csv"
+    },
+    {
+      "escopo": "CIPV|IMUNO",
+      "indicador": "Hib",
+      "n_casos": "",
+      "n_doses_cipv": "998648.0",
+      "pct_completude_sinan": "",
+      "pct_vacinados_sinan": "",
+      "fonte_cipv": "cipv_doses_meningite.csv"
+    },
+    {
+      "escopo": "CIPV|IMUNO",
+      "indicador": "MenACWY",
+      "n_casos": "",
+      "n_doses_cipv": "5118.0",
+      "pct_completude_sinan": "",
+      "pct_vacinados_sinan": "",
+      "fonte_cipv": "cipv_doses_meningite.csv"
+    },
+    {
+      "escopo": "CIPV|IMUNO",
+      "indicador": "MenC",
+      "n_casos": "",
+      "n_doses_cipv": "20392.0",
+      "pct_completude_sinan": "",
+      "pct_vacinados_sinan": "",
+      "fonte_cipv": "cipv_doses_meningite.csv"
+    },
+    {
+      "escopo": "CIPV|IMUNO",
+      "indicador": "Meningocócica (outra)",
+      "n_casos": "",
+      "n_doses_cipv": "708046.0",
+      "pct_completude_sinan": "",
+      "pct_vacinados_sinan": "",
+      "fonte_cipv": "cipv_doses_meningite.csv"
+    },
+    {
+      "escopo": "CIPV|IMUNO",
+      "indicador": "Penta/Hexa (Hib)",
+      "n_casos": "",
+      "n_doses_cipv": "469691.0",
+      "pct_completude_sinan": "",
+      "pct_vacinados_sinan": "",
+      "fonte_cipv": "cipv_doses_meningite.csv"
+    }
+  ]
+}

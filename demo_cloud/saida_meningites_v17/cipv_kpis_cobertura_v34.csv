@@ -1,0 +1,13 @@
+﻿escopo,indicador,n_casos,n_doses_cipv,pct_completude_sinan,pct_vacinados_sinan,fonte_cipv
+SINAN|DM,MenC (SINAN),278.0,,46.76258992805755,19.230769230769234,ausente
+SINAN|DM,MenAC (polissacarídica A/C SINAN),278.0,,44.24460431654676,3.2520325203252036,ausente
+SINAN|Hib,Hib (SINAN),21.0,,57.14285714285714,83.33333333333334,ausente
+SINAN|DM <1–4a,MenC (SINAN),70.0,,65.71428571428571,32.608695652173914,ausente
+SINAN|DM 11–14a,MenC (SINAN),29.0,,37.93103448275862,9.090909090909092,ausente
+SINAN|Hib <5a,Hib (SINAN),10.0,,80.0,87.5,ausente
+CIPV|ESTADUAL,doses_meningo_hib_total,,2201895.0,,,cipv_doses_meningite.csv
+CIPV|IMUNO,Hib,,998648.0,,,cipv_doses_meningite.csv
+CIPV|IMUNO,MenACWY,,5118.0,,,cipv_doses_meningite.csv
+CIPV|IMUNO,MenC,,20392.0,,,cipv_doses_meningite.csv
+CIPV|IMUNO,Meningocócica (outra),,708046.0,,,cipv_doses_meningite.csv
+CIPV|IMUNO,Penta/Hexa (Hib),,469691.0,,,cipv_doses_meningite.csv
