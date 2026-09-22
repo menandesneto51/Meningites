@@ -74,3 +74,8 @@ Crianças com doença invasiva por Hib antes dos 2 anos podem ter risco de 2º e
 ## Coleta laboratorial oportuna
 
 Coletar líquor e sangue tão logo haja suspeita; não atrasar o tratamento pela coleta; encaminhar material/cepas ao LACEN para caracterização (incluindo tipagem Hi).
+
+## Como citar no Assistente / boletim
+
+Citar sempre: *NT Conjunta nº 154/2024-DPNI/SVSA/MS (vigente — revoga NT 97/2024)*.  
+Em conflito com a 6ª edição do Guia de Vigilância, prevalece a NT 154 nos pontos de caso, contato, surto e quimio.

@@ -198,7 +198,7 @@ def iter_source_files() -> list[Path]:
     for p in DOCS_MS.rglob("*"):
         if not p.is_file():
             continue
-        if p.name.lower() in {"readme.md", "catalogo.json"}:
+        if p.name.lower() in {"readme.md", "catalogo.json", "fontes_oficiais.md"}:
             continue
         if p.suffix.lower() not in EXT_OK:
             continue

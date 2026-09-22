@@ -1,7 +1,17 @@
 {
-  "versao": 2,
+  "versao": 3,
   "descricao": "Catálogo do corpus MS para RAG do Assistente CIEVS-MT",
   "documentos": [
+    {
+      "id": "indice_vigencia",
+      "arquivo": "vigentes/00_indice_vigencia_citacao.md",
+      "titulo": "Índice de vigência e citação (corpus MS)",
+      "fonte": "Catálogo CIEVS-MT — ordem de prioridade normativa",
+      "tema": "norma",
+      "vigente": true,
+      "prioridade": 99,
+      "tags": "vigencia citacao fonte nt154 informe prioridade"
+    },
     {
       "id": "nt154_md",
       "arquivo": "vigentes/01_nt154_orientacoes_operacionais.md",
@@ -23,6 +33,16 @@
       "tags": "nt154 pdf oficial quimioprofilaxia surto dm hib"
     },
     {
+      "id": "nt201_md",
+      "arquivo": "vigentes/06_nt201_vigilancia_sentinela_dihi_dpi.md",
+      "titulo": "NT 201/2025 — sentinela DIHi/DPI (MD)",
+      "fonte": "NT Conjunta nº 201/2025-CGVDI/DPNI/SVSA/MS-CGLAB/SVSA",
+      "tema": "laboratorio",
+      "vigente": true,
+      "prioridade": 86,
+      "tags": "nt201 sentinela dihi dpi haemophilus pneumococo lacen"
+    },
+    {
       "id": "nt201_pdf",
       "arquivo": "vigentes/NT201_2025_Vigilancia_Sentinela_DIHi_DPI.pdf",
       "titulo": "NT Conjunta nº 201/2025 — Vigilância Sentinela DIHi/DPI",
@@ -33,6 +53,16 @@
       "tags": "nt201 sentinela dihi dpi haemophilus pneumococo"
     },
     {
+      "id": "nt77_md",
+      "arquivo": "vigentes/05_nt77_menacwy_reforco.md",
+      "titulo": "NT 77/2025 — reforço MenACWY (MD)",
+      "fonte": "NT nº 77/2025-CGICI/DPNI/SVSA/MS",
+      "tema": "vacina",
+      "vigente": true,
+      "prioridade": 84,
+      "tags": "nt77 menacwy meningococica c reforco vacina calendario"
+    },
+    {
       "id": "nt77_pdf",
       "arquivo": "vigentes/NT77_2025_MenACWY_reforco.pdf",
       "titulo": "NT nº 77/2025 — reforço MenACWY",
@@ -41,6 +71,16 @@
       "vigente": true,
       "prioridade": 82,
       "tags": "nt77 menacwy meningococica c reforco vacina"
+    },
+    {
+      "id": "diretrizes_2030_md",
+      "arquivo": "vigentes/07_diretrizes_meningites_2030.md",
+      "titulo": "Diretrizes Meningites até 2030 (resumo MD)",
+      "fonte": "Diretrizes para enfrentamento das meningites até 2030 — MS",
+      "tema": "estrategia",
+      "vigente": true,
+      "prioridade": 75,
+      "tags": "diretrizes 2030 oms estrategia imunizacao vigilancia"
     },
     {
       "id": "guia_md",

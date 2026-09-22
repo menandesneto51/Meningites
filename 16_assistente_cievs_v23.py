@@ -174,13 +174,29 @@ def answer_offline(query: str, contexto_dados: str = "") -> dict:
     partes = []
     fontes = []
     for h in hits:
-        partes.append(f"**{h['titulo']}** ({h['fonte']}):\n{h['texto']}")
-        fontes.append({"id": h["id"], "titulo": h["titulo"], "fonte": h["fonte"], "score": round(h["score"], 3)})
+        vigente = h.get("vigente", True)
+        if isinstance(vigente, str):
+            vigente = vigente.strip().lower() in {"1", "true", "sim", "yes"}
+        label_vig = "vigente" if vigente else "histórico/revogado"
+        partes.append(f"**{h['titulo']}** — {h['fonte']} ({label_vig}):\n{h['texto']}")
+        fontes.append({
+            "id": h["id"],
+            "titulo": h["titulo"],
+            "fonte": h["fonte"],
+            "vigencia": label_vig,
+            "arquivo": h.get("arquivo", ""),
+            "score": round(h["score"], 3),
+        })
 
     resposta = (
         f"Com base nas normas indexadas para a pergunta «{query}»:\n\n"
         + "\n\n".join(partes)
     )
+    if fontes:
+        resposta += "\n\n### Fontes citadas (fonte + vigência)\n"
+        for f in fontes:
+            arq = f" · `{f['arquivo']}`" if f.get("arquivo") else ""
+            resposta += f"- {f['titulo']} — {f['fonte']} ({f['vigencia']}){arq}\n"
     if contexto_dados:
         resposta += (
             "\n\n---\n**Contexto operacional do MT (dados do sistema):**\n"
