@@ -9,8 +9,9 @@ Fontes (offline-safe — ausência não derruba o pipeline):
 
 Saídas (saida_meningites_v17/):
   - cipv_doses_agregadas_v34.csv      (só se extrato CIPV existir; sem PII)
+  - cipv_doses_regional_ano_v34.csv   (MenC/MenACWY/Hib/Penta-Hexa por regional×ano)
   - cipv_sinan_status_vacinal_v34.csv (status vacinal SINAN por faixa/etiologia)
-  - cipv_kpis_cobertura_v34.csv       (KPIs estaduais / por faixa)
+  - cipv_kpis_cobertura_v34.csv       (KPIs estaduais / por faixa / regional)
   - cipv_fonte_meta_v34.json
   - relatorios/CIPV_COBERTURA_VACINAL_V34.md
 
@@ -234,15 +235,52 @@ def preparar_cipv(raw: pd.DataFrame) -> pd.DataFrame:
     return out.reset_index(drop=True)
 
 
+def mapa_municipio_regional(base: pd.DataFrame) -> pd.DataFrame:
+    """Tabela codigo_municipio → regional a partir da base SINAN (sem inventar regionais)."""
+    if base is None or base.empty:
+        return pd.DataFrame(columns=["codigo_municipio_v34", "regional_v34"])
+    mun_c = "codigo_municipio_v17" if "codigo_municipio_v17" in base.columns else None
+    reg_c = "regional_v17" if "regional_v17" in base.columns else None
+    if not mun_c or not reg_c:
+        return pd.DataFrame(columns=["codigo_municipio_v34", "regional_v34"])
+    m = base[[mun_c, reg_c]].copy()
+    m["codigo_municipio_v34"] = m[mun_c].map(norm_code6)
+    m["regional_v34"] = m[reg_c].astype(str).str.strip()
+    m = m.dropna(subset=["codigo_municipio_v34"])
+    m = m[m["codigo_municipio_v34"].astype(str).str.len() > 0]
+    # moda da regional por município (estável)
+    modo = (
+        m.groupby("codigo_municipio_v34", dropna=False)["regional_v34"]
+        .agg(lambda s: s.mode().iloc[0] if not s.mode().empty else (s.dropna().iloc[0] if s.dropna().shape[0] else ""))
+        .reset_index()
+    )
+    return modo
+
+
+def anexar_regional(prep: pd.DataFrame, mapa: pd.DataFrame) -> pd.DataFrame:
+    if prep is None or prep.empty:
+        return prep if prep is not None else pd.DataFrame()
+    out = prep.copy()
+    if mapa is None or mapa.empty or "codigo_municipio_v34" not in out.columns:
+        out["regional_v34"] = ""
+        return out
+    out = out.merge(mapa, on="codigo_municipio_v34", how="left")
+    out["regional_v34"] = out["regional_v34"].fillna("").astype(str)
+    out.loc[out["regional_v34"].isin({"", "nan", "None", "<NA>"}), "regional_v34"] = "Sem regional"
+    return out
+
+
 def agregar_doses_cipv(prep: pd.DataFrame) -> pd.DataFrame:
     if prep is None or prep.empty:
         return pd.DataFrame(columns=[
-            "ano_dose_v34", "codigo_municipio_v34", "municipio_v34",
+            "ano_dose_v34", "codigo_municipio_v34", "municipio_v34", "regional_v34",
             "imuno_grupo_v34", "faixa_risco_v34", "n_doses",
         ])
     gcols = [
-        "ano_dose_v34", "codigo_municipio_v34", "municipio_v34",
-        "imuno_grupo_v34", "faixa_risco_v34",
+        c for c in [
+            "ano_dose_v34", "codigo_municipio_v34", "municipio_v34", "regional_v34",
+            "imuno_grupo_v34", "faixa_risco_v34",
+        ] if c in prep.columns
     ]
     peso = "n_doses" if "n_doses" in prep.columns else None
     if peso:
@@ -259,6 +297,29 @@ def agregar_doses_cipv(prep: pd.DataFrame) -> pd.DataFrame:
         )
     return agg.sort_values(
         ["ano_dose_v34", "imuno_grupo_v34", "n_doses"],
+        ascending=[False, True, False],
+    )
+
+
+def agregar_doses_regional_ano(prep: pd.DataFrame) -> pd.DataFrame:
+    """Doses MenC / MenACWY / Hib / Penta-Hexa por regional × ano (painel operacional)."""
+    cols = ["ano_dose_v34", "regional_v34", "imuno_grupo_v34", "n_doses"]
+    if prep is None or prep.empty:
+        return pd.DataFrame(columns=cols)
+    d = prep.copy()
+    if "regional_v34" not in d.columns:
+        d["regional_v34"] = "Sem regional"
+    imunos = {"MenACWY", "MenC", "Hib", "Penta/Hexa (Hib)", "Meningocócica (outra)"}
+    if "imuno_grupo_v34" in d.columns:
+        d = d[d["imuno_grupo_v34"].isin(imunos)].copy()
+    peso = "n_doses" if "n_doses" in d.columns else None
+    gcols = ["ano_dose_v34", "regional_v34", "imuno_grupo_v34"]
+    if peso:
+        agg = d.groupby(gcols, dropna=False)[peso].sum().reset_index(name="n_doses")
+    else:
+        agg = d.groupby(gcols, dropna=False).size().reset_index(name="n_doses")
+    return agg.sort_values(
+        ["ano_dose_v34", "regional_v34", "n_doses"],
         ascending=[False, True, False],
     )
 
@@ -391,6 +452,17 @@ def kpis_cobertura(
                 "pct_vacinados_sinan": np.nan,
                 "fonte_cipv": "cipv_doses_meningite.csv",
             })
+        if "regional_v34" in doses_agg.columns:
+            for (reg, imuno), g in doses_agg.groupby(["regional_v34", "imuno_grupo_v34"], dropna=False):
+                rows.append({
+                    "escopo": f"CIPV|REGIONAL|{reg}",
+                    "indicador": str(imuno),
+                    "n_casos": np.nan,
+                    "n_doses_cipv": int(g["n_doses"].sum()),
+                    "pct_completude_sinan": np.nan,
+                    "pct_vacinados_sinan": np.nan,
+                    "fonte_cipv": "cipv_doses_meningite.csv",
+                })
     else:
         rows.append({
             "escopo": "CIPV|ESTADUAL",
@@ -509,6 +581,17 @@ def write_report(
         for imuno, n in by_imuno.items():
             lines.append(f"- **{imuno}**: {int(n)} doses")
         lines.append("")
+        if "regional_v34" in doses_agg.columns:
+            lines += ["## Doses por regional (top 12)", ""]
+            by_reg = (
+                doses_agg.groupby("regional_v34", dropna=False)["n_doses"]
+                .sum()
+                .sort_values(ascending=False)
+                .head(12)
+            )
+            for reg, n in by_reg.items():
+                lines.append(f"- **{reg}**: {int(n)} doses")
+            lines.append("")
     else:
         lines += [
             "## CIPV ausente",
@@ -543,12 +626,6 @@ def main() -> int:
     raw = _read_cipv()
     cipv_disponivel = not raw.empty
     prep = preparar_cipv(raw) if cipv_disponivel else pd.DataFrame()
-    doses_agg = agregar_doses_cipv(prep) if not prep.empty else pd.DataFrame(
-        columns=[
-            "ano_dose_v34", "codigo_municipio_v34", "municipio_v34",
-            "imuno_grupo_v34", "faixa_risco_v34", "n_doses",
-        ]
-    )
 
     try:
         base = load_base_v17()
@@ -557,6 +634,20 @@ def main() -> int:
         print(f"[AVISO] Base SINAN indisponível ({e})")
         base = pd.DataFrame()
         sinan_ok = False
+
+    mapa_reg = mapa_municipio_regional(base) if sinan_ok else pd.DataFrame()
+    if not prep.empty:
+        prep = anexar_regional(prep, mapa_reg)
+
+    doses_agg = agregar_doses_cipv(prep) if not prep.empty else pd.DataFrame(
+        columns=[
+            "ano_dose_v34", "codigo_municipio_v34", "municipio_v34", "regional_v34",
+            "imuno_grupo_v34", "faixa_risco_v34", "n_doses",
+        ]
+    )
+    doses_reg = agregar_doses_regional_ano(prep) if not prep.empty else pd.DataFrame(
+        columns=["ano_dose_v34", "regional_v34", "imuno_grupo_v34", "n_doses"]
+    )
 
     status = status_vacinal_sinan(base) if sinan_ok else pd.DataFrame()
     kdf = kpis_cobertura(status, doses_agg, cipv_disponivel=cipv_disponivel and not prep.empty)
@@ -575,6 +666,7 @@ def main() -> int:
         ])
 
     doses_agg.to_csv(OUT / "cipv_doses_agregadas_v34.csv", index=False, encoding="utf-8-sig")
+    doses_reg.to_csv(OUT / "cipv_doses_regional_ano_v34.csv", index=False, encoding="utf-8-sig")
     status.to_csv(OUT / "cipv_sinan_status_vacinal_v34.csv", index=False, encoding="utf-8-sig")
     kdf.to_csv(OUT / "cipv_kpis_cobertura_v34.csv", index=False, encoding="utf-8-sig")
 

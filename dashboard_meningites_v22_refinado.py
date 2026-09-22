@@ -2934,6 +2934,7 @@ def quality_section():
     cipv_kpi = read_any(OUT / "cipv_kpis_cobertura_v34.csv")
     cipv_status = read_any(OUT / "cipv_sinan_status_vacinal_v34.csv")
     cipv_doses = read_any(OUT / "cipv_doses_agregadas_v34.csv")
+    cipv_reg = read_any(OUT / "cipv_doses_regional_ano_v34.csv")
     cipv_meta_path = OUT / "cipv_fonte_meta_v34.json"
     st.markdown("---")
     st.subheader("CIPV / SI-PNI × SINAN (V34) — vacinal MenACWY / Hib")
@@ -2988,6 +2989,19 @@ def quality_section():
                     st.dataframe(piv.head(80), use_container_width=True)
                 else:
                     st.dataframe(by.head(40), use_container_width=True)
+            if not cipv_reg.empty:
+                with st.expander("Doses MenC / MenACWY / Hib / Penta-Hexa por regional × ano"):
+                    st.caption(
+                        "Agregado SI-PNI com regional mapeada via município IBGE da base SINAN. "
+                        "Volume de doses ≠ cobertura populacional nem vacinação entre casos."
+                    )
+                    show = cipv_reg.copy()
+                    if "n_doses" in show.columns:
+                        show = show.sort_values(
+                            [c for c in ["ano_dose_v34", "n_doses"] if c in show.columns],
+                            ascending=[False, False],
+                        )
+                    st.dataframe(show.head(120), use_container_width=True)
             with st.expander("Doses CIPV agregadas (município / imuno)"):
                 st.dataframe(cipv_doses.head(80), use_container_width=True)
         rel34 = REL / "CIPV_COBERTURA_VACINAL_V34.md"
@@ -4161,10 +4175,18 @@ PROCEDENCIA_ARTEFATOS_CHAVE = [
     "fila_cievs_unificada_v23.csv",
     "desfechos_mortalidade_sim_v23.csv",
     "enriquecimento_casos_dw_v23.csv",
+    "sim_fila_reconcilacao_v23.csv",
     "indicadores_gestao_semana_v24.csv",
     "score_risco_municipal_nt154_v25.csv",
     "score_risco_municipal_nt97_v25.csv",
     "indicadores_novos_resumo_v28.csv",
+    "sih_kpis_subnotificacao_v33.csv",
+    "sih_fila_investigacao_v33.csv",
+    "cipv_kpis_cobertura_v34.csv",
+    "cipv_doses_regional_ano_v34.csv",
+    "cipv_fonte_meta_v34.json",
+    "redcap_kpis_fila_v35.csv",
+    "redcap_fonte_meta_v35.json",
 ]
 
 

@@ -11,3 +11,87 @@ CIPV|IMUNO,MenACWY,,5118.0,,,cipv_doses_meningite.csv
 CIPV|IMUNO,MenC,,20392.0,,,cipv_doses_meningite.csv
 CIPV|IMUNO,Meningocócica (outra),,708046.0,,,cipv_doses_meningite.csv
 CIPV|IMUNO,Penta/Hexa (Hib),,469691.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|AGUA BOA,Hib,,35588.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|AGUA BOA,MenACWY,,104.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|AGUA BOA,MenC,,1911.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|AGUA BOA,Meningocócica (outra),,28889.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|AGUA BOA,Penta/Hexa (Hib),,18481.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|ALTA FLORESTA,Hib,,23605.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|ALTA FLORESTA,MenACWY,,127.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|ALTA FLORESTA,MenC,,601.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|ALTA FLORESTA,Meningocócica (outra),,21541.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|ALTA FLORESTA,Penta/Hexa (Hib),,14183.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|BARRA DO GARCAS,Hib,,34564.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|BARRA DO GARCAS,MenACWY,,662.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|BARRA DO GARCAS,MenC,,1148.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|BARRA DO GARCAS,Meningocócica (outra),,26584.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|BARRA DO GARCAS,Penta/Hexa (Hib),,17113.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|CACERES,Hib,,50291.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|CACERES,MenACWY,,110.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|CACERES,MenC,,837.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|CACERES,Meningocócica (outra),,34360.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|CACERES,Penta/Hexa (Hib),,23194.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|COLIDER,Hib,,17622.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|COLIDER,MenACWY,,64.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|COLIDER,MenC,,731.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|COLIDER,Meningocócica (outra),,14828.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|COLIDER,Penta/Hexa (Hib),,9012.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|CUIABA,Hib,,264286.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|CUIABA,MenACWY,,1498.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|CUIABA,MenC,,5033.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|CUIABA,Meningocócica (outra),,174821.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|CUIABA,Penta/Hexa (Hib),,117820.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|DIAMANTINO,Hib,,29700.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|DIAMANTINO,MenACWY,,69.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|DIAMANTINO,MenC,,192.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|DIAMANTINO,Meningocócica (outra),,17779.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|DIAMANTINO,Penta/Hexa (Hib),,11454.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|JUARA,Hib,,14834.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|JUARA,MenACWY,,54.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|JUARA,MenC,,214.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|JUARA,Meningocócica (outra),,12713.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|JUARA,Penta/Hexa (Hib),,8123.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|JUINA,Hib,,37641.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|JUINA,MenACWY,,239.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|JUINA,MenC,,633.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|JUINA,Meningocócica (outra),,28839.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|JUINA,Penta/Hexa (Hib),,19232.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PEIXOTO DE AZEVEDO,Hib,,26635.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PEIXOTO DE AZEVEDO,MenACWY,,22.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PEIXOTO DE AZEVEDO,MenC,,685.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PEIXOTO DE AZEVEDO,Meningocócica (outra),,23395.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PEIXOTO DE AZEVEDO,Penta/Hexa (Hib),,14434.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PONTES E LACERDA,Hib,,30378.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PONTES E LACERDA,MenACWY,,62.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PONTES E LACERDA,MenC,,363.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PONTES E LACERDA,Meningocócica (outra),,24641.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PONTES E LACERDA,Penta/Hexa (Hib),,16552.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PORTO ALEGRE DO NORTE,Hib,,20976.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PORTO ALEGRE DO NORTE,MenACWY,,25.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PORTO ALEGRE DO NORTE,MenC,,257.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PORTO ALEGRE DO NORTE,Meningocócica (outra),,21523.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|PORTO ALEGRE DO NORTE,Penta/Hexa (Hib),,12708.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|RONDONOPOLIS,Hib,,134022.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|RONDONOPOLIS,MenACWY,,689.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|RONDONOPOLIS,MenC,,2482.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|RONDONOPOLIS,Meningocócica (outra),,103829.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|RONDONOPOLIS,Penta/Hexa (Hib),,69080.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|SAO FELIX DO ARAGUAIA,Hib,,7126.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|SAO FELIX DO ARAGUAIA,MenACWY,,55.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|SAO FELIX DO ARAGUAIA,MenC,,166.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|SAO FELIX DO ARAGUAIA,Meningocócica (outra),,4974.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|SAO FELIX DO ARAGUAIA,Penta/Hexa (Hib),,3429.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|SINOP,Hib,,193603.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|SINOP,MenACWY,,485.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|SINOP,MenC,,4396.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|SINOP,Meningocócica (outra),,116689.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|SINOP,Penta/Hexa (Hib),,81264.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|Sem regional,Hib,,207.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|Sem regional,MenC,,4.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|Sem regional,Meningocócica (outra),,426.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|Sem regional,Penta/Hexa (Hib),,224.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|TANGARA DA SERRA,Hib,,77570.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|TANGARA DA SERRA,MenACWY,,853.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|TANGARA DA SERRA,MenC,,739.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|TANGARA DA SERRA,Meningocócica (outra),,52215.0,,,cipv_doses_meningite.csv
+CIPV|REGIONAL|TANGARA DA SERRA,Penta/Hexa (Hib),,33388.0,,,cipv_doses_meningite.csv

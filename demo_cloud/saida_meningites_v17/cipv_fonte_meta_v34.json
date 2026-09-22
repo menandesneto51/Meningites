@@ -1,6 +1,6 @@
 {
   "modulo": "34_cipv_cobertura_vacinal_v34",
-  "gerado_em": "2026-09-05T22:01:11",
+  "gerado_em": "2026-09-22T09:52:17",
   "cipv_disponivel": true,
   "sinan_disponivel": true,
   "entrada_cipv": "cipv_doses_meningite.csv",
