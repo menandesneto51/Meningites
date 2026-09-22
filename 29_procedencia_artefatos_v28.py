@@ -195,6 +195,7 @@ MAPA_ARTEFATOS: dict[str, str] = {
     "gal_tipagem_nm_hib_v32.csv": "32_gal_laboratorio_detalhado_v32.py",
     "gal_sinan_concordancia_lab_v32.csv": "32_gal_laboratorio_detalhado_v32.py",
     "gal_tempo_coleta_liberacao_v32.csv": "32_gal_laboratorio_detalhado_v32.py",
+    "gal_fila_tipagem_sinan_v32.csv": "32_gal_laboratorio_detalhado_v32.py",
     "populacao_fonte_meta_v31.json": "31_atualizar_populacao_ibge_ripsa_v31.py",
     "sih_internacoes_prep_v33.csv": "33_sih_subnotificacao_v33.py",
     "sih_sinan_linkage_v33.csv": "33_sih_subnotificacao_v33.py",

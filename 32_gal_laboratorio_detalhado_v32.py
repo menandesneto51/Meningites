@@ -10,6 +10,7 @@ Saídas:
   - gal_kpis_laboratorio_v32.csv          (KPIs estaduais/regionais)
   - gal_sinan_concordancia_lab_v32.csv    (SINAN × GAL por caso)
   - gal_tempo_coleta_liberacao_v32.csv    (oportunidade lab)
+  - gal_fila_tipagem_sinan_v32.csv        (tipagem GAL → atualizar sorogrupo SINAN)
   - relatorios/GAL_LABORATORIO_DETALHADO_V32.md
 
 Âncora: Informe Meningites (confirmação lab) + NT 154/2024 (sorogrupo para surto).
@@ -269,6 +270,70 @@ def concordancia_sinan(tip: pd.DataFrame, base: pd.DataFrame, ex: pd.DataFrame |
     return m
 
 
+def fila_tipagem_sinan(conc: pd.DataFrame) -> pd.DataFrame:
+    """
+    Lista acionável para fechar lacuna de sorogrupo DM (~30% preenchido):
+      1) Tipagem Nm já no GAL e campo SINAN em branco (atualizar ficha)
+      2) DM com GAL vinculado mas sem tipagem Nm nem sorogrupo SINAN (buscar tipagem)
+    """
+    cols = [
+        "NumeroNotificacao", "municipio_v17", "regional_v17", "classificacao_agrupada_v17",
+        "ano_evento_v17", "sinan_sorogrupo", "gal_sorogrupo_nm", "sorogrupo_uniao_v32",
+        "sorogrupo_so_gal_v32", "tem_gal_v32", "motivo_fila_v32", "acao_sugerida_v32",
+    ]
+    if conc is None or conc.empty:
+        return pd.DataFrame(columns=cols)
+    d = conc.copy()
+    is_dm = d.get("classificacao_agrupada_v17", pd.Series("", index=d.index)).astype(str).str.contains(
+        "meningoc", case=False, na=False
+    )
+    sinan_vazio = d.get("sinan_sorogrupo", pd.Series("", index=d.index)).astype(str).str.len().eq(0)
+    gal_soro = d.get("gal_sorogrupo_nm", pd.Series("", index=d.index)).astype(str)
+    gal_tem_soro = gal_soro.str.len().gt(0) & ~gal_soro.isin({"nan", "None", ""})
+    tem_gal = pd.to_numeric(d.get("tem_gal_v32"), errors="coerce").fillna(0).astype(int).eq(1)
+    so_gal = pd.to_numeric(d.get("sorogrupo_so_gal_v32"), errors="coerce").fillna(0).astype(int).eq(1)
+
+    # 1) tipagem no GAL → atualizar SINAN
+    m1 = so_gal | (sinan_vazio & gal_tem_soro)
+    # 2) DM sem sorogrupo + tem GAL sem tipagem Nm
+    m2 = is_dm & sinan_vazio & tem_gal & ~gal_tem_soro
+    # 3) DM sem sorogrupo e sem GAL (ainda vale listar, prioridade menor)
+    m3 = is_dm & sinan_vazio & ~tem_gal
+
+    d["_motivo"] = ""
+    d.loc[m1, "_motivo"] = "tipagem_gal_atualizar_sinan"
+    d.loc[m2 & ~m1, "_motivo"] = "dm_com_gal_sem_tipagem"
+    d.loc[m3 & ~m1 & ~m2, "_motivo"] = "dm_sem_sorogrupo_sem_gal"
+
+    mask = m1 | m2 | m3
+    fila = d.loc[mask].copy()
+    if fila.empty:
+        return pd.DataFrame(columns=cols)
+
+    prio_map = {
+        "tipagem_gal_atualizar_sinan": 0,
+        "dm_com_gal_sem_tipagem": 1,
+        "dm_sem_sorogrupo_sem_gal": 2,
+    }
+    acao_map = {
+        "tipagem_gal_atualizar_sinan": "Atualizar SeNMeningiditisEspecificarSorogrupo no SINAN com tipagem GAL",
+        "dm_com_gal_sem_tipagem": "Localizar tipagem Nm no GAL/LACEN e completar sorogrupo no SINAN",
+        "dm_sem_sorogrupo_sem_gal": "Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN",
+    }
+    fila["motivo_fila_v32"] = fila["_motivo"]
+    fila["acao_sugerida_v32"] = fila["_motivo"].map(acao_map)
+    fila["_prio"] = fila["_motivo"].map(prio_map).fillna(9)
+    if "sorogrupo_so_gal_v32" not in fila.columns:
+        fila["sorogrupo_so_gal_v32"] = m1.loc[fila.index].astype(int)
+    sort_cols = [c for c in ["_prio", "regional_v17", "municipio_v17", "ano_evento_v17"] if c in fila.columns]
+    if sort_cols:
+        fila = fila.sort_values(sort_cols, ascending=[True] * len(sort_cols))
+    for c in cols:
+        if c not in fila.columns:
+            fila[c] = ""
+    return fila[cols].reset_index(drop=True)
+
+
 def kpis(ex: pd.DataFrame, conc: pd.DataFrame) -> pd.DataFrame:
     rows = []
 
@@ -388,6 +453,7 @@ def main() -> int:
             "gal_kpis_laboratorio_v32.csv",
             "gal_sinan_concordancia_lab_v32.csv",
             "gal_tempo_coleta_liberacao_v32.csv",
+            "gal_fila_tipagem_sinan_v32.csv",
         ]:
             pd.DataFrame().to_csv(OUT / nome, index=False, encoding="utf-8-sig")
         return 0
@@ -401,6 +467,7 @@ def main() -> int:
     conc = concordancia_sinan(tip, base, ex)
     kdf = kpis(ex, conc)
     tempo = tempo_lab(ex)
+    fila_tip = fila_tipagem_sinan(conc)
 
     # export exames (colunas úteis, sem nominais)
     drop_pii = [
@@ -413,9 +480,13 @@ def main() -> int:
     kdf.to_csv(OUT / "gal_kpis_laboratorio_v32.csv", index=False, encoding="utf-8-sig")
     conc.to_csv(OUT / "gal_sinan_concordancia_lab_v32.csv", index=False, encoding="utf-8-sig")
     tempo.to_csv(OUT / "gal_tempo_coleta_liberacao_v32.csv", index=False, encoding="utf-8-sig")
+    fila_tip.to_csv(OUT / "gal_fila_tipagem_sinan_v32.csv", index=False, encoding="utf-8-sig")
     write_report(kdf, tip, tempo)
 
-    print(f"[OK] GAL detalhado: {len(ex)} exames meningite · {len(tip)} notificações tipadas")
+    print(
+        f"[OK] GAL detalhado: {len(ex)} exames meningite · {len(tip)} notificações tipadas · "
+        f"fila_tipagem_sinan={len(fila_tip)}"
+    )
     if not kdf.empty:
         print(kdf[kdf["escopo"].eq("ESTADUAL")].to_string(index=False))
     return 0

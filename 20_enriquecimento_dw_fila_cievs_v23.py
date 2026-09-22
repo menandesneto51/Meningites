@@ -253,6 +253,54 @@ def alertas_linkage(df: pd.DataFrame) -> pd.DataFrame:
         sub["norma"] = "Linkage SIM × SINAN — vigilância de mortalidade"
         rows.append(sub)
 
+    # Tipagem / sorogrupo DM — fila GAL V32 (atualizar SINAN ou buscar tipagem)
+    tip_path = OUT / "gal_fila_tipagem_sinan_v32.csv"
+    tip = _read(tip_path) if tip_path.exists() else pd.DataFrame()
+    if tip.empty:
+        tip = _read(OUT / "gal_sinan_concordancia_lab_v32.csv")
+        if not tip.empty and "sorogrupo_so_gal_v32" in tip.columns:
+            tip = tip.loc[
+                pd.to_numeric(tip["sorogrupo_so_gal_v32"], errors="coerce").fillna(0).astype(int).eq(1)
+            ].copy()
+    if not tip.empty:
+        # Prioriza atualizar tipagem já disponível; depois DM com GAL sem tipagem
+        if "motivo_fila_v32" in tip.columns:
+            mot = tip["motivo_fila_v32"].astype(str)
+            tip = tip[mot.isin({
+                "tipagem_gal_atualizar_sinan",
+                "dm_com_gal_sem_tipagem",
+            })]
+        tip_use = tip.head(250)
+        sub = pd.DataFrame({
+            "NumeroNotificacao": tip_use.get("NumeroNotificacao", pd.Series(dtype=object)),
+            "municipio_v17": tip_use.get("municipio_v17", pd.Series(dtype=object)),
+            "regional_v17": tip_use.get("regional_v17", pd.Series(dtype=object)),
+            "classificacao_agrupada_v17": tip_use.get("classificacao_agrupada_v17", pd.Series(dtype=object)),
+            "confirmado_v17": np.nan,
+            "obito_meningite_v17": np.nan,
+            "data_ref_v17": tip_use.get("ano_evento_v17", pd.Series(dtype=object)),
+        })
+        motivo = tip_use.get("motivo_fila_v32", pd.Series([""] * len(tip_use))).astype(str)
+        sub["tipo_alerta"] = np.where(
+            motivo.eq("dm_com_gal_sem_tipagem"),
+            "DM com GAL — buscar tipagem/sorogrupo",
+            "Tipagem GAL — atualizar sorogrupo no SINAN",
+        )
+        sub["severidade"] = np.where(motivo.eq("dm_sem_sorogrupo_sem_gal"), "Atenção", "Alto")
+        gal_s = tip_use.get("gal_sorogrupo_nm", pd.Series([""] * len(tip_use))).astype(str)
+        sub["evidencia"] = np.where(
+            gal_s.str.len() > 0,
+            "Sorogrupo GAL=" + gal_s + "; campo SINAN ausente",
+            "DM sem sorogrupo SINAN; " + motivo,
+        )
+        sub["acao_recomendada"] = tip_use.get(
+            "acao_sugerida_v32",
+            pd.Series(["Completar sorogrupo DM no SINAN"] * len(tip_use)),
+        ).astype(str)
+        sub["prazo"] = "Semanal"
+        sub["norma"] = "Guia de Vigilância / Informe Meningites — tipagem Nm"
+        rows.append(sub)
+
     if not rows:
         return pd.DataFrame()
     out = pd.concat(rows, ignore_index=True)
@@ -331,14 +379,18 @@ def build_fila_unificada(
         if limit:
             use = use.head(limit)
         for _, r in use.iterrows():
-            terr = str(r.get("municipio_v17", "") or "")
+            id_caso = ""
             if id_col and id_col in r and pd.notna(r.get(id_col)):
-                terr = f"{terr} | caso {r.get(id_col)}"
+                id_caso = str(r.get(id_col))
+            terr = str(r.get("municipio_v17", "") or "")
+            if id_caso:
+                terr = f"{terr} | caso {id_caso}"
             fila.append({
                 "origem": origem,
                 "prioridade": r.get("severidade", r.get("prioridade", "Atenção")),
                 "tipo": r.get("tipo_alerta", r.get("tipo", "")),
                 "territorio": terr,
+                "id_caso": id_caso,
                 "regional_v17": r.get("regional_v17", ""),
                 "evidencia": r.get("evidencia", ""),
                 "acao": r.get("acao_recomendada", r.get("acao", "")),
@@ -347,7 +399,7 @@ def build_fila_unificada(
             })
 
     add_rows(surtos, "surto_nt154", id_col=None)
-    add_rows(alertas_dw, "linkage_dw", limit=150)
+    add_rows(alertas_dw, "linkage_dw", limit=200)
     if not alertas_prazo.empty:
         top = alertas_prazo[alertas_prazo["severidade"].isin(["Crítico", "Alto"])].head(200)
         add_rows(top, "prazo_ms")

@@ -24,6 +24,95 @@ from meningites_v17_common import OUT, REL, load_base_v17, fmt_num
 DIGEST_DIR = OUT / "digests_regionais_v23"
 DIGEST_DIR.mkdir(exist_ok=True)
 
+# Ordem operacional das ações no digest (menor = mais urgente operacionalmente dentro da severidade)
+ACAO_ORDEM = {
+    "quimio": 1,
+    "lab": 2,
+    "tipagem": 3,
+    "encerramento": 4,
+    "investigacao": 5,
+    "outro": 9,
+}
+
+
+def classificar_acao(tipo: object, acao: object = "") -> str:
+    t = f"{tipo} {acao}".lower()
+    if "quimio" in t:
+        return "quimio"
+    if "tipagem" in t or "sorogrupo" in t:
+        return "tipagem"
+    if "gal" in t or "lacen" in t or "laborat" in t or "pcr" in t or "cultura" in t:
+        return "lab"
+    if "encerr" in t:
+        return "encerramento"
+    if "investiga" in t:
+        return "investigacao"
+    return "outro"
+
+
+def priorizar_fila(df: pd.DataFrame) -> pd.DataFrame:
+    """Ordena por severidade e depois por família de ação (quimio → lab/tipagem → encerramento)."""
+    if df is None or df.empty:
+        return df if df is not None else pd.DataFrame()
+    out = df.copy()
+    sev_map = {"Crítico": 4, "Alto": 3, "Atenção": 2, "Informativo": 1}
+    tipo_c = "tipo" if "tipo" in out.columns else ("tipo_alerta" if "tipo_alerta" in out.columns else None)
+    acao_c = "acao" if "acao" in out.columns else ("acao_recomendada" if "acao_recomendada" in out.columns else None)
+    tipos = out[tipo_c] if tipo_c else ""
+    acoes = out[acao_c] if acao_c else ""
+    out["_familia_acao"] = [
+        classificar_acao(t, a) for t, a in zip(tipos.astype(str), acoes.astype(str))
+    ]
+    pri = out.get("prioridade", out.get("severidade", pd.Series(["Atenção"] * len(out))))
+    out["_sev"] = pri.map(sev_map).fillna(0)
+    out["_acao_ord"] = out["_familia_acao"].map(ACAO_ORDEM).fillna(9)
+    return out.sort_values(["_sev", "_acao_ord"], ascending=[False, True]).drop(
+        columns=["_sev", "_acao_ord"], errors="ignore"
+    )
+
+
+def _linha_caso(r: pd.Series) -> str:
+    """Linha de digest com link textual ao caso (NU_NOTIFICACAO / id)."""
+    sev = r.get("prioridade", r.get("severidade", ""))
+    tipo = r.get("tipo", r.get("tipo_alerta", ""))
+    terr = str(r.get("territorio", r.get("municipio_v17", "")) or "")
+    acao = r.get("acao", r.get("acao_recomendada", ""))
+    id_caso = str(r.get("id_caso", "") or "").strip()
+    if "| caso " in terr:
+        mun, _, resto = terr.partition("| caso ")
+        terr = mun.strip()
+        if not id_caso:
+            id_caso = resto.strip()
+    caso_txt = f" · caso `{id_caso}`" if id_caso else ""
+    return f"- **{sev}** · {tipo} · {terr}{caso_txt} — {str(acao)[:100]}"
+
+
+def _bloco_por_acao(src: pd.DataFrame, limite: int = 20) -> list[str]:
+    """Agrupa a fila em seções quimio / lab / tipagem / encerramento / investigação."""
+    if src is None or src.empty:
+        return ["(sem itens na fila local)"]
+    use = priorizar_fila(src).head(limite)
+    labels = {
+        "quimio": "Quimioprofilaxia",
+        "lab": "Laboratório / GAL",
+        "tipagem": "Tipagem / sorogrupo",
+        "encerramento": "Encerramento",
+        "investigacao": "Investigação",
+        "outro": "Outros",
+    }
+    lines: list[str] = []
+    familia = use["_familia_acao"] if "_familia_acao" in use.columns else pd.Series([""] * len(use), index=use.index)
+    for fam in ["quimio", "lab", "tipagem", "encerramento", "investigacao", "outro"]:
+        g = use[familia.astype(str).eq(fam)]
+        if g.empty:
+            continue
+        lines.append(f"### {labels.get(fam, fam)} ({len(g)})")
+        lines.append("")
+        for _, r in g.iterrows():
+            lines.append(_linha_caso(r))
+        lines.append("")
+    return lines if lines else ["(sem itens na fila local)"]
+
 
 def _read(name: str) -> pd.DataFrame:
     p = OUT / name
@@ -139,11 +228,9 @@ def build_digests(df: pd.DataFrame) -> pd.DataFrame:
             "",
         ]
     if not crit.empty:
-        lines_est.append("### Top 20 da fila")
-        for _, r in crit.head(20).iterrows():
-            lines_est.append(
-                f"- **{r.get('prioridade')}** · {r.get('tipo')} · {r.get('territorio')} — {str(r.get('acao', ''))[:90]}"
-            )
+        lines_est.append("### Top da fila (por severidade × ação)")
+        lines_est.append("")
+        lines_est += _bloco_por_acao(crit, limite=25)
     path_est = DIGEST_DIR / "DIGEST_CIEVS_ESTADUAL.md"
     path_est.write_text("\n".join(lines_est), encoding="utf-8")
     rows_idx.append({
@@ -186,28 +273,29 @@ def build_digests(df: pd.DataFrame) -> pd.DataFrame:
             "",
             f"## Fila local: {len(freg)} itens · Crítico/Alto: {n_crit}",
             "",
+            "Prioridade: **quimio → lab/tipagem → encerramento → investigação** (dentro da severidade).",
+            "",
         ]
         src = freg if not freg.empty else creg
         if not src.empty:
-            use = src.head(15)
-            for _, r in use.iterrows():
-                sev = r.get("prioridade", r.get("severidade", ""))
-                tipo = r.get("tipo", r.get("tipo_alerta", ""))
-                terr = r.get("territorio", r.get("municipio_v17", ""))
-                acao = r.get("acao", r.get("acao_recomendada", ""))
-                lines.append(f"- **{sev}** · {tipo} · {terr} — {str(acao)[:100]}")
+            lines += _bloco_por_acao(src, limite=20)
         if not lreg.empty:
             lines += ["", f"## Linkage DW ({len(lreg)})", ""]
-            for _, r in lreg.head(8).iterrows():
-                lines.append(f"- {r.get('tipo_alerta')} · caso {r.get('id_caso')} — {str(r.get('evidencia', ''))[:100]}")
+            lprio = priorizar_fila(lreg)
+            for _, r in lprio.head(10).iterrows():
+                idc = r.get("id_caso", "")
+                lines.append(
+                    f"- {r.get('tipo_alerta')} · caso `{idc}` — {str(r.get('evidencia', ''))[:100]}"
+                )
 
         lines += [
             "",
             "## Ações sugeridas (meningites / MS)",
             "1. Resolver quimioprofilaxia DM/Hib pendente (≤48h).",
-            "2. Encerrar casos próximos/além de 60 dias.",
-            "3. Buscar resultado GAL/LACEN quando lab fraco ou match DW positivo.",
-            "4. Completar investigação ≤48h e sorogrupo em DM.",
+            "2. Atualizar sorogrupo SINAN quando houver tipagem GAL.",
+            "3. Encerrar casos próximos/além de 60 dias.",
+            "4. Buscar resultado GAL/LACEN quando lab fraco ou match DW positivo.",
+            "5. Completar investigação ≤48h.",
             "",
         ]
         safe = "".join(ch if ch.isalnum() or ch in "-_" else "_" for ch in reg)[:60]
@@ -221,24 +309,34 @@ def build_digests(df: pd.DataFrame) -> pd.DataFrame:
             "canal_sugerido": "e-mail / WhatsApp da regional de saúde",
         })
 
-    # Perfil lab
+    # Perfil lab — tipagem + GAL positivo
     lab_fila = pd.DataFrame()
     if not link.empty:
-        lab_fila = link[link["tipo_alerta"].astype(str).str.contains("GAL|lab|Lab|SINAN", case=False, na=False)]
+        lab_fila = link[link["tipo_alerta"].astype(str).str.contains(
+            "GAL|lab|Lab|SINAN|tipagem|sorogrupo", case=False, na=False
+        )]
+    tip_fila = _read("gal_fila_tipagem_sinan_v32.csv")
     if lab_fila.empty and not casos.empty:
-        lab_fila = casos[casos["tipo_alerta"].astype(str).str.contains("laboratorial|GAL", case=False, na=False)]
+        lab_fila = casos[casos["tipo_alerta"].astype(str).str.contains("laboratorial|GAL|tipagem|sorogrupo", case=False, na=False)]
+    if not tip_fila.empty:
+        tip_as_alert = tip_fila.rename(columns={
+            "NumeroNotificacao": "id_caso",
+            "acao_sugerida_v32": "acao_recomendada",
+        }).copy()
+        tip_as_alert["tipo_alerta"] = "Tipagem GAL — atualizar sorogrupo no SINAN"
+        tip_as_alert["evidencia"] = (
+            "GAL=" + tip_as_alert.get("gal_sorogrupo_nm", pd.Series(dtype=str)).astype(str)
+        )
+        lab_fila = pd.concat([lab_fila, tip_as_alert], ignore_index=True, sort=False)
+    lab_fila = priorizar_fila(lab_fila) if not lab_fila.empty else lab_fila
     lines_lab = [
         "# Digest Laboratório / LACEN — Meningites",
         f"**Perfil:** LAB_REFERENCIA · **Gerado:** {datetime.now().strftime('%d/%m/%Y %H:%M')}",
         "",
-        f"Itens: **{len(lab_fila)}**",
+        f"Itens: **{len(lab_fila)}** (inclui tipagem GAL→SINAN quando disponível)",
         "",
     ]
-    for _, r in lab_fila.head(30).iterrows():
-        lines_lab.append(
-            f"- {r.get('tipo_alerta', r.get('tipo', ''))} · {r.get('municipio_v17', r.get('territorio', ''))} "
-            f"· caso {r.get('id_caso', '')} — {str(r.get('evidencia', ''))[:120]}"
-        )
+    lines_lab += _bloco_por_acao(lab_fila, limite=40) if not lab_fila.empty else ["(sem itens)"]
     path_lab = DIGEST_DIR / "DIGEST_LAB_REFERENCIA.md"
     path_lab.write_text("\n".join(lines_lab), encoding="utf-8")
     rows_idx.append({

@@ -2156,6 +2156,15 @@ def lab_section(df):
                     h2.metric("% DM sorogrupo SINAN∪GAL", fmt(rr.get("pct_dm_sorogrupo_uniao")))
                 if "n_dm_sorogrupo_so_gal" in rr:
                     h3.metric("Sorogrupo só no GAL", fmt(rr.get("n_dm_sorogrupo_so_gal"), 0))
+        gal_fila_tip = read_any(OUT / "gal_fila_tipagem_sinan_v32.csv")
+        if not gal_fila_tip.empty:
+            with st.expander(f"Fila operacional — tipagem GAL → sorogrupo SINAN ({len(gal_fila_tip)})"):
+                st.caption(
+                    "Prioridade: tipagem GAL já disponível → atualizar SINAN; "
+                    "depois DM com vínculo GAL sem tipagem; por fim DM sem sorogrupo. "
+                    "Meta operacional: elevar os ~30% de sorogrupo preenchido em DM."
+                )
+                st.dataframe(gal_fila_tip.head(150), use_container_width=True)
         if not gal_tempo.empty:
             t = gal_tempo.iloc[0]
             st.caption(
