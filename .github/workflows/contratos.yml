@@ -30,4 +30,4 @@ jobs:
       - name: VNext domain and municipal engine tests
         env:
           PYTHONPATH: src
-        run: pytest -q tests/test_vnext_domain_contracts.py tests/test_vnext_municipal_engine.py tests/test_vnext_legacy_aggregator.py tests/test_vnext_descriptive_aggregator.py tests/test_vnext_municipal_cards.py tests/test_vnext_executive_agent.py tests/test_vnext_operational_agent.py tests/test_vnext_publisher.py
+        run: pytest -q tests/test_vnext_domain_contracts.py tests/test_vnext_municipal_engine.py tests/test_vnext_legacy_aggregator.py tests/test_vnext_descriptive_aggregator.py tests/test_vnext_municipal_cards.py tests/test_vnext_executive_agent.py tests/test_vnext_operational_agent.py tests/test_vnext_rag_adapter.py tests/test_vnext_publisher.py
