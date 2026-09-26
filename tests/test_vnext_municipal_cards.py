@@ -6,7 +6,7 @@ from meningites.operational_queue.cards import build_municipal_cards
 from meningites.operational_queue.municipal_indicators import municipal_indicator_frame
 
 
-def test_municipal_indicators_keep_denominator_and_do_not_infer_numerator(tmp_path: Path):
+def test_municipal_indicators_keep_denominator_and_do_not_infer_numerator_on_legacy_artifact(tmp_path: Path):
     pd.DataFrame([{
         "codigo_municipio_v17": "5103403",
         "municipio_v17": "Cuiabá",
@@ -69,4 +69,40 @@ def test_card_contains_operational_context_and_reference(tmp_path: Path):
     assert "Investigados em até 48h" in card
     assert "denominador: 20" in card
     assert "sih-sem-sinan" in card
-    assert "não exporta todos os numeradores" in card
+    assert "nunca são reconstruídas por arredondamento" in card
+
+
+def test_municipal_indicators_use_exact_exported_numerator_and_denominator(tmp_path: Path):
+    pd.DataFrame([{
+        "codigo_municipio_v17": "510340",
+        "municipio_v17": "Cuiabá",
+        "regional_v17": "Baixada Cuiabana",
+        "total_notificacoes": 20,
+        "investigados_48h": 15,
+        "encerrados_60d": 16,
+        "bact_confirmadas": 5,
+        "bact_lab_informe_pcr_cultura": 2,
+        "dm_casos": 4,
+        "dm_quimio_48h": 2,
+        "pct_investigados_48h": 75.0,
+        "pct_encerrados_60d": 80.0,
+        "pct_confirmacao_laboratorial_pcr_cultura": 40.0,
+        "pct_quimioprofilaxia_dm_48h": 50.0,
+    }]).to_csv(tmp_path / "indicadores_ms_operacionais_municipio_v23.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame([{
+        "referencia_ano": 2024,
+        "referencia_periodo": "SE 1–36/2024",
+        "referencia_fonte": "Informe Meningites CGVDI/DPNI/SVSA/MS",
+        "referencia_vigencia_desde": "2024-10-01",
+    }]).to_csv(tmp_path / "indicadores_ms_operacionais_base_v23.csv", index=False, encoding="utf-8-sig")
+
+    frame = municipal_indicator_frame(tmp_path)
+    inv = frame[frame["indicador"].eq("pct_investigados_48h")].iloc[0]
+    lab = frame[frame["indicador"].eq("pct_confirmacao_laboratorial_pcr_cultura")].iloc[0]
+
+    assert inv["numerador"] == 15
+    assert inv["denominador"] == 20
+    assert inv["numerador_status"] == "ok"
+    assert inv["denominador_status"] == "ok"
+    assert lab["numerador"] == 2
+    assert lab["denominador"] == 5
