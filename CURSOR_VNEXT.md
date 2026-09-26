@@ -845,3 +845,29 @@ Execute:
 ```powershell
 python -m pytest -q tests/test_vnext_schema_registry.py tests/test_vnext_operational_agent.py tests/test_vnext_structured_llm.py
 ```
+
+
+## Compatibilidade de schema nos gates finais
+
+O schema registry agora é aplicado também aos artefatos consumidos por:
+- captura de evidência;
+- preflight;
+- readiness;
+- release readiness;
+- manifesto operacional.
+
+### Regra fail-closed
+Mesmo que um JSON contenha campos aparentemente válidos e status `PASS`, ele deve ser rejeitado/bloqueado se `schema_version` estiver ausente ou incompatível.
+
+### Consequências
+- evidência não é capturada sobre validação de schema desconhecido;
+- preflight interrompe se `validacao_vnext.json` tiver schema incompatível;
+- readiness não chega a READY com artefatos de versões não aceitas;
+- release readiness permanece bloqueado;
+- manifesto mostra `schema_compatibility` por artefato e bloqueia LLM quando contexto/validação são incompatíveis.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_schema_registry.py tests/test_vnext_validation_evidence.py tests/test_vnext_preflight.py tests/test_vnext_readiness.py tests/test_vnext_release_readiness.py tests/test_vnext_operational_manifest.py
+```
