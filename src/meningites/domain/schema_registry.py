@@ -22,6 +22,8 @@ SCHEMAS = {
     "readiness": SchemaContract("readiness", "vnext-readiness-1", ("vnext-readiness-1",)),
     "release_readiness": SchemaContract("release_readiness", "vnext-release-readiness-1", ("vnext-release-readiness-1",)),
     "operational_manifest": SchemaContract("operational_manifest", "vnext-operational-manifest-1", ("vnext-operational-manifest-1",)),
+    "visual_review": SchemaContract("visual_review", "vnext-visual-review-1", ("vnext-visual-review-1",)),
+    "schema_catalog": SchemaContract("schema_catalog", "vnext-schema-catalog-1", ("vnext-schema-catalog-1",)),
 }
 
 
