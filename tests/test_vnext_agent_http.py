@@ -31,8 +31,29 @@ def test_http_handler_requires_published_context(tmp_path: Path):
     assert result["status_code"] == 503
 
 
+def _pass_gate(root: Path):
+    (root / "validacao_vnext.json").write_text(json.dumps({
+        "overall_status": "pass",
+        "fail_n": 0,
+        "attention_n": 0,
+        "checks": [],
+    }), encoding="utf-8")
+
+
+def test_http_handler_blocks_query_without_pass_gate(tmp_path: Path):
+    _context(tmp_path / "agente_epidemiologico_contexto_vnext.json")
+    result = handle_query_payload(
+        {"question": "Situação estadual", "scope": "Mato Grosso"},
+        outdir=tmp_path,
+    )
+    assert result["ok"] is False
+    assert result["status_code"] == 503
+    assert "Gate VNext" in result["error"]
+
+
 def test_http_handler_returns_query_without_fastapi_dependency(tmp_path: Path):
     _context(tmp_path / "agente_epidemiologico_contexto_vnext.json")
+    _pass_gate(tmp_path)
     result = handle_query_payload(
         {"question": "Situação estadual", "scope": "Mato Grosso"},
         outdir=tmp_path,
