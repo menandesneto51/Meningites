@@ -4,6 +4,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from meningites.agent.query_service import query_agent
+from meningites.validation.health import load_validation_health, important_checks
 
 
 def render_agent_panel(st, outdir: str | Path) -> None:
@@ -12,6 +13,23 @@ def render_agent_panel(st, outdir: str | Path) -> None:
     kb_path = root / "assistente_kb_docs_ms_v27.csv"
 
     st.subheader("Agente epidemiológico VNext")
+    health = load_validation_health(root)
+    status = health["overall_status"]
+    if status == "pass":
+        st.success(f"Gate VNext: PASS · falhas={health['fail_n']} · atenções={health['attention_n']}")
+    elif status == "attention":
+        st.warning(f"Gate VNext: ATTENTION · falhas={health['fail_n']} · atenções={health['attention_n']}")
+    elif status == "fail":
+        st.error(f"Gate VNext: FAIL · falhas={health['fail_n']} · atenções={health['attention_n']}")
+    else:
+        st.warning(f"Gate VNext: {status.upper()} · {health['detail']}")
+
+    with st.expander("Saúde operacional VNext", expanded=status != "pass"):
+        for check in important_checks(health, limit=8):
+            st.write(f"- {str(check.get('status','')).upper()} · {check.get('check_id')} — {check.get('detail')}")
+        if not health.get("checks"):
+            st.write(health.get("detail") or "Sem relatório de validação.")
+
     st.caption(
         "Modo de desenvolvimento. Usa fatos canônicos publicados e RAG local. "
         "LLM é opcional e toda saída exige revisão humana."
