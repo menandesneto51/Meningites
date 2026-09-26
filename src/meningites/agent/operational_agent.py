@@ -11,6 +11,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from meningites.domain.schema_registry import require_schema
+
 
 @dataclass(frozen=True)
 class AgentResponse:
@@ -31,6 +33,7 @@ class EpidemiologicalAgent:
         return cls(json.loads(Path(path).read_text(encoding="utf-8")))
 
     def _validate_context(self) -> None:
+        require_schema(self.context, "agent_context")
         required = {"schema_version", "guardrails", "state_summary", "regional_summary", "municipalities"}
         missing = required.difference(self.context)
         if missing:
