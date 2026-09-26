@@ -72,3 +72,23 @@ def test_agent_publisher_writes_auditable_outputs(tmp_path: Path):
     briefing = paths["state_briefing"].read_text(encoding="utf-8")
     assert "Briefing Epidemiológico Estadual" in briefing
     assert "não cria definição de caso" in briefing
+
+
+def test_agent_data_gaps_surface_artifact_divergences():
+    ctx = _context()
+    ctx["data_quality"] = {
+        "artifact_status_rows": [{
+            "arquivo": "sih_fila_investigacao_v33.csv",
+            "metrica": "sih_sem_sinan_n",
+            "status": "sem_chave_territorial",
+            "detalhe": "chave ausente",
+        }],
+        "blocking_divergences_n": 1,
+        "missing_artifacts_n": 0,
+        "has_blocking_divergences": True,
+    }
+    response = EpidemiologicalAgent(ctx).data_gaps()
+    assert any(
+        item.get("lacuna") == "artefato_sem_chave_territorial"
+        for item in response.evidence
+    )
