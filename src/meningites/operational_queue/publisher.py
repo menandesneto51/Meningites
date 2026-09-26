@@ -12,6 +12,7 @@ from typing import Iterable
 
 import pandas as pd
 
+from meningites.operational_queue.descriptive_aggregator import descriptive_snapshots, merge_snapshots
 from meningites.operational_queue.legacy_aggregator import (
     ArtifactSpec,
     DEFAULT_ARTIFACTS,
@@ -114,7 +115,9 @@ def publish_municipal_vnext(
     now = published_at or datetime.now(timezone.utc)
 
     divergences = inspect_artifacts(root)
-    snapshots = aggregate_artifacts(root, generated_at=now)
+    operational = aggregate_artifacts(root, generated_at=now)
+    descriptive = descriptive_snapshots(root, generated_at=now)
+    snapshots = merge_snapshots(operational, descriptive)
     situation = _situation_frame(snapshots)
     signals = _signals_frame(snapshots)
 
@@ -137,10 +140,13 @@ def publish_municipal_vnext(
         "outputs": {key: path.name for key, path in paths.items() if key != "provenance"},
         "municipalities_n": int(len(situation)),
         "signals_n": int(len(signals)),
+        "operational_snapshots_n": int(len(operational)),
+        "descriptive_snapshots_n": int(len(descriptive)),
         "notes": [
             "Ausência de artefato não é convertida silenciosamente em zero.",
             "Ausência de chave territorial não é inferida a partir do nome do município.",
             "As regras atuais representam presença de filas operacionais já produzidas pelo legado.",
+            "Score V25 e doses CIPV V34 entram apenas como contexto descritivo; não geram sinal VNext automaticamente.",
         ],
     }
     paths["provenance"].write_text(
