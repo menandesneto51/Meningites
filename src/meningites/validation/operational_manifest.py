@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from meningites.domain.schema_registry import require_schema
+
 
 def _load(path: Path) -> dict[str, Any] | None:
     if not path.exists() or path.stat().st_size == 0:
@@ -24,6 +26,24 @@ def build_operational_manifest(outdir: str | Path) -> dict[str, Any]:
     readiness = _load(root / "prontidao_vnext.json") or {}
     release = _load(root / "release_readiness_vnext.json") or {}
 
+    compatibility = {}
+    for name, payload, contract in [
+        ("context", context, "agent_context"),
+        ("validation", validation, "validation"),
+        ("preflight", preflight, "preflight"),
+        ("evidence", evidence, "validation_evidence"),
+        ("readiness", readiness, "readiness"),
+        ("release_readiness", release, "release_readiness"),
+    ]:
+        if not payload:
+            compatibility[name] = False
+            continue
+        try:
+            require_schema(payload, contract)
+            compatibility[name] = True
+        except ValueError:
+            compatibility[name] = False
+
     quality = context.get("data_quality") or {}
     validation_pass = str(validation.get("overall_status", "")).lower() == "pass"
     preflight_pass = str(preflight.get("status", "")).lower() == "pass"
@@ -31,7 +51,13 @@ def build_operational_manifest(outdir: str | Path) -> dict[str, Any]:
         not bool(quality.get("has_blocking_divergences"))
         and int(quality.get("blocking_divergences_n", 0) or 0) == 0
     )
-    llm_allowed = bool(context) and validation_pass and quality_safe
+    llm_allowed = (
+        bool(context)
+        and compatibility["context"]
+        and compatibility["validation"]
+        and validation_pass
+        and quality_safe
+    )
 
     artifacts = {
         "context": "agente_epidemiologico_contexto_vnext.json",
@@ -69,6 +95,7 @@ def build_operational_manifest(outdir: str | Path) -> dict[str, Any]:
             "structured_response_schema": "llm-response-vnext-2",
         },
         "artifacts": artifacts,
+        "schema_compatibility": compatibility,
         "human_review_required": True,
     }
 
