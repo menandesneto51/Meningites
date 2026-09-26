@@ -389,3 +389,36 @@ python -m pytest -q tests/test_vnext_feature_flags.py tests/test_vnext_agent_que
 
 ### Próximo alvo no Cursor
 Executar o dashboard local com a feature flag ativa, conferir visualmente a aba, revisar logs e divergências e só então propor integração permanente. Não ativar a flag em Streamlit Cloud/produção nesta fase.
+
+
+## Validação adicional — numeradores municipais exatos do módulo 12
+
+O módulo 12 passa a exportar, de forma aditiva e retrocompatível, os numeradores/denominadores municipais reais usados nos quatro indicadores principais:
+- `bact_lab_informe_pcr_cultura / bact_confirmadas`;
+- `investigados_48h / total_notificacoes`;
+- `encerrados_60d / total_notificacoes`;
+- `dm_quimio_48h / dm_casos`.
+
+Também exporta no artefato municipal:
+- `referencia_ano`;
+- `referencia_periodo`;
+- `referencia_fonte`;
+- `referencia_vigencia_desde`.
+
+### Regras obrigatórias
+1. Não reconstruir numerador por percentual × denominador.
+2. Em artefatos antigos, numerador/denominador ausente deve permanecer vazio com status explícito.
+3. Em artefatos novos, `numerador_status=ok` e `denominador_status=ok` quando os campos estiverem presentes.
+4. Conferir pelo menos 5 municípios contra o recálculo direto do módulo 12, incluindo Cuiabá e Várzea Grande quando presentes.
+5. Verificar que os cards municipais mostram numerador e denominador reais.
+6. Confirmar que a mudança é apenas aditiva: nenhuma coluna legada foi removida ou renomeada.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python 12_indicadores_ms_operacionais_v23.py
+python -m pytest -q tests/test_vnext_municipal_cards.py tests/test_vnext_publisher.py
+python pipelines/vnext_municipal.py --outdir saida_meningites_v17
+```
+
+Depois compare `indicadores_ms_operacionais_municipio_v23.csv` com `indicadores_municipais_vnext.csv` e registre divergências, se houver.
