@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 
 
 def main() -> int:
@@ -16,8 +17,18 @@ def main() -> int:
     except ImportError as exc:
         raise SystemExit("Instale requirements-api.txt para executar a API.") from exc
 
-    from meningites.agent.http_api import create_app
-    uvicorn.run(create_app(outdir=args.outdir), host=args.host, port=args.port)
+    from meningites.agent.http_api import create_app, validate_api_bind
+    api_token = os.environ.get("MENINGITES_API_TOKEN", "")
+    try:
+        validate_api_bind(args.host, api_token)
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
+
+    uvicorn.run(
+        create_app(outdir=args.outdir, api_token=api_token or None),
+        host=args.host,
+        port=args.port,
+    )
     return 0
 
 
