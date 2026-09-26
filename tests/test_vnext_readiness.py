@@ -25,9 +25,9 @@ def test_readiness_requires_human_visual_review(tmp_path: Path):
 
 
 def test_readiness_becomes_ready_only_with_all_requirements(tmp_path: Path):
-    _write(tmp_path, "validacao_vnext.json", {"overall_status": "pass"})
-    _write(tmp_path, "evidencia_validacao_vnext.json", {"validation_status": "pass", "artifact_count": 6})
-    _write(tmp_path, "preflight_vnext.json", {"status": "pass"})
+    _write(tmp_path, "validacao_vnext.json", {"schema_version": "vnext-validation-1", "overall_status": "pass"})
+    _write(tmp_path, "evidencia_validacao_vnext.json", {"schema_version": "vnext-validation-evidence-1", "validation_status": "pass", "artifact_count": 6})
+    _write(tmp_path, "preflight_vnext.json", {"schema_version": "vnext-preflight-1", "status": "pass"})
     _write(tmp_path, "REVISAO_VISUAL_VNEXT.json", {"schema_version": "vnext-visual-review-1", "approved": True, "reviewer": "Menandes"})
     _write(tmp_path, "agente_epidemiologico_contexto_vnext.json", {
         "schema_version": "agent-context-vnext-1",
@@ -52,8 +52,9 @@ def test_readiness_blocks_on_data_quality_divergence(tmp_path: Path):
     _write(tmp_path, "validacao_vnext.json", {"overall_status": "pass"})
     _write(tmp_path, "evidencia_validacao_vnext.json", {"validation_status": "pass", "artifact_count": 6})
     _write(tmp_path, "preflight_vnext.json", {"status": "pass"})
-    _write(tmp_path, "REVISAO_VISUAL_VNEXT.json", {"approved": True, "reviewer": "Menandes"})
+    _write(tmp_path, "REVISAO_VISUAL_VNEXT.json", {"schema_version": "vnext-visual-review-1", "approved": True, "reviewer": "Menandes"})
     _write(tmp_path, "agente_epidemiologico_contexto_vnext.json", {
+        "schema_version": "agent-context-vnext-1",
         "data_quality": {
             "blocking_divergences_n": 1,
             "has_blocking_divergences": True,
