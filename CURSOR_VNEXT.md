@@ -730,3 +730,22 @@ Execute:
 $env:PYTHONPATH="src"
 python -m pytest -q tests/test_vnext_agent_query.py tests/test_vnext_agent_http.py
 ```
+
+
+## Hardening da API local — validação estrita de payload
+
+A camada HTTP passa a validar tipos e limites antes de chamar `query_agent()`.
+
+### Regras
+- `question` deve ser string não vazia e ter no máximo 4000 caracteres;
+- `scope` deve ser string e ter no máximo 200 caracteres;
+- `mode` deve ser string e pertencer ao conjunto permitido;
+- `use_llm` deve ser booleano real; strings como `"false"` são rejeitadas;
+- falha de validação retorna HTTP 400;
+- lógica epidemiológica continua fora da API.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_agent_http.py tests/test_vnext_agent_query.py
+```
