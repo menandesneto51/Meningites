@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install deps
-        run: pip install pandas numpy
+        run: pip install pandas numpy pytest
       - name: Contract tests (demo_cloud, V28–V35)
         run: >
           python -m unittest -v
@@ -27,3 +27,7 @@ jobs:
           tests.test_contratos_v33
           tests.test_contratos_v34
           tests.test_contratos_v35
+      - name: VNext domain and municipal engine tests
+        env:
+          PYTHONPATH: src
+        run: pytest -q tests/test_vnext_domain_contracts.py tests/test_vnext_municipal_engine.py
