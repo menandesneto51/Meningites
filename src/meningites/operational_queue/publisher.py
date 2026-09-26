@@ -25,6 +25,7 @@ from meningites.operational_queue.cards import build_municipal_cards
 from meningites.operational_queue.executive import build_executive_views
 from meningites.operational_queue.agent_context import build_agent_context
 from meningites.operational_queue.rules_catalog import PRODUCTION_RULES
+from meningites.agent.publisher import publish_agent_outputs
 
 
 def inspect_artifacts(outdir: str | Path, specs: Iterable[ArtifactSpec] = DEFAULT_ARTIFACTS) -> pd.DataFrame:
@@ -148,6 +149,8 @@ def publish_municipal_vnext(
     paths["agent_context"] = build_agent_context(
         root, situation, signals, indicators, executive_regional, executive_state, generated_at=now
     )
+    agent_outputs = publish_agent_outputs(root, paths["agent_context"])
+    paths.update(agent_outputs)
 
     provenance = {
         "schema_version": "vnext-1",
