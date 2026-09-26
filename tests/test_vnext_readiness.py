@@ -29,6 +29,12 @@ def test_readiness_becomes_ready_only_with_all_requirements(tmp_path: Path):
     _write(tmp_path, "evidencia_validacao_vnext.json", {"validation_status": "pass", "artifact_count": 6})
     _write(tmp_path, "preflight_vnext.json", {"status": "pass"})
     _write(tmp_path, "REVISAO_VISUAL_VNEXT.json", {"approved": True, "reviewer": "Menandes"})
+    _write(tmp_path, "agente_epidemiologico_contexto_vnext.json", {
+        "data_quality": {
+            "blocking_divergences_n": 0,
+            "has_blocking_divergences": False,
+        }
+    })
 
     report = build_readiness(tmp_path)
     assert report["ready"] is True
@@ -39,3 +45,23 @@ def test_publish_readiness_writes_json_and_markdown(tmp_path: Path):
     paths = publish_readiness(tmp_path)
     assert paths["readiness_json"].exists()
     assert paths["readiness_md"].exists()
+
+
+def test_readiness_blocks_on_data_quality_divergence(tmp_path: Path):
+    _write(tmp_path, "validacao_vnext.json", {"overall_status": "pass"})
+    _write(tmp_path, "evidencia_validacao_vnext.json", {"validation_status": "pass", "artifact_count": 6})
+    _write(tmp_path, "preflight_vnext.json", {"status": "pass"})
+    _write(tmp_path, "REVISAO_VISUAL_VNEXT.json", {"approved": True, "reviewer": "Menandes"})
+    _write(tmp_path, "agente_epidemiologico_contexto_vnext.json", {
+        "data_quality": {
+            "blocking_divergences_n": 1,
+            "has_blocking_divergences": True,
+        }
+    })
+
+    report = build_readiness(tmp_path)
+    assert report["ready"] is False
+    assert any(
+        item["id"] == "data_quality" and item["ok"] is False
+        for item in report["checks"]
+    )
