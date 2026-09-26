@@ -8,6 +8,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from meningites.domain.schema_registry import require_schema
+
 
 CANONICAL_ARTIFACTS = (
     "validacao_vnext.json",
@@ -39,6 +41,7 @@ def capture_validation_evidence(
         raise FileNotFoundError("validacao_vnext.json não encontrado.")
 
     validation = json.loads(validation_path.read_text(encoding="utf-8"))
+    require_schema(validation, "validation")
     if str(validation.get("overall_status", "")).lower() != "pass":
         raise ValueError("Evidência só pode ser capturada quando overall_status=pass.")
 
