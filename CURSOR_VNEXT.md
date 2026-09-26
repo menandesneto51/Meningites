@@ -627,3 +627,30 @@ O relatório reúne:
 
 ### Regra
 `ready_for_merge_review=true` significa apenas que o PR pode entrar em revisão final para merge. Não realiza merge e não autoriza ativação automática em produção.
+
+
+## Contrato estruturado de resposta LLM V2
+
+O agente passa a preferir respostas JSON estritas com `schema_version=llm-response-vnext-2`.
+
+Estrutura esperada:
+- `facts[]`: `text` + `fact_refs`;
+- `interpretations[]`: `text` + `fact_refs`;
+- `recommendations[]`: `text` + `fact_refs` + `normative_evidence_ids`;
+- `limitations[]`;
+- `human_validation_required=true`.
+
+### Regras
+1. Cada `fact_ref` deve apontar para um caminho existente dentro de `canonical_facts`.
+2. Cada `normative_evidence_id` deve existir no pacote RAG vigente.
+3. Se houver evidência normativa disponível, recomendações sem `normative_evidence_ids` são rejeitadas.
+4. Referência inexistente invalida a resposta.
+5. O runner mantém o formato legado apenas como fallback compatível.
+6. O formato estruturado não usa o detector numérico como fonte primária de validação; a rastreabilidade passa a ocorrer pelas referências explícitas.
+7. Mesmo respostas V2 aceitas continuam com revisão humana obrigatória.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_structured_llm.py tests/test_vnext_llm_guardrails.py
+```
