@@ -6,6 +6,7 @@ from meningites.validation.evidence import capture_validation_evidence, publish_
 
 def _write_pass(root: Path):
     (root / "validacao_vnext.json").write_text(json.dumps({
+        "schema_version": "vnext-validation-1",
         "overall_status": "pass",
         "fail_n": 0,
         "attention_n": 0,
@@ -22,6 +23,7 @@ def _write_pass(root: Path):
 
 def test_evidence_requires_pass(tmp_path: Path):
     (tmp_path / "validacao_vnext.json").write_text(json.dumps({
+        "schema_version": "vnext-validation-1",
         "overall_status": "fail",
         "fail_n": 1,
         "attention_n": 0,
@@ -47,3 +49,17 @@ def test_publish_evidence_writes_json_and_markdown(tmp_path: Path):
     assert paths["evidence_json"].exists()
     assert paths["evidence_md"].exists()
     assert "abc123" in paths["evidence_md"].read_text(encoding="utf-8")
+
+
+def test_evidence_rejects_incompatible_validation_schema(tmp_path: Path):
+    (tmp_path / "validacao_vnext.json").write_text(json.dumps({
+        "schema_version": "vnext-validation-99",
+        "overall_status": "pass",
+        "fail_n": 0,
+        "attention_n": 0,
+    }), encoding="utf-8")
+    try:
+        capture_validation_evidence(tmp_path)
+        assert False, "deveria rejeitar schema incompatível"
+    except ValueError as exc:
+        assert "Schema incompatível" in str(exc)
