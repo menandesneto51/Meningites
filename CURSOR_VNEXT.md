@@ -684,3 +684,24 @@ Execute:
 $env:PYTHONPATH="src"
 python -m pytest -q tests/test_vnext_rag_adapter.py tests/test_vnext_operational_agent.py tests/test_vnext_publisher.py
 ```
+
+
+## Gate de qualidade de dados no readiness
+
+O estado `READY` agora exige também que `agente_epidemiologico_contexto_vnext.json` informe:
+- `has_blocking_divergences=false`;
+- `blocking_divergences_n=0`.
+
+### Regra
+Mesmo com CI verde, preflight em PASS, evidência capturada e revisão visual aprovada, o VNext permanece bloqueado se houver divergência crítica de dados.
+
+Exemplos bloqueantes:
+- `erro_leitura`;
+- `sem_chave_territorial`;
+- arquivo `vazio` quando esperado como fonte operacional.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_readiness.py tests/test_vnext_release_readiness.py
+```
