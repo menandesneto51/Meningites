@@ -73,4 +73,5 @@ jobs:
           tests/test_vnext_preflight.py
           tests/test_vnext_readiness.py
           tests/test_vnext_release_readiness.py
+          tests/test_vnext_operational_manifest.py
           tests/test_vnext_publisher.py
