@@ -20,6 +20,8 @@ from meningites.operational_queue.legacy_aggregator import (
     aggregate_artifacts,
 )
 from meningites.operational_queue.municipal_engine import MunicipalSituationEngine
+from meningites.operational_queue.municipal_indicators import municipal_indicator_frame
+from meningites.operational_queue.cards import build_municipal_cards
 from meningites.operational_queue.rules_catalog import PRODUCTION_RULES
 
 
@@ -120,16 +122,22 @@ def publish_municipal_vnext(
     snapshots = merge_snapshots(operational, descriptive)
     situation = _situation_frame(snapshots)
     signals = _signals_frame(snapshots)
+    indicators = municipal_indicator_frame(root)
 
     paths = {
         "situation": root / "situacao_municipal_vnext.csv",
         "signals": root / "sinais_municipais_vnext.csv",
         "divergences": root / "divergencias_vnext.csv",
         "provenance": root / "procedencia_situacao_vnext.json",
+        "indicators": root / "indicadores_municipais_vnext.csv",
     }
     situation.to_csv(paths["situation"], index=False, encoding="utf-8-sig")
     signals.to_csv(paths["signals"], index=False, encoding="utf-8-sig")
     divergences.to_csv(paths["divergences"], index=False, encoding="utf-8-sig")
+    indicators.to_csv(paths["indicators"], index=False, encoding="utf-8-sig")
+    cards_index, cards_manifest = build_municipal_cards(root, situation, signals, indicators)
+    paths["cards_index"] = cards_index
+    paths["cards_manifest"] = cards_manifest
 
     provenance = {
         "schema_version": "vnext-1",
@@ -140,6 +148,7 @@ def publish_municipal_vnext(
         "outputs": {key: path.name for key, path in paths.items() if key != "provenance"},
         "municipalities_n": int(len(situation)),
         "signals_n": int(len(signals)),
+        "municipal_indicators_n": int(len(indicators)),
         "operational_snapshots_n": int(len(operational)),
         "descriptive_snapshots_n": int(len(descriptive)),
         "notes": [
