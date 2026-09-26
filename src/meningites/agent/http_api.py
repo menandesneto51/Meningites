@@ -23,6 +23,14 @@ def handle_query_payload(payload: dict[str, Any], *, outdir: str | Path) -> dict
         return {"ok": False, "status_code": 400, "error": f"mode inválido: {mode}"}
 
     root = Path(outdir)
+    validation = load_validation_health(root)
+    if validation["blocking"]:
+        return {
+            "ok": False,
+            "status_code": 503,
+            "error": f"Gate VNext não aprovado: {validation['overall_status']}. Execute a validação antes da consulta operacional.",
+        }
+
     context_path = root / "agente_epidemiologico_contexto_vnext.json"
     kb_path = root / "assistente_kb_docs_ms_v27.csv"
     if not context_path.exists():
