@@ -28,6 +28,7 @@ def build_release_readiness(
     preflight = _load(root / "preflight_vnext.json")
     readiness = _load(root / "prontidao_vnext.json")
     visual = _load(root / "REVISAO_VISUAL_VNEXT.json")
+    context = _load(root / "agente_epidemiologico_contexto_vnext.json")
 
     requirements = [
         {
@@ -59,6 +60,17 @@ def build_release_readiness(
             "detail": (
                 f"revisor={visual.get('reviewer')}"
                 if visual else "REVISAO_VISUAL_VNEXT.json ausente"
+            ),
+        },
+        {
+            "id": "data_quality",
+            "ok": bool(context)
+            and not bool((context.get("data_quality") or {}).get("has_blocking_divergences"))
+            and int((context.get("data_quality") or {}).get("blocking_divergences_n", 0) or 0) == 0,
+            "detail": (
+                "blocking_divergences_n="
+                + str((context.get("data_quality") or {}).get("blocking_divergences_n", 0))
+                if context else "agente_epidemiologico_contexto_vnext.json ausente"
             ),
         },
         {
