@@ -24,12 +24,16 @@ def test_publisher_generates_four_auditable_outputs(tmp_path: Path):
     signals = pd.read_csv(paths["signals"], encoding="utf-8-sig")
     divergence = pd.read_csv(paths["divergences"], encoding="utf-8-sig")
     provenance = json.loads(paths["provenance"].read_text(encoding="utf-8"))
+    agent_context = json.loads(paths["agent_context"].read_text(encoding="utf-8"))
 
     assert int(situation.loc[0, "sih_sem_sinan_n"]) == 2
     assert "sih-sem-sinan" in set(signals["rule_id"])
     assert "ausente" in set(divergence["status"])
     assert provenance["municipalities_n"] == 1
     assert provenance["signals_n"] >= 1
+    assert "data_quality" in agent_context
+    assert agent_context["data_quality"]["missing_artifacts_n"] >= 1
+    assert agent_context["guardrails"]["must_surface_missing_or_divergent_data"] is True
 
 
 def test_missing_municipality_key_is_reported_and_not_inferred(tmp_path: Path):
