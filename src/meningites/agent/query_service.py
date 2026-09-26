@@ -24,6 +24,23 @@ def _resolve_municipality(agent: EpidemiologicalAgent, value: str) -> dict[str, 
     return None
 
 
+def _llm_safety(agent: EpidemiologicalAgent) -> dict[str, Any]:
+    quality = agent.context.get("data_quality")
+    if not isinstance(quality, dict):
+        return {
+            "allowed": False,
+            "reason": "data_quality_ausente",
+            "blocking_divergences_n": None,
+        }
+    blocking_n = int(quality.get("blocking_divergences_n", 0) or 0)
+    has_blocking = bool(quality.get("has_blocking_divergences")) or blocking_n > 0
+    return {
+        "allowed": not has_blocking,
+        "reason": "" if not has_blocking else "data_quality_bloqueante",
+        "blocking_divergences_n": blocking_n,
+    }
+
+
 def query_agent(
     *,
     context_path: str | Path,
@@ -67,6 +84,8 @@ def query_agent(
     package = build_grounded_request(question, agent, retriever, scope=scope)
     prompt = render_prompt(package)
 
+    llm_safety = _llm_safety(agent)
+
     output: dict[str, Any] = {
         "schema_version": "agent-query-vnext-1",
         "question": question,
@@ -80,12 +99,15 @@ def query_agent(
         "llm": {
             "requested": bool(use_llm),
             "executed": False,
+            "blocked": bool(use_llm) and not llm_safety["allowed"],
+            "block_reason": llm_safety["reason"] if bool(use_llm) and not llm_safety["allowed"] else "",
+            "safety": llm_safety,
             "result": None,
         },
         "human_validation_required": True,
     }
 
-    if use_llm:
+    if use_llm and llm_safety["allowed"]:
         output["llm"]["executed"] = True
         output["llm"]["result"] = run_validated_llm(package, prompt)
 
