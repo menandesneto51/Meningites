@@ -6,6 +6,11 @@ from pathlib import Path
 
 from meningites.agent.llm_client import OptionalLLMClient
 from meningites.agent.response_validator import validate_llm_response
+from meningites.agent.structured_response import (
+    parse_structured_response,
+    render_structured_response,
+    validate_structured_llm_response,
+)
 
 
 def run_validated_llm(
@@ -26,14 +31,35 @@ def run_validated_llm(
             "requires_human_review": True,
         }
 
-    validation = validate_llm_response(package, llm.get("text", ""))
+    raw_text = llm.get("text", "")
+    structured = parse_structured_response(raw_text)
+    if structured is not None:
+        validation = validate_structured_llm_response(package, raw_text)
+        rendered = render_structured_response(validation.parsed or {}) if validation.parsed else ""
+        return {
+            "status": "validated" if validation.accepted else "rejected",
+            "provider": llm.get("provider"),
+            "model": llm.get("model"),
+            "accepted": validation.accepted,
+            "issues": list(validation.issues),
+            "response_format": "structured_v2",
+            "response": rendered,
+            "structured_response": validation.parsed,
+            "raw_response": raw_text,
+            "requires_human_review": validation.requires_human_review,
+        }
+
+    validation = validate_llm_response(package, raw_text)
     return {
         "status": "validated" if validation.accepted else "rejected",
         "provider": llm.get("provider"),
         "model": llm.get("model"),
         "accepted": validation.accepted,
         "issues": list(validation.issues),
-        "response": llm.get("text", ""),
+        "response_format": "legacy_text",
+        "response": raw_text,
+        "structured_response": None,
+        "raw_response": raw_text,
         "requires_human_review": validation.requires_human_review,
     }
 
