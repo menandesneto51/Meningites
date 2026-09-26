@@ -569,3 +569,31 @@ python pipelines/vnext_preflight.py --repo-root . --outdir saida_meningites_v17 
 
 ### Regra
 Este passa a ser o comando preferencial de validação local. Os comandos separados continuam disponíveis para diagnóstico, mas não devem substituir o preflight no registro final do PR.
+
+
+## Gate final de prontidão para merge/ativação
+
+Depois do preflight em PASS e da revisão visual:
+
+1. registrar a revisão visual humana:
+```powershell
+python pipelines/vnext_record_visual_review.py --outdir saida_meningites_v17 --reviewer "Menandes" --approved --notes "Dashboard e cards revisados localmente."
+```
+
+2. avaliar prontidão:
+```powershell
+python pipelines/vnext_readiness.py --outdir saida_meningites_v17 --strict
+```
+
+Saídas:
+- `prontidao_vnext.json`;
+- `PRONTIDAO_VNEXT.md`.
+
+O status só será `READY` quando existirem simultaneamente:
+- `validacao_vnext.json` em PASS;
+- `evidencia_validacao_vnext.json` válida;
+- `preflight_vnext.json` em PASS;
+- `REVISAO_VISUAL_VNEXT.json` aprovada e com revisor identificado.
+
+### Regra
+O estado `READY` não realiza merge nem ativação automaticamente. Ele apenas comprova que os requisitos técnicos e a revisão visual foram satisfeitos. A decisão de merge permanece humana e explícita.
