@@ -535,3 +535,37 @@ O PR só deve ser considerado tecnicamente pronto para merge quando houver:
 5. Agent Review final registrado no PR.
 
 Não gerar evidência manualmente nem editar hashes/relatório.
+
+
+## Preflight único — comando preferencial no Cursor
+
+A validação local completa passa a ter um único entrypoint:
+
+```powershell
+$env:PYTHONPATH="src"
+python pipelines/vnext_preflight.py --repo-root . --outdir saida_meningites_v17 --commit <SHA_DO_COMMIT>
+```
+
+O preflight executa:
+1. módulo 12;
+2. publisher VNext;
+3. gate de reconciliação;
+4. captura de evidência somente se o gate estiver em `PASS`.
+
+Saída adicional:
+- `saida_meningites_v17/preflight_vnext.json`.
+
+### Comportamento
+- falha no módulo 12 → interrompe;
+- `FAIL` no gate → interrompe e não captura evidência;
+- `ATTENTION` → não captura evidência;
+- `PASS` → gera evidência com hashes SHA-256;
+- sempre mantém `human_review_required=true`.
+
+### Uso quando o módulo 12 já tiver sido executado
+```powershell
+python pipelines/vnext_preflight.py --repo-root . --outdir saida_meningites_v17 --commit <SHA> --skip-module12
+```
+
+### Regra
+Este passa a ser o comando preferencial de validação local. Os comandos separados continuam disponíveis para diagnóstico, mas não devem substituir o preflight no registro final do PR.
