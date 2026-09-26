@@ -781,3 +781,31 @@ python -m pytest -q tests/test_vnext_agent_http.py
 ```
 
 - O endpoint `/health` informa `auth_required=true|false`, sem expor token ou segredo.
+
+
+## Manifesto operacional consolidado
+
+Depois de gerar os demais gates, publique também:
+
+```powershell
+$env:PYTHONPATH="src"
+python pipelines/vnext_operational_manifest.py --outdir saida_meningites_v17
+```
+
+Saídas:
+- `manifesto_operacional_vnext.json`;
+- `MANIFESTO_OPERACIONAL_VNEXT.md`.
+
+O manifesto reúne em um único snapshot:
+- status da validação;
+- preflight;
+- evidência;
+- readiness;
+- release readiness;
+- qualidade dos dados;
+- política de execução determinística/RAG/LLM;
+- política normativa fail-closed;
+- política de segurança da API.
+
+### Regra
+O manifesto é descritivo e auditável. Ele não altera gates nem autoriza execução; apenas consolida o estado operacional já calculado pelos componentes canônicos.
