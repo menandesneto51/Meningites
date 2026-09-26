@@ -63,12 +63,13 @@ class NormativeRetriever:
             return []
         hits: list[NormativeHit] = []
         for row in self.rows:
-            valid_raw = row.get("vigente", True)
-            valid = (
-                valid_raw.strip().lower() in {"1", "true", "sim", "yes"}
-                if isinstance(valid_raw, str)
-                else bool(valid_raw)
-            )
+            valid_raw = row.get("vigente", None)
+            if isinstance(valid_raw, str):
+                valid = valid_raw.strip().lower() in {"1", "true", "sim", "yes"}
+            elif valid_raw is None or pd.isna(valid_raw):
+                valid = False
+            else:
+                valid = bool(valid_raw)
             if current_only and not valid:
                 continue
             title = str(row.get("titulo", ""))
@@ -101,15 +102,19 @@ class NormativeRetriever:
 
 
 def _select_operational_context(agent: EpidemiologicalAgent, scope: str | None) -> dict[str, Any]:
+    data_quality = agent.context.get("data_quality", {})
     if not scope or scope.casefold() in {"mt", "mato grosso", "estadual"}:
-        return {"state_summary": agent.context.get("state_summary", [])}
+        return {
+            "state_summary": agent.context.get("state_summary", []),
+            "data_quality": data_quality,
+        }
 
     regional = [
         row for row in agent.context.get("regional_summary", [])
         if str(row.get("regional", "")).casefold() == scope.casefold()
     ]
     if regional:
-        return {"regional_summary": regional}
+        return {"regional_summary": regional, "data_quality": data_quality}
 
     municipal = [
         row for row in agent.context.get("municipalities", [])
@@ -117,9 +122,9 @@ def _select_operational_context(agent: EpidemiologicalAgent, scope: str | None) 
         or str(row.get("municipio", "")).casefold() == scope.casefold()
     ]
     if municipal:
-        return {"municipalities": municipal}
+        return {"municipalities": municipal, "data_quality": data_quality}
 
-    return {"context_missing_for_scope": scope}
+    return {"context_missing_for_scope": scope, "data_quality": data_quality}
 
 
 def build_grounded_request(
