@@ -346,3 +346,46 @@ python -m pytest -q tests/test_vnext_agent_http.py
 
 ### Próximo alvo no Cursor
 Após validar dados reais e a API local, integrar o endpoint ao painel apenas em ambiente de desenvolvimento e implementar autenticação/autorização antes de qualquer exposição em rede institucional.
+
+
+## Validação adicional — integração Streamlit por feature flag
+
+A aba `23 Agente VNext (dev)` está integrada ao dashboard, mas deve permanecer **desligada por padrão**.
+
+### Ativação local
+```powershell
+$env:PYTHONPATH="src"
+$env:MENINGITES_VNEXT_AGENT_UI="true"
+streamlit run streamlit_app.py
+```
+
+Sem a variável acima, o dashboard deve manter exatamente as 22 abas existentes e não carregar o componente VNext.
+
+### Regras obrigatórias
+1. `MENINGITES_VNEXT_AGENT_UI` deve permanecer ausente/false no ambiente atual de produção.
+2. A aba VNext usa `query_agent()`; não duplicar lógica epidemiológica dentro do Streamlit.
+3. LLM permanece desmarcado por padrão na interface.
+4. Se o contexto VNext não existir, exibir aviso e não tentar inferir resposta.
+5. Evidência normativa deve ser exibida separadamente da resposta determinística.
+6. Resposta LLM rejeitada pelo validador deve aparecer como rejeitada e não ser usada como resposta operacional.
+7. A interface deve reiterar revisão humana obrigatória.
+8. Não expor a API HTTP ou a aba VNext externamente antes da validação local com dados reais.
+
+### Cenários de validação manual
+- Mato Grosso: pergunta estadual;
+- Baixada Cuiabana: pergunta regional;
+- Cuiabá por nome;
+- Cuiabá por IBGE-7 `5103403` e IBGE-6 `510340`;
+- Várzea Grande por nome/código;
+- escopo inexistente;
+- corpus normativo ausente;
+- LLM sem credencial;
+- resposta LLM rejeitada (teste controlado).
+
+Execute:
+```powershell
+python -m pytest -q tests/test_vnext_feature_flags.py tests/test_vnext_agent_query.py tests/test_vnext_agent_http.py
+```
+
+### Próximo alvo no Cursor
+Executar o dashboard local com a feature flag ativa, conferir visualmente a aba, revisar logs e divergências e só então propor integração permanente. Não ativar a flag em Streamlit Cloud/produção nesta fase.
