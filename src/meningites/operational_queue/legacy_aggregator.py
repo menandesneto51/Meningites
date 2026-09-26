@@ -14,6 +14,7 @@ import pandas as pd
 
 from meningites.domain.contracts import Evidence
 from meningites.operational_queue.municipal_engine import MunicipalSnapshot
+from meningites.domain.territory import normalize_municipality_code
 
 
 @dataclass(frozen=True)
@@ -52,11 +53,8 @@ def _pick(columns: Iterable[str], candidates: Iterable[str]) -> str | None:
 
 
 def _norm_code(value) -> str:
-    raw = str(value).strip()
-    if raw.lower() in {"", "nan", "none", "<na>"}:
-        return ""
-    digits = "".join(ch for ch in raw if ch.isdigit())
-    return digits[:7] if digits else raw
+    """Compatibilidade temporária para adapters existentes; canônico = IBGE-6."""
+    return normalize_municipality_code(value)
 
 
 def aggregate_artifacts(
