@@ -71,4 +71,5 @@ jobs:
           tests/test_vnext_validation_evidence.py
           tests/test_vnext_preflight.py
           tests/test_vnext_readiness.py
+          tests/test_vnext_release_readiness.py
           tests/test_vnext_publisher.py
