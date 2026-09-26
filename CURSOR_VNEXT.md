@@ -779,3 +779,5 @@ Execute:
 ```powershell
 python -m pytest -q tests/test_vnext_agent_http.py
 ```
+
+- O endpoint `/health` informa `auth_required=true|false`, sem expor token ou segredo.
