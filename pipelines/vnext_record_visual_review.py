@@ -13,11 +13,13 @@ def main() -> int:
     parser.add_argument("--reviewer", required=True)
     parser.add_argument("--approved", action="store_true")
     parser.add_argument("--notes", default="")
+    parser.add_argument("--commit", required=True, help="SHA do commit efetivamente revisado.")
     args = parser.parse_args()
 
     payload = {
         "schema_version": "vnext-visual-review-1",
         "reviewed_at": datetime.now(timezone.utc).isoformat(),
+        "commit_sha": args.commit.strip(),
         "reviewer": args.reviewer.strip(),
         "approved": bool(args.approved),
         "notes": args.notes.strip(),
