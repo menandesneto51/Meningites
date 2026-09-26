@@ -63,6 +63,7 @@ jobs:
           tests/test_vnext_operational_agent.py
           tests/test_vnext_rag_adapter.py
           tests/test_vnext_llm_guardrails.py
+          tests/test_vnext_structured_llm.py
           tests/test_vnext_agent_query.py
           tests/test_vnext_agent_http.py
           tests/test_vnext_feature_flags.py
