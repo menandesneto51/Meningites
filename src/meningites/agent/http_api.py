@@ -11,14 +11,38 @@ from meningites.agent.query_service import query_agent
 from meningites.validation.health import load_validation_health
 
 
+MAX_QUESTION_CHARS = 4000
+MAX_SCOPE_CHARS = 200
+
+
 def handle_query_payload(payload: dict[str, Any], *, outdir: str | Path) -> dict[str, Any]:
-    question = str(payload.get("question", "")).strip()
+    raw_question = payload.get("question", "")
+    if not isinstance(raw_question, str):
+        return {"ok": False, "status_code": 400, "error": "question deve ser texto."}
+    question = raw_question.strip()
     if not question:
         return {"ok": False, "status_code": 400, "error": "question é obrigatório."}
+    if len(question) > MAX_QUESTION_CHARS:
+        return {"ok": False, "status_code": 400, "error": f"question excede {MAX_QUESTION_CHARS} caracteres."}
 
-    scope = str(payload.get("scope") or "Mato Grosso")
-    mode = str(payload.get("mode") or "auto")
-    use_llm = bool(payload.get("use_llm", False))
+    raw_scope = payload.get("scope", "Mato Grosso")
+    if raw_scope is None:
+        raw_scope = "Mato Grosso"
+    if not isinstance(raw_scope, str):
+        return {"ok": False, "status_code": 400, "error": "scope deve ser texto."}
+    scope = raw_scope.strip() or "Mato Grosso"
+    if len(scope) > MAX_SCOPE_CHARS:
+        return {"ok": False, "status_code": 400, "error": f"scope excede {MAX_SCOPE_CHARS} caracteres."}
+
+    raw_mode = payload.get("mode", "auto")
+    if not isinstance(raw_mode, str):
+        return {"ok": False, "status_code": 400, "error": "mode deve ser texto."}
+    mode = raw_mode.strip() or "auto"
+
+    raw_use_llm = payload.get("use_llm", False)
+    if not isinstance(raw_use_llm, bool):
+        return {"ok": False, "status_code": 400, "error": "use_llm deve ser booleano true/false."}
+    use_llm = raw_use_llm
     if mode not in {"auto", "state", "regional", "municipality", "gaps", "rag"}:
         return {"ok": False, "status_code": 400, "error": f"mode inválido: {mode}"}
 
