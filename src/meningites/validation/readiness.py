@@ -126,6 +126,7 @@ def build_readiness(outdir: str | Path) -> dict[str, Any]:
         "schema_version": "vnext-readiness-1",
         "ready": ready,
         "status": "ready" if ready else "blocked",
+        "snapshot_commit": commit_values[0] if snapshot_ok else "",
         "checks": checks,
         "human_review_required": True,
     }
