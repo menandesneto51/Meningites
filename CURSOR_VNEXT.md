@@ -467,3 +467,35 @@ Se houver `FAIL`, corrigir o adapter/contrato/fonte e repetir o ciclo. Não edit
 
 ### Próximo alvo
 Depois de obter `PASS` com dados reais, incorporar o validador como gate do pipeline principal e criar um resumo de saúde operacional do VNext no dashboard de desenvolvimento.
+
+
+## Validação adicional — saúde operacional visível
+
+O resultado de `validacao_vnext.json` agora é consumido por:
+- aba `23 Agente VNext (dev)` no Streamlit;
+- endpoint `GET /health` da API local.
+
+### Comportamento esperado
+- `PASS`: interface mostra gate aprovado e `blocking=false`;
+- `ATTENTION`: interface mostra aviso e mantém bloqueio para ativação permanente;
+- `FAIL`: interface mostra erro e mantém bloqueio;
+- sem relatório: `not_validated` e bloqueio;
+- JSON inválido: `invalid_report` e bloqueio.
+
+### Regras obrigatórias
+1. Saúde operacional deve ser lida de `validacao_vnext.json`; não recalcular checks na UI/API.
+2. UI/API nunca devem promover `ATTENTION` ou `FAIL` como estado saudável.
+3. O endpoint `/health` deve retornar `status=degraded` quando o gate não estiver em PASS.
+4. A aba deve mostrar primeiro falhas, depois atenções, depois passes.
+5. A existência do contexto do agente não substitui o gate de validação.
+6. Não ativar a feature flag em produção se `blocking=true`.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_reconciliation.py tests/test_vnext_validation_health.py tests/test_vnext_agent_http.py
+python pipelines/vnext_validate.py --outdir saida_meningites_v17 --strict
+```
+
+### Próximo alvo no Cursor
+Quando houver PASS real, salvar uma evidência do gate (JSON/Markdown) junto do PR e executar a validação visual da aba VNext. Só depois disso avaliar a incorporação do validador ao pipeline principal.
