@@ -4,6 +4,7 @@ A lógica permanece em query_agent(); FastAPI é somente um adapter de transport
 """
 from __future__ import annotations
 
+import hmac
 from pathlib import Path
 from typing import Any
 
@@ -13,6 +14,32 @@ from meningites.validation.health import load_validation_health
 
 MAX_QUESTION_CHARS = 4000
 MAX_SCOPE_CHARS = 200
+_LOOPBACK_HOSTS = {"127.0.0.1", "localhost", "::1"}
+
+
+def is_loopback_host(host: str) -> bool:
+    return str(host).strip().casefold() in _LOOPBACK_HOSTS
+
+
+def validate_api_bind(host: str, api_token: str | None) -> None:
+    if is_loopback_host(host):
+        return
+    if not str(api_token or "").strip():
+        raise ValueError(
+            "Bind externo exige MENINGITES_API_TOKEN configurado. "
+            "Use localhost enquanto autenticação/TLS institucional não estiverem configurados."
+        )
+
+
+def bearer_authorized(authorization: str | None, api_token: str | None) -> bool:
+    token = str(api_token or "").strip()
+    if not token:
+        return True
+    prefix = "Bearer "
+    if not isinstance(authorization, str) or not authorization.startswith(prefix):
+        return False
+    supplied = authorization[len(prefix):].strip()
+    return bool(supplied) and hmac.compare_digest(supplied, token)
 
 
 def handle_query_payload(payload: dict[str, Any], *, outdir: str | Path) -> dict[str, Any]:
@@ -75,9 +102,9 @@ def handle_query_payload(payload: dict[str, Any], *, outdir: str | Path) -> dict
     return {"ok": True, "status_code": 200, "data": result}
 
 
-def create_app(*, outdir: str | Path = "saida_meningites_v17"):
+def create_app(*, outdir: str | Path = "saida_meningites_v17", api_token: str | None = None):
     try:
-        from fastapi import FastAPI, HTTPException
+        from fastapi import FastAPI, Header, HTTPException
     except ImportError as exc:
         raise RuntimeError(
             "FastAPI não instalado. Instale requirements-api.txt para executar a camada HTTP."
@@ -106,7 +133,9 @@ def create_app(*, outdir: str | Path = "saida_meningites_v17"):
         }
 
     @app.post("/v1/query")
-    def query(payload: dict[str, Any]):
+    def query(payload: dict[str, Any], authorization: str | None = Header(default=None)):
+        if not bearer_authorized(authorization, api_token):
+            raise HTTPException(status_code=401, detail="Bearer token ausente ou inválido.")
         result = handle_query_payload(payload, outdir=outdir)
         if not result["ok"]:
             raise HTTPException(status_code=result["status_code"], detail=result["error"])
