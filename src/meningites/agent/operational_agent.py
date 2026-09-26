@@ -127,6 +127,16 @@ class EpidemiologicalAgent:
 
     def data_gaps(self) -> AgentResponse:
         gaps = []
+        quality = self.context.get("data_quality") or {}
+        for row in quality.get("artifact_status_rows") or []:
+            status = str(row.get("status", ""))
+            if status in {"erro_leitura", "sem_chave_territorial", "vazio", "ausente"}:
+                gaps.append({
+                    "arquivo": row.get("arquivo"),
+                    "metrica": row.get("metrica"),
+                    "lacuna": "artefato_" + status,
+                    "detalhe": row.get("detalhe"),
+                })
         for mun in self.context.get("municipalities", []):
             facts = mun.get("facts") or {}
             if not facts.get("fontes"):
@@ -146,7 +156,10 @@ class EpidemiologicalAgent:
             scope="Mato Grosso",
             text=f"Foram identificadas {len(gaps)} lacunas explícitas no contexto publicado.",
             evidence=tuple(gaps),
-            caveats=("A lista cobre apenas lacunas observáveis no contrato VNext atual.",),
+            caveats=(
+                "A lista cobre apenas lacunas observáveis no contrato VNext atual.",
+                "Divergências de artefatos devem ser resolvidas antes de interpretar ausência como ausência de evento.",
+            ),
         )
 
     def _default_caveats(self) -> tuple[str, ...]:
