@@ -52,3 +52,37 @@ Se `saida_meningites_v17` contiver os artefatos reais:
 
 ### Próximo alvo após validação
 Criar um comando/entrypoint VNext que gere `situacao_municipal_vnext.csv` e `sinais_municipais_vnext.csv` a partir dos artefatos reais, preservando procedência.
+
+
+## Incremento atual — publicação municipal VNext
+
+O entrypoint já existe. No Cursor, após atualizar a branch, execute:
+
+```powershell
+$env:PYTHONPATH="src"
+python pipelines/vnext_municipal.py --outdir saida_meningites_v17
+```
+
+Verifique obrigatoriamente:
+- `saida_meningites_v17/situacao_municipal_vnext.csv`;
+- `saida_meningites_v17/sinais_municipais_vnext.csv`;
+- `saida_meningites_v17/divergencias_vnext.csv`;
+- `saida_meningites_v17/procedencia_situacao_vnext.json`.
+
+### Regra de validação local
+
+1. Abra `divergencias_vnext.csv` primeiro.
+2. Para qualquer `sem_chave_territorial`, identifique no módulo de origem se a chave municipal pode ser exportada legitimamente; não faça join por nome apenas para eliminar o alerta.
+3. Compare manualmente pelo menos 5 municípios, incluindo Cuiabá e Várzea Grande quando existirem nas fontes, entre os arquivos legados e `situacao_municipal_vnext.csv`.
+4. Confira que cada sinal possui `rule_id`, valor, limiar e fonte.
+5. Não altere os arquivos legados durante essa validação.
+6. Se houver divergência, corrija adapter/contrato; não ajuste a saída manualmente.
+
+### Testes adicionais
+
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_publisher.py
+```
+
+Somente após a reconciliação local, propor inclusão do entrypoint no pipeline principal.
