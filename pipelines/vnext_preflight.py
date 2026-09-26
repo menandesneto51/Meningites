@@ -21,6 +21,7 @@ from pathlib import Path
 from meningites.operational_queue.publisher import publish_municipal_vnext
 from meningites.validation.reconcile import publish_validation_report
 from meningites.validation.evidence import publish_validation_evidence
+from meningites.domain.schema_registry import require_schema
 
 
 def _run_module12(root: Path) -> dict:
@@ -64,6 +65,11 @@ def run_preflight(
 
     validation_paths = publish_validation_report(out)
     validation = json.loads(validation_paths["validation_json"].read_text(encoding="utf-8"))
+    try:
+        require_schema(validation, "validation")
+    except ValueError as exc:
+        steps.append({"step": "validation", "status": "fail", "detail": str(exc)})
+        return _finish("fail", steps, out, "Schema de validação incompatível; preflight interrompido.")
     gate = str(validation.get("overall_status", "fail")).lower()
     steps.append({
         "step": "validation",
