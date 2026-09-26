@@ -69,4 +69,5 @@ jobs:
           tests/test_vnext_reconciliation.py
           tests/test_vnext_validation_health.py
           tests/test_vnext_validation_evidence.py
+          tests/test_vnext_preflight.py
           tests/test_vnext_publisher.py
