@@ -26,6 +26,7 @@ from meningites.operational_queue.executive import build_executive_views
 from meningites.operational_queue.agent_context import build_agent_context
 from meningites.operational_queue.rules_catalog import PRODUCTION_RULES
 from meningites.agent.publisher import publish_agent_outputs
+from meningites.agent.rag_publisher import publish_rag_packages
 
 
 def inspect_artifacts(outdir: str | Path, specs: Iterable[ArtifactSpec] = DEFAULT_ARTIFACTS) -> pd.DataFrame:
@@ -151,6 +152,9 @@ def publish_municipal_vnext(
     )
     agent_outputs = publish_agent_outputs(root, paths["agent_context"])
     paths.update(agent_outputs)
+    kb_path = root / "assistente_kb_docs_ms_v27.csv"
+    rag_outputs = publish_rag_packages(root, paths["agent_context"], kb_path)
+    paths.update(rag_outputs)
 
     provenance = {
         "schema_version": "vnext-1",
