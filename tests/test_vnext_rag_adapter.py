@@ -88,3 +88,38 @@ def test_rag_publisher_generates_packages_without_calling_llm(tmp_path: Path):
     assert all(path.exists() for path in paths.values())
     payload = json.loads(paths["rag_packages"].read_text(encoding="utf-8"))
     assert "estadual" in payload
+
+
+def test_retriever_fails_closed_when_vigency_is_missing(tmp_path: Path):
+    kb = tmp_path / "kb_missing_vigency.csv"
+    pd.DataFrame([{
+        "id": "sem-vigencia",
+        "titulo": "Documento sem vigência",
+        "fonte": "Ministério da Saúde",
+        "texto": "Orientações para quimioprofilaxia.",
+        "prioridade": 100,
+        "arquivo": "docs/sem_vigencia.md",
+        "tags": "quimioprofilaxia",
+        "tema": "norma",
+    }]).to_csv(kb, index=False, encoding="utf-8-sig")
+
+    hits = NormativeRetriever.from_csv(kb).retrieve("quimioprofilaxia")
+    assert hits == []
+
+
+def test_grounded_request_includes_data_quality_context(tmp_path: Path):
+    kb = tmp_path / "kb.csv"
+    _kb(kb)
+    ctx = _context()
+    ctx["data_quality"] = {
+        "blocking_divergences_n": 1,
+        "missing_artifacts_n": 2,
+        "has_blocking_divergences": True,
+        "artifact_status_rows": [{"arquivo": "x.csv", "status": "sem_chave_territorial"}],
+    }
+    package = build_grounded_request(
+        "quimioprofilaxia",
+        EpidemiologicalAgent(ctx),
+        NormativeRetriever.from_csv(kb),
+    )
+    assert package["canonical_facts"]["data_quality"]["has_blocking_divergences"] is True
