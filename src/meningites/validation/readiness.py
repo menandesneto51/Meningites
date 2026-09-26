@@ -103,6 +103,24 @@ def build_readiness(outdir: str | Path) -> dict[str, Any]:
     else:
         checks.append({"id": "visual_review", "ok": False, "detail": "REVISAO_VISUAL_VNEXT.json ausente"})
 
+    commit_values = []
+    for payload in (
+        locals().get("preflight"),
+        locals().get("evidence"),
+        locals().get("visual"),
+    ):
+        if isinstance(payload, dict):
+            commit_values.append(str(payload.get("commit_sha", "") or "").strip())
+        else:
+            commit_values.append("")
+
+    snapshot_ok = all(commit_values) and len(set(commit_values)) == 1
+    checks.append({
+        "id": "snapshot_consistency",
+        "ok": snapshot_ok,
+        "detail": "commits=" + " | ".join(value or "<ausente>" for value in commit_values),
+    })
+
     ready = all(item["ok"] for item in checks)
     return {
         "schema_version": "vnext-readiness-1",
