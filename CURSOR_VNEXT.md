@@ -1,0 +1,54 @@
+# Cursor — Meningites VNext
+
+## Regra permanente
+
+Toda alteração feita localmente no Cursor deve respeitar a arquitetura e os gates documentados em:
+- `docs/vnext/ARCHITECTURE.md`
+- `docs/vnext/MODULE_MIGRATION.md`
+- `docs/vnext/MUNICIPAL_ENGINE.md`
+- `agents/README.md`
+
+Não mover, apagar ou renomear scripts 00–35 enquanto `pipeline_meningites_v23_indicadores_ms.py` depender deles.
+
+## Prompt operacional — próxima execução no Cursor
+
+Você está trabalhando no repositório Meningites, branch `vnext/architecture-agents`.
+
+Objetivo: validar localmente o Meningites VNext e preparar a integração do Motor de Situação Epidemiológica Municipal com os artefatos reais em `saida_meningites_v17`.
+
+### Antes de editar
+1. Leia os quatro documentos VNext listados acima.
+2. Leia `src/meningites/domain/contracts.py`.
+3. Leia `src/meningites/operational_queue/municipal_engine.py`, `legacy_aggregator.py` e `rules_catalog.py`.
+4. Leia os módulos 20, 26, 32, 33, 34 e 35.
+5. Não invente colunas, limiares, regras clínicas ou fontes.
+
+### Validação
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_domain_contracts.py tests/test_vnext_municipal_engine.py tests/test_vnext_legacy_aggregator.py
+```
+
+Depois execute os testes de contrato já existentes do projeto.
+
+### Integração local
+Se `saida_meningites_v17` contiver os artefatos reais:
+- confira o schema antes de mapear;
+- registre colunas ausentes como erro de contrato, não como zero;
+- nunca inferira município por nome quando houver ausência da chave territorial;
+- não exporte PII;
+- compare as contagens VNext com os arquivos-fonte;
+- gere relatório de divergências antes de qualquer substituição do legado.
+
+### Definition of Done
+- todos os testes passam;
+- nenhuma regressão nos contratos V28–V35;
+- contagens municipais reconciliadas com os artefatos-fonte;
+- sinais exibem fonte e regra;
+- ausência de fonte não vira zero silenciosamente;
+- nenhuma regra epidemiológica nova sem validação/fonte;
+- alterações documentadas no PR com bloco Agent Review.
+
+### Próximo alvo após validação
+Criar um comando/entrypoint VNext que gere `situacao_municipal_vnext.csv` e `sinais_municipais_vnext.csv` a partir dos artefatos reais, preservando procedência.
