@@ -1,0 +1,48 @@
+import json
+from pathlib import Path
+
+from meningites.validation.release_readiness import build_release_readiness
+
+
+def _write(root: Path, name: str, payload: dict):
+    (root / name).write_text(json.dumps(payload), encoding="utf-8")
+
+
+def test_release_readiness_blocked_without_local_evidence(tmp_path: Path):
+    report = build_release_readiness(
+        tmp_path,
+        ci_status="success",
+        ci_run="95",
+        commit_sha="abc",
+    )
+    assert report["ready_for_merge_review"] is False
+    assert any(x["id"] == "validation" for x in report["blockers"])
+
+
+def test_release_readiness_ready_when_all_requirements_exist(tmp_path: Path):
+    _write(tmp_path, "validacao_vnext.json", {"overall_status": "pass"})
+    _write(tmp_path, "preflight_vnext.json", {"status": "pass"})
+    _write(tmp_path, "evidencia_validacao_vnext.json", {"validation_status": "pass", "artifact_count": 6})
+    _write(tmp_path, "REVISAO_VISUAL_VNEXT.json", {"approved": True, "reviewer": "Menandes"})
+    _write(tmp_path, "prontidao_vnext.json", {"ready": True, "status": "ready"})
+
+    report = build_release_readiness(
+        tmp_path,
+        ci_status="success",
+        ci_run="95",
+        commit_sha="abc",
+    )
+    assert report["ready_for_merge_review"] is True
+    assert report["status"] == "ready_for_merge_review"
+
+
+def test_release_readiness_stays_blocked_if_ci_fails(tmp_path: Path):
+    _write(tmp_path, "validacao_vnext.json", {"overall_status": "pass"})
+    _write(tmp_path, "preflight_vnext.json", {"status": "pass"})
+    _write(tmp_path, "evidencia_validacao_vnext.json", {"validation_status": "pass", "artifact_count": 6})
+    _write(tmp_path, "REVISAO_VISUAL_VNEXT.json", {"approved": True, "reviewer": "Menandes"})
+    _write(tmp_path, "prontidao_vnext.json", {"ready": True, "status": "ready"})
+
+    report = build_release_readiness(tmp_path, ci_status="failure")
+    assert report["ready_for_merge_review"] is False
+    assert any(x["id"] == "ci" for x in report["blockers"])
