@@ -61,3 +61,32 @@ def test_http_handler_returns_query_without_fastapi_dependency(tmp_path: Path):
     assert result["ok"] is True
     assert result["data"]["mode"] == "state"
     assert result["data"]["human_validation_required"] is True
+
+
+def test_http_handler_rejects_string_false_for_use_llm(tmp_path: Path):
+    result = handle_query_payload(
+        {"question": "Situação estadual", "use_llm": "false"},
+        outdir=tmp_path,
+    )
+    assert result["ok"] is False
+    assert result["status_code"] == 400
+    assert "booleano" in result["error"]
+
+
+def test_http_handler_rejects_non_text_question(tmp_path: Path):
+    result = handle_query_payload(
+        {"question": 123},
+        outdir=tmp_path,
+    )
+    assert result["ok"] is False
+    assert result["status_code"] == 400
+
+
+def test_http_handler_rejects_question_above_limit(tmp_path: Path):
+    result = handle_query_payload(
+        {"question": "x" * 4001},
+        outdir=tmp_path,
+    )
+    assert result["ok"] is False
+    assert result["status_code"] == 400
+    assert "4000" in result["error"]
