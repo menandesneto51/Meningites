@@ -19,6 +19,7 @@ def build_agent_context(
     indicators: pd.DataFrame,
     regional: pd.DataFrame,
     state: pd.DataFrame,
+    divergences: pd.DataFrame | None = None,
     *,
     generated_at: datetime,
 ) -> Path:
@@ -41,6 +42,19 @@ def build_agent_context(
             "indicators": ind.to_dict(orient="records"),
         })
 
+    divergence_rows = []
+    if divergences is not None and not divergences.empty:
+        divergence_rows = divergences.to_dict(orient="records")
+    blocking_statuses = {"erro_leitura", "sem_chave_territorial", "vazio"}
+    blocking_rows = [
+        row for row in divergence_rows
+        if str(row.get("status", "")) in blocking_statuses
+    ]
+    absent_rows = [
+        row for row in divergence_rows
+        if str(row.get("status", "")) == "ausente"
+    ]
+
     payload = {
         "schema_version": "agent-context-vnext-1",
         "generated_at": generated_at.isoformat(),
@@ -54,6 +68,12 @@ def build_agent_context(
         },
         "state_summary": state.to_dict(orient="records"),
         "regional_summary": regional.to_dict(orient="records"),
+        "data_quality": {
+            "artifact_status_rows": divergence_rows,
+            "blocking_divergences_n": len(blocking_rows),
+            "missing_artifacts_n": len(absent_rows),
+            "has_blocking_divergences": bool(blocking_rows),
+        },
         "municipalities": municipalities,
         "allowed_tasks": [
             "resumir situação epidemiológica e operacional",
