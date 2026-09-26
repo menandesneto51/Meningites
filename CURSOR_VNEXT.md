@@ -749,3 +749,33 @@ Execute:
 $env:PYTHONPATH="src"
 python -m pytest -q tests/test_vnext_agent_http.py tests/test_vnext_agent_query.py
 ```
+
+
+## Segurança da API — bind externo e Bearer token
+
+A API continua segura por padrão em localhost.
+
+### Regras
+- `127.0.0.1`, `localhost` e `::1` podem iniciar sem token;
+- qualquer bind externo, inclusive `0.0.0.0`, exige `MENINGITES_API_TOKEN`;
+- quando o token estiver configurado, `POST /v1/query` exige `Authorization: Bearer <token>`;
+- comparação de token usa `hmac.compare_digest`;
+- `/health` permanece disponível para observabilidade local;
+- bind externo ainda não substitui TLS/autorização institucional para produção.
+
+### Exemplo local
+```powershell
+$env:PYTHONPATH="src"
+python pipelines/vnext_agent_api.py --outdir saida_meningites_v17 --host 127.0.0.1 --port 8765
+```
+
+### Exemplo de laboratório com bind externo protegido
+```powershell
+$env:MENINGITES_API_TOKEN="<segredo-forte-local>"
+python pipelines/vnext_agent_api.py --outdir saida_meningites_v17 --host 0.0.0.0 --port 8765
+```
+
+Execute:
+```powershell
+python -m pytest -q tests/test_vnext_agent_http.py
+```
