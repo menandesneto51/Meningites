@@ -16,8 +16,10 @@ jobs:
           python-version: "3.12"
       - name: Install deps
         run: pip install pandas numpy pytest
-      - name: Rebuild anonymized demo package
-        run: python preparar_pacote_cloud_demo.py
+      - name: Sanitize committed demo package
+        run: >
+          python -c "from preparar_pacote_cloud_demo import sanitizar_demo_existente;
+          print(sanitizar_demo_existente())"
       - name: Contract tests (demo_cloud, V28–V35)
         run: >
           python -m unittest -v
