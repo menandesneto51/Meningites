@@ -46,6 +46,24 @@ def build_readiness(outdir: str | Path) -> dict[str, Any]:
     else:
         checks.append({"id": "preflight_pass", "ok": False, "detail": "preflight_vnext.json ausente"})
 
+    context_path = root / "agente_epidemiologico_contexto_vnext.json"
+    if context_path.exists():
+        context = json.loads(context_path.read_text(encoding="utf-8"))
+        quality = context.get("data_quality") or {}
+        blocking_n = int(quality.get("blocking_divergences_n", 0) or 0)
+        has_blocking = bool(quality.get("has_blocking_divergences")) or blocking_n > 0
+        checks.append({
+            "id": "data_quality",
+            "ok": not has_blocking,
+            "detail": "blocking_divergences_n=" + str(blocking_n),
+        })
+    else:
+        checks.append({
+            "id": "data_quality",
+            "ok": False,
+            "detail": "agente_epidemiologico_contexto_vnext.json ausente",
+        })
+
     visual_path = root / "REVISAO_VISUAL_VNEXT.json"
     if visual_path.exists():
         visual = json.loads(visual_path.read_text(encoding="utf-8"))
