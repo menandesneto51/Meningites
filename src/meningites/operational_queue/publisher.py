@@ -149,7 +149,14 @@ def publish_municipal_vnext(
     paths["cards_index"] = cards_index
     paths["cards_manifest"] = cards_manifest
     paths["agent_context"] = build_agent_context(
-        root, situation, signals, indicators, executive_regional, executive_state, generated_at=now
+        root,
+        situation,
+        signals,
+        indicators,
+        executive_regional,
+        executive_state,
+        divergences,
+        generated_at=now,
     )
     agent_outputs = publish_agent_outputs(root, paths["agent_context"])
     paths.update(agent_outputs)
