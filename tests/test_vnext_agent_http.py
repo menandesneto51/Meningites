@@ -1,7 +1,12 @@
 import json
 from pathlib import Path
 
-from meningites.agent.http_api import handle_query_payload
+from meningites.agent.http_api import (
+    bearer_authorized,
+    handle_query_payload,
+    is_loopback_host,
+    validate_api_bind,
+)
 
 
 def _context(path: Path):
@@ -90,3 +95,28 @@ def test_http_handler_rejects_question_above_limit(tmp_path: Path):
     assert result["ok"] is False
     assert result["status_code"] == 400
     assert "4000" in result["error"]
+
+
+def test_api_bind_allows_loopback_without_token():
+    validate_api_bind("127.0.0.1", "")
+    validate_api_bind("localhost", None)
+    assert is_loopback_host("::1") is True
+
+
+def test_api_bind_rejects_external_host_without_token():
+    try:
+        validate_api_bind("0.0.0.0", "")
+        assert False, "deveria bloquear bind externo sem token"
+    except ValueError as exc:
+        assert "MENINGITES_API_TOKEN" in str(exc)
+
+
+def test_api_bind_allows_external_host_with_token():
+    validate_api_bind("0.0.0.0", "segredo")
+
+
+def test_bearer_authorization_is_strict():
+    assert bearer_authorized(None, None) is True
+    assert bearer_authorized("Bearer segredo", "segredo") is True
+    assert bearer_authorized("Bearer errado", "segredo") is False
+    assert bearer_authorized("segredo", "segredo") is False
