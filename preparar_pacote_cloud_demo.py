@@ -57,6 +57,15 @@ COLS_IDENTIFICADOR = {
     "NumeroDO", "numero_do", "NumeroDN", "numero_dn",
 }
 
+# Defesa adicional para novos módulos: qualquer coluna com semântica explícita
+# de identificador de caso deve ser pseudonimizada mesmo que ainda não tenha
+# sido adicionada à lista nominal acima.
+IDENTIFICADOR_POR_PADRAO = re.compile(
+    r"^(numero_?notifica\w*|nu_?notific\w*|id_?caso|caso_?id|_?sid|"
+    r"numero_?d[on]|prontuario|chave_caso)$",
+    re.I,
+)
+
 # Substrings de campo nominal. Deliberadamente específicas: a versão anterior
 # usava "sus", que removia ContatoComCasoSuspeitoOuConfirmadoDeMeningite da base.
 SUBSTR_NOMINAIS = (
@@ -143,7 +152,8 @@ def is_pii(col: str) -> bool:
 
 def is_identificador(col: str) -> bool:
     """True quando a coluna deve ser PSEUDONIMIZADA (e não removida)."""
-    return str(col) in COLS_IDENTIFICADOR
+    nome = str(col)
+    return nome in COLS_IDENTIFICADOR or bool(IDENTIFICADOR_POR_PADRAO.search(nome))
 
 
 def e_coluna_de_texto(serie: pd.Series) -> bool:
