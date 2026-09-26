@@ -5,9 +5,17 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: contratos-ops-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  test:
+  legacy-contracts:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,7 +39,34 @@ jobs:
           tests.test_contratos_v33
           tests.test_contratos_v34
           tests.test_contratos_v35
-      - name: VNext domain and municipal engine tests
+
+  vnext-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install pandas numpy pytest
+      - name: VNext contracts and agent tests
         env:
           PYTHONPATH: src
-        run: pytest -q tests/test_vnext_domain_contracts.py tests/test_vnext_municipal_engine.py tests/test_vnext_legacy_aggregator.py tests/test_vnext_descriptive_aggregator.py tests/test_vnext_municipal_cards.py tests/test_vnext_executive_agent.py tests/test_vnext_operational_agent.py tests/test_vnext_rag_adapter.py tests/test_vnext_llm_guardrails.py tests/test_vnext_agent_query.py tests/test_vnext_agent_http.py tests/test_vnext_feature_flags.py tests/test_vnext_reconciliation.py tests/test_vnext_validation_health.py tests/test_vnext_validation_evidence.py tests/test_vnext_publisher.py
+        run: >
+          pytest -q
+          tests/test_vnext_domain_contracts.py
+          tests/test_vnext_municipal_engine.py
+          tests/test_vnext_legacy_aggregator.py
+          tests/test_vnext_descriptive_aggregator.py
+          tests/test_vnext_municipal_cards.py
+          tests/test_vnext_executive_agent.py
+          tests/test_vnext_operational_agent.py
+          tests/test_vnext_rag_adapter.py
+          tests/test_vnext_llm_guardrails.py
+          tests/test_vnext_agent_query.py
+          tests/test_vnext_agent_http.py
+          tests/test_vnext_feature_flags.py
+          tests/test_vnext_reconciliation.py
+          tests/test_vnext_validation_health.py
+          tests/test_vnext_validation_evidence.py
+          tests/test_vnext_publisher.py
