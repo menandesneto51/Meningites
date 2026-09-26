@@ -104,3 +104,29 @@ Execute ainda:
 $env:PYTHONPATH="src"
 python -m pytest -q tests/test_vnext_descriptive_aggregator.py tests/test_vnext_publisher.py
 ```
+
+
+## Validação adicional — indicadores municipais e cards VNext
+
+Após executar o publisher, confirme a criação de:
+- `indicadores_municipais_vnext.csv`;
+- `cards_municipais_vnext_index.csv`;
+- `cards_municipais_vnext_manifest.json`;
+- diretório `cards_municipais_vnext/` com um Markdown por município presente na situação consolidada.
+
+### Regras obrigatórias
+1. O denominador municipal deve vir do artefato do módulo 12, nunca ser inventado.
+2. Quando o numerador não estiver exportado pelo módulo 12 municipal, ele deve permanecer vazio com `numerador_status=nao_exportado_pelo_modulo_12_municipal`.
+3. Não reconstruir numerador por `percentual × denominador`.
+4. A referência e a vigência devem ser herdadas de `indicadores_ms_operacionais_base_v23.csv` ou, na ausência, do artefato canônico equivalente.
+5. Conferir manualmente ao menos 5 cards contra os CSV-fonte.
+6. O card deve diferenciar claramente: fila/sinal acionável, contexto V25, doses CIPV e indicador operacional.
+7. Doses CIPV nunca devem aparecer como cobertura populacional sem denominador adequado.
+8. Antes de incorporar card em painel/PDF, corrigir qualquer divergência de chave municipal.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_municipal_cards.py tests/test_vnext_publisher.py
+python pipelines/vnext_municipal.py --outdir saida_meningites_v17
+```
