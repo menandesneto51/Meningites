@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from meningites.domain.schema_registry import require_schema
+
 
 def build_readiness(outdir: str | Path) -> dict[str, Any]:
     root = Path(outdir)
@@ -13,7 +15,12 @@ def build_readiness(outdir: str | Path) -> dict[str, Any]:
     validation_path = root / "validacao_vnext.json"
     if validation_path.exists():
         validation = json.loads(validation_path.read_text(encoding="utf-8"))
-        ok = str(validation.get("overall_status", "")).lower() == "pass"
+        try:
+            require_schema(validation, "validation")
+            schema_ok = True
+        except ValueError:
+            schema_ok = False
+        ok = schema_ok and str(validation.get("overall_status", "")).lower() == "pass"
         checks.append({
             "id": "validation_pass",
             "ok": ok,
@@ -25,7 +32,12 @@ def build_readiness(outdir: str | Path) -> dict[str, Any]:
     evidence_path = root / "evidencia_validacao_vnext.json"
     if evidence_path.exists():
         evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
-        ok = str(evidence.get("validation_status", "")).lower() == "pass" and int(evidence.get("artifact_count", 0)) > 0
+        try:
+            require_schema(evidence, "validation_evidence")
+            schema_ok = True
+        except ValueError:
+            schema_ok = False
+        ok = schema_ok and str(evidence.get("validation_status", "")).lower() == "pass" and int(evidence.get("artifact_count", 0)) > 0
         checks.append({
             "id": "evidence_captured",
             "ok": ok,
@@ -37,7 +49,12 @@ def build_readiness(outdir: str | Path) -> dict[str, Any]:
     preflight_path = root / "preflight_vnext.json"
     if preflight_path.exists():
         preflight = json.loads(preflight_path.read_text(encoding="utf-8"))
-        ok = str(preflight.get("status", "")).lower() == "pass"
+        try:
+            require_schema(preflight, "preflight")
+            schema_ok = True
+        except ValueError:
+            schema_ok = False
+        ok = schema_ok and str(preflight.get("status", "")).lower() == "pass"
         checks.append({
             "id": "preflight_pass",
             "ok": ok,
@@ -49,12 +66,17 @@ def build_readiness(outdir: str | Path) -> dict[str, Any]:
     context_path = root / "agente_epidemiologico_contexto_vnext.json"
     if context_path.exists():
         context = json.loads(context_path.read_text(encoding="utf-8"))
+        try:
+            require_schema(context, "agent_context")
+            context_schema_ok = True
+        except ValueError:
+            context_schema_ok = False
         quality = context.get("data_quality") or {}
         blocking_n = int(quality.get("blocking_divergences_n", 0) or 0)
         has_blocking = bool(quality.get("has_blocking_divergences")) or blocking_n > 0
         checks.append({
             "id": "data_quality",
-            "ok": not has_blocking,
+            "ok": context_schema_ok and not has_blocking,
             "detail": "blocking_divergences_n=" + str(blocking_n),
         })
     else:
@@ -67,7 +89,12 @@ def build_readiness(outdir: str | Path) -> dict[str, Any]:
     visual_path = root / "REVISAO_VISUAL_VNEXT.json"
     if visual_path.exists():
         visual = json.loads(visual_path.read_text(encoding="utf-8"))
-        ok = bool(visual.get("approved")) and bool(visual.get("reviewer"))
+        try:
+            require_schema(visual, "visual_review")
+            schema_ok = True
+        except ValueError:
+            schema_ok = False
+        ok = schema_ok and bool(visual.get("approved")) and bool(visual.get("reviewer"))
         checks.append({
             "id": "visual_review",
             "ok": ok,
