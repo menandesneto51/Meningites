@@ -283,3 +283,66 @@ python -m pytest -q tests/test_vnext_agent_query.py tests/test_vnext_llm_guardra
 
 ### Próximo alvo no Cursor
 Após validar a CLI com dados reais, criar uma camada HTTP fina sobre `query_agent()` apenas se houver necessidade operacional, mantendo a função Python como contrato principal para evitar acoplamento de framework.
+
+
+## Validação adicional — chave territorial IBGE-6 e API HTTP opcional
+
+### Chave territorial
+O contrato VNext foi alinhado ao legado institucional: a chave municipal interna é **IBGE-6**.
+
+Regras:
+1. Entradas IBGE-7 são aceitas e normalizadas para os seis primeiros dígitos.
+2. Fontes com `510340` e `5103403` devem convergir para o mesmo município.
+3. Nunca inferir código por nome.
+4. Conferir `docs/vnext/TERRITORY_KEY.md`.
+5. Validar especialmente Cuiabá e Várzea Grande contra os arquivos reais, verificando se não há duplicatas 6×7.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_legacy_aggregator.py tests/test_vnext_agent_query.py
+```
+
+### API HTTP opcional
+A API é apenas um adapter de transporte sobre `query_agent()`.
+
+Instalação opcional:
+```powershell
+pip install -r requirements-api.txt
+```
+
+Execução local:
+```powershell
+$env:PYTHONPATH="src"
+python pipelines/vnext_agent_api.py --outdir saida_meningites_v17 --host 127.0.0.1 --port 8765
+```
+
+Endpoints:
+- `GET /health`
+- `POST /v1/query`
+
+Payload de exemplo:
+```json
+{
+  "question": "Qual a situação de Cuiabá?",
+  "scope": "Cuiabá",
+  "mode": "auto",
+  "use_llm": false
+}
+```
+
+Regras obrigatórias:
+1. A API não deve conter lógica epidemiológica própria.
+2. A API não deve modificar arquivos canônicos.
+3. LLM permanece desligado por padrão.
+4. Contexto não publicado retorna indisponibilidade; não inventar resposta.
+5. Para exposição fora de localhost, exigir autenticação, TLS e revisão Security/LGPD antes de qualquer implantação institucional.
+6. Não publicar esta API diretamente na internet durante a fase atual.
+
+Execute também:
+```powershell
+python -m pytest -q tests/test_vnext_agent_http.py
+```
+
+### Próximo alvo no Cursor
+Após validar dados reais e a API local, integrar o endpoint ao painel apenas em ambiente de desenvolvimento e implementar autenticação/autorização antes de qualquer exposição em rede institucional.
