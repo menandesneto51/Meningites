@@ -86,3 +86,21 @@ python -m pytest -q tests/test_vnext_publisher.py
 ```
 
 Somente após a reconciliação local, propor inclusão do entrypoint no pipeline principal.
+
+
+## Validação adicional — módulos 26 e 34
+
+Após executar o publisher VNext, valide também:
+
+1. `score_risco_municipal_nt154_v25.csv` → colunas `v25_*` em `situacao_municipal_vnext.csv`.
+2. `cipv_doses_agregadas_v34.csv` → `cipv_ano_mais_recente` e `cipv_doses_ano_mais_recente`.
+3. Confirme que o VNext não converte automaticamente `v25_prioridade`, `v25_score_risco_nt154_v25` ou volume de doses em novos sinais.
+4. Confirme que `cipv_doses_*` é tratado como número de doses, e nunca rotulado como cobertura populacional sem denominador apropriado.
+5. Se códigos municipais 6/7 dígitos causarem duplicação territorial, registre a divergência e corrija a normalização somente após conferir o padrão real das fontes; não faça correção ad hoc por nome.
+
+Execute ainda:
+
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_descriptive_aggregator.py tests/test_vnext_publisher.py
+```
