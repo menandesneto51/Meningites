@@ -5,6 +5,8 @@ import json
 from dataclasses import dataclass
 from typing import Any
 
+from meningites.domain.schema_registry import require_schema
+
 
 @dataclass(frozen=True)
 class StructuredValidationResult:
@@ -58,7 +60,9 @@ def validate_structured_llm_response(package: dict[str, Any], response_text: str
         return StructuredValidationResult(False, ("structured_json_invalido",), None, True)
 
     issues: list[str] = []
-    if payload.get("schema_version") != "llm-response-vnext-2":
+    try:
+        require_schema(payload, "llm_response")
+    except ValueError:
         issues.append("schema_version_invalido")
 
     for key in ("facts", "interpretations", "recommendations", "limitations"):
