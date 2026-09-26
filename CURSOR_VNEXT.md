@@ -705,3 +705,28 @@ Execute:
 $env:PYTHONPATH="src"
 python -m pytest -q tests/test_vnext_readiness.py tests/test_vnext_release_readiness.py
 ```
+
+
+## Gate de segurança LLM na camada query_service
+
+`query_agent()` agora aplica o mesmo princípio fail-closed mesmo quando chamado diretamente por Python/CLI.
+
+### Comportamento
+- `data_quality` ausente → LLM bloqueado;
+- `has_blocking_divergences=true` → LLM bloqueado;
+- `blocking_divergences_n > 0` → LLM bloqueado;
+- resposta determinística e pacote RAG continuam disponíveis para diagnóstico;
+- LLM só executa quando a qualidade de dados está explicitamente não bloqueante.
+
+O bloco `llm` passa a informar:
+- `requested`;
+- `executed`;
+- `blocked`;
+- `block_reason`;
+- `safety`.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_agent_query.py tests/test_vnext_agent_http.py
+```
