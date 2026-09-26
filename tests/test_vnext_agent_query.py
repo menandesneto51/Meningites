@@ -118,3 +118,24 @@ def test_query_can_be_saved_without_llm(tmp_path: Path):
     assert path.exists()
     saved = json.loads(path.read_text(encoding="utf-8"))
     assert saved["human_validation_required"] is True
+
+
+def test_query_accepts_ibge7_for_ibge6_context(tmp_path: Path):
+    ctx = tmp_path / "ctx.json"
+    kb = tmp_path / "kb.csv"
+    _write_context(ctx)
+    _write_kb(kb)
+
+    payload = json.loads(ctx.read_text(encoding="utf-8"))
+    payload["municipalities"][0]["codigo_municipio"] = "510340"
+    ctx.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+    result = query_agent(
+        context_path=ctx,
+        kb_path=kb,
+        question="Qual a situação?",
+        scope="5103403",
+    )
+
+    assert result["mode"] == "municipality"
+    assert result["deterministic"]["scope"] == "Cuiabá"
