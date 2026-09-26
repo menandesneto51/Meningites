@@ -13,6 +13,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from meningites_v17_common import *
 import interpretacoes_painel_v26 as interp
+from meningites.feature_flags import enabled as feature_enabled
 
 # Identidade visual GOV-MT / SES-MT — azul oficial #1B3281 (Pantone 2758C)
 SES_AZUL = {
@@ -4395,14 +4396,18 @@ def main():
     if case_sel and "classificacao_caso_padronizada_v17" in df.columns:
         df = df[df["classificacao_caso_padronizada_v17"].astype(str).isin(case_sel)]
 
-    tabs = st.tabs([
+    tab_labels = [
         "01 Executivo", "02 Indicadores MS", "03 Alertas CIEVS", "04 Painel Epidemiológico",
         "05 Assistente IA", "06 Mapas", "07 Estatística/OR", "08 Surtos", "09 Sazonalidade/Canal",
         "10 Projeções", "11 Geoespacial", "12 Laboratório", "13 Vacina",
         "14 Comorbidades", "15 Qualidade", "16 Relatório/Base", "17 Clima×casos",
         "18 Fila do dia", "19 Supervisão regional", "20 Contatos/Quimio",
         "21 Linha do tempo", "22 Procedência",
-    ])
+    ]
+    vnext_agent_ui = feature_enabled("MENINGITES_VNEXT_AGENT_UI", default=False)
+    if vnext_agent_ui:
+        tab_labels.append("23 Agente VNext (dev)")
+    tabs = st.tabs(tab_labels)
 
     with tabs[0]:
         gest = read_any(OUT / "indicadores_gestao_semana_v24.csv")
@@ -4790,6 +4795,14 @@ def main():
 
     with tabs[21]:
         procedencia_dados_section()
+
+    if vnext_agent_ui:
+        with tabs[22]:
+            try:
+                from meningites.agent.streamlit_panel import render_agent_panel
+                render_agent_panel(st, OUT)
+            except Exception as exc:
+                st.error(f"Componente VNext indisponível: {type(exc).__name__}: {exc}")
 
 
 if __name__ == "__main__":
