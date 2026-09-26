@@ -152,11 +152,16 @@ def build_grounded_request(
             for h in hits
         ],
         "response_contract": {
+            "schema_version": "llm-response-vnext-2",
+            "format": "strict_json",
             "preserve_canonical_facts": True,
             "cite_normative_source_when_used": True,
             "state_when_normative_evidence_is_insufficient": True,
             "separate_fact_interpretation_recommendation": True,
             "human_validation_required": True,
+            "facts_require_fact_refs": True,
+            "interpretations_require_fact_refs": True,
+            "recommendations_require_normative_evidence_ids_when_available": True,
         },
     }
     return package
@@ -168,7 +173,12 @@ def render_prompt(package: dict[str, Any]) -> str:
         "Use somente os fatos canônicos e as evidências normativas fornecidas abaixo.\n"
         "Não recalcule indicadores, não altere prioridades, não invente regras clínicas, "
         "não transforme ausência de dado em zero e não trate doses como cobertura sem denominador.\n"
-        "Separe claramente: FATOS, INTERPRETAÇÃO, RECOMENDAÇÕES FUNDAMENTADAS e LIMITAÇÕES.\n"
+        "Responda preferencialmente em JSON estrito com schema_version=llm-response-vnext-2.\n"
+        "Campos obrigatórios: facts, interpretations, recommendations, limitations e human_validation_required=true.\n"
+        "Cada item de facts/interpretations deve conter text e fact_refs apontando para caminhos existentes em canonical_facts.\n"
+        "Cada recommendation deve conter text, fact_refs e normative_evidence_ids; quando houver evidência normativa, cite somente IDs existentes.\n"
+        "Não use markdown ao retornar o JSON estruturado.\n"
+        "Se não conseguir cumprir o JSON, use o formato legado com FATOS, INTERPRETAÇÃO, RECOMENDAÇÕES FUNDAMENTADAS e LIMITAÇÕES.\n"
         "Toda recomendação normativa deve citar a fonte correspondente.\n"
         "Se a evidência normativa for insuficiente, declare isso explicitamente.\n"
         "A validação humana é obrigatória.\n\n"
