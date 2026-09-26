@@ -9,12 +9,15 @@ from typing import Any
 from meningites.agent.operational_agent import EpidemiologicalAgent
 from meningites.agent.rag_adapter import NormativeRetriever, build_grounded_request, render_prompt
 from meningites.agent.llm_runner import run_validated_llm
+from meningites.domain.territory import normalize_municipality_code
 
 
 def _resolve_municipality(agent: EpidemiologicalAgent, value: str) -> dict[str, Any] | None:
     target = value.strip().casefold()
+    target_code = normalize_municipality_code(value)
     for row in agent.context.get("municipalities", []):
-        if str(row.get("codigo_municipio", "")).strip().casefold() == target:
+        row_code = normalize_municipality_code(row.get("codigo_municipio", ""))
+        if target_code and row_code == target_code:
             return row
         if str(row.get("municipio", "")).strip().casefold() == target:
             return row
