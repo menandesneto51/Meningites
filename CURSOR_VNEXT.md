@@ -215,3 +215,31 @@ python pipelines/vnext_municipal.py --outdir saida_meningites_v17
 
 ### Próximo alvo no Cursor
 Implementar um cliente LLM opcional sobre `agente_rag_pacotes_vnext.json`, reutilizando credenciais já suportadas pelo projeto, mas com validação pós-resposta que rejeite alterações de fatos canônicos e respostas sem fundamentação normativa quando a pergunta exigir norma.
+
+
+## Validação adicional — cliente LLM opcional e pós-validação
+
+O publisher deve gerar `agente_llm_validacao_vnext.json` como template de controle, mas **não deve chamar LLM automaticamente**.
+
+### Regras obrigatórias
+1. O cliente LLM reutiliza apenas credenciais locais já suportadas: `LLM_API_KEY`, `GEMINI_API_KEY`, `MENINGITES_OPENAI_API_KEY` ou `OPENAI_API_KEY`.
+2. Ausência de credencial deve resultar em `status=unavailable`, nunca falha do pipeline principal.
+3. Toda resposta LLM deve passar por `validate_llm_response` antes de qualquer uso.
+4. O validador rejeita:
+   - números não rastreados em fatos canônicos ou evidência normativa;
+   - ausência das seções FATOS, INTERPRETAÇÃO, RECOMENDAÇÕES e LIMITAÇÕES;
+   - ausência de fonte normativa quando houver evidência normativa;
+   - conduta clínica não autorizada.
+5. Mesmo respostas aceitas ficam com `requires_human_review=true`.
+6. Respostas rejeitadas nunca devem substituir briefing determinístico, CSVs ou JSONs canônicos.
+7. O pipeline VNext não deve fazer chamadas externas de IA por padrão.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_llm_guardrails.py tests/test_vnext_publisher.py
+python pipelines/vnext_municipal.py --outdir saida_meningites_v17
+```
+
+### Teste manual opcional no Cursor
+Somente após os testes acima e com credencial configurada, carregar um pacote de `agente_rag_pacotes_vnext.json`, renderizar o prompt correspondente e executar `run_validated_llm`. Revisar `issues` e confirmar manualmente a resposta antes de qualquer uso operacional.
