@@ -871,3 +871,29 @@ Execute:
 $env:PYTHONPATH="src"
 python -m pytest -q tests/test_vnext_schema_registry.py tests/test_vnext_validation_evidence.py tests/test_vnext_preflight.py tests/test_vnext_readiness.py tests/test_vnext_release_readiness.py tests/test_vnext_operational_manifest.py
 ```
+
+
+## Consistência de snapshot/commit
+
+Os gates finais passam a ser vinculados ao commit efetivamente validado.
+
+### Regras
+1. `preflight_vnext.json` registra `commit_sha`.
+2. `evidencia_validacao_vnext.json` registra o mesmo `commit_sha`.
+3. A revisão visual deve registrar explicitamente o commit revisado:
+
+```powershell
+python pipelines/vnext_record_visual_review.py `
+  --outdir saida_meningites_v17 `
+  --reviewer "Menandes" `
+  --approved `
+  --commit <SHA_DO_COMMIT> `
+  --notes "Dashboard e cards revisados localmente."
+```
+
+4. `vnext_readiness.py` exige que preflight, evidência e revisão visual tenham SHAs não vazios e idênticos.
+5. Quando consistente, `prontidao_vnext.json` publica `snapshot_commit`.
+6. `vnext_release_readiness.py --commit <SHA>` só pode retornar apto se `<SHA>` for exatamente igual ao `snapshot_commit` aprovado.
+
+### Motivo
+Evitar que um conjunto de dados seja hashado em um commit e visualmente aprovado em outro, ou que o relatório final declare pronto um snapshot diferente daquele efetivamente revisado.
