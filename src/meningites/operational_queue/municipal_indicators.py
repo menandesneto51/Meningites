@@ -13,10 +13,10 @@ from meningites.operational_queue.legacy_aggregator import _norm_code
 
 
 INDICATOR_SPECS = (
-    ("pct_confirmacao_laboratorial_pcr_cultura", "bact_confirmadas", "Confirmação laboratorial PCR/cultura"),
-    ("pct_investigados_48h", "total_notificacoes", "Investigados em até 48h"),
-    ("pct_encerrados_60d", "total_notificacoes", "Encerrados em até 60 dias"),
-    ("pct_quimioprofilaxia_dm_48h", "dm_casos", "DM com quimioprofilaxia em até 48h"),
+    ("pct_confirmacao_laboratorial_pcr_cultura", "bact_lab_informe_pcr_cultura", "bact_confirmadas", "Confirmação laboratorial PCR/cultura"),
+    ("pct_investigados_48h", "investigados_48h", "total_notificacoes", "Investigados em até 48h"),
+    ("pct_encerrados_60d", "encerrados_60d", "total_notificacoes", "Encerrados em até 60 dias"),
+    ("pct_quimioprofilaxia_dm_48h", "dm_quimio_48h", "dm_casos", "DM com quimioprofilaxia em até 48h"),
 )
 
 
@@ -53,7 +53,7 @@ def municipal_indicator_frame(outdir: str | Path) -> pd.DataFrame:
     path = root / "indicadores_ms_operacionais_municipio_v23.csv"
     columns = [
         "codigo_municipio", "municipio", "regional", "indicador", "indicador_rotulo",
-        "valor_pct", "numerador", "denominador", "numerador_status",
+        "valor_pct", "numerador", "denominador", "numerador_status", "denominador_status",
         "referencia_ano", "referencia_periodo", "referencia_fonte",
         "referencia_vigencia_desde", "fonte_artefato", "referencia_artefato",
     ]
@@ -70,9 +70,11 @@ def municipal_indicator_frame(outdir: str | Path) -> pd.DataFrame:
         code = _norm_code(source.get("codigo_municipio_v17"))
         if not code:
             continue
-        for metric, denominator_col, label in INDICATOR_SPECS:
+        for metric, numerator_col, denominator_col, label in INDICATOR_SPECS:
             if metric not in frame.columns:
                 continue
+            numerator_available = numerator_col in frame.columns
+            denominator_available = denominator_col in frame.columns
             rows.append({
                 "codigo_municipio": code,
                 "municipio": source.get("municipio_v17", ""),
@@ -80,9 +82,10 @@ def municipal_indicator_frame(outdir: str | Path) -> pd.DataFrame:
                 "indicador": metric,
                 "indicador_rotulo": label,
                 "valor_pct": source.get(metric),
-                "numerador": None,
-                "denominador": source.get(denominator_col),
-                "numerador_status": "nao_exportado_pelo_modulo_12_municipal",
+                "numerador": source.get(numerator_col) if numerator_available else None,
+                "denominador": source.get(denominator_col) if denominator_available else None,
+                "numerador_status": "ok" if numerator_available else "nao_exportado_pelo_modulo_12_municipal",
+                "denominador_status": "ok" if denominator_available else "nao_exportado_pelo_modulo_12_municipal",
                 **ref,
                 "fonte_artefato": path.name,
             })
