@@ -37,7 +37,7 @@ def test_manifest_blocks_llm_on_data_quality(tmp_path: Path):
             "has_blocking_divergences": True,
         },
     })
-    _write(tmp_path, "validacao_vnext.json", {"overall_status": "pass"})
+    _write(tmp_path, "validacao_vnext.json", {"schema_version": "vnext-validation-1", "overall_status": "pass"})
     manifest = build_operational_manifest(tmp_path)
     assert manifest["execution_policy"]["llm_allowed"] is False
 
