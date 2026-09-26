@@ -65,7 +65,10 @@ def render_agent_panel(st, outdir: str | Path) -> None:
         key="vnext_agent_llm",
     )
 
-    if st.button("Consultar agente", key="vnext_agent_submit"):
+    if health["blocking"]:
+        st.warning("Consulta operacional indisponível até o gate VNext ficar em PASS.")
+
+    if st.button("Consultar agente", key="vnext_agent_submit", disabled=health["blocking"]):
         try:
             result = query_agent(
                 context_path=context_path,
