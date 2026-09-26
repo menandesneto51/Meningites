@@ -58,7 +58,7 @@ def run_preflight(
         step = _run_module12(root)
         steps.append(step)
         if step["status"] != "pass":
-            return _finish("fail", steps, out, "Módulo 12 falhou; preflight interrompido.")
+            return _finish("fail", steps, out, "Módulo 12 falhou; preflight interrompido.", commit_sha)
 
     publish_municipal_vnext(out)
     steps.append({"step": "publisher", "status": "pass"})
@@ -69,7 +69,7 @@ def run_preflight(
         require_schema(validation, "validation")
     except ValueError as exc:
         steps.append({"step": "validation", "status": "fail", "detail": str(exc)})
-        return _finish("fail", steps, out, "Schema de validação incompatível; preflight interrompido.")
+        return _finish("fail", steps, out, "Schema de validação incompatível; preflight interrompido.", commit_sha)
     gate = str(validation.get("overall_status", "fail")).lower()
     steps.append({
         "step": "validation",
@@ -79,7 +79,7 @@ def run_preflight(
     })
 
     if gate != "pass":
-        return _finish(gate, steps, out, "Gate não aprovado; evidência não será capturada.")
+        return _finish(gate, steps, out, "Gate não aprovado; evidência não será capturada.", commit_sha)
 
     evidence_paths = publish_validation_evidence(out, commit_sha=commit_sha or None)
     steps.append({
@@ -88,13 +88,14 @@ def run_preflight(
         "json": str(evidence_paths["evidence_json"]),
         "markdown": str(evidence_paths["evidence_md"]),
     })
-    return _finish("pass", steps, out, "Preflight concluído com PASS e evidência capturada.")
+    return _finish("pass", steps, out, "Preflight concluído com PASS e evidência capturada.", commit_sha)
 
 
-def _finish(status: str, steps: list[dict], out: Path, detail: str) -> dict:
+def _finish(status: str, steps: list[dict], out: Path, detail: str, commit_sha: str = "") -> dict:
     result = {
         "schema_version": "vnext-preflight-1",
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "commit_sha": commit_sha,
         "status": status,
         "detail": detail,
         "outdir": str(out),
