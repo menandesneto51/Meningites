@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from meningites.agent.query_service import query_agent
+from meningites.validation.health import load_validation_health
 
 
 def handle_query_payload(payload: dict[str, Any], *, outdir: str | Path) -> dict[str, Any]:
@@ -59,9 +60,16 @@ def create_app(*, outdir: str | Path = "saida_meningites_v17"):
     @app.get("/health")
     def health():
         root = Path(outdir)
+        validation = load_validation_health(root)
         return {
-            "status": "ok",
+            "status": "ok" if validation["overall_status"] == "pass" else "degraded",
             "context_published": (root / "agente_epidemiologico_contexto_vnext.json").exists(),
+            "validation": {
+                "overall_status": validation["overall_status"],
+                "fail_n": validation["fail_n"],
+                "attention_n": validation["attention_n"],
+                "blocking": validation["blocking"],
+            },
             "llm_default": "disabled",
         }
 
