@@ -156,3 +156,36 @@ python pipelines/vnext_municipal.py --outdir saida_meningites_v17
 
 ### Uso no Cursor
 Ao pedir interpretação ao Cursor/LLM, use `agente_epidemiologico_contexto_vnext.json` como contexto estruturado primário e o corpus `docs_ms/` para fundamentação normativa. Não peça ao modelo para recalcular os indicadores a partir de arquivos brutos se o publisher já tiver produzido o fato canônico.
+
+
+## Validação adicional — agente epidemiológico operacional
+
+Cada execução do publisher deve gerar também:
+- `agente_briefing_estadual_vnext.md`;
+- `agente_briefings_regionais_vnext.json`;
+- `agente_lacunas_dados_vnext.json`.
+
+### Regras obrigatórias
+1. O briefing estadual deve reproduzir apenas totais presentes em `resumo_executivo_estadual_vnext.csv`.
+2. O briefing regional deve reproduzir apenas a agregação publicada em `resumo_executivo_regional_vnext.csv`.
+3. A explicação municipal deve preservar `rule_id`, prioridade, valor e fonte dos sinais.
+4. O agente deve falhar se `may_create_clinical_rules` não estiver explicitamente como `false`.
+5. Ausência no contexto deve ser descrita como ausência de informação, nunca como ausência de risco/evento.
+6. O agente determinístico é o baseline auditável. Qualquer enriquecimento por LLM/RAG deve manter esses fatos intactos e apenas adicionar interpretação fundamentada.
+7. Não permitir que o LLM altere contagens, regras ou prioridades publicadas pelo VNext.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_operational_agent.py tests/test_vnext_publisher.py
+python pipelines/vnext_municipal.py --outdir saida_meningites_v17
+```
+
+### Próximo alvo no Cursor
+Preparar um adapter entre o agente VNext e a RAG existente do módulo 16/27. O adapter deve enviar ao LLM apenas:
+- pergunta do usuário;
+- fatos canônicos VNext relevantes;
+- trechos normativos recuperados do corpus vigente;
+- guardrails do agente.
+
+O LLM não deve receber autoridade para recalcular indicadores nem substituir os artefatos publicados.
