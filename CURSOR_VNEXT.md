@@ -243,3 +243,43 @@ python pipelines/vnext_municipal.py --outdir saida_meningites_v17
 
 ### Teste manual opcional no Cursor
 Somente após os testes acima e com credencial configurada, carregar um pacote de `agente_rag_pacotes_vnext.json`, renderizar o prompt correspondente e executar `run_validated_llm`. Revisar `issues` e confirmar manualmente a resposta antes de qualquer uso operacional.
+
+
+## Validação adicional — interface de consulta do agente
+
+Novo entrypoint:
+```powershell
+$env:PYTHONPATH="src"
+python pipelines/vnext_agent_query.py "Qual a situação de Cuiabá?" --scope "Cuiabá"
+```
+
+Exemplos:
+```powershell
+python pipelines/vnext_agent_query.py "Quais os principais sinais do estado?" --scope "Mato Grosso"
+python pipelines/vnext_agent_query.py "Quais as pendências da regional?" --scope "Baixada Cuiabana"
+python pipelines/vnext_agent_query.py "Explique os sinais deste município" --scope "5103403"
+python pipelines/vnext_agent_query.py "Quais lacunas de dados existem?" --mode gaps
+```
+
+Uso opcional de LLM validado:
+```powershell
+python pipelines/vnext_agent_query.py "O que a norma vigente orienta sobre esta pendência?" --scope "Cuiabá" --llm
+```
+
+### Regras obrigatórias
+1. Sem `--llm`, a consulta deve funcionar integralmente em modo determinístico/RAG local.
+2. `--llm` é opt-in e sempre passa pelo validador pós-resposta.
+3. O modo `auto` deve resolver estado, regional ou município a partir do contexto publicado.
+4. Município pode ser consultado por código ou nome exato presente no contexto.
+5. Escopo não encontrado não pode ser tratado como ausência de evento; retornar contexto ausente.
+6. Resultado sempre mantém `human_validation_required=true`.
+7. A interface não altera qualquer artefato canônico; `--save` grava apenas o resultado da consulta.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_agent_query.py tests/test_vnext_llm_guardrails.py
+```
+
+### Próximo alvo no Cursor
+Após validar a CLI com dados reais, criar uma camada HTTP fina sobre `query_agent()` apenas se houver necessidade operacional, mantendo a função Python como contrato principal para evitar acoplamento de framework.
