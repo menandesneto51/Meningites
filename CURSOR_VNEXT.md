@@ -189,3 +189,29 @@ Preparar um adapter entre o agente VNext e a RAG existente do módulo 16/27. O a
 - guardrails do agente.
 
 O LLM não deve receber autoridade para recalcular indicadores nem substituir os artefatos publicados.
+
+
+## Validação adicional — adapter RAG VNext
+
+Cada execução do publisher deve gerar também:
+- `agente_rag_pacotes_vnext.json`;
+- `agente_rag_prompts_vnext.json`.
+
+### Regras obrigatórias
+1. A fonte normativa primária do adapter é `assistente_kb_docs_ms_v27.csv`, gerada pelo módulo 27 a partir de `docs_ms/`.
+2. Por padrão, documentos marcados como revogados/não vigentes não entram nos pacotes normativos.
+3. O pacote deve manter seções separadas para `canonical_facts`, `normative_evidence`, `guardrails` e `response_contract`.
+4. O prompt deve proibir explicitamente recalcular indicadores, alterar prioridades e criar regras clínicas.
+5. Se não houver evidência normativa suficiente, a futura resposta LLM deve declarar insuficiência em vez de preencher lacunas por conhecimento não rastreado.
+6. O adapter não chama LLM durante a publicação; ele apenas prepara um contrato auditável.
+7. Nenhum texto gerado por LLM deve sobrescrever os CSV/JSON canônicos do VNext.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_rag_adapter.py tests/test_vnext_publisher.py
+python pipelines/vnext_municipal.py --outdir saida_meningites_v17
+```
+
+### Próximo alvo no Cursor
+Implementar um cliente LLM opcional sobre `agente_rag_pacotes_vnext.json`, reutilizando credenciais já suportadas pelo projeto, mas com validação pós-resposta que rejeite alterações de fatos canônicos e respostas sem fundamentação normativa quando a pergunta exigir norma.
