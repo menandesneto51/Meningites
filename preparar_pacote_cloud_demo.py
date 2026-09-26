@@ -263,6 +263,73 @@ def _clear_dir(path: Path) -> None:
         pass
 
 
+
+def sanitizar_demo_existente() -> dict:
+    """Sanitiza o pacote demo já versionado sem depender de OUT.
+
+    Uso principal: CI. Preserva os artefatos públicos existentes, remove arquivos
+    proibidos por política e reaplica scrub/pseudonimização in-place.
+    """
+    DEST.mkdir(parents=True, exist_ok=True)
+    DEST_REL.mkdir(parents=True, exist_ok=True)
+    auditoria: dict[str, dict] = {}
+    excluidos: list[str] = []
+
+    for p in sorted(DEST.glob("*.csv")):
+        if p.name.startswith(EXCLUIR_PREFIXOS):
+            p.unlink(missing_ok=True)
+            excluidos.append(p.name)
+            continue
+        df, rel = sanitizar_df(_ler_csv(p))
+        df.to_csv(p, index=False, encoding="utf-8-sig")
+        if any(rel.values()):
+            auditoria[p.name] = {k: v for k, v in rel.items() if v}
+
+    for p in sorted(DEST.glob("*.json")):
+        if p.name not in JSON_PERMITIDOS:
+            continue
+        texto = p.read_text(encoding="utf-8", errors="ignore")
+        limpo = sanitizar_texto(texto)
+        if limpo != texto:
+            p.write_text(limpo, encoding="utf-8")
+            auditoria[p.name] = {"texto_sanitizado": True}
+
+    for pasta in (DEST_REL, DEST / "digests_regionais_v23"):
+        if not pasta.exists():
+            continue
+        for p in sorted(pasta.glob("*.md")):
+            bruto = p.read_text(encoding="utf-8", errors="ignore")
+            limpo = sanitizar_texto(bruto)
+            if limpo != bruto:
+                p.write_text(limpo, encoding="utf-8")
+                auditoria[str(p.relative_to(ROOT / "demo_cloud"))] = {"texto_sanitizado": True}
+
+    rel_path = ROOT / "demo_cloud" / "ANONIMIZACAO.json"
+    rel_path.write_text(
+        json.dumps(
+            {
+                "politica": {
+                    "modo": "sanitize-existing",
+                    "removidas": "colunas nominais, contato, endereço e data de nascimento",
+                    "pseudonimizadas": sorted(COLS_IDENTIFICADOR),
+                    "texto_livre": "número de caso com 5+ dígitos substituído por pseudônimo",
+                    "arquivos_excluidos": list(EXCLUIR_PREFIXOS),
+                },
+                "n_identificadores_pseudonimizados": len(_CACHE_PSEUDO),
+                "por_arquivo": auditoria,
+                "excluidos_por_politica": excluidos,
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+    return {
+        "arquivos_sanitizados": len(auditoria),
+        "identificadores_pseudonimizados": len(_CACHE_PSEUDO),
+        "arquivos_excluidos": len(excluidos),
+    }
+
 def main():
     _clear_dir(DEST)
     _clear_dir(DEST_REL)
