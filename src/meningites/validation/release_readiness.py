@@ -95,6 +95,17 @@ def build_release_readiness(
             ),
         },
         {
+            "id": "snapshot_commit",
+            "ok": bool(commit_sha)
+            and bool(readiness)
+            and schema_ok["readiness"]
+            and str(readiness.get("snapshot_commit", "")) == str(commit_sha),
+            "detail": (
+                "requested=" + str(commit_sha or "<ausente>")
+                + " readiness=" + str((readiness or {}).get("snapshot_commit", "") or "<ausente>")
+            ),
+        },
+        {
             "id": "readiness",
             "ok": bool(readiness) and schema_ok["readiness"] and bool(readiness.get("ready")),
             "detail": (
