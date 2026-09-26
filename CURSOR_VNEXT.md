@@ -130,3 +130,29 @@ $env:PYTHONPATH="src"
 python -m pytest -q tests/test_vnext_municipal_cards.py tests/test_vnext_publisher.py
 python pipelines/vnext_municipal.py --outdir saida_meningites_v17
 ```
+
+
+## Validação adicional — visão executiva e agente epidemiológico
+
+Após executar o publisher, confirme a criação de:
+- `resumo_executivo_regional_vnext.csv`;
+- `resumo_executivo_estadual_vnext.csv`;
+- `agente_epidemiologico_contexto_vnext.json`.
+
+### Regras obrigatórias
+1. A regional deve ser derivada do mapeamento municipal presente nos indicadores do módulo 12; ausência de regional deve aparecer como `Sem regional`, nunca ser adivinhada.
+2. A visão executiva só agrega sinais já existentes; não cria novo limiar nem reclassifica automaticamente municípios.
+3. O JSON do agente deve preservar os guardrails: sem criação de regra clínica, sem inferência de numerador, sem interpretar doses como cobertura e com obrigação de distinguir fato de interpretação.
+4. Verifique que cada sinal municipal do contexto do agente mantém `rule_id` e fonte quando existirem na saída publicada.
+5. Compare os totais estadual e regional com `sinais_municipais_vnext.csv` e `situacao_municipal_vnext.csv`.
+6. Não permitir que o agente substitua decisão sanitária humana nem emita conduta clínica sem referência oficial validada.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_executive_agent.py tests/test_vnext_publisher.py
+python pipelines/vnext_municipal.py --outdir saida_meningites_v17
+```
+
+### Uso no Cursor
+Ao pedir interpretação ao Cursor/LLM, use `agente_epidemiologico_contexto_vnext.json` como contexto estruturado primário e o corpus `docs_ms/` para fundamentação normativa. Não peça ao modelo para recalcular os indicadores a partir de arquivos brutos se o publisher já tiver produzido o fato canônico.
