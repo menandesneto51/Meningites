@@ -130,6 +130,7 @@ def create_app(*, outdir: str | Path = "saida_meningites_v17", api_token: str | 
                 "blocking": validation["blocking"],
             },
             "llm_default": "disabled",
+            "auth_required": bool(str(api_token or "").strip()),
         }
 
     @app.post("/v1/query")
