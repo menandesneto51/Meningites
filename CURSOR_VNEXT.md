@@ -499,3 +499,39 @@ python pipelines/vnext_validate.py --outdir saida_meningites_v17 --strict
 
 ### Próximo alvo no Cursor
 Quando houver PASS real, salvar uma evidência do gate (JSON/Markdown) junto do PR e executar a validação visual da aba VNext. Só depois disso avaliar a incorporação do validador ao pipeline principal.
+
+
+## Evidência formal de validação
+
+Após obter `PASS` real:
+
+```powershell
+$env:PYTHONPATH="src"
+python pipelines/vnext_capture_evidence.py --outdir saida_meningites_v17 --commit <SHA_DO_COMMIT>
+```
+
+Saídas:
+- `evidencia_validacao_vnext.json`;
+- `EVIDENCIA_VALIDACAO_VNEXT.md`.
+
+A captura falha se:
+- `validacao_vnext.json` não existir;
+- o status não for `PASS`;
+- qualquer artefato canônico obrigatório estiver ausente.
+
+A evidência registra:
+- commit validado;
+- data/hora;
+- status do gate;
+- SHA-256 e tamanho dos artefatos canônicos;
+- obrigação de revisão humana.
+
+### Regra operacional
+O PR só deve ser considerado tecnicamente pronto para merge quando houver:
+1. CI verde;
+2. gate real em `PASS`;
+3. evidência de validação capturada;
+4. revisão visual local da aba VNext;
+5. Agent Review final registrado no PR.
+
+Não gerar evidência manualmente nem editar hashes/relatório.
