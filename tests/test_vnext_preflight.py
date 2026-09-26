@@ -45,6 +45,7 @@ def test_run_preflight_pass_captures_evidence(tmp_path: Path, monkeypatch):
         root.mkdir(parents=True, exist_ok=True)
         p = root / "validacao_vnext.json"
         p.write_text(json.dumps({
+            "schema_version": "vnext-validation-1",
             "overall_status": "pass",
             "fail_n": 0,
             "attention_n": 0,
@@ -90,6 +91,7 @@ def test_run_preflight_fail_does_not_capture_evidence(tmp_path: Path, monkeypatc
         root.mkdir(parents=True, exist_ok=True)
         p = root / "validacao_vnext.json"
         p.write_text(json.dumps({
+            "schema_version": "vnext-validation-1",
             "overall_status": "fail",
             "fail_n": 1,
             "attention_n": 0,
@@ -111,3 +113,33 @@ def test_run_preflight_fail_does_not_capture_evidence(tmp_path: Path, monkeypatc
     )
     assert result["status"] == "fail"
     assert "evidência não será capturada" in result["detail"]
+
+
+def test_run_preflight_rejects_incompatible_validation_schema(tmp_path: Path, monkeypatch):
+    import importlib.util
+
+    script = Path("pipelines/vnext_preflight.py").resolve()
+    spec = importlib.util.spec_from_file_location("vnext_preflight_schema_test", script)
+    mod = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(mod)
+
+    out = tmp_path / "saida"
+    monkeypatch.setattr(mod, "publish_municipal_vnext", lambda root: {})
+
+    def fake_validation(root):
+        root.mkdir(parents=True, exist_ok=True)
+        p = root / "validacao_vnext.json"
+        p.write_text(json.dumps({
+            "schema_version": "vnext-validation-99",
+            "overall_status": "pass",
+            "fail_n": 0,
+            "attention_n": 0,
+            "checks": [],
+        }), encoding="utf-8")
+        return {"validation_json": p, "validation_md": root / "VALIDACAO_VNEXT.md"}
+
+    monkeypatch.setattr(mod, "publish_validation_report", fake_validation)
+    result = mod.run_preflight(repo_root=tmp_path, outdir=out, skip_module12=True)
+    assert result["status"] == "fail"
+    assert "Schema de validação incompatível" in result["detail"]
