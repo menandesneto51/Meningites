@@ -597,3 +597,33 @@ O status só será `READY` quando existirem simultaneamente:
 
 ### Regra
 O estado `READY` não realiza merge nem ativação automaticamente. Ele apenas comprova que os requisitos técnicos e a revisão visual foram satisfeitos. A decisão de merge permanece humana e explícita.
+
+
+## Relatório executivo de release readiness
+
+Depois que o gate `vnext_readiness.py --strict` retornar READY, gere o relatório consolidado:
+
+```powershell
+python pipelines/vnext_release_readiness.py `
+  --outdir saida_meningites_v17 `
+  --ci-status success `
+  --ci-run 95 `
+  --commit <SHA_DO_COMMIT> `
+  --strict
+```
+
+Saídas:
+- `release_readiness_vnext.json`;
+- `RELEASE_READINESS_VNEXT.md`.
+
+O relatório reúne:
+- estado do CI;
+- PASS local;
+- preflight;
+- evidência hashada;
+- revisão visual;
+- prontidão técnica;
+- bloqueios remanescentes.
+
+### Regra
+`ready_for_merge_review=true` significa apenas que o PR pode entrar em revisão final para merge. Não realiza merge e não autoriza ativação automática em produção.
