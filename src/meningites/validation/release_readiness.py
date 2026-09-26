@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from meningites.domain.schema_registry import require_schema
+
 
 def _load(path: Path) -> dict[str, Any] | None:
     if not path.exists() or path.stat().st_size == 0:
@@ -30,6 +32,24 @@ def build_release_readiness(
     visual = _load(root / "REVISAO_VISUAL_VNEXT.json")
     context = _load(root / "agente_epidemiologico_contexto_vnext.json")
 
+    schema_ok = {}
+    for name, payload, contract in [
+        ("validation", validation, "validation"),
+        ("evidence", evidence, "validation_evidence"),
+        ("preflight", preflight, "preflight"),
+        ("readiness", readiness, "readiness"),
+        ("visual_review", visual, "visual_review"),
+        ("agent_context", context, "agent_context"),
+    ]:
+        if not payload:
+            schema_ok[name] = False
+            continue
+        try:
+            require_schema(payload, contract)
+            schema_ok[name] = True
+        except ValueError:
+            schema_ok[name] = False
+
     requirements = [
         {
             "id": "ci",
@@ -38,17 +58,17 @@ def build_release_readiness(
         },
         {
             "id": "validation",
-            "ok": bool(validation) and str(validation.get("overall_status", "")).lower() == "pass",
+            "ok": bool(validation) and schema_ok["validation"] and str(validation.get("overall_status", "")).lower() == "pass",
             "detail": "PASS local" if validation else "validacao_vnext.json ausente",
         },
         {
             "id": "preflight",
-            "ok": bool(preflight) and str(preflight.get("status", "")).lower() == "pass",
+            "ok": bool(preflight) and schema_ok["preflight"] and str(preflight.get("status", "")).lower() == "pass",
             "detail": "PASS" if preflight else "preflight_vnext.json ausente",
         },
         {
             "id": "evidence",
-            "ok": bool(evidence) and str(evidence.get("validation_status", "")).lower() == "pass",
+            "ok": bool(evidence) and schema_ok["evidence"] and str(evidence.get("validation_status", "")).lower() == "pass",
             "detail": (
                 f"artefatos={evidence.get('artifact_count', 0)}"
                 if evidence else "evidencia_validacao_vnext.json ausente"
@@ -56,7 +76,7 @@ def build_release_readiness(
         },
         {
             "id": "visual_review",
-            "ok": bool(visual) and bool(visual.get("approved")) and bool(visual.get("reviewer")),
+            "ok": bool(visual) and schema_ok["visual_review"] and bool(visual.get("approved")) and bool(visual.get("reviewer")),
             "detail": (
                 f"revisor={visual.get('reviewer')}"
                 if visual else "REVISAO_VISUAL_VNEXT.json ausente"
@@ -65,6 +85,7 @@ def build_release_readiness(
         {
             "id": "data_quality",
             "ok": bool(context)
+            and schema_ok["agent_context"]
             and not bool((context.get("data_quality") or {}).get("has_blocking_divergences"))
             and int((context.get("data_quality") or {}).get("blocking_divergences_n", 0) or 0) == 0,
             "detail": (
@@ -75,7 +96,7 @@ def build_release_readiness(
         },
         {
             "id": "readiness",
-            "ok": bool(readiness) and bool(readiness.get("ready")),
+            "ok": bool(readiness) and schema_ok["readiness"] and bool(readiness.get("ready")),
             "detail": (
                 f"status={readiness.get('status')}"
                 if readiness else "prontidao_vnext.json ausente"
