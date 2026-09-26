@@ -809,3 +809,39 @@ O manifesto reúne em um único snapshot:
 
 ### Regra
 O manifesto é descritivo e auditável. Ele não altera gates nem autoriza execução; apenas consolida o estado operacional já calculado pelos componentes canônicos.
+
+
+## Registro central de schemas e compatibilidade
+
+O VNext passa a usar `src/meningites/domain/schema_registry.py` como referência canônica de versões aceitas.
+
+### Contratos registrados
+- `agent_context` → `agent-context-vnext-1`;
+- `rag_request` → `rag-request-vnext-1`;
+- `llm_response` → `llm-response-vnext-2`;
+- `validation` → `vnext-validation-1`;
+- `validation_evidence` → `vnext-validation-evidence-1`;
+- `preflight` → `vnext-preflight-1`;
+- `readiness` → `vnext-readiness-1`;
+- `release_readiness` → `vnext-release-readiness-1`;
+- `operational_manifest` → `vnext-operational-manifest-1`.
+
+### Regras
+1. Consumidores críticos devem chamar `require_schema()` antes de interpretar payloads versionados.
+2. Versão desconhecida ou ausente deve falhar explicitamente.
+3. Uma nova versão só entra em `accepted` após adapter/migração/testes documentados.
+4. Não alterar `current` sem ADR/Agent Review.
+5. Publicar o catálogo local com:
+
+```powershell
+$env:PYTHONPATH="src"
+python pipelines/vnext_schema_catalog.py --outdir saida_meningites_v17
+```
+
+Saída:
+- `catalogo_schemas_vnext.json`.
+
+Execute:
+```powershell
+python -m pytest -q tests/test_vnext_schema_registry.py tests/test_vnext_operational_agent.py tests/test_vnext_structured_llm.py
+```
