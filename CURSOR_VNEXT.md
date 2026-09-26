@@ -422,3 +422,48 @@ python pipelines/vnext_municipal.py --outdir saida_meningites_v17
 ```
 
 Depois compare `indicadores_ms_operacionais_municipio_v23.csv` com `indicadores_municipais_vnext.csv` e registre divergências, se houver.
+
+
+## Gate formal — reconciliação automatizada VNext
+
+Novo comando:
+
+```powershell
+$env:PYTHONPATH="src"
+python pipelines/vnext_validate.py --outdir saida_meningites_v17 --strict
+```
+
+Saídas:
+- `validacao_vnext.json`;
+- `VALIDACAO_VNEXT.md`.
+
+### Significado
+- `PASS`: reconciliação técnica sem falhas bloqueantes; revisão humana ainda obrigatória.
+- `ATTENTION`: existem ausências ou condições que precisam ser revistas antes de ativação permanente.
+- `FAIL`: não integrar ao pipeline principal nem ativar a feature flag em produção.
+
+### Checks atuais
+1. Chave territorial IBGE-6 válida nas saídas VNext.
+2. Ausência de duplicação territorial 6×7 nas saídas consolidadas.
+3. Reconciliação módulo 12 × `indicadores_municipais_vnext.csv` para valor, numerador e denominador.
+4. Sinais com `rule_id`, fonte e chave territorial válida.
+5. `divergencias_vnext.csv` sem `erro_leitura`, `sem_chave_territorial` ou arquivo vazio.
+
+### Sequência obrigatória no Cursor
+```powershell
+$env:PYTHONPATH="src"
+python 12_indicadores_ms_operacionais_v23.py
+python pipelines/vnext_municipal.py --outdir saida_meningites_v17
+python pipelines/vnext_validate.py --outdir saida_meningites_v17 --strict
+```
+
+Somente se o status for `PASS`:
+1. ativar `MENINGITES_VNEXT_AGENT_UI=true` localmente;
+2. testar dashboard e consultas;
+3. revisar visualmente os cards;
+4. registrar o resultado no PR.
+
+Se houver `FAIL`, corrigir o adapter/contrato/fonte e repetir o ciclo. Não editar CSV de saída manualmente para “fazer passar”.
+
+### Próximo alvo
+Depois de obter `PASS` com dados reais, incorporar o validador como gate do pipeline principal e criar um resumo de saúde operacional do VNext no dashboard de desenvolvimento.
