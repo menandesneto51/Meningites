@@ -88,16 +88,20 @@ def build_municipal_cards(
             lines.append("Indicadores municipais do módulo 12 não disponíveis para este município.")
         else:
             for _, indicator in ind.iterrows():
+                num = _fmt_num(indicator.get("numerador"))
                 denom = _fmt_num(indicator.get("denominador"))
                 value = _fmt_num(indicator.get("valor_pct"))
-                lines.append(f"- **{indicator['indicador_rotulo']}**: {value}% (denominador: {denom})")
+                lines.append(
+                    f"- **{indicator['indicador_rotulo']}**: {value}% "
+                    f"(numerador: {num}; denominador: {denom})"
+                )
             first = ind.iloc[0]
             lines += [
                 "",
                 f"Referência: {_safe(first.get('referencia_periodo'))} — {_safe(first.get('referencia_fonte'))}.",
                 f"Vigência registrada desde: {_safe(first.get('referencia_vigencia_desde'))}.",
                 "",
-                "> O módulo municipal atual não exporta todos os numeradores; o VNext não os reconstrói por arredondamento.",
+                "> Numeradores/denominadores são usados somente quando exportados pelo módulo 12; ausências permanecem explícitas e nunca são reconstruídas por arredondamento.",
             ]
 
         lines += ["", "## Sinais e ações", ""]
