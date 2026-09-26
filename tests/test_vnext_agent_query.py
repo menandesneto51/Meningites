@@ -33,6 +33,12 @@ def _write_context(path: Path):
             "sih_sem_sinan_n": 1,
             "redcap_sem_sinan_n": 0,
         }],
+        "data_quality": {
+            "blocking_divergences_n": 0,
+            "missing_artifacts_n": 0,
+            "has_blocking_divergences": False,
+            "artifact_status_rows": [],
+        },
         "municipalities": [{
             "codigo_municipio": "5103403",
             "municipio": "Cuiabá",
@@ -139,3 +145,58 @@ def test_query_accepts_ibge7_for_ibge6_context(tmp_path: Path):
 
     assert result["mode"] == "municipality"
     assert result["deterministic"]["scope"] == "Cuiabá"
+
+
+def test_query_blocks_llm_when_data_quality_is_blocking(tmp_path: Path):
+    ctx = tmp_path / "ctx.json"
+    kb = tmp_path / "kb.csv"
+    _write_context(ctx)
+    _write_kb(kb)
+
+    payload = json.loads(ctx.read_text(encoding="utf-8"))
+    payload["data_quality"] = {
+        "blocking_divergences_n": 1,
+        "missing_artifacts_n": 0,
+        "has_blocking_divergences": True,
+        "artifact_status_rows": [{
+            "arquivo": "sih.csv",
+            "status": "sem_chave_territorial",
+        }],
+    }
+    ctx.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+    result = query_agent(
+        context_path=ctx,
+        kb_path=kb,
+        question="Interprete a situação",
+        scope="Mato Grosso",
+        use_llm=True,
+    )
+
+    assert result["llm"]["requested"] is True
+    assert result["llm"]["executed"] is False
+    assert result["llm"]["blocked"] is True
+    assert result["llm"]["block_reason"] == "data_quality_bloqueante"
+    assert result["deterministic"] is not None
+
+
+def test_query_blocks_llm_when_data_quality_is_absent(tmp_path: Path):
+    ctx = tmp_path / "ctx.json"
+    kb = tmp_path / "kb.csv"
+    _write_context(ctx)
+    _write_kb(kb)
+
+    payload = json.loads(ctx.read_text(encoding="utf-8"))
+    payload.pop("data_quality", None)
+    ctx.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+
+    result = query_agent(
+        context_path=ctx,
+        kb_path=kb,
+        question="Interprete a situação",
+        use_llm=True,
+    )
+
+    assert result["llm"]["executed"] is False
+    assert result["llm"]["blocked"] is True
+    assert result["llm"]["block_reason"] == "data_quality_ausente"
