@@ -654,3 +654,33 @@ Execute:
 $env:PYTHONPATH="src"
 python -m pytest -q tests/test_vnext_structured_llm.py tests/test_vnext_llm_guardrails.py
 ```
+
+
+## Hardening adicional — vigência fail-closed e data quality no agente
+
+### Vigência normativa
+O RAG não deve mais tratar ausência de `vigente` como documento vigente.
+- `vigente=true/sim/yes/1` → elegível por padrão;
+- `vigente=false` → excluído de `current_only`;
+- campo ausente, `null` ou `NaN` → considerado **não vigente/indeterminado** e excluído do retrieval padrão.
+
+### Qualidade de dados no contexto do agente
+`agente_epidemiologico_contexto_vnext.json` passa a incluir `data_quality` com:
+- `artifact_status_rows`;
+- `blocking_divergences_n`;
+- `missing_artifacts_n`;
+- `has_blocking_divergences`.
+
+O RAG inclui `data_quality` dentro de `canonical_facts`, e `data_gaps()` deve listar divergências de artefatos como lacunas explícitas.
+
+### Regras
+1. Documento sem vigência explícita não pode fundamentar recomendação normativa corrente.
+2. Ausência/erro/chave territorial ausente/vazio deve ser visível para o agente.
+3. O agente não pode interpretar ausência de fonte como ausência de evento.
+4. Divergência bloqueante deve aparecer no contexto antes de qualquer enriquecimento LLM.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_rag_adapter.py tests/test_vnext_operational_agent.py tests/test_vnext_publisher.py
+```
