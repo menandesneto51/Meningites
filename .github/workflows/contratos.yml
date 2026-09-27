@@ -55,7 +55,7 @@ jobs:
         run: >
           pytest -q
           tests/test_vnext_domain_contracts.py
-          tests/test_vnext_schema_registry.py
+          tests/test_vnext_schema_registry.py tests/test_vnext_producer_schema_contracts.py
           tests/test_vnext_municipal_engine.py
           tests/test_vnext_legacy_aggregator.py
           tests/test_vnext_descriptive_aggregator.py
