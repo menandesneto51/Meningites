@@ -14,6 +14,7 @@ Fase finalize:
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 from pathlib import Path
 
@@ -112,9 +113,14 @@ def main() -> int:
 
     root = Path(args.outdir)
     if args.phase == "prepare":
-        from pipelines.vnext_preflight import run_preflight
+        preflight_path = Path(__file__).with_name("vnext_preflight.py")
+        spec = importlib.util.spec_from_file_location("vnext_preflight_runtime", preflight_path)
+        if spec is None or spec.loader is None:
+            raise SystemExit("Não foi possível carregar pipelines/vnext_preflight.py.")
+        preflight_mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(preflight_mod)
 
-        result = run_preflight(
+        result = preflight_mod.run_preflight(
             repo_root=args.repo_root,
             outdir=args.outdir,
             commit_sha=args.commit,
