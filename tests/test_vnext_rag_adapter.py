@@ -4,7 +4,7 @@ from pathlib import Path
 import pandas as pd
 
 from meningites.agent.operational_agent import EpidemiologicalAgent
-from meningites.agent.rag_adapter import NormativeRetriever, build_grounded_request, render_prompt
+from meningites.agent.rag_adapter import NormativeRetriever, _parse_vigency, build_grounded_request, render_prompt
 from meningites.agent.rag_publisher import publish_rag_packages
 
 
@@ -123,3 +123,77 @@ def test_grounded_request_includes_data_quality_context(tmp_path: Path):
         NormativeRetriever.from_csv(kb),
     )
     assert package["canonical_facts"]["data_quality"]["has_blocking_divergences"] is True
+
+
+def test_parse_vigency_is_explicit_and_fail_closed():
+    accepted = [
+        True,
+        1,
+        1.0,
+        "1",
+        "true",
+        "TRUE",
+        "sim",
+        "yes",
+        "vigente",
+        " Vigente ",
+    ]
+    rejected = [
+        False,
+        0,
+        0.0,
+        2,
+        -1,
+        float("nan"),
+        None,
+        "",
+        "false",
+        "não",
+        "no",
+        "revogado",
+        "historico",
+        "qualquer-coisa",
+    ]
+
+    assert all(_parse_vigency(value) is True for value in accepted)
+    assert all(_parse_vigency(value) is False for value in rejected)
+
+
+def test_retriever_rejects_ambiguous_numeric_vigency():
+    rows = [
+        {
+            "id": "ok",
+            "titulo": "Norma vigente",
+            "fonte": "MS",
+            "texto": "quimioprofilaxia meningococica",
+            "vigente": 1,
+            "prioridade": 100,
+        },
+        {
+            "id": "ambigua",
+            "titulo": "Norma ambígua",
+            "fonte": "MS",
+            "texto": "quimioprofilaxia meningococica",
+            "vigente": 2,
+            "prioridade": 100,
+        },
+    ]
+    hits = NormativeRetriever(rows).retrieve("quimioprofilaxia meningococica")
+    assert [hit.id for hit in hits] == ["ok"]
+
+
+def test_retriever_keeps_noncurrent_as_invalid_when_current_only_is_false():
+    rows = [{
+        "id": "historico",
+        "titulo": "Documento histórico",
+        "fonte": "MS",
+        "texto": "quimioprofilaxia meningococica",
+        "vigente": -1,
+        "prioridade": 100,
+    }]
+    hits = NormativeRetriever(rows).retrieve(
+        "quimioprofilaxia meningococica",
+        current_only=False,
+    )
+    assert len(hits) == 1
+    assert hits[0].valid is False
