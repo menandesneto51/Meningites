@@ -60,11 +60,43 @@ def run_preflight(
         if step["status"] != "pass":
             return _finish("fail", steps, out, "Módulo 12 falhou; preflight interrompido.", commit_sha)
 
-    publish_municipal_vnext(out)
-    steps.append({"step": "publisher", "status": "pass"})
+    try:
+        publish_municipal_vnext(out)
+        steps.append({"step": "publisher", "status": "pass"})
+    except Exception as exc:
+        steps.append({
+            "step": "publisher",
+            "status": "fail",
+            "error_type": type(exc).__name__,
+            "detail": str(exc),
+        })
+        return _finish(
+            "fail",
+            steps,
+            out,
+            "Publisher VNext falhou; preflight interrompido.",
+            commit_sha,
+        )
 
-    validation_paths = publish_validation_report(out)
-    validation = json.loads(validation_paths["validation_json"].read_text(encoding="utf-8"))
+    try:
+        validation_paths = publish_validation_report(out)
+        validation = json.loads(
+            validation_paths["validation_json"].read_text(encoding="utf-8")
+        )
+    except Exception as exc:
+        steps.append({
+            "step": "validation",
+            "status": "fail",
+            "error_type": type(exc).__name__,
+            "detail": str(exc),
+        })
+        return _finish(
+            "fail",
+            steps,
+            out,
+            "Geração/leitura da validação falhou; preflight interrompido.",
+            commit_sha,
+        )
     try:
         require_schema(validation, "validation")
     except ValueError as exc:
@@ -81,14 +113,39 @@ def run_preflight(
     if gate != "pass":
         return _finish(gate, steps, out, "Gate não aprovado; evidência não será capturada.", commit_sha)
 
-    evidence_paths = publish_validation_evidence(out, commit_sha=commit_sha or None)
-    steps.append({
-        "step": "evidence",
-        "status": "pass",
-        "json": str(evidence_paths["evidence_json"]),
-        "markdown": str(evidence_paths["evidence_md"]),
-    })
-    return _finish("pass", steps, out, "Preflight concluído com PASS e evidência capturada.", commit_sha)
+    try:
+        evidence_paths = publish_validation_evidence(
+            out,
+            commit_sha=commit_sha or None,
+        )
+        steps.append({
+            "step": "evidence",
+            "status": "pass",
+            "json": str(evidence_paths["evidence_json"]),
+            "markdown": str(evidence_paths["evidence_md"]),
+        })
+    except Exception as exc:
+        steps.append({
+            "step": "evidence",
+            "status": "fail",
+            "error_type": type(exc).__name__,
+            "detail": str(exc),
+        })
+        return _finish(
+            "fail",
+            steps,
+            out,
+            "Captura de evidência falhou; preflight interrompido.",
+            commit_sha,
+        )
+
+    return _finish(
+        "pass",
+        steps,
+        out,
+        "Preflight concluído com PASS e evidência capturada.",
+        commit_sha,
+    )
 
 
 def _finish(status: str, steps: list[dict], out: Path, detail: str, commit_sha: str = "") -> dict:
