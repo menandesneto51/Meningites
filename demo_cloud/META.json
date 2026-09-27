@@ -1,12 +1,14 @@
 {
-  "n_arquivos_csv": 147,
-  "n_arquivos_json": 3,
+  "n_arquivos_csv": 175,
+  "n_arquivos_json": 7,
   "excluidos_por_politica": [
-    "auditoria_sinan_somente_dw_v23.csv",
     "auditoria_sinan_somente_local_v23.csv",
     "dw_objetos_descobertos_v23.csv",
+    "dw_schema_cipv_doses_meningite.csv",
     "dw_schema_cnes_estabelecimentos.csv",
+    "dw_schema_cnes_leitos.csv",
     "dw_schema_gal_lacen_meningites.csv",
+    "dw_schema_sih_internacoes_meningite.csv",
     "dw_schema_sim_obitos_meningites.csv",
     "dw_schema_sinan_meningites_dw.csv",
     "dw_schema_sinasc_dw.csv"

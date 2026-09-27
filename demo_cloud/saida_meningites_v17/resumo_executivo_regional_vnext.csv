@@ -1,0 +1,18 @@
+﻿regional,municipios_com_contexto_n,municipios_com_sinal_n,sinais_n,sinais_alta_ou_critica_n,fila_cievs_n,gal_tipagem_pendente_n,sih_sem_sinan_n,redcap_sem_sinan_n
+AGUA BOA,8,7,16,12,7.0,8.0,21.0,0
+ALTA FLORESTA,6,6,10,9,1.0,10.0,11.0,0
+BARRA DO GARCAS,10,6,11,9,2.0,16.0,14.0,0
+CACERES,12,7,11,9,2.0,11.0,11.0,0
+COLIDER,6,3,5,4,1.0,2.0,5.0,0
+CUIABA,11,7,13,9,25.0,46.0,47.0,0
+DIAMANTINO,7,5,7,5,2.0,3.0,3.0,0
+JUARA,4,3,6,4,4.0,4.0,11.0,0
+JUINA,7,5,10,8,2.0,6.0,11.0,0
+PEIXOTO DE AZEVEDO,5,4,6,4,2.0,3.0,4.0,0
+PONTES E LACERDA,9,5,7,6,1.0,3.0,10.0,0
+PORTO ALEGRE DO NORTE,7,3,4,3,2.0,1.0,4.0,0
+RONDONOPOLIS,19,16,33,24,19.0,37.0,68.0,0
+SAO FELIX DO ARAGUAIA,5,0,0,0,0.0,0.0,0.0,0
+SINOP,14,10,22,18,6.0,40.0,45.0,0
+Sem regional,10,8,8,8,0.0,0.0,9.0,0
+TANGARA DA SERRA,10,8,13,9,4.0,6.0,10.0,0

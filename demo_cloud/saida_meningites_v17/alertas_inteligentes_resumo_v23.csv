@@ -1,12 +1,13 @@
 ﻿tipo_alerta,severidade,n,origem
-Encerramento fora do prazo,Atenção,679,caso
-Confirmação laboratorial fraca,Atenção,591,caso
-Encerramento em risco/atrasado,Crítico,292,caso
-Investigação atrasada,Alto,210,caso
-Investigação fora do prazo,Atenção,168,caso
-Quimioprofilaxia ausente,Crítico,69,caso
-Quimioprofilaxia inconsistente,Atenção,47,caso
+Encerramento fora do prazo,Atenção,681,caso
+Confirmação laboratorial fraca,Atenção,595,caso
+Encerramento em risco/atrasado,Crítico,290,caso
+Investigação atrasada,Alto,214,caso
+Investigação fora do prazo,Atenção,170,caso
+Quimioprofilaxia ausente,Crítico,70,caso
+Quimioprofilaxia inconsistente,Atenção,48,caso
 Quimioprofilaxia fora do prazo,Alto,28,caso
 Quimioprofilaxia ausente,Alto,11,caso
+Encerramento em risco/atrasado,Alto,7,caso
 Vacinação complementar pós-DIHib (<2 anos),Atenção,7,caso
 Vacinação complementar pós-DIHib (<2 anos),Alto,2,caso

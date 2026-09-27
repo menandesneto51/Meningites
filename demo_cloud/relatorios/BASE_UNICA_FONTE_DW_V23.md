@@ -1,16 +1,8 @@
 # Base única SINAN — fonte DW V23
 
 **Fonte:** `DW_VW_SINAN_MENINGITE` ← `sinan_meningites_dw.csv`
-**Residentes MT:** 5944 casos | **Colunas:** 186
-**Gerado em:** 27/07/2026 11:36
-
-## Auditoria DW × local
-
-- Local (`meningite.csv`): 5925 linhas
-- DW (`VW_SINAN_MENINGITE`): 6032 linhas
-- Overlap notificações: 5894
-- Somente no DW: **109** (ver `auditoria_sinan_somente_dw_v23.csv`)
-- Somente no local: 2
+**Residentes MT:** 6004 casos | **Colunas:** 186
+**Gerado em:** 27/09/2026 10:08
 
 ## Como forçar fonte
 

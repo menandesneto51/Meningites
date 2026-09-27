@@ -1,0 +1,5 @@
+﻿arquivo,metrica,status,linhas,coluna_codigo,coluna_municipio,detalhe
+fila_cievs_unificada_v23.csv,fila_cievs_n,ok,280,codigo_municipio_v17,municipio_v17,
+gal_fila_tipagem_sinan_v32.csv,gal_tipagem_pendente_n,ok,196,codigo_municipio_v17,municipio_v17,
+sih_fila_investigacao_v33.csv,sih_sem_sinan_n,ok,284,codigo_municipio_v33,municipio_v33,
+redcap_gap_sinan_v35.csv,redcap_sem_sinan_n,sem_registros,0,codigo_municipio_v35,municipio_v35,"Arquivo válido, sem registros acionáveis."

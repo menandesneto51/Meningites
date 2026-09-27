@@ -1,6 +1,6 @@
 # Narrativa assistida — Boletim Meningites CIEVS-MT
 
-**Gerado em:** 29/07/2026 12:35
+**Gerado em:** 27/09/2026 10:09
 **Modo:** recuperação normativa local (RAG) + síntese operacional
 
 > Texto de apoio. Revisar e validar antes de divulgação oficial.
@@ -8,19 +8,19 @@
 ## Síntese executiva
 ## Parágrafo executivo (LLM)
 
-O presente boletim técnico-epidemiológico sumariza a situação da vigilância das meningites em Mato Grosso para o ano de 2025. Até o momento, foram registrados 87 casos confirmados, resultando em uma incidência de 2,9/100 mil habitantes e uma letalidade de 18,4%, com 16 óbitos. Em relação aos indicadores do Ministério da Saúde, o estado demonstra desempenho favorável na % de confirmação laboratorial (44,4% vs. BR 36,1%) e na % de doença meningocócica com quimioprofilaxia em até 48h (54,7% vs. BR 45,5%). No entanto, persistem desafios críticos, evidenciados pela baixa % de casos investigados em até 48h (93,6% vs. BR 97,8%), % de casos encerrados em até 60 dias (83,6% vs. BR 94,4%), e % de notificação em até 24h do início dos sintomas (29,8%). Os principais alertas incluem 679 encerramentos fora do prazo e 591 confirmações laboratoriais consideradas fracas, impactando diretamente a qualidade dos dados. A fila de trabalho do CIEVS-MT atualmente contabiliza 200 itens prioritários, demandando atenção contínua para a qualificação da vigilância epidemiológica. A validação humana deste relatório é obrigatória.
+O cenário epidemiológico de meningites em 2024 registra 112 casos confirmados, com incidência de 3,5/100 mil habitantes e uma letalidade de 22,3%, totalizando 25 óbitos. Conforme indicadores do Ministério da Saúde, o estado de Mato Grosso demonstra desempenho positivo na confirmação laboratorial (44,6% vs. BR 36,1%) e na quimioprofilaxia para Doença Meningocócica (54,5% vs. BR 45,5%). No entanto, persistem desafios críticos na vigilância, com percentuais abaixo da referência nacional para investigação em até 48h (93,6% vs. BR 97,8%) e encerramento em até 60 dias (83,5% vs. BR 94,4%). A baixa taxa de notificação em até 24h (29,6%), identificação de sorogrupo em DM (30,5%) e quimioprofilaxia para Hib/Hemófilo (38,1%) também são pontos de atenção. O volume de alertas é expressivo, com 681 encerramentos fora do prazo e 290 em risco/atrasados, além de 595 alertas de confirmação laboratorial fraca e 214 de investigação atrasada, impactando a fila de 200 itens prioritários do CIEVS. É fundamental aprimorar os processos de vigilância e assistência. Validação humana obrigatória.
 
 
 **Pontos favoráveis**
-- % confirmação laboratorial (PCR/cultura) — Informe MS em 44,4% (acima ou alinhado à referência nacional).
-- % doença meningocócica com quimioprofilaxia ≤48h em 54,7% (acima ou alinhado à referência nacional).
+- % confirmação laboratorial (PCR/cultura) — Informe MS em 44,6% (acima ou alinhado à referência nacional).
+- % doença meningocócica com quimioprofilaxia ≤48h em 54,5% (acima ou alinhado à referência nacional).
 
 **Pontos que exigem ação**
 - % casos investigados em até 48h da notificação em 93,6% (vermelho vs referência Brasil).
-- % casos encerrados em até 60 dias da notificação em 83,6% (vermelho vs referência Brasil).
+- % casos encerrados em até 60 dias da notificação em 83,5% (vermelho vs referência Brasil).
 - % meningite Hib/Hemófilo com quimioprofilaxia ≤48h em 38,1% (vermelho vs referência Brasil).
-- % DM com sorogrupo identificado em 30,6% (vermelho vs referência Brasil).
-- % notificação em até 24h do início dos sintomas em 29,8% (vermelho vs referência Brasil).
+- % DM com sorogrupo identificado em 30,5% (vermelho vs referência Brasil).
+- % notificação em até 24h do início dos sintomas em 29,6% (vermelho vs referência Brasil).
 
 ## Leitura normativa aplicada
 
@@ -45,15 +45,15 @@ correc...
 
 ```
 Indicadores MS (MT):
-- % confirmação laboratorial (PCR/cultura) — Informe MS: 44,4% (ref BR 36,1; Verde)
+- % confirmação laboratorial (PCR/cultura) — Informe MS: 44,6% (ref BR 36,1; Verde)
 - % casos investigados em até 48h da notificação: 93,6% (ref BR 97,8; Vermelho)
-- % casos encerrados em até 60 dias da notificação: 83,6% (ref BR 94,4; Vermelho)
-- % doença meningocócica com quimioprofilaxia ≤48h: 54,7% (ref BR 45,5; Verde)
+- % casos encerrados em até 60 dias da notificação: 83,5% (ref BR 94,4; Vermelho)
+- % doença meningocócica com quimioprofilaxia ≤48h: 54,5% (ref BR 45,5; Verde)
 - % meningite Hib/Hemófilo com quimioprofilaxia ≤48h: 38,1% (ref BR NA; Vermelho)
-- % DM com sorogrupo identificado: 30,6% (ref BR NA; Vermelho)
-- % notificação em até 24h do início dos sintomas: 29,8% (ref BR NA; Vermelho)
-Epidemiologia 2025: confirmados=87; incidência=2,9/100 mil; letalidade=18,4%; óbitos=16
-Principais alertas: Encerramento fora do prazo (Atenção) n=679; Confirmação laboratorial fraca (Atenção) n=591; Encerramento em risco/atrasado (Crítico) n=292; Investigação atrasada (Alto) n=210; Investigação fora do prazo (Atenção) n=168
+- % DM com sorogrupo identificado: 30,5% (ref BR NA; Vermelho)
+- % notificação em até 24h do início dos sintomas: 29,6% (ref BR NA; Vermelho)
+Epidemiologia 2024: confirmados=112; incidência=3,5/100 mil; letalidade=22,3%; óbitos=25
+Principais alertas: Encerramento fora do prazo (Atenção) n=681; Confirmação laboratorial fraca (Atenção) n=595; Encerramento em risco/atrasado (Crítico) n=290; Investigação atrasada (Alto) n=214; Investigação fora do prazo (Atenção) n=170
 Fila CIEVS: 200 itens prioritários.
 ```
 

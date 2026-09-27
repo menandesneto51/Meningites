@@ -1,34 +1,50 @@
 # Digest Regional — TANGARA DA SERRA
-**Perfil:** COORD_REGIONAL · **Gerado:** 29/07/2026 12:37
+**Perfil:** COORD_REGIONAL · **Gerado:** 27/09/2026 10:11
 
 ## Indicadores MS (regional)
-Casos=344 | inv48h=98.5% | enc60d=63.9% | quimio=100.0%
+Casos=343 | inv48h=98.5% | enc60d=64.1% | quimio=100.0%
 
 ## Fila local: 18 itens · Crítico/Alto: 17
 
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · DENISE | CASO-0CC91ABC — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CAMPO NOVO DO PARECIS | CASO-E2C44C9D — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Encerramento em risco/atrasado · ARENAPOLIS | CASO-2C6856A0 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · BARRA DO BUGRES | CASO-14EDEF44 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · BARRA DO BUGRES | CASO-603E7792 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · BARRA DO BUGRES | CASO-22E107C8 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CAMPO NOVO DO PARECIS | CASO-815AEBC4 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CAMPO NOVO DO PARECIS | CASO-CBF0228E — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CAMPO NOVO DO PARECIS | CASO-81CE7679 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · DENISE | CASO-1957BC60 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · DENISE | CASO-0CC91ABC — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVA MARILANDIA | CASO-25762644 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVA OLIMPIA | CASO-F01F4D99 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVA OLIMPIA | CASO-759DD5ED — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVA OLIMPIA | CASO-F374C08B — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+Prioridade: **quimio → lab/tipagem → encerramento → investigação** (dentro da severidade).
 
-## Linkage DW (2)
+### Laboratório / GAL (1)
 
-- Óbito no SIM sem desfecho meningite no SINAN · CASO-0CC91ABC — Match DW SIM score≥0.75; CID=G00.3 Meningite esta; data óbito=2022-06-05; evidência=data_obito+cid_m
-- Óbito no SIM sem desfecho meningite no SINAN · CASO-E2C44C9D — Match DW SIM score≥0.75; CID=G00.2 Meningite estr; data óbito=2024-07-28; evidência=data_obito+cid_m
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · BARRA DO BUGRES · caso `2588847` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+
+### Encerramento (16)
+
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CAMPO NOVO DO PARECIS · caso `2600796` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · DENISE · caso `2191077` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Encerramento em risco/atrasado · ARENAPOLIS · caso `2842275` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · BARRA DO BUGRES · caso `1655096` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · BARRA DO BUGRES · caso `2009373` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · BARRA DO BUGRES · caso `294976` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CAMPO NOVO DO PARECIS · caso `427953` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CAMPO NOVO DO PARECIS · caso `377066` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · DENISE · caso `2191077` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · DENISE · caso `431828` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVA MARILANDIA · caso `1390697` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVA OLIMPIA · caso `793174` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVA OLIMPIA · caso `454121` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVA OLIMPIA · caso `990081` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · PORTO ESTRELA · caso `710146` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · PORTO ESTRELA · caso `588875` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+
+### Outros (1)
+
+- **Atenção** · Duplicidade NumeroNotificacao · SAPEZAL · caso `1517426` — Auditar e consolidar registros duplicados no SINAN/DW.
+
+
+## Linkage DW (3)
+
+- Óbito no SIM sem desfecho meningite no SINAN · caso `2600796` — Match DW SIM score≥0.75; CID=G00.2 Meningite estr; data óbito=2024-07-28; evidência=data_obito+cid_m
+- Óbito no SIM sem desfecho meningite no SINAN · caso `2191077` — Match DW SIM score≥0.75; CID=G00.3 Meningite esta; data óbito=2022-06-05; evidência=data_obito+cid_m
+- GAL/LACEN positivo — atualizar SINAN · caso `2588847` — Match DW VW_GAL score≥0.75; método=Teste de Sensibilidade; resultado=Microrganismo Isolado:  
 
 ## Ações sugeridas (meningites / MS)
 1. Resolver quimioprofilaxia DM/Hib pendente (≤48h).
-2. Encerrar casos próximos/além de 60 dias.
-3. Buscar resultado GAL/LACEN quando lab fraco ou match DW positivo.
-4. Completar investigação ≤48h e sorogrupo em DM.
+2. Atualizar sorogrupo SINAN quando houver tipagem GAL.
+3. Encerrar casos próximos/além de 60 dias.
+4. Buscar resultado GAL/LACEN quando lab fraco ou match DW positivo.
+5. Completar investigação ≤48h.

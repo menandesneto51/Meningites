@@ -19,7 +19,7 @@
       "auditoria_sinan_somente_"
     ]
   },
-  "n_identificadores_pseudonimizados": 6812,
+  "n_identificadores_pseudonimizados": 14019,
   "por_arquivo": {
     "alertas_inteligentes_casos_v23.csv": {
       "colunas_pseudonimizadas": [
@@ -27,6 +27,9 @@
       ]
     },
     "alertas_inteligentes_fila_cievs_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "id_caso"
+      ],
       "colunas_texto_sanitizadas": [
         "territorio"
       ]
@@ -75,8 +78,33 @@
       ]
     },
     "fila_cievs_unificada_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "id_caso"
+      ],
       "colunas_texto_sanitizadas": [
         "territorio"
+      ]
+    },
+    "gal_exames_meningite_v32.csv": {
+      "colunas_pseudonimizadas": [
+        "numero_notificacao"
+      ]
+    },
+    "gal_fila_tipagem_sinan_v32.csv": {
+      "colunas_pseudonimizadas": [
+        "NumeroNotificacao"
+      ]
+    },
+    "gal_sinan_concordancia_lab_v32.csv": {
+      "colunas_pseudonimizadas": [
+        "_sid",
+        "NumeroNotificacao",
+        "numero_notificacao"
+      ]
+    },
+    "gal_tipagem_nm_hib_v32.csv": {
+      "colunas_pseudonimizadas": [
+        "numero_notificacao"
       ]
     },
     "linkage_fila_busca_gal_lacen_v23.csv": {
@@ -109,6 +137,31 @@
       ]
     },
     "linkage_proxy_interno_casos_v23.csv": {
+      "colunas_pseudonimizadas": [
+        "NumeroNotificacao"
+      ]
+    },
+    "redcap_schema_esperado_v35.csv": {
+      "colunas_pseudonimizadas": [
+        "nu_notificacao_sinan"
+      ]
+    },
+    "sih_internacoes_prep_v33.csv": {
+      "colunas_removidas": [
+        "AnoNascimento",
+        "MesNascimento"
+      ]
+    },
+    "sih_sinan_linkage_v33.csv": {
+      "colunas_removidas": [
+        "AnoNascimento",
+        "MesNascimento"
+      ],
+      "colunas_pseudonimizadas": [
+        "NumeroNotificacao_match"
+      ]
+    },
+    "sim_fila_reconcilacao_v23.csv": {
       "colunas_pseudonimizadas": [
         "NumeroNotificacao"
       ]
@@ -170,9 +223,6 @@
     "relatorios/ALERTAS_PERSONALIZADOS_V23.md": {
       "texto_sanitizado": true
     },
-    "relatorios/ANALISE_SINAN_MENINGITES_DW_V23.md": {
-      "texto_sanitizado": true
-    },
     "relatorios/BASE_UNICA_FONTE_DW_V23.md": {
       "texto_sanitizado": true
     },
@@ -180,6 +230,9 @@
       "texto_sanitizado": true
     },
     "relatorios/BOLETIM_SEMANAL_MENINGITES_V23_RASCUNHO.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/CIPV_COBERTURA_VACINAL_V34.md": {
       "texto_sanitizado": true
     },
     "relatorios/CNES_SINASC_ENRIQUECIMENTO_V30.md": {
@@ -191,10 +244,10 @@
     "relatorios/FILA_CIEVS_UNIFICADA_V23.md": {
       "texto_sanitizado": true
     },
-    "relatorios/INDICADORES_NOVOS_V28.md": {
+    "relatorios/GAL_LABORATORIO_DETALHADO_V32.md": {
       "texto_sanitizado": true
     },
-    "relatorios/INTERPRETACAO_ODDS_RATIO_EFETIVIDADE_VACINAL_V13_1.md": {
+    "relatorios/INDICADORES_NOVOS_V28.md": {
       "texto_sanitizado": true
     },
     "relatorios/LINKAGE_GAL_LACEN_SIM_V23.md": {
@@ -206,7 +259,16 @@
     "relatorios/NOWCAST_FORECAST_REFINADO_V23.md": {
       "texto_sanitizado": true
     },
+    "relatorios/POPULACAO_IBGE_RIPSA_V31.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/REDCAP_FILA_CIEVS_V35.md": {
+      "texto_sanitizado": true
+    },
     "relatorios/SAZONALIDADE_MENINGITES_V23.md": {
+      "texto_sanitizado": true
+    },
+    "relatorios/SIH_SUBNOTIFICACAO_V33.md": {
       "texto_sanitizado": true
     }
   }

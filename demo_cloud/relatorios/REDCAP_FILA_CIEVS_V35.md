@@ -1,6 +1,6 @@
 # Fila CIEVS / RedCap — Meningites V35
 
-**Gerado em:** 2026-09-05T22:01:16
+**Gerado em:** 2026-09-27T10:12:13
 **Status:** redcap_fila_meningite_cievs.csv ausente — stub V35 ativo (sem inventar fila). Deposite CSV ou defina REDCAP_FILA_CSV.
 
 ## Escopo
@@ -8,7 +8,6 @@
 - Canal quase em tempo real da CIEVS-MT para meningites / DM (quando o export existir).
 - Complementa a fila SINAN/GAL/SIM do módulo 20 — **não a substitui**.
 - Stub offline-safe: ausência do CSV não falha o pipeline.
-- LGPD: sem CPF/CNS/nome; `record_id` hasheado; NU_NOTIFICACAO só como flag.
 
 **Export disponível:** não
 

@@ -1,185 +1,239 @@
 {
   "rotina": "ops",
-  "inicio": "2026-07-29T12:34:43",
-  "fim": "2026-07-29T12:37:51",
+  "inicio": "2026-09-27T10:07:21",
+  "fim": "2026-09-27T10:12:18",
   "python": "C:\\Users\\Menandesneto\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe",
   "passos": [
     {
       "ordem": 1,
-      "script": "12_indicadores_ms_operacionais_v23.py",
+      "script": "19_dw_descobrir_e_extrair_v23.py",
       "obrigatorio": true,
       "status": "ok",
-      "duracao_s": 2.82,
+      "duracao_s": 59.85,
       "erro": "",
-      "fim": "2026-07-29T12:34:46"
+      "fim": "2026-09-27T10:08:21"
     },
     {
       "ordem": 2,
-      "script": "13_alertas_inteligentes_v23.py",
+      "script": "00_base_unica_meningites_v17.py",
       "obrigatorio": true,
       "status": "ok",
-      "duracao_s": 1.23,
+      "duracao_s": 3.45,
       "erro": "",
-      "fim": "2026-07-29T12:34:47"
+      "fim": "2026-09-27T10:08:25"
     },
     {
       "ordem": 3,
-      "script": "14_painel_epidemiologico_ms_v23.py",
+      "script": "12_indicadores_ms_operacionais_v23.py",
       "obrigatorio": true,
       "status": "ok",
-      "duracao_s": 1.65,
+      "duracao_s": 4.71,
       "erro": "",
-      "fim": "2026-07-29T12:34:49"
+      "fim": "2026-09-27T10:08:29"
     },
     {
       "ordem": 4,
-      "script": "11_qualidade_score_v20.py",
-      "obrigatorio": false,
+      "script": "13_alertas_inteligentes_v23.py",
+      "obrigatorio": true,
       "status": "ok",
-      "duracao_s": 1.02,
+      "duracao_s": 3.33,
       "erro": "",
-      "fim": "2026-07-29T12:34:50"
+      "fim": "2026-09-27T10:08:33"
     },
     {
       "ordem": 5,
-      "script": "15_boletim_semanal_rascunho_v23.py",
-      "obrigatorio": false,
+      "script": "14_painel_epidemiologico_ms_v23.py",
+      "obrigatorio": true,
       "status": "ok",
-      "duracao_s": 0.86,
+      "duracao_s": 4.4,
       "erro": "",
-      "fim": "2026-07-29T12:34:51"
+      "fim": "2026-09-27T10:08:37"
     },
     {
       "ordem": 6,
-      "script": "27_ingestao_docs_ms_rag_v27.py",
+      "script": "11_qualidade_score_v20.py",
       "obrigatorio": false,
       "status": "ok",
-      "duracao_s": 5.69,
+      "duracao_s": 4.01,
       "erro": "",
-      "fim": "2026-07-29T12:34:57"
+      "fim": "2026-09-27T10:08:41"
     },
     {
       "ordem": 7,
-      "script": "16_assistente_cievs_v23.py",
+      "script": "15_boletim_semanal_rascunho_v23.py",
       "obrigatorio": false,
       "status": "ok",
-      "duracao_s": 22.31,
+      "duracao_s": 2.38,
       "erro": "",
-      "fim": "2026-07-29T12:35:19"
+      "fim": "2026-09-27T10:08:43"
     },
     {
       "ordem": 8,
-      "script": "19_dw_descobrir_e_extrair_v23.py",
+      "script": "27_ingestao_docs_ms_rag_v27.py",
       "obrigatorio": false,
-      "status": "falhou",
-      "duracao_s": 46.26,
-      "erro": "código de saída 1",
-      "fim": "2026-07-29T12:36:05"
+      "status": "ok",
+      "duracao_s": 8.97,
+      "erro": "",
+      "fim": "2026-09-27T10:08:52"
     },
     {
       "ordem": 9,
-      "script": "17_linkage_gal_lacen_sim_v23.py",
+      "script": "16_assistente_cievs_v23.py",
       "obrigatorio": false,
       "status": "ok",
-      "duracao_s": 76.26,
+      "duracao_s": 21.81,
       "erro": "",
-      "fim": "2026-07-29T12:37:21"
+      "fim": "2026-09-27T10:09:14"
     },
     {
       "ordem": 10,
-      "script": "20_enriquecimento_dw_fila_cievs_v23.py",
-      "obrigatorio": false,
+      "script": "17_linkage_gal_lacen_sim_v23.py",
+      "obrigatorio": true,
       "status": "ok",
-      "duracao_s": 1.93,
+      "duracao_s": 104.0,
       "erro": "",
-      "fim": "2026-07-29T12:37:23"
+      "fim": "2026-09-27T10:10:58"
     },
     {
       "ordem": 11,
-      "script": "02b_odds_classificacao_desfechos_v20.py",
-      "obrigatorio": false,
+      "script": "20_enriquecimento_dw_fila_cievs_v23.py",
+      "obrigatorio": true,
       "status": "ok",
-      "duracao_s": 2.41,
+      "duracao_s": 3.82,
       "erro": "",
-      "fim": "2026-07-29T12:37:26"
+      "fim": "2026-09-27T10:11:02"
     },
     {
       "ordem": 12,
-      "script": "02c_odds_clinico_socio_comorb_v21.py",
+      "script": "02b_odds_classificacao_desfechos_v20.py",
       "obrigatorio": false,
       "status": "ok",
-      "duracao_s": 4.09,
+      "duracao_s": 3.62,
       "erro": "",
-      "fim": "2026-07-29T12:37:30"
+      "fim": "2026-09-27T10:11:06"
     },
     {
       "ordem": 13,
-      "script": "21_sazonalidade_meningites_v23.py",
+      "script": "02c_odds_clinico_socio_comorb_v21.py",
       "obrigatorio": false,
       "status": "ok",
-      "duracao_s": 1.06,
+      "duracao_s": 6.08,
       "erro": "",
-      "fim": "2026-07-29T12:37:31"
+      "fim": "2026-09-27T10:11:12"
     },
     {
       "ordem": 14,
-      "script": "22_nowcast_forecast_refinado_v23.py",
+      "script": "21_sazonalidade_meningites_v23.py",
       "obrigatorio": false,
       "status": "ok",
-      "duracao_s": 0.92,
+      "duracao_s": 1.44,
       "erro": "",
-      "fim": "2026-07-29T12:37:32"
+      "fim": "2026-09-27T10:11:13"
     },
     {
       "ordem": 15,
-      "script": "26_indicadores_ops_avancados_v25.py",
+      "script": "22_nowcast_forecast_refinado_v23.py",
       "obrigatorio": false,
       "status": "ok",
-      "duracao_s": 1.83,
+      "duracao_s": 1.39,
       "erro": "",
-      "fim": "2026-07-29T12:37:34"
+      "fim": "2026-09-27T10:11:15"
     },
     {
       "ordem": 16,
-      "script": "24_nowcast_operacional_gestao_v24.py",
-      "obrigatorio": true,
+      "script": "26_indicadores_ops_avancados_v25.py",
+      "obrigatorio": false,
       "status": "ok",
-      "duracao_s": 2.41,
+      "duracao_s": 3.76,
       "erro": "",
-      "fim": "2026-07-29T12:37:36"
+      "fim": "2026-09-27T10:11:18"
     },
     {
       "ordem": 17,
-      "script": "23_alertas_personalizados_ia_v23.py",
-      "obrigatorio": false,
+      "script": "24_nowcast_operacional_gestao_v24.py",
+      "obrigatorio": true,
       "status": "ok",
-      "duracao_s": 6.53,
+      "duracao_s": 4.63,
       "erro": "",
-      "fim": "2026-07-29T12:37:43"
+      "fim": "2026-09-27T10:11:23"
     },
     {
       "ordem": 18,
-      "script": "28_indicadores_novos_v28.py",
+      "script": "23_alertas_personalizados_ia_v23.py",
       "obrigatorio": false,
       "status": "ok",
-      "duracao_s": 6.27,
+      "duracao_s": 7.83,
       "erro": "",
-      "fim": "2026-07-29T12:37:49"
+      "fim": "2026-09-27T10:11:31"
     },
     {
       "ordem": 19,
+      "script": "28_indicadores_novos_v28.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 13.23,
+      "erro": "",
+      "fim": "2026-09-27T10:11:44"
+    },
+    {
+      "ordem": 20,
+      "script": "30_cnes_sinasc_enriquecimento_v30.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 9.65,
+      "erro": "",
+      "fim": "2026-09-27T10:11:54"
+    },
+    {
+      "ordem": 21,
+      "script": "32_gal_laboratorio_detalhado_v32.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 8.04,
+      "erro": "",
+      "fim": "2026-09-27T10:12:02"
+    },
+    {
+      "ordem": 22,
+      "script": "33_sih_subnotificacao_v33.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 8.29,
+      "erro": "",
+      "fim": "2026-09-27T10:12:10"
+    },
+    {
+      "ordem": 23,
+      "script": "34_cipv_cobertura_vacinal_v34.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 2.03,
+      "erro": "",
+      "fim": "2026-09-27T10:12:12"
+    },
+    {
+      "ordem": 24,
+      "script": "35_redcap_fila_cievs_v35.py",
+      "obrigatorio": false,
+      "status": "ok",
+      "duracao_s": 1.45,
+      "erro": "",
+      "fim": "2026-09-27T10:12:13"
+    },
+    {
+      "ordem": 25,
       "script": "29_procedencia_artefatos_v28.py",
       "obrigatorio": false,
       "status": "ok",
-      "duracao_s": 1.78,
+      "duracao_s": 4.69,
       "erro": "",
-      "fim": "2026-07-29T12:37:51"
+      "fim": "2026-09-27T10:12:18"
     }
   ],
   "resumo": {
-    "total": 19,
-    "ok": 18,
-    "falhou": 1,
+    "total": 25,
+    "ok": 25,
+    "falhou": 0,
     "pulado": 0,
     "obrigatorios_falhos": 0
   }

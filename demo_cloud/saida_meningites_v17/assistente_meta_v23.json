@@ -1,8 +1,8 @@
 {
-  "gerado_em": "2026-07-29T12:35:19",
-  "n_documentos_kb": 522,
+  "gerado_em": "2026-09-27T10:09:14",
+  "n_documentos_kb": 219,
   "n_curados": 20,
-  "n_docs_ms": 502,
+  "n_docs_ms": 199,
   "llm_disponivel": true,
   "llm_provider": "gemini",
   "llm_model": "gemini-2.5-flash",

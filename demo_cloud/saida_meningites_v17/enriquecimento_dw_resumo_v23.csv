@@ -1,2 +1,2 @@
-﻿n_base,gal_matches_usados,sim_matches_usados,casos_gal,casos_gal_positivo,casos_sim,casos_sim_com_evidencia_obito,casos_sim_sem_evidencia_obito,obitos_sinan,obitos_uniao_sinan_sim,obitos_sim_sem_sinan,alertas_linkage,alertas_qualidade,fila_unificada,min_score,gerado_em
-5944,415,64,415,70,64,64,0,395,415,20,29,43,257,0.75,2026-07-29T12:37:23
+﻿n_base,gal_matches_usados,sim_matches_usados,casos_gal,casos_gal_positivo,casos_sim,casos_sim_com_evidencia_obito,casos_sim_sem_evidencia_obito,obitos_sinan,obitos_uniao_sinan_sim,obitos_sim_sem_sinan,sim_fila_reconcilacao,alertas_linkage,alertas_qualidade,fila_unificada,min_score,gerado_em
+6004,293,64,293,81,64,64,0,398,418,20,20,51,44,280,0.75,2026-09-27T10:11:02

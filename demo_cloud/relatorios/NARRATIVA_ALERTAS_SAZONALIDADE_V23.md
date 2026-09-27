@@ -1,12 +1,12 @@
 # Narrativa operacional — Meningites (IA assistida)
 
-**Gerado:** 29/07/2026 12:37
+**Gerado:** 27/09/2026 10:11
 
 ## Síntese
 
-O padrão sazonal histórico aponta maior risco relativo em **Mar** (índice 1,13). Na SE 31, a vigilância deve comparar o observado com a média/P75 do perfil semanal.
- O nowcast corrigido por atraso estima **1,1** casos (observado 1), status **rotina**. Projeção SE+1 ≈ 4,3; backtest MAPE ≈ 85,7%.
- A fila unificada tem **257** itens; foram gerados **18** digests personalizados (estadual, regionais e laboratório) para disparo manual aos perfis CIEVS.
+O padrão sazonal histórico aponta maior risco relativo em **Mar** (índice 1,13). Na SE 39, a vigilância deve comparar o observado com a média/P75 do perfil semanal.
+ O nowcast corrigido por atraso estima **2,1** casos (observado 2), status **rotina**. Projeção SE+1 ≈ 5,3; backtest MAPE ≈ 54,1%.
+ A fila unificada tem **280** itens; foram gerados **18** digests personalizados (estadual, regionais e laboratório) para disparo manual aos perfis CIEVS.
 
 ## Recomendações alinhadas ao MS
 
@@ -22,17 +22,15 @@ O padrão sazonal histórico aponta maior risco relativo em **Mar** (índice 1,1
 
 Com base nas normas indexadas para a pergunta «Quais ações prioritárias do CIEVS para meningites conforme Informe MS e NT 154?»:
 
-**Informe Meningites — indicadores (MD) — Como usar no CIEVS-MT** (Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS):
-- Comparar o valor estadual/municipal ao parâmetro Brasil do Informe (não como meta absoluta isolada, mas como referência de desempenho).
-- Priorizar ação quando investigação >48h, encerramento >60 dias ou quimio DM atrasada.
-- Cruzar indicadores vermelhos com a fila operacional (casos abertos, backlog) e alertas de surto.
-- Sempre citar a fonte e a data de geração do painel em comunicações oficiais.
+**Índice de vigência e citação (corpus MS) — Índice de vigência — corpus MS (Assistente CIEVS-MT)** — Catálogo CIEVS-MT — ordem de prioridade normativa (vigente):
+01/2025 — sentinela DIHi/DPI | Sim | Rede lab / sentinela Hi e pneumococo |
+| 7 | Diretrizes Meningites até 2030 | Sim | Contexto estratégico (não substitui NT 154) |
+| — | NT nº 97/2024 | **Não** (revogada) | Apenas histórico |
 
-**Informe Meningites — indicadores (MD) — Informe Meningites — Indicadores operacionais (MS)** (Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS):
-**Fonte:** Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS  
-**Uso CIEVS:** metas/referências nacionais e leitura de semáforo dos indicadores MS no painel.
+\* Nos pontos de definição de caso/contato/surto/quimio, prevalece a NT 154 sobre a 6ª edição do GVS.
 
-**Informe Meningites 2024 (PDF oficial) — Por Meningite Bacteriana Segundo** (Informe Meningites 2024 — CGVDI/DPNI/SVSA/MS):
-io do estado, não sendo apresentados neste informe.
-2Dados de 2024 notificados até 7/9/2024 (SE36).
-3Foram utilizadas as estimati
+**Diretrizes Meningites até 2030 (resumo MD) — Diretrizes para enfrentamento das meningites até 2030 (resumo operacional)** — Diretrizes para enfrentamento das meningites até 2030 — MS (vigente):
+**Fonte:** Diretrizes para enfrentamento das meningites até 2030 — Ministério da Saúde (CGVDI/DPNI/SVSA e correlatos)  
+**Vigência:** vigente (documento estratégico 2024)  
+**URL oficial:** https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/guias-e-manuais/2024/diretrizes-para-enfrentamento-das-meningites-ate-2030.pdf  
+**Uso CIEVS:** contexto de política e metas

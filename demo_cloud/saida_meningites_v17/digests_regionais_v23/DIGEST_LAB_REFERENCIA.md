@@ -1,34 +1,50 @@
 # Digest Laboratório / LACEN — Meningites
-**Perfil:** LAB_REFERENCIA · **Gerado:** 29/07/2026 12:37
+**Perfil:** LAB_REFERENCIA · **Gerado:** 27/09/2026 10:11
 
-Itens: **29**
+Itens: **244** (inclui tipagem GAL→SINAN quando disponível)
 
-- Óbito no SIM sem desfecho meningite no SINAN · JACIARA · CASO-7654F73D — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2023-04-03; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · VILA RICA · CASO-8DC7E574 — Match DW SIM score≥0.75; CID=A87.9 Meningite vira; data óbito=2023-04-21; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · COCALINHO · CASO-06108C82 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2023-05-13; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA · CASO-987A52F3 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2023-04-07; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · SANTO ANTONIO DO LEVERGER · CASO-F2BEA0E7 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2022-03-14; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · CUIABA · CASO-47E2E02D — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2022-10-05; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · DENISE · CASO-0CC91ABC — Match DW SIM score≥0.75; CID=G00.3 Meningite esta; data óbito=2022-06-05; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · JUARA · CASO-7DC15045 — Match DW SIM score≥0.75; CID=G00.1 Meningite pneu; data óbito=2023-04-30; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · VARZEA GRANDE · CASO-9066EA04 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2024-12-27; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · SANTO ANTONIO DO LEVERGER · CASO-EC6CA0C0 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2022-04-20; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · PORTO DOS GAUCHOS · CASO-4DE4C08D — Match DW SIM score≥0.75; CID=G03.9 Meningite não ; data óbito=2024-04-18; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · JUARA · CASO-8649C824 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2024-12-13; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA · CASO-F61A6975 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2023-04-07; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · CANARANA · CASO-3B942580 — Match DW SIM score≥0.75; CID=G03.9 Meningite não ; data óbito=2025-02-28; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · POXOREO · caso 1 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2022-04-16; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · CAMPINAPOLIS · CASO-E4AF4779 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2024-05-17; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · CAMPO NOVO DO PARECIS · CASO-E2C44C9D — Match DW SIM score≥0.75; CID=G00.2 Meningite estr; data óbito=2024-07-28; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · SORRISO · CASO-744170FE — Match DW SIM score≥0.75; CID=G00.1 Meningite pneu; data óbito=2025-04-19; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · SAO PEDRO DA CIPA · CASO-ECA28272 — Match DW SIM score≥0.75; CID=A39.2 Meningococcemi; data óbito=2024-12-18; evidência=data_obito+cid_meningite; EvolucaoCa
-- Óbito no SIM sem desfecho meningite no SINAN · JUARA · CASO-D2B4AAFD — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2024-12-13; evidência=data_obito+cid_meningite; EvolucaoCa
-- GAL/LACEN positivo — atualizar SINAN · CUIABA · CASO-C2531DE7 — Match DW VW_GAL score≥0.75; método=PCR em Tempo Real; resultado=DNA para o Complexo <i>Mycobacterium tuberculosis</i>: D
-- GAL/LACEN positivo — atualizar SINAN · CUIABA · CASO-79A32ACA — Match DW VW_GAL score≥0.75; método=PCR em Tempo Real; resultado=Resultado: Detectável 
-- GAL/LACEN positivo — atualizar SINAN · JUINA · CASO-12167102 — Match DW VW_GAL score≥0.75; método=PCR em Tempo Real; resultado=Resultado: Detectável 
-- GAL/LACEN positivo — atualizar SINAN · SAO JOSE DOS QUATRO MARCOS · CASO-9F5DEA11 — Match DW VW_GAL score≥0.75; método=Teste de Sensibilidade; resultado=Microrganismo Isolado:  
-- GAL/LACEN positivo — atualizar SINAN · SORRISO · CASO-2B93C89B — Match DW VW_GAL score≥0.75; método=Teste de Sensibilidade; resultado=Microrganismo Isolado:  
-- GAL/LACEN positivo — atualizar SINAN · CUIABA · CASO-C6AA3AD2 — Match DW VW_GAL score≥0.75; método=Teste de Sensibilidade; resultado=Microrganismo Isolado:  
-- GAL/LACEN positivo — atualizar SINAN · COLNIZA · CASO-216379A8 — Match DW VW_GAL score≥0.75; método=PCR em Tempo Real; resultado=Resultado: Detectável 
-- GAL/LACEN positivo — atualizar SINAN · CUIABA · CASO-5FBE31E5 — Match DW VW_GAL score≥0.75; método=PCR em Tempo Real; resultado=DNA para o Complexo <i>Mycobacterium tuberculosis</i>: D
-- GAL/LACEN positivo — atualizar SINAN · VARZEA GRANDE · CASO-4228BEDA — Match DW VW_GAL score≥0.75; método=Enzimaimunoensaio; resultado=Resultado: Reagente 
+### Laboratório / GAL (20)
+
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · RONDONOPOLIS · caso `2490645` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · ALTO ARAGUAIA · caso `2489959` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · PRIMAVERA DO LESTE · caso `2489993` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · VARZEA GRANDE · caso `2423499` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · ITIQUIRA · caso `2392636` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · CUIABA · caso `1777019` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · JACIARA · caso `2152404` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · SAO PEDRO DA CIPA · caso `2220263` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · CUIABA · caso `1657469` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · ALTO PARAGUAI · caso `1855554` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · CACERES · caso `2191191` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · GAUCHA DO NORTE · caso `2338782` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · NOVA NAZARE · caso `2338726` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · SORRISO · caso `2302646` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · SANTO ANTONIO DO LEVERGER · caso `2382577` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · ARIPUANA · caso `2316833` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · SINOP · caso `2191176` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · CUIABA · caso `2234306` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · RONDONOPOLIS · caso `2487527` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · RONDONOPOLIS · caso `1456772` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+
+### Encerramento (20)
+
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CANARANA · caso `2644023` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JUARA · caso `2698494` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SORRISO · caso `2673263` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JUARA · caso `2074968` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · VARZEA GRANDE · caso `2164165` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SANTO ANTONIO DO LEVERGER · caso `2209995` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CUIABA · caso `1777019` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CAMPINAPOLIS · caso `2571375` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CAMPO NOVO DO PARECIS · caso `2600796` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SANTO ANTONIO DO LEVERGER · caso `1146304` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · COCALINHO · caso `2336634` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · DENISE · caso `2191077` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA · caso `2365378` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · VILA RICA · caso `2376787` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JACIARA · caso `2365377` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · JUARA · caso `2308041` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · PORTO DOS GAUCHOS · caso `2308306` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · ALTO ARAGUAIA · caso `2362236` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · POXOREO · caso `1` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · SAO PEDRO DA CIPA · caso `2654382` — Revisar evolução/encerramento no SINAN e causa básica no SIM.

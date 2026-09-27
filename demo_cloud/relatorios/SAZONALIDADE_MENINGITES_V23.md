@@ -1,6 +1,6 @@
 # Sazonalidade — Meningites MT V23
 
-**Período:** 2007-2026 · **Casos:** 5929 · **Gerado:** 29/07/2026 12:37
+**Período:** 2007-2026 · **Casos:** 5989 · **Gerado:** 27/09/2026 10:11
 
 ## Picos sazonais (índice mensal)
 
@@ -10,7 +10,7 @@
 
 ## Semana epidemiológica atual
 
-SE 31 dentro do esperado histórico (obs 0; média 6.5).
+SE 39 dentro do esperado histórico (obs 0; média 5.3).
 
 Arquivos: `sazonalidade_indice_mensal_v23.csv`, `sazonalidade_heatmap_semana_ano_v23.csv`,
 `sazonalidade_indice_etiologia_v23.csv`, `sazonalidade_indice_regional_v23.csv`.

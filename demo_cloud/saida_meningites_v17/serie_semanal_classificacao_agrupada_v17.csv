@@ -2968,11 +2968,11 @@
 2025,42,Outras etiologias,2,0,2,0,1
 2025,43,Meningite fúngica,1,1,1,0,0
 2025,43,Meningite tuberculosa,1,1,1,0,1
-2025,43,Outras etiologias,6,0,5,0,3
+2025,43,Outras etiologias,6,0,5,0,4
 2025,44,Meningite bacteriana/outras bactérias,1,1,1,1,0
 2025,44,Meningite tuberculosa,1,1,1,0,1
 2025,44,Outras etiologias,2,0,2,0,2
-2025,45,Doença meningocócica,1,1,1,0,1
+2025,45,Doença meningocócica,2,2,2,0,2
 2025,45,Meningite fúngica,1,1,1,1,0
 2025,45,Meningite viral/asséptica,1,1,1,0,1
 2025,45,Outras etiologias,4,0,3,0,0
@@ -3026,20 +3026,19 @@
 2026,14,Meningite não especificada,1,1,1,1,0
 2026,14,Outras etiologias,2,0,2,0,2
 2026,15,Meningite bacteriana/outras bactérias,1,1,1,0,1
-2026,15,Meningite não especificada,1,1,1,0,0
 2026,15,Meningite viral/asséptica,1,1,1,0,1
-2026,15,Outras etiologias,1,0,0,0,0
+2026,15,Outras etiologias,1,0,1,0,1
 2026,16,Doença meningocócica,2,2,2,2,0
 2026,16,Meningite pneumocócica,1,1,1,0,1
 2026,16,Outras etiologias,5,0,5,0,4
-2026,17,Meningite bacteriana/outras bactérias,2,2,2,0,1
+2026,17,Meningite bacteriana/outras bactérias,2,2,2,0,2
 2026,17,Meningite não especificada,3,3,3,0,3
 2026,17,Meningite viral/asséptica,1,1,1,0,1
 2026,17,Outras etiologias,4,0,3,0,3
-2026,18,Meningite fúngica,2,2,2,1,0
+2026,18,Meningite fúngica,2,2,2,2,0
 2026,18,Meningite não especificada,3,3,3,0,3
 2026,18,Meningite pneumocócica,3,3,3,0,3
-2026,18,Outras etiologias,9,0,8,0,7
+2026,18,Outras etiologias,10,0,9,0,8
 2026,19,Meningite não especificada,1,1,1,0,1
 2026,19,Meningite tuberculosa,1,1,1,0,0
 2026,19,Meningite viral/asséptica,2,2,2,0,2
@@ -3047,23 +3046,43 @@
 2026,20,Doença meningocócica,1,1,1,0,1
 2026,20,Meningite não especificada,1,1,1,0,0
 2026,20,Outras etiologias,2,0,2,0,2
+2026,21,Meningite bacteriana/outras bactérias,1,1,1,0,0
 2026,21,Meningite não especificada,2,2,2,0,2
 2026,21,Meningite viral/asséptica,1,1,1,1,0
-2026,21,Outras etiologias,3,0,2,0,2
+2026,21,Outras etiologias,3,0,3,0,3
 2026,22,Meningite bacteriana/outras bactérias,1,1,1,1,0
 2026,22,Meningite não especificada,1,1,1,0,1
 2026,22,Meningite viral/asséptica,1,1,1,0,1
 2026,22,Outras etiologias,5,0,4,0,4
-2026,23,Meningite não especificada,2,2,2,1,1
+2026,23,Meningite não especificada,2,2,2,0,1
 2026,23,Meningite pneumocócica,1,1,1,0,1
 2026,23,Meningite viral/asséptica,1,1,1,0,1
-2026,23,Outras etiologias,2,0,2,0,2
+2026,23,Outras etiologias,4,0,4,0,4
+2026,24,Meningite não especificada,1,1,1,0,1
 2026,24,Meningite por Hib/Hemófilo,1,1,1,0,1
-2026,24,Outras etiologias,7,0,6,0,6
+2026,24,Outras etiologias,7,0,7,0,6
 2026,25,Meningite não especificada,2,2,2,0,2
-2026,25,Outras etiologias,3,0,1,0,1
-2026,26,Meningite não especificada,1,1,1,0,0
+2026,25,Outras etiologias,4,0,3,0,3
+2026,26,Meningite não especificada,2,2,2,0,2
+2026,26,Meningite viral/asséptica,1,1,1,0,1
 2026,26,Outras etiologias,5,0,4,0,4
-2026,27,Meningite pneumocócica,1,1,1,0,0
-2026,27,Outras etiologias,2,0,0,0,1
-2026,28,Outras etiologias,1,0,1,0,0
+2026,27,Meningite bacteriana/outras bactérias,3,3,3,1,2
+2026,27,Meningite pneumocócica,1,1,1,0,1
+2026,27,Outras etiologias,4,0,3,0,4
+2026,28,Meningite pneumocócica,2,2,2,0,0
+2026,28,Meningite tuberculosa,1,1,1,1,0
+2026,28,Outras etiologias,3,0,3,0,1
+2026,29,Meningite fúngica,1,1,1,0,0
+2026,29,Meningite não especificada,1,1,1,0,1
+2026,29,Meningite viral/asséptica,1,1,1,0,0
+2026,29,Outras etiologias,2,0,2,0,2
+2026,30,Meningite bacteriana/outras bactérias,2,2,2,0,2
+2026,30,Meningite fúngica,2,2,2,0,1
+2026,30,Outras etiologias,3,0,3,0,3
+2026,31,Outras etiologias,7,0,1,0,2
+2026,32,Outras etiologias,6,0,3,0,2
+2026,33,Meningite fúngica,1,1,1,1,0
+2026,33,Outras etiologias,9,0,3,0,4
+2026,34,Meningite pneumocócica,1,1,1,0,1
+2026,34,Outras etiologias,4,0,1,0,0
+2026,35,Outras etiologias,2,0,1,0,1

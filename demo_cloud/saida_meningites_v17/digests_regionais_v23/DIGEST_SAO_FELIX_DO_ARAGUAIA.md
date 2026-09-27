@@ -1,15 +1,21 @@
 # Digest Regional — SAO FELIX DO ARAGUAIA
-**Perfil:** COORD_REGIONAL · **Gerado:** 29/07/2026 12:37
+**Perfil:** COORD_REGIONAL · **Gerado:** 27/09/2026 10:11
 
 ## Indicadores MS (regional)
 Casos=11 | inv48h=100.0% | enc60d=50.0% | quimio=nan%
 
 ## Fila local: 1 itens · Crítico/Alto: 1
 
-- **Crítico** · Encerramento em risco/atrasado · LUCIARA | CASO-CA23DBE6 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+Prioridade: **quimio → lab/tipagem → encerramento → investigação** (dentro da severidade).
+
+### Encerramento (1)
+
+- **Crítico** · Encerramento em risco/atrasado · LUCIARA · caso `265937` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+
 
 ## Ações sugeridas (meningites / MS)
 1. Resolver quimioprofilaxia DM/Hib pendente (≤48h).
-2. Encerrar casos próximos/além de 60 dias.
-3. Buscar resultado GAL/LACEN quando lab fraco ou match DW positivo.
-4. Completar investigação ≤48h e sorogrupo em DM.
+2. Atualizar sorogrupo SINAN quando houver tipagem GAL.
+3. Encerrar casos próximos/além de 60 dias.
+4. Buscar resultado GAL/LACEN quando lab fraco ou match DW positivo.
+5. Completar investigação ≤48h.

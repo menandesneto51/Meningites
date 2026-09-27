@@ -1,194 +1,197 @@
-﻿NumeroNotificacao,municipio_v17,regional_v17,classificacao_agrupada_v17,ano_evento_v17,sinan_sorogrupo,gal_sorogrupo_nm,sorogrupo_uniao_v32,sorogrupo_so_gal_v32,tem_gal_v32,motivo_fila_v32,acao_sugerida_v32
-2338782,GAUCHA DO NORTE,AGUA BOA,Doença meningocócica,2023,,,,0,1,dm_com_gal_sem_tipagem,Localizar tipagem Nm no GAL/LACEN e completar sorogrupo no SINAN
-2338726,NOVA NAZARE,AGUA BOA,Doença meningocócica,2023,,,,0,1,dm_com_gal_sem_tipagem,Localizar tipagem Nm no GAL/LACEN e completar sorogrupo no SINAN
-1086063,CUIABA,CUIABA,Doença meningocócica,2012,,,,0,1,dm_com_gal_sem_tipagem,Localizar tipagem Nm no GAL/LACEN e completar sorogrupo no SINAN
-1146030,SANTO ANTONIO DO LEVERGER,CUIABA,Doença meningocócica,2022,,,,0,1,dm_com_gal_sem_tipagem,Localizar tipagem Nm no GAL/LACEN e completar sorogrupo no SINAN
-2455163,VARZEA GRANDE,CUIABA,Doença meningocócica,2023,,,,0,1,dm_com_gal_sem_tipagem,Localizar tipagem Nm no GAL/LACEN e completar sorogrupo no SINAN
-2152404,JACIARA,RONDONOPOLIS,Doença meningocócica,2021,,,,0,1,dm_com_gal_sem_tipagem,Localizar tipagem Nm no GAL/LACEN e completar sorogrupo no SINAN
-854470,AGUA BOA,AGUA BOA,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-325994,CANARANA,AGUA BOA,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-826952,CANARANA,AGUA BOA,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1311386,CANARANA,AGUA BOA,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1145060,COCALINHO,AGUA BOA,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-599973,QUERENCIA,AGUA BOA,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-383089,ALTA FLORESTA,ALTA FLORESTA,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1070199,ALTA FLORESTA,ALTA FLORESTA,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1696554,ALTA FLORESTA,ALTA FLORESTA,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1940882,ALTA FLORESTA,ALTA FLORESTA,Doença meningocócica,2021,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1036391,APIACAS,ALTA FLORESTA,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1760325,APIACAS,ALTA FLORESTA,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-417841,NOVA BANDEIRANTES,ALTA FLORESTA,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-418191,NOVA BANDEIRANTES,ALTA FLORESTA,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1760630,NOVA BANDEIRANTES,ALTA FLORESTA,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-898401,PARANAITA,ALTA FLORESTA,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-787219,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-853644,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-960943,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1488002,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1488631,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1488757,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1680425,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1910926,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,2020,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2525995,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,2024,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2664251,BARRA DO GARCAS,BARRA DO GARCAS,Doença meningocócica,2025,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-651745,CAMPINAPOLIS,BARRA DO GARCAS,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-651746,CAMPINAPOLIS,BARRA DO GARCAS,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1204568,CAMPINAPOLIS,BARRA DO GARCAS,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-336702,NOVA XAVANTINA,BARRA DO GARCAS,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-462164,NOVA XAVANTINA,BARRA DO GARCAS,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1680212,PONTAL DO ARAGUAIA,BARRA DO GARCAS,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-577867,CACERES,CACERES,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1074871,CACERES,CACERES,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1021893,CACERES,CACERES,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1109162,CACERES,CACERES,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1223428,CACERES,CACERES,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1395062,CACERES,CACERES,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1493333,CACERES,CACERES,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1551012,CACERES,CACERES,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1554499,CACERES,CACERES,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2176214,CACERES,CACERES,Doença meningocócica,2021,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-631034,PORTO ESPERIDIAO,CACERES,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1106267,ITAUBA,COLIDER,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-406853,MARCELANDIA,COLIDER,Doença meningocócica,2008,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1172270,CHAPADA DOS GUIMARAES,CUIABA,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1259037,CHAPADA DOS GUIMARAES,CUIABA,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-374473,CUIABA,CUIABA,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-391887,CUIABA,CUIABA,Doença meningocócica,2008,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-536822,CUIABA,CUIABA,Doença meningocócica,2008,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-557772,CUIABA,CUIABA,Doença meningocócica,2008,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-604758,CUIABA,CUIABA,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-604759,CUIABA,CUIABA,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-784075,CUIABA,CUIABA,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-784437,CUIABA,CUIABA,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-797759,CUIABA,CUIABA,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-843183,CUIABA,CUIABA,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-999337,CUIABA,CUIABA,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1091972,CUIABA,CUIABA,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1108071,CUIABA,CUIABA,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1169532,CUIABA,CUIABA,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1172005,CUIABA,CUIABA,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1172022,CUIABA,CUIABA,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1172112,CUIABA,CUIABA,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-947411,CUIABA,CUIABA,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1259466,CUIABA,CUIABA,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1259480,CUIABA,CUIABA,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1259618,CUIABA,CUIABA,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1748914,CUIABA,CUIABA,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1375507,CUIABA,CUIABA,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-374124,VARZEA GRANDE,CUIABA,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-838400,VARZEA GRANDE,CUIABA,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-838543,VARZEA GRANDE,CUIABA,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-844148,VARZEA GRANDE,CUIABA,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-797793,VARZEA GRANDE,CUIABA,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-874681,VARZEA GRANDE,CUIABA,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1111554,VARZEA GRANDE,CUIABA,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-972455,VARZEA GRANDE,CUIABA,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-913021,VARZEA GRANDE,CUIABA,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1103620,VARZEA GRANDE,CUIABA,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1015686,VARZEA GRANDE,CUIABA,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1258368,VARZEA GRANDE,CUIABA,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1258060,VARZEA GRANDE,CUIABA,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1508686,VARZEA GRANDE,CUIABA,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1888920,VARZEA GRANDE,CUIABA,Doença meningocócica,2019,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1891936,VARZEA GRANDE,CUIABA,Doença meningocócica,2019,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2396932,DIAMANTINO,DIAMANTINO,Doença meningocócica,2024,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2716438,DIAMANTINO,DIAMANTINO,Doença meningocócica,2025,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-720885,SAO JOSE DO RIO CLARO,DIAMANTINO,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-480997,JUARA,JUARA,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1418201,JUARA,JUARA,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2728007,JUARA,JUARA,Doença meningocócica,2026,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2319998,ARIPUANA,JUINA,Doença meningocócica,2023,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-684757,BRASNORTE,JUINA,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-447681,JUINA,JUINA,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-447682,JUINA,JUINA,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-684588,JUINA,JUINA,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1555266,JURUENA,JUINA,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-389854,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-880064,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1402807,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-3627914,COMODORO,PONTES E LACERDA,Doença meningocócica,2008,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1492500,PONTES E LACERDA,PONTES E LACERDA,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1550570,PONTES E LACERDA,PONTES E LACERDA,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-552077,VILA RICA,PORTO ALEGRE DO NORTE,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-823227,ALTO ARAGUAIA,RONDONOPOLIS,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-909661,ALTO ARAGUAIA,RONDONOPOLIS,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-824531,CAMPO VERDE,RONDONOPOLIS,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-907831,CAMPO VERDE,RONDONOPOLIS,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-908779,DOM AQUINO,RONDONOPOLIS,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1185522,ITIQUIRA,RONDONOPOLIS,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1066250,ITIQUIRA,RONDONOPOLIS,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-824528,JACIARA,RONDONOPOLIS,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-862440,JACIARA,RONDONOPOLIS,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-862441,JACIARA,RONDONOPOLIS,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-909129,JACIARA,RONDONOPOLIS,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2365377,JACIARA,RONDONOPOLIS,Doença meningocócica,2023,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-532638,JUSCIMEIRA,RONDONOPOLIS,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-498700,PARANATINGA,RONDONOPOLIS,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-3401001,PEDRA PRETA,RONDONOPOLIS,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-685896,PEDRA PRETA,RONDONOPOLIS,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1321565,PEDRA PRETA,RONDONOPOLIS,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-926019,POXOREO,RONDONOPOLIS,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2363555,POXOREO,RONDONOPOLIS,Doença meningocócica,2022,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-528449,PRIMAVERA DO LESTE,RONDONOPOLIS,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-886928,PRIMAVERA DO LESTE,RONDONOPOLIS,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1032662,PRIMAVERA DO LESTE,RONDONOPOLIS,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1587007,PRIMAVERA DO LESTE,RONDONOPOLIS,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1818481,PRIMAVERA DO LESTE,RONDONOPOLIS,Doença meningocócica,2019,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-819905,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-819937,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-861958,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1055187,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-949140,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1312831,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1314266,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1457024,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1816787,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2942128,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2025,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2992076,RONDONOPOLIS,RONDONOPOLIS,Doença meningocócica,2025,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1055431,SAO JOSE DO POVO,RONDONOPOLIS,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1260294,CLAUDIA,SINOP,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1636923,FELIZ NATAL,SINOP,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1705880,FELIZ NATAL,SINOP,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-484695,LUCAS DO RIO VERDE,SINOP,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1705331,LUCAS DO RIO VERDE,SINOP,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1047659,NOVA MUTUM,SINOP,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1705007,NOVA MUTUM,SINOP,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-366957,SINOP,SINOP,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-812276,SINOP,SINOP,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-791240,SINOP,SINOP,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-866263,SINOP,SINOP,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-921162,SINOP,SINOP,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1014766,SINOP,SINOP,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1049769,SINOP,SINOP,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1050762,SINOP,SINOP,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1140542,SINOP,SINOP,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1149191,SINOP,SINOP,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1149192,SINOP,SINOP,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1218555,SINOP,SINOP,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1666819,SINOP,SINOP,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1632119,SINOP,SINOP,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1876987,SINOP,SINOP,Doença meningocócica,2019,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1881555,SINOP,SINOP,Doença meningocócica,2019,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2171713,SINOP,SINOP,Doença meningocócica,2021,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2278519,SINOP,SINOP,Doença meningocócica,2022,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2278823,SINOP,SINOP,Doença meningocócica,2022,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2279878,SINOP,SINOP,Doença meningocócica,2023,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2276855,SINOP,SINOP,Doença meningocócica,2023,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-2677284,SINOP,SINOP,Doença meningocócica,2025,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-334694,SORRISO,SINOP,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-451938,SORRISO,SINOP,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-804443,SORRISO,SINOP,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-791598,SORRISO,SINOP,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1526613,SORRISO,SINOP,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1995946,SORRISO,SINOP,Doença meningocócica,2020,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1997247,SORRISO,SINOP,Doença meningocócica,2020,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-865476,TAPURAH,SINOP,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1284275,TAPURAH,SINOP,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-361821,VERA,SINOP,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-670057,VERA,SINOP,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1248740,SANTO AFONSO,TANGARA DA SERRA,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-359271,SAPEZAL,TANGARA DA SERRA,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-1556571,SAPEZAL,TANGARA DA SERRA,Doença meningocócica,2019,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-431041,TANGARA DA SERRA,TANGARA DA SERRA,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-662567,TANGARA DA SERRA,TANGARA DA SERRA,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
-992193,TANGARA DA SERRA,TANGARA DA SERRA,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+﻿NumeroNotificacao,municipio_v17,regional_v17,codigo_municipio_v17,classificacao_agrupada_v17,ano_evento_v17,sinan_sorogrupo,gal_sorogrupo_nm,sorogrupo_uniao_v32,sorogrupo_so_gal_v32,tem_gal_v32,motivo_fila_v32,acao_sugerida_v32
+CASO-8518EF84,VARZEA GRANDE,CUIABA,510840,Outras etiologias,2024,,C,C,1,1,tipagem_gal_atualizar_sinan,Atualizar SeNMeningiditisEspecificarSorogrupo no SINAN com tipagem GAL
+CASO-969838A5,JUARA,JUARA,510510,Meningite tuberculosa,2017,,C,C,1,1,tipagem_gal_atualizar_sinan,Atualizar SeNMeningiditisEspecificarSorogrupo no SINAN com tipagem GAL
+CASO-8AAFFCC0,GAUCHA DO NORTE,AGUA BOA,510385,Doença meningocócica,2023,,,,0,1,dm_com_gal_sem_tipagem,Localizar tipagem Nm no GAL/LACEN e completar sorogrupo no SINAN
+CASO-6D7A9877,NOVA NAZARE,AGUA BOA,510617,Doença meningocócica,2023,,,,0,1,dm_com_gal_sem_tipagem,Localizar tipagem Nm no GAL/LACEN e completar sorogrupo no SINAN
+CASO-0CC19375,CUIABA,CUIABA,510340,Doença meningocócica,2012,,,,0,1,dm_com_gal_sem_tipagem,Localizar tipagem Nm no GAL/LACEN e completar sorogrupo no SINAN
+CASO-7C04524D,SANTO ANTONIO DO LEVERGER,CUIABA,510780,Doença meningocócica,2022,,,,0,1,dm_com_gal_sem_tipagem,Localizar tipagem Nm no GAL/LACEN e completar sorogrupo no SINAN
+CASO-90F4188F,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2023,,,,0,1,dm_com_gal_sem_tipagem,Localizar tipagem Nm no GAL/LACEN e completar sorogrupo no SINAN
+CASO-2E6A0433,JACIARA,RONDONOPOLIS,510480,Doença meningocócica,2021,,,,0,1,dm_com_gal_sem_tipagem,Localizar tipagem Nm no GAL/LACEN e completar sorogrupo no SINAN
+CASO-C4686CBC,AGUA BOA,AGUA BOA,510020,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-5FE5544A,CANARANA,AGUA BOA,510270,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-6A8AFED6,CANARANA,AGUA BOA,510270,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-0EA3D5FC,CANARANA,AGUA BOA,510270,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-EF3B6DBB,COCALINHO,AGUA BOA,510310,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-983B7A8D,QUERENCIA,AGUA BOA,510706,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-8304A6CA,ALTA FLORESTA,ALTA FLORESTA,510025,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-7F188EED,ALTA FLORESTA,ALTA FLORESTA,510025,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-01B6D846,ALTA FLORESTA,ALTA FLORESTA,510025,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-8E8A7E50,ALTA FLORESTA,ALTA FLORESTA,510025,Doença meningocócica,2021,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-2B351D9C,APIACAS,ALTA FLORESTA,510080,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-8A5D7F5F,APIACAS,ALTA FLORESTA,510080,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-A6BBF143,NOVA BANDEIRANTES,ALTA FLORESTA,510615,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-5DAF425C,NOVA BANDEIRANTES,ALTA FLORESTA,510615,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-7798B902,NOVA BANDEIRANTES,ALTA FLORESTA,510615,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-19B8FDC7,PARANAITA,ALTA FLORESTA,510629,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-69D8288B,BARRA DO GARCAS,BARRA DO GARCAS,510180,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-C09DC6DA,BARRA DO GARCAS,BARRA DO GARCAS,510180,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-A5950484,BARRA DO GARCAS,BARRA DO GARCAS,510180,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-1A749030,BARRA DO GARCAS,BARRA DO GARCAS,510180,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-38225A7F,BARRA DO GARCAS,BARRA DO GARCAS,510180,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-55B6AFBC,BARRA DO GARCAS,BARRA DO GARCAS,510180,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-69865361,BARRA DO GARCAS,BARRA DO GARCAS,510180,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-1A749B66,BARRA DO GARCAS,BARRA DO GARCAS,510180,Doença meningocócica,2020,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-1BAD01FF,BARRA DO GARCAS,BARRA DO GARCAS,510180,Doença meningocócica,2024,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-F53FEB4A,BARRA DO GARCAS,BARRA DO GARCAS,510180,Doença meningocócica,2025,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-6DD895CB,CAMPINAPOLIS,BARRA DO GARCAS,510260,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-3B670644,CAMPINAPOLIS,BARRA DO GARCAS,510260,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-9658D0A4,CAMPINAPOLIS,BARRA DO GARCAS,510260,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-BE3BD71C,NOVA XAVANTINA,BARRA DO GARCAS,510625,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-D8A5930F,NOVA XAVANTINA,BARRA DO GARCAS,510625,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-42A452A1,PONTAL DO ARAGUAIA,BARRA DO GARCAS,510665,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-1F0B52B1,CACERES,CACERES,510250,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-5BED2388,CACERES,CACERES,510250,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-403FCA42,CACERES,CACERES,510250,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-74C5E5B0,CACERES,CACERES,510250,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-E2D3A086,CACERES,CACERES,510250,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-3A7C396F,CACERES,CACERES,510250,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-A80AA3AA,CACERES,CACERES,510250,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-3E9DE53B,CACERES,CACERES,510250,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-37F36C25,CACERES,CACERES,510250,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-2E16EC70,CACERES,CACERES,510250,Doença meningocócica,2021,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-1DEC2463,PORTO ESPERIDIAO,CACERES,510682,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-6DAAD51E,ITAUBA,COLIDER,510455,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-31A01A0F,MARCELANDIA,COLIDER,510558,Doença meningocócica,2008,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-375CC0DA,CHAPADA DOS GUIMARAES,CUIABA,510300,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-6293C910,CHAPADA DOS GUIMARAES,CUIABA,510300,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-628570CC,CUIABA,CUIABA,510340,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-6BDF398F,CUIABA,CUIABA,510340,Doença meningocócica,2008,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-5AD588D5,CUIABA,CUIABA,510340,Doença meningocócica,2008,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-CC299424,CUIABA,CUIABA,510340,Doença meningocócica,2008,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-37FC2CEF,CUIABA,CUIABA,510340,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-5DAC73E2,CUIABA,CUIABA,510340,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-3D4CCB46,CUIABA,CUIABA,510340,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-1131CE6E,CUIABA,CUIABA,510340,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-0D550D98,CUIABA,CUIABA,510340,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-DB799AE9,CUIABA,CUIABA,510340,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-8E6B2AAD,CUIABA,CUIABA,510340,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-6BBD03F3,CUIABA,CUIABA,510340,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-3D98A312,CUIABA,CUIABA,510340,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-DC223E2E,CUIABA,CUIABA,510340,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-922516F3,CUIABA,CUIABA,510340,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-AF511922,CUIABA,CUIABA,510340,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-45397B6B,CUIABA,CUIABA,510340,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-B3999685,CUIABA,CUIABA,510340,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-5B6C0C7A,CUIABA,CUIABA,510340,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-46EDC90D,CUIABA,CUIABA,510340,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-0F6DC8D0,CUIABA,CUIABA,510340,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-5D07B550,CUIABA,CUIABA,510340,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-3295360F,CUIABA,CUIABA,510340,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-523B51F2,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-564AB6B3,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-79FE8908,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-B6539578,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-4C5CA8EB,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-EDC290F3,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-48E0E1A9,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-307E70A4,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-F1D1B74B,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-920B0E01,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-61AC2858,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-84F3F991,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-7A1F10FC,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-788A9E60,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-B30F19B4,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2019,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-A75BB62B,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2019,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-5D597CC8,VARZEA GRANDE,CUIABA,510840,Doença meningocócica,2025,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-987D3985,DIAMANTINO,DIAMANTINO,510350,Doença meningocócica,2024,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-EA429E34,DIAMANTINO,DIAMANTINO,510350,Doença meningocócica,2025,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-551F17EE,SAO JOSE DO RIO CLARO,DIAMANTINO,510730,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-6479D260,JUARA,JUARA,510510,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-1527A8D9,JUARA,JUARA,510510,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-B613DEAA,JUARA,JUARA,510510,Doença meningocócica,2026,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-0080CAE6,ARIPUANA,JUINA,510140,Doença meningocócica,2023,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-ABB13D80,BRASNORTE,JUINA,510190,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-673BB20D,JUINA,JUINA,510515,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-C10E9641,JUINA,JUINA,510515,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-CCFDCFF5,JUINA,JUINA,510515,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-27C486F2,JURUENA,JUINA,510517,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-4AC30B32,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,510410,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-5D21FD05,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,510410,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-2075223A,GUARANTA DO NORTE,PEIXOTO DE AZEVEDO,510410,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-F7F39A6E,COMODORO,PONTES E LACERDA,510330,Doença meningocócica,2008,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-7B896B44,PONTES E LACERDA,PONTES E LACERDA,510675,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-B70EFD41,PONTES E LACERDA,PONTES E LACERDA,510675,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-3FF4795E,VILA RICA,PORTO ALEGRE DO NORTE,510860,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-1912953D,ALTO ARAGUAIA,RONDONOPOLIS,510030,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-051AEDED,ALTO ARAGUAIA,RONDONOPOLIS,510030,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-8B723A39,CAMPO VERDE,RONDONOPOLIS,510267,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-7EA7C500,CAMPO VERDE,RONDONOPOLIS,510267,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-437D3BA3,DOM AQUINO,RONDONOPOLIS,510360,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-97476D0E,ITIQUIRA,RONDONOPOLIS,510460,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-D743A780,ITIQUIRA,RONDONOPOLIS,510460,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-278D2A90,JACIARA,RONDONOPOLIS,510480,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-782E5A0B,JACIARA,RONDONOPOLIS,510480,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-B57481BF,JACIARA,RONDONOPOLIS,510480,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-D835BAF7,JACIARA,RONDONOPOLIS,510480,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-A7C38FBE,JACIARA,RONDONOPOLIS,510480,Doença meningocócica,2023,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-766F0AA8,JUSCIMEIRA,RONDONOPOLIS,510520,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-7C70B8B3,PARANATINGA,RONDONOPOLIS,510630,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-C083EE9E,PEDRA PRETA,RONDONOPOLIS,510637,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-1D2F59C8,PEDRA PRETA,RONDONOPOLIS,510637,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-4D713CDB,PEDRA PRETA,RONDONOPOLIS,510637,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-ABF00A9D,POXOREO,RONDONOPOLIS,510700,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-7CCC81BD,POXOREO,RONDONOPOLIS,510700,Doença meningocócica,2022,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-58228808,PRIMAVERA DO LESTE,RONDONOPOLIS,510704,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-6E595615,PRIMAVERA DO LESTE,RONDONOPOLIS,510704,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-699BC335,PRIMAVERA DO LESTE,RONDONOPOLIS,510704,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-AF01F978,PRIMAVERA DO LESTE,RONDONOPOLIS,510704,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-F47D3E21,PRIMAVERA DO LESTE,RONDONOPOLIS,510704,Doença meningocócica,2019,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-FD93C39B,RONDONOPOLIS,RONDONOPOLIS,510760,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-D5305A0C,RONDONOPOLIS,RONDONOPOLIS,510760,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-D89C74F1,RONDONOPOLIS,RONDONOPOLIS,510760,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-BC07E264,RONDONOPOLIS,RONDONOPOLIS,510760,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-B5836ED9,RONDONOPOLIS,RONDONOPOLIS,510760,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-E0A70640,RONDONOPOLIS,RONDONOPOLIS,510760,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-C6CFC53E,RONDONOPOLIS,RONDONOPOLIS,510760,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-48890CD9,RONDONOPOLIS,RONDONOPOLIS,510760,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-7DEC837D,RONDONOPOLIS,RONDONOPOLIS,510760,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-D1923073,RONDONOPOLIS,RONDONOPOLIS,510760,Doença meningocócica,2025,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-16C14F2F,RONDONOPOLIS,RONDONOPOLIS,510760,Doença meningocócica,2025,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-3CB19553,SAO JOSE DO POVO,RONDONOPOLIS,510729,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-5A552B06,CLAUDIA,SINOP,510305,Doença meningocócica,2014,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-BB4D56FD,FELIZ NATAL,SINOP,510370,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-69CA2583,FELIZ NATAL,SINOP,510370,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-88DE2FFD,LUCAS DO RIO VERDE,SINOP,510525,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-E9311CFA,LUCAS DO RIO VERDE,SINOP,510525,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-3B87CA2E,NOVA MUTUM,SINOP,510622,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-F134B5DD,NOVA MUTUM,SINOP,510622,Doença meningocócica,2017,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-3DEBEF6E,SINOP,SINOP,510790,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-7EDD2FAE,SINOP,SINOP,510790,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-58AD402E,SINOP,SINOP,510790,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-16F06632,SINOP,SINOP,510790,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-59C23A18,SINOP,SINOP,510790,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-F4993EAB,SINOP,SINOP,510790,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-D27C8859,SINOP,SINOP,510790,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-3BAFE886,SINOP,SINOP,510790,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-5C1AF004,SINOP,SINOP,510790,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-87080144,SINOP,SINOP,510790,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-78B80E4B,SINOP,SINOP,510790,Doença meningocócica,2013,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-58518044,SINOP,SINOP,510790,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-30289EF3,SINOP,SINOP,510790,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-65394BE7,SINOP,SINOP,510790,Doença meningocócica,2018,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-A825FB7B,SINOP,SINOP,510790,Doença meningocócica,2019,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-7326FE9C,SINOP,SINOP,510790,Doença meningocócica,2019,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-51D0FC42,SINOP,SINOP,510790,Doença meningocócica,2021,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-D650430E,SINOP,SINOP,510790,Doença meningocócica,2022,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-C9FEBE56,SINOP,SINOP,510790,Doença meningocócica,2022,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-D885110E,SINOP,SINOP,510790,Doença meningocócica,2023,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-E85BDD94,SINOP,SINOP,510790,Doença meningocócica,2023,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-CFFAE412,SINOP,SINOP,510790,Doença meningocócica,2025,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-DEF1FFF2,SORRISO,SINOP,510792,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-03BBA6FB,SORRISO,SINOP,510792,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-AE2F8A2D,SORRISO,SINOP,510792,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-1DCE2901,SORRISO,SINOP,510792,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-6BE3263E,SORRISO,SINOP,510792,Doença meningocócica,2016,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-E86D8BF0,SORRISO,SINOP,510792,Doença meningocócica,2020,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-46001274,SORRISO,SINOP,510792,Doença meningocócica,2020,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-870015DE,TAPURAH,SINOP,510800,Doença meningocócica,2011,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-C4067B0E,TAPURAH,SINOP,510800,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-0A5A5F6B,VERA,SINOP,510850,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-49BEA8AE,VERA,SINOP,510850,Doença meningocócica,2009,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-9E683DC7,SANTO AFONSO,TANGARA DA SERRA,510726,Doença meningocócica,2015,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-D99187ED,SAPEZAL,TANGARA DA SERRA,510787,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-20992F23,SAPEZAL,TANGARA DA SERRA,510787,Doença meningocócica,2019,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-2FFC4FF2,TANGARA DA SERRA,TANGARA DA SERRA,510795,Doença meningocócica,2007,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-12C96A56,TANGARA DA SERRA,TANGARA DA SERRA,510795,Doença meningocócica,2010,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN
+CASO-0F5A77AB,TANGARA DA SERRA,TANGARA DA SERRA,510795,Doença meningocócica,2012,,,,0,0,dm_sem_sorogrupo_sem_gal,Articular LACEN/GAL para tipagem e preencher sorogrupo DM no SINAN

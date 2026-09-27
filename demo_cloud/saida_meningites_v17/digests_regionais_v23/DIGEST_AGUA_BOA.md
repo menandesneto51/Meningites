@@ -1,34 +1,52 @@
 # Digest Regional — AGUA BOA
-**Perfil:** COORD_REGIONAL · **Gerado:** 29/07/2026 12:37
+**Perfil:** COORD_REGIONAL · **Gerado:** 27/09/2026 10:11
 
 ## Indicadores MS (regional)
 Casos=115 | inv48h=96.2% | enc60d=94.9% | quimio=37.5%
 
-## Fila local: 18 itens · Crítico/Alto: 17
+## Fila local: 23 itens · Crítico/Alto: 22
 
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · COCALINHO | CASO-06108C82 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CANARANA | CASO-3B942580 — Revisar evolução/encerramento no SINAN e causa básica no SIM.
-- **Crítico** · Encerramento em risco/atrasado · AGUA BOA | CASO-33FBC9C6 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · BOM JESUS DO ARAGUAIA | CASO-5B8C9382 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · BOM JESUS DO ARAGUAIA | CASO-39865A0B — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CANARANA | CASO-F3E0B3D2 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · CANARANA | CASO-222D758E — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · COCALINHO | CASO-17302C29 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · GAUCHA DO NORTE | CASO-C5F09F51 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · GAUCHA DO NORTE | CASO-6190D61D — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVA NAZARE | CASO-0A5C231B — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVA NAZARE | CASO-B7690D4D — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · NOVA NAZARE | CASO-AD26842D — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · QUERENCIA | CASO-F8ED1F57 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
-- **Crítico** · Encerramento em risco/atrasado · QUERENCIA | CASO-EDAD3BA2 — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+Prioridade: **quimio → lab/tipagem → encerramento → investigação** (dentro da severidade).
 
-## Linkage DW (2)
+### Laboratório / GAL (2)
 
-- Óbito no SIM sem desfecho meningite no SINAN · CASO-06108C82 — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2023-05-13; evidência=data_obito+cid_m
-- Óbito no SIM sem desfecho meningite no SINAN · CASO-3B942580 — Match DW SIM score≥0.75; CID=G03.9 Meningite não ; data óbito=2025-02-28; evidência=data_obito+cid_m
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · GAUCHA DO NORTE · caso `2338782` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+- **Alto** · GAL/LACEN positivo — atualizar SINAN · NOVA NAZARE · caso `2338726` — Conferir GAL e atualizar CritérioConfirmacao / classificação no SINAN.
+
+### Encerramento (18)
+
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · CANARANA · caso `2644023` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Óbito no SIM sem desfecho meningite no SINAN · COCALINHO · caso `2336634` — Revisar evolução/encerramento no SINAN e causa básica no SIM.
+- **Crítico** · Encerramento em risco/atrasado · AGUA BOA · caso `382408` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · BOM JESUS DO ARAGUAIA · caso `1919439` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · BOM JESUS DO ARAGUAIA · caso `780641` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CANARANA · caso `2514624` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · CANARANA · caso `1214823` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · COCALINHO · caso `2514899` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · GAUCHA DO NORTE · caso `2338783` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · GAUCHA DO NORTE · caso `2491618` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVA NAZARE · caso `2338851` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVA NAZARE · caso `709902` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · NOVA NAZARE · caso `707902` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · QUERENCIA · caso `429169` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · QUERENCIA · caso `598084` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · QUERENCIA · caso `2514396` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · QUERENCIA · caso `2514624` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+- **Crítico** · Encerramento em risco/atrasado · QUERENCIA · caso `2514842` — Priorizar encerramento com critério de confirmação e evolução preenchidos.
+
+
+## Linkage DW (6)
+
+- Óbito no SIM sem desfecho meningite no SINAN · caso `2644023` — Match DW SIM score≥0.75; CID=G03.9 Meningite não ; data óbito=2025-02-28; evidência=data_obito+cid_m
+- Óbito no SIM sem desfecho meningite no SINAN · caso `2336634` — Match DW SIM score≥0.75; CID=G00.9 Meningite bact; data óbito=2023-05-13; evidência=data_obito+cid_m
+- GAL/LACEN positivo — atualizar SINAN · caso `2338782` — Match DW VW_GAL score≥0.75; método=Teste de Sensibilidade; resultado=Microrganismo Isolado:  
+- GAL/LACEN positivo — atualizar SINAN · caso `2338726` — Match DW VW_GAL score≥0.75; método=Teste de Sensibilidade; resultado=Microrganismo Isolado:  
+- DM com GAL — buscar tipagem/sorogrupo · caso `2338782` — DM sem sorogrupo SINAN; dm_com_gal_sem_tipagem
+- DM com GAL — buscar tipagem/sorogrupo · caso `2338726` — DM sem sorogrupo SINAN; dm_com_gal_sem_tipagem
 
 ## Ações sugeridas (meningites / MS)
 1. Resolver quimioprofilaxia DM/Hib pendente (≤48h).
-2. Encerrar casos próximos/além de 60 dias.
-3. Buscar resultado GAL/LACEN quando lab fraco ou match DW positivo.
-4. Completar investigação ≤48h e sorogrupo em DM.
+2. Atualizar sorogrupo SINAN quando houver tipagem GAL.
+3. Encerrar casos próximos/além de 60 dias.
+4. Buscar resultado GAL/LACEN quando lab fraco ou match DW positivo.
+5. Completar investigação ≤48h.
