@@ -159,6 +159,11 @@ def finalize(
             "schema_catalog": str(schema_path),
         },
     }
+    root.mkdir(parents=True, exist_ok=True)
+    (root / "fechamento_local_vnext.json").write_text(
+        json.dumps(result, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     return result
 
 
