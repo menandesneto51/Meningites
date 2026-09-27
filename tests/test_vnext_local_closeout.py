@@ -11,6 +11,7 @@ _MOD = importlib.util.module_from_spec(_SPEC)
 assert _SPEC is not None and _SPEC.loader is not None
 _SPEC.loader.exec_module(_MOD)
 finalize = _MOD.finalize
+verify_local_snapshot = _MOD.verify_local_snapshot
 
 
 def _write(root: Path, name: str, payload: dict):
@@ -100,3 +101,44 @@ def test_finalize_blocks_failed_ci(tmp_path: Path):
             ci_status="failure",
             ci_run="154",
         )
+
+
+def test_verify_local_snapshot_accepts_matching_clean_head(monkeypatch, tmp_path: Path):
+    calls = []
+
+    def fake_git(repo_root, *args):
+        calls.append(args)
+        class Result:
+            returncode = 0
+            stdout = "abc\n" if args == ("rev-parse", "HEAD") else ""
+        return Result()
+
+    monkeypatch.setattr(_MOD, "_git", fake_git)
+    result = verify_local_snapshot(tmp_path, "abc", require_clean=True)
+    assert result["head_commit"] == "abc"
+    assert result["tracked_worktree_clean"] is True
+    assert ("status", "--porcelain", "--untracked-files=no") in calls
+
+
+def test_verify_local_snapshot_blocks_head_mismatch(monkeypatch, tmp_path: Path):
+    def fake_git(repo_root, *args):
+        class Result:
+            returncode = 0
+            stdout = "def\n"
+        return Result()
+
+    monkeypatch.setattr(_MOD, "_git", fake_git)
+    with pytest.raises(ValueError, match="difere do commit solicitado"):
+        verify_local_snapshot(tmp_path, "abc", require_clean=True)
+
+
+def test_verify_local_snapshot_blocks_dirty_tracked_tree(monkeypatch, tmp_path: Path):
+    def fake_git(repo_root, *args):
+        class Result:
+            returncode = 0
+            stdout = "abc\n" if args == ("rev-parse", "HEAD") else " M pipelines/vnext_local_closeout.py\n"
+        return Result()
+
+    monkeypatch.setattr(_MOD, "_git", fake_git)
+    with pytest.raises(ValueError, match="alterações locais rastreadas"):
+        verify_local_snapshot(tmp_path, "abc", require_clean=True)
