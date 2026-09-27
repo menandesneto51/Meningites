@@ -1,0 +1,50 @@
+---
+description: CI_OBSERVABILITY — evidência obrigatória para falhas de CI e proibição de atribuição causal sem suporte
+alwaysApply: true
+---
+
+# Capability: CI_OBSERVABILITY
+
+Toda execução de CI deve tentar produzir `CIFailureEvidence`, inclusive quando houver falha.
+
+## Regra de causalidade
+Falha de workflow NÃO autoriza atribuir a causa ao módulo recém-alterado.
+
+Quando logs, steps ou evidência causal forem insuficientes, usar:
+- status = FAILURE
+- root_cause = UNKNOWN
+- attribution = NOT_ALLOWED
+- evidence_quality = INSUFFICIENT
+
+## Classificação da fase da falha
+
+### PRE_RUN_FAILURE
+Usar quando a infraestrutura de execução não chegou a iniciar o job, por exemplo:
+- `runner_id = 0`;
+- `runner_name` vazio;
+- `steps = []`;
+- execução encerra sem qualquer step iniciado.
+
+Nesse estado:
+- nenhum teste, scanner ou módulo do projeto foi executado;
+- ausência de artefato produzido pelo próprio workflow é esperada;
+- é proibido atribuir a falha ao código, aos agentes ou ao Sentinel;
+- registrar `execution_started = false` e `attribution = NOT_ALLOWED`.
+
+### IN_RUN_FAILURE
+Usar quando há runner atribuído e pelo menos um step executado. Nesse caso, stage outcomes, logs e artefatos podem sustentar diagnóstico, mas proximidade temporal continua não sendo causalidade.
+
+## Artefatos
+Salvar, quando o runner efetivamente iniciar:
+- artifacts/ci/ci_failure_evidence.json
+- artifacts/security/security_evidence_pack.json
+
+## Campos mínimos
+workflow, run_id, run_attempt, sha, ref, event, actor, execution_phase, execution_started, runner_id, stage_outcomes, failed_components, root_cause_class, causal_attribution_supported, evidence_quality, timestamp.
+
+## Comportamento do Cursor
+- Não "explicar" CI vermelho por inferência.
+- Separar outcome observado de hipótese.
+- Tratar logs ausentes como lacuna de evidência.
+- Reconhecer PRE_RUN_FAILURE antes de investigar código.
+- Só promover diagnóstico causal quando houver evidência reproduzível.

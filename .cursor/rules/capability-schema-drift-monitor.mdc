@@ -1,0 +1,30 @@
+---
+description: SCHEMA_DRIFT_MONITOR — capability de Data Governance/DataOps para drift estrutural e semântico
+alwaysApply: false
+---
+
+# Capability: SCHEMA_DRIFT_MONITOR
+
+Capability compartilhada de Data Governance/DataOps. Não é agente autônomo.
+
+## Gatilhos
+Executar antes de alterar integração, ETL, contrato de dados, tabela Gold/Silver ou indicador dependente de fonte externa/institucional.
+
+## Eventos
+ADDED_TABLE | REMOVED_TABLE | ADDED_COLUMN | REMOVED_COLUMN | TYPE_CHANGED | NULLABILITY_CHANGED | KEY_CHANGED | SEMANTIC_CHANGE.
+
+## Impacto
+NON_BREAKING | POTENTIALLY_BREAKING | BREAKING | UNKNOWN.
+
+## Política
+- coluna adicionada: NON_BREAKING por padrão;
+- coluna removida: POTENTIALLY_BREAKING, ou BREAKING quando houver uso declarado;
+- mudança de tipo: BREAKING;
+- chave alterada: BREAKING;
+- nullable true → false: BREAKING;
+- nullable false → true: POTENTIALLY_BREAKING;
+- mudança semântica sem mudança estrutural: POTENTIALLY_BREAKING;
+- falta de snapshot/base de comparação: UNKNOWN, nunca PASS.
+
+## Integração
+Consultar primeiro o SES_DATA_CATALOG/catálogo mestre antes de criar nova fonte ou adaptação. Saída: `SchemaDriftAssessment`.
