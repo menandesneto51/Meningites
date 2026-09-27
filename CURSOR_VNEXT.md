@@ -897,3 +897,35 @@ python pipelines/vnext_record_visual_review.py `
 
 ### Motivo
 Evitar que um conjunto de dados seja hashado em um commit e visualmente aprovado em outro, ou que o relatório final declare pronto um snapshot diferente daquele efetivamente revisado.
+
+
+## Cadeia de custódia do snapshot
+
+Depois de gerar preflight, evidência, revisão visual e readiness, publique:
+
+```powershell
+$env:PYTHONPATH="src"
+python pipelines/vnext_snapshot_chain.py --outdir saida_meningites_v17
+```
+
+Saídas:
+- `cadeia_custodia_vnext.json`;
+- `CADEIA_CUSTODIA_VNEXT.md`.
+
+A cadeia consolida:
+- `snapshot_commit`;
+- commits registrados em evidência/preflight/revisão visual/readiness;
+- compatibilidade de schemas;
+- revisor e momento da revisão;
+- hashes SHA-256 dos artefatos canônicos;
+- status de readiness/release readiness.
+
+### Regra
+`custody_ok=true` exige:
+- schemas compatíveis;
+- commits não vazios e idênticos entre evidência, preflight, revisão visual e readiness;
+- pelo menos um artefato hashado;
+- revisão visual aprovada com revisor;
+- readiness em `ready=true`.
+
+A cadeia é derivada e auditável; não substitui os gates nem a decisão humana de merge.
