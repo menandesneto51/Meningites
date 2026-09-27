@@ -8,6 +8,7 @@ from datetime import datetime
 from pathlib import Path
 import argparse
 import json
+import os
 import subprocess
 import sys
 import time
@@ -38,6 +39,70 @@ def _registrar(script: str, obrigatorio: bool, status: str, duracao_s: float, er
 
 def _falhas_obrigatorias() -> list[dict]:
     return [p for p in EXECUCAO if p["obrigatorio"] and p["status"] != "ok"]
+
+
+def _env_flag(name: str, default: bool = False) -> bool:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    return str(raw).strip().lower() in {"1", "true", "sim", "yes", "on"}
+
+
+def _git_head() -> str:
+    proc = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=str(ROOT),
+        capture_output=True,
+        text=True,
+    )
+    return proc.stdout.strip() if proc.returncode == 0 else ""
+
+
+def run_vnext_preflight():
+    """Executa o gate VNext somente quando explicitamente habilitado."""
+    if not _env_flag("MENINGITES_VNEXT_PIPELINE_VALIDATE", default=False):
+        return
+
+    script = ROOT / "pipelines" / "vnext_preflight.py"
+    step_name = "pipelines/vnext_preflight.py"
+    if not script.exists():
+        _registrar(step_name, True, "falhou", 0.0, "script VNext ausente")
+        _abortar(2)
+
+    commit_sha = _git_head()
+    if not commit_sha:
+        _registrar(step_name, True, "falhou", 0.0, "não foi possível determinar o HEAD Git")
+        _abortar(2)
+
+    env = os.environ.copy()
+    src = str(ROOT / "src")
+    current_pythonpath = env.get("PYTHONPATH", "")
+    env["PYTHONPATH"] = src + (os.pathsep + current_pythonpath if current_pythonpath else "")
+
+    cmd = [
+        sys.executable,
+        str(script),
+        "--repo-root",
+        str(ROOT),
+        "--outdir",
+        "saida_meningites_v17",
+        "--commit",
+        commit_sha,
+        "--skip-module12",
+    ]
+
+    print("\n" + "=" * 90)
+    print("[VNEXT]", " ".join(cmd))
+    print("=" * 90)
+    t0 = time.perf_counter()
+    proc = subprocess.run(cmd, cwd=str(ROOT), env=env)
+    dur = time.perf_counter() - t0
+
+    if proc.returncode != 0:
+        _registrar(step_name, True, "falhou", dur, f"preflight VNext retornou {proc.returncode}")
+        _abortar(proc.returncode)
+
+    _registrar(step_name, True, "ok", dur)
 
 
 def gravar_execucao(rotina: str | None = None) -> Path:
@@ -201,6 +266,7 @@ def ops_steps(
     run("33_sih_subnotificacao_v33.py", allow_fail=True)
     run("34_cipv_cobertura_vacinal_v34.py", allow_fail=True)
     run("35_redcap_fila_cievs_v35.py", allow_fail=True)
+    run_vnext_preflight()
     print("\n[OK] Pipeline operacional (--ops) concluído.")
     if finalizar_execucao:
         finalizar("ops")
