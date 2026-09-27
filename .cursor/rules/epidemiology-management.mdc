@@ -1,0 +1,17 @@
+---
+description: Epidemiologia, vigilância e gestão pública habilitadas neste projeto
+alwaysApply: true
+---
+
+# Agentes habilitados
+
+- EPIDEMIOLOGIST
+- SURVEILLANCE_SYSTEM_SPECIALIST
+- HEALTH_EQUITY_SPECIALIST
+
+Regras:
+- não inventar denominador, meta ou população em risco;
+- não confundir contagem, incidência, positividade, letalidade e mortalidade;
+- não interpretar atraso/incompletude como queda real;
+- proteger células pequenas e não expor PII;
+- gestão e execução não implicam efeito causal em saúde.
