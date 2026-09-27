@@ -74,6 +74,12 @@ def validate_structured_llm_response(package: dict[str, Any], response_text: str
 
     canonical = package.get("canonical_facts", {})
     evidence = package.get("normative_evidence") or []
+
+    data_quality = canonical.get("data_quality", {}) if isinstance(canonical, dict) else {}
+    if isinstance(data_quality, dict):
+        blocking_n = int(data_quality.get("blocking_divergences_n", 0) or 0)
+        if bool(data_quality.get("has_blocking_divergences")) or blocking_n > 0:
+            issues.append("data_quality_bloqueante")
     evidence_ids = {str(item.get("id", "")) for item in evidence if str(item.get("id", "")).strip()}
 
     for section in ("facts", "interpretations"):
@@ -103,12 +109,17 @@ def validate_structured_llm_response(package: dict[str, Any], response_text: str
             continue
         if not str(item.get("text", "")).strip():
             issues.append(f"recommendations[{idx}]_texto_ausente")
-        refs = item.get("fact_refs", [])
+        refs = item.get("fact_refs")
         if not isinstance(refs, list):
             issues.append(f"recommendations[{idx}]_fact_refs_invalido")
             refs = []
+        elif not refs:
+            issues.append(f"recommendations[{idx}]_fact_refs_ausentes")
         for ref in refs:
-            ok, _ = _resolve_path(canonical, str(ref))
+            if not isinstance(ref, str):
+                issues.append(f"recommendations[{idx}]_fact_ref_invalido")
+                continue
+            ok, _ = _resolve_path(canonical, ref)
             if not ok:
                 issues.append(f"recommendations[{idx}]_fact_ref_desconhecido:{ref}")
         normative_ids = item.get("normative_evidence_ids", [])
