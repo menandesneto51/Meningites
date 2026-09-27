@@ -5,6 +5,7 @@ Dashboard V22 com alertas estatísticos, séries separadas, OR fixo à direita e
 """
 
 from pathlib import Path
+import os
 import uuid
 import numpy as np
 import pandas as pd
@@ -13,7 +14,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 from meningites_v17_common import *
 import interpretacoes_painel_v26 as interp
-from meningites.feature_flags import enabled as feature_enabled
 
 # Identidade visual GOV-MT / SES-MT — azul oficial #1B3281 (Pantone 2758C)
 SES_AZUL = {
@@ -81,6 +81,14 @@ try:
     ]
 except Exception:
     pass
+
+
+def _feature_enabled(name: str, default: bool = False) -> bool:
+    """Feature flag local para preservar compatibilidade do dashboard legado sem src no PYTHONPATH."""
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() in {"1", "true", "yes", "on", "sim"}
 
 
 def uid():
@@ -4404,7 +4412,7 @@ def main():
         "18 Fila do dia", "19 Supervisão regional", "20 Contatos/Quimio",
         "21 Linha do tempo", "22 Procedência",
     ]
-    vnext_agent_ui = feature_enabled("MENINGITES_VNEXT_AGENT_UI", default=False)
+    vnext_agent_ui = _feature_enabled("MENINGITES_VNEXT_AGENT_UI", default=False)
     if vnext_agent_ui:
         tab_labels.append("23 Agente VNext (dev)")
     tabs = st.tabs(tab_labels)
