@@ -1,0 +1,32 @@
+---
+description: Roteamento global do Agent Framework v3 por perfil e evidência. Sempre aplicar.
+alwaysApply: true
+---
+
+# Agent Framework v3 — roteamento
+
+Antes de criar, alterar ou acionar agentes:
+
+1. Ler `AGENTS.md`.
+2. Ler `agents/registry.yaml`.
+3. Identificar o perfil do projeto em `agents/project_profiles.yaml` quando disponível.
+4. Acionar somente agentes/capabilities pertinentes ao trabalho.
+5. Consultar SES_DATA_CATALOG antes de nova fonte, coletor, API, ETL, tabela de integração ou indicador.
+6. Executar SCHEMA_DRIFT_MONITOR quando integração existente puder ter mudado.
+7. Executar SECURITY_DEVSECOPS_SENTINEL em mudança sensível de segurança/CI/dependências/container.
+8. Preservar `UNKNOWN`; não converter ausência de evidência em zero, PASS ou READY.
+9. Não atribuir causa a workflow vermelho sem evidência reproduzível.
+10. Usar EXECUTIVE_BRIEFING_ORCHESTRATOR somente para síntese de evidências já produzidas.
+11. Usar MUNICIPAL_READINESS_SPECIALIST quando a decisão depender de capacidade municipal documentada.
+12. Registrar decisão humana para exceção a BLOCK.
+
+## Regra para novos agentes
+
+NÃO criar novo agente quando a necessidade puder ser atendida por:
+- agente já registrado;
+- capability existente;
+- extensão de contrato;
+- regra do Cursor;
+- especialista de domínio já presente.
+
+Novo agente exige gap explícito, papel próprio, contrato de entrada/saída e justificativa de não sobreposição.

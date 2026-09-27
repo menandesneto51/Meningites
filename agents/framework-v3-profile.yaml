@@ -1,0 +1,10 @@
+framework_version: "3.0"
+project: "Meningites"
+profile: "epidemiological_intelligence"
+specialist: "MENINGITIS"
+contract_source: "menandesneto51/pqavs/agents/contracts"
+registry_source: "menandesneto51/pqavs/agents/registry.yaml"
+rules:
+  - "Use only agents/capabilities required by this profile and the current task."
+  - "Preserve this repository's architecture and existing domain agents."
+  - "Do not infer missing evidence."
