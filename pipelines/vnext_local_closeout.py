@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import importlib.util
 import json
+import subprocess
 from pathlib import Path
 
 from meningites.validation.readiness import publish_readiness
@@ -27,6 +28,52 @@ from meningites.domain.schema_registry import schema_catalog
 
 def _load(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _git(repo_root: str | Path, *args: str) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        ["git", *args],
+        cwd=Path(repo_root),
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+
+def verify_local_snapshot(
+    repo_root: str | Path,
+    expected_commit: str,
+    *,
+    require_clean: bool,
+) -> dict:
+    expected = str(expected_commit or "").strip()
+    if not expected:
+        raise ValueError("Commit esperado não informado.")
+
+    head_proc = _git(repo_root, "rev-parse", "HEAD")
+    if head_proc.returncode != 0:
+        raise ValueError("Não foi possível determinar o HEAD local do repositório.")
+    head = head_proc.stdout.strip()
+    if head != expected:
+        raise ValueError(
+            f"HEAD local ({head}) difere do commit solicitado ({expected}). "
+            "Atualize/checkout o branch correto antes de continuar."
+        )
+
+    if require_clean:
+        tracked = _git(repo_root, "status", "--porcelain", "--untracked-files=no")
+        if tracked.returncode != 0:
+            raise ValueError("Não foi possível verificar o estado da árvore de trabalho.")
+        if tracked.stdout.strip():
+            raise ValueError(
+                "Há alterações locais rastreadas não commitadas. "
+                "O preflight deve executar sobre uma árvore limpa e reproduzível."
+            )
+
+    return {
+        "head_commit": head,
+        "tracked_worktree_clean": True if require_clean else None,
+    }
 
 
 def _write_schema_catalog(root: Path) -> Path:
@@ -112,6 +159,22 @@ def main() -> int:
     args = parser.parse_args()
 
     root = Path(args.outdir)
+    repo_root = Path(args.repo_root).resolve()
+
+    try:
+        local_snapshot = verify_local_snapshot(
+            repo_root,
+            args.commit,
+            require_clean=args.phase == "prepare",
+        )
+    except ValueError as exc:
+        print(json.dumps({
+            "status": "blocked",
+            "error": str(exc),
+            "human_review_required": True,
+        }, ensure_ascii=False, indent=2))
+        return 2
+
     if args.phase == "prepare":
         preflight_path = Path(__file__).with_name("vnext_preflight.py")
         spec = importlib.util.spec_from_file_location("vnext_preflight_runtime", preflight_path)
@@ -121,18 +184,25 @@ def main() -> int:
         spec.loader.exec_module(preflight_mod)
 
         result = preflight_mod.run_preflight(
-            repo_root=args.repo_root,
+            repo_root=repo_root,
             outdir=args.outdir,
             commit_sha=args.commit,
             skip_module12=args.skip_module12,
         )
         if result.get("status") != "pass":
-            print(json.dumps(result, ensure_ascii=False, indent=2))
+            result["local_snapshot"] = local_snapshot
+    root.mkdir(parents=True, exist_ok=True)
+    (root / "fechamento_local_vnext.json").write_text(
+        json.dumps(result, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    print(json.dumps(result, ensure_ascii=False, indent=2))
             return 2
         instruction = {
             "schema_version": "vnext-local-closeout-1",
             "status": "awaiting_visual_review",
             "commit_sha": args.commit,
+            "local_snapshot": local_snapshot,
             "next_step": "Inspecione dashboard/cards e registre revisão visual para este mesmo commit antes de --phase finalize.",
             "human_review_required": True,
         }
