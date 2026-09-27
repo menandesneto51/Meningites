@@ -1007,3 +1007,21 @@ Saída final:
 
 ### Guardrail
 O orquestrador não realiza merge, não marca o PR como ready e não registra revisão visual automaticamente.
+
+
+## Verificação do snapshot local antes do fechamento
+
+O orquestrador local agora verifica o repositório Git antes de executar qualquer gate.
+
+### Fase `prepare`
+Exige:
+- `git rev-parse HEAD` exatamente igual ao `--commit` informado;
+- ausência de alterações locais **rastreadas** não commitadas (`git status --porcelain --untracked-files=no` vazio).
+
+Se o HEAD divergir ou houver arquivos rastreados modificados, o fechamento é bloqueado antes do preflight.
+
+### Fase `finalize`
+Revalida que o HEAD local ainda corresponde ao mesmo commit aprovado. Isso impede finalizar um snapshot após trocar de commit entre preflight e revisão visual.
+
+### Regra
+Nunca usar manualmente um SHA diferente do commit realmente checkoutado. O próprio orquestrador deve confirmar essa identidade.
