@@ -77,6 +77,6 @@ jobs:
           tests/test_vnext_release_readiness.py
           tests/test_vnext_operational_manifest.py
           tests/test_vnext_snapshot_chain.py
-          tests/test_vnext_snapshot_e2e.py
+          tests/test_vnext_snapshot_e2e.py tests/test_vnext_territory_e2e.py
           tests/test_vnext_local_closeout.py
           tests/test_vnext_publisher.py
