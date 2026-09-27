@@ -950,3 +950,60 @@ Execute:
 $env:PYTHONPATH="src"
 python -m pytest -q tests/test_vnext_snapshot_e2e.py
 ```
+
+
+## Orquestrador de fechamento local
+
+Use `pipelines/vnext_local_closeout.py` para reduzir erro operacional no fechamento.
+
+### Fase 1 — prepare
+Executa preflight e evidência para um commit explícito, depois para obrigatoriamente em revisão humana:
+
+```powershell
+$env:PYTHONPATH="src"
+python pipelines/vnext_local_closeout.py `
+  --phase prepare `
+  --repo-root . `
+  --outdir saida_meningites_v17 `
+  --commit <SHA_DO_COMMIT>
+```
+
+Se o preflight não for PASS, retorna código 2 e não avança.
+Se for PASS, grava `fechamento_local_vnext.json` com `status=awaiting_visual_review`.
+
+### Fase 2 — revisão visual humana
+Inspecione dashboard, cards e artefatos do mesmo snapshot e registre:
+
+```powershell
+python pipelines/vnext_record_visual_review.py `
+  --outdir saida_meningites_v17 `
+  --reviewer "Menandes" `
+  --approved `
+  --commit <SHA_DO_COMMIT> `
+  --notes "Dashboard e cards revisados localmente."
+```
+
+### Fase 3 — finalize
+Somente após a revisão visual:
+
+```powershell
+python pipelines/vnext_local_closeout.py `
+  --phase finalize `
+  --outdir saida_meningites_v17 `
+  --commit <SHA_DO_COMMIT> `
+  --ci-status success `
+  --ci-run <NUMERO_DO_RUN>
+```
+
+O `finalize` executa, em sequência:
+- readiness;
+- release readiness;
+- cadeia de custódia;
+- manifesto operacional;
+- catálogo de schemas.
+
+Saída final:
+- `fechamento_local_vnext.json` com `status=ready_for_human_merge_review` somente se todos os gates estiverem aprovados.
+
+### Guardrail
+O orquestrador não realiza merge, não marca o PR como ready e não registra revisão visual automaticamente.
