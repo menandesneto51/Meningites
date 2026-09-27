@@ -34,6 +34,50 @@ def _strip(text: str) -> str:
     return re.sub(r"[^a-z0-9\s]+", " ", text.lower()).strip()
 
 
+def _parse_vigency(value: Any) -> bool:
+    """Interpreta vigência de forma explícita e fail-closed.
+
+    Somente marcadores inequívocos de vigência retornam True.
+    Valores ausentes, ambíguos ou numéricos diferentes de 1 retornam False.
+    """
+    if value is None:
+        return False
+
+    if isinstance(value, bool):
+        return value
+
+    if isinstance(value, str):
+        normalized = _strip(value).replace(" ", "")
+        if normalized in {"1", "true", "sim", "yes", "vigente"}:
+            return True
+        if normalized in {
+            "",
+            "0",
+            "false",
+            "nao",
+            "no",
+            "revogado",
+            "revogada",
+            "expirado",
+            "expirada",
+            "historico",
+            "historica",
+        }:
+            return False
+        return False
+
+    try:
+        if pd.isna(value):
+            return False
+    except Exception:
+        return False
+
+    if isinstance(value, (int, float)):
+        return float(value) == 1.0
+
+    return False
+
+
 def _tokens(text: str) -> set[str]:
     stop = {"de", "da", "do", "das", "dos", "a", "o", "e", "em", "para", "com", "por", "um", "uma", "no", "na", "ao", "ou"}
     out = set()
@@ -63,13 +107,7 @@ class NormativeRetriever:
             return []
         hits: list[NormativeHit] = []
         for row in self.rows:
-            valid_raw = row.get("vigente", None)
-            if isinstance(valid_raw, str):
-                valid = valid_raw.strip().lower() in {"1", "true", "sim", "yes"}
-            elif valid_raw is None or pd.isna(valid_raw):
-                valid = False
-            else:
-                valid = bool(valid_raw)
+            valid = _parse_vigency(row.get("vigente", None))
             if current_only and not valid:
                 continue
             title = str(row.get("titulo", ""))
