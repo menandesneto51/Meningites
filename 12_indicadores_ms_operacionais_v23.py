@@ -391,12 +391,21 @@ def by_geo(df: pd.DataFrame, keys: list[str]) -> pd.DataFrame:
         row = {k: v for k, v in zip(present, vals)}
         row.update({
             "total_notificacoes": kpis["total_notificacoes"],
+            "bact_confirmadas": kpis["bact_confirmadas"],
+            "bact_lab_informe_pcr_cultura": kpis["bact_lab_informe_pcr_cultura"],
+            "investigados_48h": kpis["investigados_48h"],
+            "encerrados_60d": kpis["encerrados_60d"],
+            "dm_casos": kpis["dm_casos"],
+            "dm_quimio_48h": kpis["dm_quimio_48h"],
             "pct_confirmacao_laboratorial_pcr_cultura": kpis["pct_confirmacao_laboratorial_pcr_cultura"],
             "pct_investigados_48h": kpis["pct_investigados_48h"],
             "pct_encerrados_60d": kpis["pct_encerrados_60d"],
             "pct_quimioprofilaxia_dm_48h": kpis["pct_quimioprofilaxia_dm_48h"],
-            "dm_casos": kpis["dm_casos"],
             "quimioprofilaxia_indevida_n": kpis["quimioprofilaxia_indevida_n"],
+            "referencia_ano": REF_ANO,
+            "referencia_periodo": REF_PERIODO,
+            "referencia_fonte": REF_FONTE,
+            "referencia_vigencia_desde": REF_VIGENCIA,
         })
         rows.append(row)
     return pd.DataFrame(rows)

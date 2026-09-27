@@ -177,7 +177,7 @@ def concordancia_sinan(tip: pd.DataFrame, base: pd.DataFrame, ex: pd.DataFrame |
     keep = [
         c for c in [
             "_sid", "NumeroNotificacao", "municipio_v17", "regional_v17",
-            "classificacao_agrupada_v17", "ano_evento_v17",
+            "codigo_municipio_v17", "classificacao_agrupada_v17", "ano_evento_v17",
             "SeNMeningiditisEspecificarSorogrupo",
         ] if c in b.columns or c == "_sid"
     ]
@@ -277,7 +277,8 @@ def fila_tipagem_sinan(conc: pd.DataFrame) -> pd.DataFrame:
       2) DM com GAL vinculado mas sem tipagem Nm nem sorogrupo SINAN (buscar tipagem)
     """
     cols = [
-        "NumeroNotificacao", "municipio_v17", "regional_v17", "classificacao_agrupada_v17",
+        "NumeroNotificacao", "municipio_v17", "regional_v17", "codigo_municipio_v17",
+        "classificacao_agrupada_v17",
         "ano_evento_v17", "sinan_sorogrupo", "gal_sorogrupo_nm", "sorogrupo_uniao_v32",
         "sorogrupo_so_gal_v32", "tem_gal_v32", "motivo_fila_v32", "acao_sugerida_v32",
     ]
