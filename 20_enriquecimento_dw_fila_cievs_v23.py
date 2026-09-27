@@ -208,8 +208,11 @@ def classificar_obito_sim(enr: pd.DataFrame) -> tuple[pd.Series, pd.Series]:
 
 def alertas_linkage(df: pd.DataFrame) -> pd.DataFrame:
     rows = []
-    base_cols = ["NumeroNotificacao", "municipio_v17", "regional_v17", "classificacao_agrupada_v17",
-                 "confirmado_v17", "obito_meningite_v17", "data_ref_v17"]
+    base_cols = [
+        "NumeroNotificacao", "municipio_v17", "regional_v17", "codigo_municipio_v17",
+        "classificacao_agrupada_v17", "confirmado_v17", "obito_meningite_v17", "data_ref_v17",
+    ]
+    base_cols = [c for c in base_cols if c in df.columns]
 
     # GAL positivo e confirmação lab fraca no SINAN
     m = (df["dw_gal_positivo_v23"] == 1) & (pd.to_numeric(df.get("confirmado_v17"), errors="coerce").fillna(0) == 1)
@@ -271,7 +274,7 @@ def alertas_linkage(df: pd.DataFrame) -> pd.DataFrame:
                 "dm_com_gal_sem_tipagem",
             })]
         tip_use = tip.head(250)
-        sub = pd.DataFrame({
+        sub_cols = {
             "NumeroNotificacao": tip_use.get("NumeroNotificacao", pd.Series(dtype=object)),
             "municipio_v17": tip_use.get("municipio_v17", pd.Series(dtype=object)),
             "regional_v17": tip_use.get("regional_v17", pd.Series(dtype=object)),
@@ -279,7 +282,10 @@ def alertas_linkage(df: pd.DataFrame) -> pd.DataFrame:
             "confirmado_v17": np.nan,
             "obito_meningite_v17": np.nan,
             "data_ref_v17": tip_use.get("ano_evento_v17", pd.Series(dtype=object)),
-        })
+        }
+        if "codigo_municipio_v17" in tip_use.columns:
+            sub_cols["codigo_municipio_v17"] = tip_use["codigo_municipio_v17"]
+        sub = pd.DataFrame(sub_cols)
         motivo = tip_use.get("motivo_fila_v32", pd.Series([""] * len(tip_use))).astype(str)
         sub["tipo_alerta"] = np.where(
             motivo.eq("dm_com_gal_sem_tipagem"),
@@ -311,7 +317,12 @@ def alertas_linkage(df: pd.DataFrame) -> pd.DataFrame:
 
 def alertas_qualidade(df: pd.DataFrame) -> pd.DataFrame:
     rows = []
-    base = ["NumeroNotificacao", "municipio_v17", "regional_v17", "classificacao_agrupada_v17"]
+    base = [
+        c for c in [
+            "NumeroNotificacao", "municipio_v17", "regional_v17", "codigo_municipio_v17",
+            "classificacao_agrupada_v17",
+        ] if c in df.columns
+    ]
 
     # Duplicidade de notificação
     n = df["NumeroNotificacao"].astype(str)
@@ -391,6 +402,8 @@ def build_fila_unificada(
                 "tipo": r.get("tipo_alerta", r.get("tipo", "")),
                 "territorio": terr,
                 "id_caso": id_caso,
+                "codigo_municipio_v17": r.get("codigo_municipio_v17", ""),
+                "municipio_v17": r.get("municipio_v17", ""),
                 "regional_v17": r.get("regional_v17", ""),
                 "evidencia": r.get("evidencia", ""),
                 "acao": r.get("acao_recomendada", r.get("acao", "")),
