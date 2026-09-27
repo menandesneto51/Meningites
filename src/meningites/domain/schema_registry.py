@@ -24,6 +24,7 @@ SCHEMAS = {
     "operational_manifest": SchemaContract("operational_manifest", "vnext-operational-manifest-1", ("vnext-operational-manifest-1",)),
     "visual_review": SchemaContract("visual_review", "vnext-visual-review-1", ("vnext-visual-review-1",)),
     "schema_catalog": SchemaContract("schema_catalog", "vnext-schema-catalog-1", ("vnext-schema-catalog-1",)),
+    "snapshot_chain": SchemaContract("snapshot_chain", "vnext-snapshot-chain-1", ("vnext-snapshot-chain-1",)),
 }
 
 
