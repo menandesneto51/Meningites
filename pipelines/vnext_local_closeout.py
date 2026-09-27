@@ -1,12 +1,15 @@
 """Orquestrador local seguro do fechamento VNext.
 
 Fase prepare:
+- verifica se o HEAD local corresponde ao commit solicitado;
+- exige árvore rastreada limpa;
 - executa preflight para um commit explícito;
 - exige PASS;
 - publica instruções de revisão visual;
 - não registra aprovação humana.
 
 Fase finalize:
+- verifica novamente o HEAD local;
 - exige revisão visual explícita do mesmo commit;
 - publica readiness, release readiness, cadeia de custódia, manifesto e catálogo de schemas;
 - falha se qualquer gate final não estiver aprovado.
@@ -60,6 +63,7 @@ def verify_local_snapshot(
             "Atualize/checkout o branch correto antes de continuar."
         )
 
+    clean = None
     if require_clean:
         tracked = _git(repo_root, "status", "--porcelain", "--untracked-files=no")
         if tracked.returncode != 0:
@@ -69,19 +73,27 @@ def verify_local_snapshot(
                 "Há alterações locais rastreadas não commitadas. "
                 "O preflight deve executar sobre uma árvore limpa e reproduzível."
             )
+        clean = True
 
     return {
         "head_commit": head,
-        "tracked_worktree_clean": True if require_clean else None,
+        "tracked_worktree_clean": clean,
     }
 
 
 def _write_schema_catalog(root: Path) -> Path:
     path = root / "catalogo_schemas_vnext.json"
-    path.write_text(json.dumps({
-        "schema_version": "vnext-schema-catalog-1",
-        "contracts": schema_catalog(),
-    }, ensure_ascii=False, indent=2), encoding="utf-8")
+    path.write_text(
+        json.dumps(
+            {
+                "schema_version": "vnext-schema-catalog-1",
+                "contracts": schema_catalog(),
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
     return path
 
 
@@ -95,7 +107,10 @@ def finalize(
     root = Path(outdir)
     visual_path = root / "REVISAO_VISUAL_VNEXT.json"
     if not visual_path.exists():
-        raise ValueError("Revisão visual ausente. Inspecione dashboard/cards e registre REVISAO_VISUAL_VNEXT.json.")
+        raise ValueError(
+            "Revisão visual ausente. Inspecione dashboard/cards e registre REVISAO_VISUAL_VNEXT.json."
+        )
+
     visual = _load(visual_path)
     if not bool(visual.get("approved")):
         raise ValueError("Revisão visual não aprovada.")
@@ -115,7 +130,9 @@ def finalize(
     )
     release = _load(release_paths["release_readiness_json"])
     if not release.get("ready_for_merge_review"):
-        raise ValueError("Release readiness bloqueado. Consulte release_readiness_vnext.json.")
+        raise ValueError(
+            "Release readiness bloqueado. Consulte release_readiness_vnext.json."
+        )
 
     chain_paths = publish_snapshot_chain(root)
     chain = _load(chain_paths["chain_json"])
@@ -142,13 +159,13 @@ def finalize(
             "schema_catalog": str(schema_path),
         },
     }
-    path = root / "fechamento_local_vnext.json"
-    path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     return result
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Orquestra fechamento local seguro do Meningites VNext.")
+    parser = argparse.ArgumentParser(
+        description="Orquestra fechamento local seguro do Meningites VNext."
+    )
     parser.add_argument("--phase", choices=("prepare", "finalize"), required=True)
     parser.add_argument("--repo-root", default=".")
     parser.add_argument("--outdir", default="saida_meningites_v17")
@@ -168,18 +185,28 @@ def main() -> int:
             require_clean=args.phase == "prepare",
         )
     except ValueError as exc:
-        print(json.dumps({
-            "status": "blocked",
-            "error": str(exc),
-            "human_review_required": True,
-        }, ensure_ascii=False, indent=2))
+        print(
+            json.dumps(
+                {
+                    "status": "blocked",
+                    "error": str(exc),
+                    "human_review_required": True,
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
         return 2
 
     if args.phase == "prepare":
         preflight_path = Path(__file__).with_name("vnext_preflight.py")
-        spec = importlib.util.spec_from_file_location("vnext_preflight_runtime", preflight_path)
+        spec = importlib.util.spec_from_file_location(
+            "vnext_preflight_runtime",
+            preflight_path,
+        )
         if spec is None or spec.loader is None:
             raise SystemExit("Não foi possível carregar pipelines/vnext_preflight.py.")
+
         preflight_mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(preflight_mod)
 
@@ -190,20 +217,25 @@ def main() -> int:
             skip_module12=args.skip_module12,
         )
         if result.get("status") != "pass":
-            result["local_snapshot"] = local_snapshot
-    root.mkdir(parents=True, exist_ok=True)
-    (root / "fechamento_local_vnext.json").write_text(
-        json.dumps(result, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+            blocked = dict(result)
+            blocked["local_snapshot"] = local_snapshot
+            root.mkdir(parents=True, exist_ok=True)
+            (root / "fechamento_local_vnext.json").write_text(
+                json.dumps(blocked, ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+            print(json.dumps(blocked, ensure_ascii=False, indent=2))
             return 2
+
         instruction = {
             "schema_version": "vnext-local-closeout-1",
             "status": "awaiting_visual_review",
             "commit_sha": args.commit,
             "local_snapshot": local_snapshot,
-            "next_step": "Inspecione dashboard/cards e registre revisão visual para este mesmo commit antes de --phase finalize.",
+            "next_step": (
+                "Inspecione dashboard/cards e registre revisão visual para este mesmo "
+                "commit antes de --phase finalize."
+            ),
             "human_review_required": True,
         }
         root.mkdir(parents=True, exist_ok=True)
@@ -222,16 +254,27 @@ def main() -> int:
             ci_run=args.ci_run,
         )
     except ValueError as exc:
-        print(json.dumps({
-            "status": "blocked",
-            "error": str(exc),
-            "human_review_required": True,
-        }, ensure_ascii=False, indent=2))
+        print(
+            json.dumps(
+                {
+                    "status": "blocked",
+                    "error": str(exc),
+                    "human_review_required": True,
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
         return 2
 
+    result["local_snapshot"] = local_snapshot
+    root.mkdir(parents=True, exist_ok=True)
+    (root / "fechamento_local_vnext.json").write_text(
+        json.dumps(result, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
-
 
 
 if __name__ == "__main__":
