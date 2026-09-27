@@ -1,9 +1,16 @@
+import importlib.util
 import json
 from pathlib import Path
 
 import pytest
 
-from pipelines.vnext_local_closeout import finalize
+
+_SCRIPT = Path("pipelines/vnext_local_closeout.py").resolve()
+_SPEC = importlib.util.spec_from_file_location("vnext_local_closeout_test", _SCRIPT)
+_MOD = importlib.util.module_from_spec(_SPEC)
+assert _SPEC is not None and _SPEC.loader is not None
+_SPEC.loader.exec_module(_MOD)
+finalize = _MOD.finalize
 
 
 def _write(root: Path, name: str, payload: dict):
