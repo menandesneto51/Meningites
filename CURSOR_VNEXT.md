@@ -929,3 +929,24 @@ A cadeia consolida:
 - readiness em `ready=true`.
 
 A cadeia é derivada e auditável; não substitui os gates nem a decisão humana de merge.
+
+
+## Teste ponta a ponta do snapshot
+
+A suíte inclui `tests/test_vnext_snapshot_e2e.py`, que valida em sequência:
+- validação PASS;
+- contexto com data quality segura;
+- preflight com commit;
+- evidência com hashes e o mesmo commit;
+- revisão visual vinculada ao mesmo commit;
+- readiness READY com `snapshot_commit`;
+- release readiness para o mesmo commit;
+- cadeia de custódia com `custody_ok=true`.
+
+Também cobre cenário negativo em que a revisão visual pertence a outro commit e deve bloquear READY.
+
+Execute:
+```powershell
+$env:PYTHONPATH="src"
+python -m pytest -q tests/test_vnext_snapshot_e2e.py
+```
