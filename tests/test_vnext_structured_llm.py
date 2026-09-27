@@ -100,3 +100,52 @@ A validação humana é obrigatória.
     )
     assert result["response_format"] == "legacy_text"
     assert result["accepted"] is True
+
+
+def test_structured_response_rejects_recommendation_without_fact_refs():
+    text = _response().replace(
+        '"fact_refs": ["state_summary.0.sinais_n"],\n      "normative_evidence_ids"',
+        '"fact_refs": [],\n      "normative_evidence_ids"',
+        1,
+    )
+    result = validate_structured_llm_response(_package(), text)
+    assert result.accepted is False
+    assert "recommendations[0]_fact_refs_ausentes" in result.issues
+
+
+def test_structured_response_rejects_non_string_recommendation_fact_ref():
+    text = _response().replace(
+        '"fact_refs": ["state_summary.0.sinais_n"],\n      "normative_evidence_ids"',
+        '"fact_refs": [123],\n      "normative_evidence_ids"',
+        1,
+    )
+    result = validate_structured_llm_response(_package(), text)
+    assert result.accepted is False
+    assert "recommendations[0]_fact_ref_invalido" in result.issues
+
+
+def test_structured_response_rejects_blocking_data_quality():
+    package = _package()
+    package["canonical_facts"]["data_quality"] = {
+        "blocking_divergences_n": 1,
+        "has_blocking_divergences": True,
+    }
+    result = validate_structured_llm_response(package, _response())
+    assert result.accepted is False
+    assert "data_quality_bloqueante" in result.issues
+
+
+def test_runner_rejects_structured_response_when_data_quality_is_blocking():
+    package = _package()
+    package["canonical_facts"]["data_quality"] = {
+        "blocking_divergences_n": 2,
+        "has_blocking_divergences": True,
+    }
+    result = run_validated_llm(
+        package,
+        "prompt",
+        client=FakeClient(_response()),
+    )
+    assert result["response_format"] == "structured_v2"
+    assert result["accepted"] is False
+    assert "data_quality_bloqueante" in result["issues"]
