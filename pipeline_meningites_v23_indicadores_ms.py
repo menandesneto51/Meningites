@@ -58,8 +58,48 @@ def _git_head() -> str:
     return proc.stdout.strip() if proc.returncode == 0 else ""
 
 
+def run_vnext_ops_gate():
+    """Republica VNext e aplica o gate de validação ao fim do --ops (fail-closed em FAIL)."""
+    step_name = "pipelines/vnext_ops_gate"
+    print("\n" + "=" * 90)
+    print("[VNEXT] publisher + validação (gate operacional)")
+    print("=" * 90)
+    t0 = time.perf_counter()
+    src = str(ROOT / "src")
+    if src not in sys.path:
+        sys.path.insert(0, src)
+
+    try:
+        from meningites.operational_queue.publisher import publish_municipal_vnext
+        from meningites.validation.reconcile import publish_validation_report
+
+        out = ROOT / "saida_meningites_v17"
+        publish_municipal_vnext(out)
+        paths = publish_validation_report(out)
+        report = json.loads(Path(paths["validation_json"]).read_text(encoding="utf-8"))
+        status = str(report.get("overall_status", "")).lower()
+        fail_n = int(report.get("fail_n", 0) or 0)
+        detail = f"overall_status={status} fail_n={fail_n}"
+        if status == "fail" or fail_n > 0:
+            _registrar(step_name, True, "falhou", time.perf_counter() - t0, detail)
+            _abortar(2)
+        _registrar(step_name, True, "ok", time.perf_counter() - t0, detail)
+        print(f"[OK] Gate VNext operacional: {detail}")
+    except SystemExit:
+        raise
+    except Exception as exc:
+        _registrar(
+            step_name,
+            True,
+            "falhou",
+            time.perf_counter() - t0,
+            f"{type(exc).__name__}: {exc}",
+        )
+        _abortar(2)
+
+
 def run_vnext_preflight():
-    """Executa o gate VNext somente quando explicitamente habilitado."""
+    """Preflight completo VNext — somente quando MENINGITES_VNEXT_PIPELINE_VALIDATE=true."""
     if not _env_flag("MENINGITES_VNEXT_PIPELINE_VALIDATE", default=False):
         return
 
@@ -266,6 +306,7 @@ def ops_steps(
     run("33_sih_subnotificacao_v33.py", allow_fail=True)
     run("34_cipv_cobertura_vacinal_v34.py", allow_fail=True)
     run("35_redcap_fila_cievs_v35.py", allow_fail=True)
+    run_vnext_ops_gate()
     run_vnext_preflight()
     print("\n[OK] Pipeline operacional (--ops) concluído.")
     if finalizar_execucao:
@@ -366,6 +407,10 @@ def validate(strict: bool = True) -> int:
         "saida_meningites_v17/redcap_fonte_meta_v35.json",
         "saida_meningites_v17/redcap_schema_esperado_v35.csv",
         "relatorios/REDCAP_FILA_CIEVS_V35.md",
+        # VNext — situação municipal + gate de reconciliação
+        "saida_meningites_v17/situacao_municipal_vnext.csv",
+        "saida_meningites_v17/validacao_vnext.json",
+        "saida_meningites_v17/divergencias_vnext.csv",
     ]
     print("\nVALIDAÇÃO OPERACIONAL V23/V24")
     print("=" * 90)

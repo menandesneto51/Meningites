@@ -1,5 +1,5 @@
 import importlib.util
-import os
+import sys
 from pathlib import Path
 
 import pytest
@@ -17,6 +17,78 @@ class _Proc:
         self.returncode = returncode
         self.stdout = ""
         self.stderr = ""
+
+
+def _patch_vnext_modules(monkeypatch, *, publish, validate):
+    import meningites.operational_queue.publisher as publisher
+    import meningites.validation.reconcile as reconcile
+
+    monkeypatch.setattr(publisher, "publish_municipal_vnext", publish)
+    monkeypatch.setattr(reconcile, "publish_validation_report", validate)
+    monkeypatch.setitem(sys.modules, "meningites.operational_queue.publisher", publisher)
+    monkeypatch.setitem(sys.modules, "meningites.validation.reconcile", reconcile)
+
+
+def test_vnext_ops_gate_publishes_and_passes(monkeypatch, tmp_path):
+    _MOD.EXECUCAO.clear()
+    monkeypatch.setattr(_MOD, "ROOT", tmp_path)
+    out = tmp_path / "saida_meningites_v17"
+    out.mkdir()
+    report_path = out / "validacao_vnext.json"
+    report_path.write_text(
+        '{"overall_status":"pass","fail_n":0}',
+        encoding="utf-8",
+    )
+
+    calls = {"publish": 0, "validate": 0}
+
+    def fake_publish(path):
+        calls["publish"] += 1
+        assert Path(path) == out
+
+    def fake_validate(path):
+        calls["validate"] += 1
+        assert Path(path) == out
+        return {"validation_json": report_path}
+
+    _patch_vnext_modules(monkeypatch, publish=fake_publish, validate=fake_validate)
+    _MOD.run_vnext_ops_gate()
+
+    assert calls["publish"] == 1
+    assert calls["validate"] == 1
+    assert _MOD.EXECUCAO[-1]["script"] == "pipelines/vnext_ops_gate"
+    assert _MOD.EXECUCAO[-1]["status"] == "ok"
+    assert _MOD.EXECUCAO[-1]["obrigatorio"] is True
+
+
+def test_vnext_ops_gate_is_fail_closed_on_fail(monkeypatch, tmp_path):
+    _MOD.EXECUCAO.clear()
+    monkeypatch.setattr(_MOD, "ROOT", tmp_path)
+    out = tmp_path / "saida_meningites_v17"
+    out.mkdir()
+    report_path = out / "validacao_vnext.json"
+    report_path.write_text(
+        '{"overall_status":"fail","fail_n":1}',
+        encoding="utf-8",
+    )
+
+    _patch_vnext_modules(
+        monkeypatch,
+        publish=lambda path: None,
+        validate=lambda path: {"validation_json": report_path},
+    )
+    monkeypatch.setattr(
+        _MOD,
+        "_abortar",
+        lambda code: (_ for _ in ()).throw(SystemExit(code)),
+    )
+
+    with pytest.raises(SystemExit) as exc:
+        _MOD.run_vnext_ops_gate()
+
+    assert exc.value.code == 2
+    assert _MOD.EXECUCAO[-1]["status"] == "falhou"
+    assert "overall_status=fail" in _MOD.EXECUCAO[-1]["erro"]
 
 
 def test_vnext_pipeline_validation_is_disabled_by_default(monkeypatch):
