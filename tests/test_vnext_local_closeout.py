@@ -142,3 +142,55 @@ def test_verify_local_snapshot_blocks_dirty_tracked_tree(monkeypatch, tmp_path: 
     monkeypatch.setattr(_MOD, "_git", fake_git)
     with pytest.raises(ValueError, match="alterações locais rastreadas"):
         verify_local_snapshot(tmp_path, "abc", require_clean=True)
+
+
+def test_finalize_cli_requires_clean_tracked_worktree(monkeypatch, tmp_path: Path):
+    calls = []
+
+    def fake_verify(repo_root, expected_commit, *, require_clean):
+        calls.append({
+            "repo_root": repo_root,
+            "expected_commit": expected_commit,
+            "require_clean": require_clean,
+        })
+        return {
+            "head_commit": expected_commit,
+            "tracked_worktree_clean": True,
+        }
+
+    def fake_finalize(**kwargs):
+        return {
+            "schema_version": "vnext-local-closeout-1",
+            "status": "ready_for_human_merge_review",
+            "commit_sha": kwargs["commit_sha"],
+            "snapshot_commit": kwargs["commit_sha"],
+            "ready": True,
+            "human_merge_decision_required": True,
+            "artifacts": {},
+        }
+
+    monkeypatch.setattr(_MOD, "verify_local_snapshot", fake_verify)
+    monkeypatch.setattr(_MOD, "finalize", fake_finalize)
+    monkeypatch.setattr(
+        "sys.argv",
+        [
+            "vnext_local_closeout.py",
+            "--phase",
+            "finalize",
+            "--repo-root",
+            str(tmp_path),
+            "--outdir",
+            str(tmp_path / "saida"),
+            "--commit",
+            "abc",
+            "--ci-status",
+            "success",
+            "--ci-run",
+            "176",
+        ],
+    )
+
+    assert _MOD.main() == 0
+    assert calls
+    assert calls[0]["expected_commit"] == "abc"
+    assert calls[0]["require_clean"] is True
