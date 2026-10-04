@@ -25,6 +25,7 @@ SCHEMAS = {
     "visual_review": SchemaContract("visual_review", "vnext-visual-review-1", ("vnext-visual-review-1",)),
     "schema_catalog": SchemaContract("schema_catalog", "vnext-schema-catalog-1", ("vnext-schema-catalog-1",)),
     "snapshot_chain": SchemaContract("snapshot_chain", "vnext-snapshot-chain-1", ("vnext-snapshot-chain-1",)),
+    "local_closeout": SchemaContract("local_closeout", "vnext-local-closeout-1", ("vnext-local-closeout-1",)),
 }
 
 
