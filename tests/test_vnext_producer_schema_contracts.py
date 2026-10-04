@@ -18,6 +18,7 @@ PRODUCER_SOURCES = {
     "visual_review": Path("pipelines/vnext_record_visual_review.py"),
     "schema_catalog": Path("pipelines/vnext_schema_catalog.py"),
     "snapshot_chain": Path("src/meningites/validation/snapshot_chain.py"),
+    "local_closeout": Path("pipelines/vnext_local_closeout.py"),
 }
 
 # llm_response não tem produtor local determinístico: é resposta externa do modelo
