@@ -7,6 +7,7 @@ def test_schema_registry_exposes_current_contracts():
     catalog = schema_catalog()
     assert catalog["agent_context"]["current"] == "agent-context-vnext-1"
     assert catalog["llm_response"]["current"] == "llm-response-vnext-2"
+    assert catalog["local_closeout"]["current"] == "vnext-local-closeout-1"
 
 
 def test_require_schema_accepts_current_version():
