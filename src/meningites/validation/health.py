@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from meningites.domain.schema_registry import require_schema
+
 
 def load_validation_health(outdir: str | Path) -> dict[str, Any]:
     root = Path(outdir)
@@ -32,6 +34,21 @@ def load_validation_health(outdir: str | Path) -> dict[str, Any]:
             "detail": f"Falha ao ler validacao_vnext.json: {type(exc).__name__}: {exc}",
         }
 
+    try:
+        require_schema(payload, "validation")
+        schema_compatible = True
+    except (ValueError, KeyError) as exc:
+        return {
+            "available": True,
+            "overall_status": "incompatible_schema",
+            "fail_n": int(payload.get("fail_n", 0) or 0),
+            "attention_n": int(payload.get("attention_n", 0) or 0),
+            "checks": payload.get("checks") or [],
+            "blocking": True,
+            "schema_compatible": False,
+            "detail": f"Schema de validação incompatível: {exc}",
+        }
+
     status = str(payload.get("overall_status") or "unknown").lower()
     return {
         "available": True,
@@ -40,6 +57,7 @@ def load_validation_health(outdir: str | Path) -> dict[str, Any]:
         "attention_n": int(payload.get("attention_n", 0) or 0),
         "checks": payload.get("checks") or [],
         "blocking": status != "pass",
+        "schema_compatible": schema_compatible,
         "detail": "Gate aprovado." if status == "pass" else "Gate exige revisão antes de ativação permanente.",
     }
 
