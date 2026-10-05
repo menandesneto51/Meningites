@@ -12,6 +12,7 @@ def test_health_is_blocking_before_validation(tmp_path: Path):
 
 def test_health_reads_pass_report(tmp_path: Path):
     (tmp_path / "validacao_vnext.json").write_text(json.dumps({
+        "schema_version": "vnext-validation-1",
         "overall_status": "pass",
         "fail_n": 0,
         "attention_n": 0,
@@ -26,6 +27,7 @@ def test_health_reads_pass_report(tmp_path: Path):
 
 def test_health_reads_fail_report_and_prioritizes_failures(tmp_path: Path):
     (tmp_path / "validacao_vnext.json").write_text(json.dumps({
+        "schema_version": "vnext-validation-1",
         "overall_status": "fail",
         "fail_n": 1,
         "attention_n": 1,
@@ -47,3 +49,66 @@ def test_health_handles_invalid_json(tmp_path: Path):
     health = load_validation_health(tmp_path)
     assert health["overall_status"] == "invalid_report"
     assert health["blocking"] is True
+
+
+def test_health_blocks_pass_report_with_missing_schema(tmp_path: Path):
+    (tmp_path / "validacao_vnext.json").write_text(json.dumps({
+        "overall_status": "pass",
+        "fail_n": 0,
+        "attention_n": 0,
+        "checks": [],
+    }), encoding="utf-8")
+
+    health = load_validation_health(tmp_path)
+    assert health["overall_status"] == "incompatible_schema"
+    assert health["blocking"] is True
+    assert health["schema_compatible"] is False
+
+
+def test_health_blocks_pass_report_with_unknown_schema(tmp_path: Path):
+    (tmp_path / "validacao_vnext.json").write_text(json.dumps({
+        "schema_version": "vnext-validation-99",
+        "overall_status": "pass",
+        "fail_n": 0,
+        "attention_n": 0,
+        "checks": [],
+    }), encoding="utf-8")
+
+    health = load_validation_health(tmp_path)
+    assert health["blocking"] is True
+    assert health["overall_status"] == "incompatible_schema"
+
+
+def test_health_blocks_semantically_inconsistent_pass_report(tmp_path: Path):
+    (tmp_path / "validacao_vnext.json").write_text(json.dumps({
+        "schema_version": "vnext-validation-1",
+        "overall_status": "pass",
+        "fail_n": 0,
+        "attention_n": 0,
+        "checks": [
+            {"check_id": "hidden-fail", "status": "fail", "detail": "falha real"},
+        ],
+    }), encoding="utf-8")
+
+    health = load_validation_health(tmp_path)
+    assert health["overall_status"] == "inconsistent_report"
+    assert health["blocking"] is True
+    assert health["schema_compatible"] is True
+    assert health["counts_consistent"] is False
+
+
+def test_health_blocks_mismatched_declared_counts(tmp_path: Path):
+    (tmp_path / "validacao_vnext.json").write_text(json.dumps({
+        "schema_version": "vnext-validation-1",
+        "overall_status": "fail",
+        "fail_n": 2,
+        "attention_n": 0,
+        "checks": [
+            {"check_id": "one-fail", "status": "fail", "detail": "falha"},
+        ],
+    }), encoding="utf-8")
+
+    health = load_validation_health(tmp_path)
+    assert health["overall_status"] == "inconsistent_report"
+    assert health["blocking"] is True
+    assert health["counts_consistent"] is False

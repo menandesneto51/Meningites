@@ -38,6 +38,7 @@ def test_http_handler_requires_published_context(tmp_path: Path):
 
 def _pass_gate(root: Path):
     (root / "validacao_vnext.json").write_text(json.dumps({
+        "schema_version": "vnext-validation-1",
         "overall_status": "pass",
         "fail_n": 0,
         "attention_n": 0,
@@ -120,3 +121,40 @@ def test_bearer_authorization_is_strict():
     assert bearer_authorized("Bearer segredo", "segredo") is True
     assert bearer_authorized("Bearer errado", "segredo") is False
     assert bearer_authorized("segredo", "segredo") is False
+
+
+def test_http_handler_blocks_forged_pass_without_validation_schema(tmp_path: Path):
+    _context(tmp_path / "agente_epidemiologico_contexto_vnext.json")
+    (tmp_path / "validacao_vnext.json").write_text(json.dumps({
+        "overall_status": "pass",
+        "fail_n": 0,
+        "attention_n": 0,
+        "checks": [],
+    }), encoding="utf-8")
+
+    result = handle_query_payload(
+        {"question": "Situação estadual", "scope": "Mato Grosso"},
+        outdir=tmp_path,
+    )
+    assert result["ok"] is False
+    assert result["status_code"] == 503
+
+
+def test_http_handler_blocks_inconsistent_pass_even_with_valid_schema(tmp_path: Path):
+    _context(tmp_path / "agente_epidemiologico_contexto_vnext.json")
+    (tmp_path / "validacao_vnext.json").write_text(json.dumps({
+        "schema_version": "vnext-validation-1",
+        "overall_status": "pass",
+        "fail_n": 0,
+        "attention_n": 0,
+        "checks": [
+            {"check_id": "x", "status": "fail", "detail": "falha escondida"},
+        ],
+    }), encoding="utf-8")
+
+    result = handle_query_payload(
+        {"question": "Situação estadual", "scope": "Mato Grosso"},
+        outdir=tmp_path,
+    )
+    assert result["ok"] is False
+    assert result["status_code"] == 503

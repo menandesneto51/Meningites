@@ -9,7 +9,7 @@ Fase prepare:
 - não registra aprovação humana.
 
 Fase finalize:
-- verifica novamente o HEAD local;
+- verifica novamente o HEAD local e exige árvore rastreada limpa;
 - exige revisão visual explícita do mesmo commit;
 - publica readiness, release readiness, cadeia de custódia, manifesto e catálogo de schemas;
 - falha se qualquer gate final não estiver aprovado.
@@ -187,7 +187,7 @@ def main() -> int:
         local_snapshot = verify_local_snapshot(
             repo_root,
             args.commit,
-            require_clean=args.phase == "prepare",
+            require_clean=True,
         )
     except ValueError as exc:
         print(
