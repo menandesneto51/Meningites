@@ -138,3 +138,23 @@ def test_http_handler_blocks_forged_pass_without_validation_schema(tmp_path: Pat
     )
     assert result["ok"] is False
     assert result["status_code"] == 503
+
+
+def test_http_handler_blocks_inconsistent_pass_even_with_valid_schema(tmp_path: Path):
+    _context(tmp_path / "agente_epidemiologico_contexto_vnext.json")
+    (tmp_path / "validacao_vnext.json").write_text(json.dumps({
+        "schema_version": "vnext-validation-1",
+        "overall_status": "pass",
+        "fail_n": 0,
+        "attention_n": 0,
+        "checks": [
+            {"check_id": "x", "status": "fail", "detail": "falha escondida"},
+        ],
+    }), encoding="utf-8")
+
+    result = handle_query_payload(
+        {"question": "Situação estadual", "scope": "Mato Grosso"},
+        outdir=tmp_path,
+    )
+    assert result["ok"] is False
+    assert result["status_code"] == 503
