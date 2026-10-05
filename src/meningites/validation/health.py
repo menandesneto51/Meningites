@@ -49,15 +49,78 @@ def load_validation_health(outdir: str | Path) -> dict[str, Any]:
             "detail": f"Schema de validação incompatível: {exc}",
         }
 
+    checks = payload.get("checks")
+    if not isinstance(checks, list):
+        return {
+            "available": True,
+            "overall_status": "invalid_report",
+            "fail_n": None,
+            "attention_n": None,
+            "checks": [],
+            "blocking": True,
+            "schema_compatible": schema_compatible,
+            "counts_consistent": False,
+            "detail": "Relatório de validação inválido: checks deve ser uma lista.",
+        }
+
+    try:
+        fail_n = int(payload.get("fail_n", 0) or 0)
+        attention_n = int(payload.get("attention_n", 0) or 0)
+    except (TypeError, ValueError):
+        return {
+            "available": True,
+            "overall_status": "invalid_report",
+            "fail_n": None,
+            "attention_n": None,
+            "checks": checks,
+            "blocking": True,
+            "schema_compatible": schema_compatible,
+            "counts_consistent": False,
+            "detail": "Relatório de validação inválido: contagens não numéricas.",
+        }
+
+    actual_fail_n = sum(1 for item in checks if str(item.get("status", "")).lower() == "fail")
+    actual_attention_n = sum(
+        1 for item in checks if str(item.get("status", "")).lower() == "attention"
+    )
+    expected_status = (
+        "fail"
+        if actual_fail_n
+        else ("attention" if actual_attention_n else "pass")
+    )
     status = str(payload.get("overall_status") or "unknown").lower()
+    counts_consistent = (
+        fail_n == actual_fail_n
+        and attention_n == actual_attention_n
+        and status == expected_status
+    )
+    if not counts_consistent:
+        return {
+            "available": True,
+            "overall_status": "inconsistent_report",
+            "fail_n": fail_n,
+            "attention_n": attention_n,
+            "checks": checks,
+            "blocking": True,
+            "schema_compatible": schema_compatible,
+            "counts_consistent": False,
+            "detail": (
+                "Relatório inconsistente: "
+                f"declarado status={status}, fail_n={fail_n}, attention_n={attention_n}; "
+                f"calculado status={expected_status}, fail_n={actual_fail_n}, "
+                f"attention_n={actual_attention_n}."
+            ),
+        }
+
     return {
         "available": True,
         "overall_status": status,
-        "fail_n": int(payload.get("fail_n", 0) or 0),
-        "attention_n": int(payload.get("attention_n", 0) or 0),
-        "checks": payload.get("checks") or [],
+        "fail_n": fail_n,
+        "attention_n": attention_n,
+        "checks": checks,
         "blocking": status != "pass",
         "schema_compatible": schema_compatible,
+        "counts_consistent": True,
         "detail": "Gate aprovado." if status == "pass" else "Gate exige revisão antes de ativação permanente.",
     }
 
