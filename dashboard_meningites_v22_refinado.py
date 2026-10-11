@@ -5,6 +5,7 @@ Dashboard V22 com alertas estatísticos, séries separadas, OR fixo à direita e
 """
 
 from pathlib import Path
+from html import escape
 import os
 import uuid
 import numpy as np
@@ -425,8 +426,10 @@ def load_shapefile():
 def choropleth_or_points(ind, shapefile, latlon, metric, title):
     """Prioriza coroplético com shapefile; pontos só se a malha falhar.
 
-    Sempre desenha TODOS os municípios da malha: quem não tem dado fica com 0
-    (cor mais clara da escala), para não deixar buracos no mapa.
+    Segurança semântica:
+    - zero observado permanece zero;
+    - ausência de dado permanece NaN/N.D.;
+    - municípios sem dado são exibidos em cinza, nunca na classe de menor valor.
     """
     d = ind.copy()
     if "codigo_municipio_v17" not in d.columns:
@@ -435,23 +438,25 @@ def choropleth_or_points(ind, shapefile, latlon, metric, title):
     d["codigo_municipio_v17"] = (
         d["codigo_municipio_v17"].astype(str).str.replace(r"\D", "", regex=True).str[:6]
     )
-    # agrega por município caso o indicador venha com linhas duplicadas
+
     value_cols = [
-        c for c in [
+        col for col in [
             metric, "casos", "confirmados", "obitos_meningite", "hospitalizacoes",
             "incidencia_100mil", "mortalidade_100mil", "letalidade_confirmados", "score_risco",
         ]
-        if c in d.columns
+        if col in d.columns
     ]
     for col in value_cols:
         d[col] = pd.to_numeric(d[col], errors="coerce")
+
     name_col = "municipio_v17" if "municipio_v17" in d.columns else None
     if value_cols:
-        agg = {c: "sum" for c in value_cols}
-        # taxas/score: média se houver duplicata; contagens: soma
-        for c in list(agg):
-            if any(k in c for k in ("incidencia", "mortalidade", "letalidade", "score", "taxa", "pct")):
-                agg[c] = "mean"
+        agg = {}
+        for col in value_cols:
+            if any(k in col for k in ("incidencia", "mortalidade", "letalidade", "score", "taxa", "pct")):
+                agg[col] = "mean"
+            else:
+                agg[col] = _sum_preserve_missing
         if name_col:
             agg[name_col] = "first"
         d = d.groupby("codigo_municipio_v17", as_index=False).agg(agg)
@@ -468,53 +473,91 @@ def choropleth_or_points(ind, shapefile, latlon, metric, title):
                 g["municipio_v17"] = g["municipio_v17"].fillna(g["NM_MUN"]).astype(str)
             else:
                 g["municipio_v17"] = g["municipio_v17"].fillna("").astype(str)
-            # garante colunas e preenche NaN com 0 → todos os polígonos coloridos
-            fill_cols = [
+
+            for col in [
                 metric, "casos", "confirmados", "obitos_meningite", "hospitalizacoes",
                 "incidencia_100mil", "mortalidade_100mil", "letalidade_confirmados", "score_risco",
-            ]
-            for col in fill_cols:
+            ]:
                 if col not in g.columns:
-                    g[col] = 0.0
+                    g[col] = np.nan
                 else:
-                    g[col] = pd.to_numeric(g[col], errors="coerce").fillna(0.0)
+                    g[col] = pd.to_numeric(g[col], errors="coerce")
+
             g = g.reset_index(drop=True)
             g["_map_id"] = g.index.astype(str)
-            zmax = float(pd.to_numeric(g[metric], errors="coerce").max() or 0)
-            if zmax <= 0:
-                zmax = 1.0
+            g["_metric_value"], g["_has_metric_data"] = _metric_with_data_mask(g[metric])
+            g["_data_status"] = np.where(g["_has_metric_data"], "Com dado", "Sem dado")
+
             geojson = __import__("json").loads(g.to_json())
-            hover = {
-                metric: ":.2f",
-                "casos": ":.0f",
-                "confirmados": ":.0f",
-                "obitos_meningite": ":.0f",
-                "_map_id": False,
-            }
-            plot_df = g.drop(columns=["geometry"], errors="ignore")
-            fig = px.choropleth_mapbox(
-                plot_df,
-                geojson=geojson,
-                locations="_map_id",
-                featureidkey="properties._map_id",
-                color=metric,
-                hover_name="municipio_v17",
-                hover_data=hover,
-                color_continuous_scale=PLOTLY_BLUES,
-                range_color=(0, zmax),
+            available = g[g["_has_metric_data"]].copy()
+            missing = g[~g["_has_metric_data"]].copy()
+
+            fig = go.Figure()
+
+            if not missing.empty:
+                fig.add_trace(
+                    go.Choroplethmapbox(
+                        geojson=geojson,
+                        locations=missing["_map_id"],
+                        featureidkey="properties._map_id",
+                        z=np.zeros(len(missing)),
+                        colorscale=[[0, "#D1D5DB"], [1, "#D1D5DB"]],
+                        showscale=False,
+                        marker=dict(
+                            opacity=0.68,
+                            line=dict(width=0.35, color=SES_AZUL["neutro"]),
+                        ),
+                        text=missing["municipio_v17"],
+                        hovertemplate="<b>%{text}</b><br>Status: Sem dado (N/D)<extra></extra>",
+                        name="Sem dado",
+                    )
+                )
+
+            if not available.empty:
+                zmin = float(available["_metric_value"].min())
+                zmax = float(available["_metric_value"].max())
+                if zmin >= 0:
+                    zmin = 0.0
+                if zmax <= zmin:
+                    zmax = zmin + 1.0
+                fig.add_trace(
+                    go.Choroplethmapbox(
+                        geojson=geojson,
+                        locations=available["_map_id"],
+                        featureidkey="properties._map_id",
+                        z=available["_metric_value"],
+                        zmin=zmin,
+                        zmax=zmax,
+                        colorscale=PLOTLY_BLUES,
+                        showscale=True,
+                        colorbar=dict(title=metric),
+                        marker=dict(
+                            opacity=0.85,
+                            line=dict(width=0.35, color=SES_AZUL["neutro"]),
+                        ),
+                        text=available["municipio_v17"],
+                        hovertemplate=(
+                            f"<b>%{{text}}</b><br>{metric}: %{{z:.2f}}"
+                            "<br>Status: dado observado<extra></extra>"
+                        ),
+                        name="Com dado",
+                    )
+                )
+
+            fig.update_layout(
                 mapbox_style="carto-positron",
-                center={"lat": -12.8, "lon": -55.8},
-                zoom=4.5,
-                opacity=0.85,
+                mapbox_center={"lat": -12.8, "lon": -55.8},
+                mapbox_zoom=4.5,
                 height=560,
                 title=title + " (shapefile municipal)",
+                margin=dict(l=0, r=0, t=40, b=0),
+                legend=dict(orientation="h"),
             )
-            fig.update_traces(
-                marker_line_width=0.35,
-                marker_line_color=SES_AZUL["neutro"],
+            st.caption(
+                f"{len(g)} municípios na malha · "
+                f"{len(available)} com dado · {len(missing)} sem dado. "
+                "Cinza = N/D; zero colorido = zero observado."
             )
-            fig.update_layout(margin=dict(l=0, r=0, t=40, b=0))
-            st.caption(f"{len(g)} municípios na malha · valor 0 = sem registro no filtro (cor mais clara).")
             st.plotly_chart(fig, use_container_width=True, key=uid())
             return
         except Exception as e:
@@ -523,26 +566,81 @@ def choropleth_or_points(ind, shapefile, latlon, metric, title):
     if latlon.empty:
         st.info(f"Mapa indisponível (sem shapefile/coordenadas): {title}")
         return
-    d["municipio_key_v17"] = d.get("municipio_v17", pd.Series(index=d.index)).map(text_key)
-    d = d.merge(latlon[["municipio_key_v17", "lat", "lon"]], on="municipio_key_v17", how="left").dropna(subset=["lat", "lon"])
+
+    d["municipio_key_v17"] = d.get("municipio_v17", pd.Series(index=d.index, dtype="object")).map(text_key)
+    d = d.merge(
+        latlon[["municipio_key_v17", "lat", "lon"]],
+        on="municipio_key_v17",
+        how="left",
+    ).dropna(subset=["lat", "lon"])
     if d.empty:
         st.info(f"Sem coordenadas disponíveis: {title}")
         return
-    fig = px.scatter_mapbox(
-        d,
-        lat="lat",
-        lon="lon",
-        size=np.maximum(pd.to_numeric(d.get("casos"), errors="coerce").fillna(1), 1),
-        color=metric,
-        hover_name="municipio_v17",
-        hover_data={"casos": True, "confirmados": True, "obitos_meningite": True},
-        zoom=4.5,
-        height=560,
-        color_continuous_scale=PLOTLY_BLUES,
-        title=title + " (pontos — fallback)",
+
+    if metric not in d.columns:
+        d[metric] = np.nan
+    d["_metric_value"], d["_has_metric_data"] = _metric_with_data_mask(d[metric])
+    available = d[d["_has_metric_data"]].copy()
+    missing = d[~d["_has_metric_data"]].copy()
+
+    if not available.empty:
+        if "casos" in available.columns:
+            available["_marker_size"] = np.maximum(
+                pd.to_numeric(available["casos"], errors="coerce").fillna(1),
+                1,
+            )
+        else:
+            available["_marker_size"] = 8
+        fig = px.scatter_mapbox(
+            available,
+            lat="lat",
+            lon="lon",
+            size="_marker_size",
+            color="_metric_value",
+            hover_name="municipio_v17",
+            zoom=4.5,
+            height=560,
+            color_continuous_scale=PLOTLY_BLUES,
+            title=title + " (pontos — fallback)",
+        )
+    else:
+        fig = go.Figure()
+        fig.update_layout(height=560, title=title + " (pontos — fallback)")
+
+    if not missing.empty:
+        fig.add_trace(
+            go.Scattermapbox(
+                lat=missing["lat"],
+                lon=missing["lon"],
+                mode="markers",
+                marker=dict(size=9, color="#9CA3AF", opacity=0.75),
+                text=missing.get("municipio_v17"),
+                hovertemplate="<b>%{text}</b><br>Status: Sem dado (N/D)<extra></extra>",
+                name="Sem dado",
+            )
+        )
+
+    fig.update_layout(
+        mapbox_style="carto-positron",
+        mapbox_center={"lat": -12.8, "lon": -55.8},
+        mapbox_zoom=4.5,
     )
-    fig.update_layout(mapbox_style="carto-positron")
+    st.caption(
+        f"{len(available)} município(s) com dado · {len(missing)} sem dado. "
+        "Cinza = N/D; zero colorido = zero observado."
+    )
     st.plotly_chart(fig, use_container_width=True, key=uid())
+
+
+def _sum_preserve_missing(series: pd.Series):
+    """Soma contagens sem converter grupo totalmente ausente em zero."""
+    return pd.to_numeric(series, errors="coerce").sum(min_count=1)
+
+
+def _metric_with_data_mask(series: pd.Series) -> tuple[pd.Series, pd.Series]:
+    """Retorna valor numérico e máscara de dado observado; NaN permanece ausência."""
+    values = pd.to_numeric(series, errors="coerce")
+    return values, values.notna()
 
 
 def fmt(x, nd=1):
@@ -584,6 +682,117 @@ def scope_caption(escopo: str, detalhe: str = ""):
         unsafe_allow_html=True,
     )
 
+
+
+def active_scope_summary(
+    ano_sel,
+    reg_sel,
+    mun_sel,
+    clas_sel=None,
+    evo_sel=None,
+    case_sel=None,
+):
+    """Resumo curto do escopo ativo para reduzir ambiguidade entre filtros e agregados."""
+    if mun_sel:
+        place = (
+            f"Município: {mun_sel[0]}"
+            if len(mun_sel) == 1
+            else f"Municípios: {len(mun_sel)} selecionados"
+        )
+    elif reg_sel:
+        place = (
+            f"Regional: {reg_sel[0]}"
+            if len(reg_sel) == 1
+            else f"Regionais: {len(reg_sel)} selecionadas"
+        )
+    else:
+        place = "Mato Grosso"
+
+    if ano_sel:
+        years = (
+            f"Ano: {ano_sel[0]}"
+            if len(ano_sel) == 1
+            else f"Anos: {len(ano_sel)} selecionados"
+        )
+    else:
+        years = "Todos os anos"
+
+    clinical_filters = any([clas_sel, evo_sel, case_sel])
+    suffix = " · filtros clínicos ativos" if clinical_filters else ""
+    return f"{place} · {years}{suffix}"
+
+
+def _read_json_optional(path: Path) -> dict:
+    try:
+        if path.exists() and path.stat().st_size > 0:
+            payload = __import__("json").loads(path.read_text(encoding="utf-8"))
+            return payload if isinstance(payload, dict) else {}
+    except Exception:
+        pass
+    return {}
+
+
+def global_status_snapshot(outdir: Path, scope_text: str) -> dict:
+    """Metadados operacionais para a faixa global; somente leitura, sem alterar gates."""
+    root = Path(outdir)
+    demo = "demo_cloud" in str(root).replace("\\", "/")
+
+    audit = _read_json_optional(root / "auditoria_sinan_fonte_v23.json")
+    source = audit.get("fonte_escolhida") or audit.get("fonte") or "N/D"
+    updated = audit.get("gerado_em") or "N/D"
+
+    validation = _read_json_optional(root / "validacao_vnext.json")
+    gate = str(validation.get("overall_status") or "não validado").upper()
+
+    context = _read_json_optional(root / "agente_epidemiologico_contexto_vnext.json")
+    quality = context.get("data_quality") if isinstance(context.get("data_quality"), dict) else {}
+    blocking_n = int(quality.get("blocking_divergences_n", 0) or 0) if quality else None
+    missing_n = int(quality.get("missing_artifacts_n", 0) or 0) if quality else None
+    if blocking_n is None:
+        quality_text = "N/D"
+        quality_tone = "neutral"
+    elif blocking_n > 0:
+        quality_text = f"{blocking_n} bloqueio(s)"
+        quality_tone = "danger"
+    elif (missing_n or 0) > 0:
+        quality_text = f"{missing_n} fonte(s) ausente(s)"
+        quality_tone = "warn"
+    else:
+        quality_text = "Sem bloqueios"
+        quality_tone = "ok"
+
+    return {
+        "mode": "DEMO" if demo else "OPERAÇÃO LOCAL",
+        "source": str(source),
+        "updated": str(updated),
+        "gate": gate,
+        "gate_tone": "ok" if gate == "PASS" else ("danger" if gate == "FAIL" else "warn"),
+        "quality": quality_text,
+        "quality_tone": quality_tone,
+        "scope": scope_text,
+    }
+
+
+def render_global_status_bar(outdir: Path, scope_text: str):
+    status = global_status_snapshot(outdir, scope_text)
+
+    def chip(label, value, tone="neutral"):
+        return (
+            f'<div class="status-chip status-{tone}" role="status">'
+            f'<span class="status-label">{escape(str(label))}</span>'
+            f'<span class="status-value">{escape(str(value))}</span>'
+            "</div>"
+        )
+
+    html = '<div class="status-strip">' + "".join([
+        chip("Ambiente", status["mode"]),
+        chip("Fonte SINAN", status["source"]),
+        chip("Atualização", status["updated"]),
+        chip("Gate VNext", status["gate"], status["gate_tone"]),
+        chip("Qualidade", status["quality"], status["quality_tone"]),
+        chip("Escopo ativo", status["scope"]),
+    ]) + "</div>"
+    st.markdown(html, unsafe_allow_html=True)
 
 
 def norm_coord_value(x, kind):
@@ -685,6 +894,45 @@ def inject_ui_css():
   }}
   .hero-band h1 {{ color: #fff !important; margin: 0 !important; font-size: 1.55rem !important; }}
   .hero-band p {{ margin: 6px 0 0 0; opacity: .92; font-size: 0.95rem; }}
+  .status-strip {{
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 8px;
+    margin: 0 0 14px 0;
+  }}
+  .status-chip {{
+    background: {a['white']};
+    border: 1px solid {a['border']};
+    border-left: 4px solid {a['neutro']};
+    border-radius: 10px;
+    padding: 8px 10px;
+    min-width: 0;
+  }}
+  .status-ok {{ border-left-color: {SEMAFORO['verde']}; }}
+  .status-warn {{ border-left-color: {SEMAFORO['amarelo']}; }}
+  .status-danger {{ border-left-color: {SEMAFORO['vermelho']}; }}
+  .status-label {{
+    display: block;
+    color: {a['muted']};
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+  }}
+  .status-value {{
+    display: block;
+    color: {a['text']};
+    font-size: .86rem;
+    font-weight: 700;
+    margin-top: 2px;
+    overflow-wrap: anywhere;
+  }}
+  @media (max-width: 1100px) {{
+    .status-strip {{ grid-template-columns: repeat(3, minmax(0, 1fr)); }}
+  }}
+  @media (max-width: 700px) {{
+    .status-strip {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+  }}
   .kpi-card {{
     background: {a['white']};
     border: 1px solid {a['border']};
@@ -4347,28 +4595,6 @@ def main():
             "Para operação completa use o painel local (porta 8510) após o pipeline."
         )
 
-    # Idade da extração / fonte SINAN
-    try:
-        import json
-        audit_p = OUT / "auditoria_sinan_fonte_v23.json"
-        dw_p = OUT / "dw_descoberta_resumo_v23.json"
-        bits = []
-        if audit_p.exists():
-            aud = json.loads(audit_p.read_text(encoding="utf-8"))
-            fonte = aud.get("fonte_escolhida") or aud.get("fonte") or "?"
-            gerado = aud.get("gerado_em") or ""
-            bits.append(f"Fonte SINAN: **{fonte}**" + (f" · gerado {gerado}" if gerado else ""))
-        if dw_p.exists():
-            dwm = json.loads(dw_p.read_text(encoding="utf-8"))
-            conn = dwm.get("conectado_em") or ""
-            n = (dwm.get("extracoes") or {}).get("sinan_meningites_dw", {}).get("n")
-            if conn:
-                bits.append(f"DW: {conn}" + (f" · {n} linhas SINAN" if n is not None else ""))
-        if bits:
-            st.caption(" · ".join(bits) + " · Atualizar: `ATUALIZAR_MENINGITES.bat`")
-    except Exception:
-        pass
-
     with st.sidebar:
         st.header("Filtros globais")
         try:
@@ -4389,6 +4615,16 @@ def main():
         clas_sel = st.multiselect("Classificação agrupada", sorted(base["classificacao_agrupada_v17"].dropna().astype(str).unique()) if "classificacao_agrupada_v17" in base.columns else [], default=[])
         evo_sel = st.multiselect("Evolução", sorted(base["evolucao_padronizada_v17"].dropna().astype(str).unique()) if "evolucao_padronizada_v17" in base.columns else [], default=[])
         case_sel = st.multiselect("Classificação final do caso", sorted(base["classificacao_caso_padronizada_v17"].dropna().astype(str).unique()) if "classificacao_caso_padronizada_v17" in base.columns else [], default=[])
+
+    scope_text = active_scope_summary(
+        ano_sel,
+        reg_sel,
+        mun_sel,
+        clas_sel,
+        evo_sel,
+        case_sel,
+    )
+    render_global_status_bar(OUT, scope_text)
 
     df = base.copy()
     if ano_sel and "ano_evento_v17" in df.columns:
